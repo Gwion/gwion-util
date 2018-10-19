@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "absyn.h"
 #include "oo.h"
+#include "vm.h"
 #include "func.h"
 #include "type.h"
 #include "value.h"
