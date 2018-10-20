@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "defs.h"
+#include "map.h"
 #include "absyn.h"
 #include "hash.h"
 #include "scanner.h"

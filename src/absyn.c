@@ -1,7 +1,9 @@
+#include "defs.h"
+#include "map.h"
 #include "absyn.h"
 #include "mpool.h"
 
-Var_Decl new_var_decl(const Symbol xid, const Array_Sub array, const int pos) {
+Var_Decl new_var_decl(struct Symbol_* xid, const Array_Sub array, const int pos) {
   Var_Decl a = mp_alloc(Var_Decl);
   a->xid = xid;
   a->array = array;
@@ -93,14 +95,14 @@ ANN static void free_exp_array(Exp_Array* a) {
   free_exp(a->base);
 }
 
-ID_List new_id_list(const Symbol xid, const int pos) {
+ID_List new_id_list(struct Symbol_* xid, const int pos) {
   ID_List a = mp_alloc(ID_List);
   a->xid = xid;
   a->pos = pos;
   return a;
 }
 
-ID_List prepend_id_list(const Symbol xid, const ID_List list, const int pos) {
+ID_List prepend_id_list(struct Symbol_* xid, const ID_List list, const int pos) {
   ID_List a = new_id_list(xid, pos);
   a->next = list;
   a->pos = pos;
@@ -239,7 +241,7 @@ Exp new_exp_prim_nil(const int pos) {
   return a;
 }
 
-Exp new_exp_prim_id(const Symbol xid, const int pos) {
+Exp new_exp_prim_id(struct Symbol_* xid, const int pos) {
   Exp a = new_exp_prim(pos);
   a->meta = ae_meta_var;
   a->d.exp_primary.primary_type = ae_primary_id;
@@ -376,7 +378,7 @@ m_bool tmpl_class_base(const Tmpl_Class* a) {
   return a ? tmpl_list_base(&a->list) : 0;
 }
 
-Func_Def new_func_def(Type_Decl* td, const Symbol xid,
+Func_Def new_func_def(Type_Decl* td, struct Symbol_* xid,
   const Arg_List arg_list, const Stmt code, const ae_flag flag) {
   Func_Def a = mp_alloc(Func_Def);
   a->td   = td;
@@ -398,7 +400,7 @@ void free_func_def(Func_Def a) {
   mp_free(Func_Def, a);
 }
 
-Stmt new_stmt_fptr(const Symbol xid, Type_Decl* td, const Arg_List args, const ae_flag flag, const int pos) {
+Stmt new_stmt_fptr(struct Symbol_* xid, Type_Decl* td, const Arg_List args, const ae_flag flag, const int pos) {
   Stmt a              = mp_alloc(Stmt);
   a->stmt_type        = ae_stmt_fptr;
   a->d.stmt_fptr.td    = td;
@@ -410,7 +412,7 @@ Stmt new_stmt_fptr(const Symbol xid, Type_Decl* td, const Arg_List args, const a
 
 }
 
-Stmt new_stmt_type(Type_Decl* td, const Symbol xid, const int pos) {
+Stmt new_stmt_type(Type_Decl* td, struct Symbol_* xid, const int pos) {
   Stmt a              = mp_alloc(Stmt);
   a->stmt_type        = ae_stmt_type;
   a->d.stmt_type.td   = td;
@@ -463,7 +465,7 @@ ANN static void free_exp_call(Exp_Call* a) {
     free_exp(a->args);
 }
 
-Exp new_exp_dot(const Exp base, const Symbol xid, const int pos) {
+Exp new_exp_dot(const Exp base, struct Symbol_* xid, const int pos) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_dot;
   a->meta = ae_meta_var;
@@ -599,7 +601,7 @@ ANN static void free_stmt_for(Stmt_For a) {
   free_stmt(a->body);
 }
 
-Stmt new_stmt_auto(const Symbol sym, const Exp exp, const Stmt body, const m_bool ptr, const int pos) {
+Stmt new_stmt_auto(struct Symbol_* sym, const Exp exp, const Stmt body, const m_bool ptr, const int pos) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = ae_stmt_auto;
   a->d.stmt_auto.sym = sym;
@@ -616,7 +618,7 @@ ANN static void free_stmt_auto(Stmt_Auto a) {
   free_stmt(a->body);
 }
 
-Stmt new_stmt_jump(const Symbol xid, const m_bool is_label, const int pos) {
+Stmt new_stmt_jump(struct Symbol_* xid, const m_bool is_label, const int pos) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = ae_stmt_jump;
   a->d.stmt_jump.name = xid;
@@ -673,7 +675,7 @@ ANN inline static void free_stmt_switch(Stmt_Switch a) {
   free_stmt(a->stmt);
 }
 
-Stmt new_stmt_enum(const ID_List list, const Symbol xid, const int pos) {
+Stmt new_stmt_enum(const ID_List list, struct Symbol_* xid, const int pos) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = ae_stmt_enum;
   a->d.stmt_enum.xid = xid;

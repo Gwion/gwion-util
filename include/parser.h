@@ -1,4 +1,4 @@
-/* A Bison parser, made by GNU Bison 3.0.5.  */
+/* A Bison parser, made by GNU Bison 3.1.  */
 
 /* Bison interface for Yacc-like parsers in C
 
@@ -268,7 +268,7 @@ extern int gwion_debug;
 
 union YYSTYPE
 {
-#line 32 "utils/gwion.y" /* yacc.c:1910  */
+#line 34 "ly/gwion.y" /* yacc.c:1913  */
 
   char* sval;
   int ival;
@@ -293,7 +293,7 @@ union YYSTYPE
   Class_Def class_def;
   Ast ast;
 
-#line 297 "include/parser.h" /* yacc.c:1910  */
+#line 297 "include/parser.h" /* yacc.c:1913  */
 };
 
 typedef union YYSTYPE YYSTYPE;

@@ -1,6 +1,5 @@
 #ifndef __ABSYN
 #define __ABSYN
-#include "vm.h"
 
 typedef struct Ast_           * Ast;
 typedef struct Class_Def_     * Class_Def;
@@ -15,14 +14,14 @@ typedef struct Arg_List_      * Arg_List;
 
 typedef struct {
   Exp base;
-  Type t_base;
-  Symbol xid;
+  struct Type_ *t_base;
+  struct Symbol_ *xid;
   Exp self;
 } Exp_Dot;
 
 struct Array_Sub_ {
   Exp    exp;
-  Type   type;
+  struct Type_ *type;
   m_uint depth;
   int pos;
 };
@@ -39,13 +38,13 @@ typedef struct {
 ANEW ANN Exp new_exp_array(const Exp, const Array_Sub, const int);
 
 struct Var_Decl_ {
-  Symbol xid;
+  struct Symbol_* xid;
   Value value;
   Array_Sub array;
   void* addr;
   int pos;
 };
-ANN2(1) ANEW Var_Decl new_var_decl(const Symbol, const Array_Sub, const int);
+ANN2(1) ANEW Var_Decl new_var_decl(struct Symbol_*, const Array_Sub, const int);
 
 struct Var_Decl_List_ {
   Var_Decl self;
@@ -67,13 +66,13 @@ ANN void free_type_decl(Type_Decl* a);
 ANN Type_Decl* add_type_decl_array(Type_Decl*, const Array_Sub);
 
 struct ID_List_    {
-  Symbol xid;
+  struct Symbol_* xid;
   ID_List next;
   ID_List ref;
   int pos;
 };
-ANEW ANN ID_List new_id_list(const Symbol, const int);
-ANN ID_List prepend_id_list(const Symbol, ID_List, const int);
+ANEW ANN ID_List new_id_list(struct Symbol_*, const int);
+ANN ID_List prepend_id_list(struct Symbol_*, ID_List, const int);
 ANN void free_id_list(ID_List a);
 
 struct Type_List_  {
@@ -91,7 +90,7 @@ typedef struct {
 struct Arg_List_ {
   Type_Decl* td;
   Var_Decl var_decl;
-  Type type;
+  struct Type_* type;
   Arg_List  next;
 };
 ANN2(1,2) ANEW Arg_List new_arg_list(Type_Decl*, const Var_Decl, const Arg_List);
@@ -115,7 +114,7 @@ typedef enum { ae_primary_id, ae_primary_num, ae_primary_float,
              } ae_prim_t;
 typedef struct {
   Type_Decl* td;
-  Type type;
+  struct Type_* type;
   Var_Decl_List list;
   Class_Def base;
   Exp self;
@@ -123,7 +122,7 @@ typedef struct {
 typedef struct {
   Value value;
   union exp_primary_data {
-    Symbol var;
+    struct Symbol_* var;
     long num;
     m_float fnum;
     m_str chr;
@@ -196,8 +195,8 @@ typedef struct {
 } Exp_Constprop;
 #endif
 struct Exp_ {
-  Type type;
-  Type cast_to;
+  struct Type_* type;
+  struct Type_* cast_to;
   Exp next;
   union exp_data {
     Exp_Postfix   exp_post;
@@ -221,7 +220,7 @@ struct Exp_ {
   unsigned emit_var : 1;
 };
 
-ANEW ANN Exp new_exp_prim_id(const Symbol, const int);
+ANEW ANN Exp new_exp_prim_id(struct Symbol_*, const int);
 ANEW Exp new_exp_prim_int(const long, const int);
 ANEW Exp new_exp_prim_float(const m_float, const int);
 ANEW ANN Exp new_exp_prim_string(const m_str, const int);
@@ -237,7 +236,7 @@ ANN2(1) ANEW Exp new_exp_call(const Exp, const Exp args, const int pos);
 ANEW ANN Exp new_exp_cast(Type_Decl*, const Exp, const int);
 ANN2(1,2) ANEW Exp new_exp_if(const __restrict__ Exp, const __restrict__ Exp, const __restrict__ Exp, const int);
 ANEW ANN Exp new_exp_dur(const Exp, const Exp, const int);
-ANEW ANN Exp new_exp_dot(const Exp, const Symbol, const int);
+ANEW ANN Exp new_exp_dot(const Exp, struct Symbol_*, const int);
 ANEW ANN Exp new_exp_unary(const Operator, const Exp, const int);
 ANEW ANN Exp new_exp_unary2(const Operator, Type_Decl*, const int);
 ANEW ANN Exp new_exp_unary3(const Operator, const Stmt, const int);
@@ -308,7 +307,7 @@ struct Stmt_For_ {
 };
 
 struct Stmt_Auto_ {
-  Symbol sym;
+  struct Symbol_* sym;
   Exp exp;
   Stmt body;
   Value v;
@@ -329,7 +328,7 @@ struct Stmt_If_ {
 };
 
 struct Stmt_Jump_ {
-  Symbol name;
+  struct Symbol_* name;
   union stmt_goto_data {
     struct Vector_ v;
     Instr instr;
@@ -346,8 +345,8 @@ struct Stmt_Switch_ {
 
 struct Stmt_Enum_ {
   ID_List list;
-  Symbol xid;
-  Type t;
+  struct Symbol_* xid;
+  struct Type_* t;
   struct Vector_ values;
   Stmt self;
   ae_flag flag;
@@ -355,27 +354,27 @@ struct Stmt_Enum_ {
 
 struct Stmt_Fptr_ {
   Type_Decl* td;
-  Type       type;
-  Symbol     xid;
+  struct Type_*       type;
+  struct Symbol_*     xid;
   Arg_List   args;
-  Type       ret_type;
+  struct Type_*       ret_type;
   Func       func;
   Value      value;
 };
 
 struct Stmt_Type_ {
   Type_Decl* td;
-  Type       type;
-  Symbol     xid;
+  struct Type_*       type;
+  struct Symbol_*     xid;
 };
 
 struct Stmt_Union_ {
   Decl_List l;
-  Symbol xid;
-  Symbol type_xid;
+  struct Symbol_* xid;
+  struct Symbol_* type_xid;
 union {
   Value value;
-  Type type;
+  struct Type_* type;
 };
   m_uint s;
   m_uint o;
@@ -429,14 +428,15 @@ ANEW Stmt new_stmt_code(const Stmt_List, const int);
 ANN2(1,2) ANEW Stmt new_stmt_if(const Exp, const __restrict__ Stmt, const __restrict__ Stmt, const int);
 ANEW ANN Stmt new_stmt_flow(const ae_stmt_t, const Exp, const Stmt, const m_bool, const int);
 ANN2(1,2,4) ANEW Stmt new_stmt_for(const __restrict__ Stmt, const __restrict__ Stmt, const Exp, const __restrict__ Stmt, const int);
-ANEW ANN Stmt new_stmt_auto(const Symbol, const Exp, const Stmt, const m_bool, const int);
+ANEW ANN Stmt new_stmt_auto(struct Symbol_*, const Exp, const Stmt, const m_bool, const int);
 ANEW ANN Stmt new_stmt_loop(const Exp, const Stmt, const int pos);
-ANEW ANN Stmt new_stmt_jump(const Symbol, const m_bool, const int);
-ANN2(1) ANEW Stmt new_stmt_enum(const ID_List, const Symbol, const int);
+ANEW ANN Stmt new_stmt_jump(struct Symbol_*, const m_bool, const int);
+ANN2(1) ANEW Stmt new_stmt_enum(const ID_List, struct Symbol_*, const 
+int);
 ANEW ANN Stmt new_stmt_switch(Exp, Stmt, const int);
 ANEW ANN Stmt new_stmt_union(const Decl_List, const int);
-ANEW ANN Stmt new_stmt_fptr(const Symbol, Type_Decl*, const Arg_List, const ae_flag, const int);
-ANEW ANN Stmt new_stmt_type(Type_Decl*, const Symbol, const int);
+ANEW ANN Stmt new_stmt_fptr(struct Symbol_*, Type_Decl*, const Arg_List, const ae_flag, const int);
+ANEW ANN Stmt new_stmt_type(Type_Decl*, struct Symbol_*, const int);
 #ifndef TINY_MODE
 ANEW     Stmt new_stmt_pp(const enum ae_pp_type, const m_str);
 #endif
@@ -457,8 +457,8 @@ typedef struct Tmpl_List_ {
 
 struct Func_Def_ {
   Type_Decl* td;
-  Type ret_type;
-  Symbol name;
+  struct Type_* ret_type;
+  struct Symbol_* name;
   Arg_List arg_list;
   m_uint stack_depth;
   Func func;
@@ -472,7 +472,7 @@ struct Func_Def_ {
 ANEW ANN Tmpl_List* new_tmpl_list(const ID_List, const m_int);
 ANN void free_tmpl_list(Tmpl_List*);
 m_bool tmpl_list_base(const Tmpl_List*);
-ANEW Func_Def new_func_def(Type_Decl*, const Symbol, const Arg_List, const Stmt, const ae_flag);
+ANEW Func_Def new_func_def(Type_Decl*, struct Symbol_*, const Arg_List, const Stmt, const ae_flag);
 ANN void free_func_def(Func_Def def);
 
 typedef enum { ae_section_stmt, ae_section_func, ae_section_class } ae_section_t;
@@ -504,7 +504,7 @@ struct Class_Def_ {
   ID_List name;
   Type_Decl* ext;
   Class_Body body;
-  Type type;
+  struct Type_* type;
   Tmpl_Class*  tmpl;
   ae_flag flag;
 };

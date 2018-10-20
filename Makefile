@@ -15,19 +15,19 @@ libgwion_ast.a: ${obj}
 
 parser:
 	$(info generating parser)
-	@${YACC} -o src/ast/parser.c --defines=include/parser.h ly/gwion.y
+	@${YACC} -o src/parser.c --defines=include/parser.h ly/gwion.y
 
 lexer:
 	$(info generating lexer)
-	@${LEX}  -o src/ast/lexer.c ly/gwion.l
+	@${LEX}  -o src/lexer.c ly/gwion.l
 
 generate_parser:
 	$(info meta-generating parser)
-	m4 m4/gwion.ym4 >ly /gwion.y;
+	m4 m4/gwion.ym4 > ly/gwion.y;
 
 generate_lexer:
 	$(info meta-generating lexer)
-	m4 m4/gwion.lm4 >ly /gwion.l;
+	m4 m4/gwion.lm4 > ly/gwion.l;
 
 .c.o: $(DEPDIR)/%.d
 	$(info compile $(<:.c=))

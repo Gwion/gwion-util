@@ -78,9 +78,9 @@ void *_mp_alloc2(struct pool *p) {
 
 void _mp_free2(struct pool *p, void *ptr) {
   struct Recycle* next = p->next;
-#ifdef POOL_CHECK
+//#ifdef POOL_CHECK
   memset(ptr, 0, p->obj_sz);
-#endif
+//#endif
   p->next = ptr;
   p->next->next = next;
 }
