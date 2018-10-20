@@ -3291,14 +3291,14 @@ yyreduce:
         gwion_error(arg, "can't use empty '[]' in 'new' expression");
         YYERROR;
       }
-      (yyval.exp) = new_exp_unary2(op_new, (yyvsp[0].type_decl), get_pos(arg));
+      (yyval.exp) = new_exp_unary2(op_new, (yyvsp[0].type_decl));
     }
 #line 3297 "src/parser.c" /* yacc.c:1651  */
     break;
 
   case 211:
 #line 487 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.exp) = new_exp_unary3(op_spork, (yyvsp[0].stmt), get_pos(arg)); }
+    { (yyval.exp) = new_exp_unary3(op_spork, (yyvsp[0].stmt)); }
 #line 3303 "src/parser.c" /* yacc.c:1651  */
     break;
 

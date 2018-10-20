@@ -297,14 +297,15 @@ Exp new_exp_unary(const Operator oper, const Exp exp) {
   return a;
 }
 
-Exp new_exp_unary2(const Operator oper, Type_Decl* td, const int pos) {
-  Exp a = new_exp_unary_base(pos);
+Exp new_exp_unary2(const Operator oper, Type_Decl* td) {
+  Exp a = new_exp_unary_base(td->pos);
   a->d.exp_unary.op = oper;
   a->d.exp_unary.td = td;
   return a;
 }
 
-Exp new_exp_unary3(const Operator oper, const Stmt code, const int pos) {
+Exp new_exp_unary3(const Operator oper, const Stmt code) {
+  const m_uint pos = code->pos;
   Exp a = new_exp_unary_base(pos);
   a->d.exp_unary.op = oper;
   ID_List id = new_id_list(insert_symbol("void"), pos);
