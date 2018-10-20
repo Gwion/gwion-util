@@ -465,13 +465,13 @@ ANN static void free_exp_call(Exp_Call* a) {
     free_exp(a->args);
 }
 
-Exp new_exp_dot(const Exp base, struct Symbol_* xid, const int pos) {
+Exp new_exp_dot(const Exp base, struct Symbol_* xid) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_dot;
   a->meta = ae_meta_var;
   a->d.exp_dot.base = base;
   a->d.exp_dot.xid = xid;
-  a->pos = pos;
+  a->pos = base->pos;
   a->d.exp_dot.self = a;
   return a;
 }
