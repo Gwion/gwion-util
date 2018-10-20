@@ -392,8 +392,6 @@ Func_Def new_func_def(Type_Decl* td, struct Symbol_* xid,
 
 void free_func_def(Func_Def a) {
   if(!GET_FLAG(a, ae_flag_template)) {
-    if(!GET_FLAG(a, ae_flag_builtin))
-      free_stmt(a->d.code);
     if(a->arg_list)
       free_arg_list(a->arg_list);
     free_type_decl(a->td);
@@ -740,7 +738,7 @@ ANN inline static void free_stmt_union(Stmt_Union a) {
   free_decl_list(a->l);
 }
 
-ANN static void free_stmt_xxx(const union stmt_data *d __attribute__((unused))) { return; }
+ANN static void free_stmt_xxx(const union stmt_data *d) { return; }
 typedef void (*_stmt_func)(const union stmt_data *);
 static const _stmt_func stmt_func[] = {
   (_stmt_func)free_stmt_exp,  (_stmt_func)free_stmt_flow, (_stmt_func)free_stmt_flow,
@@ -810,13 +808,20 @@ void free_class_def(Class_Def a) {
 }
 
 ANN static void free_section(Section* section) {
-  const ae_section_t t = section->section_type;
-  if(t == ae_section_class)
-    free_class_def(section->d.class_def);
-  else if(ae_section_stmt)
-    free_stmt_list(section->d.stmt_list);
-  else if(t == ae_section_func)
-    free_func_def(section->d.func_def);
+  switch(section->section_type) {
+    case ae_section_class:
+      free_class_def(section->d.class_def);
+      break;
+    case ae_section_stmt:
+      free_stmt_list(section->d.stmt_list);
+      break;
+    case ae_section_func:
+      if(!GET_FLAG(section->d.func_def, ae_flag_builtin))
+        free_stmt(section->d.func_def->d.code);
+      if(!section->d.func_def->func || GET_FLAG(section->d.func_def, ae_flag_builtin))
+        free_func_def(section->d.func_def);
+      break;
+  }
   mp_free(Section, section);
 }
 
