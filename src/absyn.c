@@ -141,14 +141,14 @@ ANN static void free_exp_decl(Exp_Decl* a) {
   free_var_decl_list(a->list);
 }
 
-Exp new_exp_binary(const Exp lhs, const Operator op, const Exp rhs, const int pos) {
+Exp new_exp_binary(const Exp lhs, const Operator op, const Exp rhs) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_binary;
   a->meta = ae_meta_value;
   a->d.exp_binary.lhs = lhs;
   a->d.exp_binary.op = op;
   a->d.exp_binary.rhs = rhs;
-  a->pos = pos;
+  a->pos = lhs->pos;
   a->d.exp_binary.self = a;
   return a;
 }

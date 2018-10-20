@@ -300,7 +300,7 @@ exp
 
 binary_exp
   : decl_exp
-  | binary_exp op decl_exp     { $$ = new_exp_binary($1, $2, $3, get_pos(arg)); }
+  | binary_exp op decl_exp     { $$ = new_exp_binary($1, $2, $3); }
   ;
 
 template: { $$ = NULL; } | LTB type_list GTB { $$ = $2; };
@@ -436,30 +436,30 @@ con_exp: log_or_exp | log_or_exp QUESTION exp COLON con_exp
       { $$ = new_exp_if($1, $3, $5, get_pos(arg)); };
 
 log_or_exp: log_and_exp | log_or_exp OR log_and_exp
-      { $$ = new_exp_binary($1, op_or, $3, get_pos(arg)); };
+      { $$ = new_exp_binary($1, op_or, $3); };
 
 log_and_exp: inc_or_exp | log_and_exp AND inc_or_exp
-      { $$ = new_exp_binary($1, op_and, $3, get_pos(arg)); };
+      { $$ = new_exp_binary($1, op_and, $3); };
 
 inc_or_exp: exc_or_exp | inc_or_exp S_OR exc_or_exp
-      { $$ = new_exp_binary($1, op_sor, $3, get_pos(arg)); };
+      { $$ = new_exp_binary($1, op_sor, $3); };
 
 exc_or_exp: and_exp | exc_or_exp S_XOR and_exp
-      { $$ = new_exp_binary($1, op_sxor, $3, get_pos(arg)); };
+      { $$ = new_exp_binary($1, op_sxor, $3); };
 
 and_exp: eq_exp | and_exp S_AND eq_exp
-      { $$ = new_exp_binary($1, op_sand, $3, get_pos(arg)); };
+      { $$ = new_exp_binary($1, op_sand, $3); };
 
 eq_op : EQ { $$ = op_eq; } | NEQ { $$ = op_ne; };
 
 eq_exp: relational_exp | eq_exp eq_op relational_exp
-    { $$ = new_exp_binary($1, $2, $3, get_pos(arg)); };
+    { $$ = new_exp_binary($1, $2, $3); };
 
 rel_op: LT { $$ = op_lt; } | GT { $$ = op_gt; } |
     LE { $$ = op_le; } | GE { $$ = op_ge; };
 
 relational_exp: shift_exp | relational_exp rel_op shift_exp
-    { $$ = new_exp_binary($1, $2, $3, get_pos(arg)); };
+    { $$ = new_exp_binary($1, $2, $3); };
 
 shift_op
   : SHIFT_LEFT  { $$ = op_shl;  }
@@ -467,17 +467,17 @@ shift_op
   ;
 
 shift_exp: add_exp | shift_exp shift_op  add_exp
-    { $$ = new_exp_binary($1, $2, $3, get_pos(arg)); };
+    { $$ = new_exp_binary($1, $2, $3); };
 
 add_op: PLUS { $$ = op_add; } | MINUS { $$ = op_sub; };
 
 add_exp: mul_exp | add_exp add_op mul_exp
-    { $$ = new_exp_binary($1, $2, $3, get_pos(arg)); };
+    { $$ = new_exp_binary($1, $2, $3); };
 
 mul_op: TIMES { $$ = op_mul; } | DIVIDE { $$ = op_div; } | PERCENT { $$ = op_mod; };
 
 mul_exp: cast_exp | mul_exp mul_op cast_exp
-    { $$ = new_exp_binary($1, $2, $3, get_pos(arg)); };
+    { $$ = new_exp_binary($1, $2, $3); };
 
 cast_exp: unary_exp | cast_exp DOLLAR type_decl2
     { $$ = new_exp_cast($3, $1, get_pos(arg)); };
