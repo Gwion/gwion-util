@@ -55,6 +55,16 @@ void mp_end(struct pool *p) {
     free(p->data[i]);
   free(p->data);
 }
+static void mp_realloc(struct pool* p) {
+  p->obj_id = 0;
+  if(++p->blk_id == (int32_t)p->nblk) {
+    p->nblk <<= 1;
+    p->data = (uint8_t**)xrealloc(p->data, sizeof(uint8_t*)* p->nblk);
+    for(uint32_t i = (p->nblk >> 1) + 1; i < p->nblk; ++i)
+      p->data[i] = NULL;
+  }
+  p->data[p->blk_id] = (uint8_t*)xcalloc(BLK, p->obj_sz);
+}
 
 void *_mp_alloc2(struct pool *p) {
   if(p->next) {
@@ -63,16 +73,8 @@ void *_mp_alloc2(struct pool *p) {
     memset(recycle, 0, p->obj_sz);
     return recycle;
   }
-  if(++p->obj_id == BLK) {
-    p->obj_id = 0;
-    if(++p->blk_id == (int32_t)p->nblk) {
-      p->nblk <<= 1;
-      p->data = (uint8_t**)xrealloc(p->data, sizeof(uint8_t*)* p->nblk);
-      for(uint32_t i = (p->nblk >> 1) + 1; i < p->nblk; ++i)
-        p->data[i] = NULL;
-    }
-    p->data[p->blk_id] = (uint8_t*)xcalloc(BLK, p->obj_sz);
-  }
+  if(++p->obj_id == BLK)
+    mp_realloc(p);
   return p->data[p->blk_id] + p->obj_id * p->obj_sz;
 }
 
