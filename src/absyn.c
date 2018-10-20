@@ -446,13 +446,13 @@ ANN static void free_tmpl_call(Tmpl_Call* a) {
   mp_free(Tmpl_Call, a);
 }
 
-Exp new_exp_call(const Exp base, const Exp args, const int pos) {
+Exp new_exp_call(const Exp base, const Exp args) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_call;
   a->meta = ae_meta_value;
   a->d.exp_call.func = base;
   a->d.exp_call.args = args;
-  a->pos = pos;
+  a->pos = base->pos;
   a->d.exp_call.self = a;
   return a;
 }
