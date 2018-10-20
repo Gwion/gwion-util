@@ -473,7 +473,7 @@ unary_op : PLUS { $$ = op_add; } | MINUS { $$ = op_sub; } | TIMES { $$ = op_mul;
   ;
 
 unary_exp : dur_exp | unary_op unary_exp
-      { $$ = new_exp_unary($1, $2, get_pos(arg)); }
+      { $$ = new_exp_unary($1, $2); }
   | NEW type_decl2
     {
       if($2->array && !$2->array->exp) {

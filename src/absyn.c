@@ -289,8 +289,8 @@ static Exp new_exp_unary_base(const int pos)  {
   return a;
 }
 
-Exp new_exp_unary(const Operator oper, const Exp exp, const int pos) {
-  Exp a = new_exp_unary_base(pos);
+Exp new_exp_unary(const Operator oper, const Exp exp) {
+  Exp a = new_exp_unary_base(exp->pos);
   a->meta = exp->meta;
   a->d.exp_unary.op = oper;
   a->d.exp_unary.exp = exp;
