@@ -322,7 +322,7 @@ ANN static void free_exp_unary(Exp_Unary* a) {
     free_stmt(a->code);
 }
 
-Exp new_exp_if(const restrict Exp cond, const restrict Exp if_exp, const restrict Exp else_exp, const int pos) {
+Exp new_exp_if(const restrict Exp cond, const restrict Exp if_exp, const restrict Exp else_exp) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_if;
   a->meta = ((if_exp->meta == ae_meta_var &&
@@ -330,7 +330,7 @@ Exp new_exp_if(const restrict Exp cond, const restrict Exp if_exp, const restric
   a->d.exp_if.cond = cond;
   a->d.exp_if.if_exp = if_exp;
   a->d.exp_if.else_exp = else_exp;
-  a->pos = pos;
+  a->pos = cond->pos;
   a->d.exp_if.self = a;
   return a;
 }

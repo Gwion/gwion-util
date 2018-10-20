@@ -418,7 +418,7 @@ var_decl
   ;
 
 con_exp: log_or_exp | log_or_exp QUESTION exp COLON con_exp
-      { $$ = new_exp_if($1, $3, $5, get_pos(arg)); };
+      { $$ = new_exp_if($1, $3, $5); };
 
 log_or_exp: log_and_exp | log_or_exp OR log_and_exp
       { $$ = new_exp_binary($1, op_or, $3); };
