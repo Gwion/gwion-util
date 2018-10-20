@@ -1,11 +1,5 @@
-#include <stdlib.h>
 #include "absyn.h"
-#include "vm.h"
-#include "func.h"
-#include "type.h"
 #include "mpool.h"
-
-ANN static void free_section(Section*);
 
 Var_Decl new_var_decl(const Symbol xid, const Array_Sub array, const int pos) {
   Var_Decl a = mp_alloc(Var_Decl);
@@ -462,9 +456,6 @@ Exp new_exp_call(const Exp base, const Exp args, const int pos) {
 }
 
 ANN static void free_exp_call(Exp_Call* a) {
-  if(a->m_func && GET_FLAG(a->m_func, ae_flag_checked))
-    if(a->m_func->def)
-      mp_free(Func_Def, a->m_func->def);
   if(a->tmpl)
     free_tmpl_call(a->tmpl);
   free_exp(a->func);
@@ -800,16 +791,8 @@ Section* new_section_class_def(const Class_Def class_def) {
   return a;
 }
 
-void free_class_body(Class_Body a) {
-  if(a->next)
-    free_class_body(a->next);
-  if(a->section)
-    free_section(a->section);
-  mp_free(Class_Body, a);
-}
-
 void free_class_def(Class_Def a) {
-  if(a->type && GET_FLAG(a->type, ae_flag_template))
+  if(a->type && GET_FLAG(a, ae_flag_template))
     return;
   if(a->ext)
     free_type_decl(a->ext);
@@ -837,6 +820,14 @@ ANN static void free_section(Section* section) {
       break;
   }
   mp_free(Section, section);
+}
+
+void free_class_body(Class_Body a) {
+  if(a->next)
+    free_class_body(a->next);
+  if(a->section)
+    free_section(a->section);
+  mp_free(Class_Body, a);
 }
 
 Class_Def new_class_def(const ae_flag class_decl, const ID_List name, Type_Decl* ext,
