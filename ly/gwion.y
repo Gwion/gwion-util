@@ -487,7 +487,7 @@ unary_exp : dur_exp | unary_op unary_exp
         { $$ = new_exp_unary3(op_spork, $3, get_pos(arg)); };
 
 dur_exp: post_exp | dur_exp COLONCOLON post_exp
-    { $$ = new_exp_dur($1, $3, get_pos(arg)); };
+    { $$ = new_exp_dur($1, $3); };
 
 type_list
   : type_decl2 { $$ = new_type_list($1, NULL); }

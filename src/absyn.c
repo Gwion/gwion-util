@@ -189,13 +189,13 @@ ANN static inline void free_exp_post(Exp_Postfix* post) {
   free_exp(post->exp);
 }
 
-Exp new_exp_dur(const Exp base, const Exp unit, const int pos) {
+Exp new_exp_dur(const Exp base, const Exp unit) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_dur;
   a->meta = ae_meta_value;
   a->d.exp_dur.base = base;
   a->d.exp_dur.unit = unit;
-  a->pos = pos;
+  a->pos = base->pos;
   a->d.exp_dur.self = a;
   return a;
 }

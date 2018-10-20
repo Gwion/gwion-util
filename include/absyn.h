@@ -234,7 +234,7 @@ ANEW ANN Exp new_exp_post(const Exp, const Operator);
 ANN2(1) ANEW Exp new_exp_call(const Exp, const Exp args);
 ANEW ANN Exp new_exp_cast(Type_Decl*, const Exp);
 ANN2(1,2) ANEW Exp new_exp_if(const __restrict__ Exp, const __restrict__ Exp, const __restrict__ Exp);
-ANEW ANN Exp new_exp_dur(const Exp, const Exp, const int);
+ANEW ANN Exp new_exp_dur(const Exp, const Exp);
 ANEW ANN Exp new_exp_dot(const Exp, struct Symbol_*, const int);
 ANEW ANN Exp new_exp_unary(const Operator, const Exp, const int);
 ANEW ANN Exp new_exp_unary2(const Operator, Type_Decl*, const int);
