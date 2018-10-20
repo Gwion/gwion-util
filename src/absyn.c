@@ -158,12 +158,12 @@ ANN static void free_exp_binary(Exp_Binary* binary) {
   free_exp(binary->rhs);
 }
 
-Exp new_exp_cast(Type_Decl* td, const Exp exp, const int pos) {
+Exp new_exp_cast(Type_Decl* td, const Exp exp) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_cast;
   a->meta = ae_meta_value;
   a->d.exp_cast.td = td;
-  a->pos = pos;
+  a->pos = exp->pos;
   a->d.exp_cast.exp = exp;
   a->d.exp_cast.self = a;
   return a;

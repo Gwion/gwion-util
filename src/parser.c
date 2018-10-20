@@ -3225,7 +3225,7 @@ yyreduce:
 
   case 199:
 #line 468 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.exp) = new_exp_cast((yyvsp[0].type_decl), (yyvsp[-2].exp), get_pos(arg)); }
+    { (yyval.exp) = new_exp_cast((yyvsp[0].type_decl), (yyvsp[-2].exp)); }
 #line 3230 "src/parser.c" /* yacc.c:1651  */
     break;
 
