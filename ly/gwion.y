@@ -499,7 +499,7 @@ call_paren : LPAREN RPAREN { $$ = NULL; } | LPAREN exp RPAREN { $$ = $2; } ;
 post_op : PLUSPLUS { $$ = op_inc; } | MINUSMINUS { $$ = op_dec; };
 
 post_exp: primary_exp | post_exp array_exp
-    { $$ = new_exp_array($1, $2, get_pos(arg)); }
+    { $$ = new_exp_array($1, $2); }
   | post_exp template call_paren
     { $$ = new_exp_call($1, $3);
       if($2)$$->d.exp_call.tmpl = new_tmpl_call($2); }

@@ -79,13 +79,13 @@ Type_Decl* add_type_decl_array(Type_Decl* a, const Array_Sub array) {
   return a;
 }
 
-Exp new_exp_array(const Exp base, const Array_Sub array, const int pos) {
+Exp new_exp_array(const Exp base, const Array_Sub array) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_array;
   a->meta = ae_meta_var;
   a->d.exp_array.base = base;
   a->d.exp_array.array = array;
-  a->pos = pos;
+  a->pos = base->pos;
   a->d.exp_array.self = a;
   return a;
 }

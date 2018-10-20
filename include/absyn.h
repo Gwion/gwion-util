@@ -34,7 +34,7 @@ typedef struct {
   Exp       self;
 } Exp_Array;
 
-ANEW ANN Exp new_exp_array(const Exp, const Array_Sub, const int);
+ANEW ANN Exp new_exp_array(const Exp, const Array_Sub);
 
 struct Var_Decl_ {
   struct Symbol_* xid;
