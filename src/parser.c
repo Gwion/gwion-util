@@ -2831,7 +2831,7 @@ yyreduce:
 
   case 117:
 #line 317 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.exp)= new_exp_decl((yyvsp[-1].type_decl), (yyvsp[0].var_decl_list), get_pos(arg)); }
+    { (yyval.exp)= new_exp_decl((yyvsp[-1].type_decl), (yyvsp[0].var_decl_list)); }
 #line 2836 "src/parser.c" /* yacc.c:1651  */
     break;
 
@@ -3431,7 +3431,7 @@ yyreduce:
 
   case 235:
 #line 524 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.exp) = new_exp_prim_vec((yyvsp[-2].ival), (yyvsp[-1].exp), get_pos(arg)); }
+    { (yyval.exp) = new_exp_prim_vec((yyvsp[-2].ival), (yyvsp[-1].exp)); }
 #line 3436 "src/parser.c" /* yacc.c:1651  */
     break;
 

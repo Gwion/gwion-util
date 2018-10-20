@@ -329,7 +329,7 @@ array_empty
 
 decl_exp
   : con_exp
-  | type_decl var_decl_list { $$= new_exp_decl($1, $2, get_pos(arg)); }
+  | type_decl var_decl_list { $$= new_exp_decl($1, $2); }
   | STATIC decl_exp
     { CHECK_FLAG(arg, $2->d.exp_decl.td, ae_flag_static);  $$ = $2; }
   | GLOBAL  decl_exp
@@ -536,7 +536,7 @@ primary_exp
   | CHAR_LIT            { $$ = new_exp_prim_char(   $1, get_pos(arg)); }
   | array_exp           { $$ = new_exp_prim_array(  $1, get_pos(arg)); }
   | array_empty         { $$ = new_exp_prim_array(  $1, get_pos(arg)); }
-  | vec_type exp RPAREN { $$ = new_exp_prim_vec($1, $2, get_pos(arg)); }
+  | vec_type exp RPAREN { $$ = new_exp_prim_vec($1, $2); }
   | L_HACK exp R_HACK   { $$ = new_exp_prim_hack(   $2, get_pos(arg)); }
   | LPAREN exp RPAREN   { $$ =                      $2;                }
   | LPAREN RPAREN       { $$ = new_exp_prim_nil(        get_pos(arg)); }

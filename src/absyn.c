@@ -126,12 +126,12 @@ void free_type_decl(Type_Decl* a) {
   mp_free(Type_Decl, a);
 }
 
-Exp new_exp_decl(Type_Decl* type, const Var_Decl_List list, const int pos) {
+Exp new_exp_decl(Type_Decl* td, const Var_Decl_List list) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_decl;
-  a->d.exp_decl.td = type;
+  a->d.exp_decl.td = td;
   a->d.exp_decl.list = list;
-  a->pos = pos;
+  a->pos = td->pos;
   a->d.exp_decl.self = a;
   return a;
 }
@@ -270,8 +270,8 @@ Exp new_exp_prim_array(const Array_Sub exp, const int pos) {
   return a;
 }
 
-Exp new_exp_prim_vec(const ae_prim_t t, Exp e, const int pos) {
-  Exp a = new_exp_prim(pos);
+Exp new_exp_prim_vec(const ae_prim_t t, Exp e) {
+  Exp a = new_exp_prim(e->pos);
   a->d.exp_primary.primary_type = t;
   a->d.exp_primary.d.vec.exp = e;
   do ++a->d.exp_primary.d.vec.dim;
