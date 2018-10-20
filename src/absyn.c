@@ -448,9 +448,7 @@ ANN static void free_stmt_type(Stmt_Type a){
 }
 
 ANN static void free_stmt_fptr(Stmt_Fptr a) {
-  if(a->func)
-    REM_REF(a->func)
-  else {
+  if(!a->func) {
     if(a->args)
       free_arg_list(a->args);
     free_type_decl(a->td);
