@@ -474,7 +474,6 @@ ANN void free_tmpl_list(Tmpl_List*);
 m_bool tmpl_list_base(const Tmpl_List*);
 ANEW Func_Def new_func_def(Type_Decl*, const Symbol, const Arg_List, const Stmt, const ae_flag);
 ANN void free_func_def(Func_Def def);
-ANN void free_func_def_simple(Func_Def def);
 
 typedef enum { ae_section_stmt, ae_section_func, ae_section_class } ae_section_t;
 typedef struct Section_ {
@@ -512,7 +511,6 @@ struct Class_Def_ {
 ANN2(2) ANEW Class_Def new_class_def(const ae_flag, const ID_List,
                         Type_Decl*, const Class_Body);
 ANN void free_class_def(Class_Def);
-ANN void free_class_def_simple(Class_Def);
 ANN2(1) ANEW Class_Body new_class_body(Section*, const Class_Body);
 ANN void free_class_body(Class_Body);
 

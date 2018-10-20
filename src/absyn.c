@@ -404,7 +404,6 @@ void free_func_def(Func_Def a) {
     free_tmpl_list(a->tmpl);
   mp_free(Func_Def, a);
 }
-void free_func_def_simple(Func_Def a) { mp_free(Func_Def, a); }
 
 Stmt new_stmt_fptr(const Symbol xid, Type_Decl* td, const Arg_List args, const ae_flag flag, const int pos) {
   Stmt a              = mp_alloc(Stmt);
@@ -466,7 +465,7 @@ Exp new_exp_call(const Exp base, const Exp args, const int pos) {
 ANN static void free_exp_call(Exp_Call* a) {
   if(a->m_func && GET_FLAG(a->m_func, ae_flag_checked))
     if(a->m_func->def)
-      free_func_def_simple(a->m_func->def);
+      mp_free(Func_Def, a->m_func->def);
   if(a->tmpl)
     free_tmpl_call(a->tmpl);
   free_exp(a->func);
@@ -822,7 +821,6 @@ void free_class_def(Class_Def a) {
   free_id_list(a->name);
   mp_free(Class_Def, a);
 }
-void free_class_def_simple(Class_Def a) { mp_free(Class_Def, a); }
 
 ANN static void free_section(Section* section) {
   switch(section->section_type) {
