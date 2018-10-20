@@ -1,10 +1,8 @@
 #include <stdlib.h>
 #include "absyn.h"
-#include "oo.h"
 #include "vm.h"
 #include "func.h"
 #include "type.h"
-#include "value.h"
 #include "mpool.h"
 
 ANN static void free_section(Section*);
@@ -817,7 +815,7 @@ void free_class_def(Class_Def a) {
     free_type_decl(a->ext);
   if(a->tmpl)
     free_tmpl_class(a->tmpl);
-  if(a->body && (!a->type || !GET_FLAG(a->type, ae_flag_ref)))
+  if(a->body && (!a->type || !GET_FLAG(a, ae_flag_ref)))
     free_class_body(a->body);
   free_id_list(a->name);
   mp_free(Class_Def, a);
