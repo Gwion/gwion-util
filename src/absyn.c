@@ -174,13 +174,13 @@ ANN static void free_exp_cast(Exp_Cast* a) {
   free_exp(a->exp);
 }
 
-Exp new_exp_post(const Exp exp, const Operator op, const int pos) {
+Exp new_exp_post(const Exp exp, const Operator op) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_post;
   a->meta = ae_meta_var;
   a->d.exp_post.exp = exp;
   a->d.exp_post.op = op;
-  a->pos = pos;
+  a->pos = exp->pos;
   a->d.exp_post.self = a;
   return a;
 }

@@ -521,7 +521,7 @@ post_exp: primary_exp | post_exp array_exp
   | post_exp DOT id
     { $$ = new_exp_dot($1, $3, get_pos(arg)); }
   | post_exp post_op
-    { $$ = new_exp_post($1, $2, get_pos(arg)); }
+    { $$ = new_exp_post($1, $2); }
   ;
 
 vec_type: SHARPPAREN   { $$ = ae_primary_complex; }
