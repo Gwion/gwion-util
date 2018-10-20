@@ -2795,7 +2795,7 @@ yyreduce:
 
   case 110:
 #line 304 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.array_sub) = new_array_sub((yyvsp[-1].exp), get_pos(arg)); }
+    { (yyval.array_sub) = new_array_sub((yyvsp[-1].exp)); }
 #line 2800 "src/parser.c" /* yacc.c:1651  */
     break;
 
@@ -2813,7 +2813,7 @@ yyreduce:
 
   case 113:
 #line 310 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.array_sub) = new_array_sub(NULL, get_pos(arg)); }
+    { (yyval.array_sub) = new_array_sub(NULL); }
 #line 2818 "src/parser.c" /* yacc.c:1651  */
     break;
 

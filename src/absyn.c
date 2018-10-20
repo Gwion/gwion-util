@@ -57,11 +57,11 @@ Type_Decl* new_type_decl2(const ID_List xid, const ae_flag flag, const int pos) 
   a->xid->ref = xid;
   return a;
 }
-Array_Sub new_array_sub(const Exp exp, const int pos) {
+
+Array_Sub new_array_sub(const Exp exp) {
   Array_Sub a = mp_alloc(Array_Sub);
   a->exp = exp;
   a->depth = 1;
-  a->pos = pos;
   return a;
 }
 

@@ -23,9 +23,8 @@ struct Array_Sub_ {
   Exp    exp;
   struct Type_ *type;
   m_uint depth;
-  int pos;
 };
-ANEW Array_Sub new_array_sub(const Exp, const int);
+ANEW Array_Sub new_array_sub(const Exp);
 ANN2(1) Array_Sub prepend_array_sub(const Array_Sub, const Exp);
 ANN void free_array_sub(Array_Sub);
 

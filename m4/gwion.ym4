@@ -316,13 +316,13 @@ op: CHUCK { $$ = op_chuck; } | UNCHUCK { $$ = op_unchuck; } | EQ { $$ = op_eq; }
   ;
 
 array_exp
-  : LBRACK exp RBRACK           { $$ = new_array_sub($2, get_pos(arg)); }
+  : LBRACK exp RBRACK           { $$ = new_array_sub($2); }
   | LBRACK exp RBRACK array_exp { if($2->next){ gwion_error(arg, "invalid format for array init [...][...]..."); free_exp($2); free_array_sub($4); YYERROR; } $$ = prepend_array_sub($4, $2); }
   | LBRACK exp RBRACK LBRACK RBRACK { gwion_error(arg, "partially empty array init [...][]..."); free_exp($2); YYERROR; }
   ;
 
 array_empty
-  : LBRACK RBRACK             { $$ = new_array_sub(NULL, get_pos(arg)); }
+  : LBRACK RBRACK             { $$ = new_array_sub(NULL); }
   | array_empty LBRACK RBRACK { $$ = prepend_array_sub($1, NULL); }
   | array_empty array_exp     { gwion_error(arg, "partially empty array init [][...]"); free_array_sub($1); free_array_sub($2); YYERROR; }
   ;
