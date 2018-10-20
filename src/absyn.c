@@ -24,14 +24,16 @@ void free_array_sub(Array_Sub a) {
 }
 
 ANN static void free_var_decl(Var_Decl a) {
+/*
   if(a->value) {
     if(GET_FLAG(a->value, ae_flag_arg)) {
-      if(a->value->type->array_depth)
-        REM_REF(a->value->type);
+//      if(a->value->type->array_depth)
+//        REM_REF(a->value->type);
       REM_REF(a->value);
     } else if(!a->value->owner_class && !GET_FLAG(a->value, ae_flag_global))
       REM_REF(a->value)
   }
+*/
   if(a->array)
     free_array_sub(a->array);
   mp_free(Var_Decl, a);
@@ -185,8 +187,8 @@ Exp new_exp_cast(Type_Decl* td, const Exp exp, const int pos) {
 
 ANN static void free_exp_cast(Exp_Cast* a) {
   free_type_decl(a->td);
-  if(a->self->type && a->self->type->array_depth)
-    REM_REF(a->self->type)
+//  if(a->self->type && a->self->type->array_depth)
+//    REM_REF(a->self->type)
   free_exp(a->exp);
 }
 
@@ -407,8 +409,8 @@ Func_Def new_func_def(Type_Decl* td, const Symbol xid,
 
 void free_func_def(Func_Def a) {
   if(!GET_FLAG(a, ae_flag_template)) {
-    if(a->ret_type && a->ret_type->array_depth)
-      REM_REF(a->ret_type);
+//    if(a->ret_type && a->ret_type->array_depth)
+//      REM_REF(a->ret_type);
     if(a->arg_list)
       free_arg_list(a->arg_list);
     free_type_decl(a->td);
@@ -638,8 +640,8 @@ Stmt new_stmt_auto(const Symbol sym, const Exp exp, const Stmt body, const m_boo
 ANN static void free_stmt_auto(Stmt_Auto a) {
   free_exp(a->exp);
   free_stmt(a->body);
-  if(a->v)
-    REM_REF(a->v)
+//  if(a->v)
+//    REM_REF(a->v)
 }
 
 Stmt new_stmt_jump(const Symbol xid, const m_bool is_label, const int pos) {
