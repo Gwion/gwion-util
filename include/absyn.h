@@ -424,10 +424,10 @@ struct Stmt_ {
 ANEW Stmt new_stmt(const ae_stmt_t, const int);
 ANN ANEW Stmt new_stmt_exp(const ae_stmt_t, const Exp, const int pos);
 ANN ANEW Stmt new_stmt_code(const Stmt_List);
-ANN2(1,2) ANEW Stmt new_stmt_if(const Exp, const Stmt, const Stmt);
+ANN ANEW Stmt new_stmt_if(const Exp, const Stmt);
 ANEW ANN Stmt new_stmt_flow(const ae_stmt_t, const Exp, const Stmt, const m_bool);
 ANN2(1,2,4) ANEW Stmt new_stmt_for(const Stmt, const Stmt, const Exp, const Stmt);
-ANEW ANN Stmt new_stmt_auto(struct Symbol_*, const Exp, const Stmt, const m_bool);
+ANEW ANN Stmt new_stmt_auto(struct Symbol_*, const Exp, const Stmt);
 ANEW ANN Stmt new_stmt_loop(const Exp, const Stmt);
 ANEW ANN Stmt new_stmt_jump(struct Symbol_*, const m_bool, const int);
 ANN2(1) ANEW Stmt new_stmt_enum(const ID_List, struct Symbol_*, const int);

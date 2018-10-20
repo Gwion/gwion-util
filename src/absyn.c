@@ -602,13 +602,12 @@ ANN static void free_stmt_for(Stmt_For a) {
   free_stmt(a->body);
 }
 
-Stmt new_stmt_auto(struct Symbol_* sym, const Exp exp, const Stmt body, const m_bool ptr) {
+Stmt new_stmt_auto(struct Symbol_* sym, const Exp exp, const Stmt body) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = ae_stmt_auto;
   a->d.stmt_auto.sym = sym;
   a->d.stmt_auto.exp = exp;
   a->d.stmt_auto.body = body;
-  a->d.stmt_auto.is_ptr = ptr;
   a->d.stmt_auto.self = a;
   a->pos = exp->pos;
   return a;
@@ -644,12 +643,11 @@ ANN static void free_stmt_loop(Stmt_Loop a) {
   free_stmt(a->body);
 }
 
-Stmt new_stmt_if(const Exp cond, const restrict Stmt if_body, const restrict Stmt else_body) {
+Stmt new_stmt_if(const Exp cond, const restrict Stmt if_body) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = ae_stmt_if;
   a->d.stmt_if.cond = cond;
   a->d.stmt_if.if_body = if_body;
-  a->d.stmt_if.else_body = else_body;
   a->pos = cond->pos;
   return a;
 }
@@ -818,8 +816,7 @@ ANN static void free_section(Section* section) {
     case ae_section_func:
       if(!GET_FLAG(section->d.func_def, ae_flag_builtin))
         free_stmt(section->d.func_def->d.code);
-      if(!section->d.func_def->func || GET_FLAG(section->d.func_def, ae_flag_builtin))
-        free_func_def(section->d.func_def);
+      free_func_def(section->d.func_def);
       break;
   }
   mp_free(Section, section);

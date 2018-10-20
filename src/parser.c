@@ -2597,7 +2597,7 @@ yyreduce:
 
   case 75:
 #line 252 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.stmt) = new_stmt_auto((yyvsp[-4].sym), (yyvsp[-2].exp), (yyvsp[0].stmt), (yyvsp[-5].ival)); }
+    { (yyval.stmt) = new_stmt_auto((yyvsp[-4].sym), (yyvsp[-2].exp), (yyvsp[0].stmt)); (yyval.stmt)->d.stmt_auto.is_ptr = (yyvsp[-5].ival); }
 #line 2602 "src/parser.c" /* yacc.c:1651  */
     break;
 
@@ -2621,19 +2621,19 @@ yyreduce:
 
   case 79:
 #line 263 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.stmt) = new_stmt_if((yyvsp[-2].exp), (yyvsp[0].stmt), NULL); }
+    { (yyval.stmt) = new_stmt_if((yyvsp[-2].exp), (yyvsp[0].stmt)); }
 #line 2626 "src/parser.c" /* yacc.c:1651  */
     break;
 
   case 80:
 #line 265 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.stmt) = new_stmt_if((yyvsp[-4].exp), (yyvsp[-2].stmt), (yyvsp[0].stmt)); }
+    { (yyval.stmt) = new_stmt_if((yyvsp[-4].exp), (yyvsp[-2].stmt)); (yyval.stmt)->d.stmt_if.else_body = (yyvsp[0].stmt); }
 #line 2632 "src/parser.c" /* yacc.c:1651  */
     break;
 
   case 81:
 #line 269 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.stmt) = new_stmt_exp(ae_stmt_return, NULL, get_pos(arg)); }
+    { (yyval.stmt) = new_stmt_exp(ae_stmt_return, NULL, get_pos(arg)); /* should be new_stmt */}
 #line 2638 "src/parser.c" /* yacc.c:1651  */
     break;
 

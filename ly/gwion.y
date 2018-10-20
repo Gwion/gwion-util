@@ -249,7 +249,7 @@ loop_stmt
   | FOR LPAREN exp_stmt exp_stmt exp RPAREN stmt
       { $$ = new_stmt_for($3, $4, $5, $7); }
   | FOR LPAREN auto id COLON binary_exp RPAREN stmt
-      { $$ = new_stmt_auto($4, $6, $8, $3); }
+      { $$ = new_stmt_auto($4, $6, $8); $$->d.stmt_auto.is_ptr = $3; }
   | UNTIL LPAREN exp RPAREN stmt
       { $$ = new_stmt_flow(ae_stmt_until, $3, $5, 0); }
   | DO stmt UNTIL LPAREN exp RPAREN SEMICOLON
@@ -260,13 +260,13 @@ loop_stmt
 
 selection_stmt
   : IF LPAREN exp RPAREN stmt %prec NOELSE
-      { $$ = new_stmt_if($3, $5, NULL); }
+      { $$ = new_stmt_if($3, $5); }
   | IF LPAREN exp RPAREN stmt ELSE stmt
-      { $$ = new_stmt_if($3, $5, $7); }
+      { $$ = new_stmt_if($3, $5); $$->d.stmt_if.else_body = $7; }
   ;
 
 jump_stmt
-  : RETURN SEMICOLON     { $$ = new_stmt_exp(ae_stmt_return, NULL, get_pos(arg)); }
+  : RETURN SEMICOLON     { $$ = new_stmt_exp(ae_stmt_return, NULL, get_pos(arg)); /* should be new_stmt */}
   | RETURN exp SEMICOLON { $$ = new_stmt_exp(ae_stmt_return, $2, get_pos(arg)); }
   | BREAK SEMICOLON      { $$ = new_stmt(ae_stmt_break, get_pos(arg)); }
   | CONTINUE SEMICOLON   { $$ = new_stmt(ae_stmt_continue, get_pos(arg)); }
