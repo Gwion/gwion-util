@@ -105,6 +105,8 @@ Exp new_exp_array(const Exp base, const Array_Sub array, const int pos) {
 }
 
 ANN static void free_exp_array(Exp_Array* a) {
+  if(a->base && a->base->type && a->array->depth < a->base->type->array_depth)
+    REM_REF(a->self->type);
   free_array_sub(a->array);
   free_exp(a->base);
 }
