@@ -153,7 +153,7 @@ stmt_list
 
 func_ptr
   : TYPEDEF type_decl2 LPAREN id RPAREN func_args arg_type
-    { $$ = new_stmt_fptr($4, $2, $6, $7, get_pos(arg)); }
+    { $$ = new_stmt_fptr($4, $2, $6, $7); }
   | STATIC  func_ptr { CHECK_FLAG(arg, ($2->d.stmt_fptr.td), ae_flag_static);  $$ = $2; }
   | GLOBAL  func_ptr { CHECK_FLAG(arg, ($2->d.stmt_fptr.td), ae_flag_global);  $$ = $2; }
   | PRIVATE func_ptr { CHECK_FLAG(arg, ($2->d.stmt_fptr.td), ae_flag_private); $$ = $2; }
@@ -162,7 +162,7 @@ func_ptr
 
 stmt_type
   : TYPEDEF type_decl2 id SEMICOLON
-    { $$ = new_stmt_type($2, $3, get_pos(arg)); };
+    { $$ = new_stmt_type($2, $3); };
   | STATIC  stmt_type { CHECK_FLAG(arg, ($2->d.stmt_type.td), ae_flag_static); $$ = $2; }
   | GLOBAL  stmt_type { CHECK_FLAG(arg, ($2->d.stmt_type.td), ae_flag_global); $$ = $2; }
   | PRIVATE stmt_type { CHECK_FLAG(arg, ($2->d.stmt_type.td), ae_flag_private); $$ = $2; }
@@ -230,8 +230,8 @@ goto_stmt
   ;
 
 case_stmt
-  : CASE primary_exp COLON { $$ = new_stmt_exp(ae_stmt_case, $2, get_pos(arg)); }
-  | CASE post_exp COLON { $$ = new_stmt_exp(ae_stmt_case, $2, get_pos(arg)); }
+  : CASE primary_exp COLON { $$ = new_stmt_exp(ae_stmt_case, $2); }
+  | CASE post_exp COLON { $$ = new_stmt_exp(ae_stmt_case, $2); }
   ;
 
 switch_stmt
@@ -242,40 +242,40 @@ auto: AUTO ATSYM { $$ = 1; } | AUTO { $$ = 0; }
 
 loop_stmt
   : WHILE LPAREN exp RPAREN stmt
-    { $$ = new_stmt_flow(ae_stmt_while, $3, $5, 0, get_pos(arg)); }
+    { $$ = new_stmt_flow(ae_stmt_while, $3, $5, 0); }
   | DO stmt WHILE LPAREN exp RPAREN SEMICOLON
-    { $$ = new_stmt_flow(ae_stmt_while, $5, $2, 1, get_pos(arg)); }
+    { $$ = new_stmt_flow(ae_stmt_while, $5, $2, 1); }
   | FOR LPAREN exp_stmt exp_stmt RPAREN stmt
-      { $$ = new_stmt_for($3, $4, NULL, $6, get_pos(arg)); }
+      { $$ = new_stmt_for($3, $4, NULL, $6); }
   | FOR LPAREN exp_stmt exp_stmt exp RPAREN stmt
-      { $$ = new_stmt_for($3, $4, $5, $7, get_pos(arg)); }
+      { $$ = new_stmt_for($3, $4, $5, $7); }
   | FOR LPAREN auto id COLON binary_exp RPAREN stmt
-      { $$ = new_stmt_auto($4, $6, $8, $3, get_pos(arg)); }
+      { $$ = new_stmt_auto($4, $6, $8, $3); }
   | UNTIL LPAREN exp RPAREN stmt
-      { $$ = new_stmt_flow(ae_stmt_until, $3, $5, 0, get_pos(arg)); }
+      { $$ = new_stmt_flow(ae_stmt_until, $3, $5, 0); }
   | DO stmt UNTIL LPAREN exp RPAREN SEMICOLON
-      { $$ = new_stmt_flow(ae_stmt_until, $5, $2, 1, get_pos(arg)); }
+      { $$ = new_stmt_flow(ae_stmt_until, $5, $2, 1); }
   | LOOP LPAREN exp RPAREN stmt
-      { $$ = new_stmt_loop($3, $5, get_pos(arg)); }
+      { $$ = new_stmt_loop($3, $5); }
   ;
 
 selection_stmt
   : IF LPAREN exp RPAREN stmt %prec NOELSE
-      { $$ = new_stmt_if($3, $5, NULL, get_pos(arg)); }
+      { $$ = new_stmt_if($3, $5, NULL); }
   | IF LPAREN exp RPAREN stmt ELSE stmt
-      { $$ = new_stmt_if($3, $5, $7, get_pos(arg)); }
+      { $$ = new_stmt_if($3, $5, $7); }
   ;
 
 jump_stmt
-  : RETURN SEMICOLON     { $$ = new_stmt_exp(ae_stmt_return, NULL, get_pos(arg)); }
-  | RETURN exp SEMICOLON { $$ = new_stmt_exp(ae_stmt_return, $2, get_pos(arg)); }
+  : RETURN SEMICOLON     { $$ = new_stmt_exp(ae_stmt_return, NULL); }
+  | RETURN exp SEMICOLON { $$ = new_stmt_exp(ae_stmt_return, $2); }
   | BREAK SEMICOLON      { $$ = new_stmt(ae_stmt_break, get_pos(arg)); }
   | CONTINUE SEMICOLON   { $$ = new_stmt(ae_stmt_continue, get_pos(arg)); }
   ;
 
 exp_stmt
-  : exp SEMICOLON { $$ = new_stmt_exp(ae_stmt_exp, $1,   get_pos(arg)); }
-  | SEMICOLON     { $$ = new_stmt_exp(ae_stmt_exp, NULL, get_pos(arg)); }
+  : exp SEMICOLON { $$ = new_stmt_exp(ae_stmt_exp, $1); }
+  | SEMICOLON     { $$ = new_stmt_exp(ae_stmt_exp, NULL); }
   ;
 
 exp
