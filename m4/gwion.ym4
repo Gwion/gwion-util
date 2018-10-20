@@ -8,6 +8,7 @@
 #include <math.h>
 #include "defs.h"
 #include "map.h"
+#include "symbol.h"
 #include "absyn.h"
 #include "hash.h"
 #include "scanner.h"

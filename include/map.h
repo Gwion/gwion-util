@@ -1,9 +1,8 @@
 #ifndef __MAP
 #define __MAP
-#include "defs.h"
 #include <symbol.h>
 
-typedef m_uint vtype;
+typedef uintptr_t vtype;
 #include "map_private.h"
 typedef struct Vector_ * Vector;
 typedef struct Map_    * Map;

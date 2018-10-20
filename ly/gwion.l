@@ -3,6 +3,7 @@ IS          (u|U|l|L)*
 #include <stdio.h>
 #include <ctype.h>
 #include "defs.h"
+#include "symbol.h"
 #include "map.h"
 #include "absyn.h"
 #include "hash.h"

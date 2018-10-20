@@ -268,7 +268,7 @@ extern int gwion_debug;
 
 union YYSTYPE
 {
-#line 34 "ly/gwion.y" /* yacc.c:1913  */
+#line 35 "ly/gwion.y" /* yacc.c:1913  */
 
   char* sval;
   int ival;
