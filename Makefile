@@ -10,7 +10,8 @@ obj := $(src:.c=.o)
 CFLAGS += -I../include
 
 libgwion_ast.a: ${obj}
-	ar rcs $@ $^
+	@$(info linking $@)
+	@ar rcs $@ $^
 
 parser:
 	$(info generating parser)
@@ -34,6 +35,7 @@ generate_lexer:
 	@mv -f $(DEPDIR)/$(@F:.o=.Td) $(DEPDIR)/$(@F:.o=.d) && touch $@
 
 clean:
-	rm src/*.o *.a
+	$(info cleaning)
+	@rm src/*.o *.a
 
 include $(wildcard .d/*.d)
