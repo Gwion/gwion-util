@@ -36,7 +36,7 @@ ANN void map_set(const Map map, const vtype key, const vtype ptr) {
     }
   }
   if((OFFSET + (VLEN(map) << 1) + 1) > VCAP(map)) {
-    VCAP(map) *= 2;
+    VCAP(map) <<= 1;
     map->ptr = (m_uint*)xrealloc(map->ptr, VCAP(map) * SZ_INT);
   }
   VKEY(map, VLEN(map)) = key;
