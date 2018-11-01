@@ -531,12 +531,12 @@ void free_arg_list(Arg_List a) {
 
 }
 
-Stmt new_stmt_exp(const ae_stmt_t type, const Exp exp, const int pos) {
+Stmt new_stmt_exp(const ae_stmt_t type, const Exp exp) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = type;
   a->d.stmt_exp.val = exp;
   a->d.stmt_exp.self = a;
-  a->pos = pos;
+  a->pos = exp->pos;
   return a;
 }
 

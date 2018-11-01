@@ -421,7 +421,7 @@ struct Stmt_ {
 };
 
 ANEW Stmt new_stmt(const ae_stmt_t, const int);
-ANN ANEW Stmt new_stmt_exp(const ae_stmt_t, const Exp, const int pos);
+ANN ANEW Stmt new_stmt_exp(const ae_stmt_t, const Exp);
 ANN ANEW Stmt new_stmt_code(const Stmt_List);
 ANN ANEW Stmt new_stmt_if(const Exp, const Stmt);
 ANEW ANN Stmt new_stmt_flow(const ae_stmt_t, const Exp, const Stmt, const m_bool);
