@@ -41,8 +41,7 @@ ANEW const void* xcalloc(const m_uint, const m_uint);
 ANEW const void* xrealloc(void*, const m_uint);
 #define xfree free
 
-typedef struct Nspc_      * Nspc;
-typedef struct Value_     * Value;
+//typedef struct Value_     * Value;
 typedef struct Func_      * Func;
 typedef struct Env_       * Env;
 

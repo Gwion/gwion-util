@@ -3,8 +3,15 @@
 
 # Gwion-utils
 
-Provides common common utility, and lexer/parser/preprocessor for [Gwion](https://github.com/fennecdjay/gwion)
+Provides common common utility, and lexer/parser/preprocessor for 
+[Gwion](https://github.com/fennecdjay/gwion)  
 Meant to be used as a gwion submodule, and to help develop tooling.
+
+## Building
+look in config.mk, then
+```sh
+make
+```
 
 ## TODO
   * [ ] make two (static) libraries

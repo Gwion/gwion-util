@@ -38,7 +38,7 @@ ANEW ANN Exp new_exp_array(const Exp, const Array_Sub);
 
 struct Var_Decl_ {
   struct Symbol_* xid;
-  Value value;
+  struct Value_ * value;
   Array_Sub array;
   void* addr;
   int pos;
@@ -118,7 +118,7 @@ typedef struct {
   Exp self;
 } Exp_Decl;
 typedef struct {
-  Value value;
+  struct Value_ * value;
   union exp_primary_data {
     struct Symbol_* var;
     long num;
@@ -149,20 +149,20 @@ typedef struct {
   Type_Decl* td;
   Exp exp;
   Exp self;
-  Nspc nspc;
+  struct Nspc *nspc;
   Func func;
 } Exp_Cast;
 typedef struct {
   Exp lhs, rhs;
   Operator op;
-  Nspc nspc;
+  struct Nspc *nspc;
   Func func;
   Tmpl_Call* tmpl;
   Exp self;
 } Exp_Binary;
 typedef struct {
   Operator op;
-  Nspc nspc;
+  struct Nspc *nspc;
   Exp exp;
   Exp self;
 } Exp_Postfix;
@@ -179,7 +179,7 @@ typedef struct {
 } Exp_Dur;
 typedef struct {
   Operator op;
-  Nspc nspc;
+  struct Nspc *nspc;
   Exp exp;
   Type_Decl* td;
   Stmt code;
@@ -308,7 +308,7 @@ struct Stmt_Auto_ {
   struct Symbol_* sym;
   Exp exp;
   Stmt body;
-  Value v;
+  struct Value_* v;
   m_bool is_ptr;
   Stmt self;
 };
@@ -357,7 +357,7 @@ struct Stmt_Fptr_ {
   Arg_List   args;
   struct Type_*       ret_type;
   Func       func;
-  Value      value;
+  struct Value_      *value;
 };
 
 struct Stmt_Type_ {
@@ -371,7 +371,7 @@ struct Stmt_Union_ {
   struct Symbol_* xid;
   struct Symbol_* type_xid;
 union {
-  Value value;
+  struct Value_ *value;
   struct Type_* type;
 };
   m_uint s;
