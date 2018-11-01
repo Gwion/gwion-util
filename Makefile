@@ -1,4 +1,6 @@
+ifeq (,$(wildcard config.mk))
 include config.mk
+endif
 
 DEPDIR := .d
 $(shell mkdir -p $(DEPDIR) >/dev/null)
@@ -41,8 +43,8 @@ include/generated.h: scripts/generate_header.c
 	@mv -f $(DEPDIR)/$(@F:.o=.Td) $(DEPDIR)/$(@F:.o=.d) && touch $@
 
 config.mk:
-  $(info generating config.mk)
-  @cp config.mk.orig config.mk
+	$(info generating config.mk)
+	@cp config.mk.orig config.mk
 
 clean:
 	$(info cleaning)
