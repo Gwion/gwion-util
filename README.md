@@ -1,5 +1,5 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/fennecdjay/gwion-util?branch=master)](https://bettercodehub.com/)
-[![Build Status](https://travis-ci.org/fennecdjay/Gwion.svg?branch=master)](https://travis-ci.org/fennecdjay/Gwion)
+[![Build Status](https://travis-ci.org/fennecdjay/gwion-util.svg?branch=master)](https://travis-ci.org/fennecdjay/gwion-util)
 
 # Gwion-utils
 

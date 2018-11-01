@@ -151,20 +151,20 @@ typedef struct {
   Type_Decl* td;
   Exp exp;
   Exp self;
-  struct Nspc *nspc;
+  struct Nspc_*nspc;
   struct Func_* func;
 } Exp_Cast;
 typedef struct {
   Exp lhs, rhs;
   Operator op;
-  struct Nspc *nspc;
+  struct Nspc_*nspc;
   struct Func_ *func;
   Tmpl_Call* tmpl;
   Exp self;
 } Exp_Binary;
 typedef struct {
   Operator op;
-  struct Nspc *nspc;
+  struct Nspc_*nspc;
   Exp exp;
   Exp self;
 } Exp_Postfix;
@@ -181,7 +181,7 @@ typedef struct {
 } Exp_Dur;
 typedef struct {
   Operator op;
-  struct Nspc *nspc;
+  struct Nspc_*nspc;
   Exp exp;
   Type_Decl* td;
   Stmt code;

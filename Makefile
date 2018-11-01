@@ -40,6 +40,10 @@ include/generated.h: scripts/generate_header.c
 	@${CC} $(DEPFLAGS) ${CFLAGS} -c $< -o $(<:.c=.o)
 	@mv -f $(DEPDIR)/$(@F:.o=.Td) $(DEPDIR)/$(@F:.o=.d) && touch $@
 
+config.mk:
+  $(info generating config.mk)
+  @cp config.mk.orig config.mk
+
 clean:
 	$(info cleaning)
 	@rm src/*.o *.a
