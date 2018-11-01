@@ -1,4 +1,4 @@
-include ../config.mk
+include config.mk
 
 DEPDIR := .d
 $(shell mkdir -p $(DEPDIR) >/dev/null)
