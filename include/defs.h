@@ -41,14 +41,8 @@ ANEW const void* xcalloc(const m_uint, const m_uint);
 ANEW const void* xrealloc(void*, const m_uint);
 #define xfree free
 
-//typedef struct Value_     * Value;
-typedef struct Func_      * Func;
 typedef struct Env_       * Env;
-
 typedef struct Instr_     * Instr;
-typedef struct ID_List_   * ID_List;
-typedef struct Type_List_ * Type_List;
-
 typedef struct Emitter_   * Emitter;
 typedef struct M_Object_  * M_Object;
 

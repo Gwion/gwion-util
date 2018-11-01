@@ -11,6 +11,8 @@ typedef struct Var_Decl_      * Var_Decl;
 typedef struct Var_Decl_List_ * Var_Decl_List;
 typedef struct Array_Sub_     * Array_Sub;
 typedef struct Arg_List_      * Arg_List;
+typedef struct ID_List_       * ID_List;
+typedef struct Type_List_     * Type_List;
 
 typedef struct {
   Exp base;
@@ -141,7 +143,7 @@ ANEW ANN Tmpl_Call* new_tmpl_call(Type_List);
 typedef struct {
   Exp func;
   Exp args;
-  Func m_func;
+  struct Func_* m_func;
   Tmpl_Call* tmpl;
   Exp self;
 } Exp_Call;
@@ -150,13 +152,13 @@ typedef struct {
   Exp exp;
   Exp self;
   struct Nspc *nspc;
-  Func func;
+  struct Func_* func;
 } Exp_Cast;
 typedef struct {
   Exp lhs, rhs;
   Operator op;
   struct Nspc *nspc;
-  Func func;
+  struct Func_ *func;
   Tmpl_Call* tmpl;
   Exp self;
 } Exp_Binary;
@@ -356,7 +358,7 @@ struct Stmt_Fptr_ {
   struct Symbol_*     xid;
   Arg_List   args;
   struct Type_*       ret_type;
-  Func       func;
+  struct Func_       *func;
   struct Value_      *value;
 };
 
@@ -458,7 +460,7 @@ struct Func_Def_ {
   struct Symbol_* name;
   Arg_List arg_list;
   m_uint stack_depth;
-  Func func;
+  struct Func_* func;
   union func_def_data {
     Stmt code;
     void* dl_func_ptr;
