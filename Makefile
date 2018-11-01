@@ -9,7 +9,7 @@ obj := $(src:.c=.o)
 
 CFLAGS += -I../include
 
-libgwion_ast.a: ${obj}
+libgwion_ast.a: include/generated.h ${obj}
 	@$(info linking $@)
 	@ar rcs $@ $^
 
@@ -28,6 +28,12 @@ generate_parser:
 generate_lexer:
 	$(info meta-generating lexer)
 	m4 m4/gwion.lm4 > ly/gwion.l;
+
+include/generated.h: scripts/generate_header.c
+	$(info generating generated.h)
+	@cc ${DFLAGS} scripts/generate_header.c -o generate_header
+	@./generate_header > include/generated.h
+	@rm generate_header
 
 .c.o: $(DEPDIR)/%.d
 	$(info compile $(<:.c=))
