@@ -3177,14 +3177,14 @@ ANN int gwion_error(Scanner* scan, const char* s) {
   m_str filename = name;
   m_uint i = vector_size(&scan->filename) - 1;
   if(*filename == '@') {
-    err_msg(PARSE_, 0, "in macro '%s'.", filename);
+    err_msg(0, "in macro '%s'.", filename);
     while(*filename == '@') {
       i -= 5;
       filename = (m_str)vector_at(&scan->filename, i);
     }
   }
-  err_msg(PARSE_, 0, "in file '%s'.", filename);
-  err_msg(PARSE_, scan->line, "%s. at pos %i\n", s, scan->pos);
+  err_msg(0, "in file '%s'.", filename);
+  err_msg(scan->line, "%s. at pos %i\n", s, scan->pos);
   err_line(scan, filename);
   err_marker(scan);
   return 0;
