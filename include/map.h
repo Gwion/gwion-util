@@ -6,6 +6,7 @@ typedef uintptr_t vtype;
 #include "map_private.h"
 typedef struct Vector_ * Vector;
 typedef struct Map_    * Map;
+typedef struct Scope_     * Scope;
 
 ANEW extern       Vector new_vector(void);
 ANN extern       void   vector_init(const Vector);

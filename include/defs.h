@@ -42,7 +42,6 @@ ANEW const void* xrealloc(void*, const m_uint);
 #define xfree free
 
 typedef struct Nspc_      * Nspc;
-typedef struct Scope_     * Scope;
 typedef struct Value_     * Value;
 typedef struct Func_      * Func;
 typedef struct Env_       * Env;
