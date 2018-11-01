@@ -56,11 +56,10 @@ typedef struct Type_Decl_ {
   Array_Sub array;
   Exp_Dot* dot;
   Type_List types;
-  int pos;
   ae_flag flag;
 } Type_Decl;
-ANEW ANN Type_Decl* new_type_decl(const ID_List, const ae_flag, const int);
-ANEW ANN Type_Decl* new_type_decl2(const ID_List, const ae_flag, const int);
+ANEW ANN Type_Decl* new_type_decl(const ID_List, const ae_flag);
+ANEW ANN Type_Decl* new_type_decl2(const ID_List, const ae_flag);
 ANN void free_type_decl(Type_Decl* a);
 ANN Type_Decl* add_type_decl_array(Type_Decl*, const Array_Sub);
 

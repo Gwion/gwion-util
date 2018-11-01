@@ -38,22 +38,21 @@ ANN static void free_var_decl_list(Var_Decl_List a) {
 }
 
 
-static Type_Decl* td_alloc(const ae_flag flag, const int pos) {
+static Type_Decl* td_alloc(const ae_flag flag) {
   Type_Decl* a = mp_alloc(Type_Decl);
   a->flag = flag;
-  a->pos = pos;
   return a;
 }
 
-Type_Decl* new_type_decl(const ID_List xid, const ae_flag flag, const int pos) {
-  Type_Decl* a = td_alloc(flag, pos);
+Type_Decl* new_type_decl(const ID_List xid, const ae_flag flag) {
+  Type_Decl* a = td_alloc(flag);
   a->xid = xid;
   return a;
 }
 
-Type_Decl* new_type_decl2(const ID_List xid, const ae_flag flag, const int pos) {
-  Type_Decl* a = td_alloc(flag, pos);
-  a->xid = new_id_list(insert_symbol(""), pos);
+Type_Decl* new_type_decl2(const ID_List xid, const ae_flag flag) {
+  Type_Decl* a = td_alloc(flag);
+  a->xid = new_id_list(insert_symbol(""), xid->pos);
   a->xid->ref = xid;
   return a;
 }
@@ -131,7 +130,7 @@ Exp new_exp_decl(Type_Decl* td, const Var_Decl_List list) {
   a->exp_type = ae_exp_decl;
   a->d.exp_decl.td = td;
   a->d.exp_decl.list = list;
-  a->pos = td->pos;
+  a->pos = td->xid->pos;
   a->d.exp_decl.self = a;
   return a;
 }
@@ -298,7 +297,7 @@ Exp new_exp_unary(const Operator oper, const Exp exp) {
 }
 
 Exp new_exp_unary2(const Operator oper, Type_Decl* td) {
-  Exp a = new_exp_unary_base(td->pos);
+  Exp a = new_exp_unary_base(td->xid->pos);
   a->d.exp_unary.op = oper;
   a->d.exp_unary.td = td;
   return a;
@@ -309,7 +308,7 @@ Exp new_exp_unary3(const Operator oper, const Stmt code) {
   Exp a = new_exp_unary_base(pos);
   a->d.exp_unary.op = oper;
   ID_List id = new_id_list(insert_symbol("void"), pos);
-  a->d.exp_unary.td = new_type_decl(id, 0, pos);
+  a->d.exp_unary.td = new_type_decl(id, 0);
   a->d.exp_unary.code = code;
   return a;
 }
@@ -408,7 +407,7 @@ Stmt new_stmt_fptr(struct Symbol_* xid, Type_Decl* td, const Arg_List args, cons
   SET_FLAG(td, flag);
   a->d.stmt_fptr.xid   = xid;
   a->d.stmt_fptr.args  = args;
-  a->pos = td->pos;
+  a->pos = td->xid->pos;
   return a;
 
 }
@@ -418,7 +417,7 @@ Stmt new_stmt_type(Type_Decl* td, struct Symbol_* xid) {
   a->stmt_type        = ae_stmt_type;
   a->d.stmt_type.td   = td;
   a->d.stmt_type.xid  = xid;
-  a->pos = td->pos;
+  a->pos = td->xid->pos;
   return a;
 }
 

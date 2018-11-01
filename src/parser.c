@@ -2948,8 +2948,8 @@ yyreduce:
 
   case 142:
 #line 370 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.func_def) = new_func_def(new_type_decl(new_id_list(insert_symbol("void"), get_pos(arg)), 0,
-      get_pos(arg)), insert_symbol("dtor"), NULL, (yyvsp[0].stmt), ae_flag_dtor); }
+    { (yyval.func_def) = new_func_def(new_type_decl(new_id_list(insert_symbol("void"), get_pos(arg)), 0),
+       insert_symbol("dtor"), NULL, (yyvsp[0].stmt), ae_flag_dtor); }
 #line 2954 "src/parser.c" /* yacc.c:1651  */
     break;
 
@@ -2967,33 +2967,33 @@ yyreduce:
 
   case 145:
 #line 377 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.type_decl) = new_type_decl(new_id_list((yyvsp[-1].sym), get_pos(arg)), (yyvsp[0].ival), get_pos(arg)); }
+    { (yyval.type_decl) = new_type_decl(new_id_list((yyvsp[-1].sym), get_pos(arg)), (yyvsp[0].ival)); }
 #line 2972 "src/parser.c" /* yacc.c:1651  */
     break;
 
   case 146:
 #line 378 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.type_decl) = new_type_decl((yyvsp[-2].id_list), (yyvsp[0].ival), get_pos(arg)); }
+    { (yyval.type_decl) = new_type_decl((yyvsp[-2].id_list), (yyvsp[0].ival)); }
 #line 2978 "src/parser.c" /* yacc.c:1651  */
     break;
 
   case 147:
 #line 379 "ly/gwion.y" /* yacc.c:1651  */
     { (yyval.type_decl) = new_type_decl(new_id_list((yyvsp[-1].sym), get_pos(arg)),
-      (yyvsp[0].ival), get_pos(arg)); (yyval.type_decl)->types = (yyvsp[-3].type_list); }
+      (yyvsp[0].ival)); (yyval.type_decl)->types = (yyvsp[-3].type_list); }
 #line 2985 "src/parser.c" /* yacc.c:1651  */
     break;
 
   case 148:
 #line 381 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.type_decl) = new_type_decl((yyvsp[-2].id_list), (yyvsp[0].ival), get_pos(arg));
+    { (yyval.type_decl) = new_type_decl((yyvsp[-2].id_list), (yyvsp[0].ival));
       (yyval.type_decl)->types = (yyvsp[-5].type_list); }
 #line 2992 "src/parser.c" /* yacc.c:1651  */
     break;
 
   case 149:
 #line 383 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.type_decl) = new_type_decl2((yyvsp[-2].id_list), (yyvsp[0].ival), get_pos(arg)); }
+    { (yyval.type_decl) = new_type_decl2((yyvsp[-2].id_list), (yyvsp[0].ival)); }
 #line 2998 "src/parser.c" /* yacc.c:1651  */
     break;
 

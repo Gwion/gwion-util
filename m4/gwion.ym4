@@ -382,20 +382,20 @@ func_def
   |  unary_op OPERATOR type_decl2 func_args RPAREN code_segment
     { $$ = new_func_def($3, OP_SYM($1), $4, $6, ae_flag_op | ae_flag_unary); }
   | AST_DTOR LPAREN RPAREN code_segment
-    { $$ = new_func_def(new_type_decl(new_id_list(insert_symbol("void"), get_pos(arg)), 0,
-      get_pos(arg)), insert_symbol("dtor"), NULL, $4, ae_flag_dtor); }
+    { $$ = new_func_def(new_type_decl(new_id_list(insert_symbol("void"), get_pos(arg)), 0),
+       insert_symbol("dtor"), NULL, $4, ae_flag_dtor); }
   ;
 
 atsym: { $$ = 0; } | ATSYM { $$ = ae_flag_ref; };
 
 type_decl
-  : id atsym  { $$ = new_type_decl(new_id_list($1, get_pos(arg)), $2, get_pos(arg)); }
-  | LT id_dot GT atsym { $$ = new_type_decl($2, $4, get_pos(arg)); }
+  : id atsym  { $$ = new_type_decl(new_id_list($1, get_pos(arg)), $2); }
+  | LT id_dot GT atsym { $$ = new_type_decl($2, $4); }
   | LTB type_list GTB id atsym  { $$ = new_type_decl(new_id_list($4, get_pos(arg)),
-      $5, get_pos(arg)); $$->types = $2; }
-  | LTB type_list GTB LT id_dot GT atsym { $$ = new_type_decl($5, $7, get_pos(arg));
+      $5); $$->types = $2; }
+  | LTB type_list GTB LT id_dot GT atsym { $$ = new_type_decl($5, $7);
       $$->types = $2; }
-  | TYPEOF LPAREN id_dot RPAREN atsym { $$ = new_type_decl2($3, $5, get_pos(arg)); }
+  | TYPEOF LPAREN id_dot RPAREN atsym { $$ = new_type_decl2($3, $5); }
   | CONST type_decl { CHECK_FLAG(arg, $2, ae_flag_const); $$ = $2; }
   ;
 
