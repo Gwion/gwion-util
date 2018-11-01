@@ -40,13 +40,11 @@ ANEW const void* xmalloc(const m_uint);
 ANEW const void* xcalloc(const m_uint, const m_uint);
 ANEW const void* xrealloc(void*, const m_uint);
 #define xfree free
-typedef struct VM_Object_ * VM_Object;
-typedef struct Nspc_ * Nspc;
+
+typedef struct Nspc_      * Nspc;
 typedef struct Scope_     * Scope;
-typedef struct Type_      * Type;
 typedef struct Value_     * Value;
 typedef struct Func_      * Func;
-typedef struct Context_   * Context;
 typedef struct Env_       * Env;
 
 typedef struct Instr_     * Instr;
