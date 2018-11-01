@@ -70,4 +70,8 @@ ANN static inline void scope_pop(const Scope scope) {
   free_map((Map)vector_pop(&scope->vector));
 }
 
+ANN static inline void vector_realloc(const Vector v) {
+  if((OFFSET + (VLEN(v) << 1) + 1) > VCAP(v))
+    v->ptr = (m_uint*)xrealloc(v->ptr, (VCAP(v) <<= 1) * SZ_INT);
+}
 #endif

@@ -330,8 +330,8 @@ Exp new_exp_if(const restrict Exp cond, const restrict Exp if_exp, const restric
   a->d.exp_if.cond = cond;
   a->d.exp_if.if_exp = if_exp;
   a->d.exp_if.else_exp = else_exp;
-  a->pos = cond->pos;
   a->d.exp_if.self = a;
+  a->pos = cond->pos;
   return a;
 }
 
