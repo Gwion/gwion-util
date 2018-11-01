@@ -8,4 +8,8 @@ compiler:
   - gcc
   - clang
 
+before_script:
+  - apt update
+  - apt upgrade
+
 script: make
