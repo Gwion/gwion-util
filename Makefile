@@ -1,4 +1,4 @@
-ifeq (,$(wildcard config.mk))
+ifneq (,$(wildcard config.mk))
 include config.mk
 endif
 
@@ -9,7 +9,7 @@ DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)/$(@F:.o=.Td)
 src := $(wildcard src/*.c)
 obj := $(src:.c=.o)
 
-CFLAGS += -I../include
+CFLAGS += -Iinclude
 
 libgwion_ast.a: include/generated.h ${obj}
 	@$(info linking $@)
