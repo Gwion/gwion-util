@@ -429,7 +429,7 @@ ANN2(1,2,4) ANEW Stmt new_stmt_for(const Stmt, const Stmt, const Exp, const Stmt
 ANEW ANN Stmt new_stmt_auto(struct Symbol_*, const Exp, const Stmt);
 ANEW ANN Stmt new_stmt_loop(const Exp, const Stmt);
 ANEW ANN Stmt new_stmt_jump(struct Symbol_*, const m_bool, const int);
-ANN2(1) ANEW Stmt new_stmt_enum(const ID_List, struct Symbol_*, const int);
+ANN2(1) ANEW Stmt new_stmt_enum(const ID_List, struct Symbol_*);
 ANEW ANN Stmt new_stmt_switch(Exp, Stmt);
 ANEW ANN Stmt new_stmt_union(const Decl_List, const int);
 ANEW ANN Stmt new_stmt_fptr(struct Symbol_*, Type_Decl*, const Arg_List, const ae_flag);

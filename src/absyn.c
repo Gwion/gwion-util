@@ -673,7 +673,7 @@ ANN inline static void free_stmt_switch(Stmt_Switch a) {
   free_stmt(a->stmt);
 }
 
-Stmt new_stmt_enum(const ID_List list, struct Symbol_* xid, const int pos) {
+Stmt new_stmt_enum(const ID_List list, struct Symbol_* xid) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = ae_stmt_enum;
   a->d.stmt_enum.xid = xid;
@@ -681,7 +681,7 @@ Stmt new_stmt_enum(const ID_List list, struct Symbol_* xid, const int pos) {
   a->d.stmt_enum.flag = 0;
   a->d.stmt_enum.self = a;
   vector_init(&a->d.stmt_enum.values);
-  a->pos = pos;
+  a->pos = list->pos;
   return a;
 }
 

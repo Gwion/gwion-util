@@ -2501,7 +2501,7 @@ yyreduce:
 
   case 59:
 #line 216 "ly/gwion.y" /* yacc.c:1651  */
-    { (yyval.stmt) = new_stmt_enum((yyvsp[-3].id_list), (yyvsp[-1].sym), get_pos(arg)); }
+    { (yyval.stmt) = new_stmt_enum((yyvsp[-3].id_list), (yyvsp[-1].sym)); }
 #line 2506 "src/parser.c" /* yacc.c:1651  */
     break;
 
