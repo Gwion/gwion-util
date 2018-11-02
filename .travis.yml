@@ -3,7 +3,7 @@ language: c
 os:
   - linux
   - osx
-  - window
+  - windows
 
 compiler:
   - gcc
