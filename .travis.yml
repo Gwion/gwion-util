@@ -19,7 +19,4 @@ compiler:
   - gcc
   - clang
 
-before_script:
-  - if [ $CC = gcc ]; then MATRIX_EVAL='export CC=gcc-8'; fi
-
 script: make
