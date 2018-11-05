@@ -3,8 +3,10 @@ YACC ?=yacc
 LEX ?=flex
 PREFIX ?=/usr/local
 
-CFLAGS += -std=c99 -Iinclude -O3 -mtune=native -fstrict-aliasing -D_GNU_SOURCE
+CFLAGS += -std=c99 -Iinclude -O3 -fstrict-aliasing -D_GNU_SOURCE
+
 #CFLAGS += -Wall -Wextra
+#CFLAGS += -mtune=native
 
 USE_DOUBLE    = 0
 USE_COVERAGE ?= 0
