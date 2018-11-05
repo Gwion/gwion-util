@@ -126,6 +126,7 @@ class_def
   | PRIVATE class_def { CHECK_FLAG(arg, $2, ae_flag_private); $$ = $2; }
   | PROTECT class_def { CHECK_FLAG(arg, $2, ae_flag_protect); $$ = $2; }
   | decl_template class_def { CHECK_TEMPLATE(arg, $1, $2, free_class_def); $$ = $2; }
+  ;
 
 class_ext : EXTENDS type_decl2 { $$ = $2; } | { $$ = NULL; };
 
@@ -166,6 +167,7 @@ stmt_type
   | GLOBAL  stmt_type { CHECK_FLAG(arg, ($2->d.stmt_type.td), ae_flag_global); $$ = $2; }
   | PRIVATE stmt_type { CHECK_FLAG(arg, ($2->d.stmt_type.td), ae_flag_private); $$ = $2; }
   | PROTECT stmt_type { CHECK_FLAG(arg, ($2->d.stmt_type.td), ae_flag_protect); $$ = $2; }
+  ;
 
 type_decl2
   : type_decl
@@ -266,8 +268,7 @@ selection_stmt
   ;
 
 jump_stmt
-  : RETURN SEMICOLON     { $$ = new_stmt(ae_stmt_return, get_pos(arg));
-      /* $$->d.stmt_exp.val = NULL; */$$->d.stmt_exp.self = $$; }
+  : RETURN SEMICOLON     { $$ = new_stmt(ae_stmt_return, get_pos(arg)); $$->d.stmt_exp.self = $$; }
   | RETURN exp SEMICOLON { $$ = new_stmt_exp(ae_stmt_return, $2); }
   | BREAK SEMICOLON      { $$ = new_stmt(ae_stmt_break, get_pos(arg)); }
   | CONTINUE SEMICOLON   { $$ = new_stmt(ae_stmt_continue, get_pos(arg)); }
@@ -359,6 +360,7 @@ func_def_base
       $2->tmpl = new_tmpl_list($1, -1);
       $$ = $2; SET_FLAG($$, ae_flag_template);
     };
+  ;
 
 op_op: op | shift_op | post_op | rel_op | mul_op | add_op;
 func_def
@@ -485,6 +487,7 @@ unary_exp : dur_exp | unary_op unary_exp
     }
   | SPORK TILDA code_segment
         { $$ = new_exp_unary3(op_spork, $3); };
+  ;
 
 dur_exp: post_exp | dur_exp COLONCOLON post_exp
     { $$ = new_exp_dur($1, $3); };
