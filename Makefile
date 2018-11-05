@@ -11,7 +11,7 @@ DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)/$(@F:.o=.Td)
 src := $(wildcard src/*.c)
 obj := $(src:.c=.o)
 
-CFLAGS += -Iinclude
+CFLAGS += -Iinclude -D_GNU_SOURCE
 
 libgwion_ast.a: include/generated.h ${obj}
 	@$(info linking $@)
