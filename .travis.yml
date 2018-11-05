@@ -12,5 +12,6 @@ addons:
 
 env:
   - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+  - MATRIX_EVAL="TRAVIS_COMPILER==gcc-8"
 
 script: make
