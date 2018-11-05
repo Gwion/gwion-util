@@ -5,8 +5,15 @@ os:
   - osx
   - windows
 
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-8
+
 compiler:
   - gcc
   - clang
 
-script: gcc -v; make
+script: make
