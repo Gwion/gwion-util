@@ -1,12 +1,8 @@
 language: c
 
-env:
-  - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
 
 os:
   - linux:
-  - osx
-  - windows
 
 addons:
   apt:
@@ -15,8 +11,7 @@ addons:
     packages:
     - gcc-8
 
-compiler:
-  - gcc
-  - clang
+env:
+  - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
 
 script: make
