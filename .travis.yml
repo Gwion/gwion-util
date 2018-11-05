@@ -9,4 +9,4 @@ compiler:
   - gcc
   - clang
 
-script: make
+script: gcc -v; make
