@@ -35,6 +35,7 @@ m_str op2str(const Operator op);
 %union {
   char* sval;
   int ival;
+  ae_flag flag;
   m_float fval;
   Symbol sym;
   Array_Sub array_sub;
@@ -74,6 +75,7 @@ m_str op2str(const Operator op);
 %token<sval> ID STRING_LIT CHAR_LIT
 ifdef(`TINY_MODE', `', `
   PP_COMMENT PP_INCLUDE PP_DEFINE PP_UNDEF PP_IFDEF PP_IFNDEF PP_ELSE PP_ENDIF PP_NL')
+%type<flag> flag func_flag type_flag opt_flag
 %type<sym>id opt_id
 %type<var_decl> var_decl
 %type<var_decl_list> var_decl_list
@@ -154,20 +156,12 @@ stmt_list
   ;
 
 func_ptr
-  : TYPEDEF type_decl2 LPAREN id RPAREN func_args arg_type
-    { $$ = new_stmt_fptr($4, $2, $6, $7); }
-  | STATIC  func_ptr { CHECK_FLAG(arg, ($2->d.stmt_fptr.td), ae_flag_static);  $$ = $2; }
-  | GLOBAL  func_ptr { CHECK_FLAG(arg, ($2->d.stmt_fptr.td), ae_flag_global);  $$ = $2; }
-  | PRIVATE func_ptr { CHECK_FLAG(arg, ($2->d.stmt_fptr.td), ae_flag_private); $$ = $2; }
-  | PROTECT func_ptr { CHECK_FLAG(arg, ($2->d.stmt_fptr.td), ae_flag_protect); $$ = $2; }
+  : type_flag type_decl2 LPAREN id RPAREN func_args arg_type
+    { $$ = new_stmt_fptr($4, $2, $6, $7); $2->flag |= $1; }
   ;
 
 stmt_type
-  : TYPEDEF type_decl2 id SEMICOLON { $$ = new_stmt_type($2, $3); };
-  | STATIC  stmt_type { CHECK_FLAG(arg, ($2->d.stmt_type.td), ae_flag_static); $$ = $2; }
-  | GLOBAL  stmt_type { CHECK_FLAG(arg, ($2->d.stmt_type.td), ae_flag_global); $$ = $2; }
-  | PRIVATE stmt_type { CHECK_FLAG(arg, ($2->d.stmt_type.td), ae_flag_private); $$ = $2; }
-  | PROTECT stmt_type { CHECK_FLAG(arg, ($2->d.stmt_type.td), ae_flag_protect); $$ = $2; }
+  : type_flag type_decl2 id SEMICOLON { $$ = new_stmt_type($2, $3); $2->flag |= $1; };
   ;
 
 type_decl2
@@ -230,11 +224,8 @@ id
 opt_id: { $$ = NULL; } | id;
 
 enum_stmt
-  : ENUM LBRACE id_list RBRACE opt_id SEMICOLON    { $$ = new_stmt_enum($3, $5); }
-  | STATIC  enum_stmt { CHECK_FLAG(arg, (&$2->d.stmt_enum), ae_flag_static);  $$ = $2; }
-  | GLOBAL  enum_stmt { CHECK_FLAG(arg, (&$2->d.stmt_enum), ae_flag_global);  $$ = $2; }
-  | PRIVATE enum_stmt { CHECK_FLAG(arg, (&$2->d.stmt_enum), ae_flag_private); $$ = $2; }
-  | PROTECT enum_stmt { CHECK_FLAG(arg, (&$2->d.stmt_enum), ae_flag_protect); $$ = $2; }
+  : ENUM opt_flag LBRACE id_list RBRACE opt_id SEMICOLON    { $$ = new_stmt_enum($4, $6);
+    $$->d.stmt_enum.flag = $2; }
   ;
 
 label_stmt
@@ -353,17 +344,20 @@ arg_type
 
 decl_template: TEMPLATE LTB id_list GTB { $$ = $3; };
 
+flag: flag flag { $$ = $1 | $2; }
+  | STATIC { $$ = ae_flag_static; }
+  | GLOBAL { $$ = ae_flag_global; }
+  | PRIVATE { $$ = ae_flag_private; }
+  | PROTECT { $$ = ae_flag_protect; }
+  ;
+
+func_flag: FUNCTION { $$ = 0; } | FUNCTION flag { $$ = $2; };
+type_flag: TYPEDEF  { $$ = 0; } | TYPEDEF  flag { $$ = $2; };
+opt_flag:  { $$ = 0; } | flag { $$ = $1; };
+
 func_def_base
-  : FUNCTION type_decl2 id func_args arg_type code_segment
-    { $$ = new_func_def($2, $3, $4, $6, $5); }
-  | STATIC func_def_base
-    { CHECK_FLAG(arg, $2, ae_flag_static); $$ = $2; }
-  | GLOBAL func_def_base
-    { CHECK_FLAG(arg, $2, ae_flag_global); $$ = $2; }
-  | PRIVATE func_def_base
-    { CHECK_FLAG(arg, $2, ae_flag_private); $$ = $2; }
-  | PROTECT func_def_base
-    { CHECK_FLAG(arg, $2, ae_flag_protect); $$ = $2; }
+  : func_flag type_decl2 id func_args arg_type code_segment
+    { $$ = new_func_def($2, $3, $4, $6, $1 | $5); }
   | decl_template func_def_base
     {
       if($2->tmpl) {
@@ -408,19 +402,12 @@ decl_list
   ;
 
 union_stmt
-  : UNION opt_id LBRACE decl_list RBRACE opt_id SEMICOLON {
-      $$ = new_stmt_union($4, get_pos(arg));
-      $$->d.stmt_union.type_xid = $2;
-      $$->d.stmt_union.xid = $6;
+  : UNION opt_flag opt_id LBRACE decl_list RBRACE opt_id SEMICOLON {
+      $$ = new_stmt_union($5, get_pos(arg));
+      $$->d.stmt_union.type_xid = $3;
+      $$->d.stmt_union.xid = $7;
+      $$->d.stmt_union.flag = $2;
     }
-  | STATIC union_stmt
-    { CHECK_FLAG(arg, (&$2->d.stmt_union), ae_flag_static); $$ = $2; }
-  | GLOBAL union_stmt
-    { CHECK_FLAG(arg, (&$2->d.stmt_union), ae_flag_global);  $$ = $2; }
-  | PRIVATE union_stmt
-    { CHECK_FLAG(arg, (&$2->d.stmt_union), ae_flag_private); $$ = $2; }
-  | PROTECT union_stmt
-    { CHECK_FLAG(arg, (&$2->d.stmt_union), ae_flag_protect); $$ = $2; }
   ;
 
 var_decl_list

@@ -272,6 +272,7 @@ union YYSTYPE
 
   char* sval;
   int ival;
+  ae_flag flag;
   m_float fval;
   Symbol sym;
   Array_Sub array_sub;
@@ -293,7 +294,7 @@ union YYSTYPE
   Class_Def class_def;
   Ast ast;
 
-#line 297 "include/parser.h" /* yacc.c:1913  */
+#line 298 "include/parser.h" /* yacc.c:1913  */
 };
 
 typedef union YYSTYPE YYSTYPE;
