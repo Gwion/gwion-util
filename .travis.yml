@@ -1,7 +1,9 @@
 language: c
 
 os:
-  - linux
+  - linux:
+    - env:
+      - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
   - osx
   - windows
 
