@@ -16,4 +16,5 @@ compiler:
   - gcc
   - clang
 
+install: if[ "$CC" = "gcc"] exprot CC=gcc-8
 script: make
