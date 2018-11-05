@@ -1,5 +1,7 @@
 ifneq (,$(wildcard config.mk))
 include config.mk
+else
+cp config.mk.orig config.mk
 endif
 
 DEPDIR := .d
