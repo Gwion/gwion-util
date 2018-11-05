@@ -17,6 +17,6 @@ compiler:
   - clang
 
 install:
-  - if [ $CC = gcc ]; then MATRIX_EVAL="CC=gcc-8" && fi
+  - if [ $CC = gcc ]; then MATRIX_EVAL='CC=gcc-8'; fi
 
 script: make
