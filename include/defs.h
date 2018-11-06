@@ -43,7 +43,6 @@ ANEW const void* xrealloc(void*, const m_uint);
 
 typedef struct Env_       * Env;
 typedef struct Emitter_   * Emitter;
-typedef struct M_Object_  * M_Object;
 
 typedef enum {
   ae_flag_builtin = 1 << 1,
