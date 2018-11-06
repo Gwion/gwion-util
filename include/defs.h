@@ -42,7 +42,6 @@ ANEW const void* xrealloc(void*, const m_uint);
 #define xfree free
 
 typedef struct Env_       * Env;
-typedef struct Instr_     * Instr;
 typedef struct Emitter_   * Emitter;
 typedef struct M_Object_  * M_Object;
 

@@ -331,7 +331,7 @@ struct Stmt_Jump_ {
   struct Symbol_* name;
   union stmt_goto_data {
     struct Vector_ v;
-    Instr instr;
+    struct Instr_* instr;
   } data;
   m_bool is_label;
   Stmt self;
