@@ -18,3 +18,5 @@ make
     + gwion_util
     + gwion_ast (depends on the former)
   * [ ] testing
+  * improve hash
+  * list utilities
