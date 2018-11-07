@@ -42,7 +42,6 @@ ANEW const void* xrealloc(void*, const m_uint);
 #define xfree free
 
 typedef struct Env_       * Env;
-typedef struct Emitter_   * Emitter;
 
 typedef enum {
   ae_flag_builtin = 1 << 1,
