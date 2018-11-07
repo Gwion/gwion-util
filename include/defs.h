@@ -41,8 +41,6 @@ ANEW const void* xcalloc(const m_uint, const m_uint);
 ANEW const void* xrealloc(void*, const m_uint);
 #define xfree free
 
-typedef struct Env_       * Env;
-
 typedef enum {
   ae_flag_builtin = 1 << 1,
   ae_flag_checked   = 1 << 2,
@@ -86,5 +84,6 @@ typedef enum {
   op_chuck, op_unchuck, op_ref, op_unref, op_trig, op_untrig,
   op_cast, op_impl
 } Operator;
-
+ANN m_str op2str(const Operator op);
+ANN m_int name2op(const m_str name);
 #endif
