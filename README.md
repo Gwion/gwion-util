@@ -1,5 +1,6 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/fennecdjay/gwion-util?branch=master)](https://bettercodehub.com/)
 [![Build Status](https://travis-ci.org/fennecdjay/gwion-util.svg?branch=master)](https://travis-ci.org/fennecdjay/gwion-util)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffennecdjay%2Fgwion-util.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffennecdjay%2Fgwion-util?ref=badge_shield)
 
 # Gwion-utils
 
@@ -20,3 +21,7 @@ make
   * [ ] testing
   * improve hash
   * list utilities
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffennecdjay%2Fgwion-util.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffennecdjay%2Fgwion-util?ref=badge_large)
