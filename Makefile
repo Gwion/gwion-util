@@ -13,6 +13,8 @@ obj := $(src:.c=.o)
 
 CFLAGS += -Iinclude -D_GNU_SOURCE
 
+all: libgwion_ast.a
+
 libgwion_ast.a: include/generated.h ${obj}
 	@$(info linking $@)
 	@ar rcs $@ $^
