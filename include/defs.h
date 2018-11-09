@@ -4,12 +4,12 @@
 #define MEM_STEP 16
 #define SIZEOF_MEM (0x1 << MEM_STEP)
 #define SIZEOF_REG (0x1 << 14)
-
+/*
 #ifdef __GNUC__
 #define __builtin_memcpy memcpy
 #define __builtin_memset memset
 #endif
-
+*/
 #define ANN __attribute__((nonnull))
 #define ANN2(...) __attribute__((nonnull(__VA_ARGS__)))
 #define ANEW __attribute__((returns_nonnull,malloc))
@@ -33,7 +33,7 @@
 #define UNSET_FLAG(a, b) ((a)->flag &= ~b)
 
 #include <stdio.h>
-
+#include <math.h>
 #include "generated.h"
 
 ANEW const void* xmalloc(const m_uint);
@@ -86,4 +86,8 @@ typedef enum {
 } Operator;
 ANN m_str op2str(const Operator op);
 ANN m_int name2op(const m_str name);
+
+static inline m_uint num_digit(const m_uint i) {
+  return i ? (m_uint)floor(log10(i) + 1) : 1;
+}
 #endif
