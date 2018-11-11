@@ -87,6 +87,7 @@ typedef enum {
 ANN m_str op2str(const Operator op);
 ANN m_int name2op(const m_str name);
 
+__attribute__((pure))
 static inline m_uint num_digit(const m_uint i) {
   return i ? (m_uint)floor(log10(i) + 1) : 1;
 }
