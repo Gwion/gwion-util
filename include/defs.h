@@ -69,9 +69,9 @@ typedef enum {
   ae_flag_check = 1 << 24,
   ae_flag_emit  = 1 << 25,
   ae_flag_constprop = 1 << 26,
-  ae_flag_recurs = 1 << 27,
-  ae_flag_protect = 1 << 28,
-  ae_flag_used = 1 << 29,
+  ae_flag_protect = 1 << 27,
+  ae_flag_used = 1 << 28,
+  ae_flag_pure = 1 << 29,
 } ae_flag;
 
 typedef enum {
