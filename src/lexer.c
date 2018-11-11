@@ -3360,8 +3360,7 @@ static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
         if(!is_str) {
           SCAN_NOLINT {
             m_str str;
-            if(asprintf(&str, "@argument '%s'", arg->name) < 0)
-              return 0;
+            asprintf(&str, "@argument '%s'", arg->name);
             gwpp_stack(scan, handle, NULL, str);
             //scan->pos      = e->pos;
             //scan->line     = e->line;
@@ -3384,8 +3383,7 @@ static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
         e->args = e->base;
         SCAN_NOLINT {
           m_str str;
-          if(asprintf(&str, "@macro '%s'", e->name) < 0)
-            return 0;
+          asprintf(&str, "@macro '%s'", e->name);
           gwpp_stack(scan, handle, e->base, str);
           scan->pos      = e->pos;
           scan->line     = e->line;
@@ -3401,8 +3399,7 @@ static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
       } else {
         SCAN_LINT(return 0);
         m_str str;
-        if(asprintf(&str, "@macro '%s'", e->name) < 0)
-          return 0;
+        asprintf(&str, "@macro '%s'", e->name);
         gwpp_stack(scan, handle, e->base, str);
         scan->pos  = e->pos;
         scan->line = e->line;
