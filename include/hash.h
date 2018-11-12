@@ -1,3 +1,5 @@
+#ifndef __HASH
+#define __HASH
 typedef struct Args_* Args;
 typedef struct Macro_* Macro;
 typedef struct Hash_* Hash;
@@ -63,3 +65,4 @@ void  hend(const Hash);
 Macro hadd(const Hash, const char*);
 int   hrem(const Hash, const char*);
 Macro hhas(const Hash, const char*);
+#endif

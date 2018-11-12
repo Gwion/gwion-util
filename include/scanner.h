@@ -1,3 +1,5 @@
+#ifndef __SCANNER
+#define __SCANNER
 #include <setjmp.h>
 typedef struct Scanner_ {
   void* scanner;
@@ -25,3 +27,4 @@ ANEW Scanner* new_scanner(const m_uint size);
 ANN void free_scanner(Scanner* scan);
 ANN void scanner_post(Scanner* scan);
 int clear_buffer(Vector, void*, const m_bool);
+#endif
