@@ -132,7 +132,7 @@ typedef struct {
     Vec vec;
   } d;
   Exp self;
-  ae_prim_t primary_type; // FIXME can't be moved for some reason
+  ae_prim_t primary_type;
 } Exp_Primary;
 
 typedef struct Tmpl_Call_ {

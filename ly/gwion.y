@@ -7,6 +7,7 @@
 #include <string.h> // strlen in paste operation
 #include <math.h>
 #include "defs.h"
+#include "err_msg.h"
 #include "map.h"
 #include "symbol.h"
 #include "absyn.h"
@@ -339,7 +340,7 @@ union_stmt
       $$->d.stmt_union.flag = $2;
     }
   | UNION opt_flag opt_id LBRACE error RBRACE opt_id SEMICOLON {
-    err_msg(get_pos(arg), "Unions should only contain declarations.\n");
+    err_msg(get_pos(arg), "Unions should only contain declarations.");
     YYERROR;
     }
   ;
