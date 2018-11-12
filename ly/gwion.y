@@ -79,7 +79,7 @@ m_str op2str(const Operator op);
 %type<var_decl> var_decl
 %type<var_decl_list> var_decl_list
 %type<type_decl> type_decl type_decl2 class_ext
-%type<exp> primary_exp decl_exp binary_exp call_paren
+%type<exp> primary_exp decl_exp decl_exp2 decl_exp3 binary_exp call_paren
 %type<exp> con_exp log_or_exp log_and_exp inc_or_exp exc_or_exp and_exp eq_exp
 %type<exp> rel_exp shift_exp add_exp mul_exp unary_exp dur_exp
 %type<exp> post_exp cast_exp exp
@@ -237,7 +237,7 @@ exp_stmt
 
 exp: binary_exp | binary_exp COMMA exp  { $$ = prepend_exp($1, $3); };
 
-binary_exp: decl_exp | binary_exp op decl_exp     { $$ = new_exp_binary($1, $2, $3); };
+binary_exp: decl_exp2 | binary_exp op decl_exp2     { $$ = new_exp_binary($1, $2, $3); };
 
 template: LTB type_list GTB { $$ = $2; } | { $$ = NULL; };
 
@@ -263,17 +263,10 @@ array_empty
   | array_empty array_exp     { gwion_error(arg, "partially empty array init [][...]"); free_array_sub($1); free_array_sub($2); YYERROR; }
   ;
 
-decl_exp
-  : con_exp
-  | type_decl var_decl_list { $$= new_exp_decl($1, $2); }
-  | STATIC decl_exp
-    { CHECK_FLAG(arg, $2->d.exp_decl.td, ae_flag_static);  $$ = $2; }
-  | GLOBAL  decl_exp
-    { CHECK_FLAG(arg, $2->d.exp_decl.td, ae_flag_global);  $$ = $2; }
-  | PRIVATE decl_exp
-    { CHECK_FLAG(arg, $2->d.exp_decl.td, ae_flag_private); $$ = $2; }
-  | PROTECT decl_exp
-    { CHECK_FLAG(arg, $2->d.exp_decl.td, ae_flag_protect); $$ = $2; }
+decl_exp2: con_exp | decl_exp3;
+decl_exp: type_decl var_decl_list { $$= new_exp_decl($1, $2); };
+
+decl_exp3: decl_exp | flag decl_exp { $2->d.exp_decl.td->flag |= $1; $$ = $2; };
   ;
 
 func_args: LPAREN arg_list { $$ = $2; } | LPAREN { $$ = NULL; };
@@ -334,8 +327,8 @@ type_decl
   ;
 
 decl_list
-  : exp SEMICOLON { $$ = new_decl_list($1, NULL); }
-  | exp SEMICOLON decl_list { $$ = new_decl_list($1, $3); }
+  : decl_exp SEMICOLON { $$ = new_decl_list($1, NULL); }
+  | decl_exp SEMICOLON decl_list { $$ = new_decl_list($1, $3); }
   ;
 
 union_stmt
@@ -344,6 +337,10 @@ union_stmt
       $$->d.stmt_union.type_xid = $3;
       $$->d.stmt_union.xid = $7;
       $$->d.stmt_union.flag = $2;
+    }
+  | UNION opt_flag opt_id LBRACE error RBRACE opt_id SEMICOLON {
+    err_msg(get_pos(arg), "Unions should only contain declarations.\n");
+    YYERROR;
     }
   ;
 

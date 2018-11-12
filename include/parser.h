@@ -1,4 +1,4 @@
-/* A Bison parser, made by GNU Bison 3.1.  */
+/* A Bison parser, made by GNU Bison 3.2.  */
 
 /* Bison interface for Yacc-like parsers in C
 
@@ -29,6 +29,9 @@
 
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
+
+/* Undocumented macros, especially those whose name start with YY_,
+   are private implementation details.  Do not rely on them.  */
 
 #ifndef YY_GWION_INCLUDE_PARSER_H_INCLUDED
 # define YY_GWION_INCLUDE_PARSER_H_INCLUDED
@@ -268,7 +271,7 @@ extern int gwion_debug;
 
 union YYSTYPE
 {
-#line 34 "ly/gwion.y" /* yacc.c:1913  */
+#line 34 "ly/gwion.y" /* yacc.c:1906  */
 
   char* sval;
   int ival;
@@ -294,7 +297,7 @@ union YYSTYPE
   Class_Def class_def;
   Ast ast;
 
-#line 298 "include/parser.h" /* yacc.c:1913  */
+#line 301 "include/parser.h" /* yacc.c:1906  */
 };
 
 typedef union YYSTYPE YYSTYPE;
