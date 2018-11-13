@@ -73,7 +73,7 @@ ANN static m_str macro_data(void* data, const m_bool);
 #define GWYY_ENDIF   GWYY_LINT(NULL, PP_ENDIF) macro_end(yyscanner);
 
 %}
-%option noyyalloc noyyrealloc noyyfree nounput
+%option noyyalloc noyyrealloc noyyfree nounput noyyfatalerror
 %option noyylineno
 %option noyyget_text
 %option noyyget_lineno noyyset_lineno
