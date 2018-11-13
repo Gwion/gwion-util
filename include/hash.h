@@ -5,7 +5,7 @@ typedef struct Macro_* Macro;
 typedef struct Hash_* Hash;
 struct Hash_ {
   Macro       *table;
-  unsigned int size;  /* should be prime */
+  uint size;  /* should be prime */
 };
 
 typedef struct GWPP_* GWPP;
@@ -55,8 +55,8 @@ struct Macro_ {
   Args  base;
   Args  args;
   Macro next;
-  int line;
-  int pos;
+  uint line;
+  uint pos;
 };
 
 void  hini(const Hash, const unsigned int);

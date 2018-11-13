@@ -938,13 +938,13 @@ static const flex_int16_t yy_chk[681] =
 ANN static void yynoreturn gwion_fatal_error (const char* msg , yyscan_t yyscanner);
 ANN static char* strip_lit(char* str);
 ANN static char* alloc_str(const char* str);
-ANN static long htol(const char* str);
-ANN static int newline(void* data);
+ANN static unsigned long htol(const char* str);
+ANN static void newline(void* data);
 ANN static void adjust(void* data);
-ANN static int  get_currline(void* data);
+ANN static uint  get_currline(void* data);
 ANN static char* get_currfile(void* data);
 ANN int gwion_error(Scanner* scan, const char* s);
-ANN int get_pos(const Scanner* scan);
+ANN uint get_pos(const Scanner* scan);
 ANN static Macro add_macro(void* data, const m_str id);
 ANN static m_str strip_include(Scanner* scan, const m_str line, const m_bool);
 ANN2(1,2) static void handle_include(void*, const m_str, YY_BUFFER_STATE);
@@ -1970,7 +1970,7 @@ YY_RULE_SETUP
 case 124:
 YY_RULE_SETUP
 #line 258 "ly/gwion.l"
-{ adjust(yyscanner); yylval->ival = get_currline(yyscanner); return NUM;}
+{ adjust(yyscanner); yylval->ival = (int)get_currline(yyscanner); return NUM;}
 	YY_BREAK
 case 125:
 YY_RULE_SETUP
@@ -3103,8 +3103,8 @@ char* alloc_str(const char* str) {
   return s_name(sym);
 }
 
-long htol(const char* str) {
-  char * c = (char*)str;
+unsigned long htol(const char* str) {
+  unsigned char * c = (unsigned char*)str;
   unsigned long n = 0;
 
   c += 2;
@@ -3112,13 +3112,13 @@ long htol(const char* str) {
     n <<= 4;
     switch(*c) {
       case '0' ... '9':
-        n += *c - '0';
+        n += (uint)(*c - '0');
         break;
       case 'a' ... 'f':
-        n += *c - 'a' + 10;
+        n += (uint)(*c - 'a' + 10);
         break;
       case 'A' ... 'F':
-        n += *c - 'A' + 10;
+        n += (uint)(*c - 'A' + 10);
         break;
     }
     c++;
@@ -3126,14 +3126,13 @@ long htol(const char* str) {
   return n;
 }
 
-static int newline(void* data) {
+static void newline(void* data) {
   Scanner* scan = yyget_extra(data);
   scan->line++;
   scan->pos = 1;
-  return 1;
 }
 
-static int get_currline(void* data) {
+static uint get_currline(void* data) {
   Scanner* scan = yyget_extra(data);
   return scan->line;
 }
@@ -3145,7 +3144,7 @@ static char* get_currfile(void* data) {
 
 static void adjust(void* data) {
   Scanner* scan = yyget_extra(data);
-  scan->pos += gwion_get_leng((void*)data);
+  scan->pos += (uint)gwion_get_leng((void*)data);
 }
 
 static void err_line(const Scanner* scan, const m_str filename) {
@@ -3195,7 +3194,7 @@ static inline void gwpp_error(Scanner* scan, char* s) {
   gwion_fatal_error("in macro expansion", scan->scanner);
 }
 
-ANN int get_pos(const Scanner* scan) {
+ANN uint get_pos(const Scanner* scan) {
   return scan->line;
 }
 
@@ -3221,7 +3220,7 @@ static m_str strip_include(Scanner* scan, const m_str line, const m_bool sign) {
     ++str;
   m_str end = strstr(str, ">");
   scan->pos += str - line;
-  return strndup(str, strlen(str) - strlen(end) + sign);
+  return strndup(str, strlen(str) - strlen(end) + (uint)sign);
 }
 
 static m_str strip_comment(Scanner* scan, const m_str s) {
@@ -3441,7 +3440,7 @@ static void macro_append(void* data, const m_str text) {
     scan->entry->text = strndup(text, tlen - 1);
 }
 
-int clear_buffer(Vector v, void* data, const m_bool last) {
+uint clear_buffer(Vector v, void* data, const m_bool last) {
   const m_str name = (m_str)vector_pop(v);
   const void* info = (void*)vector_pop(v);
   const YY_BUFFER_STATE state = (YY_BUFFER_STATE)vector_pop(v);

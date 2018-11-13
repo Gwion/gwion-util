@@ -43,7 +43,7 @@ ANN Vector vector_copy(const Vector v) {
 ANN m_int vector_find(const Vector v, const vtype data) {
   for(vtype i = VLEN(v) + 1; --i;)
     if(VPTR(v, i - 1) == (vtype)data)
-      return i - 1;
+      return (m_int)(i - 1);
   return -1;
 }
 
@@ -59,7 +59,8 @@ ANN void vector_rem(const Vector v, const vtype index) {
 
 ANN void vector_rem2(const Vector v, const vtype data) {
   const m_int index = vector_find(v, data);
-  vector_rem(v, index);
+  if(index > -1)
+    vector_rem(v, (vtype)index);
 }
 
 ANN vtype vector_pop(const Vector v) {

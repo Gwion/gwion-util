@@ -27,7 +27,7 @@
       c->tmpl = new_tmpl_class(b, -1);\
     };
 #define OP_SYM(a) insert_symbol(op2str(a))
-ANN int get_pos(const Scanner*);
+ANN uint get_pos(const Scanner*);
 ANN void gwion_error(const Scanner*, const m_str s);
 m_str op2str(const Operator op);
 %}
@@ -70,12 +70,12 @@ m_str op2str(const Operator op);
 
 %token<ival> NUM
 %type<ival>op shift_op post_op rel_op eq_op unary_op add_op mul_op op_op
-%type<ival> atsym vec_type arg_type
+%type<ival> atsym vec_type
 %token<fval> FLOAT
 %token<sval> ID STRING_LIT CHAR_LIT
 ifdef(`TINY_MODE', `', `
   PP_COMMENT PP_INCLUDE PP_DEFINE PP_UNDEF PP_IFDEF PP_IFNDEF PP_ELSE PP_ENDIF PP_NL')
-%type<flag> flag func_flag type_flag opt_flag
+%type<flag> flag func_flag type_flag opt_flag arg_type
 %type<sym>id opt_id
 %type<var_decl> var_decl
 %type<var_decl_list> var_decl_list

@@ -97,7 +97,7 @@
       c->tmpl = new_tmpl_class(b, -1);\
     };
 #define OP_SYM(a) insert_symbol(op2str(a))
-ANN int get_pos(const Scanner*);
+ANN uint get_pos(const Scanner*);
 ANN void gwion_error(const Scanner*, const m_str s);
 m_str op2str(const Operator op);
 
@@ -2318,7 +2318,7 @@ yyreduce:
 
   case 21:
 #line 143 "ly/gwion.y" /* yacc.c:1645  */
-    { (yyval.stmt) = new_stmt_fptr((yyvsp[-2].sym), (yyvsp[-3].type_decl), (yyvsp[-1].arg_list), (yyvsp[0].ival)); (yyvsp[-3].type_decl)->flag |= (yyvsp[-4].flag); }
+    { (yyval.stmt) = new_stmt_fptr((yyvsp[-2].sym), (yyvsp[-3].type_decl), (yyvsp[-1].arg_list), (yyvsp[0].flag)); (yyvsp[-3].type_decl)->flag |= (yyvsp[-4].flag); }
 #line 2323 "src/parser.c" /* yacc.c:1645  */
     break;
 
@@ -2701,13 +2701,13 @@ yyreduce:
 
   case 104:
 #line 274 "ly/gwion.y" /* yacc.c:1645  */
-    { (yyval.ival) = ae_flag_variadic; }
+    { (yyval.flag) = ae_flag_variadic; }
 #line 2706 "src/parser.c" /* yacc.c:1645  */
     break;
 
   case 105:
 #line 274 "ly/gwion.y" /* yacc.c:1645  */
-    { (yyval.ival) = 0; }
+    { (yyval.flag) = 0; }
 #line 2712 "src/parser.c" /* yacc.c:1645  */
     break;
 
@@ -2785,7 +2785,7 @@ yyreduce:
 
   case 118:
 #line 291 "ly/gwion.y" /* yacc.c:1645  */
-    { (yyval.func_def) = new_func_def((yyvsp[-4].type_decl), (yyvsp[-3].sym), (yyvsp[-2].arg_list), (yyvsp[0].stmt), (yyvsp[-5].flag) | (yyvsp[-1].ival)); }
+    { (yyval.func_def) = new_func_def((yyvsp[-4].type_decl), (yyvsp[-3].sym), (yyvsp[-2].arg_list), (yyvsp[0].stmt), (yyvsp[-5].flag) | (yyvsp[-1].flag)); }
 #line 2790 "src/parser.c" /* yacc.c:1645  */
     break;
 
