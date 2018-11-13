@@ -3,7 +3,7 @@
 #include "absyn.h"
 #include "mpool.h"
 
-Var_Decl new_var_decl(struct Symbol_* xid, const Array_Sub array, const int pos) {
+Var_Decl new_var_decl(struct Symbol_* xid, const Array_Sub array, const uint pos) {
   Var_Decl a = mp_alloc(Var_Decl);
   a->xid = xid;
   a->array = array;
@@ -94,14 +94,14 @@ ANN static void free_exp_array(Exp_Array* a) {
   free_exp(a->base);
 }
 
-ID_List new_id_list(struct Symbol_* xid, const int pos) {
+ID_List new_id_list(struct Symbol_* xid, const uint pos) {
   ID_List a = mp_alloc(ID_List);
   a->xid = xid;
   a->pos = pos;
   return a;
 }
 
-ID_List prepend_id_list(struct Symbol_* xid, const ID_List list, const int pos) {
+ID_List prepend_id_list(struct Symbol_* xid, const ID_List list, const uint pos) {
   ID_List a = new_id_list(xid, pos);
   a->next = list;
   a->pos = pos;
@@ -204,7 +204,7 @@ ANN static void free_exp_dur(Exp_Dur* a) {
   free_exp(a->unit);
 }
 
-static Exp new_exp_prim(const int pos) {
+static Exp new_exp_prim(const uint pos) {
   Exp a = mp_alloc(Exp);
   a->exp_type = ae_exp_primary;
   a->meta = ae_meta_value;
@@ -213,34 +213,34 @@ static Exp new_exp_prim(const int pos) {
   return a;
 }
 
-Exp new_exp_prim_int(const long i, const int pos) {
+Exp new_exp_prim_int(const long i, const uint pos) {
   Exp a = new_exp_prim(pos);
   a->d.exp_primary.primary_type = ae_primary_num;
   a->d.exp_primary.d.num = i;
   return a;
 }
 
-Exp new_exp_prim_float(const m_float num, const int pos) {
+Exp new_exp_prim_float(const m_float num, const uint pos) {
   Exp a = new_exp_prim(pos);
   a->d.exp_primary.primary_type = ae_primary_float;
   a->d.exp_primary.d.fnum = num;
   return a;
 }
 
-Exp new_exp_prim_string(const m_str s, const int pos) {
+Exp new_exp_prim_string(const m_str s, const uint pos) {
   Exp a = new_exp_prim(pos);
   a->d.exp_primary.primary_type = ae_primary_str;
   a->d.exp_primary.d.str = s;
   return a;
 }
 
-Exp new_exp_prim_nil(const int pos) {
+Exp new_exp_prim_nil(const uint pos) {
   Exp a = new_exp_prim(pos);
   a->d.exp_primary.primary_type = ae_primary_nil;
   return a;
 }
 
-Exp new_exp_prim_id(struct Symbol_* xid, const int pos) {
+Exp new_exp_prim_id(struct Symbol_* xid, const uint pos) {
   Exp a = new_exp_prim(pos);
   a->meta = ae_meta_var;
   a->d.exp_primary.primary_type = ae_primary_id;
@@ -255,14 +255,14 @@ Exp new_exp_prim_hack(const Exp exp) {
   return a;
 }
 
-Exp new_exp_prim_char(const m_str chr, const int pos) {
+Exp new_exp_prim_char(const m_str chr, const uint pos) {
   Exp a = new_exp_prim(pos);
   a->d.exp_primary.primary_type = ae_primary_char;
   a->d.exp_primary.d.chr = chr;
   return a;
 }
 
-Exp new_exp_prim_array(const Array_Sub exp, const int pos) {
+Exp new_exp_prim_array(const Array_Sub exp, const uint pos) {
   Exp a = new_exp_prim(pos);
   a->d.exp_primary.primary_type = ae_primary_array;
   a->d.exp_primary.d.array = exp;
@@ -279,7 +279,7 @@ Exp new_exp_prim_vec(const ae_prim_t t, Exp e) {
   return a;
 }
 
-static Exp new_exp_unary_base(const int pos)  {
+static Exp new_exp_unary_base(const uint pos)  {
   Exp a = mp_alloc(Exp);
   a->meta = ae_meta_value;
   a->exp_type = ae_exp_unary;
@@ -304,7 +304,7 @@ Exp new_exp_unary2(const Operator oper, Type_Decl* td) {
 }
 
 Exp new_exp_unary3(const Operator oper, const Stmt code) {
-  const m_uint pos = code->pos;
+  const uint pos = code->pos;
   Exp a = new_exp_unary_base(pos);
   a->d.exp_unary.op = oper;
   ID_List id = new_id_list(insert_symbol("void"), pos);
@@ -558,7 +558,7 @@ ANN inline static void free_stmt_exp(struct Stmt_Exp_* a) {
     free_exp(a->val);
 }
 
-Stmt new_stmt(const ae_stmt_t type, const int pos) {
+Stmt new_stmt(const ae_stmt_t type, const uint pos) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = type;
   a->pos = pos;
@@ -617,7 +617,7 @@ ANN static void free_stmt_auto(Stmt_Auto a) {
   free_stmt(a->body);
 }
 
-Stmt new_stmt_jump(struct Symbol_* xid, const m_bool is_label, const int pos) {
+Stmt new_stmt_jump(struct Symbol_* xid, const m_bool is_label, const uint pos) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = ae_stmt_jump;
   a->d.stmt_jump.name = xid;
@@ -690,7 +690,7 @@ ANN static void free_stmt_enum(Stmt_Enum a) {
   vector_release(&a->values);
 }
 
-Stmt new_stmt_union(const Decl_List l, const int pos) {
+Stmt new_stmt_union(const Decl_List l, const uint pos) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = ae_stmt_union;
   a->d.stmt_union.l = l;

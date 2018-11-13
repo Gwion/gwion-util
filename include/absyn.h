@@ -43,9 +43,9 @@ struct Var_Decl_ {
   struct Value_ * value;
   Array_Sub array;
   void* addr;
-  int pos;
+  uint pos;
 };
-ANN2(1) ANEW Var_Decl new_var_decl(struct Symbol_*, const Array_Sub, const int);
+ANN2(1) ANEW Var_Decl new_var_decl(struct Symbol_*, const Array_Sub, const uint);
 
 struct Var_Decl_List_ {
   Var_Decl self;
@@ -69,10 +69,10 @@ struct ID_List_    {
   struct Symbol_* xid;
   ID_List next;
   ID_List ref;
-  int pos;
+  uint pos;
 };
-ANEW ANN ID_List new_id_list(struct Symbol_*, const int);
-ANN ID_List prepend_id_list(struct Symbol_*, ID_List, const int);
+ANEW ANN ID_List new_id_list(struct Symbol_*, const uint);
+ANN ID_List prepend_id_list(struct Symbol_*, ID_List, const uint);
 ANN void free_id_list(ID_List a);
 
 struct Type_List_  {
@@ -214,21 +214,21 @@ struct Exp_ {
     Exp_Constprop exp_constprop;
 #endif
   } d;
-  int pos;
+  uint pos;
   ae_exp_t exp_type;
   ae_Exp_Meta meta;
   unsigned emit_var : 1;
 };
 
-ANEW ANN Exp new_exp_prim_id(struct Symbol_*, const int);
-ANEW Exp new_exp_prim_int(const long, const int);
-ANEW Exp new_exp_prim_float(const m_float, const int);
-ANEW ANN Exp new_exp_prim_string(const m_str, const int);
-ANEW ANN Exp new_exp_prim_array(const Array_Sub, const int);
+ANEW ANN Exp new_exp_prim_id(struct Symbol_*, const uint);
+ANEW Exp new_exp_prim_int(const long, const uint);
+ANEW Exp new_exp_prim_float(const m_float, const uint);
+ANEW ANN Exp new_exp_prim_string(const m_str, const uint);
+ANEW ANN Exp new_exp_prim_array(const Array_Sub, const uint);
 ANEW Exp new_exp_prim_hack(const Exp);
 ANEW ANN Exp new_exp_prim_vec(const ae_prim_t t, Exp);
-ANEW ANN Exp new_exp_prim_char(const m_str, const int);
-ANEW Exp new_exp_prim_nil(const int);
+ANEW ANN Exp new_exp_prim_char(const m_str, const uint);
+ANEW Exp new_exp_prim_nil(const uint);
 ANEW ANN Exp new_exp_decl(Type_Decl*, const Var_Decl_List);
 ANEW ANN Exp new_exp_binary(const Exp, const Operator, const Exp);
 ANEW ANN Exp new_exp_post(const Exp, const Operator);
@@ -279,7 +279,7 @@ typedef struct Stmt_Union_   * Stmt_Union;
 typedef struct Stmt_PP_      * Stmt_PP;
 #endif
 struct Stmt_Basic_ {
-  int pos;
+  uint pos;
 };
 
 struct Stmt_Exp_ {
@@ -418,11 +418,11 @@ struct Stmt_ {
     struct Stmt_PP_    stmt_pp;
 #endif
   } d;
-  int pos;
+  uint pos;
   ae_stmt_t stmt_type;
 };
 
-ANEW Stmt new_stmt(const ae_stmt_t, const int);
+ANEW Stmt new_stmt(const ae_stmt_t, const uint);
 ANN ANEW Stmt new_stmt_exp(const ae_stmt_t, const Exp);
 ANN ANEW Stmt new_stmt_code(const Stmt_List);
 ANN ANEW Stmt new_stmt_if(const Exp, const Stmt);
@@ -430,10 +430,10 @@ ANEW ANN Stmt new_stmt_flow(const ae_stmt_t, const Exp, const Stmt, const m_bool
 ANN2(1,2,4) ANEW Stmt new_stmt_for(const Stmt, const Stmt, const Exp, const Stmt);
 ANEW ANN Stmt new_stmt_auto(struct Symbol_*, const Exp, const Stmt);
 ANEW ANN Stmt new_stmt_loop(const Exp, const Stmt);
-ANEW ANN Stmt new_stmt_jump(struct Symbol_*, const m_bool, const int);
+ANEW ANN Stmt new_stmt_jump(struct Symbol_*, const m_bool, const uint);
 ANN2(1) ANEW Stmt new_stmt_enum(const ID_List, struct Symbol_*);
 ANEW ANN Stmt new_stmt_switch(Exp, Stmt);
-ANEW ANN Stmt new_stmt_union(const Decl_List, const int);
+ANEW ANN Stmt new_stmt_union(const Decl_List, const uint);
 ANEW ANN Stmt new_stmt_fptr(struct Symbol_*, Type_Decl*, const Arg_List, const ae_flag);
 ANEW ANN Stmt new_stmt_type(Type_Decl*, struct Symbol_*);
 #ifndef TINY_MODE
