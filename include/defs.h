@@ -85,9 +85,9 @@ typedef enum {
   op_cast, op_impl
 } Operator;
 ANN m_str op2str(const Operator op);
-ANN m_int name2op(const m_str name);
+ANN int name2op(const m_str name);
 
 static inline m_uint num_digit(const m_uint i) {
-  return i ? (m_uint)floor(log10(i) + 1) : 1;
+  return i ? (m_uint)floor(log10((float)i) + 1) : 1;
 }
 #endif

@@ -7,7 +7,7 @@
 #include "parser.h"
 #include "lexer.h"
 
-ANEW Scanner* new_scanner(const m_uint size) {
+ANEW Scanner* new_scanner(const uint size) {
   Scanner* scan = (Scanner*)xcalloc(1, sizeof(Scanner));
   gwion_lex_init(&scan->scanner);
   gwion_set_extra(scan, scan->scanner);

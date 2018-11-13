@@ -1970,7 +1970,7 @@ YY_RULE_SETUP
 case 124:
 YY_RULE_SETUP
 #line 258 "ly/gwion.l"
-{ adjust(yyscanner); yylval->ival = (int)get_currline(yyscanner); return NUM;}
+{ adjust(yyscanner); yylval->lval = get_currline(yyscanner); return NUM;}
 	YY_BREAK
 case 125:
 YY_RULE_SETUP
@@ -1980,22 +1980,22 @@ YY_RULE_SETUP
 case 126:
 YY_RULE_SETUP
 #line 261 "ly/gwion.l"
-{ adjust(yyscanner); yylval->ival = htol(yytext);                 return NUM;        }
+{ adjust(yyscanner); yylval->lval = htol(yytext);                 return NUM;        }
 	YY_BREAK
 case 127:
 YY_RULE_SETUP
 #line 262 "ly/gwion.l"
-{ adjust(yyscanner); yylval->ival = atoi(yytext);                 return NUM;        }
+{ adjust(yyscanner); yylval->lval = (unsigned long)atoi(yytext);  return NUM;        }
 	YY_BREAK
 case 128:
 YY_RULE_SETUP
 #line 263 "ly/gwion.l"
-{ adjust(yyscanner); yylval->ival = atoi(yytext);                 return NUM;        }
+{ adjust(yyscanner); yylval->lval = (unsigned long)atoi(yytext);  return NUM;        }
 	YY_BREAK
 case 129:
 YY_RULE_SETUP
 #line 264 "ly/gwion.l"
-{ adjust(yyscanner); yylval->fval = atof(yytext);                 return FLOAT;      }
+{ adjust(yyscanner); yylval->fval = (m_float)atof(yytext);        return FLOAT;      }
 	YY_BREAK
 case 130:
 YY_RULE_SETUP
@@ -3219,16 +3219,16 @@ static m_str strip_include(Scanner* scan, const m_str line, const m_bool sign) {
   if(!sign)
     ++str;
   m_str end = strstr(str, ">");
-  scan->pos += str - line;
+  scan->pos += (uint)(str - line);
   return strndup(str, strlen(str) - strlen(end) + (uint)sign);
 }
 
 static m_str strip_comment(Scanner* scan, const m_str s) {
   m_str str = s;
   while(isspace(*str))++str;
-  m_uint end = strlen(str);
+  size_t end = strlen(str);
   while(isspace(str[--end]));
-  scan->pos += str - s;
+  scan->pos += (uint)(str - s);
   return strndup(str, end + 1);
 }
 
@@ -3390,7 +3390,7 @@ static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
           scan->line     = e->line;
         }
   char c;
-  while(isspace(c = input(data)))++scan->pos;
+  while(isspace(c = (char)input(data)))++scan->pos;
   if(c != '(')
     gwpp_error(scan, "macro needs arguments");
   ++scan->npar;
@@ -3451,7 +3451,7 @@ uint clear_buffer(Vector v, void* data, const m_bool last) {
   xfree(name);
   vector_pop(v);
   vector_pop(v);
-  return vector_size(v);
+  return (uint)vector_size(v);
 }
 
 int yywrap(void* data) {
@@ -3469,8 +3469,8 @@ int yywrap(void* data) {
     else if(info)
       clean_args((Args)info);
     xfree(name);
-    scan->pos  = vector_pop(&scan->filename);
-    scan->line = vector_pop(&scan->filename);
+    scan->pos  = (uint)vector_pop(&scan->filename);
+    scan->line = (uint)vector_pop(&scan->filename);
     return 0;
   }
   return 1;

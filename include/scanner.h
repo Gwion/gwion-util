@@ -23,7 +23,7 @@ typedef struct Scanner_ {
 } Scanner;
 
 ANN Ast parse(struct Scanner_*, const m_str, FILE*);
-ANEW Scanner* new_scanner(const m_uint size);
+ANEW Scanner* new_scanner(const uint size);
 ANN void free_scanner(Scanner* scan);
 ANN void scanner_post(Scanner* scan);
 uint clear_buffer(Vector, void*, const m_bool);

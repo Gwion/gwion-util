@@ -123,7 +123,7 @@ typedef struct {
   struct Value_ * value;
   union exp_primary_data {
     struct Symbol_* var;
-    long num;
+    unsigned long num;
     m_float fnum;
     m_str chr;
     m_str str;
@@ -221,7 +221,7 @@ struct Exp_ {
 };
 
 ANEW ANN Exp new_exp_prim_id(struct Symbol_*, const uint);
-ANEW Exp new_exp_prim_int(const long, const uint);
+ANEW Exp new_exp_prim_int(const unsigned long, const uint);
 ANEW Exp new_exp_prim_float(const m_float, const uint);
 ANEW ANN Exp new_exp_prim_string(const m_str, const uint);
 ANEW ANN Exp new_exp_prim_array(const Array_Sub, const uint);

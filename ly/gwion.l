@@ -255,13 +255,13 @@ ANN static m_str macro_data(void* data, const m_bool);
     return 1;
   }
 }
-"__line__"                          { adjust(yyscanner); yylval->ival = (int)get_currline(yyscanner); return NUM;}
+"__line__"                          { adjust(yyscanner); yylval->lval = get_currline(yyscanner); return NUM;}
 "__file__"                          { adjust(yyscanner); yylval->sval = get_currfile(yyscanner); return STRING_LIT;}
 
-0[xX][0-9a-fA-F]+{IS}?              { adjust(yyscanner); yylval->ival = htol(yytext);                 return NUM;        }
-0[cC][0-7]+{IS}?                    { adjust(yyscanner); yylval->ival = atoi(yytext);                 return NUM;        }
-[0-9]+{IS}?                         { adjust(yyscanner); yylval->ival = atoi(yytext);                 return NUM;        }
-([0-9]+"."[0-9]*)|([0-9]*"."[0-9]+) { adjust(yyscanner); yylval->fval = atof(yytext);                 return FLOAT;      }
+0[xX][0-9a-fA-F]+{IS}?              { adjust(yyscanner); yylval->lval = htol(yytext);                 return NUM;        }
+0[cC][0-7]+{IS}?                    { adjust(yyscanner); yylval->lval = (unsigned long)atoi(yytext);  return NUM;        }
+[0-9]+{IS}?                         { adjust(yyscanner); yylval->lval = (unsigned long)atoi(yytext);  return NUM;        }
+([0-9]+"."[0-9]*)|([0-9]*"."[0-9]+) { adjust(yyscanner); yylval->fval = (m_float)atof(yytext);        return FLOAT;      }
 [A-Za-z_][A-Za-z0-9_]*              {
   adjust(yyscanner);
   const int ret = is_macro(yyscanner, yytext, 
@@ -420,16 +420,16 @@ static m_str strip_include(Scanner* scan, const m_str line, const m_bool sign) {
   if(!sign)
     ++str;
   m_str end = strstr(str, ">");
-  scan->pos += str - line;
+  scan->pos += (uint)(str - line);
   return strndup(str, strlen(str) - strlen(end) + (uint)sign);
 }
 
 static m_str strip_comment(Scanner* scan, const m_str s) {
   m_str str = s;
   while(isspace(*str))++str;
-  m_uint end = strlen(str);
+  size_t end = strlen(str);
   while(isspace(str[--end]));
-  scan->pos += str - s;
+  scan->pos += (uint)(str - s);
   return strndup(str, end + 1);
 }
 
@@ -591,7 +591,7 @@ static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
           scan->line     = e->line;
         }
   char c;
-  while(isspace(c = input(data)))++scan->pos;
+  while(isspace(c = (char)input(data)))++scan->pos;
   if(c != '(')
     gwpp_error(scan, "macro needs arguments");
   ++scan->npar;
@@ -652,7 +652,7 @@ uint clear_buffer(Vector v, void* data, const m_bool last) {
   xfree(name);
   vector_pop(v);
   vector_pop(v);
-  return vector_size(v);
+  return (uint)vector_size(v);
 }
 
 int yywrap(void* data) {
@@ -670,8 +670,8 @@ int yywrap(void* data) {
     else if(info)
       clean_args((Args)info);
     xfree(name);
-    scan->pos  = vector_pop(&scan->filename);
-    scan->line = vector_pop(&scan->filename);
+    scan->pos  = (uint)vector_pop(&scan->filename);
+    scan->line = (uint)vector_pop(&scan->filename);
     return 0;
   }
   return 1;

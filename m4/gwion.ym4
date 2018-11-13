@@ -35,6 +35,7 @@ m_str op2str(const Operator op);
 %union {
   char* sval;
   int ival;
+  long unsigned int lval;
   ae_flag flag;
   m_float fval;
   Symbol sym;
@@ -68,7 +69,7 @@ m_str op2str(const Operator op);
   TYPEDEF RSL RSR RSAND RSOR RSXOR TEMPLATE
   NOELSE LTB GTB UNION ATPAREN TYPEOF CONST AUTO PASTE ELLIPSE
 
-%token<ival> NUM
+%token<lval> NUM
 %type<ival>op shift_op post_op rel_op eq_op unary_op add_op mul_op op_op
 %type<ival> atsym vec_type
 %token<fval> FLOAT

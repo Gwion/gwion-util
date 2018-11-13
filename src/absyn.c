@@ -213,7 +213,7 @@ static Exp new_exp_prim(const uint pos) {
   return a;
 }
 
-Exp new_exp_prim_int(const long i, const uint pos) {
+Exp new_exp_prim_int(const unsigned long i, const uint pos) {
   Exp a = new_exp_prim(pos);
   a->d.exp_primary.primary_type = ae_primary_num;
   a->d.exp_primary.d.num = i;
@@ -568,7 +568,7 @@ Stmt new_stmt(const ae_stmt_t type, const uint pos) {
 Stmt new_stmt_flow(const ae_stmt_t type, const Exp cond, const Stmt body, const m_bool is_do) {
   Stmt a = mp_alloc(Stmt);
   a->stmt_type = type;
-  a->d.stmt_flow.is_do = is_do;
+  a->d.stmt_flow.is_do = !!is_do;
   a->d.stmt_flow.cond = cond;
   a->d.stmt_flow.body = body;
   a->pos = cond->pos;

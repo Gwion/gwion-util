@@ -12,8 +12,8 @@ static const m_str op_str[] = {
   NULL
 };
 
-ANN m_int name2op(const m_str name) {
-  m_uint i = 0;
+ANN int name2op(const m_str name) {
+  int i = 0;
   while(op_str[i]) {
     if(!strcmp(name, op_str[i]))
       return i;
