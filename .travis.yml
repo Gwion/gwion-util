@@ -4,6 +4,10 @@ language: c
 os:
   - linux
 
+compiler:
+  - gcc
+  - clang
+
 addons:
   apt:
     sources:
@@ -11,6 +15,6 @@ addons:
     packages:
     - gcc-8
 
-before_script: [ "$CC" = "gcc" ] && export CC=gcc-8
+before_script: if [ "$CC" = "gcc" ]; then export CC=gcc-8; fi
 
 script: make
