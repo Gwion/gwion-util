@@ -67,6 +67,9 @@ int main(int argc, char** argv) {
   include();
   base_type();
   compound_type();
+#ifdef __APPLE__
+  printf("typedef unsigned int uint");
+#endif
   size();
   format();
   if(strcmp(type, "double"))
