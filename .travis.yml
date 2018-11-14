@@ -23,6 +23,6 @@ addons:
 
 before_script:
   - if [ $(uname) = "Linux" ]; then if [ "$CC" = "gcc" ]; then export CC=gcc-8; fi; fi
-  - if [ $(uname) != Linux ]; then brew update; fi
+  - if [ $(uname) = "Darwin" ]; then brew update; fi
 
 script: make
