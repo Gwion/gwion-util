@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
   base_type();
   compound_type();
 #ifdef __APPLE__
-  puts("typedef unsigned int uint");
+  puts("typedef unsigned int uint;");
 #endif
   size();
   format();
