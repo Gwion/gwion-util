@@ -1,18 +1,18 @@
-matrix:
-  fast_finish: true
-  allow_failures:
-  - os: osx
-
 language: c
-
 
 os:
   - linux
   - osx
+  - windows
 
 compiler:
   - gcc
   - clang
+
+matrix:
+  fast_finish: true
+  allow_failures:
+  - os: windows
 
 addons:
   apt:
