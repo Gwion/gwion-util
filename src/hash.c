@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "hash.h"
 #include "defs.h"
+#include "hash.h"
 #include "mpool.h"
 
 Args new_args(const char* name) {
