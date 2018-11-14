@@ -22,6 +22,6 @@ addons:
     - gcc-8
 
 before_script:
-  - if [ $(uname) = "Linux" ]; then if [ "$CC" = "gcc" ]; then export CC=gcc-8; fi; elif [ $(uname) = "Darwin" ]; then brew update; else sed 's/#/#\\#g' Makefile; fi
+  - if [ $(uname) = "Linux" ]; then if [ "$CC" = "gcc" ]; then export CC=gcc-8; fi; elif [ $(uname) = "Darwin" ]; then brew update; else sed 's/#/#\\\#g' Makefile; fi
 
 script: make
