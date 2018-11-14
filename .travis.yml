@@ -1,8 +1,14 @@
+matrix:
+  fast_finish: true
+  allow_failures:
+  - os: osx
+
 language: c
 
 
 os:
   - linux
+  - osc
 
 compiler:
   - gcc
@@ -15,6 +21,8 @@ addons:
     packages:
     - gcc-8
 
-before_script: if [ "$CC" = "gcc" ]; then export CC=gcc-8; fi
+before_script:
+  - if [ $(uname) = "linux" ]; if [ "$CC" = "gcc" ]; then export CC=gcc-8; fi; fi
+  - if [ $(uname) != Linux ]; then brew update; fi
 
 script: make
