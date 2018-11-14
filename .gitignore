@@ -1,3 +1,4 @@
 .d
 *.a
 config.mk
+include/generated.h

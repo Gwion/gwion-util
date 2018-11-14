@@ -14,7 +14,7 @@ static const char* type	 = "float ";
 #endif
 
 static void include(void) {
-  printf("#include <stdlib.h>\n#include <inttypes.h>\n");
+  puts("#include <stdlib.h>\n#include <inttypes.h>");
 }
 
 static void base_type(void) {
@@ -22,7 +22,7 @@ static void base_type(void) {
       "typedef uintptr_t m_uint;\ntypedef unsigned char m_bit;\n"
       "typedef int m_bool;\ntypedef %s m_float;\ntypedef char * m_str;\n",
       type);
-} 
+}
 
 static void compound_type(void) {
   printf("typedef struct { m_float x, y, z; } m_vec3;\n"
@@ -38,13 +38,13 @@ static void size(void) {
 
 static void format(void) {
   if(sizeof(uintptr_t) == sizeof(unsigned int))
-    printf("#define  INT_F \"i\"\n#define UINT_F \"u\"\n");
+    puts("#define  INT_F \"i\"\n#define UINT_F \"u\"");
   else
-    printf("#define  INT_F \"li\"\n#define UINT_F \"lu\"\n#define abs labs\n");
+    puts("#define  INT_F \"li\"\n#define UINT_F \"lu\"\n#define abs labs");
 }
 
 static void math_func(void) {
-  printf("#define creal crealf\n#define cimag cimagf\n#define fabs fabsf"
+  puts("#define creal crealf\n#define cimag cimagf\n#define fabs fabsf"
       "\n#define cos cosf\n#define sin sinf\n#define tan tanf\n"
       "#define acos acosf\n#define asin asinf\n#define atan atanf\n"
       "#define cosh coshf\n#define sinh sinhf\n#define tanh tanhf\n"
@@ -53,14 +53,14 @@ static void math_func(void) {
       "#define sqrt sqrtf\n#define exp expf\n#define log logf\n"
       "#define log2 log2f\n#define log10 log10f\n#define floor floorf\n"
       "#define ceil ceilf\n#define round roundf\n#define trunc truncf\n"
-      "#define fmod fmodf\n#define remainder remainderf\n");
+      "#define fmod fmodf\n#define remainder remainderf");
 }
 
 static void minval(void) {
   if(sizeof(uintptr_t) > SZ)
-    printf("#define SZ_MINVAL SZ_INT");
+    puts("#define SZ_MINVAL SZ_INT");
   else
-    printf("#define SZ_MINVAL SZ_FLOAT");
+    puts("#define SZ_MINVAL SZ_FLOAT");
 }
 
 int main(int argc, char** argv) {
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
   base_type();
   compound_type();
 #ifdef __APPLE__
-  printf("typedef unsigned int uint");
+  puts("typedef unsigned int uint");
 #endif
   size();
   format();
