@@ -8,7 +8,7 @@ language: c
 
 os:
   - linux
-  - osc
+  - osx
 
 compiler:
   - gcc
