@@ -389,6 +389,21 @@ Func_Def new_func_def(Type_Decl* td, struct Symbol_* xid,
   return a;
 }
 
+ANN m_bool compat_func(const restrict Func_Def lhs, const restrict Func_Def rhs) {
+  Arg_List e1 = lhs->arg_list;
+  Arg_List e2 = rhs->arg_list;
+
+  while(e1 && e2) {
+    if(e1->type != e2->type)
+      return -1;
+    e1 = e1->next;
+    e2 = e2->next;
+  }
+  if(e1 || e2)
+    return -1;
+  return 1;
+}
+
 void free_func_def(Func_Def a) {
   if(!GET_FLAG(a, ae_flag_template)) {
     if(a->arg_list)

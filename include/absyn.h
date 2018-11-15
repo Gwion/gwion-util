@@ -472,6 +472,7 @@ ANEW ANN Tmpl_List* new_tmpl_list(const ID_List, const m_int);
 ANN void free_tmpl_list(Tmpl_List*);
 m_bool tmpl_list_base(const Tmpl_List*);
 ANEW Func_Def new_func_def(Type_Decl*, struct Symbol_*, const Arg_List, const Stmt, const ae_flag);
+ANN m_bool compat_func(const restrict Func_Def lhs, const restrict Func_Def rhs);
 ANN void free_func_def(Func_Def def);
 
 typedef enum { ae_section_stmt, ae_section_func, ae_section_class } ae_section_t;
