@@ -3,20 +3,6 @@
 #include "defs.h"
 #include "err_msg.h"
 
-//    fprintf(stderr, " \033[4mline \033[1m%" INT_F "\033[0m\t", pos);
-m_bool err_msg(uint pos, const char* fmt, ...) {
-  va_list arg;
-  va_start(arg, fmt);
-  if(pos > 0)
-    fprintf(stderr, " line: %u\t", pos);
-  else
-    fprintf(stderr, "\t");
-  vfprintf(stderr, fmt, arg);
-  fprintf(stderr, "\n");
-  va_end(arg);
-  return -1;
-}
-
 #define describe_gw_xxx(name)            \
 m_bool gw_##name(const char* fmt, ...) { \
   va_list arg;                           \
@@ -27,3 +13,17 @@ m_bool gw_##name(const char* fmt, ...) { \
 }
 describe_gw_xxx(err)
 describe_gw_xxx(out)
+
+m_bool err_msg(uint pos, const char* fmt, ...) {
+  if(pos)
+    fprintf(stderr, " line: %u\t", pos);
+  else
+    fprintf(stderr, "\t");
+  va_list arg;
+  va_start(arg, fmt);
+  vfprintf(stderr, fmt, arg);
+  va_end(arg);
+  fprintf(stderr, "\n");
+  return -1;
+}
+
