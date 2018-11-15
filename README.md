@@ -1,6 +1,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/fennecdjay/gwion-util?branch=master)](https://bettercodehub.com/)
 [![Build Status](https://travis-ci.org/fennecdjay/gwion-util.svg?branch=master)](https://travis-ci.org/fennecdjay/gwion-util)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffennecdjay%2Fgwion-util.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffennecdjay%2Fgwion-util?ref=badge_shield)
+[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/fennecdjay/gwion-util.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fennecdjay/gwion-util/context:cpp)
 
 # Gwion-utils
 
