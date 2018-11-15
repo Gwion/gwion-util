@@ -4,11 +4,11 @@
 #include "err_msg.h"
 
 //    fprintf(stderr, " \033[4mline \033[1m%" INT_F "\033[0m\t", pos);
-m_bool err_msg(m_uint pos, const char* fmt, ...) {
+m_bool err_msg(uint pos, const char* fmt, ...) {
   va_list arg;
   va_start(arg, fmt);
   if(pos > 0)
-    fprintf(stderr, " line: %" INT_F "\t", pos);
+    fprintf(stderr, " line: %u\t", pos);
   else
     fprintf(stderr, "\t");
   vfprintf(stderr, fmt, arg);
