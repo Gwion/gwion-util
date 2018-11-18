@@ -10,5 +10,5 @@ languages:
         - /src/lexer\.c
     test:
       include:
-        - tests/.*\.c
-        - tests/.*\.h
+        - /tests/.*\.c
+        - /tests/.*\.h
