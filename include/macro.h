@@ -2,7 +2,6 @@
 #define __MACRO
 typedef struct Args_* Args;
 typedef struct Macro_* Macro;
-//typedef struct Hash_* Hash;
 
 typedef struct GWPP_* GWPP;
 struct pp_info {
@@ -16,7 +15,6 @@ enum gwpp_state {
   QUOTED,
   COMMENT,
   MACRO, // we need a append_check inline function
-
 };
 
 enum tok_type {

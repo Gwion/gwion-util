@@ -16,7 +16,7 @@ ANEW Scanner* new_scanner(const uint size) {
 #ifdef LINT_MODE
   scan->lint = 0;
 #endif
-  hini(&scan->macros, size, sizeof(struct Macro_));
+  hini(&scan->macros, size);
   vector_init(&scan->filename);
 #endif
   return scan;

@@ -5,9 +5,9 @@
 #include "hash.h"
 #include "mpool.h"
 
-void hini(Hash h, const uint nmemb, const uint size) {
-  h->table = (void*)xcalloc(((nmemb  + 3) & 0xfffffffc), size);
-  h->size = size;
+void hini(Hash h, const uint nmemb) {
+  h->table = (void*)xcalloc(((nmemb  + 3) & 0xfffffffc), sizeof(void*));
+  h->size = nmemb;
 }
 
 void hdel(const Hash h, void (*func)(void*)) {
