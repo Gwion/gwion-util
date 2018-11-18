@@ -8,8 +8,6 @@ languages:
       exclude:
         - /src/parser\.c
         - /src/lexer\.c
-        - /include/parser\.h
-        - /include/lexer\.h
     test:
       include:
         - /tests/.*\.c
