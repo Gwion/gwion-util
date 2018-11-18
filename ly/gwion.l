@@ -7,6 +7,7 @@ IS          (u|U|l|L)*
 #include "map.h"
 #include "absyn.h"
 #include "hash.h"
+#include "macro.h"
 #include "scanner.h"
 #include "parser.h"
 #include "err_msg.h"
@@ -73,7 +74,7 @@ ANN static m_str macro_data(void* data, const m_bool);
 #define GWYY_ENDIF   GWYY_LINT(NULL, PP_ENDIF) macro_end(yyscanner);
 
 %}
-%option noyyalloc noyyrealloc noyyfree nounput noyyfatalerror
+%option noyyalloc noyyrealloc noyyfree nounput
 %option noyylineno
 %option noyyget_text
 %option noyyget_lineno noyyset_lineno
@@ -403,7 +404,7 @@ static Macro add_macro(void* data, const m_str line) {
   Scanner* scan = yyget_extra(data);
   scan->pos += 8;
   m_str id = strip_comment(data, line + 8);
-  scan->entry = hadd(&scan->macros, id);
+  scan->entry = macro_add(&scan->macros, id);
   xfree(id);
   if(!scan->entry)
     gwpp_error(scan, "macro already defined");
@@ -437,7 +438,7 @@ static void rem_macro(void* data, const m_str str) {
   Scanner* scan = yyget_extra(data);
   scan->pos += 6;
   const m_str id = strip_comment(scan, str+6);
-  const m_bool ret = hrem(&scan->macros, id);
+  const m_bool ret = macro_rem(&scan->macros, id);
   xfree(id);
   if(ret)
     gwpp_error(scan, "undefined macro");
@@ -446,7 +447,7 @@ static void rem_macro(void* data, const m_str str) {
 static int has_macro(void* data, const m_str id, const m_bool def) {
   Scanner* scan = yyget_extra(data);
   return scan->def.data[++scan->def.idx] = def ?
-    !!hhas(&scan->macros, id) : !hhas(&scan->macros, id);
+    !!macro_has(&scan->macros, id) : !macro_has(&scan->macros, id);
 }
 
 static void gwpp_stack(Scanner* scan, YY_BUFFER_STATE state, void* opt, const m_str str) {
@@ -576,7 +577,7 @@ static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
     }
     arg = arg->next;
   }
-  Macro e = hhas(&scan->macros, id);
+  Macro e = macro_has(&scan->macros, id);
   if(e) {
     scan->entry = e;
     if(e->text) {

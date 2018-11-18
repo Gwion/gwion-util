@@ -12,6 +12,7 @@
 #include "symbol.h"
 #include "absyn.h"
 #include "hash.h"
+#include "macro.h"
 #include "scanner.h"
 #include "parser.h"
 #include "lexer.h"

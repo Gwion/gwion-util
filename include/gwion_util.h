@@ -3,6 +3,7 @@
 #include "defs.h"
 #include "map.h"
 #include "hash.h"
+#include "macro.h"
 #include "absyn.h"
 #include "scanner.h"
 #include "err_msg.h"

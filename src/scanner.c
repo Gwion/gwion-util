@@ -3,6 +3,7 @@
 #include "map.h"
 #include "absyn.h"
 #include "hash.h"
+#include "macro.h"
 #include "scanner.h"
 #include "parser.h"
 #include "lexer.h"
@@ -15,7 +16,7 @@ ANEW Scanner* new_scanner(const uint size) {
 #ifdef LINT_MODE
   scan->lint = 0;
 #endif
-  hini(&scan->macros, size);
+  hini(&scan->macros, size, sizeof(struct Macro_));
   vector_init(&scan->filename);
 #endif
   return scan;
@@ -51,7 +52,7 @@ void scanner_post(Scanner* scan) {
     size = clear_buffer(&scan->filename, scan, size > 6);
   scan->entry = NULL;
   vector_clear(&scan->filename);
-  hdel(&scan->macros);
+  macro_del(&scan->macros);
 }
 #else
 #define scanner_post(a)
