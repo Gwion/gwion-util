@@ -33,4 +33,7 @@ before_script:
         sed -i 's#/#\\#g' Makefile;
       fi
 
-script: make
+script:
+  - if [ $(uname) = "Linux" ] || [ $(uname) = "Darwin" ];
+    then make;
+    else make.exe
