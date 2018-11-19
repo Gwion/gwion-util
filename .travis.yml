@@ -29,8 +29,8 @@ before_script:
       elif [ $(uname) = "Darwin" ];
       then brew update;
       else
+        sed -i 's#/#\\#g' Makefile;
         choco install make;
       fi
 
 script: make
-#        sed -i 's#/#\\#g' Makefile;
