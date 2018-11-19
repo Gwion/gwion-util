@@ -6,6 +6,8 @@ languages:
       include:
         - /src/.*\.c
       exclude:
+        - /include/parser\.h
+        - /include/lexer\.h
         - /src/parser\.c
         - /src/lexer\.c
     test:
