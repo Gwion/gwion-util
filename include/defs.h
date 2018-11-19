@@ -4,12 +4,7 @@
 #define MEM_STEP 16
 #define SIZEOF_MEM (0x1 << MEM_STEP)
 #define SIZEOF_REG (0x1 << 14)
-/*
-#ifdef __GNUC__
-#define __builtin_memcpy memcpy
-#define __builtin_memset memset
-#endif
-*/
+
 #define ANN __attribute__((nonnull))
 #define ANN2(...) __attribute__((nonnull(__VA_ARGS__)))
 #define ANEW __attribute__((returns_nonnull,malloc))
@@ -75,7 +70,7 @@ typedef enum {
 } ae_flag;
 
 typedef enum {
-  op_assign, op_add, op_sub, op_mul, op_div, op_mod,
+  op_add, op_sub, op_mul, op_div, op_mod,
   op_and, op_or, op_eq, op_ne, op_gt, op_ge, op_lt, op_le,
   op_shl, op_shr, op_sor, op_sand, op_sxor,
   op_inc, op_dec, op_not, op_cmp, op_new, op_spork,
