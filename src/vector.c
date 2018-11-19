@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "defs.h"
-#include "map.h"
+#include "vector.h"
 #include "mpool.h"
 
 ANN inline void vector_init(const Vector v) {

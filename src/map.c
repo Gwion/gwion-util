@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "defs.h"
+#include "vector.h"
 #include "map.h"
 #include "map_private.h"
 #include "mpool.h"

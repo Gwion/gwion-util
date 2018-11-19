@@ -1,8 +1,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "defs.h"
+#include "symbol.h"
+#include "vector.h"
 #include "map.h"
-#include "map_private.h"
+#include "scope.h"
 
 ANN vtype scope_lookup0(const Scope scope, const Symbol xid) {
   const Map map = (Map)vector_back(&scope->vector);
