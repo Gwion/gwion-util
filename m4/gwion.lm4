@@ -11,6 +11,7 @@ changequote(`[[[',`]]]')IS          (u|U|l|L)*
 #include "scanner.h"
 #include "parser.h"
 #include "err_msg.h"
+#include "pp.h"
 #define gwion_alloc(a,b) xmalloc(a)
 #define gwion_realloc(a,b,c) xrealloc(a,b)
 #define gwion_free(a,b)  xfree(a)
@@ -295,7 +296,7 @@ ANN static void yynoreturn gwion_fatal_error (const char* msg , yyscan_t yyscann
   gw_err("%s\n", msg);
   yy_flush_buffer(yyg->yy_buffer_stack[yyg->yy_buffer_stack_top], yyscanner);
   yyg->yy_start = 1 + 2 * INITIAL;
-  longjmp(scan->jmp, 1);
+  longjmp(*scan->jmp, 1);
 }
 
 char* strip_lit(char* str){
@@ -345,7 +346,7 @@ static uint get_currline(void* data) {
 static char* get_currfile(void* data) {
   Scanner* scan = yyget_extra(data);
   return ifdef([[[TINY_MODE]]], [[[scan->filename]]],
-    [[[alloc_str((m_str)vector_back(&scan->filename))]]]);
+    [[[alloc_str((m_str)vector_back(&scan->pp->filename))]]]);
 }
 
 static void adjust(void* data) {
@@ -379,14 +380,14 @@ static void err_marker(Scanner* scan) {
 
 ANN int gwion_error(Scanner* scan, const char* s) {
 ifdef([[[TINY_MODE]]], [[[const m_str filename = scan->filename;]]],
-[[[  const m_str name = (m_str)vector_back(&scan->filename);
+[[[  const m_str name = (m_str)vector_back(&scan->pp->filename);
   m_str filename = name;
-  m_uint i = vector_size(&scan->filename) - 1;
+  m_uint i = vector_size(&scan->pp->filename) - 1;
   if(*filename == '@') {
     err_msg(0, "in macro '%s'.", filename);
     while(*filename == '@') {
       i -= 5;
-      filename = (m_str)vector_at(&scan->filename, i);
+      filename = (m_str)vector_at(&scan->pp->filename, i);
     }
   }]]])
   err_msg(0, "in file '%s'.", filename);
@@ -410,15 +411,15 @@ ifdef([[[TINY_MODE]]], [[[]]],
   Scanner* scan = yyget_extra(data);
   scan->pos += 8;
   m_str id = strip_comment(data, line + 8);
-  scan->entry = macro_add(&scan->macros, id);
+  scan->pp->entry = macro_add(scan->pp->macros, id);
   xfree(id);
-  if(!scan->entry)
+  if(!scan->pp->entry)
     gwpp_error(scan, "macro already defined");
   else {
-    scan->entry->line = scan->line;
-    scan->entry->pos = scan->pos;
+    scan->pp->entry->line = scan->line;
+    scan->pp->entry->pos = scan->pos;
   }
-  return scan->entry;
+  return scan->pp->entry;
 }
 
 static m_str strip_include(Scanner* scan, const m_str line, const m_bool sign) {
@@ -444,7 +445,7 @@ static void rem_macro(void* data, const m_str str) {
   Scanner* scan = yyget_extra(data);
   scan->pos += 6;
   const m_str id = strip_comment(scan, str+6);
-  const m_bool ret = macro_rem(&scan->macros, id);
+  const m_bool ret = macro_rem(scan->pp->macros, id);
   xfree(id);
   if(ret)
     gwpp_error(scan, "undefined macro");
@@ -452,12 +453,12 @@ static void rem_macro(void* data, const m_str str) {
 
 static int has_macro(void* data, const m_str id, const m_bool def) {
   Scanner* scan = yyget_extra(data);
-  return scan->def.data[++scan->def.idx] = def ?
-    !!macro_has(&scan->macros, id) : !macro_has(&scan->macros, id);
+  return scan->pp->def.data[++scan->pp->def.idx] = def ?
+    !!macro_has(scan->pp->macros, id) : !macro_has(scan->pp->macros, id);
 }
 
 static void gwpp_stack(Scanner* scan, YY_BUFFER_STATE state, void* opt, const m_str str) {
-  const Vector v = &scan->filename;
+  const Vector v = &scan->pp->filename;
   vector_add(v, scan->pos);
   vector_add(v, scan->line);
   vector_add(v, (vtype)state);
@@ -482,7 +483,7 @@ static void handle_include(void* data, const m_str filename, YY_BUFFER_STATE han
 #ifdef LINT_MODE
 static m_str macro_data(void* data, const m_bool call) {
   Scanner* scan = yyget_extra(data);
-  const Macro e = scan->entry;
+  const Macro e = scan->pp->entry;
   size_t elen = strlen(e->name);
   size_t len = elen + 2;
   Args args = e->base;
@@ -500,7 +501,7 @@ static m_str macro_data(void* data, const m_bool call) {
   char c[len];
   size_t offset = elen;
   strcpy(c, e->name);
-  args = scan->entry->base;
+  args = scan->pp->entry->base;
   if(args) {
     c[offset++] = '(';
     do {
@@ -524,14 +525,14 @@ static m_str macro_data(void* data, const m_bool call) {
     offset += strlen(e->text);
   }
   c[offset] = '\0';
-  scan->entry = NULL;
+  scan->pp->entry = NULL;
   return !call ? strdup(c) : s_name(insert_symbol(c));
 }
 #endif
 static int macro_toggle(void* data) {
   Scanner* scan = yyget_extra(data);
-  scan->def.data[scan->def.idx] = !scan->def.data[scan->def.idx];
-  if(scan->def.data[scan->def.idx])
+  scan->pp->def.data[scan->pp->def.idx] = !scan->pp->def.data[scan->pp->def.idx];
+  if(scan->pp->def.data[scan->pp->def.idx])
     return INITIAL;
   else
     return skip;
@@ -540,27 +541,27 @@ static int macro_toggle(void* data) {
 static void macro_arg(void* data, const m_str id) {
   const Scanner* scan = yyget_extra(data);
   const Args arg = new_args(id);
-  if(scan->entry->base) {
-    Args a = scan->entry->base;
+  if(scan->pp->entry->base) {
+    Args a = scan->pp->entry->base;
     while(a->next)
       a = a->next;
     a->next = arg;
   } else
-    scan->entry->base = arg;
+    scan->pp->entry->base = arg;
 }
 
 static void macro_end(void* data) {
   Scanner* scan = yyget_extra(data);
-  --scan->def.idx;
+  --scan->pp->def.idx;
 }
 
 static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
   Scanner* scan = yyget_extra(data);
   const m_bool is_str = s[0] == '#';
   m_str id = is_str ? s+1 : s;
-  const m_str name = (m_str)vector_back(&scan->filename);
-  Args arg = name[0] == '@' ? (Args)vector_at(&scan->filename,
-    vector_size(&scan->filename) - 2) : NULL;
+  const m_str name = (m_str)vector_back(&scan->pp->filename);
+  Args arg = name[0] == '@' ? (Args)vector_at(&scan->pp->filename,
+    vector_size(&scan->pp->filename) - 2) : NULL;
   while(arg) {
     if(!strcmp(id, arg->name)) {
       if(arg->text) {
@@ -583,9 +584,9 @@ static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
     }
     arg = arg->next;
   }
-  Macro e = macro_has(&scan->macros, id);
+  Macro e = macro_has(scan->pp->macros, id);
   if(e) {
-    scan->entry = e;
+    scan->pp->entry = e;
     if(e->text) {
       if(e->base) {
         e->args = e->base;
@@ -601,7 +602,7 @@ static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
   while(isspace(c = (char)input(data)))++scan->pos;
   if(c != '(')
     gwpp_error(scan, "macro needs arguments");
-  ++scan->npar;
+  ++scan->pp->npar;
   struct yyguts_t * yyg = (struct yyguts_t*)data;
   yyg->yy_start = 1 + 2 * get_arg;
         return 2;
@@ -624,11 +625,11 @@ static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
 
 static m_str get_arg_text(void* data, const m_str id) {
   Scanner* scan = yyget_extra(data);
-if(!scan->entry)
+if(!scan->pp->entry)
   return NULL;
-  if(vector_size(&scan->filename) < 2)
+  if(vector_size(&scan->pp->filename) < 2)
     return NULL;
-  Args arg = (Args)vector_at(&scan->filename, vector_size(&scan->filename) - 2);
+  Args arg = (Args)vector_at(&scan->pp->filename, vector_size(&scan->pp->filename) - 2);
   while(arg) {
     if(!strcmp(id, arg->name))
       return arg->text ? arg->text : "";
@@ -640,12 +641,12 @@ if(!scan->entry)
 static void macro_append(void* data, const m_str text) {
   Scanner* scan = yyget_extra(data);
   const size_t tlen = strlen(text);
-  if(scan->entry->text) {
-    const size_t len = strlen(scan->entry->text) - 1;
-    scan->entry->text = (m_str)xrealloc(scan->entry->text, len + tlen + 1);
-    strcpy(scan->entry->text + len, text);
+  if(scan->pp->entry->text) {
+    const size_t len = strlen(scan->pp->entry->text) - 1;
+    scan->pp->entry->text = (m_str)xrealloc(scan->pp->entry->text, len + tlen + 1);
+    strcpy(scan->pp->entry->text + len, text);
   } else
-    scan->entry->text = strndup(text, tlen - 1);
+    scan->pp->entry->text = strndup(text, tlen - 1);
 }
 
 uint clear_buffer(Vector v, void* data, const m_bool last) {
@@ -666,10 +667,10 @@ int yywrap(void* data) {
   struct yyguts_t * yyg = (struct yyguts_t*)data;
   YY_BUFFER_STATE handle = yyg->yy_buffer_stack[yyg->yy_buffer_stack_top];
   Scanner* scan = yyget_extra(data);
-  if(vector_size(&scan->filename) > 2) {
-    const m_str name = (m_str)vector_pop(&scan->filename);
-    const void* info = (void*)vector_pop(&scan->filename);
-    const YY_BUFFER_STATE state = (YY_BUFFER_STATE)vector_pop(&scan->filename);
+  if(vector_size(&scan->pp->filename) > 2) {
+    const m_str name = (m_str)vector_pop(&scan->pp->filename);
+    const void* info = (void*)vector_pop(&scan->pp->filename);
+    const YY_BUFFER_STATE state = (YY_BUFFER_STATE)vector_pop(&scan->pp->filename);
     yy_switch_to_buffer(state, data);
     yy_delete_buffer(handle, data);
     if(name[0] != '@')
@@ -677,8 +678,8 @@ int yywrap(void* data) {
     else if(info)
       clean_args((Args)info);
     xfree(name);
-    scan->pos  = (uint)vector_pop(&scan->filename);
-    scan->line = (uint)vector_pop(&scan->filename);
+    scan->pos  = (uint)vector_pop(&scan->pp->filename);
+    scan->line = (uint)vector_pop(&scan->pp->filename);
     return 0;
   }
   return 1;
@@ -686,42 +687,42 @@ int yywrap(void* data) {
 
 void handle_comma(void* data) {
   Scanner* scan = yyget_extra(data);
-  Args a = scan->entry->args;
-  if(strcmp(a->name, "__VA_ARGS__") && !(scan->entry->args = a->next))
+  Args a = scan->pp->entry->args;
+  if(strcmp(a->name, "__VA_ARGS__") && !(scan->pp->entry->args = a->next))
     gwpp_error(scan, "too many arguments");
 }
 
 void handle_lpar(void* data) {
   Scanner* scan = yyget_extra(data);
-  ++scan->npar;
+  ++scan->pp->npar;
 }
 
 static int handle_rpar(void* data) {
   Scanner* scan = yyget_extra(data);
-  if(--scan->npar)
+  if(--scan->pp->npar)
     return 0;
-  if(scan->entry->args->next)
+  if(scan->pp->entry->args->next)
     gwpp_error(scan, "not enough arguments");
-  scan->entry->args = NULL;
+  scan->pp->entry->args = NULL;
   SCAN_NOLINT
-    yy_scan_string(scan->entry->text, data);
+    yy_scan_string(scan->pp->entry->text, data);
   return 1;
 }
 
 void handle_char(void* data, const m_str str) {
   Scanner* scan = yyget_extra(data);
-  const Args a = scan->entry->args;
+  const Args a = scan->pp->entry->args;
   if(!a->text) {
     a->text = malloc(32);
-    scan->arg_cap = 32;
-    scan->arg_len = 1;
+    scan->pp->arg_cap = 32;
+    scan->pp->arg_len = 1;
     a->text[0] = *str;
     a->text[1] = '\0';
   } else {
-    if(++scan->arg_len == scan->arg_cap)
-      a->text = realloc(a->text, (scan->arg_len << 1));
-    a->text[scan->arg_len- 1] = *str;
-    a->text[scan->arg_len] = '\0';
+    if(++scan->pp->arg_len == scan->pp->arg_cap)
+      a->text = realloc(a->text, (scan->pp->arg_len << 1));
+    a->text[scan->pp->arg_len- 1] = *str;
+    a->text[scan->pp->arg_len] = '\0';
   }
 }
 ]]])

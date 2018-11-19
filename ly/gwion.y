@@ -385,8 +385,7 @@ unary_op : MINUS { $$ = op_sub; } | TIMES { $$ = op_mul; }
   | EXCLAMATION { $$ = op_not; } | SPORK { $$ = op_spork; } | TILDA { $$ = op_cmp; }
   ;
 
-unary_exp : dur_exp | unary_op unary_exp
-      { $$ = new_exp_unary($1, $2); }
+unary_exp : dur_exp | unary_op unary_exp { $$ = new_exp_unary($1, $2); }
   | NEW type_decl2
     {
       if($2->array && !$2->array->exp) {

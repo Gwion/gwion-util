@@ -6,20 +6,8 @@ typedef struct Scanner_ {
   Ast ast;
   unsigned int line;
   unsigned int pos;
-#ifndef TINY_MODE
-  struct Vector_ filename;
-  struct Hash_ macros;
-  struct Macro_* entry;
-  struct pp_info def;
-  size_t arg_len, arg_cap;
-  int npar;
-#ifdef LINT_MODE
-  unsigned lint : 1;
-#endif
-#else
-  m_str filename;
-#endif
-  jmp_buf jmp;
+  struct PP_* pp;
+  jmp_buf* jmp;
 } Scanner;
 
 ANN Ast parse(struct Scanner_*, const m_str, FILE*);
