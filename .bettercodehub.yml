@@ -5,19 +5,7 @@ languages:
     production:
       include:
         - /src/.*\.c
-      exclude:
-        - /include/parser\.h
-        - /include/lexer\.h
-        - /src/parser\.c
-        - /src/lexer\.c
     test:
       include:
         - /tests/.*\.c
         - /tests/.*\.h
-
-  - name: go
-    production:
-      include:
-        - fake_entry
-      exclude:
-        - /m4/.*\..m4
