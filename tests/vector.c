@@ -19,6 +19,5 @@ int main() {
   EQ(vector_at(v, 0), 12, by index);
   EQ(vector_find(v, 12), 0, by value);
   gw_out("%i..%i\n", start, count);
-  if(fail)
-    exit(1);
+  return fail;
 }
