@@ -447,7 +447,7 @@ static void rem_macro(void* data, const m_str str) {
 
 static int has_macro(void* data, const m_str id, const m_bool def) {
   Scanner* scan = yyget_extra(data);
-  return scan->pp->def.data[++scan->pp->def.idx] = def ?
+  return scan->pp->def->data[++scan->pp->def->idx] = def ?
     !!macro_has(scan->pp->macros, id) : !macro_has(scan->pp->macros, id);
 }
 
@@ -525,8 +525,8 @@ static m_str macro_data(void* data, const m_bool call) {
 #endif
 static int macro_toggle(void* data) {
   Scanner* scan = yyget_extra(data);
-  scan->pp->def.data[scan->pp->def.idx] = !scan->pp->def.data[scan->pp->def.idx];
-  if(scan->pp->def.data[scan->pp->def.idx])
+  scan->pp->def->data[scan->pp->def->idx] = !scan->pp->def->data[scan->pp->def->idx];
+  if(scan->pp->def->data[scan->pp->def->idx])
     return INITIAL;
   else
     return skip;
@@ -546,7 +546,7 @@ static void macro_arg(void* data, const m_str id) {
 
 static void macro_end(void* data) {
   Scanner* scan = yyget_extra(data);
-  --scan->pp->def.idx;
+  --scan->pp->def->idx;
 }
 
 static int is_macro(void* data, const m_str s, YY_BUFFER_STATE handle) {
