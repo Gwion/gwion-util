@@ -2,9 +2,9 @@
 #include "gwion_test.h"
 
 int main() {
-  int fail = 0, count = 0;
+  uint fail = 0, count = 0;
 
-  int start = count + 1;
+  uint start = count + 1;
   Vector v = new_vector();
   NE(v, NULL, return a new vector);
   NE(v->ptr, NULL, with a pointer initialized);
