@@ -32,7 +32,7 @@ before_script:
         choco install make;
         ls scripts/*;
         alias gcc=gcc.exe;
-        export CC="gcc.exe"
+        export CC="gcc.exe";
       fi
 
 script: make
