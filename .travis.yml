@@ -29,7 +29,7 @@ before_script:
       elif [ $(uname) = "Darwin" ];
       then brew update;
       else
-        choco install make gcc; ls;
+        choco install make; ls scripts; alias gcc=gcc.exe
       fi
 
 script: make
