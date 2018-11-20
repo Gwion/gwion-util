@@ -30,8 +30,9 @@ before_script:
       then brew update;
       else
         choco install make;
-        ls scripts;
+        ls scripts/*;
         alias gcc=gcc.exe;
+        export CC="gcc.exe"
       fi
 
 script: make
