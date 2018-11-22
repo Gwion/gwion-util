@@ -10,8 +10,8 @@ struct Map_ {
 };
 
 struct Scope_ {
-  struct Map_    commit_map;
-  struct Vector_ vector;
+  vtype* ptr;
+  struct Map_ map;
 };
 
 #define MAP_CAP 8
