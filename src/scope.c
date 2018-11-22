@@ -9,7 +9,7 @@
 ANN vtype scope_lookup0(const Scope scope, const Symbol xid) {
   const Map map = (Map)vector_back(&scope->vector);
   const vtype ret = map_get(map, (vtype)xid);
-  if(!ret && vector_back(&scope->vector) == vector_front(&scope->vector))
+  if(!ret && vector_size(&scope->vector) == 1)
     return map_get(&scope->commit_map, (vtype)xid);
   return ret;
 }
@@ -31,7 +31,7 @@ ANN vtype scope_lookup2(const Scope scope, const Symbol xid) {
 }
 
 ANN void scope_add(const Scope scope, const Symbol xid, const vtype value) {
-  if(vector_front(&scope->vector) != vector_back(&scope->vector))
+  if(vector_size(&scope->vector) > 1)
     map_set((Map)vector_back(&scope->vector), (vtype)xid, (vtype)value);
   else
     map_set(&scope->commit_map, (vtype)xid, (vtype)value);
