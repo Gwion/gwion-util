@@ -22,10 +22,10 @@
 #define CHECK_BO(f) { if(f < 0) return NULL; }
 #define CHECK_OO(f) { if(!f)    return NULL; }
 
-#define SET_FLAG(a, b) (a)->flag |= (b)
-#define GET_FLAG(a, b) (((a)->flag & (b)) == (b))
-#define SAFE_FLAG(a, b) (a && ((a)->flag & (b)) == (b))
-#define UNSET_FLAG(a, b) ((a)->flag &= (uint)~b)
+#define SET_FLAG(a, b) (a)->flag |= (ae_flag_##b)
+#define GET_FLAG(a, b) (((a)->flag & ae_flag_##b) == (ae_flag_##b))
+#define SAFE_FLAG(a, b) (a && ((a)->flag & (ae_flag_##b)) == (ae_flag_##b))
+#define UNSET_FLAG(a, b) ((a)->flag &= (uint)~(ae_flag_##b))
 
 #include <stdio.h>
 #include <math.h>
