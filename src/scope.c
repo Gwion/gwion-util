@@ -5,8 +5,12 @@
 #include "map.h"
 #include "scope.h"
 
+ANN static inline Map scope_back(const Scope s) {
+  return (Map)vector_back((Vector)s);
+}
+
 ANN vtype scope_lookup0(const Scope s, const vtype xid) {
-  const Map map = (Map)vector_back((Vector)s);
+  const Map map = scope_back(s);
   const vtype ret = map_get(map, xid);
   if(!ret && VLEN(s) == 1)
     return map_get(&s->map, (vtype)xid);
@@ -23,15 +27,9 @@ ANN vtype scope_lookup1(const Scope s, const vtype xid) {
   return map_get(&s->map, (vtype)xid);
 }
 
-ANN vtype scope_lookup2(const Scope s, const vtype xid) {
-  const Map map = (Map)VPTR(s, 0);
-  const vtype ret = map_get(map, xid);
-  return ret ? ret : map_get(&s->map, xid);
-}
-
 ANN void scope_add(const Scope s, const vtype xid, const vtype value) {
   if(VLEN(s) > 1)
-    map_set((Map)vector_back((Vector)s), xid, value);
+    map_set(scope_back(s), xid, value);
   else
     map_set(&s->map, xid, value);
 }
