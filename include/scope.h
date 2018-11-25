@@ -1,6 +1,12 @@
 #ifndef __SCOPE
 #define __SCOPE
 typedef struct Scope_     * Scope;
+struct scope_iter {
+  const Scope s;
+  m_uint vec;
+  m_uint idx;
+};
+
 extern ANN       void   scope_init(Scope);
 extern ANEW ANN Vector scope_get(const Scope);
 extern ANN vtype  scope_lookup0(const Scope, const vtype);
@@ -16,4 +22,5 @@ ANN static inline void scope_push(const Scope s) {
 ANN static inline void scope_pop(const Scope s) {
   free_map((Map)vector_pop((Vector)s));
 }
+ANN m_bool scope_iter(struct scope_iter* iter, void* ret);
 #endif

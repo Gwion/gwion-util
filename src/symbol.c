@@ -70,12 +70,13 @@ static const char* wagner_fisher(const char *s, const char* t) {
   const size_t m = strlen(s);
   const size_t n = strlen(t);
   unsigned int d[m][n];
-  for(uint i = 0; i < m; ++i)
+  uint i, j;
+  for(i = 0; i < m; ++i)
     d[i][0] = i;
-  for(uint i = 0; i < n; ++i)
+  for(i = 0; i < n; ++i)
     d[0][i] = i;
-  for(uint j = 1; j < n; ++j) {
-    for(uint i = 1; i < m; ++i) {
+  for(j = 1; j < n; ++j) {
+    for(i = 1; i < m; ++i) {
       if(s[i] == t[j])
         d[i][j] = d[i-1][j-1];
       else
@@ -84,7 +85,7 @@ static const char* wagner_fisher(const char *s, const char* t) {
         return NULL;
     }
   }
-    return d[m-1][n-1] < MAX_DISTANCE? t : NULL;
+  return (i && j && d[m-1][n-1] < MAX_DISTANCE) ? t : NULL;
 }
 
 ANN static const char* ressembles(const char* name) {

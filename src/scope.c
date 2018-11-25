@@ -51,25 +51,23 @@ ANN void scope_release(Scope a) {
   vector_release((Vector)&a->map);
 }
 
-ANN Vector scope_get(const Scope s) {
-  m_uint size = OFFSET + VLEN(&s->map);
-  m_uint iter = 0;
-  for(m_uint j = 0; j < VLEN(s); j++) {
-    const Map map = (Map)VPTR(s, j);
-    size += VLEN(map);
+ANN m_bool scope_iter(struct scope_iter* iter, void* ret) {
+  m_uint size = map_size(&iter->s->map);
+  const m_uint vsize = vector_size((Vector)iter->s);
+  const m_uint vec = vsize - iter->vec;
+  Map map = &iter->s->map;
+  if(!vec) {
+    if(iter->idx == size)
+      return -1;
+  } else {
+    map = (Map)vector_at((Vector)iter->s, vec -1);
+    size = map_size(map);
+    if(iter->idx == size) {
+      ++iter->vec;
+      iter->idx = 0;
+      return scope_iter(iter, ret);
+    }
   }
-  const Vector ret = new_vector();
-  if(size > MAP_CAP)
-    ret->ptr = (vtype*)xrealloc(ret->ptr, size * SZ_INT);
-
-  for(m_uint j = 0; j < VLEN(s); j++) {
-    const Map map = (Map)VPTR(s, j);
-    for(m_uint i = 0; i < VLEN(map); i++)
-      VPTR(ret, iter++) =  VVAL(map, i);
-  }
-  for(m_uint i = 0; i < VLEN(&s->map); i++)
-      VPTR(ret, iter++) =  VVAL(&s->map, i);
-  VCAP(ret) = size;
-  VLEN(ret) = iter;
-  return ret;
+  *(vtype*)ret = map_at(map, size - ++iter->idx);
+  return 1;
 }
