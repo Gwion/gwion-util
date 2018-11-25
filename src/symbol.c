@@ -69,6 +69,7 @@ m_str s_name(const Symbol s) { return s->name; }
 static const char* wagner_fisher(const char *s, const char* t) {
   const size_t m = strlen(s);
   const size_t n = strlen(t);
+  unsigned int d[m][n];
   for(uint i = 0; i < m; ++i)
     d[i][0] = i;
   for(uint i = 0; i < n; ++i)
