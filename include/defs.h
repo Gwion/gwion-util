@@ -29,6 +29,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <assert.h>
 #include "generated.h"
 
 ANEW const void* xmalloc(const m_uint);
