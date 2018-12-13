@@ -9,7 +9,7 @@ m_bool gw_##name(const char* fmt, ...) { \
   va_start(arg, fmt);                    \
   vfprintf(std##name, fmt, arg);         \
   va_end(arg);                           \
-  return -1;                             \
+  return GW_ERROR;                             \
 }
 describe_gw_xxx(err)
 describe_gw_xxx(out)
@@ -24,6 +24,6 @@ m_bool err_msg(uint pos, const char* fmt, ...) {
   vfprintf(stderr, fmt, arg);
   va_end(arg);
   fprintf(stderr, "\n");
-  return -1;
+  return GW_ERROR;
 }
 

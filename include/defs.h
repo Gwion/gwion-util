@@ -1,6 +1,8 @@
 #ifndef __DEF
 #define __DEF
 
+#define GW_ERROR -1
+#define GW_OK     1
 #define MEM_STEP 16
 #define SIZEOF_MEM (0x1 << MEM_STEP)
 #define SIZEOF_REG (0x1 << 14)

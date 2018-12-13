@@ -19,7 +19,7 @@ ANN int name2op(const m_str name) {
       return i;
     ++i;
   }
-  return -1;
+  return GW_ERROR;
 }
 
 ANN m_str op2str(const Operator op) {

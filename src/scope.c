@@ -58,7 +58,7 @@ ANN m_bool scope_iter(struct scope_iter* iter, void* ret) {
   Map map = &iter->s->map;
   if(!vec) {
     if(iter->idx == size)
-      return -1;
+      return GW_ERROR;
   } else {
     map = (Map)vector_at((Vector)iter->s, vec -1);
     size = map_size(map);
@@ -69,5 +69,5 @@ ANN m_bool scope_iter(struct scope_iter* iter, void* ret) {
     }
   }
   *(vtype*)ret = map_at(map, size - ++iter->idx);
-  return 1;
+  return GW_OK;
 }
