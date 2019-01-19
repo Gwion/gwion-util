@@ -3,7 +3,7 @@
 
 #define OP(op, a,b,c)                                    \
 if((a) op (b))                                           \
-  gw_out("\033[1;32mOK     \033[0m% 4i %s %s(%s:%i)\n",  \
+  gw_out("\033[1;32mOK     \033[0m% 4i %s %s (%s:%i)\n", \
     ++count, #c, #a, __FILE__, __LINE__);                \
 else                                                     \
   gw_out("\033[1;31mNOT OK \033[0m% 4i %s %s (%s:%i)\n", \

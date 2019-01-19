@@ -4,7 +4,7 @@
 int main() {
   uint fail = 0, count = 0;
 
-  uint start = count + 1;
+  const uint start = count + 1;
   Vector v = new_vector();
   NE(v, NULL, return a new vector);
   NE(v->ptr, NULL, with a pointer initialized);
@@ -18,6 +18,7 @@ int main() {
   NO(vector_add(v, 12), add '12');
   EQ(vector_at(v, 0), 12, by index);
   EQ(vector_find(v, 12), 0, by value);
+  NO(free_vector(v), free vector);
   gw_out("%i..%i\n", start, count);
   return fail;
 }
