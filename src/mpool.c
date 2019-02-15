@@ -4,7 +4,8 @@
 #include "mpool.h"
 #include "mpool_private.h"
 
-#define POOL_NUMBER  ((SIZEOF_REG + SIZEOF_MEM) / SZ_INT)
+// init from main ?
+#define POOL_NUMBER  ((SZ_INT*8 + SIZEOF_REG + SIZEOF_MEM) / SZ_INT)
 #define POOL_SIZE(a) (((a) + SZ_INT -1) & 0xfffffffc)
 #define POOL_IDX(a) (((a)/SZ_INT) -1)
 
@@ -80,9 +81,9 @@ void *_mp_alloc2(struct pool *p) {
 
 void _mp_free2(struct pool *p, void *ptr) {
   struct Recycle* next = p->next;
-//#ifdef POOL_CHECK
+#ifdef POOL_CHECK
   memset(ptr, 0, p->obj_sz);
-//#endif
+#endif
   p->next = ptr;
   p->next->next = next;
 }
