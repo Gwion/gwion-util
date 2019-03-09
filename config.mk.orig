@@ -3,7 +3,7 @@ YACC ?=yacc
 LEX ?=flex
 PREFIX ?=/usr/local
 
-CFLAGS += -std=c99 -Iinclude -O3 -fstrict-aliasing
+CFLAGS += -std=c99 -Iinclude -O2 -fstrict-aliasing
 
 CFLAGS += -Wall -Wextra
 CFLAGS += -mtune=native
@@ -26,6 +26,8 @@ endif
 
 ifeq (${USE_MEMCHECK}, 1)
 CFLAGS += -g -Og
+else
+CFLAGS += -DNDEBUG
 endif
 
 ifeq (${USE_LTO}, 1)
@@ -33,6 +35,3 @@ CFLAGS += -flto
 LDFLAGS += -flto
 endif
 
-#ifeq (${USE_COLOR}, 1)
-#CFLAGS+= -DCOLOR
-#endif
