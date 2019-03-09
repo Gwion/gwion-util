@@ -1,7 +1,5 @@
 util_dir := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 CC ?=gcc
-YACC ?=yacc
-LEX ?=flex
 PREFIX ?=/usr/local
 
 CFLAGS += -std=c99 -Iinclude -O2
