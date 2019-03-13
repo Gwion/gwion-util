@@ -33,6 +33,7 @@ before_script:
         ls scripts/*;
         alias gcc=gcc.exe;
         export CC="gcc.exe";
+        alias make=make.exe;
       fi
 
 script: make
