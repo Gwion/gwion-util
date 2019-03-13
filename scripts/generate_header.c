@@ -1,9 +1,15 @@
 /* use this to generate include/generated.h */
+
+#ifdef BUILD_ON_WINDOWS
+#include "windows_missing.h"
+#define SIZET_FMT "%Iu"
+#else
+#define SIZET_FMT "%zu"
+#endif
+
 #include <stdio.h>
 #include <string.h>
 #include <inttypes.h>
-
-static const char* filename = "include/generated.h";
 
 #ifdef USE_DOUBLE
 static const char* type	 = "double";
@@ -31,8 +37,11 @@ static void compound_type(void) {
 }
 
 static void size(void) {
-  printf("#define SZ_INT     %u\n#define SZ_FLOAT   %u\n"
-    "#define SZ_COMPLEX %u\n#define SZ_VEC3    %u\n#define SZ_VEC4    %u\n",
+  printf("#define SZ_INT     " SIZET_FMT "\n"
+         "#define SZ_FLOAT   " SIZET_FMT "\n"
+         "#define SZ_COMPLEX " SIZET_FMT "\n"
+         "#define SZ_VEC3    " SIZET_FMT "\n"
+         "#define SZ_VEC4    " SIZET_FMT "\n",
     sizeof(uintptr_t), SZ, SZ * 2, SZ * 3, SZ * 4);
 }
 
@@ -63,7 +72,7 @@ static void minval(void) {
     puts("#define SZ_MINVAL SZ_FLOAT");
 }
 
-int main(int argc, char** argv) {
+int main(void) {
   include();
   base_type();
   compound_type();
