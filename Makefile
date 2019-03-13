@@ -16,11 +16,11 @@ all: libgwion_util.a
 
 libgwion_util.a: include/generated.h ${obj}
 	@$(info linking $@)
-	@ar rcs $@ $^
+	@${AR} rcs $@ $^
 
 include/generated.h: scripts/generate_header.c
 	$(info generating generated.h)
-	@cc ${DFLAGS} scripts/generate_header.c -o generate_header
+	@${CC} ${DFLAGS} scripts/generate_header.c -o generate_header
 	@./generate_header > include/generated.h
 	@rm generate_header
 
