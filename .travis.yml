@@ -32,6 +32,7 @@ before_script:
         choco install make;
         ls scripts/*;
         alias gcc=gcc.exe;
+        export CFLAGS=-Duint="unsigned int"
         export CC="gcc.exe";
         alias make=make.exe;
       fi
