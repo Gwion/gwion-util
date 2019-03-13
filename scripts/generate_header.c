@@ -31,8 +31,8 @@ static void compound_type(void) {
 }
 
 static void size(void) {
-  printf("#define SZ_INT     %zu\n#define SZ_FLOAT   %zu\n"
-    "#define SZ_COMPLEX %zu\n#define SZ_VEC3    %zu\n#define SZ_VEC4    %zu\n",
+  printf("#define SZ_INT     %u\n#define SZ_FLOAT   %u\n"
+    "#define SZ_COMPLEX %u\n#define SZ_VEC3    %u\n#define SZ_VEC4    %u\n",
     sizeof(uintptr_t), SZ, SZ * 2, SZ * 3, SZ * 4);
 }
 
