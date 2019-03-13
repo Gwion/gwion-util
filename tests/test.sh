@@ -1,18 +1,18 @@
 #!/bin/sh
 
-function clean () {
+clean () {
   rm -f a.out test.log
 }
 
-function compile () {
+compile () {
   cc -I../include "$1" ../libgwion_util.a
 }
 
-function run () {
+run () {
   valgrind --leak-check=yes --log-file=test.log ./a.out
 }
 
-function test_error () {
+test_error () {
   printf "leak in test file '%s'" "$file"
 }
 
