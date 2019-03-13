@@ -39,6 +39,6 @@ before_script:
 script: 
   - if [ [ $(uname) = "Linux" ] && [ $(uname) = "Darwin" ] ]
     then make;
-    else make.exe
+    else make.exe;
     fi
 
