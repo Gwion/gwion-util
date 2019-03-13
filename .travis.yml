@@ -36,6 +36,9 @@ before_script:
         alias make=make.exe;
       fi
 
-script: make
-#        sed -i 's#/#\\#g' Makefile;
+script: 
+  - if [ [ $(uname) = "Linux" ] && [ $(uname) = "Darwin" ] ]
+    then make;
+    else make.exe
+    fi
 
