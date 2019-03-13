@@ -22,20 +22,19 @@ addons:
     - gcc-8
 
 before_script:
-  - if [ $(uname) = "Linux" ];
-      then if [ "$CC" = "gcc" ];
-           then export CC=gcc-8;
-           fi;
-      elif [ $(uname) = "Darwin" ];
-      then brew update;
-      else
-        export CFLAGS+=-DBUILD_ON_WINDOWS
-        choco install make;
-        alias gcc=gcc.exe;
-#        export CFLAGS+=-Duint='"unsigned int"'
-        export CC="gcc.exe";
-        alias make=make.exe;
-      fi
+  if [ $(uname) = "Linux" ];
+  then if [ "$CC" = "gcc" ];
+     then export CC=gcc-8;
+     fi;
+  elif [ $(uname) = "Darwin" ];
+  then brew update;
+  else
+    export CFLAGS+=-DBUILD_ON_WINDOWS
+    choco install make;
+    alias gcc=gcc.exe;
+    export CC="gcc.exe";
+    alias make=make.exe;
+    fi
 
 script: 
   - if [ $(uname) = "Linux" ] || [ $(uname) = "Darwin" ];
