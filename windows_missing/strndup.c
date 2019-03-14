@@ -16,3 +16,17 @@ char *strndup(const char *s, size_t n) {
   }
   return c;
 }
+
+char* strsep(char** stringp, const char* delim) {
+  char* start = *stringp;
+  char* p;
+
+  if(!(p = (!start) ? strpbrk(start, delim) : NULL))
+    *stringp = NULL;
+  else {
+    *p = '\0';
+    *stringp = p + 1;
+  }
+
+  return start;
+}
