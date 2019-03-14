@@ -1,6 +1,5 @@
 #ifndef __WINDOWS_MISSING
 #include <stddef.h>
-#include "win_dirent.h"
 typedef unsigned int uint;
 char* strdup(const char *s);
 //char* strndup(const char *s, size_t n);
