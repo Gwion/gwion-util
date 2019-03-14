@@ -97,7 +97,7 @@ scandir(dirname, namelist, select, dcomp)
 		p = (struct dirent *)malloc(DIRSIZ(d));
 		if (p == NULL)
 			goto fail;
-		p->d_fileno = d->d_fileno;
+		p->d_ino = d->d_ino;
 //		p->d_type = d->d_type;
 //		p->d_reclen = d->d_reclen;
 //		p->d_namlen = d->d_namlen;
