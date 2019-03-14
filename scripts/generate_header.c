@@ -1,15 +1,15 @@
 /* use this to generate include/generated.h */
 
+#include <stdio.h>
+#include <string.h>
+#include <inttypes.h>
+
 #ifdef BUILD_ON_WINDOWS
 #include "windows_missing.h"
 #define SIZET_FMT "%Iu"
 #else
 #define SIZET_FMT "%zu"
 #endif
-
-#include <stdio.h>
-#include <string.h>
-#include <inttypes.h>
 
 #ifdef USE_DOUBLE
 static const char* type	 = "double";
