@@ -35,6 +35,6 @@ include/generated.h: scripts/generate_header.c
 
 clean:
 	$(info cleaning)
-	@rm -f src/*.o *.a
+	@rm -f src/*.o windows_missing/*.o *.a
 
 include $(wildcard .d/*.d)
