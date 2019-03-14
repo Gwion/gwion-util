@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <io.h>
 #include <fcntl.h>
 #include <windows.h>
