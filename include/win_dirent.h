@@ -8,7 +8,7 @@
  */
 #ifndef DIRENT_H
 #define DIRENT_H
-
+#include <dirent.h>
 /* Hide warnings about unreferenced local functions */
 #if defined(__clang__)
 #   pragma clang diagnostic ignored "-Wunused-function"
