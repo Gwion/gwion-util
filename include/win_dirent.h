@@ -218,92 +218,12 @@ extern "C" {
 #endif
 
 
-/* Wide-character version */
-struct _wdirent {
-    /* Always zero */
-    long d_ino;
-
-    /* File position within stream */
-    long d_off;
-
-    /* Structure size */
-    unsigned short d_reclen;
-
-    /* Length of name without \0 */
-    size_t d_namlen;
-
-    /* File type */
-    int d_type;
-
-    /* File name */
-    wchar_t d_name[PATH_MAX+1];
-};
-typedef struct _wdirent _wdirent;
-
-struct _WDIR {
-    /* Current directory entry */
-    struct _wdirent ent;
-
-    /* Private file data */
-    WIN32_FIND_DATAW data;
-
-    /* True if data is valid */
-    int cached;
-
-    /* Win32 search handle */
-    HANDLE handle;
-
-    /* Initial directory name */
-    wchar_t *patt;
-};
-typedef struct _WDIR _WDIR;
-
-/* Multi-byte character version */
-struct dirent {
-    /* Always zero */
-    long d_ino;
-
-    /* File position within stream */
-    long d_off;
-
-    /* Structure size */
-    unsigned short d_reclen;
-
-    /* Length of name without \0 */
-    size_t d_namlen;
-
-    /* File type */
-    int d_type;
-
-    /* File name */
-    char d_name[PATH_MAX+1];
-};
-typedef struct dirent dirent;
-
-struct DIR {
-    struct dirent ent;
-    struct _WDIR *wdirp;
-};
-typedef struct DIR DIR;
-
-
 /* Dirent functions */
-static DIR *opendir (const char *dirname);
-static _WDIR *_wopendir (const wchar_t *dirname);
-
-static struct dirent *readdir (DIR *dirp);
-static struct _wdirent *_wreaddir (_WDIR *dirp);
 
 static int readdir_r(
     DIR *dirp, struct dirent *entry, struct dirent **result);
 static int _wreaddir_r(
     _WDIR *dirp, struct _wdirent *entry, struct _wdirent **result);
-
-static int closedir (DIR *dirp);
-static int _wclosedir (_WDIR *dirp);
-
-static void rewinddir (DIR* dirp);
-static void _wrewinddir (_WDIR* dirp);
 
 static int scandir (const char *dirname, struct dirent ***namelist,
     int (*filter)(const struct dirent*),
@@ -317,11 +237,6 @@ static int versionsort (const struct dirent **a, const struct dirent **b);
 /* For compatibility with Symbian */
 #define wdirent _wdirent
 #define WDIR _WDIR
-#define wopendir _wopendir
-#define wreaddir _wreaddir
-#define wclosedir _wclosedir
-#define wrewinddir _wrewinddir
-
 
 /* Internal utility functions */
 static WIN32_FIND_DATAW *dirent_first (_WDIR *dirp);
@@ -343,106 +258,6 @@ static int dirent_wcstombs_s(
 
 static void dirent_set_errno (int error);
 
-
-/*
- * Open directory stream DIRNAME for read and return a pointer to the
- * internal working area that is used to retrieve individual directory
- * entries.
- */
-static _WDIR*
-_wopendir(
-    const wchar_t *dirname)
-{
-    _WDIR *dirp;
-    DWORD n;
-    wchar_t *p;
-
-    /* Must have directory name */
-    if (dirname == NULL  ||  dirname[0] == '\0') {
-        dirent_set_errno (ENOENT);
-        return NULL;
-    }
-
-    /* Allocate new _WDIR structure */
-    dirp = (_WDIR*) malloc (sizeof (struct _WDIR));
-    if (!dirp) {
-        return NULL;
-    }
-
-    /* Reset _WDIR structure */
-    dirp->handle = INVALID_HANDLE_VALUE;
-    dirp->patt = NULL;
-    dirp->cached = 0;
-
-    /*
-     * Compute the length of full path plus zero terminator
-     *
-     * Note that on WinRT there's no way to convert relative paths
-     * into absolute paths, so just assume it is an absolute path.
-     */
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
-    /* Desktop */
-    n = GetFullPathNameW (dirname, 0, NULL, NULL);
-#else
-    /* WinRT */
-    n = wcslen (dirname);
-#endif
-
-    /* Allocate room for absolute directory name and search pattern */
-    dirp->patt = (wchar_t*) malloc (sizeof (wchar_t) * n + 16);
-    if (dirp->patt == NULL) {
-        goto exit_closedir;
-    }
-
-    /*
-     * Convert relative directory name to an absolute one.  This
-     * allows rewinddir() to function correctly even when current
-     * working directory is changed between opendir() and rewinddir().
-     *
-     * Note that on WinRT there's no way to convert relative paths
-     * into absolute paths, so just assume it is an absolute path.
-     */
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
-    /* Desktop */
-    n = GetFullPathNameW (dirname, n, dirp->patt, NULL);
-    if (n <= 0) {
-        goto exit_closedir;
-    }
-#else
-    /* WinRT */
-    wcsncpy_s (dirp->patt, n+1, dirname, n);
-#endif
-
-    /* Append search pattern \* to the directory name */
-    p = dirp->patt + n;
-    switch (p[-1]) {
-    case '\\':
-    case '/':
-    case ':':
-        /* Directory ends in path separator, e.g. c:\temp\ */
-        /*NOP*/;
-        break;
-
-    default:
-        /* Directory name doesn't end in path separator */
-        *p++ = '\\';
-    }
-    *p++ = '*';
-    *p = '\0';
-
-    /* Open directory stream and retrieve the first entry */
-    if (!dirent_first (dirp)) {
-        goto exit_closedir;
-    }
-
-    /* Success */
-    return dirp;
-
-    /* Failure */
-exit_closedir:
-    _wclosedir (dirp);
-    return NULL;
-}
 
 /*
  * Read next directory entry.
@@ -527,59 +342,6 @@ _wreaddir_r(
     }
 
     return /*OK*/0;
-}
-
-/*
- * Close directory stream opened by opendir() function.  This invalidates the
- * DIR structure as well as any directory entry read previously by
- * _wreaddir().
- */
-static int
-_wclosedir(
-    _WDIR *dirp)
-{
-    int ok;
-    if (dirp) {
-
-        /* Release search handle */
-        if (dirp->handle != INVALID_HANDLE_VALUE) {
-            FindClose (dirp->handle);
-        }
-
-        /* Release search pattern */
-        free (dirp->patt);
-
-        /* Release directory structure */
-        free (dirp);
-        ok = /*success*/0;
-
-    } else {
-
-        /* Invalid directory stream */
-        dirent_set_errno (EBADF);
-        ok = /*failure*/-1;
-
-    }
-    return ok;
-}
-
-/*
- * Rewind directory stream such that _wreaddir() returns the very first
- * file name again.
- */
-static void
-_wrewinddir(
-    _WDIR* dirp)
-{
-    if (dirp) {
-        /* Release existing search handle */
-        if (dirp->handle != INVALID_HANDLE_VALUE) {
-            FindClose (dirp->handle);
-        }
-
-        /* Open new search handle */
-        dirent_first (dirp);
-    }
 }
 
 /* Get first directory entry (internal) */
@@ -668,81 +430,6 @@ dirent_next(
     }
 
     return p;
-}
-
-/*
- * Open directory stream using plain old C-string.
- */
-static DIR*
-opendir(
-    const char *dirname)
-{
-    struct DIR *dirp;
-
-    /* Must have directory name */
-    if (dirname == NULL  ||  dirname[0] == '\0') {
-        dirent_set_errno (ENOENT);
-        return NULL;
-    }
-
-    /* Allocate memory for DIR structure */
-    dirp = (DIR*) malloc (sizeof (struct DIR));
-    if (!dirp) {
-        return NULL;
-    }
-    {
-        int error;
-        wchar_t wname[PATH_MAX + 1];
-        size_t n;
-
-        /* Convert directory name to wide-character string */
-        error = dirent_mbstowcs_s(
-            &n, wname, PATH_MAX + 1, dirname, PATH_MAX + 1);
-        if (error) {
-            /*
-             * Cannot convert file name to wide-character string.  This
-             * occurs if the string contains invalid multi-byte sequences or
-             * the output buffer is too small to contain the resulting
-             * string.
-             */
-            goto exit_free;
-        }
-
-
-        /* Open directory stream using wide-character name */
-        dirp->wdirp = _wopendir (wname);
-        if (!dirp->wdirp) {
-            goto exit_free;
-        }
-
-    }
-
-    /* Success */
-    return dirp;
-
-    /* Failure */
-exit_free:
-    free (dirp);
-    return NULL;
-}
-
-/*
- * Read next directory entry.
- */
-static struct dirent*
-readdir(
-    DIR *dirp)
-{
-    struct dirent *entry;
-
-    /*
-     * Read directory entry to buffer.  We can safely ignore the return value
-     * as entry will be set to NULL in case of error.
-     */
-    (void) readdir_r (dirp, &dirp->ent, &entry);
-
-    /* Return pointer to statically allocated directory entry */
-    return entry;
 }
 
 /*
@@ -835,44 +522,6 @@ readdir_r(
     }
 
     return /*OK*/0;
-}
-
-/*
- * Close directory stream.
- */
-static int
-closedir(
-    DIR *dirp)
-{
-    int ok;
-    if (dirp) {
-
-        /* Close wide-character directory stream */
-        ok = _wclosedir (dirp->wdirp);
-        dirp->wdirp = NULL;
-
-        /* Release multi-byte character version */
-        free (dirp);
-
-    } else {
-
-        /* Invalid directory stream */
-        dirent_set_errno (EBADF);
-        ok = /*failure*/-1;
-
-    }
-    return ok;
-}
-
-/*
- * Rewind directory stream to beginning.
- */
-static void
-rewinddir(
-    DIR* dirp)
-{
-    /* Rewind wide-character string directory stream */
-    _wrewinddir (dirp->wdirp);
 }
 
 /*
