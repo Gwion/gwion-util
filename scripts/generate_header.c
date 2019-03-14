@@ -21,6 +21,9 @@ static const char* type	 = "float ";
 
 static void include(void) {
   puts("#include <stdlib.h>\n#include <inttypes.h>");
+#ifdef BUILD_ON_WINDOWS
+  puts("#include \"windows_missing.h\"");
+#endif
 }
 
 static void base_type(void) {
