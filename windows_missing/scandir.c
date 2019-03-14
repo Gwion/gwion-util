@@ -44,13 +44,11 @@ __FBSDID("$FreeBSD: src/lib/libc/gen/scandir.c,v 1.7 2002/02/01 01:32:19 obrien 
  * struct dirent (through namelist). Returns -1 if there were any errors.
  */
 
-#include "namespace.h"
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <dirent.h>
 #include <stdlib.h>
 #include <string.h>
-#include "un-namespace.h"
 
 /*
  * The DIRSIZ macro is the minimum record length which will hold the directory
