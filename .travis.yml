@@ -39,6 +39,6 @@ before_script:
 script: 
   - if [ $(uname) = "Linux" ] || [ $(uname) = "Darwin" ];
     then make;
-    else CFLAGS+=-DBUILD_ON_WINDOWS make.exe;
+    else BUILD_ON_WINDOWS=1 make.exe;
     fi
 
