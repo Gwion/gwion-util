@@ -30,13 +30,6 @@
  * SUCH DAMAGE.
  */
 
-#if defined(LIBC_SCCS) && !defined(lint)
-static char sccsid[] = "@(#)scandir.c	8.3 (Berkeley) 1/2/94";
-#endif /* LIBC_SCCS and not lint */
-#include <sys/cdefs.h>
-__FBSDID("$FreeBSD: src/lib/libc/gen/scandir.c,v 1.7 2002/02/01 01:32:19 obrien Exp 
-$");
-
 /*
  * Scan the directory dirname calling select to make a list of selected
  * directory entries then sort using qsort and compare routine dcomp.
@@ -44,13 +37,11 @@ $");
  * struct dirent (through namelist). Returns -1 if there were any errors.
  */
 
-#include "namespace.h"
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <dirent.h>
 #include <stdlib.h>
 #include <string.h>
-#include "un-namespace.h"
 
 /*
  * The DIRSIZ macro is the minimum record length which will hold the directory
