@@ -76,7 +76,7 @@ scandir(dirname, namelist, select, dcomp)
 
 	if ((dirp = opendir(dirname)) == NULL)
 		return(-1);
-	if (_fstat(dirp->dd_fd, &stb) < 0)
+	if (_fstat(dirp->d_fd, &stb) < 0)
 		goto fail;
 
 	/*
