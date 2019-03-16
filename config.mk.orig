@@ -5,7 +5,7 @@ PREFIX ?=/usr/local
 CFLAGS += -std=c99 -Iinclude -O2
 # -fstrict-aliasing -mfpmath=sse
 CFLAGS += -Wall -Wextra
-CFLAGS += -mtune=native
+#CFLAGS += -mtune=native
 
 USE_DOUBLE    = 0
 USE_COVERAGE ?= 0
