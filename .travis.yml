@@ -13,7 +13,7 @@ before_script:
   - export CICFLAGS="-Wno-attributes -Wno-unknown-pragmas";
   - if [ $(uname) = "Darwin" ];
     then brew update;
-    elif [ $(uname) != "Linux" ];
+    elif [ $(uname) != "Linux" ]; then
       export CFLAGS=-DBUILD_ON_WINDOWS;
       choco install make;
       alias gcc=gcc.exe;
