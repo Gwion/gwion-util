@@ -29,7 +29,7 @@ before_script:
      then export CC=gcc-8;
      fi;
   elif [ $(uname) = "Darwin" ];
-  then brew update;
+  then brew update; which libtool;
   else
     export CFLAGS=-DBUILD_ON_WINDOWS;
     choco install make;
