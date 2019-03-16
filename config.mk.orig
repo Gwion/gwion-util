@@ -35,8 +35,8 @@ LDFLAGS += -flto
 endif
 
 ifeq ($(shell uname), Darwin)
-AR = "/usr/local/bin/libtool"
-AR_OPT = "-static -o"
+AR = "libtool"
+AR_OPT = " -o"
 else
 AR = "ar"
 AR_OPT = "rcs"
