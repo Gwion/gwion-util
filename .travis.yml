@@ -9,22 +9,15 @@ compiler:
   - gcc
   - clang
 
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - unzip
-    - gcc-8
-
 #  then brew update; brew install libtool;
 before_script:
+  - export CICFLAGS="-Wno-attributes -Wno-unknown-pragmas"
   if [ $(uname) = "Linux" ];
   then if [ "$CC" = "gcc" ];
      then export CC=gcc-8;
      fi;
   elif [ $(uname) = "Darwin" ];
-  then brew update; brew info libtool; which libtool;
+  then brew update;
   else
     export CFLAGS=-DBUILD_ON_WINDOWS;
     choco install make;
@@ -32,10 +25,6 @@ before_script:
     export CC="gcc.exe";
     alias make=make.exe;
     fi
-#    curl -L  http://downloads.sourceforge.net/project/gnuwin32/libgw32c/0.4/libgw32c-0.4-lib.zip > libgw32c.zip;
-#    unzip libgw32c.zip -d libgw32c;
-#    export "CFLAGS=$CFLAGS -Ilibgw32c/include";
-#    export "LDFLAGS=$LDFLAGS -Llibgw32c/lib -llibgw32c.a";
 
 script: 
   - if [ $(uname) = "Linux" ] || [ $(uname) = "Darwin" ];
