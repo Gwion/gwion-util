@@ -36,7 +36,7 @@ endif
 
 ifeq ($(shell uname), Darwin)
 AR = "libtool"
-AR_OPT = " -o"
+AR_OPT = "-dynamic -o"
 else
 AR = "ar"
 AR_OPT = "rcs"
