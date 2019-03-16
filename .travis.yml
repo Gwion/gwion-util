@@ -9,21 +9,15 @@ compiler:
   - gcc
   - clang
 
-#  then brew update; brew install libtool;
 before_script:
-  - export CICFLAGS="-Wno-attributes -Wno-unknown-pragmas"
-  if [ $(uname) = "Linux" ];
-  then if [ "$CC" = "gcc" ];
-     then export CC=gcc-8;
-     fi;
-  elif [ $(uname) = "Darwin" ];
-  then brew update;
-  else
-    export CFLAGS=-DBUILD_ON_WINDOWS;
-    choco install make;
-    alias gcc=gcc.exe;
-    export CC="gcc.exe";
-    alias make=make.exe;
+  - export CICFLAGS="-Wno-attributes -Wno-unknown-pragmas";
+  - if [ $(uname) = "Darwin" ];
+    then brew update;
+    elif [ $(uname) != "Linux" ];
+      export CFLAGS=-DBUILD_ON_WINDOWS;
+      choco install make;
+      alias gcc=gcc.exe;
+      export CC="gcc.exe";
     fi
 
 script: 
