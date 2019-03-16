@@ -34,3 +34,8 @@ CFLAGS += -flto
 LDFLAGS += -flto
 endif
 
+ifeq ($(shell uname), Darwin)
+AR = "libtool -static"
+else
+AR = "ar rcs"
+endif
