@@ -16,11 +16,11 @@ obj := $(src:.c=.o)
 
 CFLAGS += -Iinclude -D_GNU_SOURCE
 
-all: libgwion_util.a
+all: include/generated.h libgwion_util.a
 
-libgwion_util.a: include/generated.h ${obj}
+libgwion_util.a: ${obj}
 	@$(info linking $@)
-	${AR} ${AR_OPT} $@ $^
+	${AR} ${AR_OPT}
 
 include/generated.h: scripts/generate_header.c
 	$(info generating generated.h)
