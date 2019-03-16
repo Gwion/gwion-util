@@ -22,13 +22,14 @@ addons:
     - unzip
     - gcc-8
 
+#  then brew update; brew install libtool;
 before_script:
   if [ $(uname) = "Linux" ];
   then if [ "$CC" = "gcc" ];
      then export CC=gcc-8;
      fi;
   elif [ $(uname) = "Darwin" ];
-  then brew update; brew install libtool;
+  then brew update;
   else
     export CFLAGS=-DBUILD_ON_WINDOWS;
     choco install make;
