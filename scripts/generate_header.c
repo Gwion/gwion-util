@@ -23,6 +23,13 @@ static void include(void) {
   puts("#include <stdlib.h>\n#include <inttypes.h>");
 #ifdef BUILD_ON_WINDOWS
   puts("#include \"windows_missing.h\"");
+#else
+puts("#define MUTEX_TYPE             pthread_mutex_t");
+puts("#define MUTEX_INITIALIZER      PTHREAD_MUTEX_INITIALIZER");
+puts("#define MUTEX_SETUP(x)");
+puts("#define MUTEX_CLEANUP(x)       pthread_mutex_destroy((x))");
+puts("#define MUTEX_LOCK(x)          pthread_mutex_lock((x))");
+puts("#define MUTEX_UNLOCK(x)        pthread_mutex_unlock((x))");
 #endif
 }
 

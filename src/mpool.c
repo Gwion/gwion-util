@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <pthread.h>
 #include "defs.h"
 #include "mpool.h"
 #include "mpool_private.h"
@@ -11,6 +12,7 @@
 
 static struct pool master_pool;
 static struct pool* pools[POOL_NUMBER];
+static MUTEX_TYPE mutex = MUTEX_INITIALIZER;
 
 ANN static void mp_set(struct pool* p, const uint32_t obj_sz) {
   p->obj_sz = POOL_SIZE(obj_sz);
@@ -35,6 +37,7 @@ void mpool_end() {
       mp_end(p);
   }
   mp_end(&master_pool);
+  MUTEX_CLEANUP(&mutex);
 }
 
 static struct pool* mp_get(const uint32_t obj_sz) {
@@ -42,9 +45,12 @@ static struct pool* mp_get(const uint32_t obj_sz) {
   struct pool* orig = pools[idx];
   if(orig)
     return orig;
+  MUTEX_LOCK(&mutex);
   struct pool* p = (struct pool*)_mp_alloc2(&master_pool);
   mp_set(p, obj_sz);
-  return pools[idx] = p;
+  pools[idx] = p;
+  MUTEX_UNLOCK(&mutex);
+  return p;
 }
 
 struct pool* mp_ini(const uint32_t obj_sz) {

@@ -1,5 +1,6 @@
-#include "stdlib.h"
-#include "string.h"
+#include <stdlib.h>
+#include <string.h>
+#include <pthread.h>
 #include "defs.h"
 #include "symbol.h"
 #include "mpool.h"
@@ -19,6 +20,8 @@ struct Symbol_ {
 };
 
 static Symbol hashtable[SIZE];
+static MUTEX_TYPE mutex = MUTEX_INITIALIZER;
+
 
 ANN static void free_symbol(const Symbol s) {
   if(s->next)
@@ -61,7 +64,10 @@ ANN Symbol insert_symbol(const m_str name) {
   for(Symbol sym = syms; sym; sym = sym->next)
     if(!strcmp(sym->name, name))
       return sym;
-   return hashtable[index] = mksymbol(name, syms);
+  MUTEX_LOCK(&mutex);
+  hashtable[index] = mksymbol(name, syms);
+  MUTEX_UNLOCK(&mutex);
+  return hashtable[index];
 }
 
 m_str s_name(const Symbol s) { return s->name; }
