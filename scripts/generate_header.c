@@ -5,6 +5,7 @@
 #include <inttypes.h>
 
 #ifdef BUILD_ON_WINDOWS
+#include <windows.h>
 #include "windows_missing.h"
 #define SIZET_FMT "%Iu"
 #else
