@@ -13,7 +13,8 @@ char *realpath(const char *path, char *resolved_path);
 #define MUTEX_TYPE             HANDLE
 #define MUTEX_INITIALIZER      NULL
 #define MUTEX_SETUP(x)         (x) = CreateMutex(NULL, FALSE, NULL)
-#define MUTEX_CLEANUP(x)       (CloseHandle(x) == 0)
+//#define MUTEX_CLEANUP(x)       (CloseHandle(x) == 0)
+#define MUTEX_CLEANUP(x)       CloseHandle(x)
 #define MUTEX_LOCK(x)          emulate_pthread_mutex_lock((x))
 //#define MUTEX_UNLOCK(x)        (ReleaseMutex(x) == 0)
 #define MUTEX_UNLOCK(x)        ReleaseMutex((x))
