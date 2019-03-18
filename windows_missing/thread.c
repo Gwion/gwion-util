@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <windows_missing.h>
 
 int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx) {
