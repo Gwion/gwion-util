@@ -1,5 +1,5 @@
 #include <windows.h>
-#include <windows_missing.h>
+#include "windows_missing.h"
 int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx) {
   if (!*mx) {
     HANDLE p = CreateMutex(NULL, FALSE, NULL);
