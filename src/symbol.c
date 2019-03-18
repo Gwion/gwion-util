@@ -2,8 +2,6 @@
 #include <string.h>
 #ifndef BUILD_ON_WINDOWS
 #include <pthread.h>
-#else
-#include <windows.h>
 #endif
 #include "defs.h"
 #include "symbol.h"

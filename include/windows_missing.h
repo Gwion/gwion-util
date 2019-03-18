@@ -1,5 +1,6 @@
 #ifndef __WINDOWS_MISSING
 #define __WINDOWS_MISSING
+#include <windows.h>
 #include <stddef.h>
 typedef unsigned int uint;
 char* strdup(const char *s);
