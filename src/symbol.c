@@ -12,6 +12,10 @@
 #define SIZE 65347  /* should be prime */
 #endif
 
+#ifdef min
+#undef min
+#endif
+
 #define MAX_DISTANCE 2
 #define min2(a, b) ((a) < (b) ? (a) : (b))
 #define min(a, b, c) (min2(min2((a), (b)), (c)))
