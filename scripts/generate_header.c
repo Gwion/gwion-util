@@ -6,10 +6,10 @@
 
 #ifdef BUILD_ON_WINDOWS
 #include "windows_missing.h"
-#ifdef _WIN64
-#define SIZET_FMT "%I64u"
-#else
+#ifdef __MINGW32__
 #define SIZET_FMT "%I32u"
+#else
+#define SIZET_FMT "%I64u"
 #endif
 #else
 #define SIZET_FMT "%zu"
