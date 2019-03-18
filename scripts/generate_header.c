@@ -6,7 +6,7 @@
 
 #ifdef BUILD_ON_WINDOWS
 #include "windows_missing.h"
-#if _WIN64
+#ifdef _WIN64
 #define SIZET_FMT "%I64u"
 #else
 #define SIZET_FMT "%I32u"
