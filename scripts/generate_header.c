@@ -10,6 +10,7 @@
 #define SIZET_FMT "%lu"
 #else
 #define SIZET_FMT "%u"
+#endif
 #else
 #define SIZET_FMT "%zu"
 #endif
