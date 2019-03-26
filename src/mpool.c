@@ -1,9 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
-#ifndef BUILD_ON_WINDOWS
-#include <pthread.h>
-#endif
 #include "defs.h"
+#include "gwion_thread.h"
 #include "mpool.h"
 #include "mpool_private.h"
 
