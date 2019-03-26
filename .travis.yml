@@ -7,9 +7,7 @@ os:
 
 before_script:
   - export CICFLAGS="-Wno-attributes -Wno-unknown-pragmas";
-  - if [ $(uname) = "Darwin" ];
-    then brew update;
-    elif [ $(uname) != "Linux" ]; then
+  - if [ $(uname) != "Linux" ] && [ $(uname) != "Darwin" ]; then
       export BUILD_ON_WINDOWS=1;
       choco install make;
       export CC="gcc.exe";
@@ -20,4 +18,3 @@ script:
     then make;
     else make.exe;
     fi
-
