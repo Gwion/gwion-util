@@ -34,6 +34,8 @@
 #include <assert.h>
 #include "generated.h"
 
+typedef unsigned int uint;
+
 ANEW const void* xmalloc(const m_uint);
 ANEW const void* xcalloc(const m_uint, const m_uint);
 ANEW const void* xrealloc(void*, const m_uint);
@@ -80,7 +82,7 @@ typedef enum {
   op_radd, op_rsub, op_rmul, op_rdiv, op_rmod,
   op_rsl, op_rsr, op_rsand, op_rsor, op_rsxor,
   op_chuck, op_unchuck, op_ref, op_unref, op_trig, op_untrig,
-  op_cast, op_impl
+  op_coloncolon, op_cast, op_impl
 } Operator;
 ANN m_str op2str(const Operator op);
 ANN int name2op(const m_str name);
