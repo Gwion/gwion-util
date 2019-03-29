@@ -24,7 +24,7 @@ void hend(const Hash h) {
   xfree(h->table);
 }
 
-unsigned int hash(const char *s0) {
+unsigned int hash(const m_str s0) {
   unsigned int h = 0;
   const unsigned char *s;
   for(s = (unsigned char*)s0; *s; ++s)
