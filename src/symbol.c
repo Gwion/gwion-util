@@ -22,7 +22,7 @@ ANN SymTable* new_symbol_table(size_t sz) {
   SymTable *st = mp_alloc(SymTable);
   st->sz = sz;
   st->sym = (Symbol*)xcalloc(sz, sizeof(struct Symbol_));
-  MUTEX_SETUP(st->mutex)
+  MUTEX_SETUP(st->mutex);
   return st;
 }
 
