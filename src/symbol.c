@@ -4,11 +4,6 @@
 #include <gwion_thread.h>
 #include "symbol.h"
 #include "mpool.h"
-#ifdef TINY_MODE
-#define SIZE 32653  /* should be prime */
-#else
-#define SIZE 65347  /* should be prime */
-#endif
 
 #ifdef min
 #undef min
@@ -23,9 +18,13 @@ struct Symbol_ {
   Symbol next;
 };
 
-static Symbol hashtable[SIZE];
-static MUTEX_TYPE mutex = MUTEX_INITIALIZER;
-
+ANN SymTable* new_symbol_table(size_t sz) {
+  SymTable *st = mp_alloc(SymTable);
+  st->sz = sz;
+  st->sym = (Symbol*)xcalloc(sz, sizeof(struct Symbol_));
+  MUTEX_SETUP(st->mutex)
+  return st;
+}
 
 ANN static void free_symbol(const Symbol s) {
   if(s->next)
@@ -34,13 +33,15 @@ ANN static void free_symbol(const Symbol s) {
   mp_free(Symbol, s);
 }
 
-void free_symbols(void) {
+void free_symbols(SymTable* ht) {
   LOOP_OPTIM
-  for(uint i = SIZE + 1; --i;) {
-    const Symbol s = hashtable[i - 1];
+  for(uint i = ht->sz + 1; --i;) {
+    const Symbol s = ht->sym[i - 1];
     if(s)
       free_symbol(s);
   }
+  xfree(ht->sym);
+  mp_free(SymTable, ht);
 }
 
 __attribute__((hot,pure))
@@ -61,17 +62,17 @@ ANN2(1) static Symbol mksymbol(const m_str name, const Symbol next) {
 }
 
 __attribute__((hot))
-ANN Symbol insert_symbol(const m_str name) {
-  const uint index = hash(name) % SIZE;
-  const Symbol syms = hashtable[index];
+ANN Symbol insert_symbol(SymTable* ht, const m_str name) {
+  const uint index = hash(name) % ht->sz;
+  const Symbol syms = ht->sym[index];
   LOOP_OPTIM
   for(Symbol sym = syms; sym; sym = sym->next)
     if(!strcmp(sym->name, name))
       return sym;
-  MUTEX_LOCK(&mutex);
-  hashtable[index] = mksymbol(name, syms);
-  MUTEX_UNLOCK(&mutex);
-  return hashtable[index];
+  MUTEX_LOCK(&ht->mutex);
+  ht->sym[index] = mksymbol(name, syms);
+  MUTEX_UNLOCK(&ht->mutex);
+  return ht->sym[index];
 }
 
 m_str s_name(const Symbol s) { return s->name; }
@@ -98,12 +99,11 @@ static const char* wagner_fisher(const char *s, const char* t) {
   return (i && j && d[m-1][n-1] < MAX_DISTANCE) ? t : NULL;
 }
 
-ANN static const char* ressembles(const char* name) {
-  const Symbol s = insert_symbol((char*)name);
+ANN static const char* ressembles(SymTable *ht, const char* name) {
+  const Symbol s = insert_symbol(ht, (char*)name);
   LOOP_OPTIM
-//  for(uint i = 0; i < SIZE; ++i) {
-  for(uint i = SIZE; --i;) {
-    const Symbol syms = hashtable[i-1];
+  for(uint i = ht->sz; --i;) {
+    const Symbol syms = ht->sym[i-1];
     for(Symbol sym = syms; sym; sym = sym->next) {
       if(s == sym)
         continue;
@@ -116,8 +116,8 @@ ANN static const char* ressembles(const char* name) {
 }
 
 #include "err_msg.h"
-ANN void did_you_mean(const char* name) {
-  const char* s = ressembles(name);
+ANN void did_you_mean(SymTable *ht, const char* name) {
+  const char* s = ressembles(ht, name);
   if(s)
     gw_err("\t(did you mean '%s'?)\n", s);
 }
