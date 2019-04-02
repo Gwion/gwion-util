@@ -7,20 +7,20 @@ struct scope_iter {
   m_uint idx;
 };
 
-extern ANN       void   scope_init(Scope);
+extern ANN       void   scope_init(MemPool, Scope);
 extern ANEW ANN Vector scope_get(const Scope);
 extern ANN vtype  scope_lookup0(const Scope, const vtype);
 extern ANN vtype  scope_lookup1(const Scope, const vtype);
 extern ANN vtype  scope_lookup2(const Scope, const vtype);
 extern ANN       void   scope_add(const Scope, const vtype, const vtype);
 extern ANN       void   scope_commit(const Scope);
-extern ANN       void   scope_release(Scope);
-ANN static inline void scope_push(const Scope s) {
-  vector_add((Vector)s, (vtype)new_map());
+extern ANN       void   scope_release(MemPool, Scope);
+ANN static inline void scope_push(MemPool p, const Scope s) {
+  vector_add((Vector)s, (vtype)new_map(p));
 }
 
-ANN static inline void scope_pop(const Scope s) {
-  free_map((Map)vector_pop((Vector)s));
+ANN static inline void scope_pop(MemPool p, const Scope s) {
+  free_map(p, (Map)vector_pop((Vector)s));
 }
 ANN m_bool scope_iter(struct scope_iter* iter, void* ret);
 #endif

@@ -1,9 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-#include "defs.h"
-#include <gwion_thread.h>
-#include "symbol.h"
-#include "mpool.h"
+#include "gwion_util.h"
 
 #ifdef min
 #undef min
@@ -18,19 +15,20 @@ struct Symbol_ {
   Symbol next;
 };
 
-ANN SymTable* new_symbol_table(size_t sz) {
-  SymTable *st = mp_alloc(SymTable);
+ANN SymTable* new_symbol_table(MemPool p, size_t sz) {
+  SymTable *st = mp_alloc(p, SymTable);
   st->sz = sz;
   st->sym = (Symbol*)xcalloc(sz, sizeof(struct Symbol_));
   MUTEX_SETUP(st->mutex);
+  st->p = p;
   return st;
 }
 
-ANN static void free_symbol(const Symbol s) {
+ANN static void free_symbol(MemPool p, const Symbol s) {
   if(s->next)
-    free_symbol(s->next);
-  free(s->name);
-  mp_free(Symbol, s);
+    free_symbol(p, s->next);
+  xfree(s->name);
+  mp_free(p, Symbol, s);
 }
 
 void free_symbols(SymTable* ht) {
@@ -38,24 +36,15 @@ void free_symbols(SymTable* ht) {
   for(uint i = ht->sz + 1; --i;) {
     const Symbol s = ht->sym[i - 1];
     if(s)
-      free_symbol(s);
+      free_symbol(ht->p, s);
   }
   xfree(ht->sym);
-  mp_free(SymTable, ht);
-}
-
-__attribute__((hot,pure))
-ANN static uint hash(const char *s0) {
-  unsigned int h = 0;
-  const unsigned char *s;
-  for(s = (unsigned char*)s0; *s; ++s)
-    h = h * 65599 + *s;
-  return h;
+  mp_free(ht->p, SymTable, ht);
 }
 
 __attribute__((hot))
-ANN2(1) static Symbol mksymbol(const m_str name, const Symbol next) {
-  const Symbol s = mp_alloc(Symbol);
+ANN2(1) static Symbol mksymbol(MemPool p, const m_str name, const Symbol next) {
+  const Symbol s = mp_alloc(p, Symbol);
   s->name = strdup(name);
   s->next = next;
   return s;
@@ -70,7 +59,7 @@ ANN Symbol insert_symbol(SymTable* ht, const m_str name) {
     if(!strcmp(sym->name, name))
       return sym;
   MUTEX_LOCK(&ht->mutex);
-  ht->sym[index] = mksymbol(name, syms);
+  ht->sym[index] = mksymbol(ht->p, name, syms);
   MUTEX_UNLOCK(&ht->mutex);
   return ht->sym[index];
 }

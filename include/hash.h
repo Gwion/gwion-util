@@ -3,11 +3,12 @@
 typedef struct Hash_* Hash;
 struct Hash_ {
   void*       *table;
-  uint size;  /* should be prime */
+  size_t size;
+  MemPool p;
 };
 
 void  hini(const Hash, const uint);
-void  hdel(const Hash, void (*)(void*));
+void  hdel(const Hash, void (*)(MemPool,void*));
 void  hend(const Hash);
 ANN unsigned int hash(const m_str s0);
 

@@ -1,9 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-#include "defs.h"
-#include "vector.h"
-#include "map.h"
-#include "scope.h"
+#include "gwion_util.h"
 
 ANN static inline Map scope_back(const Scope s) {
   return (Map)vector_back((Vector)s);
@@ -39,14 +36,14 @@ ANN void scope_commit(const Scope s) {
   map_clear(&s->map);
 }
 
-ANN void scope_init(Scope a) {
+ANN void scope_init(MemPool p, Scope a) {
   vector_init((Vector)&a->map);
   vector_init((Vector)a);
-  scope_push(a);
+  scope_push(p, a);
 }
 
-ANN void scope_release(Scope a) {
-  free_map((Map)VPTR(a, 0));
+ANN void scope_release(MemPool p, Scope a) {
+  free_map(p, (Map)VPTR(a, 0));
   vector_release((Vector)a);
   vector_release((Vector)&a->map);
 }
