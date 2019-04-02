@@ -7,9 +7,10 @@ typedef struct SymTable_ {
   Symbol *sym;
   size_t sz;
   MUTEX_TYPE mutex;
+  MemPool p;
 } SymTable;
 
-ANN SymTable* new_symbol_table(size_t sz);
+ANN SymTable* new_symbol_table(MemPool p, size_t sz);
 ANN Symbol insert_symbol(SymTable*, const m_str) __attribute__((pure));
 ANN m_str s_name(const Symbol) __attribute__((pure));
 ANN void free_symbols(SymTable*);

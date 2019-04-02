@@ -1,27 +1,25 @@
 #include <stdlib.h>
 #include <string.h>
-#include "defs.h"
-#include "vector.h"
-#include "mpool.h"
+#include "gwion_util.h"
 
 ANN inline void vector_init(const Vector v) {
   v->ptr = (m_uint*)xcalloc(MAP_CAP, SZ_INT);
   VCAP(v) = MAP_CAP;
 }
 
-Vector new_vector() {
-  const Vector v = mp_alloc(Vector);
+Vector new_vector(MemPool p) {
+  const Vector v = mp_alloc(p, Vector);
   vector_init(v);
   return v;
 }
 
 ANN inline void vector_release(const Vector v) {
-  free(v->ptr);
+  xfree(v->ptr);
 }
 
-ANN void free_vector(const Vector v) {
+ANN void free_vector(MemPool p, const Vector v) {
   vector_release(v);
-  mp_free(Vector, v);
+  mp_free(p, Vector, v);
 }
 
 ANN void vector_add(const Vector v, const vtype data) {
@@ -34,8 +32,8 @@ ANN inline void vector_copy2(const restrict Vector v, const restrict Vector ret)
   memcpy(ret->ptr, v->ptr, VCAP(v) * SZ_INT);
 }
 
-ANN Vector vector_copy(const Vector v) {
-  const Vector ret = mp_alloc(Vector);
+ANN Vector vector_copy(MemPool p, const Vector v) {
+  const Vector ret = mp_alloc(p, Vector);
   vector_copy2(v, ret);
   return ret;
 }

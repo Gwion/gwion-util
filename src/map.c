@@ -1,10 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-#include "defs.h"
-#include "vector.h"
-#include "map.h"
-#include "map_private.h"
-#include "mpool.h"
+#include "gwion_util.h"
 
 ANN void map_clear(const Map v) {
   v->ptr = (m_uint*)xrealloc(v->ptr, (VCAP(v) = MAP_CAP) * SZ_INT);
@@ -16,8 +12,8 @@ ANN inline void map_init(const Map a) {
   VCAP(a) = MAP_CAP;
 }
 
-ANEW Map new_map() {
-  const Map map  = mp_alloc(Map);
+ANEW Map new_map(MemPool p) {
+  const Map map  = mp_alloc(p, Map);
   map_init(map);
   return map;
 }
@@ -56,9 +52,9 @@ ANN void map_commit(const restrict Map map, const restrict Map commit) {
   memcpy(map->ptr, commit->ptr, VCAP(commit) * SZ_INT);
 }
 
-ANN void free_map(const Map map) {
+ANN void free_map(MemPool p, const Map map) {
   free(map->ptr);
-  mp_free(Map, map);
+  mp_free(p, Map, map);
 }
 
 ANN void map_release(const Map map) {
