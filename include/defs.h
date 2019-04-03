@@ -7,10 +7,8 @@
 #define SIZEOF_MEM (0x1 << MEM_STEP)
 #define SIZEOF_REG (0x1 << 14)
 
-#define ANN
-//#define ANN __attribute__((nonnull))
-//#define ANN2(...) __attribute__((nonnull(__VA_ARGS__)))
-#define ANN2(...) 
+#define ANN __attribute__((nonnull))
+#define ANN2(...) __attribute__((nonnull(__VA_ARGS__)))
 #define ANEW __attribute__((returns_nonnull,malloc))
 
 #ifdef __GNUC__

@@ -3,12 +3,12 @@ struct Recycle {
 };
 
 struct pool {
+  uint8_t **data;
+  struct Recycle  *next;
   uint32_t  obj_sz;
   uint32_t  obj_id;
   int32_t   blk_id;
   uint32_t  nblk;
-  struct Recycle  *next;
-  uint8_t **data;
 };
 
 #define BLK 64

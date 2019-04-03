@@ -21,8 +21,7 @@ ANN static void mp_set(struct pool* p, const uint32_t obj_sz) {
 
 MemPool mempool_ini(size_t sz) {
   MemPool p = (MemPool)xmalloc(sizeof(struct MemPool_));
-  p->master_pool = (struct pool*)xmalloc(sizeof(struct pool));
-  mp_set(p->master_pool, sizeof(struct pool));
+  p->master_pool = new_pool(sz);
   p->pools = (struct pool**)xcalloc(p->sz = sz, sizeof(struct pool));
   MUTEX_SETUP(p->mutex);
   return p;
