@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <io.h>
 #include <fcntl.h>
+#include <defs.h>
 #include <windows.h>
 
 FILE *fmemopen(void *buf, size_t len, const char *type NUSED) {
