@@ -17,6 +17,8 @@
 #else
 #define LOOP_OPTIM _Pragma("GCC ivdep")
 #endif
+#else
+#define LOOP_OPTIM
 #endif
 
 #define CHECK_BB(f) { if(f < 0) return -1;   }
