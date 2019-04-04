@@ -10,6 +10,7 @@
 #define ANN __attribute__((nonnull))
 #define ANN2(...) __attribute__((nonnull(__VA_ARGS__)))
 #define ANEW __attribute__((returns_nonnull,malloc))
+#define NUSED __attribute__((unused))
 
 #ifdef __GNUC__
 #ifdef __clang__

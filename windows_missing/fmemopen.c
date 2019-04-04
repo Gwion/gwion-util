@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include <windows.h>
 
-FILE *fmemopen(void *buf, size_t len, const char *type __attribute__((unused))) {
+FILE *fmemopen(void *buf, size_t len, const char *type NUSED) {
 	int fd;
 	FILE *fp;
 	char tp[MAX_PATH - 13];
