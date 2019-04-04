@@ -11,6 +11,7 @@ I am placing this in the public domain for anyone to use or modify
 #include <limits.h>
 #include <errno.h>
 #include <sys/stat.h>
+#include "gwion_utils.h"
 
 char *realpath(const char *path, char resolved_path[PATH_MAX])
 {
