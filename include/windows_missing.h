@@ -6,6 +6,9 @@
 
 // needed for clang
 #ifndef PATH_MAX
+#ifndef MAX_PATH
+#define MAX_PATH 260
+#endif
 #define PATH_MAX MAX_PATH
 #endif
 
