@@ -28,7 +28,7 @@ static const char* type	 = "float ";
 #endif
 
 static void include(void) {
-  puts("#include <stdlib.h>\n#include <inttypes.h>\n#include <float.h>");
+  puts("#include <stddef.h>\n#include <stdlib.h>\n#include <inttypes.h>\n#include <float.h>");
 #ifdef USE_DOUBLE
   puts("#define GWION_EPSILON DBL_EPSILON");
 #else
