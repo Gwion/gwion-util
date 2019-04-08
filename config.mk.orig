@@ -12,4 +12,4 @@ USE_COVERAGE ?= 0
 USE_MEMCHECK ?= 0
 USE_LTO      ?= 0
 
-include common.mk
+include ${util_dir}/common.mk
