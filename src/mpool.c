@@ -37,7 +37,7 @@ void mempool_end(MemPool mp) {
   mp_end(mp->master_pool);
   xfree(mp->master_pool);
   xfree(mp->pools);
-  MUTEX_CLEANUP(&mp->mutex);
+  MUTEX_CLEANUP(mp->mutex);
   xfree(mp);
 }
 
@@ -46,11 +46,11 @@ static struct pool* mp_get(MemPool mp, const uint32_t obj_sz) {
   struct pool* orig = mp->pools[idx];
   if(orig)
     return orig;
-  MUTEX_LOCK(&mp->mutex);
+  MUTEX_LOCK(mp->mutex);
   struct pool* p = (struct pool*)_mp_alloc2(mp->master_pool);
   mp_set(p, obj_sz);
   mp->pools[idx] = p;
-  MUTEX_UNLOCK(&mp->mutex);
+  MUTEX_UNLOCK(mp->mutex);
   return p;
 }
 
@@ -98,7 +98,9 @@ void _mp_free2(struct pool *p, void *ptr) {
 
 void _mp_free(MemPool mp, const m_uint size, void *ptr) {
   struct pool* p = mp_get(mp, POOL_SIZE(size));
-  return _mp_free2(p, ptr);
+  MUTEX_LOCK(mp->mutex);
+  _mp_free2(p, ptr);
+  MUTEX_UNLOCK(mp->mutex);
 }
 
 struct pool* new_pool(const uint32_t obj_sz) {

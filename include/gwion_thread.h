@@ -24,10 +24,15 @@ int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 #define THREAD_JOIN(thread)       pthread_join(thread, NULL);
 #define THREAD_RETURN(arg)        pthread_exit(arg); return arg;
 
-#define MUTEX_TYPE             pthread_mutex_t
+#define MUTEX_TYPE             pthread_mutex_t*
 #define MUTEX_INITIALIZER      PTHREAD_MUTEX_INITIALIZER
-#define MUTEX_SETUP(x)         pthread_mutex_init(&(x), NULL)
-#define MUTEX_CLEANUP(x)       pthread_mutex_destroy((x))
+#define MUTEX_SETUP(x)         { \
+ pthread_mutexattr_t attr; \
+pthread_mutexattr_init(&attr); \
+pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);\
+x = (pthread_mutex_t*)xmalloc(sizeof (pthread_mutex_t));\
+pthread_mutex_init(x, &attr); }
+#define MUTEX_CLEANUP(x)       { pthread_mutex_destroy((x)); xfree(x); }
 #define MUTEX_LOCK(x)          pthread_mutex_lock((x))
 #define MUTEX_UNLOCK(x)        pthread_mutex_unlock((x))
 

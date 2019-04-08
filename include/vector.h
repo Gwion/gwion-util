@@ -23,7 +23,7 @@ ANN static inline vtype vector_at(const Vector v, const vtype i) {
 ANN static inline vtype vector_back(const Vector v) {
   return VPTR(v, VLEN(v) - 1);
 }
-ANN static inline vtype vector_size(const Vector v) {
+ANN static inline vtype vector_size(Vector const v) {
   return VLEN(v);
 }
 

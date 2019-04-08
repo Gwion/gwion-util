@@ -39,6 +39,7 @@ void free_symbols(SymTable* ht) {
       free_symbol(ht->p, s);
   }
   xfree(ht->sym);
+  MUTEX_CLEANUP(ht->mutex);
   mp_free(ht->p, SymTable, ht);
 }
 
@@ -58,9 +59,9 @@ ANN Symbol insert_symbol(SymTable* ht, const m_str name) {
   for(Symbol sym = syms; sym; sym = sym->next)
     if(!strcmp(sym->name, name))
       return sym;
-  MUTEX_LOCK(&ht->mutex);
+  MUTEX_LOCK(ht->mutex);
   ht->sym[index] = mksymbol(ht->p, name, syms);
-  MUTEX_UNLOCK(&ht->mutex);
+  MUTEX_UNLOCK(ht->mutex);
   return ht->sym[index];
 }
 
