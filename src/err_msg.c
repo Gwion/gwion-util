@@ -16,7 +16,7 @@ describe_gw_xxx(out)
 
 m_bool err_msg(uint pos, const char* fmt, ...) {
   if(pos)
-    fprintf(stderr, " line: %u\t", pos);
+    fprintf(stderr, "line: %u\t", pos);
   else
     fprintf(stderr, "\t");
   va_list arg;
