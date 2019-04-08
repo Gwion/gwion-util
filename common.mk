@@ -1,19 +1,29 @@
-util_dir := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-CC ?=gcc
-PREFIX ?=/usr/local
+ifeq (${USE_DOUBLE}, 1)
+CFLAGS +=-DUSE_DOUBLE -DSPFLOAT=double
+else
+CFLAGS+=-DSPFLOAT=float
+endif
 
-CFLAGS += -std=c99 -Iinclude -O3
-#CFLAGS += -ffast-math
-FLAGS +=  -fstrict-aliasing
-#-mfpmath=sse
-CFLAGS += -Wall -Wextra
-CFLAGS += -mtune=native
+ifeq (${USE_COVERAGE}, 1)
+CFLAGS += -ftest-coverage -fprofile-arcs
+LDFLAGS += --coverage
+endif
 
-CFLAGS += -fomit-frame-pointer
+ifeq (${USE_MEMCHECK}, 1)
+CFLAGS += -g -Og
+else
+CFLAGS += -DNDEBUG
+endif
 
-USE_DOUBLE    = 0
-USE_COVERAGE ?= 0
-USE_MEMCHECK ?= 1
-USE_LTO      ?= 0
+ifeq (${USE_LTO}, 1)
+CFLAGS += -flto
+LDFLAGS += -flto
+endif
 
-include common.mk
+ifeq ($(shell uname), Darwin)
+AR = /usr/bin/libtool
+AR_OPT = -static $^ -o $@
+else
+AR = ar
+AR_OPT = rcs $@ $^
+endif
