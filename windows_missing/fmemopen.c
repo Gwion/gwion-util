@@ -4,14 +4,14 @@
 #include <defs.h>
 #include <windows.h>
 
-static void fmemopen_handle(void) {
+static HANDLE fmemopen_handle(void) {
 	char tp[MAX_PATH - 13];
 	char fn[MAX_PATH + 1];
 	if(!GetTempPath(sizeof(tp), tp))
 		return NULL;
 	if(!GetTempFileName(tp, "confuse", 0, fn))
 		return NULL;
-	h = CreateFile(fn, GENERIC_READ | GENERIC_WRITE, 0, NULL,
+	HANDLE h = CreateFile(fn, GENERIC_READ | GENERIC_WRITE, 0, NULL,
 		       CREATE_ALWAYS, FILE_FLAG_DELETE_ON_CLOSE, NULL);
 	return h != INVALID_HANDLE_VALUE ? h : NULL:
 }
