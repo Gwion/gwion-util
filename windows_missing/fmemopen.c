@@ -13,7 +13,7 @@ static HANDLE fmemopen_handle(void) {
 		return NULL;
 	HANDLE h = CreateFile(fn, GENERIC_READ | GENERIC_WRITE, 0, NULL,
 		       CREATE_ALWAYS, FILE_FLAG_DELETE_ON_CLOSE, NULL);
-	return h != INVALID_HANDLE_VALUE ? h : NULL:
+	return h != INVALID_HANDLE_VALUE ? h : NULL;
 }
 
 FILE *fmemopen(void *buf, size_t len, const char *type NUSED) {
