@@ -67,7 +67,7 @@ ANN Symbol insert_symbol(SymTable* ht, const m_str name) {
 
 m_str s_name(const Symbol s) { return s->name; }
 
-static const char* wagner_fisher(const char *s, const char* t) {
+static m_bool wagner_fisher(const char *s, const char* t) {
   const size_t m = strlen(s);
   const size_t n = strlen(t);
   unsigned int d[m][n];
@@ -83,10 +83,10 @@ static const char* wagner_fisher(const char *s, const char* t) {
       else
         d[i][j] = min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + 1);
       if(d[i][j] > MAX_DISTANCE + 1)
-        return NULL;
+        return 0;
     }
   }
-  return (i && j && d[m-1][n-1] < MAX_DISTANCE) ? t : NULL;
+  return (i && j && d[m-1][n-1] < MAX_DISTANCE);
 }
 
 ANN static const char* ressembles(SymTable *ht, const char* name) {
@@ -97,9 +97,8 @@ ANN static const char* ressembles(SymTable *ht, const char* name) {
     for(Symbol sym = syms; sym; sym = sym->next) {
       if(s == sym)
         continue;
-      const char* ret = wagner_fisher(name, sym->name);
-      if(ret)
-        return ret;
+      if(wagner_fisher(name, sym->name))
+        return sym->name;
     }
   }
   return NULL;
