@@ -43,7 +43,7 @@ ANN void map_remove(const Map map, const vtype key) {
   for(vtype i = 0; i < VLEN(map); ++i)
     if(VKEY(map, i) != key)
       map_set(&tmp, key, VVAL(map, i));
-  free(map->ptr);
+  xfree(map->ptr);
   map->ptr = tmp.ptr;
 }
 
@@ -53,10 +53,10 @@ ANN void map_commit(const restrict Map map, const restrict Map commit) {
 }
 
 ANN void free_map(MemPool p, const Map map) {
-  free(map->ptr);
+  xfree(map->ptr);
   mp_free(p, Map, map);
 }
 
 ANN void map_release(const Map map) {
-  free(map->ptr);
+  xfree(map->ptr);
 }
