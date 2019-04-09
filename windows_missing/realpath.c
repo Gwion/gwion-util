@@ -23,7 +23,7 @@ char *realpath(const char *path, char resolved_path[PATH_MAX]) {
         if(return_path != resolved_path) {
           size_t new_size;
           xfree(return_path);
-          return_path = xmalloc(size);
+          return_path = (char*)xmalloc(size);
           if(return_path) {
             new_size = GetFullPathNameA(path, size, return_path, 0);
             if (new_size > size) {
