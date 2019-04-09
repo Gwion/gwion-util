@@ -2,22 +2,19 @@
 #include <stdio.h>
 #include <errno.h>
 #define GETLINE_MINSIZE 16
+#define RET_ERR(a) { errno = (a); return -1; }
+
 int getline(char **lineptr, size_t *n, FILE *fp) {
   int ch, i = 0;
   char free_on_err = 0, *p;
-
   errno = 0;
-  if(!lineptr || !n || !fp) {
-      errno = EINVAL;
-      return -1;
-  }
+  if(!lineptr || !n || !fp)
+    RET_ERR(EINVAL);
   if(!*lineptr) {
     *n = GETLINE_MINSIZE;
     *lineptr = (char *)malloc( sizeof(char) * (*n));
-    if (*lineptr == NULL) {
-        errno = ENOMEM;
-        return -1;
-    }
+    if(*lineptr == NULL)
+      RET_ERR(ENOMEM);
     free_on_err = 1;
   }
   for (i=0; ; i++) {
@@ -27,8 +24,7 @@ int getline(char **lineptr, size_t *n, FILE *fp) {
       if(!(p = realloc(*lineptr, sizeof(char) * (*n)))) {
         if (free_on_err)
           free(*lineptr);
-        errno = ENOMEM;
-        return -1;
+        RET_ERR(ENOMEM);
       }
       *lineptr = p;
     }
