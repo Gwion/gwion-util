@@ -16,7 +16,7 @@ I am placing this in the public domain for anyone to use or modify
 char *realpath(const char *path, char resolved_path[PATH_MAX]) {
   char *return_path = 0;
   if(path) {
-    return_path = resolved_path ?: xmalloc(PATH_MAX);
+    return_path = resolved_path ?: (char*)xmalloc(PATH_MAX);
     if(return_path) {
       size_t size = GetFullPathNameA(path, PATH_MAX, return_path, 0);
       if(size > PATH_MAX) {
