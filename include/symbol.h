@@ -14,5 +14,4 @@ ANN SymTable* new_symbol_table(MemPool p, size_t sz);
 ANN Symbol insert_symbol(SymTable*, const m_str) __attribute__((pure));
 ANN m_str s_name(const Symbol) __attribute__((pure));
 ANN void free_symbols(SymTable*);
-ANN void did_you_mean(SymTable*, const char* name);
 #endif
