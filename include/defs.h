@@ -40,6 +40,7 @@
 #include "generated.h"
 
 typedef unsigned int uint;
+typedef uint loc_t;
 
 ANEW const void* xmalloc(const m_uint);
 ANEW const void* xcalloc(const m_uint, const m_uint);

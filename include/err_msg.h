@@ -2,7 +2,7 @@
 #define __ERRMSG
 
 #include <stdarg.h>
-m_bool err_msg(uint pos, const char* fmt, ...);
+m_bool err_msg(loc_t pos, const char* fmt, ...);
 m_bool gw_err(const char* fmt, ...);
 m_bool gw_out(const char* fmt, ...);
 
