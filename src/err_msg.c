@@ -13,17 +13,3 @@ m_bool gw_##name(const char* fmt, ...) { \
 }
 describe_gw_xxx(err)
 describe_gw_xxx(out)
-
-m_bool err_msg(loc_t pos, const char* fmt, ...) {
-  if(pos)
-    fprintf(stderr, "line: %u\t", pos);
-  else
-    fprintf(stderr, "\t");
-  va_list arg;
-  va_start(arg, fmt);
-  vfprintf(stderr, fmt, arg);
-  va_end(arg);
-  fprintf(stderr, "\n");
-  return GW_ERROR;
-}
-
