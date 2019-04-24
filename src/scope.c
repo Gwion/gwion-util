@@ -42,10 +42,21 @@ ANN void scope_init(MemPool p, Scope a) {
   scope_push(p, a);
 }
 
+ANN Scope new_scope(MemPool p) {
+  Scope a = mp_alloc(p, Scope);
+  scope_init(p, a);
+  return a;
+}
+
 ANN void scope_release(MemPool p, Scope a) {
   free_map(p, (Map)VPTR(a, 0));
   vector_release((Vector)a);
   vector_release((Vector)&a->map);
+}
+
+ANN void free_scope(MemPool p, Scope a) {
+  scope_release(p, a);
+  mp_free(p, Scope, a);
 }
 
 ANN m_bool scope_iter(struct scope_iter* iter, void* ret) {
