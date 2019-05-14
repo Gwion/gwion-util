@@ -96,4 +96,8 @@ ANN int name2op(const m_str name);
 static inline m_uint num_digit(const m_uint i) {
   return i ? (m_uint)floor(log10((float)i) + 1) : 1;
 }
+
+static inline m_uint round2szint(const m_uint i) {
+  return ((i + (SZ_INT-1)) & ~(SZ_INT-1));
+}
 #endif
