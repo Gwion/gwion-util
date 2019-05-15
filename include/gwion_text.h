@@ -1,5 +1,5 @@
-#ifndef __TEXT
-#define __TEXT
+#ifndef __GWTEXT
+#define __GWTEXT
 typedef struct GwText_ {
   m_str str;
   size_t cap;
