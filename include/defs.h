@@ -70,14 +70,15 @@ typedef enum {
   ae_flag_empty  = 1 << 21, // for typedef with empty array
     // and complete vararg func def
 // parsing flags for class_def->type
-  ae_flag_scan1 = 1 << 22,
-  ae_flag_scan2 = 1 << 23,
-  ae_flag_check = 1 << 24,
-  ae_flag_emit  = 1 << 25,
-  ae_flag_protect = 1 << 26,
-  ae_flag_used = 1 << 27,
-  ae_flag_pure = 1 << 28,
-  ae_flag_force = 1 << 29
+  ae_flag_scan0 = 1 << 22,
+  ae_flag_scan1 = 1 << 23,
+  ae_flag_scan2 = 1 << 24,
+  ae_flag_check = 1 << 25,
+  ae_flag_emit  = 1 << 26,
+  ae_flag_protect = 1 << 27,
+  ae_flag_used = 1 << 28,
+  ae_flag_pure = 1 << 29,
+  ae_flag_force = 1 << 30
 } ae_flag;
 
 typedef enum {
