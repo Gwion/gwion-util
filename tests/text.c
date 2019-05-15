@@ -6,7 +6,7 @@ int main() {
   uint fail = 0, count = 0;
   const uint start = count + 1;
 
-  Text text = {.str=NULL};
+  GwText text = {.str=NULL};
 
   text_add(&text, "first part.");
   NE(text.str, NULL, text is not null)
