@@ -5,7 +5,7 @@ clean () {
 }
 
 compile () {
-  cc -I../include "$1" ../libgwion_util.a
+  cc -I../include "$1" ../libgwion_util.a -lpthread
 }
 
 run () {
