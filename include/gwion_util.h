@@ -10,5 +10,5 @@
 #include "map_private.h"
 #include "symbol.h"
 #include "scope.h"
-#include "text.h"
+#include "gwion_text.h"
 #endif
