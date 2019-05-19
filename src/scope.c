@@ -43,7 +43,7 @@ ANN void scope_init(MemPool p, Scope a) {
 }
 
 ANN Scope new_scope(MemPool p) {
-  Scope a = mp_alloc(p, Scope);
+  Scope a = mp_calloc(p, Scope);
   scope_init(p, a);
   return a;
 }

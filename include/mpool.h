@@ -6,15 +6,17 @@ typedef struct MemPool_* MemPool;
 ANN struct pool* new_pool(const uint32_t elementSize);
 ANN struct pool* mp_ini(MemPool p, const uint32_t elementSize);
 ANN void mp_end(struct pool*);
-ANEW ANN void *_mp_alloc2(struct pool*) __attribute__((hot));
-ANEW ANN void *_mp_alloc(MemPool, const m_uint) __attribute__((hot));
+ANEW ANN void *_mp_calloc2(struct pool*, const m_bool) __attribute__((hot));
+ANEW ANN void *_mp_calloc(MemPool, const m_uint) __attribute__((hot));
 ANN void _mp_free(MemPool, const m_uint, void*);
 ANN void _mp_free2(struct pool*, void*);
 
-#define mp_alloc(p, name) _mp_alloc(p, sizeof(struct name##_))
+void *mp_realloc(MemPool mp, void* ptr, const m_uint curr, const m_uint next);
+#define mp_calloc(p, name) _mp_calloc(p, sizeof(struct name##_))
 #define mp_free(p, name, a) _mp_free(p, sizeof(struct name##_), (a))
 #define mp_free2(p, sz, a) _mp_free(p, sz, (a))
-#define mp_alloc2(p, sz) _mp_alloc(p, sz)
+#define mp_calloc2(p, sz) _mp_calloc(p, sz)
+#define mp_malloc2(p, sz) _mp_calloc(p, sz)
 
 
 struct MemPool_ {

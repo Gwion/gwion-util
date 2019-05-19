@@ -8,7 +8,7 @@ ANN inline void vector_init(const Vector v) {
 }
 
 Vector new_vector(MemPool p) {
-  const Vector v = mp_alloc(p, Vector);
+  const Vector v = mp_calloc(p, Vector);
   vector_init(v);
   return v;
 }
@@ -33,7 +33,7 @@ ANN inline void vector_copy2(const restrict Vector v, const restrict Vector ret)
 }
 
 ANN Vector vector_copy(MemPool p, const Vector v) {
-  const Vector ret = mp_alloc(p, Vector);
+  const Vector ret = mp_calloc(p, Vector);
   vector_copy2(v, ret);
   return ret;
 }

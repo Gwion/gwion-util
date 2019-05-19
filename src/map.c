@@ -13,7 +13,7 @@ ANN inline void map_init(const Map a) {
 }
 
 ANEW Map new_map(MemPool p) {
-  const Map map  = mp_alloc(p, Map);
+  const Map map  = mp_calloc(p, Map);
   map_init(map);
   return map;
 }
