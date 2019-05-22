@@ -1,10 +1,6 @@
 #include <string.h>
 #include "gwion_util.h"
 
-ANN static inline m_str text_init(GwText *text, const size_t sz) {
-  return (text->str = (m_str)xmalloc(text-> cap = round2szint(sz)));
-}
-
 ANN static inline m_str text_grow(GwText *text, const size_t sz) {
   if(text->cap <= sz) {
     while(text->cap <= sz)
