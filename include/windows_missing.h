@@ -23,6 +23,9 @@ char *realpath(const char *path, char *resolved_path);
 #ifdef __clang__
 #define strdup _strdup
 int asprintf(char **strp, const char *fmt, ...);
+
+#undef creal
+#undef cimag
 #ifdef USE_DOUBLE
 #define creal(a) crealf((_Dcomplex)(a))
 #define cimag(a) cimagf((_Dcomplex)(a))
