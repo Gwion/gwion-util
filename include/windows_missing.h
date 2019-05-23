@@ -25,11 +25,11 @@ char *realpath(const char *path, char *resolved_path);
 int asprintf(char **strp, const char *fmt, ...);
 
 #ifdef USE_DOUBLE
-#define crealf(a) crealf(*(_Dcomplex*)&a)
-#define cimagf(a) cimagf(*(_Dcomplex*)&a)
+#define creal(a) creal(*(_Dcomplex*)&a)
+#define cimag(a) cimag(*(_Dcomplex*)&a)
 #else
-#define creal(a) creal(*(_Fcomplex*)a)
-#define cimag(a) cimag(*(_Fcomplex*)a)
+#define crealf(a) crealf(*(_Fcomplex*)&a)
+#define cimagf(a) cimagf(*(_Fcomplex*)&a)
 #endif
 #endif
 #endif
