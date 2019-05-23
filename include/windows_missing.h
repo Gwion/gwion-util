@@ -24,9 +24,11 @@ char *realpath(const char *path, char *resolved_path);
 #define strdup _strdup
 int asprintf(char **strp, const char *fmt, ...);
 #ifdef USE_DOUBLE
-#define creal(a) creal((_Dcomplex)(a))
+#define creal(a) crealf((_Dcomplex)(a))
+#define cimag(a) cimagf((_Dcomplex)(a))
 #else
-#define creal(a) creal((_Fcomplex)(a))
+#define creal(a) creald((_Fcomplex)(a))
+#define cimag(a) cimagd((_Fcomplex)(a))
 #endif
 #endif
 #endif
