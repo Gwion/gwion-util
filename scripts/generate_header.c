@@ -64,8 +64,10 @@ static void size(void) {
 static void format(void) {
   if(sizeof(uintptr_t) == sizeof(unsigned int))
     puts("#define  INT_F \"i\"\n#define UINT_F \"u\"");
-  else
+  else if(sizeof(uintptr_t) == sizeof(unsigned long int))
     puts("#define  INT_F \"li\"\n#define UINT_F \"lu\"\n#define abs labs");
+  else
+    puts("#define  INT_F \"lli\"\n#define UINT_F \"llu\"\n#define abs labs");
 }
 
 static void math_func(void) {
