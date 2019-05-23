@@ -20,7 +20,7 @@ int getline(char **lineptr, size_t *n, FILE *fp);
 FILE *fmemopen(void *buf, size_t len, const char *type NUSED);
 char *realpath(const char *path, char *resolved_path);
 
-#ifdef __clang
+#ifdef __clang__
 #define strcpy strcpy_s
 #define strncpy strncpy_s
 #define fdopen _fdopen
