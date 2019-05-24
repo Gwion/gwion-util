@@ -94,9 +94,6 @@ int main(void) {
   include();
   base_type();
   compound_type();
-#ifdef __APPLE__
-  puts("typedef unsigned int uint;");
-#endif
   size();
   format();
   if(strcmp(type, "double"))
