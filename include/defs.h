@@ -29,6 +29,11 @@
 #define CHECK_BO(f) { if(f < 0) return NULL; }
 #define CHECK_OO(f) { if(!f)    return NULL; }
 
+#define DECL_BB(decl, f, exp) decl f exp; { if(f < 0) return -1;   }
+#define DECL_OB(decl, f, exp) decl f exp; { if(!f)    return -1;   }
+#define DECL_BO(decl, f, exp) decl f exp; { if(f < 0) return NULL; }
+#define DECL_OO(decl, f, exp) decl f exp; { if(!f)    return NULL; }
+
 #define SET_FLAG(a, b) (a)->flag |= (ae_flag_##b)
 #define GET_FLAG(a, b) (((a)->flag & ae_flag_##b) == (ae_flag_##b))
 #define SAFE_FLAG(a, b) (a && ((a)->flag & (ae_flag_##b)) == (ae_flag_##b))
