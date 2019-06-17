@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 
-#define _(String) gettext(String)
+#define _(String) dgettext(DOMAIN, String)
 
 #define INTERNATIONALIZE(name)  \
 __attribute__((constructor))    \
