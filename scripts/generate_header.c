@@ -20,10 +20,10 @@
 #define SIZET_FMT "%zu"
 
 #ifdef USE_DOUBLE
-static const char* type	 = "double";
+static const char* type   = "double";
 #define SZ sizeof(double)
 #else
-static const char* type	 = "float ";
+static const char* type   = "float ";
 #define SZ sizeof(float)
 #endif
 

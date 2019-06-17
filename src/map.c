@@ -48,7 +48,7 @@ ANN void map_remove(const Map map, const vtype key) {
 }
 
 ANN void map_commit(const restrict Map map, const restrict Map commit) {
-  map->ptr = realloc(map->ptr, VCAP(commit) * SZ_INT);
+  map->ptr = (m_uint*)xrealloc(map->ptr, VCAP(commit) * SZ_INT);
   memcpy(map->ptr, commit->ptr, VCAP(commit) * SZ_INT);
 }
 
