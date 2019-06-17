@@ -1,6 +1,26 @@
 #ifndef __DEF
 #define __DEF
 
+#ifdef USE_GETTEXT
+#include <libintl.h>
+#include <locale.h>
+
+#include <stdio.h>
+
+#define _(String) gettext(String)
+
+#define INTERNATIONALIZE(name)  \
+__attribute__((constructor))    \
+static void name##_intl(void) { \
+  setlocale(LC_ALL, "");        \
+  bindtextdomain(#name, NULL);  \
+  textdomain(#name);\
+}
+INTERNATIONALIZE(gwion_util)
+#else
+#define _(String) (String)
+#endif
+
 #define container_of(ptr, type, member) (type *)( (char *)(ptr) - offsetof(type,member) )
 
 #define GW_ERROR -1

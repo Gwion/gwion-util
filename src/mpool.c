@@ -131,7 +131,7 @@ void *mp_realloc(MemPool mp, void* ptr, const m_uint curr, const m_uint next) {
 #include "err_msg.h" // for gwXalloc
 static const void* xcheck(const void* a) {
   if(!a)
-    exit(gw_err("Out of Memory"));
+    exit(gw_err(_("Out of Memory\n")));
   return a;
 }
 #else

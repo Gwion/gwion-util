@@ -20,6 +20,10 @@ CFLAGS += -flto
 LDFLAGS += -flto
 endif
 
+ifeq (${USE_GETTEXT}, 1)
+CFLAGS += -DUSE_GETTEXT=1
+endif
+
 ifeq ($(shell uname), Darwin)
 AR = /usr/bin/libtool
 AR_OPT = -static $^ -o $@
