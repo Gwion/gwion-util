@@ -6,8 +6,6 @@ $(shell cp config.mk.orig config.mk)
 endif
 include config.mk
 
-$(call TESTER, ${USE_MEMCHECK})
-
 src := $(wildcard src/*.c)
 
 ifeq (${BUILD_ON_WINDOWS}, 1)
@@ -20,14 +18,9 @@ CFLAGS += -D_GNU_SOURCE
 
 all: options include/generated.h libgwion_util.a
 
-options:
-  $(info CC      : ${CC})
-  $(info CFLAGS  : ${CFLAGS})
-  $(info LDFLAGS : ${LDFLAGS})
-
 libgwion_util.a: ${obj}
 	@$(info linking $@)
-	${AR} ${AR_OPT}
+	@${AR} ${AR_OPT}
 
 include/generated.h: scripts/generate_header.c
 	$(info generating generated.h)
@@ -37,7 +30,7 @@ include/generated.h: scripts/generate_header.c
 
 clean:
 	$(info cleaning)
-	@rm -f src/*.o windows_missing/*.o *.a
+	@rm -f ${obj} *.a
 
 install: libgwion_util.a
 	$(info installing in ${PREFIX})
@@ -45,4 +38,5 @@ install: libgwion_util.a
 	@install $^ ${PREFIX}/lib
 
 include $(wildcard .d/*.d)
+include target.mk
 include intl.mk
