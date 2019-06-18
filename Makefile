@@ -32,10 +32,13 @@ clean:
 	$(info cleaning)
 	@rm -f ${obj} *.a
 
-install: libgwion_util.a
-	$(info installing in ${PREFIX})
-	$(info installing $^)
-	@install $^ ${PREFIX}/lib
+install: translation-install libgwion_util.a
+	$(info installing $^ in ${PREFIX})
+	@install lib${PACKAGE}.a ${PREFIX}
+
+uninstall: translation-uninstall
+	$(info uninstalling lib${PACKAGE}.a from ${PREFIX})
+	@rm -rf ${PREFIX}/lib${PACKAGE}.a
 
 include $(wildcard .d/*.d)
 include target.mk

@@ -16,7 +16,7 @@ translation-update: ${po}
 	@xgettext -k_ -o ${pot} -i ${src}
 	@for a in ${po}; do msgmerge -Uq $$a ${pot}; done
 translation-generate: ${mo}
-translation-install: ${translation-generate}
+translation-install: translation-generate
 	@$(info installing translations)
 	@for a in ${mo}; do cp $$a ${PREFIX}/share/locale/$$(basename $$(dirname $$a))/LC_MESSAGES/${PACKAGE}.mo; done
 translation-uninstall:
