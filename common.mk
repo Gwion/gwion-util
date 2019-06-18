@@ -1,7 +1,5 @@
 ifeq (${USE_DOUBLE}, 1)
-CFLAGS +=-DUSE_DOUBLE -DSPFLOAT=double
-else
-CFLAGS+=-DSPFLOAT=float
+CFLAGS +=-DUSE_DOUBLE
 endif
 
 ifeq (${USE_COVERAGE}, 1)
@@ -21,7 +19,7 @@ LDFLAGS += -flto
 endif
 
 ifeq (${USE_GETTEXT}, 1)
-CFLAGS += -DUSE_GETTEXT=1
+CFLAGS += -DUSE_GETTEXT
 endif
 
 ifeq ($(shell uname), Darwin)
@@ -31,3 +29,13 @@ else
 AR = ar
 AR_OPT = rcs $@ $^
 endif
+
+.c.o: $(DEPDIR)/%.d
+	$(info compile $(<:.c=))
+	@${CC} $(DEPFLAGS) ${CFLAGS} ${CICFLAGS} -c $< -o $(<:.c=.o)
+	@mv -f $(DEPDIR)/$(@F:.o=.Td) $(DEPDIR)/$(@F:.o=.d) && touch $@
+	@echo $@: config.mk >> $(DEPDIR)/$(@F:.o=.d)
+
+DEPDIR := .d
+$(shell mkdir -p $(DEPDIR) >/dev/null)
+DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)/$(@F:.o=.Td)

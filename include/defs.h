@@ -4,19 +4,8 @@
 #ifdef USE_GETTEXT
 #include <libintl.h>
 #include <locale.h>
-
 #include <stdio.h>
-
-#define _(String) dgettext(DOMAIN, String)
-
-#define INTERNATIONALIZE(name)  \
-__attribute__((constructor))    \
-static void name##_intl(void) { \
-  setlocale(LC_ALL, "");        \
-  bindtextdomain(#name, NULL);  \
-  textdomain(#name);\
-}
-INTERNATIONALIZE(gwion_util)
+#define _(String) dgettext(PACKAGE, String)
 #else
 #define _(String) (String)
 #endif

@@ -1,13 +1,12 @@
-CFLAGS += -DDOMAIN='"gwion_util"'
+PACKAGE=gwion_util
+CFLAGS += -DPACKAGE='"${PACKAGE}"'
 
 ifeq (,$(wildcard config.mk))
 $(shell cp config.mk.orig config.mk)
 endif
 include config.mk
 
-DEPDIR := .d
-$(shell mkdir -p $(DEPDIR) >/dev/null)
-DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)/$(@F:.o=.Td)
+$(call TESTER, ${USE_MEMCHECK})
 
 src := $(wildcard src/*.c)
 
@@ -17,7 +16,7 @@ CFLAGS += -Iwindows_missing -DBUILD_ON_WINDOWS -D_XOPEN_SOURCE=700
 endif
 obj := $(src:.c=.o)
 
-CFLAGS += -Iinclude -D_GNU_SOURCE
+CFLAGS += -D_GNU_SOURCE
 
 all: options include/generated.h libgwion_util.a
 
@@ -36,12 +35,7 @@ include/generated.h: scripts/generate_header.c
 	@./generate_header > include/generated.h
 	@rm generate_header
 
-.c.o: $(DEPDIR)/%.d
-	$(info compile $(<:.c=))
-	@${CC} $(DEPFLAGS) ${CFLAGS} ${CICFLAGS} -c $< -o $(<:.c=.o)
-	@mv -f $(DEPDIR)/$(@F:.o=.Td) $(DEPDIR)/$(@F:.o=.d) && touch $@
-
-clean: clean-lang
+clean:
 	$(info cleaning)
 	@rm -f src/*.o windows_missing/*.o *.a
 
@@ -51,3 +45,4 @@ install: libgwion_util.a
 	@install $^ ${PREFIX}/lib
 
 include $(wildcard .d/*.d)
+include intl.mk
