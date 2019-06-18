@@ -62,7 +62,7 @@ static void size(void) {
 }
 
 static void format(void) {
-  else if(sizeof(uintptr_t) == sizeof(unsigned long long int))
+  if(sizeof(uintptr_t) == sizeof(unsigned long long int))
     puts("#define  INT_F \"lli\"\n#define UINT_F \"llu\"\n#define abs llabs");
   else if(sizeof(uintptr_t) == sizeof(unsigned long int))
     puts("#define  INT_F \"li\"\n#define UINT_F \"lu\"\n#define abs labs");
