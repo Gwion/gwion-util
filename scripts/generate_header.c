@@ -62,12 +62,12 @@ static void size(void) {
 }
 
 static void format(void) {
-  if(sizeof(uintptr_t) == sizeof(unsigned int))
-    puts("#define  INT_F \"i\"\n#define UINT_F \"u\"");
+  else if(sizeof(uintptr_t) == sizeof(unsigned long long int))
+    puts("#define  INT_F \"lli\"\n#define UINT_F \"llu\"\n#define abs llabs");
   else if(sizeof(uintptr_t) == sizeof(unsigned long int))
     puts("#define  INT_F \"li\"\n#define UINT_F \"lu\"\n#define abs labs");
   else
-    puts("#define  INT_F \"lli\"\n#define UINT_F \"llu\"\n#define abs labs");
+    puts("#define  INT_F \"lli\"\n#define UINT_F \"llu\"\n#define abs abs");
 }
 
 static void math_func(void) {
@@ -82,7 +82,7 @@ static void math_func(void) {
       "#define ceil ceilf\n#define round roundf\n#define trunc truncf\n"
       "#define fmod fmodf\n#define remainder remainderf");
 }
-
+#endif
 static void minval(void) {
   if(sizeof(uintptr_t) > SZ)
     puts("#define SZ_MINVAL SZ_INT");
