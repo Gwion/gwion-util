@@ -1,6 +1,15 @@
 #ifndef __DEF
 #define __DEF
 
+#ifdef USE_GETTEXT
+#include <libintl.h>
+#include <locale.h>
+#include <stdio.h>
+#define _(String) dgettext(PACKAGE, String)
+#else
+#define _(String) (String)
+#endif
+
 #define container_of(ptr, type, member) (type *)( (char *)(ptr) - offsetof(type,member) )
 
 #define GW_ERROR -1
