@@ -1,4 +1,5 @@
 .d
 *.a
+*.mo
 config.mk
 include/generated.h
