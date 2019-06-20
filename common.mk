@@ -39,3 +39,9 @@ endif
 DEPDIR := .d
 $(shell mkdir -p $(DEPDIR) >/dev/null)
 DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)/$(@F:.o=.Td)
+
+define _options
+  $(info CC      : ${CC})
+  $(info CFLAGS  : ${CFLAGS})
+  $(info LDFLAGS : ${LDFLAGS})
+endef

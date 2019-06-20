@@ -16,7 +16,10 @@ obj := $(src:.c=.o)
 
 CFLAGS += -D_GNU_SOURCE
 
-all: options include/generated.h libgwion_util.a
+all: options-show include/generated.h libgwion_util.a
+
+options-show:
+	@$(call _options)
 
 libgwion_util.a: ${obj}
 	@$(info linking $@)
