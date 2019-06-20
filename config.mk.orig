@@ -1,15 +1,21 @@
-util_dir := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-CC ?=gcc
-PREFIX ?=/usr/local
-
-CFLAGS += -std=c99 -Iinclude -O2
-# -fstrict-aliasing -mfpmath=sse
-CFLAGS += -Wall -Wextra
-#CFLAGS += -mtune=native
-
+# build options
 USE_DOUBLE    = 0
-USE_COVERAGE ?= 0
+USE_GETTEXT  ?= 0
 USE_MEMCHECK ?= 0
 USE_LTO      ?= 0
+USE_COVERAGE ?= 0
 
+#compiler/linker options
+CC ?=gcc
+PREFIX ?=/usr/local
+CFLAGS += -std=c99 -Iinclude -O2 -fstrict-aliasing
+CFLAGS += -mtune=native
+# -mfpmath=sse
+# don't forget the warnings
+CFLAGS += -Wall -Wextra
+
+# should point to gwion-util source
+util_dir := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+
+#please don't touch this
 include ${util_dir}/common.mk

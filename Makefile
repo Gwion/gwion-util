@@ -44,5 +44,4 @@ uninstall: translation-uninstall
 	@rm -rf ${PREFIX}/lib${PACKAGE}.a
 
 include $(wildcard .d/*.d)
-include target.mk
 include intl.mk
