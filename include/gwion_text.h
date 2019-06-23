@@ -16,7 +16,13 @@ ANN static inline void text_release(GwText *text) {
   }
 }
 
-ANN static inline void free_mstr(MemPool mp, m_str str) {
+ANN static inline void free_mstr(MemPool mp, const m_str str) {
   _mp_free(mp, strlen(str) + 1, str);
+}
+
+ANN static inline m_str mstrdup(MemPool mp, const m_str name) {
+  const m_str dup = (m_str)_mp_malloc(mp, strlen(name) + 1);
+  strcpy(dup, name);
+  return dup;
 }
 #endif

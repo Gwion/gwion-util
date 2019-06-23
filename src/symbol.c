@@ -46,10 +46,7 @@ void free_symbols(SymTable* ht) {
 __attribute__((hot))
 ANN2(1) static Symbol mksymbol(MemPool p, const m_str name, const Symbol next) {
   const Symbol s = mp_calloc(p, Symbol);
-//
-  s->name = (m_str)_mp_malloc(p, strlen(name) + 1);
-  strcpy(s->name, name);
-//
+  s->name = mstrdup(p, name);
   s->next = next;
   return s;
 }
