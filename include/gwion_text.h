@@ -15,4 +15,8 @@ ANN static inline void text_release(GwText *text) {
     text->cap = text->len = 0;
   }
 }
+
+ANN static inline void free_mstr(MemPool mp, m_str str) {
+  _mp_free(mp, strlen(str) + 1, str);
+}
 #endif

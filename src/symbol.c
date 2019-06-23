@@ -27,7 +27,7 @@ ANN SymTable* new_symbol_table(MemPool p, size_t sz) {
 ANN static void free_symbol(MemPool p, const Symbol s) {
   if(s->next)
     free_symbol(p, s->next);
-  xfree(s->name);
+  free_mstr(p, s->name);
   mp_free(p, Symbol, s);
 }
 
@@ -46,7 +46,10 @@ void free_symbols(SymTable* ht) {
 __attribute__((hot))
 ANN2(1) static Symbol mksymbol(MemPool p, const m_str name, const Symbol next) {
   const Symbol s = mp_calloc(p, Symbol);
-  s->name = strdup(name);
+//
+  s->name = (m_str)_mp_malloc(p, strlen(name) + 1);
+  strcpy(s->name, name);
+//
   s->next = next;
   return s;
 }
