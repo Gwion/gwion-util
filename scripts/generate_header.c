@@ -62,12 +62,12 @@ static void size(void) {
 }
 
 static void format(void) {
-  if(sizeof(uintptr_t) == sizeof(unsigned long long int))
-    puts("#define  INT_F \"lli\"\n#define UINT_F \"llu\"\n#define abs llabs");
-  else if(sizeof(uintptr_t) == sizeof(unsigned long int))
+  if(sizeof(uintptr_t) == sizeof(unsigned long int))
     puts("#define  INT_F \"li\"\n#define UINT_F \"lu\"\n#define abs labs");
+  else if(sizeof(uintptr_t) == sizeof(unsigned long long int))
+    puts("#define  INT_F \"lli\"\n#define UINT_F \"llu\"\n#define abs llabs");
   else
-    puts("#define  INT_F \"lli\"\n#define UINT_F \"llu\"\n#define abs abs");
+    puts("#define  INT_F \"i\"\n#define UINT_F \"u\"\n#define abs abs");
 }
 
 static void math_func(void) {

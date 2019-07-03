@@ -51,6 +51,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
+#include <string.h>
 #include "generated.h"
 
 typedef unsigned int uint;
