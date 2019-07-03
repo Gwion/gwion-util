@@ -55,12 +55,13 @@ __attribute__((hot))
 ANN Symbol insert_symbol(SymTable* ht, const m_str name) {
   const uint index = hash(name) % ht->sz;
   const Symbol syms = ht->sym[index];
+  Symbol *addr = &ht->sym[index];
   LOOP_OPTIM
   for(Symbol sym = syms; sym; sym = sym->next)
     if(!strcmp(sym->name, name))
       return sym;
   MUTEX_LOCK(ht->mutex);
-  ht->sym[index] = mksymbol(ht->p, name, syms);
+  *addr = mksymbol(ht->p, name, syms);
   MUTEX_UNLOCK(ht->mutex);
   return ht->sym[index];
 }
