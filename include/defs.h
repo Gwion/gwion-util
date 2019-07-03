@@ -10,7 +10,7 @@
 #define _(String) (String)
 #endif
 
-#define container_of(ptr, type, member) (type *)( (char *)(ptr) - offsetof(type,member) )
+#define container_of(ptr, type, member) ((type *)( (char *)(ptr) - offsetof(type,member) ))
 
 #define GW_ERROR -1
 #define GW_OK     1
