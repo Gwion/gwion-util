@@ -97,19 +97,6 @@ typedef enum {
   ae_flag_force = 1 << 30
 } ae_flag;
 
-typedef enum {
-  op_add, op_sub, op_mul, op_div, op_mod,
-  op_and, op_or, op_eq, op_ne, op_gt, op_ge, op_lt, op_le,
-  op_shl, op_shr, op_sor, op_sand, op_sxor,
-  op_inc, op_dec, op_not, op_cmp, op_new, op_spork, op_fork,
-  op_radd, op_rsub, op_rmul, op_rdiv, op_rmod,
-  op_rsl, op_rsr, op_rsand, op_rsor, op_rsxor,
-  op_chuck, op_unchuck, op_ref, op_unref, op_trig, op_untrig,
-  op_coloncolon, op_cast, op_impl
-} Operator;
-ANN m_str op2str(const Operator op);
-ANN int name2op(const m_str name);
-
 static inline m_uint num_digit(const m_uint i) {
   return i ? (m_uint)floor(log10((float)i) + 1) : 1;
 }
