@@ -94,7 +94,8 @@ typedef enum {
   ae_flag_protect = 1 << 27,
   ae_flag_used = 1 << 28,
   ae_flag_pure = 1 << 29,
-  ae_flag_force = 1 << 30
+  ae_flag_force = 1 << 30,
+  ae_flag_nonnull = 1 << 31
 } ae_flag;
 
 static inline m_uint num_digit(const m_uint i) {
