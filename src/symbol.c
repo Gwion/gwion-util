@@ -16,9 +16,9 @@ struct Symbol_ {
 };
 
 ANN SymTable* new_symbol_table(MemPool p, size_t sz) {
-  SymTable *st = mp_calloc(p, SymTable);
+  SymTable *st = mp_malloc2(p, sizeof(struct SymTable_));
   st->sz = sz;
-  st->sym = (Symbol*)xcalloc(sz, sizeof(struct Symbol_));
+  st->sym = (Symbol*)mp_calloc2(p, sz * sizeof(struct Symbol_));
   MUTEX_SETUP(st->mutex);
   st->p = p;
   return st;
@@ -45,7 +45,7 @@ void free_symbols(SymTable* ht) {
 
 __attribute__((hot))
 ANN2(1) static Symbol mksymbol(MemPool p, const m_str name, const Symbol next) {
-  const Symbol s = mp_calloc(p, Symbol);
+  const Symbol s = mp_malloc2(p, sizeof(struct Symbol_));
   s->name = mstrdup(p, name);
   s->next = next;
   return s;
