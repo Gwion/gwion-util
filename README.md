@@ -1,4 +1,5 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/fennecdjay/gwion-util?branch=master)](https://bettercodehub.com/)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![Build Status](https://travis-ci.org/fennecdjay/gwion-util.svg?branch=master)](https://travis-ci.org/fennecdjay/gwion-util)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffennecdjay%2Fgwion-util.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffennecdjay%2Fgwion-util?ref=badge_shield)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/fennecdjay/gwion-util.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/fennecdjay/gwion-util/context:cpp)
@@ -26,3 +27,19 @@ make
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffennecdjay%2Fgwion-util.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffennecdjay%2Fgwion-util?ref=badge_large)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/vemakereporter"><img src="https://avatars2.githubusercontent.com/u/49064208?v=4" width="100px;" alt="Vemake"/><br /><sub><b>Vemake</b></sub></a><br /><a href="https://github.com/fennecdjay/gwion-util/commits?author=vemakereporter" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

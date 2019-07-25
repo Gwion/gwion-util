@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "vemakereporter",
+      "name": "Vemake",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/49064208?v=4",
+      "profile": "https://github.com/vemakereporter",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "gwion-util",
+  "projectOwner": "fennecdjay",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
