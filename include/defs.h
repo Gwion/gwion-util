@@ -20,7 +20,8 @@
 
 #define ANN __attribute__((nonnull))
 #define ANN2(...) __attribute__((nonnull(__VA_ARGS__)))
-#define ANEW __attribute__((returns_nonnull,malloc))
+//#define ANEW __attribute__((returns_nonnull,malloc))
+#define ANEW __attribute__((malloc))
 #define NUSED __attribute__((unused))
 
 #ifdef __GNUC__
@@ -33,13 +34,13 @@
 #define LOOP_OPTIM
 #endif
 
-#define CHECK_BB(f) { if(f < 0) return -1;   }
-#define CHECK_OB(f) { if(!f)    return -1;   }
+#define CHECK_BB(f) { if(f < 0) return GW_ERROR;   }
+#define CHECK_OB(f) { if(!f)    return GW_ERROR;   }
 #define CHECK_BO(f) { if(f < 0) return NULL; }
 #define CHECK_OO(f) { if(!f)    return NULL; }
 
-#define DECL_BB(decl, f, exp) decl f exp; { if(f < 0) return -1;   }
-#define DECL_OB(decl, f, exp) decl f exp; { if(!f)    return -1;   }
+#define DECL_BB(decl, f, exp) decl f exp; { if(f < 0) return GW_ERROR;   }
+#define DECL_OB(decl, f, exp) decl f exp; { if(!f)    return GW_ERROR;   }
 #define DECL_BO(decl, f, exp) decl f exp; { if(f < 0) return NULL; }
 #define DECL_OO(decl, f, exp) decl f exp; { if(!f)    return NULL; }
 

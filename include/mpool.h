@@ -13,6 +13,7 @@ ANN void _mp_free(MemPool, const m_uint, void*);
 ANN void _mp_free2(struct pool*, void*);
 
 void *mp_realloc(MemPool mp, void* ptr, const m_uint curr, const m_uint next);
+#define mp_malloc(p, name) _mp_malloc(p, sizeof(struct name##_))
 #define mp_calloc(p, name) _mp_calloc(p, sizeof(struct name##_))
 #define mp_free(p, name, a) _mp_free(p, sizeof(struct name##_), (a))
 #define mp_free2(p, sz, a) _mp_free(p, sz, (a))
