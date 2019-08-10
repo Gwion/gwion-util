@@ -19,7 +19,7 @@ translation-edit: ${pot}
 	@$(call _translation_check)
 	@${EDITOR} po/${TRANSLATION_TARGET}/${PACKAGE}.po
 
-translation-update: ${po}
+translation-update: ${po} ${src}/*.c
 	@$(info updating translations)
 	@xgettext -k_ -o ${pot} -i ${src}
 	@mv ${pot}.tmp ${pot}
