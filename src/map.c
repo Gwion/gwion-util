@@ -42,7 +42,7 @@ ANN void map_remove(const Map map, const vtype key) {
   map_init(&tmp);
   for(vtype i = 0; i < VLEN(map); ++i)
     if(VKEY(map, i) != key)
-      map_set(&tmp, key, VVAL(map, i));
+      map_set(&tmp, VKEY(map, i), VVAL(map, i));
   xfree(map->ptr);
   map->ptr = tmp.ptr;
 }
