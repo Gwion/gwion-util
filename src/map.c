@@ -3,7 +3,8 @@
 #include "gwion_util.h"
 
 ANN void map_clear(const Map v) {
-  v->ptr = (m_uint*)xrealloc(v->ptr, (VCAP(v) = MAP_CAP) * SZ_INT);
+  if(VCAP(v) != MAP_CAP)
+    v->ptr = (m_uint*)xrealloc(v->ptr, (VCAP(v) = MAP_CAP) * SZ_INT);
   VLEN(v) = 0;
 }
 
@@ -38,13 +39,15 @@ ANN void map_set(const Map map, const vtype key, const vtype ptr) {
 }
 
 ANN void map_remove(const Map map, const vtype key) {
-  struct Map_ tmp;
-  map_init(&tmp);
-  for(vtype i = 0; i < VLEN(map); ++i)
-    if(VKEY(map, i) != key)
-      map_set(&tmp, VKEY(map, i), VVAL(map, i));
-  xfree(map->ptr);
-  map->ptr = tmp.ptr;
+  const vtype len = VLEN(map);
+  for(vtype i = 0, j = 0; i < len; ++i) {
+    if(VKEY(map, i) != key) {
+      VKEY(map, j) = VKEY(map, i);
+      VVAL(map, j) = VVAL(map, i);
+      ++j;
+    } else
+      --VLEN(map);
+  }
 }
 
 ANN void map_commit(const restrict Map map, const restrict Map commit) {
@@ -52,11 +55,12 @@ ANN void map_commit(const restrict Map map, const restrict Map commit) {
   memcpy(map->ptr, commit->ptr, VCAP(commit) * SZ_INT);
 }
 
-ANN void free_map(MemPool p, const Map map) {
-  xfree(map->ptr);
-  mp_free(p, Map, map);
-}
-
 ANN void map_release(const Map map) {
   xfree(map->ptr);
 }
+
+ANN void free_map(MemPool p, const Map map) {
+  map_release(map);
+  mp_free(p, Map, map);
+}
+
