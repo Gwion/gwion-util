@@ -37,7 +37,10 @@ clean:
 
 install: translation-install libgwion_util.a
 	$(info installing $^ in ${PREFIX})
-	@install lib${PACKAGE}.a ${PREFIX}
+	@install libgwion_util.a ${DESTDIR}/${PREFIX}
+
+uninstall:
+	rm ${DESTDIR}/${PREFIX}/bin/libgwion_util.a
 
 uninstall: translation-uninstall
 	$(info uninstalling lib${PACKAGE}.a from ${PREFIX})
