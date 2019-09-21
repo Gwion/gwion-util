@@ -1,5 +1,5 @@
 GWION_PACKAGE=gwion_util
-CFLAGS += -DGWION_PACKAGE='"${PACKAGE}"'
+CFLAGS += -DGWION_PACKAGE='"${GWION_PACKAGE}"'
 
 ifeq (,$(wildcard config.mk))
 $(shell cp config.mk.orig config.mk)
