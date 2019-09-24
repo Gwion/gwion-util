@@ -130,9 +130,10 @@ void *mp_realloc(MemPool mp, void* ptr, const m_uint curr, const m_uint next) {
 #ifndef MEM_UNSECURE
 #include "err_msg.h" // for gwXalloc
 static const void* xcheck(const void* a) {
-  if(!a)
-    exit(gw_err(_("Out of Memory\n")));
-  return a;
+  if(a)
+    return a;
+  gw_err(_("Out of Memory\n"));
+  return NULL;
 }
 #else
 #define xcheck(a) (a)
