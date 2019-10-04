@@ -1,5 +1,15 @@
 GWION_PACKAGE=gwion_util
 CFLAGS += -DGWION_PACKAGE='"${GWION_PACKAGE}"'
+MEM_UNSECURE ?=
+POOL_CHECK ?=
+
+ifeq (${MEM_UNSECURE}, 1)
+CFLAGS += -DMEM_UNSECURE
+endif
+
+ifeq (${POOL_CHECK}, 1)
+CFLAGS += -DPOOL_CHECK
+endif
 
 ifeq (,$(wildcard config.mk))
 $(shell cp config.mk.orig config.mk)
@@ -39,12 +49,9 @@ install: translation-install libgwion_util.a
 	$(info installing $^ in ${PREFIX})
 	@install libgwion_util.a ${DESTDIR}/${PREFIX}
 
-uninstall:
-	rm ${DESTDIR}/${PREFIX}/bin/libgwion_util.a
-
 uninstall: translation-uninstall
 	$(info uninstalling lib${PACKAGE}.a from ${PREFIX})
-	@rm -rf ${PREFIX}/lib${PACKAGE}.a
+	@rm -rf ${PREFIX}/${PREFIX}/lib${PACKAGE}.a
 
 include $(wildcard .d/*.d)
 include intl.mk
