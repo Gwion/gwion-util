@@ -18,7 +18,7 @@ struct Symbol_ {
 ANN SymTable* new_symbol_table(MemPool p, size_t sz) {
   SymTable *st = mp_malloc2(p, sizeof(struct SymTable_));
   st->sz = sz;
-  st->sym = (Symbol*)mp_calloc2(p, sz * sizeof(struct Symbol_));
+  st->sym = (Symbol*)mp_calloc2(p, sz * sizeof(struct Symbol_*));
   MUTEX_SETUP(st->mutex);
   st->p = p;
   return st;
