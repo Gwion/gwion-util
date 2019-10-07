@@ -70,6 +70,7 @@ static void format(void) {
     puts("#define  INT_F \"i\"\n#define UINT_F \"u\"\n#define abs abs");
 }
 
+/*
 static void math_func(void) {
   puts("#define creal crealf\n#define cimag cimagf\n#define fabs fabsf"
       "\n#define cos cosf\n#define sin sinf\n#define tan tanf\n"
@@ -82,7 +83,7 @@ static void math_func(void) {
       "#define ceil ceilf\n#define round roundf\n#define trunc truncf\n"
       "#define fmod fmodf\n#define remainder remainderf");
 }
-
+*/
 static void minval(void) {
   if(sizeof(uintptr_t) > SZ)
     puts("#define SZ_MINVAL SZ_INT");
@@ -96,8 +97,8 @@ int main(void) {
   compound_type();
   size();
   format();
-  if(strcmp(type, "double"))
-    math_func();
+//  if(strcmp(type, "double"))
+//    math_func();
   minval();
   return 0;
 }
