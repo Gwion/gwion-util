@@ -46,13 +46,13 @@ clean:
 	@rm -f ${obj} *.a
 
 install: translation-install libgwion_util.a
-	$(info installing gwion_util in ${PREFIX})
+	$(info installing ${PACKAGE} in ${PREFIX})
 	@install libgwion_util.a ${DESTDIR}/${PREFIX}
 	@mkdir -p ${DESTDIR}/${PREFIX}/include/gwion/util
 	@cp include/*.h ${DESTDIR}/${PREFIX}/include/gwion/util
 
 uninstall: translation-uninstall
-	$(info uninstalling lib${PACKAGE}.a from ${PREFIX})
+	$(info uninstalling ${PACKAGE} from ${PREFIX})
 	@rm -rf ${PREFIX}/${PREFIX}/lib${PACKAGE}.a
 	@rm -rf ${PREFIX}/${PREFIX}/include/gwion/util
 
