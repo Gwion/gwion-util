@@ -43,8 +43,11 @@
 #define DECL_OB(decl, f, exp) decl f exp; { if(!f)    return GW_ERROR;   }
 #define DECL_BO(decl, f, exp) decl f exp; { if(f < 0) return NULL; }
 #define DECL_OO(decl, f, exp) decl f exp; { if(!f)    return NULL; }
-
+#ifndef __cplusplus
 #define SET_FLAG(a, b) (a)->flag |= (ae_flag_##b)
+#else
+#define SET_FLAG(a, b) { const int f = a->flag | (ae_flag_##b); (a->flag) = (ae_flag)f; }
+#endif
 #define GET_FLAG(a, b) (((a)->flag & ae_flag_##b) == (ae_flag_##b))
 #define SAFE_FLAG(a, b) (a && ((a)->flag & (ae_flag_##b)) == (ae_flag_##b))
 #define UNSET_FLAG(a, b) ((a)->flag &= (uint)~(ae_flag_##b))
