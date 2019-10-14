@@ -38,7 +38,7 @@ void free_symbols(SymTable* ht) {
     if(s)
       free_symbol(ht->p, s);
   }
-  xfree(ht->sym);
+  mp_free2(ht->p, ht->sz * sizeof(struct Symbol_*), ht->sym);
   MUTEX_CLEANUP(ht->mutex);
   mp_free(ht->p, SymTable, ht);
 }
