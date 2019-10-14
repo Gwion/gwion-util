@@ -18,7 +18,7 @@ struct Symbol_ {
 ANN SymTable* new_symbol_table(MemPool p, size_t sz) {
   SymTable *st = mp_malloc2(p, sizeof(struct SymTable_));
   st->sz = sz;
-  st->sym = (Symbol*)mp_calloc2(p, sz * sizeof(struct Symbol_*));
+  st->sym = (Symbol*)xcalloc(sz, sizeof(struct Symbol_*));
   MUTEX_SETUP(st->mutex);
   st->p = p;
   return st;
@@ -38,7 +38,7 @@ void free_symbols(SymTable* ht) {
     if(s)
       free_symbol(ht->p, s);
   }
-  mp_free2(ht->p, ht->sz * sizeof(struct Symbol_*), ht->sym);
+  xfree(ht->sym);
   MUTEX_CLEANUP(ht->mutex);
   mp_free(ht->p, SymTable, ht);
 }
@@ -55,7 +55,7 @@ __attribute__((hot))
 ANN Symbol insert_symbol(SymTable* ht, const m_str name) {
   const uint index = hash(name) % ht->sz;
   const Symbol syms = ht->sym[index];
-  Symbol *addr = &ht->sym[index];
+  Symbol *const addr = &ht->sym[index];
   LOOP_OPTIM
   for(Symbol sym = syms; sym; sym = sym->next)
     if(!strcmp(sym->name, name))
