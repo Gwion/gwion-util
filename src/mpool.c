@@ -67,7 +67,6 @@ ANN struct pool* mp_ini(MemPool mp, const uint32_t obj_sz) {
     return NULL;
   const uint32_t idx = mp_idx(obj_sz);
   return mp->pools[idx] ?: mp_create(mp, obj_sz, idx);
-  return mp_ini(mp, obj_sz);
 }
 
 void mp_end(struct pool *p) {
