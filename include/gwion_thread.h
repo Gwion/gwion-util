@@ -15,7 +15,11 @@
 #define MUTEX_UNLOCK(x)        ReleaseMutex((x))
 int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 
-
+#define THREAD_COND_TYPE           HANDLE
+#define THREAD_COND_SETUP(x)       x = CreateEvent(NULL, FALSE, FALSE, NULL);
+#define THREAD_COND_WAIT(x, mutex) WaitForSingleObject(x, INFINITE)
+#define THREAD_COND_SIGNAL(x)      SetEvent(x);
+#define THREAD_COND_CLEANUP(x)     CloseHandle(x)
 #else
 #include <pthread.h>
 
@@ -35,6 +39,12 @@ pthread_mutex_init(x, &attr); }
 #define MUTEX_CLEANUP(x)       { pthread_mutex_destroy((x)); xfree(x); }
 #define MUTEX_LOCK(x)          pthread_mutex_lock((x))
 #define MUTEX_UNLOCK(x)        pthread_mutex_unlock((x))
+
+#define THREAD_COND_TYPE           pthread_cond_t
+#define THREAD_COND_SETUP(x)       pthread_cond_init(&x, NULL);
+#define THREAD_COND_WAIT(x, mutex) pthread_cond_wait(&x, mutex)
+#define THREAD_COND_SIGNAL(x)      pthread_cond_signal(&x)
+#define THREAD_COND_CLEANUP(x)     pthread_cond_destroy(&x)
 
 #endif
 #endif
