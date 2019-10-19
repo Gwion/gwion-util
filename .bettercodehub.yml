@@ -5,6 +5,8 @@ languages:
     production:
       include:
         - /src/.*\.c
+      exclude:
+        - /windows_missing/.*\.c
     test:
       include:
         - /tests/.*\.c
