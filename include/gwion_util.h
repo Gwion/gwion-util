@@ -11,4 +11,5 @@
 #include "symbol.h"
 #include "scope.h"
 #include "gwion_text.h"
+#include "carg.h"
 #endif
