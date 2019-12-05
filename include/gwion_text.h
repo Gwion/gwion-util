@@ -19,7 +19,7 @@ ANN static inline void text_release(GwText *text) {
 // TODO: renaming
 ANN static inline void text_reset(GwText *text) {
   if(text->str) {
-    text->str = '\0';
+    *text->str = '\0';
     text->cap = text->len = 0;
   }
 }
