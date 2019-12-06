@@ -6,10 +6,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        cc: [gcc, clang]
     steps:
     - uses: actions/checkout@v1
-    - name: make
+    - name: make CC=${{ matrix.cc }}
       run: make
-    - name: make test
-      run: make test
