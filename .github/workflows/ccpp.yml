@@ -4,15 +4,12 @@ on: [push]
 
 jobs:
   build:
-      
     runs-on: ${{ matrix.os }}
-    
     matrix:
       os: [ ubuntu-latest, macos-latest, windows-latest ]
       cc: [ gcc, clang ]
       double: [ 0, 1]
-
-steps:
+  steps:
     - uses: actions/checkout@v1
     - name: make
       run: make
