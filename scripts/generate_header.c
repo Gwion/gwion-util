@@ -8,16 +8,14 @@
 #define NUSED
 #include "windows_missing.h"
 #define __USE_MINGW_ANSI_STDIO 1
-/*
 #ifdef __MINGW32__
 #define SIZET_FMT "%I32u"
 #else
 #define SIZET_FMT "%I64u"
 #endif
 #else
-*/
-#endif
 #define SIZET_FMT "%zu"
+#endif
 
 #ifdef USE_DOUBLE
 static const char* type   = "double";
