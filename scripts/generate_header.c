@@ -7,14 +7,12 @@
 #ifdef BUILD_ON_WINDOWS
 #define NUSED
 #include "windows_missing.h"
-#define __USE_MINGW_ANSI_STDIO 1
-#if defined __MINGW32__ || defined __MINGW64__
-#define SIZET_FMT "%I32u"
-#else
-#define SIZET_FMT "%I64u"
-#endif
-#else
 #define SIZET_FMT "%zu"
+#else
+#if defined __MINGW32__ || defined __MINGW64__
+#define __USE_MINGW_ANSI_STDIO 1
+#define SIZET_FMT "%I32u"
+#define SIZET_FMT "%I64u"
 #endif
 
 #ifdef USE_DOUBLE
