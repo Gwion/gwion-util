@@ -3,9 +3,9 @@ name: C/C++ CI
 on: [push]
 
 jobs:
-  - name: ${{ matrix.os }} ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
   build:
     runs-on: ${{ matrix.os }}
+    name:  ${{ matrix.os }} ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
