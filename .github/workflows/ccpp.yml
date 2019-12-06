@@ -11,7 +11,8 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
         cc: [gcc, clang]
         double: [0, 1]
+        build: [BUILD_ON_LINUX, BUILD_ON_MACOS, BUILD_ON_WINDOWS]
     steps:
     - uses: actions/checkout@v1
     - name: build
-      run: make CC=${{ matrix.cc }}
+      run: CFLAGS=-D${{ matrix.build }} make CC=${{ matrix.cc }}
