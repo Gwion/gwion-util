@@ -11,8 +11,8 @@ jobs:
       double: [0, 1]
       
   steps:
-    - uses: actions/checkout@v1
-    - name: make
-      run: make
-    - name: make test
-      run: make test
+  - uses: actions/checkout@v1
+  - name: make
+    run: make
+  - name: make test
+    run: make test
