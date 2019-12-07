@@ -15,5 +15,5 @@ jobs:
       env:
         CFLAGS: -DBUILD_ON_WINDOWS
       run: | 
-        make CC=$(which gcc)
+        make CC=$(which gcc) USE_DOUBLE=${{ matrix.double }}
 #        make CC=/c/ProgramData/Chocolatey/bin/gcc
