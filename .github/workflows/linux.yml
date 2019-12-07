@@ -13,6 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: build
-      env: USE_DOUBLE={{ matric.double }}
+      env: USE_DOUBLE=${{ matrix.double }}
       run: | 
         make CC=${{ matrix.cc }}
