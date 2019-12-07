@@ -5,13 +5,15 @@ on: [push]
 jobs:
   build:
     runs-on: windows-latest
-    name:  ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
+    name:  ${{ matrix.double && 'double' || '' }}
     strategy:
       matrix:
-        cc: [gcc, clang]
         double: [0, 1]
     steps:
     - uses: actions/checkout@v1
     - name: build
+      env:
+        CFLAGS: -DBUILD_ON_WINDOWS
       run: | 
-        make CC=${{ matrix.cc }}
+        make CC=$(which gcc)
+#        make CC=/c/ProgramData/Chocolatey/bin/gcc
