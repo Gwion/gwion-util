@@ -13,5 +13,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: build
       run: | 
-        make CC=$(which gcc)
+        CFLAGS=-DBUILD_ON_WINDOWS make CC=$(which gcc)
 #        make CC=/c/ProgramData/Chocolatey/bin/gcc
