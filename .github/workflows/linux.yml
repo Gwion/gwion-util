@@ -1,18 +1,18 @@
-name: C/C++ CI
+name: Linux
 
 on: [push]
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    name:  ${{ matrix.os }} ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
+    runs-on: ubuntu-latest
+    name:  ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
     strategy:
       matrix:
-        os: [macos-latest, windows-latest]
         cc: [gcc, clang]
         double: [0, 1]
     steps:
     - uses: actions/checkout@v1
     - name: build
+      env: USE_DOUBLE={{ matric.double }}
       run: | 
         make CC=${{ matrix.cc }}
