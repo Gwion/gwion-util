@@ -11,8 +11,6 @@ jobs:
         double: [0, 1]
     steps:
     - uses: actions/checkout@v1
-    - name: check
-      run: which cc; which gcc; which clang
     - name: build
       run: | 
         make CC=$(which gcc)
