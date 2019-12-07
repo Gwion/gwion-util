@@ -17,5 +17,5 @@ jobs:
       run: which cc; which gcc
     - name: build
       run: | 
-        make
+        make CC=/c/ProgramData/Chocolatey/bin/gcc
 #        make CC=${{ matrix.cc }}
