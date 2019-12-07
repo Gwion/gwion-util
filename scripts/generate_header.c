@@ -8,10 +8,10 @@
 #define NUSED
 #include "windows_missing.h"
 #define __USE_MINGW_ANSI_STDIO 1
-#ifdef __MINGW32__
-#define SIZET_FMT "%I32u"
-#else
+#ifdef __MINGW64__
 #define SIZET_FMT "%I64u"
+#else
+#define SIZET_FMT "%I32u"
 #endif
 #else
 #define SIZET_FMT "%zu"
