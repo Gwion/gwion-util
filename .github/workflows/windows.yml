@@ -1,14 +1,13 @@
-name: C/C++ CI
+name: Windows
 
 on: [push]
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    name:  ${{ matrix.os }} ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
+    runs-on: windows-latest
+    name:  ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
     strategy:
       matrix:
-        os: [macos-latest, windows-latest]
         cc: [gcc, clang]
         double: [0, 1]
     steps:
