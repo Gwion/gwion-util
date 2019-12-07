@@ -5,13 +5,15 @@ on: [push]
 jobs:
   build:
     runs-on: windows-latest
-    name:  ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
+    #name:  ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
+    name:  ${{ matrix.double && 'double' || '' }}
     strategy:
       matrix:
-        cc: [gcc, clang]
+#        cc: [gcc, clang]
         double: [0, 1]
     steps:
     - uses: actions/checkout@v1
     - name: build
       run: | 
-        make CC=${{ matrix.cc }}
+        make
+#        make CC=${{ matrix.cc }}
