@@ -150,7 +150,7 @@ static const void* xcheck(const void* a) {
   if(a)
     return a;
   gw_err(_("Out of Memory\n"));
-  return NULL;
+  THREAD_RETURN(NULL);
 }
 #else
 #define xcheck(a) (a)
