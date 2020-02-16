@@ -2,11 +2,6 @@ ifeq (${USE_DOUBLE}, 1)
 CFLAGS +=-DUSE_DOUBLE
 endif
 
-ifeq (${USE_COVERAGE}, 1)
-CFLAGS += -ftest-coverage -fprofile-arcs
-LDFLAGS += --coverage
-endif
-
 ifeq (${USE_MEMCHECK}, 1)
 CFLAGS += -g -Og
 else
@@ -20,6 +15,11 @@ endif
 
 ifeq (${USE_GETTEXT}, 1)
 CFLAGS += -DUSE_GETTEXT
+endif
+
+ifeq (${USE_COVERAGE}, 1)
+CFLAGS += -ftest-coverage -fprofile-arcs -O0 -g
+LDFLAGS += --coverage
 endif
 
 ifeq ($(shell uname), Darwin)
