@@ -20,7 +20,7 @@ src := $(wildcard src/*.c)
 
 ifeq (${BUILD_ON_WINDOWS}, 1)
 src += $(wildcard windows_missing/*.c)
-CFLAGS += -Iwindows_missing -DBUILD_ON_WINDOWS -D_XOPEN_SOURCE=700
+CFLAGS += -Iwindows_missing
 endif
 obj := $(src:.c=.o)
 

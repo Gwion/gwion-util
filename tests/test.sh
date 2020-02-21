@@ -8,10 +8,6 @@ compile () {
   cc -I../include "$1" ../libgwion_util.a -lpthread
 }
 
-run () {
-  valgrind --leak-check=yes --log-file=test.log ./a.out
-}
-
 test_error () {
   printf "leak in test file '%s'" "$file"
 }
@@ -20,7 +16,7 @@ test_error () {
 for file in *.c
 do
   compile "$file"
-  run || {
+  ./a.out || {
    test_error
    break
   }

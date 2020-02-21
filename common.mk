@@ -22,6 +22,10 @@ CFLAGS += -ftest-coverage -fprofile-arcs -O0 -g
 LDFLAGS += --coverage
 endif
 
+ifeq (${BUILD_ON_WINDOWS}, 1)
+CFLAGS += -DBUILD_ON_WINDOWS=1 -D_XOPEN_SOURCE=700
+endif
+
 ifeq ($(shell uname), Darwin)
 AR = /usr/bin/libtool
 AR_OPT = -static $^ -o $@
