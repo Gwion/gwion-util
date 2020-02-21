@@ -1,5 +1,5 @@
 # build options
-USE_DOUBLE    = 0
+USE_DOUBLE   ?= 0
 USE_GETTEXT  ?= 0
 USE_MEMCHECK ?= 0
 USE_LTO      ?= 0

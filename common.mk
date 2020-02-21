@@ -2,8 +2,9 @@ ifeq (${USE_DOUBLE}, 1)
 CFLAGS +=-DUSE_DOUBLE
 endif
 
-ifeq (${USE_MEMCHECK}, 1)
-CFLAGS += -g -Og
+ifeq (${USE_DEBUG}, 1)
+CFLAGS += -fsanitize=address -fno-omit-frame-pointer
+LDFLAGS += -fsanitize=address -fno-omit-frame-pointer
 else
 CFLAGS += -DNDEBUG
 endif
