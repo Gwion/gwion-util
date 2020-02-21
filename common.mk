@@ -23,7 +23,7 @@ LDFLAGS += --coverage
 endif
 
 ifeq (${BUILD_ON_WINDOWS}, 1)
-CFLAGS += -DBUILD_ON_WINDOWS=1 -D_XOPEN_SOURCE=700
+CFLAGS += -DBUILD_ON_WINDOWS=1 -D_XOPEN_SOURCE=700 -Wl,--export-all_symbols
 endif
 
 ifeq ($(shell uname), Darwin)
