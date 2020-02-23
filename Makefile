@@ -57,4 +57,4 @@ uninstall: translation-uninstall
 	@rm -rf ${PREFIX}/${PREFIX}/include/gwion/util
 
 include $(wildcard .d/*.d)
-include intl.mk
+include locale.mk
