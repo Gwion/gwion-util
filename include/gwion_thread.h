@@ -2,7 +2,7 @@
 #define __GWION_THREAD
 #ifdef BUILD_ON_WINDOWS
 #include <windows.h>
-#define THREAD_FUNC(a)               long unsigned int (*a)(void*)
+#define THREAD_FUNC(a)            long unsigned int (a)(void *data)
 #define THREAD_TYPE               HANDLE
 #define THREAD_CREATE(thread, func, arg)  thread = CreateThread(NULL, 0, func, arg, 0, NULL);
 #define THREAD_JOIN(thread)   WaitForSingleObject(thread, 0);
@@ -24,7 +24,7 @@ int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 #else
 #include <pthread.h>
 
-#define THREAD_FUNC(a)               void* (*a)(void*)
+#define THREAD_FUNC(a)               void* (a)(void *data)
 #define THREAD_TYPE               pthread_t
 #define THREAD_CREATE(thread, func, arg)  pthread_create(&thread, NULL, func, arg);
 #define THREAD_JOIN(thread)       pthread_join(thread, NULL);
