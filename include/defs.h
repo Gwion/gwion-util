@@ -73,6 +73,7 @@ typedef enum {
   ae_flag_static  = 1 << 4,
   ae_flag_template  = 1 << 5,
   ae_flag_variadic  = 1 << 6, // variadic funcs
+  ae_flag_struct = 1 << 6,
   ae_flag_ctor  = 1 << 7,
   ae_flag_dtor  = 1 << 8,
   ae_flag_op  = 1 << 9,

@@ -6,8 +6,8 @@ ifeq (${USE_DEBUG}, 1)
 CFLAGS += -fsanitize=address -fno-omit-frame-pointer -Og
 LDFLAGS += -fsanitize=address -fno-omit-frame-pointer -Og
 else
-CFLAGS += -DNDEBUG -fomit-frame-pointer -fno-stack-protector -fno-common -ffast-math -Ofast
-LDFLAGS += -fomit-frame-pointer -fno-stack-protector -fno-common -ffast-math -Ofast
+CFLAGS += -DNDEBUG -fomit-frame-pointer -fno-stack-protector -fno-common -Ofast
+LDFLAGS += -fomit-frame-pointer -fno-stack-protector -fno-common -Ofast
 endif
 
 ifeq (${USE_LTO}, 1)
@@ -36,7 +36,7 @@ AR = ar
 AR_OPT = rcs $@ $^
 endif
 
-.c.o: $(DEPDIR)/%.d
+.c.o:
 	$(info compile $(<:.c=))
 	@${CC} $(DEPFLAGS) ${CFLAGS} ${CICFLAGS} -c $< -o $(<:.c=.o)
 	@mv -f $(DEPDIR)/$(@F:.o=.Td) $(DEPDIR)/$(@F:.o=.d) && touch $@
