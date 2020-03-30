@@ -1,7 +1,7 @@
 #ifndef __GWION_THREAD
 #define __GWION_THREAD
 #ifdef BUILD_ON_WINDOWS
-
+#include <windows.h>
 #define THREAD_TYPE               HANDLE
 #define THREAD_CREATE(thread, func, arg)  thread = CreateThread(NULL, 0, func, arg, 0, NULL);
 #define THREAD_JOIN(thread)   WaitForSingleObject(thread, 0);
