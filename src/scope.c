@@ -24,6 +24,11 @@ ANN vtype scope_lookup1(const Scope s, const vtype xid) {
   return map_get(&s->map, (vtype)xid);
 }
 
+ANN vtype scope_lookup2(const Scope s, const vtype xid) {
+  const Map map = (Map)VPTR(s, 0);
+  return map_get(map, xid) ?: map_get(&s->map, (vtype)xid);
+}
+
 ANN void scope_add(const Scope s, const vtype xid, const vtype value) {
   if(VLEN(s) > 1)
     map_set(scope_back(s), xid, value);
