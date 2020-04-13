@@ -63,7 +63,7 @@ static struct pool* mp_create(MemPool mp, const uint32_t obj_sz, const uint32_t 
 }
 
 ANN struct pool* mp_ini(MemPool mp, const uint32_t obj_sz) {
-  if(mp_idx(obj_sz) > mp->sz+1)
+  if(mp_idx(obj_sz) >= mp->sz)
     return NULL;
   const uint32_t idx = mp_idx(obj_sz);
   return mp->pools[idx] ?: mp_create(mp, obj_sz, idx);
