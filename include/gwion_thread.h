@@ -44,11 +44,11 @@ pthread_mutex_init(x, &attr); }
 #define MUTEX_LOCK(x)          pthread_mutex_lock((x))
 #define MUTEX_UNLOCK(x)        pthread_mutex_unlock((x))
 
-#define THREAD_COND_TYPE           pthread_cond_t
-#define THREAD_COND_SETUP(x)       pthread_cond_init(&x, NULL);
-#define THREAD_COND_WAIT(x, mutex) pthread_cond_wait(&x, mutex)
-#define THREAD_COND_SIGNAL(x)      pthread_cond_signal(&x)
-#define THREAD_COND_CLEANUP(x)     pthread_cond_destroy(&x)
+#define THREAD_COND_TYPE           pthread_cond_t*
+#define THREAD_COND_SETUP(x)       { x = (pthread_cond_t*)xcalloc(1, sizeof(pthread_cond_t)); pthread_cond_init(x, NULL); }
+#define THREAD_COND_WAIT(x, mutex) pthread_cond_wait(x, mutex)
+#define THREAD_COND_SIGNAL(x)      pthread_cond_signal(x)
+#define THREAD_COND_CLEANUP(x)     { pthread_cond_destroy(x); xfree(x); }
 
 #endif
 #endif
