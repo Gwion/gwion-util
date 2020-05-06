@@ -14,7 +14,9 @@
 #define MUTEX_SETUP(x)         (x) = CreateMutex(NULL, FALSE, NULL)
 #define MUTEX_CLEANUP(x)       CloseHandle(x)
 #define MUTEX_LOCK(x)          emulate_pthread_mutex_lock(&(x))
+#define MUTEX_COND_LOCK(x)
 #define MUTEX_UNLOCK(x)        (ReleaseMutex((x)) == 0)
+#define MUTEX_COND_UNLOCK(x)
 int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 
 #define THREAD_COND_TYPE           HANDLE
@@ -42,7 +44,9 @@ x = (pthread_mutex_t*)xmalloc(sizeof (pthread_mutex_t));\
 pthread_mutex_init(x, &attr); }
 #define MUTEX_CLEANUP(x)       { pthread_mutex_destroy((x)); xfree(x); }
 #define MUTEX_LOCK(x)          pthread_mutex_lock((x))
+#define MUTEX_COND_LOCK(x)          pthread_mutex_lock((x))
 #define MUTEX_UNLOCK(x)        pthread_mutex_unlock((x))
+#define MUTEX_COND_UNLOCK(x)        pthread_mutex_unlock((x))
 
 #define THREAD_COND_TYPE           pthread_cond_t*
 #define THREAD_COND_SETUP(x)       { x = (pthread_cond_t*)xcalloc(1, sizeof(pthread_cond_t)); pthread_cond_init(x, NULL); }
