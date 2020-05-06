@@ -83,7 +83,7 @@ typedef enum {
   ae_flag_enum  = 1 << 13,
   ae_flag_union  = 1 << 14,
   ae_flag_ref  = 1 << 15,
-  ae_flag_abstract  = 1 << 16, // abstract type and variables in global functions
+  ae_flag_abstract  = 1 << 16, // abstract types
   ae_flag_typedef  = 1 << 17,
   ae_flag_unary  = 1 << 18,
   ae_flag_func  = 1 << 19, // for value holding func
