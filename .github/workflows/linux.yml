@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    name:  ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
+    name:  Linux ${{ matrix.cc }} ${{ matrix.double && 'double' || '' }}
     strategy:
       matrix:
         cc: [gcc, clang]
