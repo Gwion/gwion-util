@@ -68,7 +68,7 @@ ANEW const void* xrealloc(void*, const m_uint);
 typedef enum {
   ae_flag_none = 1 << 0,
   ae_flag_builtin = 1 << 1,
-  ae_flag_checked   = 1 << 2,
+  ae_flag_valid   = 1 << 2,
   ae_flag_member  = 1 << 3,
   ae_flag_static  = 1 << 4,
   ae_flag_template  = 1 << 5,
