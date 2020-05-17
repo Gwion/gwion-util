@@ -4,6 +4,8 @@
 #include "err_msg.h"
 #include "gwion_thread.h"
 
+#ifndef __FUZZING__
+
 static MUTEX_TYPE mutex_err;
 static MUTEX_TYPE mutex_out;
 __attribute__((constructor))
@@ -28,3 +30,5 @@ void gw_##name(const char* fmt, ...) {   \
 }
 describe_gw_xxx(err)
 describe_gw_xxx(out)
+
+#endif
