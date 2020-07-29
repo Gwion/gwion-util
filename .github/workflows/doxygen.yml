@@ -24,12 +24,12 @@ jobs:
       with:
         persist-credentials: false
     
-    - name: Doxygen Action
-      uses: mattnotmitt/doxygen-action@v1.1.0
-    
     - name: README
       run: mkdir -p html; cp README.md html
 
+    - name: Doxygen Action
+      uses: mattnotmitt/doxygen-action@v1.1.0
+    
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.5.2
       with:
