@@ -28,7 +28,7 @@ jobs:
       uses: mattnotmitt/doxygen-action@v1.1.0
     
     - name: README
-      run: mkdir html; cp README.md html
+      run: mkdir -p html; cp README.md html
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.5.2
