@@ -1,3 +1,7 @@
+/** @file: carg.c
+\brief simple argument utilities
+**/
+/** \dir \brief src the source dir */
 #include "gwion_util.h"
 
 ANN m_str option_argument(struct CArg *ca) {
@@ -8,6 +12,7 @@ ANN m_str option_argument(struct CArg *ca) {
   return str;
 }
 
+/** used internally to split arguments **/
 struct ArgSplitter {
   m_str str;
   Vector v;

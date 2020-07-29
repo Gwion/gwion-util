@@ -1,3 +1,7 @@
+/** @file: mpool.h
+\brief memory pool
+*/
+
 #ifndef __POOL
 #define __POOL
 

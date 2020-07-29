@@ -1,3 +1,6 @@
+/** @file: defs.h
+\brief base definitions
+**/
 #ifndef __DEF
 #define __DEF
 

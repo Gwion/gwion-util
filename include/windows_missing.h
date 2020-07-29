@@ -1,3 +1,7 @@
+/** @file: windows_missing.h
+\brief implementation of function not present in windows
+**/
+
 #ifndef __WINDOWS_MISSING
 #define __WINDOWS_MISSING
 #include <windows.h>

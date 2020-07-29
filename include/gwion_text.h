@@ -1,5 +1,10 @@
+/** @file: gwion_text.h
+\brief text structure and functions
+**/
 #ifndef __GWTEXT
 #define __GWTEXT
+
+/** mp_aclloacted text */
 typedef struct GwText_ {
   m_str str;
   size_t cap;
@@ -7,7 +12,10 @@ typedef struct GwText_ {
   MemPool mp;
 } GwText;
 
+/** append to text **/
 ANN void text_add(GwText*, const m_str);
+
+/** release text memory **/
 ANN static inline void text_release(GwText *text) {
   if(text->str) {
     mp_free2(text->mp, text->cap, text->str);
@@ -16,21 +24,11 @@ ANN static inline void text_release(GwText *text) {
   }
 }
 
-// TODO: renaming
+/** reset text **/
 ANN static inline void text_reset(GwText *text) {
   if(text->str) {
     *text->str = '\0';
     text->len = 0;
   }
-}
-
-ANN static inline void free_mstr(MemPool mp, const m_str str) {
-  _mp_free(mp, strlen(str) + 1, str);
-}
-
-ANN static inline m_str mstrdup(MemPool mp, const m_str name) {
-  const m_str dup = (m_str)_mp_malloc(mp, strlen(name) + 1);
-  strcpy(dup, name);
-  return dup;
 }
 #endif

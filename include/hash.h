@@ -1,3 +1,6 @@
+/** @file: hash.h
+\brief Hash table implementation and (near) generic set of macros
+**/
 #ifndef __HASH
 #define __HASH
 typedef struct Hash_* Hash;

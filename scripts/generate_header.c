@@ -25,6 +25,10 @@ static const char* type   = "float ";
 #define SZ sizeof(float)
 #endif
 
+static void doc(void) {
+  puts("/** @file: generated.h\n\\brief basic common includes and types.\n*/");
+}
+
 static void include(void) {
   puts("#include <stddef.h>\n#include <stdlib.h>\n#include <inttypes.h>\n#include <float.h>");
 #ifdef USE_DOUBLE
@@ -90,6 +94,7 @@ static void minval(void) {
 }
 
 int main(void) {
+  doc();
   include();
   base_type();
   compound_type();

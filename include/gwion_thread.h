@@ -1,3 +1,6 @@
+/** @file: gwion_thread.h
+\brief cross-platform thread functions
+*/
 #ifndef __GWION_THREAD
 #define __GWION_THREAD
 #ifdef BUILD_ON_WINDOWS

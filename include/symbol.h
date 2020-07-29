@@ -1,3 +1,6 @@
+/** @file symbol.h
+\brief Symbol table
+**/
 #ifndef __SYMBOL_H__
 #define __SYMBOL_H__
 

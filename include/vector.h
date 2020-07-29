@@ -1,9 +1,13 @@
+
+/** @file: vector.h
+\brief vector functions
+*/
 #ifndef __VECTOR
 #define __VECTOR
 
-typedef uintptr_t vtype;
-typedef struct Vector_ * Vector;
-#include "map_private.h"
+typedef struct Vector_ {
+  vtype* ptr;
+} *Vector;
 
 ANEW ANN extern Vector new_vector(MemPool p);
 ANN extern void   vector_init(const Vector);

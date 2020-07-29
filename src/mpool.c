@@ -1,7 +1,21 @@
 #include <stdlib.h>
 #include <string.h>
 #include "gwion_util.h"
-#include "mpool_private.h"
+
+#define BLK 64
+
+struct Recycle {
+  struct Recycle *next;
+};
+
+struct pool {
+  uint8_t **data;
+  struct Recycle  *next;
+  uint32_t  obj_sz;
+  uint32_t  obj_id;
+  int32_t   blk_id;
+  uint32_t  nblk;
+};
 
 static uint32_t nextpow2(uint32_t x) {
   --x;
@@ -153,7 +167,6 @@ void *mp_realloc(MemPool mp, void* ptr, const m_uint curr, const m_uint next) {
 }
 
 #ifndef MEM_UNSECURE
-#include "err_msg.h" // for gwXalloc
 static const void* xcheck(const void* a) {
   if(a)
     return a;

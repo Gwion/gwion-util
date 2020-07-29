@@ -1,6 +1,14 @@
+/** @file: scope.h
+\brief scope functions
+*/
+
 #ifndef __SCOPE
 #define __SCOPE
-typedef struct Scope_     * Scope;
+typedef struct Scope_ {
+  vtype* ptr;
+  struct Map_ map;
+} *Scope;
+
 struct scope_iter {
   const Scope s;
   m_uint vec;
