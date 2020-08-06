@@ -4,7 +4,7 @@
 #ifndef __CARG
 #define __CARG
 
-/** structure use to parse arguments **/
+/** structure used to parse arguments **/
 struct CArg {
   char **argv; /**< array of char* arguments */
   int    argc; /**< number of arguments */
