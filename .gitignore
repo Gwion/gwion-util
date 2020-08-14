@@ -4,3 +4,4 @@
 *.mo
 config.mk
 include/generated.h
+html
