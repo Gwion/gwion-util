@@ -355,7 +355,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="hash_8c_source.html#l00021">21</a> of file <a class="el" href="hash_8c_source.html">hash.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                        {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="defs_8h.html#a2c3897f7c46ca54a2e0dd7b24a40c7cb">xfree</a>(h-&gt;table);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(h-&gt;table);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -388,7 +388,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="hash_8c_source.html#l00006">6</a> of file <a class="el" href="hash_8c_source.html">hash.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                    {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  h-&gt;table = (<span class="keywordtype">void</span>*)<a class="code" href="mpool_8c.html#a615e89b2d5807afcb65dd53f9a6de836">xcalloc</a>(((nmemb  + 3) &amp; 0xfffffffc), <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*));</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  h-&gt;table = (<span class="keywordtype">void</span>*)<a class="code" href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a>(((nmemb  + 3) &amp; 0xfffffffc), <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*));</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  h-&gt;size = nmemb;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
 </div><!-- fragment -->
@@ -397,10 +397,10 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <div class="ttc" id="adefs_8h_html_a32a3cf3d9dd914f5aeeca5423c157934"><div class="ttname"><a href="defs_8h.html#a32a3cf3d9dd914f5aeeca5423c157934">_</a></div><div class="ttdeci">#define _(String)</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00013">defs.h:13</a></div></div>
 <div class="ttc" id="astructHash___html_ab5ac2ac9dfadbf988ede869ee99f46b7"><div class="ttname"><a href="structHash__.html#ab5ac2ac9dfadbf988ede869ee99f46b7">Hash_::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition:</b> <a href="hash_8h_source.html#l00009">hash.h:9</a></div></div>
-<div class="ttc" id="ampool_8c_html_a615e89b2d5807afcb65dd53f9a6de836"><div class="ttname"><a href="mpool_8c.html#a615e89b2d5807afcb65dd53f9a6de836">xcalloc</a></div><div class="ttdeci">ANEW const void * xcalloc(const m_uint n, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00185">mpool.c:185</a></div></div>
+<div class="ttc" id="axalloc_8h_html_a39ef228c1684eb7b3e198e83e70eff1b"><div class="ttname"><a href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a></div><div class="ttdeci">#define xfree(a)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00029">xalloc.h:29</a></div></div>
 <div class="ttc" id="ahash_8h_html_a69611d5ae5a93ab3ebf51a6c5f80f4c8"><div class="ttname"><a href="hash_8h.html#a69611d5ae5a93ab3ebf51a6c5f80f4c8">hash</a></div><div class="ttdeci">ANN unsigned int hash(const m_str s0)</div></div>
 <div class="ttc" id="astructHash___html"><div class="ttname"><a href="structHash__.html">Hash_</a></div><div class="ttdef"><b>Definition:</b> <a href="hash_8h_source.html#l00007">hash.h:7</a></div></div>
-<div class="ttc" id="adefs_8h_html_a2c3897f7c46ca54a2e0dd7b24a40c7cb"><div class="ttname"><a href="defs_8h.html#a2c3897f7c46ca54a2e0dd7b24a40c7cb">xfree</a></div><div class="ttdeci">#define xfree</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00069">defs.h:69</a></div></div>
+<div class="ttc" id="axalloc_8h_html_a494dd4d984870455b73e4b734a4a6d54"><div class="ttname"><a href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a></div><div class="ttdeci">static ANEW void * xcalloc(const m_uint n, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00019">xalloc.h:19</a></div></div>
 <div class="ttc" id="astructHash___html_a039452277a6c045b7e5e4dc3a26f9a3d"><div class="ttname"><a href="structHash__.html#a039452277a6c045b7e5e4dc3a26f9a3d">Hash_::table</a></div><div class="ttdeci">void ** table</div><div class="ttdef"><b>Definition:</b> <a href="hash_8h_source.html#l00008">hash.h:8</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

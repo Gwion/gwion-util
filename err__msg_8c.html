@@ -79,6 +79,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="defs_8h_source.html">defs.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="err__msg_8h_source.html">err_msg.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gwion__thread_8h_source.html">gwion_thread.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="xalloc_8h_source.html">xalloc.h</a>&quot;</code><br />
 </div>
 <p><a href="err__msg_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -126,7 +127,7 @@ Variables</h2></td></tr>
 <div class="line">  MUTEX_UNLOCK(mutex_##name);            \</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="err__msg_8c_source.html#l00022">22</a> of file <a class="el" href="err__msg_8c_source.html">err_msg.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="err__msg_8c_source.html#l00023">23</a> of file <a class="el" href="err__msg_8c_source.html">err_msg.c</a>.</p>
 
 </div>
 </div>
@@ -147,11 +148,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="err__msg_8c_source.html#l00011">11</a> of file <a class="el" href="err__msg_8c_source.html">err_msg.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a>(<a class="code" href="err__msg_8c.html#a190c1187ecb6f668b294921812323682">mutex_err</a>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a>(<a class="code" href="err__msg_8c.html#a5a0858d0716eeff088b93f801e60dc64">mutex_out</a>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="err__msg_8c_source.html#l00012">12</a> of file <a class="el" href="err__msg_8c_source.html">err_msg.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a>(<a class="code" href="err__msg_8c.html#a190c1187ecb6f668b294921812323682">mutex_err</a>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a>(<a class="code" href="err__msg_8c.html#a5a0858d0716eeff088b93f801e60dc64">mutex_out</a>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -171,11 +172,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="err__msg_8c_source.html#l00016">16</a> of file <a class="el" href="err__msg_8c_source.html">err_msg.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                      {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a>(<a class="code" href="err__msg_8c.html#a190c1187ecb6f668b294921812323682">mutex_err</a>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a>(<a class="code" href="err__msg_8c.html#a5a0858d0716eeff088b93f801e60dc64">mutex_out</a>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="err__msg_8c_source.html#l00017">17</a> of file <a class="el" href="err__msg_8c_source.html">err_msg.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                      {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a>(<a class="code" href="err__msg_8c.html#a190c1187ecb6f668b294921812323682">mutex_err</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a>(<a class="code" href="err__msg_8c.html#a5a0858d0716eeff088b93f801e60dc64">mutex_out</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -200,7 +201,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="err__msg_8c_source.html#l00009">9</a> of file <a class="el" href="err__msg_8c_source.html">err_msg.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="err__msg_8c_source.html#l00010">10</a> of file <a class="el" href="err__msg_8c_source.html">err_msg.c</a>.</p>
 
 </div>
 </div>
@@ -224,14 +225,14 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="err__msg_8c_source.html#l00010">10</a> of file <a class="el" href="err__msg_8c_source.html">err_msg.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="err__msg_8c_source.html#l00011">11</a> of file <a class="el" href="err__msg_8c_source.html">err_msg.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aerr__msg_8c_html_a5a0858d0716eeff088b93f801e60dc64"><div class="ttname"><a href="err__msg_8c.html#a5a0858d0716eeff088b93f801e60dc64">mutex_out</a></div><div class="ttdeci">static MUTEX_TYPE mutex_out</div><div class="ttdef"><b>Definition:</b> <a href="err__msg_8c_source.html#l00010">err_msg.c:10</a></div></div>
+<div class="ttc" id="aerr__msg_8c_html_a5a0858d0716eeff088b93f801e60dc64"><div class="ttname"><a href="err__msg_8c.html#a5a0858d0716eeff088b93f801e60dc64">mutex_out</a></div><div class="ttdeci">static MUTEX_TYPE mutex_out</div><div class="ttdef"><b>Definition:</b> <a href="err__msg_8c_source.html#l00011">err_msg.c:11</a></div></div>
 <div class="ttc" id="agwion__thread_8h_html_a4c8c0786dbefcef7711a8bf23ef5a5e9"><div class="ttname"><a href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a></div><div class="ttdeci">#define MUTEX_SETUP(x)</div><div class="ttdef"><b>Definition:</b> <a href="gwion__thread_8h_source.html#l00042">gwion_thread.h:42</a></div></div>
-<div class="ttc" id="aerr__msg_8c_html_a190c1187ecb6f668b294921812323682"><div class="ttname"><a href="err__msg_8c.html#a190c1187ecb6f668b294921812323682">mutex_err</a></div><div class="ttdeci">static MUTEX_TYPE mutex_err</div><div class="ttdef"><b>Definition:</b> <a href="err__msg_8c_source.html#l00009">err_msg.c:9</a></div></div>
+<div class="ttc" id="aerr__msg_8c_html_a190c1187ecb6f668b294921812323682"><div class="ttname"><a href="err__msg_8c.html#a190c1187ecb6f668b294921812323682">mutex_err</a></div><div class="ttdeci">static MUTEX_TYPE mutex_err</div><div class="ttdef"><b>Definition:</b> <a href="err__msg_8c_source.html#l00010">err_msg.c:10</a></div></div>
 <div class="ttc" id="agwion__thread_8h_html_a64ca321a1510fb750a1dbdc7990d056c"><div class="ttname"><a href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a></div><div class="ttdeci">#define MUTEX_CLEANUP(x)</div><div class="ttdef"><b>Definition:</b> <a href="gwion__thread_8h_source.html#l00048">gwion_thread.h:48</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

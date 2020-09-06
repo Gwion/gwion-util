@@ -99,7 +99,7 @@ Macros</h2></td></tr>
 <tr class="separator:a10ba6c8c4a5e2bcf9f5f5fd41675e122"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c8c0786dbefcef7711a8bf23ef5a5e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a>(x)</td></tr>
 <tr class="separator:a4c8c0786dbefcef7711a8bf23ef5a5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64ca321a1510fb750a1dbdc7990d056c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a>(x)&#160;&#160;&#160;{ pthread_mutex_destroy((x)); <a class="el" href="defs_8h.html#a2c3897f7c46ca54a2e0dd7b24a40c7cb">xfree</a>(x); }</td></tr>
+<tr class="memitem:a64ca321a1510fb750a1dbdc7990d056c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a>(x)&#160;&#160;&#160;{ pthread_mutex_destroy((x)); <a class="el" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(x); }</td></tr>
 <tr class="separator:a64ca321a1510fb750a1dbdc7990d056c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a441b021fa23aeb332a6aa860cb1aee7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a441b021fa23aeb332a6aa860cb1aee7c">MUTEX_LOCK</a>(x)&#160;&#160;&#160;pthread_mutex_lock((x))</td></tr>
 <tr class="separator:a441b021fa23aeb332a6aa860cb1aee7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,13 +111,13 @@ Macros</h2></td></tr>
 <tr class="separator:a27640932477cf246092d313468effba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e2835fe70b1eaf44eeabad652062ad4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a3e2835fe70b1eaf44eeabad652062ad4">THREAD_COND_TYPE</a>&#160;&#160;&#160;pthread_cond_t*</td></tr>
 <tr class="separator:a3e2835fe70b1eaf44eeabad652062ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d93fc0a1cc0db288695989bbffb704a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a3d93fc0a1cc0db288695989bbffb704a">THREAD_COND_SETUP</a>(x)&#160;&#160;&#160;{ x = (pthread_cond_t*)<a class="el" href="defs_8h.html#a7e15469ba550be3f9f182911e2c4140c">xcalloc</a>(1, sizeof(pthread_cond_t)); pthread_cond_init(x, NULL); }</td></tr>
+<tr class="memitem:a3d93fc0a1cc0db288695989bbffb704a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a3d93fc0a1cc0db288695989bbffb704a">THREAD_COND_SETUP</a>(x)&#160;&#160;&#160;{ x = (pthread_cond_t*)<a class="el" href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a>(1, sizeof(pthread_cond_t)); pthread_cond_init(x, NULL); }</td></tr>
 <tr class="separator:a3d93fc0a1cc0db288695989bbffb704a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b459dbc6d165c396134b045a72a6d74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a8b459dbc6d165c396134b045a72a6d74">THREAD_COND_WAIT</a>(x,  mutex)&#160;&#160;&#160;pthread_cond_wait(x, mutex)</td></tr>
 <tr class="separator:a8b459dbc6d165c396134b045a72a6d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe58fe34a9dac2526796eedc93417652"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#afe58fe34a9dac2526796eedc93417652">THREAD_COND_SIGNAL</a>(x)&#160;&#160;&#160;pthread_cond_signal(x)</td></tr>
 <tr class="separator:afe58fe34a9dac2526796eedc93417652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e307dfe60e30c7c953283031a09c72b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a7e307dfe60e30c7c953283031a09c72b">THREAD_COND_CLEANUP</a>(x)&#160;&#160;&#160;{ pthread_cond_destroy(x); <a class="el" href="defs_8h.html#a2c3897f7c46ca54a2e0dd7b24a40c7cb">xfree</a>(x); }</td></tr>
+<tr class="memitem:a7e307dfe60e30c7c953283031a09c72b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a7e307dfe60e30c7c953283031a09c72b">THREAD_COND_CLEANUP</a>(x)&#160;&#160;&#160;{ pthread_cond_destroy(x); <a class="el" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(x); }</td></tr>
 <tr class="separator:a7e307dfe60e30c7c953283031a09c72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -136,7 +136,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{ pthread_mutex_destroy((x)); <a class="el" href="defs_8h.html#a2c3897f7c46ca54a2e0dd7b24a40c7cb">xfree</a>(x); }</td>
+          <td>&#160;&#160;&#160;{ pthread_mutex_destroy((x)); <a class="el" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(x); }</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -240,7 +240,7 @@ Macros</h2></td></tr>
 <div class="line"> pthread_mutexattr_t attr; \</div>
 <div class="line">pthread_mutexattr_init(&amp;attr); \</div>
 <div class="line">pthread_mutexattr_settype(&amp;attr, PTHREAD_MUTEX_RECURSIVE);\</div>
-<div class="line">x = (pthread_mutex_t*)<a class="code" href="mpool_8c.html#ad84ff7165c90a20e3872fe3096ccee3d">xmalloc</a>(<span class="keyword">sizeof</span> (pthread_mutex_t));\</div>
+<div class="line">x = (pthread_mutex_t*)<a class="code" href="xalloc_8h.html#a87bb89015552fd4b7419de594da1552e">xmalloc</a>(<span class="keyword">sizeof</span> (pthread_mutex_t));\</div>
 <div class="line">pthread_mutex_init(x, &amp;attr); }</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="gwion__thread_8h_source.html#l00042">42</a> of file <a class="el" href="gwion__thread_8h_source.html">gwion_thread.h</a>.</p>
@@ -294,7 +294,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{ pthread_cond_destroy(x); <a class="el" href="defs_8h.html#a2c3897f7c46ca54a2e0dd7b24a40c7cb">xfree</a>(x); }</td>
+          <td>&#160;&#160;&#160;{ pthread_cond_destroy(x); <a class="el" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(x); }</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -314,7 +314,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{ x = (pthread_cond_t*)<a class="el" href="defs_8h.html#a7e15469ba550be3f9f182911e2c4140c">xcalloc</a>(1, sizeof(pthread_cond_t)); pthread_cond_init(x, NULL); }</td>
+          <td>&#160;&#160;&#160;{ x = (pthread_cond_t*)<a class="el" href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a>(1, sizeof(pthread_cond_t)); pthread_cond_init(x, NULL); }</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -518,7 +518,7 @@ Macros</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="ampool_8c_html_ad84ff7165c90a20e3872fe3096ccee3d"><div class="ttname"><a href="mpool_8c.html#ad84ff7165c90a20e3872fe3096ccee3d">xmalloc</a></div><div class="ttdeci">ANEW const void * xmalloc(const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00180">mpool.c:180</a></div></div>
+<div class="ttc" id="axalloc_8h_html_a87bb89015552fd4b7419de594da1552e"><div class="ttname"><a href="xalloc_8h.html#a87bb89015552fd4b7419de594da1552e">xmalloc</a></div><div class="ttdeci">static ANEW void * xmalloc(const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00014">xalloc.h:14</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.19

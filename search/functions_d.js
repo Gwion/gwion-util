@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['xcalloc_402',['xcalloc',['../mpool_8c.html#a615e89b2d5807afcb65dd53f9a6de836',1,'xcalloc(const m_uint n, const m_uint sz):&#160;mpool.c'],['../defs_8h.html#a7e15469ba550be3f9f182911e2c4140c',1,'xcalloc(const m_uint, const m_uint):&#160;mpool.c']]],
-  ['xcheck_403',['xcheck',['../mpool_8c.html#a86b6b5b41b24552a0811fce64953c563',1,'mpool.c']]],
-  ['xmalloc_404',['xmalloc',['../mpool_8c.html#ad84ff7165c90a20e3872fe3096ccee3d',1,'xmalloc(const m_uint sz):&#160;mpool.c'],['../defs_8h.html#abe8d123b505376a0f0e24434c598656c',1,'xmalloc(const m_uint):&#160;mpool.c']]],
-  ['xrealloc_405',['xrealloc',['../mpool_8c.html#a6f2e89d234d9f90652d7b6acd2add151',1,'xrealloc(void *p, const m_uint sz):&#160;mpool.c'],['../defs_8h.html#a8f0bffc68a030e4d418456f20db5471a',1,'xrealloc(void *, const m_uint):&#160;mpool.c']]]
+  ['xcalloc_405',['xcalloc',['../xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54',1,'xalloc.h']]],
+  ['xcheck_406',['xcheck',['../xalloc_8h.html#a8a952938a4a1e2c406d4bdbb75703cd3',1,'xalloc.h']]],
+  ['xmalloc_407',['xmalloc',['../xalloc_8h.html#a87bb89015552fd4b7419de594da1552e',1,'xalloc.h']]],
+  ['xrealloc_408',['xrealloc',['../xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418',1,'xalloc.h']]]
 ];

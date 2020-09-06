@@ -173,7 +173,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="mp__string_8h_source.html#l00013">13</a> of file <a class="el" href="mp__string_8h_source.html">mp_string.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                              {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">const</span> m_str dup = (m_str)<a class="code" href="mpool_8c.html#a5ea6c4c38648096186650f653558161c">_mp_malloc</a>(<a class="code" href="structArgSplitter.html#a5143eb2485df5c7c28dc7d0bee8a5468">mp</a>, strlen(name) + 1);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">const</span> m_str dup = (m_str)<a class="code" href="mpool_8h.html#a826ae7252f6b388a670ee1029012c513">_mp_malloc</a>(<a class="code" href="structArgSplitter.html#a5143eb2485df5c7c28dc7d0bee8a5468">mp</a>, strlen(name) + 1);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  strcpy(dup, name);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">return</span> dup;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
@@ -181,9 +181,9 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="ampool_8c_html_a5ea6c4c38648096186650f653558161c"><div class="ttname"><a href="mpool_8c.html#a5ea6c4c38648096186650f653558161c">_mp_malloc</a></div><div class="ttdeci">void * _mp_malloc(MemPool mp, const m_uint size)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00149">mpool.c:149</a></div></div>
 <div class="ttc" id="ampool_8c_html_a9b287ec4e96434f9d09cbbcc7372ffd3"><div class="ttname"><a href="mpool_8c.html#a9b287ec4e96434f9d09cbbcc7372ffd3">_mp_free</a></div><div class="ttdeci">void _mp_free(MemPool mp, const m_uint size, void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00125">mpool.c:125</a></div></div>
 <div class="ttc" id="astructArgSplitter_html_a5143eb2485df5c7c28dc7d0bee8a5468"><div class="ttname"><a href="structArgSplitter.html#a5143eb2485df5c7c28dc7d0bee8a5468">ArgSplitter::mp</a></div><div class="ttdeci">MemPool mp</div><div class="ttdef"><b>Definition:</b> <a href="carg_8c_source.html#l00019">carg.c:19</a></div></div>
+<div class="ttc" id="ampool_8h_html_a826ae7252f6b388a670ee1029012c513"><div class="ttname"><a href="mpool_8h.html#a826ae7252f6b388a670ee1029012c513">_mp_malloc</a></div><div class="ttdeci">ANEW ANN void * _mp_malloc(MemPool, const m_uint) __attribute__((hot))</div></div>
 <div class="ttc" id="astructArgSplitter_html_a9fa86c0b2a471471fbddb568aecb7cee"><div class="ttname"><a href="structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee">ArgSplitter::str</a></div><div class="ttdeci">m_str str</div><div class="ttdef"><b>Definition:</b> <a href="carg_8c_source.html#l00017">carg.c:17</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
