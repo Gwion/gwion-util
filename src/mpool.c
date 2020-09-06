@@ -137,22 +137,17 @@ struct pool* new_pool(const uint32_t obj_sz) {
   mp_set(p, obj_sz);
   return p;
 }
-
-void *_mp_calloc(MemPool mp, const m_uint size) {
-  MUTEX_LOCK(mp->mutex);
-  struct pool* p = mp_ini(mp, size);
-  void *ret = p ? _mp_calloc2(p, 1) : (void*)xcalloc(1, size);
-  MUTEX_UNLOCK(mp->mutex);
-  return ret;
+#define MP_ALLOC(name, zero, default)                    \
+void *_mp_##name(MemPool mp, const m_uint size) {     \
+  MUTEX_LOCK(mp->mutex);\
+  struct pool* p = mp_ini(mp, size);\
+  void *ret = p ? _mp_calloc2(p, zero) : (void*)default;\
+  MUTEX_UNLOCK(mp->mutex);\
+  return ret;\
 }
 
-void *_mp_malloc(MemPool mp, const m_uint size) {
-  MUTEX_LOCK(mp->mutex);
-  struct pool* p = mp_ini(mp, size);
-  void *ret = p ? _mp_calloc2(p, 0) : (void*)xcalloc(1, size);
-  MUTEX_UNLOCK(mp->mutex);
-  return ret;
-}
+MP_ALLOC(malloc, 0, xmalloc(size))
+MP_ALLOC(calloc, 1, xcalloc(1, size))
 
 void *mp_realloc(MemPool mp, void* ptr, const m_uint curr, const m_uint next) {
   const m_uint sz = mp_sz(next);
