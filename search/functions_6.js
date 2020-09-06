@@ -10,13 +10,12 @@ var searchData=
   ['map_5fset_346',['map_set',['../map_8c.html#aaf11da772d6d3bf63ca6c0fb7337be2d',1,'map_set(const Map map, const vtype key, const vtype ptr):&#160;map.c'],['../map_8h.html#a1eb0ebddd559c0d75091afab7dbcc2a0',1,'map_set(const Map, const vtype, const vtype):&#160;map.c']]],
   ['map_5fsize_347',['map_size',['../map_8h.html#a1a1478830fd46e5163734cb6f14b5a60',1,'map.h']]],
   ['mempool_5fend_348',['mempool_end',['../mpool_8c.html#a8429a695a1af2385ae1c5d7a5771caf5',1,'mempool_end(MemPool mp):&#160;mpool.c'],['../mpool_8h.html#a8429a695a1af2385ae1c5d7a5771caf5',1,'mempool_end(MemPool mp):&#160;mpool.c']]],
-  ['mempool_5fini_349',['mempool_ini',['../mpool_8c.html#af4eb9cf2cf5dd88f997ec118761f5ae0',1,'mempool_ini(size_t sz):&#160;mpool.c'],['../mpool_8h.html#af4eb9cf2cf5dd88f997ec118761f5ae0',1,'mempool_ini(size_t sz):&#160;mpool.c']]],
+  ['mempool_5fini_349',['mempool_ini',['../mpool_8c.html#a5a897670de44393bce837bce9fdc23ef',1,'mempool_ini(const size_t sz):&#160;mpool.c'],['../mpool_8h.html#a5a897670de44393bce837bce9fdc23ef',1,'mempool_ini(const size_t sz):&#160;mpool.c']]],
   ['mp_5fcreate_350',['mp_create',['../mpool_8c.html#a3e9fd5d96a6213eb79177fe0a23d4b59',1,'mpool.c']]],
   ['mp_5fend_351',['mp_end',['../mpool_8c.html#a2cbb62d9002025dc08ce3c26399ae0ba',1,'mp_end(struct pool *p):&#160;mpool.c'],['../mpool_8h.html#ae43108fdd44fbd03612d04bf0e343c43',1,'mp_end(struct pool *):&#160;mpool.c']]],
-  ['mp_5fidx_352',['mp_idx',['../mpool_8c.html#a793de53dd0dbc678f453fd513772753a',1,'mpool.c']]],
-  ['mp_5fini_353',['mp_ini',['../mpool_8c.html#a9ccc65fb6ec316839040e0a382ec92c7',1,'mp_ini(MemPool mp, const uint32_t obj_sz):&#160;mpool.c'],['../mpool_8h.html#a55eb85a9540f96aa6784e9d6e1d362df',1,'mp_ini(MemPool p, const uint32_t elementSize):&#160;mpool.c']]],
-  ['mp_5frealloc_354',['mp_realloc',['../mpool_8c.html#a36cd38f889bcff4c65b2ed115ced3797',1,'mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next):&#160;mpool.c'],['../mpool_8h.html#a36cd38f889bcff4c65b2ed115ced3797',1,'mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next):&#160;mpool.c']]],
-  ['mp_5fset_355',['mp_set',['../mpool_8c.html#a33f52e2aeebb0b64d361b98a5c8b9c2d',1,'mpool.c']]],
-  ['mp_5fsz_356',['mp_sz',['../mpool_8c.html#a27d0b5d9a96ffe98c149aa735bd491fa',1,'mpool.c']]],
-  ['mstrdup_357',['mstrdup',['../mp__string_8h.html#a452bc669e976f3d4154d2bcac6aad1df',1,'mp_string.h']]]
+  ['mp_5fini_352',['mp_ini',['../mpool_8c.html#a9ccc65fb6ec316839040e0a382ec92c7',1,'mp_ini(MemPool mp, const uint32_t obj_sz):&#160;mpool.c'],['../mpool_8h.html#a55eb85a9540f96aa6784e9d6e1d362df',1,'mp_ini(MemPool p, const uint32_t elementSize):&#160;mpool.c']]],
+  ['mp_5frealloc_353',['mp_realloc',['../mpool_8c.html#a36cd38f889bcff4c65b2ed115ced3797',1,'mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next):&#160;mpool.c'],['../mpool_8h.html#a36cd38f889bcff4c65b2ed115ced3797',1,'mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next):&#160;mpool.c']]],
+  ['mp_5fset_354',['mp_set',['../mpool_8c.html#a33f52e2aeebb0b64d361b98a5c8b9c2d',1,'mpool.c']]],
+  ['mp_5fsz_355',['mp_sz',['../mpool_8c.html#a27d0b5d9a96ffe98c149aa735bd491fa',1,'mpool.c']]],
+  ['mstrdup_356',['mstrdup',['../mp__string_8h.html#a452bc669e976f3d4154d2bcac6aad1df',1,'mp_string.h']]]
 ];
