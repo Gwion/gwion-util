@@ -63,11 +63,6 @@
 
 typedef unsigned int uint;
 
-ANEW const void* xmalloc(const m_uint);
-ANEW const void* xcalloc(const m_uint, const m_uint);
-ANEW const void* xrealloc(void*, const m_uint);
-#define xfree free
-
 typedef enum {
   ae_flag_none = 1 << 0,
   ae_flag_builtin = 1 << 1,

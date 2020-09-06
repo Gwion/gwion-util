@@ -3,6 +3,7 @@
 #include "defs.h"
 #include "err_msg.h"
 #include "gwion_thread.h"
+#include "xalloc.h"
 
 #ifndef __FUZZING__
 
