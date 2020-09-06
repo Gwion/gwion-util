@@ -28,9 +28,10 @@ void *mp_realloc(MemPool mp, void* ptr, const m_uint curr, const m_uint next);
 struct MemPool_ {
   struct pool* master_pool;
   struct pool** pools;
+  size_t *sizes;
   MUTEX_TYPE mutex;
   size_t sz;
 };
-MemPool mempool_ini(size_t sz);
+MemPool mempool_ini(const size_t sz);
 void mempool_end(MemPool mp);
 #endif

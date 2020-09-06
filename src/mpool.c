@@ -2,7 +2,7 @@
 #include <string.h>
 #include "gwion_util.h"
 
-#define BLK 64
+#define BLK 16
 
 struct Recycle {
   struct Recycle *next;
@@ -31,14 +31,8 @@ static inline uint32_t mp_sz(uint32_t x) {
   return x > SZ_INT ? nextpow2(x) : SZ_INT;
 }
 
-static inline uint32_t mp_idx(uint32_t x) {
-  const uint32_t sz = mp_sz(x);
-  const uint32_t ret = log2(sz);
-  return ret > 3 ? ret - 3 : 0 ;
-}
-
 ANN static void mp_set(struct pool* p, const uint32_t obj_sz) {
-  p->obj_sz = mp_sz(obj_sz);
+  p->obj_sz = obj_sz;
   p->obj_id = BLK - 1;
   p->blk_id = -1;
   p->nblk   = 1;
@@ -46,10 +40,14 @@ ANN static void mp_set(struct pool* p, const uint32_t obj_sz) {
   p->data   = (uint8_t**)xcalloc(1, sizeof(uint8_t*));
 }
 
-MemPool mempool_ini(size_t sz) {
+MemPool mempool_ini(const size_t sz) {
   MemPool p = (MemPool)xmalloc(sizeof(struct MemPool_));
-  p->master_pool = new_pool(sz);
-  p->sz = mp_idx(sz) + 1;
+  p->master_pool = new_pool(sizeof(struct MemPool_));
+  p->sizes = xmalloc((log2(sz) - 1) * sizeof(size_t));
+  p->sz = 0;
+  for(size_t j = SZ_INT, k = 0; sz >= k; k = j, j = nextpow2(j + 1))
+    p->sizes[p->sz++] = j;
+  ++p->sz;
   p->pools = (struct pool**)xcalloc(p->sz, sizeof(struct pool*));
   MUTEX_SETUP(p->mutex);
   return p;
@@ -62,6 +60,7 @@ void mempool_end(MemPool mp) {
     if(p)
       mp_end(p);
   }
+  xfree(mp->sizes);
   mp_end(mp->master_pool);
   xfree(mp->master_pool);
   xfree(mp->pools);
@@ -69,7 +68,7 @@ void mempool_end(MemPool mp) {
   xfree(mp);
 }
 
-static struct pool* mp_create(MemPool mp, const uint32_t obj_sz, const uint32_t idx) {
+static inline struct pool* mp_create(MemPool mp, const uint32_t obj_sz, const uint32_t idx) {
   struct pool* p = (struct pool*)_mp_calloc2(mp->master_pool, 0);
   mp_set(p, obj_sz);
   mp->pools[idx] = p;
@@ -77,10 +76,11 @@ static struct pool* mp_create(MemPool mp, const uint32_t obj_sz, const uint32_t 
 }
 
 ANN struct pool* mp_ini(MemPool mp, const uint32_t obj_sz) {
-  if(mp_idx(obj_sz) >= mp->sz)
-    return NULL;
-  const uint32_t idx = mp_idx(obj_sz);
-  return mp->pools[idx] ?: mp_create(mp, obj_sz, idx);
+  for(size_t i = 0; i < mp->sz; ++i) {
+    if(obj_sz <= mp->sizes[i])
+      return mp->pools[i] ?: mp_create(mp, mp->sizes[i], i);
+  }
+  return NULL;
 }
 
 void mp_end(struct pool *p) {
@@ -137,6 +137,7 @@ struct pool* new_pool(const uint32_t obj_sz) {
   mp_set(p, obj_sz);
   return p;
 }
+
 #define MP_ALLOC(name, zero, default)                    \
 void *_mp_##name(MemPool mp, const m_uint size) {     \
   MUTEX_LOCK(mp->mutex);\
@@ -150,13 +151,8 @@ MP_ALLOC(malloc, 0, xmalloc(size))
 MP_ALLOC(calloc, 1, xcalloc(1, size))
 
 void *mp_realloc(MemPool mp, void* ptr, const m_uint curr, const m_uint next) {
-  const m_uint sz = mp_sz(next);
-  if(mp_sz(curr) == sz)
-    return ptr;
-  MUTEX_LOCK(mp->mutex);
-  void* ret = _mp_malloc(mp, sz);
+  void* ret = _mp_malloc(mp, next);
   memcpy(ret, ptr, curr);
   mp_free2(mp, curr, ptr);
-  MUTEX_UNLOCK(mp->mutex);
   return ret;
 }
