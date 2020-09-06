@@ -1,6 +1,9 @@
 #include <stdlib.h>
 #include <string.h>
-#include <defs.h>
+#include "defs.h"
+#include "gwion_thread.h"
+#include "err_msg.h"
+#include "xalloc.h"
 
 char *strdup(const char *s) {
     char *p = xmalloc(strlen(s) + 1);
