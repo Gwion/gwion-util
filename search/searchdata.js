@@ -6,9 +6,7 @@ var indexSectionsWithContent =
   3: "_cfghimnorstvx",
   4: "abcdilmnopstv",
   5: "ghmsuv",
-  6: "a",
-  7: "a",
-  8: "_abcdghlmnopstuvx"
+  6: "_abcdghlmnopstvx"
 };
 
 var indexSectionNames =
@@ -19,9 +17,7 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "enums",
-  7: "enumvalues",
-  8: "defines"
+  6: "defines"
 };
 
 var indexSectionLabels =
@@ -32,8 +28,6 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Typedefs",
-  6: "Enumerations",
-  7: "Enumerator",
-  8: "Macros"
+  6: "Macros"
 };
 
