@@ -80,7 +80,7 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define THREAD_TYPE               HANDLE</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define THREAD_CREATE(thread, func, arg)  thread = CreateThread(NULL, 0, func, arg, 0, NULL);</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define THREAD_JOIN(thread)   WaitForSingleObject(thread, 0);</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define THREAD_RETURN(arg)        { ExitThread(arg); return 0; }</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define THREAD_RETURN(arg)        { const DWORD ret = (long unsigned int)(m_uint)arg; ExitThread(ret); return ret; }</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define MUTEX_TYPE             HANDLE</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define MUTEX_INITIALIZER      NULL</span></div>
@@ -105,7 +105,7 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a53ca774b0fc84afe282a5419d2d7239a">   35</a></span>&#160;<span class="preprocessor">#define THREAD_TYPE               pthread_t</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a0d6735b6a6b74cb75e999d16f1eb2d9e">   36</a></span>&#160;<span class="preprocessor">#define THREAD_CREATE(thread, func, arg)  pthread_create(&amp;thread, NULL, func, arg);</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#ab2c7c48d11176ee55bda16531ba59363">   37</a></span>&#160;<span class="preprocessor">#define THREAD_JOIN(thread)       pthread_join(thread, NULL);</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a515c663597d2215632df9477bde675f6">   38</a></span>&#160;<span class="preprocessor">#define THREAD_RETURN(arg)        { pthread_exit((THREAD_RETTYPE)arg); NULL; }</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a515c663597d2215632df9477bde675f6">   38</a></span>&#160;<span class="preprocessor">#define THREAD_RETURN(arg)        { pthread_exit((THREAD_RETTYPE)arg); return arg; }</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a94ada48918e73511c91e3e0e885fe763">   40</a></span>&#160;<span class="preprocessor">#define MUTEX_TYPE             pthread_mutex_t*</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a10ba6c8c4a5e2bcf9f5f5fd41675e122">   41</a></span>&#160;<span class="preprocessor">#define MUTEX_INITIALIZER      PTHREAD_MUTEX_INITIALIZER</span></div>
