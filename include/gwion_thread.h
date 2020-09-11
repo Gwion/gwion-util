@@ -10,7 +10,7 @@
 #define THREAD_TYPE               HANDLE
 #define THREAD_CREATE(thread, func, arg)  thread = CreateThread(NULL, 0, func, arg, 0, NULL);
 #define THREAD_JOIN(thread)   WaitForSingleObject(thread, 0);
-#define THREAD_RETURN(arg)        { ExitThread(arg); return 0; }
+#define THREAD_RETURN(arg)        { const DWORD ret = (long unsigned int)(m_uint)arg; ExitThread(ret); return ret; }
 
 #define MUTEX_TYPE             HANDLE
 #define MUTEX_INITIALIZER      NULL
@@ -35,7 +35,7 @@ int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 #define THREAD_TYPE               pthread_t
 #define THREAD_CREATE(thread, func, arg)  pthread_create(&thread, NULL, func, arg);
 #define THREAD_JOIN(thread)       pthread_join(thread, NULL);
-#define THREAD_RETURN(arg)        { pthread_exit((THREAD_RETTYPE)arg); NULL; }
+#define THREAD_RETURN(arg)        { pthread_exit((THREAD_RETTYPE)arg); return arg; }
 
 #define MUTEX_TYPE             pthread_mutex_t*
 #define MUTEX_INITIALIZER      PTHREAD_MUTEX_INITIALIZER
