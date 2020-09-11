@@ -18,7 +18,8 @@
 #define MUTEX_CLEANUP(x)       CloseHandle(x)
 #define MUTEX_LOCK(x)          emulate_pthread_mutex_lock(&(x))
 #define MUTEX_COND_LOCK(x)
-#define MUTEX_UNLOCK(x)        (ReleaseMutex((x)) == 0)
+//#define MUTEX_UNLOCK(x)        (ReleaseMutex((x)) == 0)
+#define MUTEX_UNLOCK(x)        ReleaseMutex((x))
 #define MUTEX_COND_UNLOCK(x)
 int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 
