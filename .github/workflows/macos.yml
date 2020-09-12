@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: macos-latest
-    name:  Linux ${{ matrix.cc }} ${{ matrix.double && 'double' || 'float '}}
+    name:  MacOS ${{ matrix.cc }} ${{ matrix.double && 'double' || 'float '}}
     strategy:
       matrix:
         cc: [gcc, clang]
