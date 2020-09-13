@@ -11,7 +11,6 @@ typedef struct Map_ {
 #define VKEY(v, i) (v)->ptr[OFFSET + (i) * 2]
 #define VVAL(v, i) (v)->ptr[OFFSET + (i) * 2 + 1]
 
-typedef struct Map_    * Map;
 ANEW extern Map new_map(MemPool);
 extern     void map_init(const Map);
 extern ANN vtype map_get(const Map, const vtype);

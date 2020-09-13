@@ -10,11 +10,6 @@
 #define min2(a, b) ((a) < (b) ? (a) : (b))
 #define min(a, b, c) (min2(min2((a), (b)), (c)))
 
-struct Symbol_ {
-  m_str name;
-  Symbol next;
-};
-
 ANN SymTable* new_symbol_table(MemPool p, size_t sz) {
   SymTable *st = mp_malloc2(p, sizeof(struct SymTable_));
   st->sz = sz;
@@ -65,5 +60,3 @@ ANN Symbol insert_symbol(SymTable* ht, const m_str name) {
   MUTEX_UNLOCK(ht->mutex);
   return ht->sym[index];
 }
-
-m_str s_name(const Symbol s) { return s->name; }

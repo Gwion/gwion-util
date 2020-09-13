@@ -27,10 +27,6 @@ static uint32_t nextpow2(uint32_t x) {
   return x + 1;
 }
 
-static inline uint32_t mp_sz(uint32_t x) {
-  return x > SZ_INT ? nextpow2(x) : SZ_INT;
-}
-
 ANN static void mp_set(struct pool* p, const uint32_t obj_sz) {
   p->obj_sz = obj_sz;
   p->obj_id = BLK - 1;

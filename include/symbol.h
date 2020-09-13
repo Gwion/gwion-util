@@ -6,6 +6,10 @@
 
 #include "gwion_thread.h"
 typedef struct Symbol_ * Symbol;
+struct Symbol_ {
+  m_str name;
+  Symbol next;
+};
 typedef struct SymTable_ {
   Symbol *sym;
   size_t sz;
@@ -15,6 +19,8 @@ typedef struct SymTable_ {
 
 ANN SymTable* new_symbol_table(MemPool p, size_t sz);
 ANN Symbol insert_symbol(SymTable*, const m_str) __attribute__((pure));
-ANN m_str s_name(const Symbol) __attribute__((pure));
+
+__attribute__((pure))
+ANN static inline m_str s_name(const Symbol s) { return s->name; };
 ANN void free_symbols(SymTable*);
 #endif
