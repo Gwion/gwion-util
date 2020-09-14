@@ -64,16 +64,7 @@ static void size(void) {
 }
 
 static void format(void) {
-#ifndef BUILD_ON_WINDOWS
   puts("#define  INT_F \"ti\"\n#define UINT_F \"tu\"\n#define abs labs");
-#else
-  if(sizeof(uintptr_t) == sizeof(unsigned long int))
-    puts("#define  INT_F \"li\"\n#define UINT_F \"lu\"\n#define abs labs");
-  else if(sizeof(uintptr_t) == sizeof(unsigned long long int))
-    puts("#define  INT_F \"lli\"\n#define UINT_F \"llu\"\n#define abs llabs");
-  else
-    puts("#define  INT_F \"i\"\n#define UINT_F \"u\"\n#define abs abs");
-#endif
 }
 
 /*
