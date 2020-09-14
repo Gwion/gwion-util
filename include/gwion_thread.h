@@ -10,7 +10,7 @@
 #define THREAD_TYPE               HANDLE
 #define THREAD_CREATE(thread, func, arg)  thread = CreateThread(NULL, 0, func, arg, 0, NULL);
 #define THREAD_JOIN(thread)   WaitForSingleObject(thread, 0);
-#define THREAD_RETURN(arg)        { const DWORD ret = (long unsigned int)(m_uint)arg; ExitThread(ret); return arg; }
+#define THREAD_RETURN(arg)    return (THREAD_RETTYPE)arg;
 
 #define MUTEX_TYPE             HANDLE
 #define MUTEX_INITIALIZER      NULL
