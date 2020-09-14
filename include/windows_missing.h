@@ -26,7 +26,6 @@ char *realpath(const char *path, char *resolved_path);
 
 #ifdef __clang__
 #define strdup _strdup
-int asprintf(char **strp, const char *fmt, ...);
 
 #ifdef USE_DOUBLE
 #define creal(a) creal(*(_Dcomplex*)&a)
