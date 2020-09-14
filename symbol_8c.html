@@ -67,7 +67,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -80,11 +79,6 @@ $(function() {
 </div>
 <p><a href="symbol_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSymbol__.html">Symbol_</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a08e4da5f3d0c7936fa52467f40e4b6aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="symbol_8c.html#a08e4da5f3d0c7936fa52467f40e4b6aa">MAX_DISTANCE</a>&#160;&#160;&#160;2</td></tr>
@@ -104,8 +98,6 @@ Functions</h2></td></tr>
 <tr class="separator:a7ca3f19f14e8e47c7755e7a2a926947b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5afd581121329ece5f5c613c90799083"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="symbol_8c.html#a5afd581121329ece5f5c613c90799083">__attribute__</a> ((hot))</td></tr>
 <tr class="separator:a5afd581121329ece5f5c613c90799083"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6382247068a280037eadd645beeb14ee"><td class="memItemLeft" align="right" valign="top">m_str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="symbol_8c.html#a6382247068a280037eadd645beeb14ee">s_name</a> (const <a class="el" href="symbol_8h.html#af5a7a75d6e13311eed0af65155ed4f9f">Symbol</a> s)</td></tr>
-<tr class="separator:a6382247068a280037eadd645beeb14ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a08e4da5f3d0c7936fa52467f40e4b6aa"></a>
@@ -207,13 +199,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="symbol_8c_source.html#l00046">46</a> of file <a class="el" href="symbol_8c_source.html">symbol.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                                               {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">const</span> <a class="code" href="structSymbol__.html">Symbol</a> s = <a class="code" href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a>(p, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structSymbol__.html">Symbol_</a>));</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  s-&gt;<a class="code" href="structSymbol__.html#a2f3446a758bb8e7dbfb1928020bbe8bc">name</a> = <a class="code" href="mp__string_8h.html#a452bc669e976f3d4154d2bcac6aad1df">mstrdup</a>(p, name);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  s-&gt;<a class="code" href="structSymbol__.html#a9040c623669a278243e9a8ed757b7e72">next</a> = <a class="code" href="structpool.html#a9f914cbfca19e1ad6b3bea85611b8c79">next</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">return</span> s;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="symbol_8c_source.html#l00041">41</a> of file <a class="el" href="symbol_8c_source.html">symbol.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                                               {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">const</span> <a class="code" href="structSymbol__.html">Symbol</a> s = <a class="code" href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a>(p, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structSymbol__.html">Symbol_</a>));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  s-&gt;<a class="code" href="structSymbol__.html#a2f3446a758bb8e7dbfb1928020bbe8bc">name</a> = <a class="code" href="mp__string_8h.html#a452bc669e976f3d4154d2bcac6aad1df">mstrdup</a>(p, name);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  s-&gt;<a class="code" href="structSymbol__.html#a9040c623669a278243e9a8ed757b7e72">next</a> = <a class="code" href="structpool.html#a9f914cbfca19e1ad6b3bea85611b8c79">next</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -251,13 +243,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="symbol_8c_source.html#l00027">27</a> of file <a class="el" href="symbol_8c_source.html">symbol.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                       {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">if</span>(s-&gt;<a class="code" href="structSymbol__.html#a9040c623669a278243e9a8ed757b7e72">next</a>)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="symbol_8c.html#a3cd2fe06c0c3c6ffd4c218f126922ee2">free_symbol</a>(p, s-&gt;<a class="code" href="structSymbol__.html#a9040c623669a278243e9a8ed757b7e72">next</a>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="mp__string_8h.html#a23d4adc0c6cb20fb464341a676445fb1">free_mstr</a>(p, s-&gt;<a class="code" href="structSymbol__.html#a2f3446a758bb8e7dbfb1928020bbe8bc">name</a>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(p, <a class="code" href="structSymbol__.html">Symbol</a>, s);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="symbol_8c_source.html#l00022">22</a> of file <a class="el" href="symbol_8c_source.html">symbol.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                                       {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">if</span>(s-&gt;<a class="code" href="structSymbol__.html#a9040c623669a278243e9a8ed757b7e72">next</a>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="symbol_8c.html#a3cd2fe06c0c3c6ffd4c218f126922ee2">free_symbol</a>(p, s-&gt;<a class="code" href="structSymbol__.html#a9040c623669a278243e9a8ed757b7e72">next</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="mp__string_8h.html#a23d4adc0c6cb20fb464341a676445fb1">free_mstr</a>(p, s-&gt;<a class="code" href="structSymbol__.html#a2f3446a758bb8e7dbfb1928020bbe8bc">name</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(p, <a class="code" href="structSymbol__.html">Symbol</a>, s);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -277,18 +269,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="symbol_8c_source.html#l00034">34</a> of file <a class="el" href="symbol_8c_source.html">symbol.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">LOOP_OPTIM</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">for</span>(<a class="code" href="defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> i = ht-&gt;<a class="code" href="structSymTable__.html#a0214d7a9597cf6a110ab4e4cee48eaec">sz</a> + 1; --i;) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> <a class="code" href="structSymbol__.html">Symbol</a> s = ht-&gt;<a class="code" href="structSymTable__.html#a54d05534b43aa631ec927353a4f77008">sym</a>[i - 1];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span>(s)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <a class="code" href="symbol_8c.html#a3cd2fe06c0c3c6ffd4c218f126922ee2">free_symbol</a>(ht-&gt;<a class="code" href="structSymTable__.html#ab5f44076c070a0159106234242c8510b">p</a>, s);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(ht-&gt;<a class="code" href="structSymTable__.html#a54d05534b43aa631ec927353a4f77008">sym</a>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a>(ht-&gt;<a class="code" href="structSymTable__.html#a1539f67ef4a6f2ded4ba946e9eb7281c">mutex</a>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(ht-&gt;<a class="code" href="structSymTable__.html#ab5f44076c070a0159106234242c8510b">p</a>, <a class="code" href="structSymTable__.html">SymTable</a>, ht);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="symbol_8c_source.html#l00029">29</a> of file <a class="el" href="symbol_8c_source.html">symbol.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">LOOP_OPTIM</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">for</span>(<a class="code" href="defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> i = ht-&gt;<a class="code" href="structSymTable__.html#a0214d7a9597cf6a110ab4e4cee48eaec">sz</a> + 1; --i;) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> <a class="code" href="structSymbol__.html">Symbol</a> s = ht-&gt;<a class="code" href="structSymTable__.html#a54d05534b43aa631ec927353a4f77008">sym</a>[i - 1];</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span>(s)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <a class="code" href="symbol_8c.html#a3cd2fe06c0c3c6ffd4c218f126922ee2">free_symbol</a>(ht-&gt;<a class="code" href="structSymTable__.html#ab5f44076c070a0159106234242c8510b">p</a>, s);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(ht-&gt;<a class="code" href="structSymTable__.html#a54d05534b43aa631ec927353a4f77008">sym</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a>(ht-&gt;<a class="code" href="structSymTable__.html#a1539f67ef4a6f2ded4ba946e9eb7281c">mutex</a>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(ht-&gt;<a class="code" href="structSymTable__.html#ab5f44076c070a0159106234242c8510b">p</a>, <a class="code" href="structSymTable__.html">SymTable</a>, ht);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -318,60 +310,39 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="symbol_8c_source.html#l00018">18</a> of file <a class="el" href="symbol_8c_source.html">symbol.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                     {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="structSymTable__.html">SymTable</a> *st = <a class="code" href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a>(p, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structSymTable__.html">SymTable_</a>));</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  st-&gt;<a class="code" href="structSymTable__.html#a0214d7a9597cf6a110ab4e4cee48eaec">sz</a> = sz;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  st-&gt;<a class="code" href="structSymTable__.html#a54d05534b43aa631ec927353a4f77008">sym</a> = (<a class="code" href="structSymbol__.html">Symbol</a>*)<a class="code" href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a>(sz, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structSymbol__.html">Symbol_</a>*));</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a>(st-&gt;<a class="code" href="structSymTable__.html#a1539f67ef4a6f2ded4ba946e9eb7281c">mutex</a>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  st-&gt;<a class="code" href="structSymTable__.html#ab5f44076c070a0159106234242c8510b">p</a> = p;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">return</span> st;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a6382247068a280037eadd645beeb14ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6382247068a280037eadd645beeb14ee">&#9670;&nbsp;</a></span>s_name()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">m_str s_name </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="symbol_8h.html#af5a7a75d6e13311eed0af65155ed4f9f">Symbol</a>&#160;</td>
-          <td class="paramname"><em>s</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="symbol_8c_source.html#l00069">69</a> of file <a class="el" href="symbol_8c_source.html">symbol.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{ <span class="keywordflow">return</span> s-&gt;<a class="code" href="structSymbol__.html#a2f3446a758bb8e7dbfb1928020bbe8bc">name</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="symbol_8c_source.html#l00013">13</a> of file <a class="el" href="symbol_8c_source.html">symbol.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                     {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="structSymTable__.html">SymTable</a> *st = <a class="code" href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a>(p, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structSymTable__.html">SymTable_</a>));</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  st-&gt;<a class="code" href="structSymTable__.html#a0214d7a9597cf6a110ab4e4cee48eaec">sz</a> = sz;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  st-&gt;<a class="code" href="structSymTable__.html#a54d05534b43aa631ec927353a4f77008">sym</a> = (<a class="code" href="structSymbol__.html">Symbol</a>*)<a class="code" href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a>(sz, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structSymbol__.html">Symbol_</a>*));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a>(st-&gt;<a class="code" href="structSymTable__.html#a1539f67ef4a6f2ded4ba946e9eb7281c">mutex</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  st-&gt;<a class="code" href="structSymTable__.html#ab5f44076c070a0159106234242c8510b">p</a> = p;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">return</span> st;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="ampool_8h_html_aaa16830712090aa944a1703301474d83"><div class="ttname"><a href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a></div><div class="ttdeci">#define mp_free(p, name, a)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00022">mpool.h:22</a></div></div>
-<div class="ttc" id="astructSymbol___html_a9040c623669a278243e9a8ed757b7e72"><div class="ttname"><a href="structSymbol__.html#a9040c623669a278243e9a8ed757b7e72">Symbol_::next</a></div><div class="ttdeci">Symbol next</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8c_source.html#l00015">symbol.c:15</a></div></div>
-<div class="ttc" id="astructSymTable___html_ab5f44076c070a0159106234242c8510b"><div class="ttname"><a href="structSymTable__.html#ab5f44076c070a0159106234242c8510b">SymTable_::p</a></div><div class="ttdeci">MemPool p</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00013">symbol.h:13</a></div></div>
-<div class="ttc" id="astructSymbol___html"><div class="ttname"><a href="structSymbol__.html">Symbol_</a></div><div class="ttdef"><b>Definition:</b> <a href="symbol_8c_source.html#l00013">symbol.c:13</a></div></div>
-<div class="ttc" id="astructSymTable___html_a1539f67ef4a6f2ded4ba946e9eb7281c"><div class="ttname"><a href="structSymTable__.html#a1539f67ef4a6f2ded4ba946e9eb7281c">SymTable_::mutex</a></div><div class="ttdeci">MUTEX_TYPE mutex</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00012">symbol.h:12</a></div></div>
-<div class="ttc" id="astructSymTable___html_a0214d7a9597cf6a110ab4e4cee48eaec"><div class="ttname"><a href="structSymTable__.html#a0214d7a9597cf6a110ab4e4cee48eaec">SymTable_::sz</a></div><div class="ttdeci">size_t sz</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00011">symbol.h:11</a></div></div>
-<div class="ttc" id="adefs_8h_html_a987623b00adaf8b6ddf4c54375bf703a"><div class="ttname"><a href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">LOOP_OPTIM</a></div><div class="ttdeci">#define LOOP_OPTIM</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00037">defs.h:37</a></div></div>
+<div class="ttc" id="astructSymbol___html_a9040c623669a278243e9a8ed757b7e72"><div class="ttname"><a href="structSymbol__.html#a9040c623669a278243e9a8ed757b7e72">Symbol_::next</a></div><div class="ttdeci">Symbol next</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00011">symbol.h:11</a></div></div>
+<div class="ttc" id="astructSymTable___html_ab5f44076c070a0159106234242c8510b"><div class="ttname"><a href="structSymTable__.html#ab5f44076c070a0159106234242c8510b">SymTable_::p</a></div><div class="ttdeci">MemPool p</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00017">symbol.h:17</a></div></div>
+<div class="ttc" id="astructSymbol___html"><div class="ttname"><a href="structSymbol__.html">Symbol_</a></div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00009">symbol.h:9</a></div></div>
+<div class="ttc" id="astructSymTable___html_a1539f67ef4a6f2ded4ba946e9eb7281c"><div class="ttname"><a href="structSymTable__.html#a1539f67ef4a6f2ded4ba946e9eb7281c">SymTable_::mutex</a></div><div class="ttdeci">MUTEX_TYPE mutex</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00016">symbol.h:16</a></div></div>
+<div class="ttc" id="astructSymTable___html_a0214d7a9597cf6a110ab4e4cee48eaec"><div class="ttname"><a href="structSymTable__.html#a0214d7a9597cf6a110ab4e4cee48eaec">SymTable_::sz</a></div><div class="ttdeci">size_t sz</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00015">symbol.h:15</a></div></div>
+<div class="ttc" id="adefs_8h_html_a987623b00adaf8b6ddf4c54375bf703a"><div class="ttname"><a href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">LOOP_OPTIM</a></div><div class="ttdeci">#define LOOP_OPTIM</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00039">defs.h:39</a></div></div>
 <div class="ttc" id="agwion__thread_8h_html_a4c8c0786dbefcef7711a8bf23ef5a5e9"><div class="ttname"><a href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a></div><div class="ttdeci">#define MUTEX_SETUP(x)</div><div class="ttdef"><b>Definition:</b> <a href="gwion__thread_8h_source.html#l00043">gwion_thread.h:43</a></div></div>
 <div class="ttc" id="astructpool_html_a9f914cbfca19e1ad6b3bea85611b8c79"><div class="ttname"><a href="structpool.html#a9f914cbfca19e1ad6b3bea85611b8c79">pool::next</a></div><div class="ttdeci">struct Recycle * next</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00013">mpool.c:13</a></div></div>
-<div class="ttc" id="asymbol_8c_html_a3cd2fe06c0c3c6ffd4c218f126922ee2"><div class="ttname"><a href="symbol_8c.html#a3cd2fe06c0c3c6ffd4c218f126922ee2">free_symbol</a></div><div class="ttdeci">static ANN void free_symbol(MemPool p, const Symbol s)</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8c_source.html#l00027">symbol.c:27</a></div></div>
-<div class="ttc" id="adefs_8h_html_a91ad9478d81a7aaf2593e8d9c3d06a14"><div class="ttname"><a href="defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a></div><div class="ttdeci">unsigned int uint</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00056">defs.h:56</a></div></div>
-<div class="ttc" id="astructSymTable___html_a54d05534b43aa631ec927353a4f77008"><div class="ttname"><a href="structSymTable__.html#a54d05534b43aa631ec927353a4f77008">SymTable_::sym</a></div><div class="ttdeci">Symbol * sym</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00010">symbol.h:10</a></div></div>
+<div class="ttc" id="asymbol_8c_html_a3cd2fe06c0c3c6ffd4c218f126922ee2"><div class="ttname"><a href="symbol_8c.html#a3cd2fe06c0c3c6ffd4c218f126922ee2">free_symbol</a></div><div class="ttdeci">static ANN void free_symbol(MemPool p, const Symbol s)</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8c_source.html#l00022">symbol.c:22</a></div></div>
+<div class="ttc" id="adefs_8h_html_a91ad9478d81a7aaf2593e8d9c3d06a14"><div class="ttname"><a href="defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a></div><div class="ttdeci">unsigned int uint</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00058">defs.h:58</a></div></div>
+<div class="ttc" id="astructSymTable___html_a54d05534b43aa631ec927353a4f77008"><div class="ttname"><a href="structSymTable__.html#a54d05534b43aa631ec927353a4f77008">SymTable_::sym</a></div><div class="ttdeci">Symbol * sym</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00014">symbol.h:14</a></div></div>
 <div class="ttc" id="axalloc_8h_html_a39ef228c1684eb7b3e198e83e70eff1b"><div class="ttname"><a href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a></div><div class="ttdeci">#define xfree(a)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00029">xalloc.h:29</a></div></div>
 <div class="ttc" id="agwion__thread_8h_html_a64ca321a1510fb750a1dbdc7990d056c"><div class="ttname"><a href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a></div><div class="ttdeci">#define MUTEX_CLEANUP(x)</div><div class="ttdef"><b>Definition:</b> <a href="gwion__thread_8h_source.html#l00049">gwion_thread.h:49</a></div></div>
 <div class="ttc" id="amp__string_8h_html_a452bc669e976f3d4154d2bcac6aad1df"><div class="ttname"><a href="mp__string_8h.html#a452bc669e976f3d4154d2bcac6aad1df">mstrdup</a></div><div class="ttdeci">static ANN m_str mstrdup(MemPool mp, const m_str name)</div><div class="ttdoc">mp_alloc version of strdup</div><div class="ttdef"><b>Definition:</b> <a href="mp__string_8h_source.html#l00013">mp_string.h:13</a></div></div>
-<div class="ttc" id="astructSymTable___html"><div class="ttname"><a href="structSymTable__.html">SymTable_</a></div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00009">symbol.h:9</a></div></div>
+<div class="ttc" id="astructSymTable___html"><div class="ttname"><a href="structSymTable__.html">SymTable_</a></div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00013">symbol.h:13</a></div></div>
 <div class="ttc" id="ampool_8h_html_afdf8c742bac379902ef3a9fee8dd231a"><div class="ttname"><a href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a></div><div class="ttdeci">#define mp_malloc2(p, sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00025">mpool.h:25</a></div></div>
 <div class="ttc" id="amp__string_8h_html_a23d4adc0c6cb20fb464341a676445fb1"><div class="ttname"><a href="mp__string_8h.html#a23d4adc0c6cb20fb464341a676445fb1">free_mstr</a></div><div class="ttdeci">static ANN void free_mstr(MemPool mp, const m_str str)</div><div class="ttdoc">free mp_allocated string</div><div class="ttdef"><b>Definition:</b> <a href="mp__string_8h_source.html#l00008">mp_string.h:8</a></div></div>
 <div class="ttc" id="axalloc_8h_html_a494dd4d984870455b73e4b734a4a6d54"><div class="ttname"><a href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a></div><div class="ttdeci">static ANEW void * xcalloc(const m_uint n, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00019">xalloc.h:19</a></div></div>
-<div class="ttc" id="astructSymbol___html_a2f3446a758bb8e7dbfb1928020bbe8bc"><div class="ttname"><a href="structSymbol__.html#a2f3446a758bb8e7dbfb1928020bbe8bc">Symbol_::name</a></div><div class="ttdeci">m_str name</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8c_source.html#l00014">symbol.c:14</a></div></div>
+<div class="ttc" id="astructSymbol___html_a2f3446a758bb8e7dbfb1928020bbe8bc"><div class="ttname"><a href="structSymbol__.html#a2f3446a758bb8e7dbfb1928020bbe8bc">Symbol_::name</a></div><div class="ttdeci">m_str name</div><div class="ttdef"><b>Definition:</b> <a href="symbol_8h_source.html#l00010">symbol.h:10</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
