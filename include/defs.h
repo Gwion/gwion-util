@@ -30,8 +30,10 @@
 #ifdef __GNUC__
 #ifdef __clang__
 #define LOOP_OPTIM
+#define CC_OPTIM(a)
 #else
 #define LOOP_OPTIM _Pragma("GCC ivdep")
+#define CC_OPTIM(a) __attribute__ ((optimize(#a)))
 #endif
 #else
 #define LOOP_OPTIM
