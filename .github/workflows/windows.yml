@@ -6,14 +6,14 @@ jobs:
   build:
     runs-on: windows-latest
     name:  Windows ${{ matrix.double && 'double' || 'float '}}
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    env:
+      BUILD_ON_WINDOWS: 1
+      CC: gcc
+      USE_DOUBLE: ${{ matrix.double }}
     strategy:
       matrix:
         double: [0, 1]
     steps:
-    - uses: actions/checkout@v1
-    - name: build
-      run: make
-      env:
-        BUILD_ON_WINDOWS: 1
-        CC: gcc
-        USE_DOUBLE: ${{ matrix.double }}
+    - uses: actions/checkout@v2
+    - run: make
