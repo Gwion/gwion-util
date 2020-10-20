@@ -15,7 +15,7 @@ jobs:
         cc: [gcc, clang]
         double: [0, 1]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: build
       run: make
 	
