@@ -6,6 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name:  Linux ${{ matrix.cc }} ${{ matrix.double && 'double' || 'float '}}
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    env:
+      USE_DOUBLE: ${{ matrix.double }}
+      CC: ${{ matrix.cc }}
     strategy:
       matrix:
         cc: [gcc, clang]
@@ -13,7 +17,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: build
-      env:
-        USE_DOUBLE: ${{ matrix.double }}
-      run: | 
-        make CC=${{ matrix.cc }}
+      run: make
