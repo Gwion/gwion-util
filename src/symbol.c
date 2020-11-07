@@ -2,14 +2,6 @@
 #include <string.h>
 #include "gwion_util.h"
 
-#ifdef min
-#undef min
-#endif
-
-#define MAX_DISTANCE 2
-#define min2(a, b) ((a) < (b) ? (a) : (b))
-#define min(a, b, c) (min2(min2((a), (b)), (c)))
-
 ANN SymTable* new_symbol_table(MemPool p, size_t sz) {
   SymTable *st = mp_malloc2(p, sizeof(struct SymTable_));
   st->sz = sz;
