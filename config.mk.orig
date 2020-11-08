@@ -5,17 +5,12 @@ USE_DEBUG    ?= 0
 USE_LTO      ?= 0
 USE_COVERAGE ?= 0
 
-#compiler/linker options
 CC ?=gcc
 PREFIX ?=/usr/local
-CFLAGS += -std=c99 -Iinclude -fstrict-aliasing
-CFLAGS += -mtune=native
-# -mfpmath=sse
-# don't forget the warnings
+CFLAGS  += -std=c99 -Iinclude -fstrict-aliasing
 CFLAGS += -Wall -Wextra
 
 # should point to gwion-util source
 util_dir := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-
 #please don't touch this
 include ${util_dir}/common.mk

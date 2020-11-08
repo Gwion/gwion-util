@@ -29,7 +29,7 @@ translation-generate: ${mo}
 
 translation-install: translation-generate
 	@$(info installing translations)
-	@for a in ${mo}; do cp $$a ${PREFIX}/share/locale/$$(basename $$(dirname $$a))/LC_MESSAGES/${PACKAGE}.mo; done
+	for a in ${mo}; do echo $$a; mkdir -p ${PREFIX}/share/locale/$$(basename $$(dirname $$a))/LC_MESSAGES/; cp $$a ${PREFIX}/share/locale/$$(basename $$(dirname $$a))/LC_MESSAGES/${PACKAGE}.mo; done
 
 translation-uninstall:
 	@$(info uninstalling translations)

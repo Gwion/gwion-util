@@ -36,9 +36,11 @@ AR = ar
 AR_OPT = rcs $@ $^
 endif
 
+PACKAGE_INFO ?= -DGWION_PACKAGE='"$GWION_PACKAGE"'
+
 .c.o:
 	$(info compile $(<:.c=))
-	@${CC} $(DEPFLAGS) ${CFLAGS} -c $< -o $(<:.c=.o)
+	@${CC} $(DEPFLAGS) ${CFLAGS} ${PACKAGE_INFO} -c $< -o $(<:.c=.o)
 	@mv -f $(DEPDIR)/$(@F:.o=.Td) $(DEPDIR)/$(@F:.o=.d) && touch $@
 	@echo $@: config.mk >> $(DEPDIR)/$(@F:.o=.d)
 
@@ -47,6 +49,7 @@ $(shell mkdir -p $(DEPDIR) >/dev/null)
 DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)/$(@F:.o=.Td)
 
 define _options
+  $(info PACKAGE : ${GWION_PACKAGE})
   $(info CC      : ${CC})
   $(info CFLAGS  : ${CFLAGS})
   $(info LDFLAGS : ${LDFLAGS})
