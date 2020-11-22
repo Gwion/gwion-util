@@ -24,6 +24,17 @@ ANN static inline void text_release(GwText *text) {
   }
 }
 
+ANN static inline GwText* new_text(MemPool mp) {
+  GwText *text = mp_calloc(mp, GwText);
+  text->mp = mp;
+  return text;
+}
+
+ANN static inline void free_text(MemPool mp, GwText *text) {
+  text_release(text);
+  mp_free(mp, GwText, text);
+}
+
 /** reset text **/
 ANN static inline void text_reset(GwText *text) {
   if(text->str) {
