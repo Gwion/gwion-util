@@ -30,9 +30,9 @@ ANN static inline GwText* new_text(MemPool mp) {
   return text;
 }
 
-ANN static inline void free_text(MemPool mp, GwText *text) {
+ANN static inline void free_text(GwText *text) {
   text_release(text);
-  mp_free(mp, GwText, text);
+  mp_free(text->mp, GwText, text);
 }
 
 /** reset text **/
