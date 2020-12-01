@@ -25,7 +25,7 @@ ANN static inline void text_release(GwText *text) {
 }
 
 ANN static inline GwText* new_text(MemPool mp) {
-  GwText *text = mp_calloc(mp, GwText);
+  GwText *text = (GwText*)mp_calloc(mp, GwText);
   text->mp = mp;
   return text;
 }
