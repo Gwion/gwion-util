@@ -76,6 +76,7 @@ $(function() {
 <p>cross-platform thread functions  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;pthread.h&gt;</code><br />
+<code>#include &lt;dlfcn.h&gt;</code><br />
 </div>
 <p><a href="gwion__thread_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -119,12 +120,129 @@ Macros</h2></td></tr>
 <tr class="separator:afe58fe34a9dac2526796eedc93417652"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e307dfe60e30c7c953283031a09c72b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a7e307dfe60e30c7c953283031a09c72b">THREAD_COND_CLEANUP</a>(x)&#160;&#160;&#160;{ pthread_cond_destroy(x); <a class="el" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(x); }</td></tr>
 <tr class="separator:a7e307dfe60e30c7c953283031a09c72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61469a2fe6aebc934e696bde3522a763"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a61469a2fe6aebc934e696bde3522a763">STR_EXPAND</a>(tok)&#160;&#160;&#160;#tok</td></tr>
+<tr class="separator:a61469a2fe6aebc934e696bde3522a763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05b95a47759fd66b4deab2740ba27453"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a05b95a47759fd66b4deab2740ba27453">STR</a>(tok)&#160;&#160;&#160;<a class="el" href="gwion__thread_8h.html#a61469a2fe6aebc934e696bde3522a763">STR_EXPAND</a>(tok)</td></tr>
+<tr class="separator:a05b95a47759fd66b4deab2740ba27453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb02bf89494d3be01d62ee7c0abaadf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#afb02bf89494d3be01d62ee7c0abaadf3">DLOPEN</a>(dl,  b)&#160;&#160;&#160;dlopen(dl, b)</td></tr>
+<tr class="separator:afb02bf89494d3be01d62ee7c0abaadf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d70650055a3ddb629c6243df73448b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a1d70650055a3ddb629c6243df73448b5">DLSYM</a>(dl,  t,  a)&#160;&#160;&#160;(t)(intptr_t)dlsym(dl, <a class="el" href="gwion__thread_8h.html#a05b95a47759fd66b4deab2740ba27453">STR</a>(a));</td></tr>
+<tr class="separator:a1d70650055a3ddb629c6243df73448b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab24e5745b3a82deeaed92eff349ae81a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#ab24e5745b3a82deeaed92eff349ae81a">DLCLOSE</a>(dl)&#160;&#160;&#160;dlclose(dl);</td></tr>
+<tr class="separator:ab24e5745b3a82deeaed92eff349ae81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a690562dc6c92cb811f90e8391bfeb801"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gwion__thread_8h.html#a690562dc6c92cb811f90e8391bfeb801">DLERROR</a>()&#160;&#160;&#160;dlerror()</td></tr>
+<tr class="separator:a690562dc6c92cb811f90e8391bfeb801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>cross-platform thread functions </p>
 
 <p class="definition">Definition in file <a class="el" href="gwion__thread_8h_source.html">gwion_thread.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ab24e5745b3a82deeaed92eff349ae81a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab24e5745b3a82deeaed92eff349ae81a">&#9670;&nbsp;</a></span>DLCLOSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DLCLOSE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">dl</td><td>)</td>
+          <td>&#160;&#160;&#160;dlclose(dl);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gwion__thread_8h_source.html#l00069">69</a> of file <a class="el" href="gwion__thread_8h_source.html">gwion_thread.h</a>.</p>
+
+</div>
+</div>
+<a id="a690562dc6c92cb811f90e8391bfeb801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a690562dc6c92cb811f90e8391bfeb801">&#9670;&nbsp;</a></span>DLERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DLERROR</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;dlerror()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gwion__thread_8h_source.html#l00070">70</a> of file <a class="el" href="gwion__thread_8h_source.html">gwion_thread.h</a>.</p>
+
+</div>
+</div>
+<a id="afb02bf89494d3be01d62ee7c0abaadf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb02bf89494d3be01d62ee7c0abaadf3">&#9670;&nbsp;</a></span>DLOPEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DLOPEN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">dl, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;dlopen(dl, b)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gwion__thread_8h_source.html#l00067">67</a> of file <a class="el" href="gwion__thread_8h_source.html">gwion_thread.h</a>.</p>
+
+</div>
+</div>
+<a id="a1d70650055a3ddb629c6243df73448b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d70650055a3ddb629c6243df73448b5">&#9670;&nbsp;</a></span>DLSYM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DLSYM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">dl, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">t, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(t)(intptr_t)dlsym(dl, <a class="el" href="gwion__thread_8h.html#a05b95a47759fd66b4deab2740ba27453">STR</a>(a));</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gwion__thread_8h_source.html#l00068">68</a> of file <a class="el" href="gwion__thread_8h_source.html">gwion_thread.h</a>.</p>
+
+</div>
+</div>
 <a id="a64ca321a1510fb750a1dbdc7990d056c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a64ca321a1510fb750a1dbdc7990d056c">&#9670;&nbsp;</a></span>MUTEX_CLEANUP</h2>
 
@@ -280,6 +398,46 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="gwion__thread_8h_source.html#l00052">52</a> of file <a class="el" href="gwion__thread_8h_source.html">gwion_thread.h</a>.</p>
+
+</div>
+</div>
+<a id="a05b95a47759fd66b4deab2740ba27453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b95a47759fd66b4deab2740ba27453">&#9670;&nbsp;</a></span>STR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tok</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="gwion__thread_8h.html#a61469a2fe6aebc934e696bde3522a763">STR_EXPAND</a>(tok)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gwion__thread_8h_source.html#l00064">64</a> of file <a class="el" href="gwion__thread_8h_source.html">gwion_thread.h</a>.</p>
+
+</div>
+</div>
+<a id="a61469a2fe6aebc934e696bde3522a763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61469a2fe6aebc934e696bde3522a763">&#9670;&nbsp;</a></span>STR_EXPAND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_EXPAND</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tok</td><td>)</td>
+          <td>&#160;&#160;&#160;#tok</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gwion__thread_8h_source.html#l00063">63</a> of file <a class="el" href="gwion__thread_8h_source.html">gwion_thread.h</a>.</p>
 
 </div>
 </div>
