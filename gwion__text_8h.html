@@ -188,7 +188,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00027">27</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                               {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="structGwText__.html">GwText</a> *text = <a class="code" href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a>(<a class="code" href="structArgSplitter.html#a5143eb2485df5c7c28dc7d0bee8a5468">mp</a>, <a class="code" href="structGwText__.html">GwText</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="structGwText__.html">GwText</a> *text = (<a class="code" href="structGwText__.html">GwText</a>*)<a class="code" href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a>(<a class="code" href="structArgSplitter.html#a5143eb2485df5c7c28dc7d0bee8a5468">mp</a>, <a class="code" href="structGwText__.html">GwText</a>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  text-&gt;<a class="code" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a> = <a class="code" href="structArgSplitter.html#a5143eb2485df5c7c28dc7d0bee8a5468">mp</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">return</span> text;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>

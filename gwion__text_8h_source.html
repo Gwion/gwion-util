@@ -92,7 +92,7 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="gwion__text_8h.html#a864d8baa547ebbdfcc01be9b8055a240">   27</a></span>&#160;<a class="code" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="structGwText__.html">GwText</a>* <a class="code" href="gwion__text_8h.html#a864d8baa547ebbdfcc01be9b8055a240">new_text</a>(<a class="code" href="structMemPool__.html">MemPool</a> mp) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="structGwText__.html">GwText</a> *text = <a class="code" href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a>(mp, <a class="code" href="structGwText__.html">GwText</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="structGwText__.html">GwText</a> *text = (<a class="code" href="structGwText__.html">GwText</a>*)<a class="code" href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a>(mp, <a class="code" href="structGwText__.html">GwText</a>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  text-&gt;<a class="code" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a> = mp;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">return</span> text;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
