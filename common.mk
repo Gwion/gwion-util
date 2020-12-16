@@ -6,8 +6,8 @@ ifeq (${USE_DEBUG}, 1)
 CFLAGS += -fsanitize=address -fno-omit-frame-pointer -Og
 LDFLAGS += -fsanitize=address -fno-omit-frame-pointer -Og
 else
-CFLAGS += -DNDEBUG -fomit-frame-pointer -fno-stack-protector -fno-common -Ofast
-LDFLAGS += -fomit-frame-pointer -fno-stack-protector -fno-common -Ofast
+#CFLAGS += -DNDEBUG -fomit-frame-pointer -fno-stack-protector -fno-common -Ofast
+#LDFLAGS += -fomit-frame-pointer -fno-stack-protector -fno-common -Ofast
 endif
 
 ifeq (${USE_LTO}, 1)
@@ -36,7 +36,7 @@ AR = ar
 AR_OPT = rcs $@ $^
 endif
 
-PACKAGE_INFO ?= -DGWION_PACKAGE='"$GWION_PACKAGE"'
+PACKAGE_INFO ?= -DGWION_PACKAGE='"${GWION_PACKAGE}"'
 
 .c.o:
 	$(info compile $(<:.c=))
