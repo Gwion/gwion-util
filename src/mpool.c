@@ -17,16 +17,6 @@ struct pool {
   uint32_t  nblk;
 };
 
-static uint32_t nextpow2(uint32_t x) {
-  --x;
-  x |= x >> 1;
-  x |= x >> 2;
-  x |= x >> 4;
-  x |= x >> 8;
-  x |= x >> 16;
-  return x + 1;
-}
-
 ANN static void mp_set(struct pool* p, const uint32_t obj_sz) {
   p->obj_sz = obj_sz;
   p->obj_id = BLK - 1;
@@ -41,9 +31,8 @@ MemPool mempool_ini(const size_t sz) {
   p->master_pool = new_pool(sizeof(struct MemPool_));
   p->sizes = xmalloc((log2(sz) - 1) * sizeof(size_t));
   p->sz = 0;
-  for(size_t j = SZ_INT, k = 0; sz >= k; k = j, j = nextpow2(j + 1))
+  for(size_t j = SZ_INT, k = 0; sz >= k; k = j, j <<= 1)
     p->sizes[p->sz++] = j;
-  ++p->sz;
   p->pools = (struct pool**)xcalloc(p->sz, sizeof(struct pool*));
   MUTEX_SETUP(p->mutex);
   return p;
