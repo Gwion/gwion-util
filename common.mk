@@ -37,10 +37,11 @@ AR_OPT = rcs $@ $^
 endif
 
 PACKAGE_INFO ?= -DGWION_PACKAGE='"${GWION_PACKAGE}"'
+INSTALL_PREFIX ?= -DINSTALL_PREFIX='"${PREFIX}"'
 
 .c.o:
 	$(info compile $(<:.c=))
-	@${CC} $(DEPFLAGS) ${CFLAGS} ${PACKAGE_INFO} -c $< -o $(<:.c=.o)
+	@${CC} $(DEPFLAGS) ${CFLAGS} ${PACKAGE_INFO} ${INSTALL_PREFIX} -c $< -o $(<:.c=.o)
 	@mv -f $(DEPDIR)/$(@F:.o=.Td) $(DEPDIR)/$(@F:.o=.d) && touch $@
 	@echo $@: config.mk >> $(DEPDIR)/$(@F:.o=.d)
 
