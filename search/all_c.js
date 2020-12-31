@@ -1,7 +1,7 @@
 var searchData=
 [
   ['name_123',['name',['../structSymbol__.html#a2f3446a758bb8e7dbfb1928020bbe8bc',1,'Symbol_']]],
-  ['nblk_124',['nblk',['../structpool.html#a5f9eb90fb91008ac26901153cea88fa3',1,'pool']]],
+  ['nblk_124',['nblk',['../structpool.html#a0d7dbbde4ec2eae17cd8c8310caeafb3',1,'pool']]],
   ['new_5fmap_125',['new_map',['../map_8c.html#abe97c1824252557041888c27bcbe9114',1,'new_map(MemPool p):&#160;map.c'],['../map_8h.html#a549d43a5cd3997b5ec09aba0af098084',1,'new_map(MemPool):&#160;map.c']]],
   ['new_5fpool_126',['new_pool',['../mpool_8c.html#a5cd0a624812e8f904c920b4a7c3a4afa',1,'new_pool(const uint32_t obj_sz):&#160;mpool.c'],['../mpool_8h.html#abbf74c0d480d06f33aea83ac2f005186',1,'new_pool(const uint32_t elementSize):&#160;mpool.c']]],
   ['new_5fscope_127',['new_scope',['../scope_8c.html#a13f4d2918a05fba6ee8bd2ae691a612f',1,'new_scope(MemPool p):&#160;scope.c'],['../scope_8h.html#a3aa70fd16a35b7e61ce6850da5f1514e',1,'new_scope(MemPool):&#160;scope.c']]],
