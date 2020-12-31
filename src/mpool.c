@@ -13,8 +13,8 @@ struct pool {
   struct Recycle  *next;
   uint32_t  obj_sz;
   uint32_t  obj_id;
-  int32_t   blk_id;
-  uint32_t  nblk;
+  int_fast32_t   blk_id;
+  uint_fast32_t  nblk;
 };
 
 ANN static void mp_set(struct pool* p, const uint32_t obj_sz) {
@@ -76,10 +76,10 @@ void mp_end(struct pool *p) {
 
 static void _realloc(struct pool* p) {
   p->obj_id = 0;
-  if(++p->blk_id == (int32_t)p->nblk) {
+  if(++p->blk_id == (int_fast32_t)p->nblk) {
     p->nblk <<= 1;
     p->data = (uint8_t**)xrealloc(p->data, sizeof(uint8_t*)* p->nblk);
-    for(uint32_t i = (p->nblk >> 1) + 1; i < p->nblk; ++i)
+    for(uint_fast32_t i = (p->nblk >> 1) + 1; i < p->nblk; ++i)
       p->data[i] = NULL;
   }
   p->data[p->blk_id] = (uint8_t*)xcalloc(BLK, p->obj_sz);
@@ -87,7 +87,7 @@ static void _realloc(struct pool* p) {
 
 void *_mp_calloc2(struct pool *p, const m_bool zero) {
   if(p->next) {
-    struct Recycle* recycle = p->next;
+    struct Recycle *const recycle = p->next;
     p->next = p->next->next;
     if(zero)
       memset(recycle, 0, p->obj_sz);
