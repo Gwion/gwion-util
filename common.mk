@@ -25,7 +25,7 @@ LDFLAGS += --coverage
 endif
 
 ifeq (${BUILD_ON_WINDOWS}, 1)
-CFLAGS += -DBUILD_ON_WINDOWS=1 -D_XOPEN_SOURCE=700 -Wl,--export-all-symbols -static
+CFLAGS += -DBUILD_ON_WINDOWS=1 -D_XOPEN_SOURCE=700 -Wl,--export-all-symbols -static -Wl,--out-implib=lib${GWION_PACKAGE}.dll.a
 endif
 
 ifeq ($(shell uname), Darwin)
