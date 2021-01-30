@@ -1,4 +1,4 @@
-GWION_PACKAGE=gwion-util
+GWION_PACKAGE=gwion_util
 
 MEM_UNSECURE ?=
 POOL_CHECK ?=
