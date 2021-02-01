@@ -54,5 +54,5 @@ endef
 .SUFFIXES: .po .mo
 .po.mo:
 	$(info generate $(call _translation-name, $<) translations)
-	@msgfmt $< -o $(<:.po=.mo)
+	@which msgfmt && msgfmt $< -o $(<:.po=.mo)
 
