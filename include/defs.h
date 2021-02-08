@@ -39,6 +39,10 @@
 #define LOOP_OPTIM
 #endif
 
+// maybe later enclose in ifdef
+#define likely(x) __builtin_expect(!!(x), 1)
+#define unlikely(x) __builtin_expect(!!(x), 0)
+
 #define CHECK_BB(f) { if(f < 0) return GW_ERROR;   }
 #define CHECK_OB(f) { if(!f)    return GW_ERROR;   }
 #define CHECK_BO(f) { if(f < 0) return NULL; }
