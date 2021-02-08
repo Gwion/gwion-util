@@ -111,6 +111,10 @@ Macros</h2></td></tr>
 <tr class="separator:a779a45537ce96ee93fd887eef961a634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a987623b00adaf8b6ddf4c54375bf703a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">LOOP_OPTIM</a></td></tr>
 <tr class="separator:a987623b00adaf8b6ddf4c54375bf703a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a217a0bd562b98ae8c2ffce44935351e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#a217a0bd562b98ae8c2ffce44935351e1">likely</a>(x)&#160;&#160;&#160;__builtin_expect(!!(x), 1)</td></tr>
+<tr class="separator:a217a0bd562b98ae8c2ffce44935351e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6c45889010c1bd68631771b64f18101"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#ac6c45889010c1bd68631771b64f18101">unlikely</a>(x)&#160;&#160;&#160;__builtin_expect(!!(x), 0)</td></tr>
+<tr class="separator:ac6c45889010c1bd68631771b64f18101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d4c820ca4a6569e3755e7fefebb6c64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#a5d4c820ca4a6569e3755e7fefebb6c64">CHECK_BB</a>(f)&#160;&#160;&#160;{ if(f &lt; 0) return <a class="el" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a>;   }</td></tr>
 <tr class="separator:a5d4c820ca4a6569e3755e7fefebb6c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4abd7eaaefe533c764953df27d664839"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#a4abd7eaaefe533c764953df27d664839">CHECK_OB</a>(f)&#160;&#160;&#160;{ if(!f)    return <a class="el" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a>;   }</td></tr>
@@ -233,7 +237,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00042">42</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00046">46</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
 
 </div>
 </div>
@@ -253,7 +257,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00044">44</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00048">48</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
 
 </div>
 </div>
@@ -273,7 +277,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00043">43</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00047">47</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
 
 </div>
 </div>
@@ -293,7 +297,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00045">45</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00049">49</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
 
 </div>
 </div>
@@ -365,7 +369,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00047">47</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00051">51</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
 
 </div>
 </div>
@@ -401,7 +405,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00049">49</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00053">53</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
 
 </div>
 </div>
@@ -437,7 +441,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00048">48</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00052">52</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
 
 </div>
 </div>
@@ -473,7 +477,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00050">50</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00054">54</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
 
 </div>
 </div>
@@ -506,6 +510,26 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00019">19</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+
+</div>
+</div>
+<a id="a217a0bd562b98ae8c2ffce44935351e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a217a0bd562b98ae8c2ffce44935351e1">&#9670;&nbsp;</a></span>likely</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define likely</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;__builtin_expect(!!(x), 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00043">43</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
 
 </div>
 </div>
@@ -589,6 +613,26 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac6c45889010c1bd68631771b64f18101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6c45889010c1bd68631771b64f18101">&#9670;&nbsp;</a></span>unlikely</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define unlikely</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;__builtin_expect(!!(x), 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00044">44</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a91ad9478d81a7aaf2593e8d9c3d06a14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a91ad9478d81a7aaf2593e8d9c3d06a14">&#9670;&nbsp;</a></span>uint</h2>
@@ -602,7 +646,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00058">58</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00062">62</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
 
 </div>
 </div>
@@ -631,10 +675,10 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00060">60</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                               {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">return</span> i ? (m_uint)floor(log10((<span class="keywordtype">float</span>)i) + 1) : 1;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00064">64</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                               {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> i ? (m_uint)floor(log10((<span class="keywordtype">float</span>)i) + 1) : 1;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -662,10 +706,10 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00064">64</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                 {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> ((i + (SZ_INT-1)) &amp; ~(SZ_INT-1));</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="defs_8h_source.html#l00068">68</a> of file <a class="el" href="defs_8h_source.html">defs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                 {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> ((i + (SZ_INT-1)) &amp; ~(SZ_INT-1));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
