@@ -26,17 +26,22 @@ obj := $(src:.c=.o)
 
 CFLAGS += -D_GNU_SOURCE
 
-all: options-show include/generated.h libgwion_util.a
+all: options-show include/generated.h static
 
 options-show:
 	@$(call _options)
 
-libgwion_util.a: ${TERMCOLOR_DIR}/libtermcolor.a ${obj}
+.PHONY: static
+static: termcolor libgwion_util.a
+libgwion_util.a: ${obj}
 	@$(info linking $@)
 	@${AR} ${AR_OPT}
 
+.PHONY: termcolor
+termcolor: ${TERMCOLOR_DIR}/libtermcolor.a
 ${TERMCOLOR_DIR}/libtermcolor.a:
-	${MAKE} -s -C libtermcolor static
+	@$(info building libtermcolor)
+	@${MAKE} -s -C libtermcolor static
 
 include/generated.h: scripts/generate_header.c
 	$(info generating generated.h)
