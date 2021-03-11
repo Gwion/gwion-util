@@ -31,9 +31,12 @@ all: options-show include/generated.h libgwion_util.a
 options-show:
 	@$(call _options)
 
-libgwion_util.a: ${obj}
+libgwion_util.a: ${TERMCOLOR_DIR}/libtermcolor.a ${obj}
 	@$(info linking $@)
 	@${AR} ${AR_OPT}
+
+${TERMCOLOR_DIR}/libtermcolor.a:
+	${MAKE} -s -C libtermcolor static
 
 include/generated.h: scripts/generate_header.c
 	$(info generating generated.h)

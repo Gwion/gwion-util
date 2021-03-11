@@ -5,7 +5,13 @@
 #ifndef __POOL
 #define __POOL
 
-typedef struct MemPool_* MemPool;
+typedef struct MemPool_ {
+  struct pool* master_pool;
+  struct pool** pools;
+  size_t *sizes;
+  MUTEX_TYPE mutex;
+  size_t sz;
+} *MemPool;
 
 ANN struct pool* new_pool(const uint32_t elementSize);
 ANN struct pool* mp_ini(MemPool p, const uint32_t elementSize);
@@ -24,14 +30,6 @@ void *mp_realloc(MemPool mp, void* ptr, const m_uint curr, const m_uint next);
 #define mp_calloc2(p, sz) _mp_calloc(p, sz)
 #define mp_malloc2(p, sz) _mp_calloc(p, sz)
 
-
-struct MemPool_ {
-  struct pool* master_pool;
-  struct pool** pools;
-  size_t *sizes;
-  MUTEX_TYPE mutex;
-  size_t sz;
-};
 MemPool mempool_ini(const size_t sz);
 void mempool_end(MemPool mp);
 #endif

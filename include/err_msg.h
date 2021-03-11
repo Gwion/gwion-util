@@ -6,10 +6,11 @@
 #define __ERRMSG
 
 #include <stdarg.h>
+#include <termcolor.h>
 /** similar to fprintf(stderr, fmt, ...) **/
-void gw_err(const char* fmt, ...);
+#define gw_err(...) tcol_fprintf(stderr, __VA_ARGS__)
 /** similar to fprintf(stdout, fmt, ...) **/
-void gw_out(const char* fmt, ...);
+#define gw_out(...) tcol_fprintf(stdout, __VA_ARGS__)
 
 #ifdef __FUZZING__
 #define gw_err(a,...)
