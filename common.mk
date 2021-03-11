@@ -26,7 +26,10 @@ endif
 
 ifeq (${BUILD_ON_WINDOWS}, 1)
 CFLAGS += -DBUILD_ON_WINDOWS=1 -D_XOPEN_SOURCE=700 -Wl,--export-all-symbols
-LDFLAGS += -Wl,--export-all-symbols -static -Wl,--out-implib=lib${GWION_PACKAGE}.dll.a
+LDFLAGS += -Wl,--enable-auto-impor -Wl,--export-all-symbols -static -Wl,--out-implib=lib${GWION_PACKAGE}.dll.a
+else
+LDFLAGS += -rdynamic
+LDFLAGS += -lm
 endif
 
 ifeq ($(shell uname), Darwin)
