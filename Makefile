@@ -32,16 +32,10 @@ options-show:
 	@$(call _options)
 
 .PHONY: static
-static: termcolor libgwion_util.a
+static: libgwion_util.a
 libgwion_util.a: ${obj}
 	@$(info linking $@)
 	@${AR} ${AR_OPT}
-
-.PHONY: termcolor
-termcolor: ${TERMCOLOR_DIR}/libtermcolor.a
-${TERMCOLOR_DIR}/libtermcolor.a:
-	@$(info building libtermcolor)
-	@${MAKE} -s -C libtermcolor static
 
 include/generated.h: scripts/generate_header.c
 	$(info generating generated.h)
