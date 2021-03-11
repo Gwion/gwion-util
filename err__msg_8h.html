@@ -67,7 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">err_msg.h File Reference</div>  </div>
 </div><!--header-->
@@ -76,80 +76,65 @@ $(function() {
 <p>thread-safe console output  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &lt;termcolor.h&gt;</code><br />
 </div>
 <p><a href="err__msg_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a90e6376c6c1d79cb18fb44bdb37b28be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="err__msg_8h.html#a90e6376c6c1d79cb18fb44bdb37b28be">gw_err</a> (const char *fmt,...)</td></tr>
-<tr class="memdesc:a90e6376c6c1d79cb18fb44bdb37b28be"><td class="mdescLeft">&#160;</td><td class="mdescRight">similar to fprintf(stderr, fmt, ...)  <a href="err__msg_8h.html#a90e6376c6c1d79cb18fb44bdb37b28be">More...</a><br /></td></tr>
-<tr class="separator:a90e6376c6c1d79cb18fb44bdb37b28be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acca1a00111223d02a47b8b92f4c85890"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="err__msg_8h.html#acca1a00111223d02a47b8b92f4c85890">gw_out</a> (const char *fmt,...)</td></tr>
-<tr class="memdesc:acca1a00111223d02a47b8b92f4c85890"><td class="mdescLeft">&#160;</td><td class="mdescRight">similar to fprintf(stdout, fmt, ...)  <a href="err__msg_8h.html#acca1a00111223d02a47b8b92f4c85890">More...</a><br /></td></tr>
-<tr class="separator:acca1a00111223d02a47b8b92f4c85890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a4b5f497d78c5691617dab86b088231de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="err__msg_8h.html#a4b5f497d78c5691617dab86b088231de">gw_err</a>(...)&#160;&#160;&#160;tcol_fprintf(stderr, __VA_ARGS__)</td></tr>
+<tr class="memdesc:a4b5f497d78c5691617dab86b088231de"><td class="mdescLeft">&#160;</td><td class="mdescRight">similar to fprintf(stderr, fmt, ...)  <a href="err__msg_8h.html#a4b5f497d78c5691617dab86b088231de">More...</a><br /></td></tr>
+<tr class="separator:a4b5f497d78c5691617dab86b088231de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a734218ad17fbf6049bc0102e41c46f91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="err__msg_8h.html#a734218ad17fbf6049bc0102e41c46f91">gw_out</a>(...)&#160;&#160;&#160;tcol_fprintf(stdout, __VA_ARGS__)</td></tr>
+<tr class="memdesc:a734218ad17fbf6049bc0102e41c46f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">similar to fprintf(stdout, fmt, ...)  <a href="err__msg_8h.html#a734218ad17fbf6049bc0102e41c46f91">More...</a><br /></td></tr>
+<tr class="separator:a734218ad17fbf6049bc0102e41c46f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>thread-safe console output </p>
 
 <p class="definition">Definition in file <a class="el" href="err__msg_8h_source.html">err_msg.h</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a90e6376c6c1d79cb18fb44bdb37b28be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90e6376c6c1d79cb18fb44bdb37b28be">&#9670;&nbsp;</a></span>gw_err()</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a4b5f497d78c5691617dab86b088231de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b5f497d78c5691617dab86b088231de">&#9670;&nbsp;</a></span>gw_err</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gw_err </td>
+          <td class="memname">#define gw_err</td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;tcol_fprintf(stderr, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>similar to fprintf(stderr, fmt, ...) </p>
 
+<p class="definition">Definition at line <a class="el" href="err__msg_8h_source.html#l00011">11</a> of file <a class="el" href="err__msg_8h_source.html">err_msg.h</a>.</p>
+
 </div>
 </div>
-<a id="acca1a00111223d02a47b8b92f4c85890"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acca1a00111223d02a47b8b92f4c85890">&#9670;&nbsp;</a></span>gw_out()</h2>
+<a id="a734218ad17fbf6049bc0102e41c46f91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a734218ad17fbf6049bc0102e41c46f91">&#9670;&nbsp;</a></span>gw_out</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gw_out </td>
+          <td class="memname">#define gw_out</td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;tcol_fprintf(stdout, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>similar to fprintf(stdout, fmt, ...) </p>
+
+<p class="definition">Definition at line <a class="el" href="err__msg_8h_source.html#l00013">13</a> of file <a class="el" href="err__msg_8h_source.html">err_msg.h</a>.</p>
 
 </div>
 </div>

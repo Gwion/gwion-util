@@ -75,17 +75,16 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define __ERRMSG</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="err__msg_8h.html#a90e6376c6c1d79cb18fb44bdb37b28be">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="err__msg_8h.html#a90e6376c6c1d79cb18fb44bdb37b28be">gw_err</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...);</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="err__msg_8h.html#acca1a00111223d02a47b8b92f4c85890">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="err__msg_8h.html#acca1a00111223d02a47b8b92f4c85890">gw_out</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifdef __FUZZING__</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define gw_err(a,...)</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define gw_out(a,...)</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aerr__msg_8h_html_a90e6376c6c1d79cb18fb44bdb37b28be"><div class="ttname"><a href="err__msg_8h.html#a90e6376c6c1d79cb18fb44bdb37b28be">gw_err</a></div><div class="ttdeci">void gw_err(const char *fmt,...)</div><div class="ttdoc">similar to fprintf(stderr, fmt, ...)</div></div>
-<div class="ttc" id="aerr__msg_8h_html_acca1a00111223d02a47b8b92f4c85890"><div class="ttname"><a href="err__msg_8h.html#acca1a00111223d02a47b8b92f4c85890">gw_out</a></div><div class="ttdeci">void gw_out(const char *fmt,...)</div><div class="ttdoc">similar to fprintf(stdout, fmt, ...)</div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;termcolor.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="err__msg_8h.html#a4b5f497d78c5691617dab86b088231de">   11</a></span>&#160;<span class="preprocessor">#define gw_err(...) tcol_fprintf(stderr, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="err__msg_8h.html#a734218ad17fbf6049bc0102e41c46f91">   13</a></span>&#160;<span class="preprocessor">#define gw_out(...) tcol_fprintf(stdout, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifdef __FUZZING__</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define gw_err(a,...)</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define gw_out(a,...)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
