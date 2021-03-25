@@ -35,6 +35,7 @@ endif
 ifeq ($(shell uname), Darwin)
 AR = /usr/bin/libtool
 AR_OPT = -static $^ -o $@
+LDFLAGS += -undefined dynamic_lookup
 else
 AR = ar
 AR_OPT = rcs $@ $^
