@@ -42,7 +42,7 @@ AR_OPT = rcs $@ $^
 endif
 
 TERMCOLOR_DIR += $(dir $(realpath $(lastword $(MAKEFILE_LIST))))libtermcolor
-CFLAGS += -I${TERMCOLOR_DIR}/src
+CFLAGS += -I${TERMCOLOR_DIR}/include
 #LDFLAGS += -L${TERMCOLOR_DIR} -ltermcolor
 
 PACKAGE_INFO ?= -DGWION_PACKAGE='"${GWION_PACKAGE}"'
