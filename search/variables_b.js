@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['table_394',['table',['../structHash__.html#a039452277a6c045b7e5e4dc3a26f9a3d',1,'Hash_']]]
+  ['obj_5fid_467',['obj_id',['../structpool.html#a6f6c005da280c6584dab780e7a0e2b77',1,'pool']]],
+  ['obj_5fsz_468',['obj_sz',['../structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9',1,'pool']]]
 ];
