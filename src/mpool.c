@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "gwion_util.h"
-
-#define BLK 16
+// 16
+#define BLK 128
 
 struct Recycle {
   struct Recycle *next;

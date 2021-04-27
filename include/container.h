@@ -14,6 +14,7 @@
 typedef uintptr_t vtype; /*< base type for containers, size of a pointer */
 
 #include "vector.h"
+#include "m_vector.h"
 #include "map.h"
 #include "scope.h"
 #endif

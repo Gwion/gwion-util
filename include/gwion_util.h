@@ -9,6 +9,7 @@
 #include "xalloc.h"
 #include "mpool.h"
 #include "container.h"
+#include "hashmap.h"
 #include "hash.h"
 #include "symbol.h"
 #include "gwion_text.h"
