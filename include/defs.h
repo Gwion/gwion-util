@@ -43,10 +43,10 @@
 #define likely(x) __builtin_expect(!!(x), 1)
 #define unlikely(x) __builtin_expect(!!(x), 0)
 
-#define CHECK_BB(f) { if(f < 0) return GW_ERROR;   }
-#define CHECK_OB(f) { if(!f)    return GW_ERROR;   }
-#define CHECK_BO(f) { if(f < 0) return NULL; }
-#define CHECK_OO(f) { if(!f)    return NULL; }
+#define CHECK_BB(f) do { if(f < 0) return GW_ERROR; } while(0)
+#define CHECK_OB(f) do { if(!f)    return GW_ERROR; } while(0)
+#define CHECK_BO(f) do { if(f < 0) return NULL;     } while(0)
+#define CHECK_OO(f) do { if(!f)    return NULL;     } while(0)
 
 #define DECL_BB(decl, f, exp) decl f exp; { if(f < 0) return GW_ERROR;   }
 #define DECL_OB(decl, f, exp) decl f exp; { if(!f)    return GW_ERROR;   }
