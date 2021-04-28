@@ -48,10 +48,10 @@
 #define CHECK_BO(f) do { if(f < 0) return NULL;     } while(0)
 #define CHECK_OO(f) do { if(!f)    return NULL;     } while(0)
 
-#define DECL_BB(decl, f, exp) decl f exp; { if(f < 0) return GW_ERROR;   }
-#define DECL_OB(decl, f, exp) decl f exp; { if(!f)    return GW_ERROR;   }
-#define DECL_BO(decl, f, exp) decl f exp; { if(f < 0) return NULL; }
-#define DECL_OO(decl, f, exp) decl f exp; { if(!f)    return NULL; }
+#define DECL_BB(decl, f, exp) decl f exp; if(f < 0) return GW_ERROR
+#define DECL_OB(decl, f, exp) decl f exp; if(!f)    return GW_ERROR
+#define DECL_BO(decl, f, exp) decl f exp; if(f < 0) return NULL
+#define DECL_OO(decl, f, exp) decl f exp; if(!f)    return NULL
 
 #include <stdio.h>
 #include <math.h>
