@@ -123,13 +123,13 @@ Macros</h2></td></tr>
 <tr class="separator:abb93f878ed4cadfc6b71acf08d625134"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ba6b757a44d3cd3e3d5c6b04011ef2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#a6ba6b757a44d3cd3e3d5c6b04011ef2b">CHECK_OO</a>(f)&#160;&#160;&#160;do { if(!f)    return NULL;     } while(0)</td></tr>
 <tr class="separator:a6ba6b757a44d3cd3e3d5c6b04011ef2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4eaf43e307f3fda26bbe209faa2a7bee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#a4eaf43e307f3fda26bbe209faa2a7bee">DECL_BB</a>(decl,  f,  exp)&#160;&#160;&#160;decl f exp; { if(f &lt; 0) return <a class="el" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a>;   }</td></tr>
+<tr class="memitem:a4eaf43e307f3fda26bbe209faa2a7bee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#a4eaf43e307f3fda26bbe209faa2a7bee">DECL_BB</a>(decl,  f,  exp)&#160;&#160;&#160;decl f exp; if(f &lt; 0) return <a class="el" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a></td></tr>
 <tr class="separator:a4eaf43e307f3fda26bbe209faa2a7bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a9fbbcb2ec6b528f38d53fe1e48e154"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#a8a9fbbcb2ec6b528f38d53fe1e48e154">DECL_OB</a>(decl,  f,  exp)&#160;&#160;&#160;decl f exp; { if(!f)    return <a class="el" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a>;   }</td></tr>
+<tr class="memitem:a8a9fbbcb2ec6b528f38d53fe1e48e154"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#a8a9fbbcb2ec6b528f38d53fe1e48e154">DECL_OB</a>(decl,  f,  exp)&#160;&#160;&#160;decl f exp; if(!f)    return <a class="el" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a></td></tr>
 <tr class="separator:a8a9fbbcb2ec6b528f38d53fe1e48e154"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae679a6e930a748f00294a3b84e952999"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#ae679a6e930a748f00294a3b84e952999">DECL_BO</a>(decl,  f,  exp)&#160;&#160;&#160;decl f exp; { if(f &lt; 0) return NULL; }</td></tr>
+<tr class="memitem:ae679a6e930a748f00294a3b84e952999"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#ae679a6e930a748f00294a3b84e952999">DECL_BO</a>(decl,  f,  exp)&#160;&#160;&#160;decl f exp; if(f &lt; 0) return NULL</td></tr>
 <tr class="separator:ae679a6e930a748f00294a3b84e952999"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae567284efb085a3f06ae6001011d3f23"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#ae567284efb085a3f06ae6001011d3f23">DECL_OO</a>(decl,  f,  exp)&#160;&#160;&#160;decl f exp; { if(!f)    return NULL; }</td></tr>
+<tr class="memitem:ae567284efb085a3f06ae6001011d3f23"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="defs_8h.html#ae567284efb085a3f06ae6001011d3f23">DECL_OO</a>(decl,  f,  exp)&#160;&#160;&#160;decl f exp; if(!f)    return NULL</td></tr>
 <tr class="separator:ae567284efb085a3f06ae6001011d3f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -364,7 +364,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;decl f exp; { if(f &lt; 0) return <a class="el" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a>;   }</td>
+          <td></td><td>&#160;&#160;&#160;decl f exp; if(f &lt; 0) return <a class="el" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -400,7 +400,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;decl f exp; { if(f &lt; 0) return NULL; }</td>
+          <td></td><td>&#160;&#160;&#160;decl f exp; if(f &lt; 0) return NULL</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -436,7 +436,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;decl f exp; { if(!f)    return <a class="el" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a>;   }</td>
+          <td></td><td>&#160;&#160;&#160;decl f exp; if(!f)    return <a class="el" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -472,7 +472,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;decl f exp; { if(!f)    return NULL; }</td>
+          <td></td><td>&#160;&#160;&#160;decl f exp; if(!f)    return NULL</td>
         </tr>
       </table>
 </div><div class="memdoc">
