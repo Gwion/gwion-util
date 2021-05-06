@@ -4,7 +4,7 @@
 #ifndef __GWTEXT
 #define __GWTEXT
 
-/** mp_aclloacted text */
+/** mp_allocted text */
 typedef struct GwText_ {
   m_str str;
   size_t cap;
