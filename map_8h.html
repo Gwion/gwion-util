@@ -106,6 +106,8 @@ Functions</h2></td></tr>
 <tr class="separator:a249bdad562be592f15db355ee1b54b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e3709b17d4a46a5d4895391e2b57bbf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a7e3709b17d4a46a5d4895391e2b57bbf">map_get</a> (const <a class="el" href="map_8h.html#adaee5c17ed34aef3d0c09d1879ecf54d">Map</a>, const <a class="el" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)</td></tr>
 <tr class="separator:a7e3709b17d4a46a5d4895391e2b57bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5297faef7a58bf4d54280dd3eb90ea6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> m_int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a5297faef7a58bf4d54280dd3eb90ea6a">map_index</a> (const <a class="el" href="map_8h.html#adaee5c17ed34aef3d0c09d1879ecf54d">Map</a>, const <a class="el" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)</td></tr>
+<tr class="separator:a5297faef7a58bf4d54280dd3eb90ea6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2e088adc3ebfa9789282d1cb0ad04cf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#af2e088adc3ebfa9789282d1cb0ad04cf">map_at</a> (const <a class="el" href="map_8h.html#adaee5c17ed34aef3d0c09d1879ecf54d">Map</a> map, const <a class="el" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> index)</td></tr>
 <tr class="separator:af2e088adc3ebfa9789282d1cb0ad04cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eb0ebddd559c0d75091afab7dbcc2a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a1eb0ebddd559c0d75091afab7dbcc2a0">map_set</a> (const <a class="el" href="map_8h.html#adaee5c17ed34aef3d0c09d1879ecf54d">Map</a>, const <a class="el" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>, const <a class="el" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)</td></tr>
@@ -230,12 +232,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="map_8c_source.html#l00062">62</a> of file <a class="el" href="map_8c_source.html">map.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                            {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="map_8c.html#a36f9d3abe43f7110686ab5ac1252acf4">map_release</a>(map);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(p, <a class="code" href="structMap__.html">Map</a>, map);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="ttc" id="amap_8c_html_a36f9d3abe43f7110686ab5ac1252acf4"><div class="ttname"><a href="map_8c.html#a36f9d3abe43f7110686ab5ac1252acf4">map_release</a></div><div class="ttdeci">ANN void map_release(const Map map)</div><div class="ttdef"><b>Definition:</b> <a href="map_8c_source.html#l00058">map.c:58</a></div></div>
+<p class="definition">Definition at line <a class="el" href="map_8c_source.html#l00069">69</a> of file <a class="el" href="map_8c_source.html">map.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                            {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="map_8c.html#a36f9d3abe43f7110686ab5ac1252acf4">map_release</a>(map);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(p, <a class="code" href="structMap__.html">Map</a>, map);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="ttc" id="amap_8c_html_a36f9d3abe43f7110686ab5ac1252acf4"><div class="ttname"><a href="map_8c.html#a36f9d3abe43f7110686ab5ac1252acf4">map_release</a></div><div class="ttdeci">ANN void map_release(const Map map)</div><div class="ttdef"><b>Definition:</b> <a href="map_8c_source.html#l00065">map.c:65</a></div></div>
 <div class="ttc" id="ampool_8h_html_aaa16830712090aa944a1703301474d83"><div class="ttname"><a href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a></div><div class="ttdeci">#define mp_free(p, name, a)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
 <div class="ttc" id="astructMap___html"><div class="ttname"><a href="structMap__.html">Map_</a></div><div class="ttdef"><b>Definition:</b> <a href="map_8h_source.html#l00007">map.h:7</a></div></div>
 </div><!-- fragment -->
@@ -275,10 +277,10 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="map_8h_source.html#l00018">18</a> of file <a class="el" href="map_8h_source.html">map.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a>(map, index);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="map_8h_source.html#l00019">19</a> of file <a class="el" href="map_8h_source.html">map.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a>(map, index);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="ttc" id="amap_8h_html_a3521f8f27da255d3e6fb9686aa14eab1"><div class="ttname"><a href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a></div><div class="ttdeci">#define VVAL(v, i)</div><div class="ttdef"><b>Definition:</b> <a href="map_8h_source.html#l00012">map.h:12</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -378,6 +380,42 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a5297faef7a58bf4d54280dd3eb90ea6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5297faef7a58bf4d54280dd3eb90ea6a">&#9670;&nbsp;</a></span>map_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> m_int map_index </td>
+          <td>(</td>
+          <td class="paramtype">const&#160;</td>
+          <td class="paramname"><em>Map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const&#160;</td>
+          <td class="paramname"><em>vtype</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="map_8c_source.html#l00029">29</a> of file <a class="el" href="map_8c_source.html">map.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">for</span>(<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> i = <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map) + 1; --i;)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, i - 1) == key)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <span class="keywordflow">return</span> i - 1;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a249bdad562be592f15db355ee1b54b9b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a249bdad562be592f15db355ee1b54b9b">&#9670;&nbsp;</a></span>map_init()</h2>
 
@@ -427,10 +465,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="map_8c_source.html#l00058">58</a> of file <a class="el" href="map_8c_source.html">map.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(map-&gt;ptr);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="map_8c_source.html#l00065">65</a> of file <a class="el" href="map_8c_source.html">map.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(map-&gt;ptr);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 <div class="ttc" id="axalloc_8h_html_a39ef228c1684eb7b3e198e83e70eff1b"><div class="ttname"><a href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a></div><div class="ttdeci">#define xfree(a)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00029">xalloc.h:29</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -461,18 +499,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="map_8c_source.html#l00041">41</a> of file <a class="el" href="map_8c_source.html">map.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">const</span> <a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> len = <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">for</span>(<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> i = 0, j = 0; i &lt; len; ++i) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, i) != key) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, j) = <a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, i);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <a class="code" href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a>(map, j) = <a class="code" href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a>(map, i);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      ++j;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      --<a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="map_8c_source.html#l00048">48</a> of file <a class="el" href="map_8c_source.html">map.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">const</span> <a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> len = <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">for</span>(<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> i = 0, j = 0; i &lt; len; ++i) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, i) != key) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, j) = <a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, i);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <a class="code" href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a>(map, j) = <a class="code" href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a>(map, i);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      ++j;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      --<a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -508,18 +546,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="map_8c_source.html#l00029">29</a> of file <a class="el" href="map_8c_source.html">map.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                                  {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">for</span>(<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> i = <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map) + 1; --i;) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, i - 1) == key) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <a class="code" href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a>(map, i - 1) = ptr;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="vector_8h.html#a86a7633a41f5766e53c9e34ba73f2f8a">vector_realloc</a>((<a class="code" href="structVector__.html">Vector</a>)map);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map)) = key;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a>(map, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map)++) = ptr;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="map_8c_source.html#l00036">36</a> of file <a class="el" href="map_8c_source.html">map.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">for</span>(<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> i = <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map) + 1; --i;) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, i - 1) == key) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <a class="code" href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a>(map, i - 1) = ptr;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="vector_8h.html#a86a7633a41f5766e53c9e34ba73f2f8a">vector_realloc</a>((<a class="code" href="structVector__.html">Vector</a>)map);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="map_8h.html#a947775360bfe2111aaebc42684f6df2d">VKEY</a>(map, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map)) = key;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1">VVAL</a>(map, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map)++) = ptr;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="ttc" id="astructVector___html"><div class="ttname"><a href="structVector__.html">Vector_</a></div><div class="ttdef"><b>Definition:</b> <a href="vector_8h_source.html#l00008">vector.h:8</a></div></div>
 <div class="ttc" id="avector_8h_html_a86a7633a41f5766e53c9e34ba73f2f8a"><div class="ttname"><a href="vector_8h.html#a86a7633a41f5766e53c9e34ba73f2f8a">vector_realloc</a></div><div class="ttdeci">static ANN void vector_realloc(const Vector v)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8h_source.html#l00042">vector.h:42</a></div></div>
 </div><!-- fragment -->
@@ -549,10 +587,10 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="map_8h_source.html#l00027">27</a> of file <a class="el" href="map_8h_source.html">map.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="map_8h_source.html#l00028">28</a> of file <a class="el" href="map_8h_source.html">map.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(map);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
