@@ -1,45 +1,43 @@
-#include <stdlib.h>
-#include <string.h>
 #include "gwion_util.h"
 
-ANN SymTable* new_symbol_table(MemPool p, size_t sz) {
-  SymTable *st = mp_malloc2(p, sizeof(struct SymTable_));
+#define TABLE_SZ(sz) (sizeof(struct SymTable_) + sz * SZ_INT)
+
+ANN SymTable* new_symbol_table(MemPool p, const size_t sz) {
+  SymTable *const st = mp_malloc2(p, TABLE_SZ(sz));
   st->sz = sz;
-  st->sym = (Symbol*)xcalloc(sz, sizeof(struct Symbol_*));
   MUTEX_SETUP(st->mutex);
   st->p = p;
   return st;
 }
 
 ANN static void free_symbol(MemPool p, const Symbol s) {
-  if(s->next)
-    free_symbol(p, s->next);
-  free_mstr(p, s->name);
-  mp_free(p, Symbol, s);
+  const Symbol next = s->next;
+  mp_free2(p, sizeof(struct Symbol_*) + strlen(s->name) + 1, s);
+  if(next)
+    free_symbol(p, next);
 }
 
-void free_symbols(SymTable* ht) {
+ANN void free_symbols(SymTable *const ht) {
   LOOP_OPTIM
   for(uint i = ht->sz + 1; --i;) {
     const Symbol s = ht->sym[i - 1];
     if(s)
       free_symbol(ht->p, s);
   }
-  xfree(ht->sym);
   MUTEX_CLEANUP(ht->mutex);
-  mp_free(ht->p, SymTable, ht);
+  mp_free2(ht->p, TABLE_SZ(ht->sz), ht);
 }
 
-__attribute__((hot))
-ANN2(1) static Symbol mksymbol(MemPool p, const m_str name, const Symbol next) {
-  const Symbol s = mp_malloc2(p, sizeof(struct Symbol_));
-  s->name = mstrdup(p, name);
+#undef TABLE_SZ
+
+ANN2(1,2) static inline Symbol mksymbol(MemPool p, const m_str name, const Symbol next) {
+  const Symbol s = mp_malloc2(p, sizeof(struct Symbol_*) + strlen(name) + 1);
   s->next = next;
+  strcpy(s->name, name);
   return s;
 }
 
-__attribute__((hot))
-ANN Symbol insert_symbol(SymTable* ht, const m_str name) {
+ANN Symbol insert_symbol(SymTable *const ht, const m_str name) {
   const uint index = hash(name) % ht->sz;
   const Symbol syms = ht->sym[index];
   Symbol *const addr = &ht->sym[index];
