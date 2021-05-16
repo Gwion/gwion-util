@@ -72,8 +72,7 @@ $(function() {
 <div class="title">text.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="gwion__util_8h_source.html">gwion_util.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="gwion__util_8h_source.html">gwion_util.h</a>&quot;</code><br />
 </div>
 <p><a href="text_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -114,24 +113,24 @@ Functions</h2></td></tr>
 
 <p>append to text </p>
 
-<p class="definition">Definition at line <a class="el" href="text_8c_source.html#l00014">14</a> of file <a class="el" href="text_8c_source.html">text.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                 {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = strlen(str);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">if</span>(!text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = (m_str)<a class="code" href="mpool_8h.html#a826ae7252f6b388a670ee1029012c513">_mp_malloc</a>(text-&gt;<a class="code" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a>, text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> = sz + 1);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    strcpy(text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>, str);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> len = sz + text-&gt;<a class="code" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> + 1;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    strcpy(<a class="code" href="text_8c.html#a6676f1e3cf8449a4aa756c029ac9a053">text_grow</a>(text, len), str);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  text-&gt;<a class="code" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> += sz;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="text_8c_source.html#l00013">13</a> of file <a class="el" href="text_8c_source.html">text.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                 {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = strlen(str);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">if</span>(!text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = (m_str)<a class="code" href="mpool_8h.html#a826ae7252f6b388a670ee1029012c513">_mp_malloc</a>(text-&gt;<a class="code" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a>, text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> = sz + 1);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    strcpy(text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>, str);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> len = sz + text-&gt;<a class="code" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> + 1;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    strcpy(<a class="code" href="text_8c.html#a6676f1e3cf8449a4aa756c029ac9a053">text_grow</a>(text, len), str);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  text-&gt;<a class="code" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> += sz;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="ttc" id="ampool_8h_html_a826ae7252f6b388a670ee1029012c513"><div class="ttname"><a href="mpool_8h.html#a826ae7252f6b388a670ee1029012c513">_mp_malloc</a></div><div class="ttdeci">ANEW ANN void * _mp_malloc(MemPool, const m_uint) __attribute__((hot))</div></div>
 <div class="ttc" id="astructGwText___html_a137e5ab74984cadefe2a7523508a9224"><div class="ttname"><a href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">GwText_::len</a></div><div class="ttdeci">size_t len</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00011">gwion_text.h:11</a></div></div>
 <div class="ttc" id="astructGwText___html_a21473cb466fa7e1c741d82c852d9b050"><div class="ttname"><a href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">GwText_::cap</a></div><div class="ttdeci">size_t cap</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00010">gwion_text.h:10</a></div></div>
 <div class="ttc" id="astructGwText___html_a6dcca7bae982686b33476bc6cf463d67"><div class="ttname"><a href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">GwText_::str</a></div><div class="ttdeci">m_str str</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00009">gwion_text.h:9</a></div></div>
 <div class="ttc" id="astructGwText___html_ab898b542618ba8f288ff5f83e5a03c57"><div class="ttname"><a href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">GwText_::mp</a></div><div class="ttdeci">MemPool mp</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00012">gwion_text.h:12</a></div></div>
-<div class="ttc" id="atext_8c_html_a6676f1e3cf8449a4aa756c029ac9a053"><div class="ttname"><a href="text_8c.html#a6676f1e3cf8449a4aa756c029ac9a053">text_grow</a></div><div class="ttdeci">static ANN m_str text_grow(GwText *text, const size_t sz)</div><div class="ttdef"><b>Definition:</b> <a href="text_8c_source.html#l00004">text.c:4</a></div></div>
+<div class="ttc" id="atext_8c_html_a6676f1e3cf8449a4aa756c029ac9a053"><div class="ttname"><a href="text_8c.html#a6676f1e3cf8449a4aa756c029ac9a053">text_grow</a></div><div class="ttdeci">static ANN m_str text_grow(GwText *text, const size_t sz)</div><div class="ttdef"><b>Definition:</b> <a href="text_8c_source.html#l00003">text.c:3</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -169,17 +168,17 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="text_8c_source.html#l00004">4</a> of file <a class="el" href="text_8c_source.html">text.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keywordflow">if</span>(text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> &lt;= sz) {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">const</span> m_uint cap = text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">while</span>(text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> &lt;= sz)</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;      text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> &lt;&lt;= 1;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = (m_str)<a class="code" href="mpool_8c.html#a36cd38f889bcff4c65b2ed115ced3797">mp_realloc</a>(text-&gt;<a class="code" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a>, text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>, cap, text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a>);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  }</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">return</span> text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> + text-&gt;<a class="code" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="ttc" id="ampool_8c_html_a36cd38f889bcff4c65b2ed115ced3797"><div class="ttname"><a href="mpool_8c.html#a36cd38f889bcff4c65b2ed115ced3797">mp_realloc</a></div><div class="ttdeci">void * mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00141">mpool.c:141</a></div></div>
+<p class="definition">Definition at line <a class="el" href="text_8c_source.html#l00003">3</a> of file <a class="el" href="text_8c_source.html">text.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keywordflow">if</span>(text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> &lt;= sz) {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keyword">const</span> m_uint cap = text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordflow">while</span>(text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> &lt;= sz)</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;      text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> &lt;&lt;= 1;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = (m_str)<a class="code" href="mpool_8c.html#a36cd38f889bcff4c65b2ed115ced3797">mp_realloc</a>(text-&gt;<a class="code" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a>, text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>, cap, text-&gt;<a class="code" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  }</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">return</span> text-&gt;<a class="code" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> + text-&gt;<a class="code" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="ttc" id="ampool_8c_html_a36cd38f889bcff4c65b2ed115ced3797"><div class="ttname"><a href="mpool_8c.html#a36cd38f889bcff4c65b2ed115ced3797">mp_realloc</a></div><div class="ttdeci">void * mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00139">mpool.c:139</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
