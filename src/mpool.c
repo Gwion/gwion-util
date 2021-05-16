@@ -2,9 +2,9 @@
 #include <string.h>
 #include "gwion_util.h"
 
-#define SMALL_BLK 256
+#define SMALL_BLK 512
 #define BIG_BLK   16
-#define HUGE (128 * SZ_INT)
+#define HUGE (64 * SZ_INT)
 #define BLK(obj_sz) (obj_sz < HUGE ? SMALL_BLK : BIG_BLK)
 
 struct Recycle {
