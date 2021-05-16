@@ -1,6 +1,3 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "gwion_util.h"
 
 void hini(Hash h, const uint nmemb) {

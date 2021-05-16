@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <string.h>
 #include "gwion_util.h"
 
 ANN void map_clear(const Map v) {

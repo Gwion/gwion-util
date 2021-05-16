@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <string.h>
 #include "gwion_util.h"
 
 ANN inline void vector_init(const Vector v) {

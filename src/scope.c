@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <string.h>
 #include "gwion_util.h"
 
 ANN static inline Map scope_back(const Scope s) {
@@ -68,9 +66,7 @@ ANN m_bool scope_iter(struct scope_iter* iter, void* ret) {
   m_uint size = map_size(&iter->s->map);
   const m_uint vsize = vector_size((Vector)iter->s);
   const m_uint vec = vsize - iter->vec;
-assert(vsize >= iter->vec);
   Map map = &iter->s->map;
-//  if(!vec) {
   if(vsize == iter->vec) {
     if(iter->idx == size)
       return GW_ERROR;

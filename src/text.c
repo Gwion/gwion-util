@@ -1,4 +1,3 @@
-#include <string.h>
 #include "gwion_util.h"
 
 ANN static inline m_str text_grow(GwText *text, const size_t sz) {
