@@ -26,6 +26,13 @@ ANN vtype map_get(const Map map, const vtype key) {
   return 0;
 }
 
+ANN m_int map_index(const Map map, const vtype key) {
+  for(vtype i = VLEN(map) + 1; --i;)
+    if(VKEY(map, i - 1) == key)
+      return i - 1;
+  return -1;
+}
+
 ANN void map_set(const Map map, const vtype key, const vtype ptr) {
   for(vtype i = VLEN(map) + 1; --i;) {
     if(VKEY(map, i - 1) == key) {

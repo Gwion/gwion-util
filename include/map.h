@@ -14,6 +14,7 @@ typedef struct Map_ {
 ANEW extern Map new_map(MemPool);
 extern     void map_init(const Map);
 extern ANN vtype map_get(const Map, const vtype);
+extern ANN m_int map_index(const Map, const vtype);
 
 ANN static inline vtype map_at(const Map map, const vtype index) {
   return VVAL(map, index);
