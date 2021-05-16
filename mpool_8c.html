@@ -89,11 +89,11 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab758143e4c42716c9db84073df81312c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#ab758143e4c42716c9db84073df81312c">SMALL_BLK</a>&#160;&#160;&#160;256</td></tr>
+<tr class="memitem:ab758143e4c42716c9db84073df81312c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#ab758143e4c42716c9db84073df81312c">SMALL_BLK</a>&#160;&#160;&#160;512</td></tr>
 <tr class="separator:ab758143e4c42716c9db84073df81312c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2086d86e283fe86d382a499afd48d81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#ab2086d86e283fe86d382a499afd48d81">BIG_BLK</a>&#160;&#160;&#160;16</td></tr>
 <tr class="separator:ab2086d86e283fe86d382a499afd48d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f3d17bf39f78da3422ca52e475d7724"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724">HUGE</a>&#160;&#160;&#160;(128 * SZ_INT)</td></tr>
+<tr class="memitem:a5f3d17bf39f78da3422ca52e475d7724"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724">HUGE</a>&#160;&#160;&#160;(64 * SZ_INT)</td></tr>
 <tr class="separator:a5f3d17bf39f78da3422ca52e475d7724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11a149767ea542f429838209d7d53e32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(obj_sz)&#160;&#160;&#160;(obj_sz &lt; <a class="el" href="mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724">HUGE</a> ? <a class="el" href="mpool_8c.html#ab758143e4c42716c9db84073df81312c">SMALL_BLK</a> : <a class="el" href="mpool_8c.html#ab2086d86e283fe86d382a499afd48d81">BIG_BLK</a>)</td></tr>
 <tr class="separator:a11a149767ea542f429838209d7d53e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,7 +171,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HUGE&#160;&#160;&#160;(128 * SZ_INT)</td>
+          <td class="memname">#define HUGE&#160;&#160;&#160;(64 * SZ_INT)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -235,7 +235,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SMALL_BLK&#160;&#160;&#160;256</td>
+          <td class="memname">#define SMALL_BLK&#160;&#160;&#160;512</td>
         </tr>
       </table>
 </div><div class="memdoc">
