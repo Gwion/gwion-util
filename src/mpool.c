@@ -2,7 +2,10 @@
 #include <string.h>
 #include "gwion_util.h"
 
-#define BLK 32
+#define SMALL_BLK 256
+#define BIG_BLK   16
+#define HUGE (128 * SZ_INT)
+#define BLK(obj_sz) (obj_sz < HUGE ? SMALL_BLK : BIG_BLK)
 
 struct Recycle {
   struct Recycle *next;
@@ -19,7 +22,7 @@ struct pool {
 
 ANN static void mp_set(struct pool* p, const uint32_t obj_sz) {
   p->obj_sz = obj_sz;
-  p->obj_id = BLK - 1;
+  p->obj_id = BLK(obj_sz) - 1;
   p->blk_id = -1;
   p->nblk   = 1;
   p->next   = NULL;
@@ -82,7 +85,7 @@ static void _realloc(struct pool* p) {
     for(uint_fast32_t i = (p->nblk >> 1) + 1; i < p->nblk; ++i)
       p->data[i] = NULL;
   }
-  p->data[p->blk_id] = (uint8_t*)xcalloc(BLK, p->obj_sz);
+  p->data[p->blk_id] = (uint8_t*)xcalloc(BLK(p->obj_sz), p->obj_sz);
 }
 
 void *_mp_calloc2(struct pool *p, const m_bool zero) {
@@ -93,7 +96,7 @@ void *_mp_calloc2(struct pool *p, const m_bool zero) {
       memset(recycle, 0, p->obj_sz);
     return recycle;
   }
-  if(++p->obj_id == BLK)
+  if(++p->obj_id == BLK(p->obj_sz))
     _realloc(p);
   return p->data[p->blk_id] + p->obj_id * p->obj_sz;
 }
