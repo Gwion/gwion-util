@@ -137,7 +137,8 @@ MP_ALLOC(calloc, 1, xcalloc(1, size))
 
 void *mp_realloc(MemPool mp, void* ptr, const m_uint curr, const m_uint next) {
   void* ret = _mp_malloc(mp, next);
-  memcpy(ret, ptr, curr);
+  if(ret != ptr)
+    memcpy(ret, ptr, curr);
   mp_free2(mp, curr, ptr);
   return ret;
 }
