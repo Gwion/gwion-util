@@ -1,7 +1,7 @@
 #include "gwion_util.h"
 
 ANN inline void vector_init(const Vector v) {
-  v->ptr = (m_uint*)xcalloc(MAP_CAP, SZ_INT);
+  v->ptr  = (m_uint *)xcalloc(MAP_CAP, SZ_INT);
   VCAP(v) = MAP_CAP;
 }
 
@@ -11,9 +11,7 @@ Vector new_vector(MemPool p) {
   return v;
 }
 
-ANN inline void vector_release(const Vector v) {
-  xfree(v->ptr);
-}
+ANN inline void vector_release(const Vector v) { xfree(v->ptr); }
 
 ANN void free_vector(MemPool p, const Vector v) {
   vector_release(v);
@@ -25,8 +23,9 @@ ANN void vector_add(const Vector v, const vtype data) {
   VPTR(v, VLEN(v)++) = (vtype)data;
 }
 
-ANN inline void vector_copy2(const restrict Vector v, const restrict Vector ret) {
-  ret->ptr = (m_uint*)xrealloc(ret->ptr, VCAP(v) * SZ_INT);
+ANN inline void vector_copy2(const restrict Vector v,
+                             const restrict Vector ret) {
+  ret->ptr = (m_uint *)xrealloc(ret->ptr, VCAP(v) * SZ_INT);
   memcpy(ret->ptr, v->ptr, VCAP(v) * SZ_INT);
 }
 
@@ -37,25 +36,25 @@ ANN Vector vector_copy(MemPool p, const Vector v) {
 }
 
 ANN m_int vector_find(const Vector v, const vtype data) {
-  for(vtype i = VLEN(v) + 1; --i;)
-    if(VPTR(v, i - 1) == (vtype)data)
+  for (vtype i = VLEN(v) + 1; --i;)
+    if (VPTR(v, i - 1) == (vtype)data)
       return (m_int)(i - 1);
   return GW_ERROR;
 }
 
 ANN void vector_rem(const Vector v, const vtype index) {
-  if(index >= VLEN(v))
+  if (index >= VLEN(v))
     return;
-  if(index < VLEN(v) - 1)
+  if (index < VLEN(v) - 1)
     memmove(v->ptr + index + OFFSET, v->ptr + index + OFFSET + 1,
-      (VLEN(v) - index - 1) * SZ_INT);
-  if(--VLEN(v) + OFFSET < VCAP(v) / 2)
-    v->ptr = (m_uint*)xrealloc(v->ptr, (VCAP(v) /= 2) * SZ_INT);
+            (VLEN(v) - index - 1) * SZ_INT);
+  if (--VLEN(v) + OFFSET < VCAP(v) / 2)
+    v->ptr = (m_uint *)xrealloc(v->ptr, (VCAP(v) /= 2) * SZ_INT);
 }
 
 ANN void vector_rem2(const Vector v, const vtype data) {
   const m_int index = vector_find(v, data);
-  if(index > -1)
+  if (index > -1)
     vector_rem(v, (vtype)index);
 }
 
@@ -66,6 +65,6 @@ ANN vtype vector_pop(const Vector v) {
 }
 
 ANN void vector_clear(const Vector v) {
-  v->ptr = (m_uint*)xrealloc(v->ptr, (VCAP(v) = MAP_CAP) * SZ_INT);
+  v->ptr  = (m_uint *)xrealloc(v->ptr, (VCAP(v) = MAP_CAP) * SZ_INT);
   VLEN(v) = 0;
 }

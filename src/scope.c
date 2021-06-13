@@ -5,18 +5,18 @@ ANN static inline Map scope_back(const Scope s) {
 }
 
 ANN vtype scope_lookup0(const Scope s, const vtype xid) {
-  const Map map = scope_back(s);
+  const Map   map = scope_back(s);
   const vtype ret = map_get(map, xid);
-  if(!ret && VLEN(s) == 1)
+  if (!ret && VLEN(s) == 1)
     return map_get(&s->map, (vtype)xid);
   return ret;
 }
 
 ANN vtype scope_lookup1(const Scope s, const vtype xid) {
-  for(m_uint i = VLEN(s) + 1; --i;) {
-    const Map map = (Map)&VPTR(s, i - 1);
+  for (m_uint i = VLEN(s) + 1; --i;) {
+    const Map   map = (Map)&VPTR(s, i - 1);
     const vtype ret = map_get(map, xid);
-    if(ret)
+    if (ret)
       return ret;
   }
   return map_get(&s->map, (vtype)xid);
@@ -28,7 +28,7 @@ ANN vtype scope_lookup2(const Scope s, const vtype xid) {
 }
 
 ANN void scope_add(const Scope s, const vtype xid, const vtype value) {
-  if(VLEN(s) > 1)
+  if (VLEN(s) > 1)
     map_set(scope_back(s), xid, value);
   else
     map_set(&s->map, xid, value);
@@ -62,23 +62,23 @@ ANN void free_scope(MemPool p, Scope a) {
   mp_free(p, Scope, a);
 }
 
-ANN m_bool scope_iter(struct scope_iter* iter, void* ret) {
-  m_uint size = map_size(&iter->s->map);
+ANN m_bool scope_iter(struct scope_iter *iter, void *ret) {
+  m_uint       size  = map_size(&iter->s->map);
   const m_uint vsize = vector_size((Vector)iter->s);
-  const m_uint vec = vsize - iter->vec;
-  Map map = &iter->s->map;
-  if(vsize == iter->vec) {
-    if(iter->idx == size)
+  const m_uint vec   = vsize - iter->vec;
+  Map          map   = &iter->s->map;
+  if (vsize == iter->vec) {
+    if (iter->idx == size)
       return GW_ERROR;
   } else {
-    map = (Map)&VPTR(iter->s, vec - 1);
+    map  = (Map)&VPTR(iter->s, vec - 1);
     size = map_size(map);
-    if(iter->idx == size) {
+    if (iter->idx == size) {
       ++iter->vec;
       iter->idx = 0;
       return scope_iter(iter, ret);
     }
   }
-  *(vtype*)ret = map_at(map, size - ++iter->idx);
+  *(vtype *)ret = map_at(map, size - ++iter->idx);
   return GW_OK;
 }

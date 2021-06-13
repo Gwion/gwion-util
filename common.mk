@@ -6,8 +6,8 @@ ifeq (${USE_DEBUG}, 1)
 CFLAGS  += -fsanitize=address -fno-omit-frame-pointer -Og
 LDFLAGS += -fsanitize=address -fno-omit-frame-pointer -Og
 else
-CFLAGS  += -DNDEBUG -fomit-frame-pointer -fno-stack-protector -fno-common -O2 -fno-math-errno
-LDFLAGS += -fomit-frame-pointer -fno-stack-protector -fno-common -O2 -fno-math-errno
+CFLAGS  += -DNDEBUG -fomit-frame-pointer -fno-stack-protector -fno-common -O2 -fno-math-errno -fno-trapping-math -ffp-contract=off -fno-signed-zeros
+LDFLAGS += -fomit-frame-pointer -fno-stack-protector -fno-common -O2 -fno-math-errno -fno-trapping-math -ffp-contract=off -fno-signed-zeros
 endif
 
 ifeq (${USE_LTO}, 1)

@@ -5,3 +5,4 @@
 config.mk
 include/generated.h
 html
+.clang-format
