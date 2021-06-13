@@ -109,7 +109,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xalloc_8h_source.html#l00029">29</a> of file <a class="el" href="xalloc_8h_source.html">xalloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="xalloc_8h_source.html#l00028">28</a> of file <a class="el" href="xalloc_8h_source.html">xalloc.h</a>.</p>
 
 </div>
 </div>
@@ -148,11 +148,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xalloc_8h_source.html#l00019">19</a> of file <a class="el" href="xalloc_8h_source.html">xalloc.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                  {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">void</span>* a = calloc(n, sz);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="xalloc_8h.html#a8a952938a4a1e2c406d4bdbb75703cd3">xcheck</a>(a);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="xalloc_8h_source.html#l00018">18</a> of file <a class="el" href="xalloc_8h_source.html">xalloc.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">void</span> *a = calloc(n, sz);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="xalloc_8h.html#a8a952938a4a1e2c406d4bdbb75703cd3">xcheck</a>(a);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="ttc" id="axalloc_8h_html_a8a952938a4a1e2c406d4bdbb75703cd3"><div class="ttname"><a href="xalloc_8h.html#a8a952938a4a1e2c406d4bdbb75703cd3">xcheck</a></div><div class="ttdeci">static void * xcheck(void *a)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00004">xalloc.h:4</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -183,14 +183,13 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="xalloc_8h_source.html#l00004">4</a> of file <a class="el" href="xalloc_8h_source.html">xalloc.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                             {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keywordflow">if</span>(a)</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordflow">return</span> a;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <a class="code" href="err__msg_8h.html#a4b5f497d78c5691617dab86b088231de">gw_err</a>(<a class="code" href="defs_8h.html#a32a3cf3d9dd914f5aeeca5423c157934">_</a>(<span class="stringliteral">&quot;Out of Memory\n&quot;</span>));</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <a class="code" href="gwion__thread_8h.html#a515c663597d2215632df9477bde675f6">THREAD_RETURN</a>(NULL);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keywordflow">if</span> (a) <span class="keywordflow">return</span> a;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <a class="code" href="err__msg_8h.html#a4b5f497d78c5691617dab86b088231de">gw_err</a>(<a class="code" href="defs_8h.html#a32a3cf3d9dd914f5aeeca5423c157934">_</a>(<span class="stringliteral">&quot;Out of Memory\n&quot;</span>));</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <a class="code" href="gwion__thread_8h.html#a515c663597d2215632df9477bde675f6">THREAD_RETURN</a>(NULL);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
 <div class="ttc" id="adefs_8h_html_a32a3cf3d9dd914f5aeeca5423c157934"><div class="ttname"><a href="defs_8h.html#a32a3cf3d9dd914f5aeeca5423c157934">_</a></div><div class="ttdeci">#define _(String)</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00013">defs.h:13</a></div></div>
 <div class="ttc" id="aerr__msg_8h_html_a4b5f497d78c5691617dab86b088231de"><div class="ttname"><a href="err__msg_8h.html#a4b5f497d78c5691617dab86b088231de">gw_err</a></div><div class="ttdeci">#define gw_err(...)</div><div class="ttdoc">similar to fprintf(stderr, fmt, ...)</div><div class="ttdef"><b>Definition:</b> <a href="err__msg_8h_source.html#l00011">err_msg.h:11</a></div></div>
-<div class="ttc" id="agwion__thread_8h_html_a515c663597d2215632df9477bde675f6"><div class="ttname"><a href="gwion__thread_8h.html#a515c663597d2215632df9477bde675f6">THREAD_RETURN</a></div><div class="ttdeci">#define THREAD_RETURN(arg)</div><div class="ttdef"><b>Definition:</b> <a href="gwion__thread_8h_source.html#l00039">gwion_thread.h:39</a></div></div>
+<div class="ttc" id="agwion__thread_8h_html_a515c663597d2215632df9477bde675f6"><div class="ttname"><a href="gwion__thread_8h.html#a515c663597d2215632df9477bde675f6">THREAD_RETURN</a></div><div class="ttdeci">#define THREAD_RETURN(arg)</div><div class="ttdef"><b>Definition:</b> <a href="gwion__thread_8h_source.html#l00041">gwion_thread.h:41</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -218,11 +217,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xalloc_8h_source.html#l00014">14</a> of file <a class="el" href="xalloc_8h_source.html">xalloc.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                  {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">void</span>* a = malloc(sz);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="xalloc_8h.html#a8a952938a4a1e2c406d4bdbb75703cd3">xcheck</a>(a);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="xalloc_8h_source.html#l00013">13</a> of file <a class="el" href="xalloc_8h_source.html">xalloc.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                  {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">void</span> *a = malloc(sz);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="xalloc_8h.html#a8a952938a4a1e2c406d4bdbb75703cd3">xcheck</a>(a);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -260,11 +259,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xalloc_8h_source.html#l00024">24</a> of file <a class="el" href="xalloc_8h_source.html">xalloc.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                                            {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span>* a = realloc(p, sz);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="xalloc_8h.html#a8a952938a4a1e2c406d4bdbb75703cd3">xcheck</a>(a);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="xalloc_8h_source.html#l00023">23</a> of file <a class="el" href="xalloc_8h_source.html">xalloc.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                                            {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> *a = realloc(p, sz);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="xalloc_8h.html#a8a952938a4a1e2c406d4bdbb75703cd3">xcheck</a>(a);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

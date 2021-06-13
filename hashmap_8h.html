@@ -205,12 +205,12 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8h_source.html#l00051">51</a> of file <a class="el" href="hashmap_8h_source.html">hashmap.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                               {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="hashmap_8h.html#acf5d778bccbcc91be369529cb7df6534">hashmap_release</a>(a);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(a-&gt;<a class="code" href="structHashMap__.html#a6b1020a1f9c389f663c51caa03bd657a">mp</a>, <a class="code" href="structHashMap__.html">HashMap</a>, a);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="ttc" id="ahashmap_8h_html_acf5d778bccbcc91be369529cb7df6534"><div class="ttname"><a href="hashmap_8h.html#acf5d778bccbcc91be369529cb7df6534">hashmap_release</a></div><div class="ttdeci">static ANN void hashmap_release(HashMap a)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8h_source.html#l00047">hashmap.h:47</a></div></div>
+<p class="definition">Definition at line <a class="el" href="hashmap_8h_source.html#l00053">53</a> of file <a class="el" href="hashmap_8h_source.html">hashmap.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                               {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="hashmap_8h.html#acf5d778bccbcc91be369529cb7df6534">hashmap_release</a>(a);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(a-&gt;<a class="code" href="structHashMap__.html#a6b1020a1f9c389f663c51caa03bd657a">mp</a>, <a class="code" href="structHashMap__.html">HashMap</a>, a);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="ttc" id="ahashmap_8h_html_acf5d778bccbcc91be369529cb7df6534"><div class="ttname"><a href="hashmap_8h.html#acf5d778bccbcc91be369529cb7df6534">hashmap_release</a></div><div class="ttdeci">static ANN void hashmap_release(HashMap a)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8h_source.html#l00049">hashmap.h:49</a></div></div>
 <div class="ttc" id="ampool_8h_html_aaa16830712090aa944a1703301474d83"><div class="ttname"><a href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a></div><div class="ttdeci">#define mp_free(p, name, a)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
 <div class="ttc" id="astructHashMap___html"><div class="ttname"><a href="structHashMap__.html">HashMap_</a></div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8h_source.html#l00013">hashmap.h:13</a></div></div>
 <div class="ttc" id="astructHashMap___html_a6b1020a1f9c389f663c51caa03bd657a"><div class="ttname"><a href="structHashMap__.html#a6b1020a1f9c389f663c51caa03bd657a">HashMap_::mp</a></div><div class="ttdeci">MemPool mp</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8h_source.html#l00021">hashmap.h:21</a></div></div>
@@ -333,14 +333,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="hashmap_8h_source.html#l00028">28</a> of file <a class="el" href="hashmap_8h_source.html">hashmap.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                                                        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#a2accecadefd417101c7880198456cfdd">key_size</a> = key_size;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#ac40e69641e8e7d1fd36ae882102cff4e">val_size</a> = val_size;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#aa4eededcc202f175baa214af7d8bad71">data</a> = (<a class="code" href="structHashMapValue__.html">HashMapValue</a>*)<a class="code" href="mpool_8h.html#a6ad492253c67e5c5f6edbda4b0331c9c">mp_calloc2</a>(p, <a class="code" href="hashmap_8h.html#a87caaf1a85bb21fca06a00245c443853">HMAP_MIN_CAP</a> * <a class="code" href="hashmap_8h.html#ad5839244d9144fcfd224aa7b22f4836a">hashmap_value_size</a>(a));</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#a98b85e241147e55f91a787bdbe9e5d37">capacity</a> = <a class="code" href="hashmap_8h.html#a87caaf1a85bb21fca06a00245c443853">HMAP_MIN_CAP</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#a15284c3a3bfd8ac616e98ef278fd5abe">count</a> = 0;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#a6b1020a1f9c389f663c51caa03bd657a">mp</a> = p;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                           {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#a2accecadefd417101c7880198456cfdd">key_size</a> = key_size;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#ac40e69641e8e7d1fd36ae882102cff4e">val_size</a> = val_size;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#aa4eededcc202f175baa214af7d8bad71">data</a> = (<a class="code" href="structHashMapValue__.html">HashMapValue</a> *)<a class="code" href="mpool_8h.html#a6ad492253c67e5c5f6edbda4b0331c9c">mp_calloc2</a>(p, <a class="code" href="hashmap_8h.html#a87caaf1a85bb21fca06a00245c443853">HMAP_MIN_CAP</a> * <a class="code" href="hashmap_8h.html#ad5839244d9144fcfd224aa7b22f4836a">hashmap_value_size</a>(a));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#a98b85e241147e55f91a787bdbe9e5d37">capacity</a> = <a class="code" href="hashmap_8h.html#a87caaf1a85bb21fca06a00245c443853">HMAP_MIN_CAP</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#a15284c3a3bfd8ac616e98ef278fd5abe">count</a>    = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  a-&gt;<a class="code" href="structHashMap__.html#a6b1020a1f9c389f663c51caa03bd657a">mp</a>       = p;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="ttc" id="ahashmap_8h_html_a87caaf1a85bb21fca06a00245c443853"><div class="ttname"><a href="hashmap_8h.html#a87caaf1a85bb21fca06a00245c443853">HMAP_MIN_CAP</a></div><div class="ttdeci">#define HMAP_MIN_CAP</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8h_source.html#l00004">hashmap.h:4</a></div></div>
 <div class="ttc" id="ampool_8h_html_a6ad492253c67e5c5f6edbda4b0331c9c"><div class="ttname"><a href="mpool_8h.html#a6ad492253c67e5c5f6edbda4b0331c9c">mp_calloc2</a></div><div class="ttdeci">#define mp_calloc2(p, sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00030">mpool.h:30</a></div></div>
 <div class="ttc" id="astructHashMap___html_a15284c3a3bfd8ac616e98ef278fd5abe"><div class="ttname"><a href="structHashMap__.html#a15284c3a3bfd8ac616e98ef278fd5abe">HashMap_::count</a></div><div class="ttdeci">size_t count</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8h_source.html#l00020">hashmap.h:20</a></div></div>
@@ -372,10 +372,10 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8h_source.html#l00047">47</a> of file <a class="el" href="hashmap_8h_source.html">hashmap.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                  {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a>(a-&gt;<a class="code" href="structHashMap__.html#a6b1020a1f9c389f663c51caa03bd657a">mp</a>, a-&gt;<a class="code" href="structHashMap__.html#a98b85e241147e55f91a787bdbe9e5d37">capacity</a> * <a class="code" href="hashmap_8h.html#ad5839244d9144fcfd224aa7b22f4836a">hashmap_value_size</a>(a), a-&gt;<a class="code" href="structHashMap__.html#aa4eededcc202f175baa214af7d8bad71">data</a>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="hashmap_8h_source.html#l00049">49</a> of file <a class="el" href="hashmap_8h_source.html">hashmap.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                  {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a>(a-&gt;<a class="code" href="structHashMap__.html#a6b1020a1f9c389f663c51caa03bd657a">mp</a>, a-&gt;<a class="code" href="structHashMap__.html#a98b85e241147e55f91a787bdbe9e5d37">capacity</a> * <a class="code" href="hashmap_8h.html#ad5839244d9144fcfd224aa7b22f4836a">hashmap_value_size</a>(a), a-&gt;<a class="code" href="structHashMap__.html#aa4eededcc202f175baa214af7d8bad71">data</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="ttc" id="ampool_8h_html_a10cec164a62999f9bb328b6bc2479cf8"><div class="ttname"><a href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a></div><div class="ttdeci">#define mp_free2(p, sz, a)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00029">mpool.h:29</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -563,12 +563,12 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8h_source.html#l00037">37</a> of file <a class="el" href="hashmap_8h_source.html">hashmap.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                                                               {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> <a class="code" href="structHashMap__.html">HashMap</a> a = (<a class="code" href="hashmap_8h.html#a952384eba1322e7305e2c27cf0d193bb">HashMap</a>)<a class="code" href="mpool_8h.html#a72389bcc8ebd705cc390d55952ce5f8b">mp_malloc</a>(p, <a class="code" href="structHashMap__.html">HashMap</a>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="hashmap_8h.html#af7faee4683eeffa7c9900f92696c725d">hashmap_init</a>(a, p, key_size, val_size);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">return</span> a;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="hashmap_8h_source.html#l00038">38</a> of file <a class="el" href="hashmap_8h_source.html">hashmap.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                             {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">const</span> <a class="code" href="structHashMap__.html">HashMap</a> a = (<a class="code" href="hashmap_8h.html#a952384eba1322e7305e2c27cf0d193bb">HashMap</a>)<a class="code" href="mpool_8h.html#a72389bcc8ebd705cc390d55952ce5f8b">mp_malloc</a>(p, <a class="code" href="structHashMap__.html">HashMap</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="hashmap_8h.html#af7faee4683eeffa7c9900f92696c725d">hashmap_init</a>(a, p, key_size, val_size);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">return</span> a;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 <div class="ttc" id="ahashmap_8h_html_a952384eba1322e7305e2c27cf0d193bb"><div class="ttname"><a href="hashmap_8h.html#a952384eba1322e7305e2c27cf0d193bb">HashMap</a></div><div class="ttdeci">struct HashMap_ * HashMap</div></div>
 <div class="ttc" id="ahashmap_8h_html_af7faee4683eeffa7c9900f92696c725d"><div class="ttname"><a href="hashmap_8h.html#af7faee4683eeffa7c9900f92696c725d">hashmap_init</a></div><div class="ttdeci">static ANN void hashmap_init(HashMap a, MemPool p, const size_t key_size, const size_t val_size)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8h_source.html#l00028">hashmap.h:28</a></div></div>
 <div class="ttc" id="ampool_8h_html_a72389bcc8ebd705cc390d55952ce5f8b"><div class="ttname"><a href="mpool_8h.html#a72389bcc8ebd705cc390d55952ce5f8b">mp_malloc</a></div><div class="ttdeci">#define mp_malloc(p, name)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00026">mpool.h:26</a></div></div>

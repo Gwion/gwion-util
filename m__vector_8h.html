@@ -89,11 +89,11 @@ Macros</h2></td></tr>
 <tr class="separator:a2b7ea6aed3aa81a25f6b101cda6d735a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedaab00e92eb6a8b9797aba4c21f01c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(array)&#160;&#160;&#160;(array-&gt;ptr + <a class="el" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a>)</td></tr>
 <tr class="separator:aedaab00e92eb6a8b9797aba4c21f01c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44c876c78e2fc722c001dfc1a36b638f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(array)&#160;&#160;&#160;*(m_uint*)(array-&gt;ptr)</td></tr>
+<tr class="memitem:a44c876c78e2fc722c001dfc1a36b638f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(array)&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr)</td></tr>
 <tr class="separator:a44c876c78e2fc722c001dfc1a36b638f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70c57aae3eb654e205459b4362c8089a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array)&#160;&#160;&#160;*(m_uint*)(array-&gt;ptr + SZ_INT)</td></tr>
+<tr class="memitem:a70c57aae3eb654e205459b4362c8089a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array)&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr + SZ_INT)</td></tr>
 <tr class="separator:a70c57aae3eb654e205459b4362c8089a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16c6eace6af476b197d1e2a231440d4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(array)&#160;&#160;&#160;*(m_uint*)(array-&gt;ptr + SZ_INT*2)</td></tr>
+<tr class="memitem:a16c6eace6af476b197d1e2a231440d4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(array)&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr + SZ_INT * 2)</td></tr>
 <tr class="separator:a16c6eace6af476b197d1e2a231440d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9d80d4f70dc66a23e1e183281463323"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#af9d80d4f70dc66a23e1e183281463323">ARRAY_MIN</a>(array)&#160;&#160;&#160;(<a class="el" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array) * 4 + <a class="el" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a>)</td></tr>
 <tr class="separator:af9d80d4f70dc66a23e1e183281463323"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,7 +142,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">array</td><td>)</td>
-          <td>&#160;&#160;&#160;*(m_uint*)(array-&gt;ptr + SZ_INT*2)</td>
+          <td>&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr + SZ_INT * 2)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -162,7 +162,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">array</td><td>)</td>
-          <td>&#160;&#160;&#160;*(m_uint*)(array-&gt;ptr)</td>
+          <td>&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -238,7 +238,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">array</td><td>)</td>
-          <td>&#160;&#160;&#160;*(m_uint*)(array-&gt;ptr + SZ_INT)</td>
+          <td>&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr + SZ_INT)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -297,11 +297,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="m__vector_8h_source.html#l00040">40</a> of file <a class="el" href="m__vector_8h_source.html">m_vector.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                            {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="m__vector_8h.html#afd80e347006e1d33850a649fd5408e00">m_vector_release</a>(a);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(p, <a class="code" href="structM__Vector__.html">M_Vector</a>, a);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="m__vector_8h_source.html#l00038">38</a> of file <a class="el" href="m__vector_8h_source.html">m_vector.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                            {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="m__vector_8h.html#afd80e347006e1d33850a649fd5408e00">m_vector_release</a>(a);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(p, <a class="code" href="structM__Vector__.html">M_Vector</a>, a);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="ttc" id="am__vector_8h_html_afd80e347006e1d33850a649fd5408e00"><div class="ttname"><a href="m__vector_8h.html#afd80e347006e1d33850a649fd5408e00">m_vector_release</a></div><div class="ttdeci">static ANN void m_vector_release(M_Vector a)</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00036">m_vector.h:36</a></div></div>
 <div class="ttc" id="ampool_8h_html_aaa16830712090aa944a1703301474d83"><div class="ttname"><a href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a></div><div class="ttdeci">#define mp_free(p, name, a)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
 <div class="ttc" id="astructM__Vector___html"><div class="ttname"><a href="structM__Vector__.html">M_Vector_</a></div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00004">m_vector.h:4</a></div></div>
@@ -348,7 +348,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="am__vector_8h_html_a44c876c78e2fc722c001dfc1a36b638f"><div class="ttname"><a href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a></div><div class="ttdeci">#define ARRAY_LEN(array)</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00009">m_vector.h:9</a></div></div>
 <div class="ttc" id="am__vector_8h_html_a70c57aae3eb654e205459b4362c8089a"><div class="ttname"><a href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a></div><div class="ttdeci">#define ARRAY_SIZE(array)</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00010">m_vector.h:10</a></div></div>
 <div class="ttc" id="am__vector_8h_html_aedaab00e92eb6a8b9797aba4c21f01c0"><div class="ttname"><a href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a></div><div class="ttdeci">#define ARRAY_PTR(array)</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00008">m_vector.h:8</a></div></div>
-<div class="ttc" id="axalloc_8h_html_a09b724ee1a10d3cba4ea0da021a8a418"><div class="ttname"><a href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a></div><div class="ttdeci">static ANEW void * xrealloc(void *p, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00024">xalloc.h:24</a></div></div>
+<div class="ttc" id="axalloc_8h_html_a09b724ee1a10d3cba4ea0da021a8a418"><div class="ttname"><a href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a></div><div class="ttdeci">static ANEW void * xrealloc(void *p, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00023">xalloc.h:23</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -428,7 +428,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8h_source.html#l00023">23</a> of file <a class="el" href="m__vector_8h_source.html">m_vector.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                                                         {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">return</span> &amp;*(m_bit*)(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + i * <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">return</span> &amp;*(m_bit *)(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + i * <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v));</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -523,7 +523,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array) = size;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(array)  = len;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="ttc" id="axalloc_8h_html_a494dd4d984870455b73e4b734a4a6d54"><div class="ttname"><a href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a></div><div class="ttdeci">static ANEW void * xcalloc(const m_uint n, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00019">xalloc.h:19</a></div></div>
+<div class="ttc" id="axalloc_8h_html_a494dd4d984870455b73e4b734a4a6d54"><div class="ttname"><a href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a></div><div class="ttdeci">static ANEW void * xcalloc(const m_uint n, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00018">xalloc.h:18</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -598,10 +598,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8h_source.html#l00036">36</a> of file <a class="el" href="m__vector_8h_source.html">m_vector.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(a-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="ttc" id="axalloc_8h_html_a39ef228c1684eb7b3e198e83e70eff1b"><div class="ttname"><a href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a></div><div class="ttdeci">#define xfree(a)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00029">xalloc.h:29</a></div></div>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ <a class="code" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(a-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>); }</div>
+<div class="ttc" id="axalloc_8h_html_a39ef228c1684eb7b3e198e83e70eff1b"><div class="ttname"><a href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a></div><div class="ttdeci">#define xfree(a)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00028">xalloc.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -758,11 +756,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8h_source.html#l00029">29</a> of file <a class="el" href="m__vector_8h_source.html">m_vector.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                                                        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">const</span> <a class="code" href="structM__Vector__.html">M_Vector</a> array = <a class="code" href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a>(p, <a class="code" href="structM__Vector__.html">M_Vector</a>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="m__vector_8h.html#aa4326ef5af5efea83a7095fbc5975f01">m_vector_init</a>(array, size, len);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">return</span> array;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                          {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">const</span> <a class="code" href="structM__Vector__.html">M_Vector</a> array = <a class="code" href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a>(p, <a class="code" href="structM__Vector__.html">M_Vector</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="m__vector_8h.html#aa4326ef5af5efea83a7095fbc5975f01">m_vector_init</a>(array, size, len);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">return</span> array;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="ttc" id="am__vector_8h_html_aa4326ef5af5efea83a7095fbc5975f01"><div class="ttname"><a href="m__vector_8h.html#aa4326ef5af5efea83a7095fbc5975f01">m_vector_init</a></div><div class="ttdeci">void m_vector_init(const M_Vector array, const m_uint size, const m_uint len)</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8c_source.html#l00003">m_vector.c:3</a></div></div>
 <div class="ttc" id="ampool_8h_html_a2c191a434fae6c134bab72438b8f01be"><div class="ttname"><a href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a></div><div class="ttdeci">#define mp_calloc(p, name)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00027">mpool.h:27</a></div></div>
 </div><!-- fragment -->

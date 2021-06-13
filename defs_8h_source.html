@@ -83,65 +83,86 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="defs_8h.html#a32a3cf3d9dd914f5aeeca5423c157934">   13</a></span>&#160;<span class="preprocessor">#define _(String) (String)</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="defs_8h.html#af8c317a42292b61c93aae91e59118a46">   16</a></span>&#160;<span class="preprocessor">#define container_of(ptr, type, member) ((type *)( (char *)(ptr) - offsetof(type,member) ))</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">   18</a></span>&#160;<span class="preprocessor">#define GW_ERROR -1</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="defs_8h.html#a76e8f402f53a00e4ef7b750d26251c3e">   19</a></span>&#160;<span class="preprocessor">#define GW_OK     1</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="defs_8h.html#aab8b73cdc68622fe79a8242e5cd122b4">   20</a></span>&#160;<span class="preprocessor">#define MEM_STEP 16</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="defs_8h.html#a254e7a6e08b2fa8439dc14ca1b7dc394">   21</a></span>&#160;<span class="preprocessor">#define SIZEOF_MEM (0x1 &lt;&lt; MEM_STEP)</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="defs_8h.html#a8c16ac1889e3abfab0875302d1a46b27">   22</a></span>&#160;<span class="preprocessor">#define SIZEOF_REG (0x1 &lt;&lt; 14)</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">   24</a></span>&#160;<span class="preprocessor">#define ANN __attribute__((nonnull))</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="defs_8h.html#ab529def18232dd72e7d8113d4c2feea4">   25</a></span>&#160;<span class="preprocessor">#define ANN2(...) __attribute__((nonnull(__VA_ARGS__)))</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//#define ANEW __attribute__((returns_nonnull,malloc))</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="defs_8h.html#afaa134d25204f8a3e5586f776e91f21c">   27</a></span>&#160;<span class="preprocessor">#define ANEW __attribute__((malloc))</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="defs_8h.html#a779a45537ce96ee93fd887eef961a634">   28</a></span>&#160;<span class="preprocessor">#define NUSED __attribute__((unused))</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifdef __GNUC__</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef __clang__</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define LOOP_OPTIM</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define CC_OPTIM(a)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define LOOP_OPTIM _Pragma(&quot;GCC ivdep&quot;</span>)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define CC_OPTIM(a) __attribute__ ((optimize(#a)))</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">   39</a></span>&#160;<span class="preprocessor">#define LOOP_OPTIM</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// maybe later enclose in ifdef</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="defs_8h.html#a217a0bd562b98ae8c2ffce44935351e1">   43</a></span>&#160;<span class="preprocessor">#define likely(x) __builtin_expect(!!(x), 1)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="defs_8h.html#ac6c45889010c1bd68631771b64f18101">   44</a></span>&#160;<span class="preprocessor">#define unlikely(x) __builtin_expect(!!(x), 0)</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="defs_8h.html#a5d4c820ca4a6569e3755e7fefebb6c64">   46</a></span>&#160;<span class="preprocessor">#define CHECK_BB(f) do { if(f &lt; 0) return GW_ERROR; } while(0)</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="defs_8h.html#a4abd7eaaefe533c764953df27d664839">   47</a></span>&#160;<span class="preprocessor">#define CHECK_OB(f) do { if(!f)    return GW_ERROR; } while(0)</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="defs_8h.html#abb93f878ed4cadfc6b71acf08d625134">   48</a></span>&#160;<span class="preprocessor">#define CHECK_BO(f) do { if(f &lt; 0) return NULL;     } while(0)</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="defs_8h.html#a6ba6b757a44d3cd3e3d5c6b04011ef2b">   49</a></span>&#160;<span class="preprocessor">#define CHECK_OO(f) do { if(!f)    return NULL;     } while(0)</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="defs_8h.html#a4eaf43e307f3fda26bbe209faa2a7bee">   51</a></span>&#160;<span class="preprocessor">#define DECL_BB(decl, f, exp) decl f exp; if(f &lt; 0) return GW_ERROR</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="defs_8h.html#a8a9fbbcb2ec6b528f38d53fe1e48e154">   52</a></span>&#160;<span class="preprocessor">#define DECL_OB(decl, f, exp) decl f exp; if(!f)    return GW_ERROR</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="defs_8h.html#ae679a6e930a748f00294a3b84e952999">   53</a></span>&#160;<span class="preprocessor">#define DECL_BO(decl, f, exp) decl f exp; if(f &lt; 0) return NULL</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="defs_8h.html#ae567284efb085a3f06ae6001011d3f23">   54</a></span>&#160;<span class="preprocessor">#define DECL_OO(decl, f, exp) decl f exp; if(!f)    return NULL</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;generated.h&quot;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">   62</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="defs_8h.html#af8c317a42292b61c93aae91e59118a46">   16</a></span>&#160;<span class="preprocessor">#define container_of(ptr, type, member)                                        \</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">  ((type *)((char *)(ptr)-offsetof(type, member)))</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">   19</a></span>&#160;<span class="preprocessor">#define GW_ERROR   -1</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="defs_8h.html#a76e8f402f53a00e4ef7b750d26251c3e">   20</a></span>&#160;<span class="preprocessor">#define GW_OK      1</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="defs_8h.html#aab8b73cdc68622fe79a8242e5cd122b4">   21</a></span>&#160;<span class="preprocessor">#define MEM_STEP   16</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="defs_8h.html#a254e7a6e08b2fa8439dc14ca1b7dc394">   22</a></span>&#160;<span class="preprocessor">#define SIZEOF_MEM (0x1 &lt;&lt; MEM_STEP)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="defs_8h.html#a8c16ac1889e3abfab0875302d1a46b27">   23</a></span>&#160;<span class="preprocessor">#define SIZEOF_REG (0x1 &lt;&lt; 14)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">   25</a></span>&#160;<span class="preprocessor">#define ANN       __attribute__((nonnull))</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="defs_8h.html#ab529def18232dd72e7d8113d4c2feea4">   26</a></span>&#160;<span class="preprocessor">#define ANN2(...) __attribute__((nonnull(__VA_ARGS__)))</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//#define ANEW __attribute__((returns_nonnull,malloc))</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="defs_8h.html#afaa134d25204f8a3e5586f776e91f21c">   28</a></span>&#160;<span class="preprocessor">#define ANEW  __attribute__((malloc))</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="defs_8h.html#a779a45537ce96ee93fd887eef961a634">   29</a></span>&#160;<span class="preprocessor">#define NUSED __attribute__((unused))</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef __GNUC__</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifdef __clang__</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define LOOP_OPTIM</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define CC_OPTIM(a)</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define LOOP_OPTIM  _Pragma(&quot;GCC ivdep&quot;</span>)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define CC_OPTIM(a) __attribute__((optimize(#a)))</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">   40</a></span>&#160;<span class="preprocessor">#define LOOP_OPTIM</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// maybe later enclose in ifdef</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="defs_8h.html#a217a0bd562b98ae8c2ffce44935351e1">   44</a></span>&#160;<span class="preprocessor">#define likely(x)   __builtin_expect(!!(x), 1)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="defs_8h.html#ac6c45889010c1bd68631771b64f18101">   45</a></span>&#160;<span class="preprocessor">#define unlikely(x) __builtin_expect(!!(x), 0)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="defs_8h.html#a5d4c820ca4a6569e3755e7fefebb6c64">   47</a></span>&#160;<span class="preprocessor">#define CHECK_BB(f)                                                            \</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">  do {                                                                         \</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">    if (f &lt; 0) return GW_ERROR;                                                \</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">  } while (0)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="defs_8h.html#a4abd7eaaefe533c764953df27d664839">   51</a></span>&#160;<span class="preprocessor">#define CHECK_OB(f)                                                            \</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">  do {                                                                         \</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">    if (!f) return GW_ERROR;                                                   \</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">  } while (0)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="defs_8h.html#abb93f878ed4cadfc6b71acf08d625134">   55</a></span>&#160;<span class="preprocessor">#define CHECK_BO(f)                                                            \</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">  do {                                                                         \</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">    if (f &lt; 0) return NULL;                                                    \</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">  } while (0)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="defs_8h.html#a6ba6b757a44d3cd3e3d5c6b04011ef2b">   59</a></span>&#160;<span class="preprocessor">#define CHECK_OO(f)                                                            \</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">  do {                                                                         \</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">    if (!f) return NULL;                                                       \</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">  } while (0)</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="defs_8h.html#a5dfe5f2b89d78866fa3aea7c5e3c4e29">   64</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> m_uint <a class="code" href="defs_8h.html#a5dfe5f2b89d78866fa3aea7c5e3c4e29">num_digit</a>(<span class="keyword">const</span> m_uint i) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> i ? (m_uint)floor(log10((<span class="keywordtype">float</span>)i) + 1) : 1;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="defs_8h.html#a00d855f8b9223de721c8d9e2ced68b5b">   68</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> m_uint <a class="code" href="defs_8h.html#a00d855f8b9223de721c8d9e2ced68b5b">round2szint</a>(<span class="keyword">const</span> m_uint i) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> ((i + (SZ_INT-1)) &amp; ~(SZ_INT-1));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="adefs_8h_html_a00d855f8b9223de721c8d9e2ced68b5b"><div class="ttname"><a href="defs_8h.html#a00d855f8b9223de721c8d9e2ced68b5b">round2szint</a></div><div class="ttdeci">static m_uint round2szint(const m_uint i)</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00068">defs.h:68</a></div></div>
-<div class="ttc" id="adefs_8h_html_a5dfe5f2b89d78866fa3aea7c5e3c4e29"><div class="ttname"><a href="defs_8h.html#a5dfe5f2b89d78866fa3aea7c5e3c4e29">num_digit</a></div><div class="ttdeci">static m_uint num_digit(const m_uint i)</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00064">defs.h:64</a></div></div>
-<div class="ttc" id="adefs_8h_html_a91ad9478d81a7aaf2593e8d9c3d06a14"><div class="ttname"><a href="defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a></div><div class="ttdeci">unsigned int uint</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00062">defs.h:62</a></div></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="defs_8h.html#a4eaf43e307f3fda26bbe209faa2a7bee">   64</a></span>&#160;<span class="preprocessor">#define DECL_BB(decl, f, exp)                                                  \</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">  decl f exp;                                                                  \</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">  if (f &lt; 0) return GW_ERROR</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="defs_8h.html#a8a9fbbcb2ec6b528f38d53fe1e48e154">   67</a></span>&#160;<span class="preprocessor">#define DECL_OB(decl, f, exp)                                                  \</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">  decl f exp;                                                                  \</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">  if (!f) return GW_ERROR</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="defs_8h.html#ae679a6e930a748f00294a3b84e952999">   70</a></span>&#160;<span class="preprocessor">#define DECL_BO(decl, f, exp)                                                  \</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">  decl f exp;                                                                  \</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">  if (f &lt; 0) return NULL</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="defs_8h.html#ae567284efb085a3f06ae6001011d3f23">   73</a></span>&#160;<span class="preprocessor">#define DECL_OO(decl, f, exp)                                                  \</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">  decl f exp;                                                                  \</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">  if (!f) return NULL</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#include &quot;generated.h&quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">   83</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="defs_8h.html#a5dfe5f2b89d78866fa3aea7c5e3c4e29">   85</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> m_uint <a class="code" href="defs_8h.html#a5dfe5f2b89d78866fa3aea7c5e3c4e29">num_digit</a>(<span class="keyword">const</span> m_uint i) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">return</span> i ? (m_uint)floor(log10((<span class="keywordtype">float</span>)i) + 1) : 1;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="defs_8h.html#a00d855f8b9223de721c8d9e2ced68b5b">   89</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> m_uint <a class="code" href="defs_8h.html#a00d855f8b9223de721c8d9e2ced68b5b">round2szint</a>(<span class="keyword">const</span> m_uint i) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">return</span> ((i + (SZ_INT - 1)) &amp; ~(SZ_INT - 1));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="adefs_8h_html_a00d855f8b9223de721c8d9e2ced68b5b"><div class="ttname"><a href="defs_8h.html#a00d855f8b9223de721c8d9e2ced68b5b">round2szint</a></div><div class="ttdeci">static m_uint round2szint(const m_uint i)</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00089">defs.h:89</a></div></div>
+<div class="ttc" id="adefs_8h_html_a5dfe5f2b89d78866fa3aea7c5e3c4e29"><div class="ttname"><a href="defs_8h.html#a5dfe5f2b89d78866fa3aea7c5e3c4e29">num_digit</a></div><div class="ttdeci">static m_uint num_digit(const m_uint i)</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00085">defs.h:85</a></div></div>
+<div class="ttc" id="adefs_8h_html_a91ad9478d81a7aaf2593e8d9c3d06a14"><div class="ttname"><a href="defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a></div><div class="ttdeci">unsigned int uint</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00083">defs.h:83</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
