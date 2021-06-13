@@ -14,7 +14,6 @@ struct CArg {
 /** returns the option to the argument, errors and returns if none **/
 ANN m_str option_argument(struct CArg *ca);
 
-
 /** returns separated arguments from a string in a vector.
 each value is a mp_allocated string.
 freeing it is caller responsability.

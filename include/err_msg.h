@@ -13,8 +13,8 @@
 #define gw_out(...) tcol_fprintf(stdout, __VA_ARGS__)
 
 #ifdef __FUZZING__
-#define gw_err(a,...)
-#define gw_out(a,...)
+#define gw_err(a, ...)
+#define gw_out(a, ...)
 #endif
 
 #endif
