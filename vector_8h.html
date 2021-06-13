@@ -175,11 +175,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00018">18</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="vector_8c.html#a69e8e01d271219939c8471b6524b9ed4">vector_release</a>(v);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(p, <a class="code" href="structVector__.html">Vector</a>, v);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00016">16</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="vector_8c.html#a69e8e01d271219939c8471b6524b9ed4">vector_release</a>(v);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(p, <a class="code" href="structVector__.html">Vector</a>, v);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="ttc" id="ampool_8h_html_aaa16830712090aa944a1703301474d83"><div class="ttname"><a href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a></div><div class="ttdeci">#define mp_free(p, name, a)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
 <div class="ttc" id="astructVector___html"><div class="ttname"><a href="structVector__.html">Vector_</a></div><div class="ttdef"><b>Definition:</b> <a href="vector_8h_source.html#l00008">vector.h:8</a></div></div>
 <div class="ttc" id="avector_8c_html_a69e8e01d271219939c8471b6524b9ed4"><div class="ttname"><a href="vector_8c.html#a69e8e01d271219939c8471b6524b9ed4">vector_release</a></div><div class="ttdeci">ANN void vector_release(const Vector v)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00014">vector.c:14</a></div></div>
@@ -239,11 +239,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00023">23</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                                      {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="vector_8h.html#a86a7633a41f5766e53c9e34ba73f2f8a">vector_realloc</a>(v);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(v, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v)++) = (<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)data;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00021">21</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                                      {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="vector_8h.html#a86a7633a41f5766e53c9e34ba73f2f8a">vector_realloc</a>(v);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(v, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v)++) = (<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)data;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="ttc" id="acontainer_8h_html_a3e934d574017d1adbc19a23cccb3d7fc"><div class="ttname"><a href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a></div><div class="ttdeci">#define VLEN(v)</div><div class="ttdef"><b>Definition:</b> <a href="container_8h_source.html#l00010">container.h:10</a></div></div>
 <div class="ttc" id="acontainer_8h_html_a5482df11a6922f4ce0a1d79206c3a451"><div class="ttname"><a href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a></div><div class="ttdeci">uintptr_t vtype</div><div class="ttdef"><b>Definition:</b> <a href="container_8h_source.html#l00014">container.h:14</a></div></div>
 <div class="ttc" id="acontainer_8h_html_ae7a7357208b181b8a9ab8219f9381278"><div class="ttname"><a href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a></div><div class="ttdeci">#define VPTR(v, i)</div><div class="ttdef"><b>Definition:</b> <a href="container_8h_source.html#l00012">container.h:12</a></div></div>
@@ -339,11 +339,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00068">68</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                      {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  v-&gt;ptr = (m_uint*)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;ptr, (<a class="code" href="container_8h.html#ae42da6a8d8137b249e9c9beae91ac66e">VCAP</a>(v) = <a class="code" href="container_8h.html#ac320e0a199bf6a7cfb21502480aeda11">MAP_CAP</a>) * SZ_INT);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) = 0;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00067">67</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                      {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  v-&gt;ptr  = (m_uint *)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;ptr, (<a class="code" href="container_8h.html#ae42da6a8d8137b249e9c9beae91ac66e">VCAP</a>(v) = <a class="code" href="container_8h.html#ac320e0a199bf6a7cfb21502480aeda11">MAP_CAP</a>) * SZ_INT);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="ttc" id="acontainer_8h_html_ac320e0a199bf6a7cfb21502480aeda11"><div class="ttname"><a href="container_8h.html#ac320e0a199bf6a7cfb21502480aeda11">MAP_CAP</a></div><div class="ttdeci">#define MAP_CAP</div><div class="ttdef"><b>Definition:</b> <a href="container_8h_source.html#l00008">container.h:8</a></div></div>
 <div class="ttc" id="acontainer_8h_html_ae42da6a8d8137b249e9c9beae91ac66e"><div class="ttname"><a href="container_8h.html#ae42da6a8d8137b249e9c9beae91ac66e">VCAP</a></div><div class="ttdeci">#define VCAP(v)</div><div class="ttdef"><b>Definition:</b> <a href="container_8h_source.html#l00011">container.h:11</a></div></div>
 <div class="ttc" id="axalloc_8h_html_a09b724ee1a10d3cba4ea0da021a8a418"><div class="ttname"><a href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a></div><div class="ttdeci">static ANEW void * xrealloc(void *p, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00024">xalloc.h:24</a></div></div>
@@ -376,13 +376,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00033">33</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                  {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> <a class="code" href="structVector__.html">Vector</a> ret = <a class="code" href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a>(p, <a class="code" href="structVector__.html">Vector</a>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="vector_8c.html#ad758d9247651a863d0f14ff3a1319498">vector_copy2</a>(v, ret);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="ttc" id="avector_8c_html_ad758d9247651a863d0f14ff3a1319498"><div class="ttname"><a href="vector_8c.html#ad758d9247651a863d0f14ff3a1319498">vector_copy2</a></div><div class="ttdeci">ANN void vector_copy2(const restrict Vector v, const restrict Vector ret)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00028">vector.c:28</a></div></div>
+<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00032">32</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                                  {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> <a class="code" href="structVector__.html">Vector</a> ret = <a class="code" href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a>(p, <a class="code" href="structVector__.html">Vector</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="vector_8c.html#ad758d9247651a863d0f14ff3a1319498">vector_copy2</a>(v, ret);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="ttc" id="avector_8c_html_ad758d9247651a863d0f14ff3a1319498"><div class="ttname"><a href="vector_8c.html#ad758d9247651a863d0f14ff3a1319498">vector_copy2</a></div><div class="ttdeci">ANN void vector_copy2(const restrict Vector v, const restrict Vector ret)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00026">vector.c:26</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -440,13 +440,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00039">39</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">for</span>(<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> i = <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) + 1; --i;)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(v, i - 1) == (<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)data)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">return</span> (m_int)(i - 1);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00038">38</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> i = <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) + 1; --i;)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(v, i - 1) == (<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)data)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">return</span> (m_int)(i - 1);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 <div class="ttc" id="adefs_8h_html_a42040dee910c688a8fe538ecaa59cb63"><div class="ttname"><a href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a></div><div class="ttdeci">#define GW_ERROR</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00018">defs.h:18</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -508,7 +508,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00003">3</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                            {</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  v-&gt;ptr = (m_uint*)<a class="code" href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a>(<a class="code" href="container_8h.html#ac320e0a199bf6a7cfb21502480aeda11">MAP_CAP</a>, SZ_INT);</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  v-&gt;ptr  = (m_uint *)<a class="code" href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a>(<a class="code" href="container_8h.html#ac320e0a199bf6a7cfb21502480aeda11">MAP_CAP</a>, SZ_INT);</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <a class="code" href="container_8h.html#ae42da6a8d8137b249e9c9beae91ac66e">VCAP</a>(v) = <a class="code" href="container_8h.html#ac320e0a199bf6a7cfb21502480aeda11">MAP_CAP</a>;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
 <div class="ttc" id="axalloc_8h_html_a494dd4d984870455b73e4b734a4a6d54"><div class="ttname"><a href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a></div><div class="ttdeci">static ANEW void * xcalloc(const m_uint n, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00019">xalloc.h:19</a></div></div>
@@ -531,13 +531,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00062">62</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                     {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">const</span> <a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> ret = <a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(v, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) - 1);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="vector_8c.html#a8197f6fb1a6f3418f2c094729d4312b6">vector_rem</a>(v, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) - 1);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="ttc" id="avector_8c_html_a8197f6fb1a6f3418f2c094729d4312b6"><div class="ttname"><a href="vector_8c.html#a8197f6fb1a6f3418f2c094729d4312b6">vector_rem</a></div><div class="ttdeci">ANN void vector_rem(const Vector v, const vtype index)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00046">vector.c:46</a></div></div>
+<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00061">61</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                     {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">const</span> <a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> ret = <a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(v, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) - 1);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="vector_8c.html#a8197f6fb1a6f3418f2c094729d4312b6">vector_rem</a>(v, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) - 1);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="ttc" id="avector_8c_html_a8197f6fb1a6f3418f2c094729d4312b6"><div class="ttname"><a href="vector_8c.html#a8197f6fb1a6f3418f2c094729d4312b6">vector_rem</a></div><div class="ttdeci">ANN void vector_rem(const Vector v, const vtype index)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00045">vector.c:45</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -600,9 +600,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00014">14</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                               {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(v-&gt;ptr);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{ <a class="code" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(v-&gt;ptr); }</div>
 <div class="ttc" id="axalloc_8h_html_a39ef228c1684eb7b3e198e83e70eff1b"><div class="ttname"><a href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a></div><div class="ttdeci">#define xfree(a)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00029">xalloc.h:29</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -633,16 +631,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00046">46</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                       {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">if</span>(index &gt;= <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v))</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">if</span>(index &lt; <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) - 1)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    memmove(v-&gt;ptr + index + <a class="code" href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a>, v-&gt;ptr + index + <a class="code" href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a> + 1,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      (<a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) - index - 1) * SZ_INT);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span>(--<a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) + <a class="code" href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a> &lt; <a class="code" href="container_8h.html#ae42da6a8d8137b249e9c9beae91ac66e">VCAP</a>(v) / 2)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    v-&gt;ptr = (m_uint*)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;ptr, (<a class="code" href="container_8h.html#ae42da6a8d8137b249e9c9beae91ac66e">VCAP</a>(v) /= 2) * SZ_INT);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00045">45</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                       {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span> (index &gt;= <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v))</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">if</span> (index &lt; <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) - 1)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    memmove(v-&gt;ptr + index + <a class="code" href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a>, v-&gt;ptr + index + <a class="code" href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a> + 1,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            (<a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) - index - 1) * SZ_INT);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">if</span> (--<a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(v) + <a class="code" href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a> &lt; <a class="code" href="container_8h.html#ae42da6a8d8137b249e9c9beae91ac66e">VCAP</a>(v) / 2)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    v-&gt;ptr = (m_uint *)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;ptr, (<a class="code" href="container_8h.html#ae42da6a8d8137b249e9c9beae91ac66e">VCAP</a>(v) /= 2) * SZ_INT);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -672,13 +670,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00056">56</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                       {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">const</span> m_int index = <a class="code" href="vector_8c.html#af537c97c092510bd00e32be22d9dc625">vector_find</a>(v, data);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span>(index &gt; -1)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="vector_8c.html#a8197f6fb1a6f3418f2c094729d4312b6">vector_rem</a>(v, (<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)index);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="ttc" id="avector_8c_html_af537c97c092510bd00e32be22d9dc625"><div class="ttname"><a href="vector_8c.html#af537c97c092510bd00e32be22d9dc625">vector_find</a></div><div class="ttdeci">ANN m_int vector_find(const Vector v, const vtype data)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00039">vector.c:39</a></div></div>
+<p class="definition">Definition at line <a class="el" href="vector_8c_source.html#l00055">55</a> of file <a class="el" href="vector_8c_source.html">vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                       {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">const</span> m_int index = <a class="code" href="vector_8c.html#af537c97c092510bd00e32be22d9dc625">vector_find</a>(v, data);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">if</span> (index &gt; -1)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="vector_8c.html#a8197f6fb1a6f3418f2c094729d4312b6">vector_rem</a>(v, (<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)index);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="ttc" id="avector_8c_html_af537c97c092510bd00e32be22d9dc625"><div class="ttname"><a href="vector_8c.html#af537c97c092510bd00e32be22d9dc625">vector_find</a></div><div class="ttdeci">ANN m_int vector_find(const Vector v, const vtype data)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00038">vector.c:38</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -274,7 +274,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="scope_8c_source.html#l00030">30</a> of file <a class="el" href="scope_8c_source.html">scope.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                                      {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(s) &gt; 1)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(s) &gt; 1)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="map_8c.html#aaf11da772d6d3bf63ca6c0fb7337be2d">map_set</a>(<a class="code" href="scope_8c.html#aa41f23bc24e2d8fceb808fd26e2a5865">scope_back</a>(s), xid, value);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="map_8c.html#aaf11da772d6d3bf63ca6c0fb7337be2d">map_set</a>(&amp;s-&gt;map, xid, value);</div>
@@ -396,23 +396,23 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="scope_8c_source.html#l00065">65</a> of file <a class="el" href="scope_8c_source.html">scope.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                          {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  m_uint size = <a class="code" href="map_8h.html#a1a1478830fd46e5163734cb6f14b5a60">map_size</a>(&amp;iter-&gt;<a class="code" href="structscope__iter.html#ae831eb0192b97f95b742bb569b2a7264">s</a>-&gt;<a class="code" href="structScope__.html#aa3e251b77360860c8454fdc9e9692926">map</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  m_uint       size  = <a class="code" href="map_8h.html#a1a1478830fd46e5163734cb6f14b5a60">map_size</a>(&amp;iter-&gt;<a class="code" href="structscope__iter.html#ae831eb0192b97f95b742bb569b2a7264">s</a>-&gt;<a class="code" href="structScope__.html#aa3e251b77360860c8454fdc9e9692926">map</a>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">const</span> m_uint vsize = <a class="code" href="vector_8h.html#a18f017e4ef8e2e143cd8226046f83590">vector_size</a>((<a class="code" href="structVector__.html">Vector</a>)iter-&gt;<a class="code" href="structscope__iter.html#ae831eb0192b97f95b742bb569b2a7264">s</a>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">const</span> m_uint vec = vsize - iter-&gt;<a class="code" href="structscope__iter.html#a5425a9e6344579c140fa5c6d538199b0">vec</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="structMap__.html">Map</a> map = &amp;iter-&gt;<a class="code" href="structscope__iter.html#ae831eb0192b97f95b742bb569b2a7264">s</a>-&gt;<a class="code" href="structScope__.html#aa3e251b77360860c8454fdc9e9692926">map</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span>(vsize == iter-&gt;<a class="code" href="structscope__iter.html#a5425a9e6344579c140fa5c6d538199b0">vec</a>) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span>(iter-&gt;<a class="code" href="structscope__iter.html#abc2209cf2e75607d2afe1a285ddd8926">idx</a> == size)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">const</span> m_uint vec   = vsize - iter-&gt;<a class="code" href="structscope__iter.html#a5425a9e6344579c140fa5c6d538199b0">vec</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="structMap__.html">Map</a>          map   = &amp;iter-&gt;<a class="code" href="structscope__iter.html#ae831eb0192b97f95b742bb569b2a7264">s</a>-&gt;<a class="code" href="structScope__.html#aa3e251b77360860c8454fdc9e9692926">map</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (vsize == iter-&gt;<a class="code" href="structscope__iter.html#a5425a9e6344579c140fa5c6d538199b0">vec</a>) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (iter-&gt;<a class="code" href="structscope__iter.html#abc2209cf2e75607d2afe1a285ddd8926">idx</a> == size)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="defs_8h.html#a42040dee910c688a8fe538ecaa59cb63">GW_ERROR</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    map = (<a class="code" href="map_8h.html#adaee5c17ed34aef3d0c09d1879ecf54d">Map</a>)&amp;<a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(iter-&gt;<a class="code" href="structscope__iter.html#ae831eb0192b97f95b742bb569b2a7264">s</a>, vec - 1);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    map  = (<a class="code" href="map_8h.html#adaee5c17ed34aef3d0c09d1879ecf54d">Map</a>)&amp;<a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(iter-&gt;<a class="code" href="structscope__iter.html#ae831eb0192b97f95b742bb569b2a7264">s</a>, vec - 1);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    size = <a class="code" href="map_8h.html#a1a1478830fd46e5163734cb6f14b5a60">map_size</a>(map);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span>(iter-&gt;<a class="code" href="structscope__iter.html#abc2209cf2e75607d2afe1a285ddd8926">idx</a> == size) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (iter-&gt;<a class="code" href="structscope__iter.html#abc2209cf2e75607d2afe1a285ddd8926">idx</a> == size) {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      ++iter-&gt;<a class="code" href="structscope__iter.html#a5425a9e6344579c140fa5c6d538199b0">vec</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      iter-&gt;<a class="code" href="structscope__iter.html#abc2209cf2e75607d2afe1a285ddd8926">idx</a> = 0;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="scope_8c.html#a213ca48497c648cfc167f34cb7b666f6">scope_iter</a>(iter, ret);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  *(<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>*)ret = <a class="code" href="map_8h.html#af2e088adc3ebfa9789282d1cb0ad04cf">map_at</a>(map, size - ++iter-&gt;<a class="code" href="structscope__iter.html#abc2209cf2e75607d2afe1a285ddd8926">idx</a>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  *(<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> *)ret = <a class="code" href="map_8h.html#af2e088adc3ebfa9789282d1cb0ad04cf">map_at</a>(map, size - ++iter-&gt;<a class="code" href="structscope__iter.html#abc2209cf2e75607d2afe1a285ddd8926">idx</a>);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="defs_8h.html#a76e8f402f53a00e4ef7b750d26251c3e">GW_OK</a>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="ttc" id="acontainer_8h_html_a5482df11a6922f4ce0a1d79206c3a451"><div class="ttname"><a href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a></div><div class="ttdeci">uintptr_t vtype</div><div class="ttdef"><b>Definition:</b> <a href="container_8h_source.html#l00014">container.h:14</a></div></div>
@@ -457,9 +457,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="scope_8c_source.html#l00007">7</a> of file <a class="el" href="scope_8c_source.html">scope.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                        {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">const</span> <a class="code" href="structMap__.html">Map</a> map = <a class="code" href="scope_8c.html#aa41f23bc24e2d8fceb808fd26e2a5865">scope_back</a>(s);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">const</span> <a class="code" href="structMap__.html">Map</a>   map = <a class="code" href="scope_8c.html#aa41f23bc24e2d8fceb808fd26e2a5865">scope_back</a>(s);</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">const</span> <a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> ret = <a class="code" href="map_8c.html#a71d601278ce6047bf156a0c3feb286c1">map_get</a>(map, xid);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">if</span>(!ret &amp;&amp; <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(s) == 1)</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">if</span> (!ret &amp;&amp; <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(s) == 1)</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="map_8c.html#a71d601278ce6047bf156a0c3feb286c1">map_get</a>(&amp;s-&gt;map, (<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)xid);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
@@ -495,10 +495,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="scope_8c_source.html#l00015">15</a> of file <a class="el" href="scope_8c_source.html">scope.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">for</span>(m_uint i = <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(s) + 1; --i;) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> <a class="code" href="structMap__.html">Map</a> map = (<a class="code" href="map_8h.html#adaee5c17ed34aef3d0c09d1879ecf54d">Map</a>)&amp;<a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(s, i - 1);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">for</span> (m_uint i = <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(s) + 1; --i;) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> <a class="code" href="structMap__.html">Map</a>   map = (<a class="code" href="map_8h.html#adaee5c17ed34aef3d0c09d1879ecf54d">Map</a>)&amp;<a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(s, i - 1);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> <a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a> ret = <a class="code" href="map_8c.html#a71d601278ce6047bf156a0c3feb286c1">map_get</a>(map, xid);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span>(ret)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (ret)</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="map_8c.html#a71d601278ce6047bf156a0c3feb286c1">map_get</a>(&amp;s-&gt;map, (<a class="code" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)xid);</div>
@@ -580,7 +580,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="map_8c.html#a36f9d3abe43f7110686ab5ac1252acf4">map_release</a>((<a class="code" href="structMap__.html">Map</a>)&amp;back);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="ttc" id="amap_8c_html_a36f9d3abe43f7110686ab5ac1252acf4"><div class="ttname"><a href="map_8c.html#a36f9d3abe43f7110686ab5ac1252acf4">map_release</a></div><div class="ttdeci">ANN void map_release(const Map map)</div><div class="ttdef"><b>Definition:</b> <a href="map_8c_source.html#l00063">map.c:63</a></div></div>
-<div class="ttc" id="avector_8c_html_a1944f1d00058985c807dcbbb2b0b282e"><div class="ttname"><a href="vector_8c.html#a1944f1d00058985c807dcbbb2b0b282e">vector_pop</a></div><div class="ttdeci">ANN vtype vector_pop(const Vector v)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00062">vector.c:62</a></div></div>
+<div class="ttc" id="avector_8c_html_a1944f1d00058985c807dcbbb2b0b282e"><div class="ttname"><a href="vector_8c.html#a1944f1d00058985c807dcbbb2b0b282e">vector_pop</a></div><div class="ttdeci">ANN vtype vector_pop(const Vector v)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00061">vector.c:61</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -624,7 +624,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="map_8c.html#a26c3f3e23287b942f5474c67957d1224">map_init</a>((<a class="code" href="structMap__.html">Map</a>)&amp;<a class="code" href="container_8h.html#ae7a7357208b181b8a9ab8219f9381278">VPTR</a>(s, <a class="code" href="container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc">VLEN</a>(s) -1));</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="ttc" id="amap_8c_html_a26c3f3e23287b942f5474c67957d1224"><div class="ttname"><a href="map_8c.html#a26c3f3e23287b942f5474c67957d1224">map_init</a></div><div class="ttdeci">ANN void map_init(const Map a)</div><div class="ttdef"><b>Definition:</b> <a href="map_8c_source.html#l00009">map.c:9</a></div></div>
-<div class="ttc" id="avector_8c_html_a105f09f63450df357dab17e179fd51a4"><div class="ttname"><a href="vector_8c.html#a105f09f63450df357dab17e179fd51a4">vector_add</a></div><div class="ttdeci">ANN void vector_add(const Vector v, const vtype data)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00023">vector.c:23</a></div></div>
+<div class="ttc" id="avector_8c_html_a105f09f63450df357dab17e179fd51a4"><div class="ttname"><a href="vector_8c.html#a105f09f63450df357dab17e179fd51a4">vector_add</a></div><div class="ttdeci">ANN void vector_add(const Vector v, const vtype data)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00021">vector.c:21</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -118,15 +118,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00014">14</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                          {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">const</span> m_uint size = <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">if</span>(++<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &gt;= <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v)) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> m_uint cap = <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *=2;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a> = (m_bit*)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  memcpy(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + (<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - 1) * size, data, size);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00013">13</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                          {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">const</span> m_uint size = <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">if</span> (++<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &gt;= <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v)) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">const</span> m_uint cap = <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *= 2;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>           = (m_bit *)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  memcpy(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + (<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - 1) * size, data, size);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 <div class="ttc" id="am__vector_8h_html_a16c6eace6af476b197d1e2a231440d4b"><div class="ttname"><a href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a></div><div class="ttdeci">#define ARRAY_CAP(array)</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00011">m_vector.h:11</a></div></div>
 <div class="ttc" id="am__vector_8h_html_a2b7ea6aed3aa81a25f6b101cda6d735a"><div class="ttname"><a href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a></div><div class="ttdeci">#define ARRAY_OFFSET</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00007">m_vector.h:7</a></div></div>
 <div class="ttc" id="am__vector_8h_html_a44c876c78e2fc722c001dfc1a36b638f"><div class="ttname"><a href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a></div><div class="ttdeci">#define ARRAY_LEN(array)</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00009">m_vector.h:9</a></div></div>
@@ -163,16 +163,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00023">23</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                                                {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">const</span> m_uint size = <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">if</span>(++<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &gt;= <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v)) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> m_uint cap = <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *=2;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a> = (m_bit*)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  memmove(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + size, <a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v), <a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) * size);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  memmove(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v), data, size);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00022">22</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                                                {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">const</span> m_uint size = <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">if</span> (++<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &gt;= <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v)) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> m_uint cap = <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *= 2;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>           = (m_bit *)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  memmove(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + size, <a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v), <a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) * size);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  memmove(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v), data, size);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -209,16 +209,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00003">3</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                                                               {</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = (<a class="code" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a>*SZ_INT) + (len*size);</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  array-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>   = (m_bit*)<a class="code" href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a>(1, sz);</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  m_uint cap = 1;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordflow">while</span>(cap &lt; len)</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    cap *= 2;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(array)   = cap;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array)  = size;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(array) = len;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                                                              {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = (<a class="code" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> * SZ_INT) + (len * size);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  array-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>      = (m_bit *)<a class="code" href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a>(1, sz);</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  m_uint cap      = 1;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordflow">while</span> (cap &lt; len) cap *= 2;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(array)  = cap;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array) = size;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(array)  = len;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
 <div class="ttc" id="axalloc_8h_html_a494dd4d984870455b73e4b734a4a6d54"><div class="ttname"><a href="xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54">xcalloc</a></div><div class="ttdeci">static ANEW void * xcalloc(const m_uint n, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00019">xalloc.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -255,15 +254,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00050">50</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                                                           {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">size_t</span> size = <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span>(++<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &gt;= <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v)) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> m_uint cap = <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *=2;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a> = (m_bit*)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  memmove(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + (index+1) * size, <a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + index*size, (<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - index + 1)* size);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  memcpy(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + index*size, data, size);</div>
+<p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00049">49</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                                           {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">size_t</span> size = <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">if</span> (++<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &gt;= <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v)) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">const</span> m_uint cap = <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *= 2;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>           = (m_bit *)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  memmove(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + (index + 1) * size, <a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + index * size,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          (<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - index + 1) * size);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  memcpy(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + index * size, data, size);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -294,18 +294,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00038">38</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                      {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> m_uint size = <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">if</span>(index &lt; <a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - 1)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    memmove(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + index * size, <a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + (index + 1) * size,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      (<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - index - 1) *size);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  --<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &lt; <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) / 2) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> m_uint cap = <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) /= 2;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a> = (m_bit*)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00037">37</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                      {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> m_uint size = <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">if</span> (index &lt; <a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - 1)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    memmove(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + index * size, <a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + (index + 1) * size,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            (<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - index - 1) * size);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  --<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &lt; <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) / 2) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">const</span> m_uint cap = <a class="code" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) /= 2;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>           = (m_bit *)<a class="code" href="xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418">xrealloc</a>(v-&gt;<a class="code" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -341,11 +341,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00033">33</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                                          {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> m_uint size = <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  memcpy(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + i * size, data, size);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00032">32</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                                                          {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> m_uint size = <a class="code" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  memcpy(<a class="code" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + i * size, data, size);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
