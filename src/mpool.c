@@ -42,8 +42,7 @@ void mempool_end(MemPool mp) {
   LOOP_OPTIM
   for (m_uint i = mp->sz + 1; --i;) {
     struct pool *p = mp->pools[i - 1];
-    if (p)
-      mp_end(p);
+    if (p) mp_end(p);
   }
   xfree(mp->sizes);
   mp_end(mp->master_pool);
@@ -89,12 +88,10 @@ void *_mp_calloc2(struct pool *p, const m_bool zero) {
   if (p->next) {
     struct Recycle *const recycle = p->next;
     p->next                       = p->next->next;
-    if (zero)
-      memset(recycle, 0, p->obj_sz);
+    if (zero) memset(recycle, 0, p->obj_sz);
     return recycle;
   }
-  if (++p->obj_id == BLK(p->obj_sz))
-    _realloc(p);
+  if (++p->obj_id == BLK(p->obj_sz)) _realloc(p);
   return p->data[p->blk_id] + p->obj_id * p->obj_sz;
 }
 
@@ -137,8 +134,7 @@ MP_ALLOC(calloc, 1, xcalloc(1, size))
 
 void *mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next) {
   void *ret = _mp_malloc(mp, next);
-  if (ret != ptr)
-    memcpy(ret, ptr, curr);
+  if (ret != ptr) memcpy(ret, ptr, curr);
   mp_free2(mp, curr, ptr);
   return ret;
 }

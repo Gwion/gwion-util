@@ -13,16 +13,14 @@ ANN SymTable *new_symbol_table(MemPool p, const size_t sz) {
 ANN static void free_symbol(MemPool p, const Symbol s) {
   const Symbol next = s->next;
   mp_free2(p, sizeof(struct Symbol_ *) + strlen(s->name) + 1, s);
-  if (next)
-    free_symbol(p, next);
+  if (next) free_symbol(p, next);
 }
 
 ANN void free_symbols(SymTable *const ht) {
   LOOP_OPTIM
   for (uint i = ht->sz + 1; --i;) {
     const Symbol s = ht->sym[i - 1];
-    if (s)
-      free_symbol(ht->p, s);
+    if (s) free_symbol(ht->p, s);
   }
   MUTEX_CLEANUP(ht->mutex);
   mp_free2(ht->p, TABLE_SZ(ht->sz), ht);
@@ -44,8 +42,7 @@ ANN Symbol insert_symbol(SymTable *const ht, const m_str name) {
   Symbol *const addr  = &ht->sym[index];
   LOOP_OPTIM
   for (Symbol sym = syms; sym; sym = sym->next)
-    if (!strcmp(sym->name, name))
-      return sym;
+    if (!strcmp(sym->name, name)) return sym;
   MUTEX_LOCK(ht->mutex);
   *addr = mksymbol(ht->p, name, syms);
   MUTEX_UNLOCK(ht->mutex);

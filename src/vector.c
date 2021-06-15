@@ -37,14 +37,12 @@ ANN Vector vector_copy(MemPool p, const Vector v) {
 
 ANN m_int vector_find(const Vector v, const vtype data) {
   for (vtype i = VLEN(v) + 1; --i;)
-    if (VPTR(v, i - 1) == (vtype)data)
-      return (m_int)(i - 1);
+    if (VPTR(v, i - 1) == (vtype)data) return (m_int)(i - 1);
   return GW_ERROR;
 }
 
 ANN void vector_rem(const Vector v, const vtype index) {
-  if (index >= VLEN(v))
-    return;
+  if (index >= VLEN(v)) return;
   if (index < VLEN(v) - 1)
     memmove(v->ptr + index + OFFSET, v->ptr + index + OFFSET + 1,
             (VLEN(v) - index - 1) * SZ_INT);
@@ -54,8 +52,7 @@ ANN void vector_rem(const Vector v, const vtype index) {
 
 ANN void vector_rem2(const Vector v, const vtype data) {
   const m_int index = vector_find(v, data);
-  if (index > -1)
-    vector_rem(v, (vtype)index);
+  if (index > -1) vector_rem(v, (vtype)index);
 }
 
 ANN vtype vector_pop(const Vector v) {

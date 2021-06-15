@@ -7,8 +7,7 @@ ANN static inline Map scope_back(const Scope s) {
 ANN vtype scope_lookup0(const Scope s, const vtype xid) {
   const Map   map = scope_back(s);
   const vtype ret = map_get(map, xid);
-  if (!ret && VLEN(s) == 1)
-    return map_get(&s->map, (vtype)xid);
+  if (!ret && VLEN(s) == 1) return map_get(&s->map, (vtype)xid);
   return ret;
 }
 
@@ -16,8 +15,7 @@ ANN vtype scope_lookup1(const Scope s, const vtype xid) {
   for (m_uint i = VLEN(s) + 1; --i;) {
     const Map   map = (Map)&VPTR(s, i - 1);
     const vtype ret = map_get(map, xid);
-    if (ret)
-      return ret;
+    if (ret) return ret;
   }
   return map_get(&s->map, (vtype)xid);
 }
@@ -68,8 +66,7 @@ ANN m_bool scope_iter(struct scope_iter *iter, void *ret) {
   const m_uint vec   = vsize - iter->vec;
   Map          map   = &iter->s->map;
   if (vsize == iter->vec) {
-    if (iter->idx == size)
-      return GW_ERROR;
+    if (iter->idx == size) return GW_ERROR;
   } else {
     map  = (Map)&VPTR(iter->s, vec - 1);
     size = map_size(map);

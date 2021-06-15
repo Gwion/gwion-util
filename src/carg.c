@@ -8,8 +8,7 @@ ANN m_str option_argument(struct CArg *ca) {
   const char  key = ca->argv[ca->idx][1];
   const m_str str = (ca->argv[ca->idx][2] == '\0' ? ca->argv[++ca->idx]
                                                   : ca->argv[ca->idx] + 2);
-  if (!str)
-    gw_err(_("option '-%c' needs arguments\n"), key);
+  if (!str) gw_err(_("option '-%c' needs arguments\n"), key);
   return str;
 }
 
@@ -29,8 +28,7 @@ ANN static void _split_args(struct ArgSplitter *as) {
     const m_bool skip  = prev == '\\';
     const m_bool comma = c == ',';
     if (comma) {
-      if (!skip)
-        break;
+      if (!skip) break;
       --j;
     }
     buf[j++] = (prev = c);
@@ -38,8 +36,7 @@ ANN static void _split_args(struct ArgSplitter *as) {
   }
   buf[i] = '\0';
   vector_add(as->v, (vtype)mstrdup(as->mp, buf));
-  if (i == sz)
-    return;
+  if (i == sz) return;
   as->str += i + 1;
   _split_args(as);
 }

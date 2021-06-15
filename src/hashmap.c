@@ -7,14 +7,12 @@ ANN m_bit *hashmap_find(const HashMap hmap, m_bit *key, bool *ret) {
   const size_t  sz        = hashmap_value_size(hmap);
   for (size_t i = hmap->hash(key); i %= hmap->capacity; i++) {
     HashMapValue *const entry = hmap->data + i * sz;
-    if (!entry->set)
-      break;
+    if (!entry->set) break;
     if (entry->deleted && !tombstone) {
       tombstone = entry;
       continue;
     }
-    if (!hmap->eq(key, entry->data))
-      continue;
+    if (!hmap->eq(key, entry->data)) continue;
     if (tombstone) {
       memcpy(tombstone, entry, sz);
       entry->deleted = true;
@@ -30,8 +28,7 @@ ANN static HashMapValue *find(const HashMap hmap, const m_bit *key) {
   const size_t sz = sizeof(HashMapValue) + hmap->key_size + hmap->val_size;
   for (size_t i = hmap->hash(key); i %= hmap->capacity; i++) {
     HashMapValue *const entry = hmap->data + i * sz;
-    if (!entry->set)
-      return entry;
+    if (!entry->set) return entry;
   }
   return NULL;
 }
@@ -40,12 +37,9 @@ ANN m_bit *hashmap_remove(const HashMap hmap, m_bit *key, bool *ret) {
   const size_t sz = hashmap_value_size(hmap);
   for (size_t i = hmap->hash(key); i %= hmap->capacity; i++) {
     HashMapValue *const entry = hmap->data + i * sz;
-    if (!entry->set)
-      break;
-    if (!hmap->eq(key, entry->data))
-      continue;
-    if (entry->deleted)
-      break;
+    if (!entry->set) break;
+    if (!hmap->eq(key, entry->data)) continue;
+    if (entry->deleted) break;
     entry->deleted = true;
     hmap->count--;
     *ret = true;
@@ -64,8 +58,7 @@ ANN static void adjust_capacity(HashMap hmap, const size_t capacity) {
   hmap->count             = 0;
   for (size_t i = 0; i < old_cap; ++i) {
     HashMapValue *entry = old + i * sz;
-    if (!entry->set || entry->deleted)
-      continue;
+    if (!entry->set || entry->deleted) continue;
     HashMapValue *dest = find(hmap, entry->data);
     memcpy(dest, entry, sz);
     hmap->count++;
@@ -74,15 +67,14 @@ ANN static void adjust_capacity(HashMap hmap, const size_t capacity) {
 }
 
 ANN void hashmap_set(const HashMap hmap, m_bit *key, m_bit *val) {
-  const size_t sz = hashmap_value_size(hmap);
   if (hmap->count + 1 > hmap->capacity * HMAP_MAX_LOAD) {
     const size_t capacity = grow(hmap->capacity);
     adjust_capacity(hmap, capacity);
   }
+  const size_t sz = hashmap_value_size(hmap);
   for (size_t i = hmap->hash(key); i %= hmap->capacity; i++) {
     HashMapValue *const entry = hmap->data + i * sz;
-    if (entry->set && !entry->deleted && hmap->eq(key, entry->data))
-      continue;
+    if (entry->set && !entry->deleted && hmap->eq(key, entry->data)) continue;
     memcpy(entry->data, key, hmap->key_size);
     memcpy(entry->data + hmap->key_size, val, hmap->val_size);
     entry->set     = true;
