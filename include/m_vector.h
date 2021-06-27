@@ -28,7 +28,7 @@ void m_vector_init(const M_Vector array, const m_uint size, const m_uint len);
 
 ANN static inline M_Vector new_m_vector(MemPool p, const m_uint size,
                                         const m_uint len) {
-  const M_Vector array = mp_calloc(p, M_Vector);
+  const M_Vector array = (M_Vector)mp_calloc(p, M_Vector);
   m_vector_init(array, size, len);
   return array;
 }
