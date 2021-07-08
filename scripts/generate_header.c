@@ -4,10 +4,10 @@
 #include <string.h>
 #include <inttypes.h>
 
+
 #ifdef BUILD_ON_WINDOWS
 #define NUSED
 #include "windows_missing.h"
-#define __USE_MINGW_ANSI_STDIO 1
 #ifdef __MINGW64__
 #define SIZET_FMT "%tu"
 #else
@@ -15,6 +15,10 @@
 #endif
 #else
 #define SIZET_FMT "%zu"
+#endif
+
+#ifndef __USE_MINGW_ANSI_STDIO
+#define __USE_MINGW_ANSI_STDIO 1
 #endif
 
 #ifdef USE_DOUBLE
