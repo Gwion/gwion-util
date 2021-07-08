@@ -4,7 +4,6 @@
 #include <string.h>
 #include <inttypes.h>
 
-// gwion_util include.
 
 #ifdef BUILD_ON_WINDOWS
 #define NUSED
