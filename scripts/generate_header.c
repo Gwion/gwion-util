@@ -4,16 +4,19 @@
 #include <string.h>
 #include <inttypes.h>
 
+#include "./include/gwion_util.h"
+
+
 #ifdef BUILD_ON_WINDOWS
 #define NUSED
 #include "windows_missing.h"
-#define __USE_MINGW_ANSI_STDIO 1
 #ifdef __MINGW64__
 #define SIZET_FMT "%tu"
 #else
 #define SIZET_FMT "%tu"
 #endif
 #else
+#define __USE_MINGW_ANSI_STDIO 1
 #define SIZET_FMT "%zu"
 #endif
 

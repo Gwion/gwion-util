@@ -3,6 +3,11 @@
 */
 #ifndef __GWION_UTIL
 #define __GWION_UTIL
+
+#if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(__WIN32))
+#define BUILD_ON_WINDOWS
+#endif
+
 #include "defs.h"
 #include "gwion_thread.h"
 #include "err_msg.h"
