@@ -15,8 +15,11 @@
 #define SIZET_FMT "%tu"
 #endif
 #else
-#define __USE_MINGW_ANSI_STDIO 1
 #define SIZET_FMT "%zu"
+#endif
+
+#ifndef __USE_MINGW_ANSI_STDIO
+#define __USE_MINGW_ANSI_STDIO 1
 #endif
 
 #ifdef USE_DOUBLE
