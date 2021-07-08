@@ -20,7 +20,7 @@ FILE *fmemopen(void *buf, size_t len, const char *type NUSED) {
   int fd;
   FILE *fp;
   HANDLE h = fmemopen_handle();
-  if((fd  = _open_osfhandle((intptr_t)h, _O_APPEND)) < 0 || !(fp = fopen(fd, "w+"))) {
+  if((fd  = _open_osfhandle((intptr_t)h, _O_APPEND)) < 0 || !(fp = fdopen(fd, "w+"))) {
     CloseHandle(h);
     return NULL;
   }
