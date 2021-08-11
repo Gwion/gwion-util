@@ -24,7 +24,7 @@ ANN static inline m_bit *m_vector_addr(const M_Vector v, const m_uint i) {
   return &*(m_bit *)(ARRAY_PTR(v) + i * ARRAY_SIZE(v));
 }
 
-void m_vector_init(const struct M_Vector_ *array, const m_uint size, const m_uint len);
+void m_vector_init(const M_Vector array, const m_uint size, const m_uint len);
 
 ANN static inline M_Vector new_m_vector(MemPool p, const m_uint size,
                                         const m_uint len) {
@@ -33,7 +33,7 @@ ANN static inline M_Vector new_m_vector(MemPool p, const m_uint size,
   return array;
 }
 
-ANN static inline void m_vector_release(const struct M_Vector_ *a) { xfree(a->ptr); }
+ANN static inline void m_vector_release(M_Vector a) { xfree(a->ptr); }
 
 ANN static inline void free_m_vector(MemPool p, M_Vector a) {
   m_vector_release(a);
