@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['recycle_302',['Recycle',['../structRecycle.html',1,'']]]
+  ['recycle_0',['Recycle',['../structRecycle.html',1,'']]]
 ];

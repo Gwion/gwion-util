@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['xcalloc_450',['xcalloc',['../xalloc_8h.html#a494dd4d984870455b73e4b734a4a6d54',1,'xalloc.h']]],
-  ['xcheck_451',['xcheck',['../xalloc_8h.html#a8a952938a4a1e2c406d4bdbb75703cd3',1,'xalloc.h']]],
-  ['xmalloc_452',['xmalloc',['../xalloc_8h.html#a87bb89015552fd4b7419de594da1552e',1,'xalloc.h']]],
-  ['xrealloc_453',['xrealloc',['../xalloc_8h.html#a09b724ee1a10d3cba4ea0da021a8a418',1,'xalloc.h']]]
+  ['xcalloc_0',['xcalloc',['../xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d',1,'xalloc.h']]],
+  ['xcheck_1',['xcheck',['../xalloc_8h.html#a3ae4374ebe7566098b5c359a09908a20',1,'xalloc.h']]],
+  ['xmalloc_2',['xmalloc',['../xalloc_8h.html#a6d8d1e762ac32857e5fa1c1fb218befe',1,'xalloc.h']]],
+  ['xrealloc_3',['xrealloc',['../xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a',1,'xalloc.h']]]
 ];

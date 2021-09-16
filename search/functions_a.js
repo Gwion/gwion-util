@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['realpath_412',['realpath',['../windows__missing_8h.html#a4d5ab766b0a3255ac48750676f9bd078',1,'windows_missing.h']]],
-  ['round2szint_413',['round2szint',['../defs_8h.html#a00d855f8b9223de721c8d9e2ced68b5b',1,'defs.h']]]
+  ['realpath_0',['realpath',['../windows__missing_8h.html#a01d2f9a839a1dfc59db014b944daa26d',1,'windows_missing.h']]],
+  ['round2szint_1',['round2szint',['../defs_8h.html#a00d855f8b9223de721c8d9e2ced68b5b',1,'defs.h']]]
 ];
