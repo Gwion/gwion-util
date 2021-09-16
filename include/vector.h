@@ -30,7 +30,7 @@ ANN static inline vtype vector_size(Vector const v) { return VLEN(v); }
 
 extern ANN void  vector_add(const Vector, const vtype);
 extern ANN void  vector_rem(const Vector, const vtype);
-extern ANN void  vector_rem2(const Vector, const vtype);
+extern ANN bool  vector_rem2(const Vector, const vtype);
 extern ANN vtype vector_pop(const Vector);
 extern ANN void  vector_clear(const Vector);
 extern ANN void  free_vector(MemPool p, const Vector);

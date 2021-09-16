@@ -50,9 +50,12 @@ ANN void vector_rem(const Vector v, const vtype index) {
     v->ptr = (m_uint *)xrealloc(v->ptr, (VCAP(v) /= 2) * SZ_INT);
 }
 
-ANN void vector_rem2(const Vector v, const vtype data) {
+ANN bool vector_rem2(const Vector v, const vtype data) {
   const m_int index = vector_find(v, data);
-  if (index > -1) vector_rem(v, (vtype)index);
+  if (index > -1) {
+    vector_rem(v, (vtype)index);
+    return true;
+  } else return false;
 }
 
 ANN vtype vector_pop(const Vector v) {
