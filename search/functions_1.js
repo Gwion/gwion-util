@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['adjust_5fcapacity_0',['adjust_capacity',['../hashmap_8c.html#a5469c1532cc91db83060ec57bbc6f02f',1,'hashmap.c']]]
+  ['copyright_0',['Copyright',['../License_8txt.html#aa3ed601dee313116393d6e5efc58d658',1,'License.txt']]]
 ];
