@@ -2,7 +2,7 @@ var searchData=
 [
   ['n_0',['N',['../mpool_8c.html#a0240ac851181b84ac374872dc5434ee4',1,'mpool.c']]],
   ['name_1',['name',['../structSymbol__.html#a151a0f094ab23024dbe1b604a346d5de',1,'Symbol_']]],
-  ['nblk_2',['nblk',['../structpool.html#a0d7dbbde4ec2eae17cd8c8310caeafb3',1,'pool']]],
+  ['nblk_2',['nblk',['../structpool.html#a5f9eb90fb91008ac26901153cea88fa3',1,'pool']]],
   ['new_5fm_5fvector_3',['new_m_vector',['../m__vector_8h.html#a5601ee490dc2c9a8915af7e77ce94f9b',1,'m_vector.h']]],
   ['new_5fmap_4',['new_map',['../map_8c.html#abe97c1824252557041888c27bcbe9114',1,'new_map(MemPool p):&#160;map.c'],['../map_8h.html#a549d43a5cd3997b5ec09aba0af098084',1,'new_map(MemPool):&#160;map.c']]],
   ['new_5fpool_5',['new_pool',['../mpool_8c.html#aac5b0b6d2bc686180a4b55ab8a199902',1,'new_pool(const uint32_t obj_sz):&#160;mpool.c'],['../mpool_8h.html#aa92b21ba8007f24ab32157dd145e0635',1,'new_pool(const uint32_t elementSize):&#160;mpool.c']]],
