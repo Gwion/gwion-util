@@ -9,7 +9,6 @@ typedef struct MemPool_ {
   struct pool * master_pool;
   struct pool **pools;
   size_t *      sizes;
-  MUTEX_TYPE    mutex;
   size_t        sz;
 } * MemPool;
 

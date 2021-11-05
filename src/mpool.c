@@ -14,8 +14,8 @@ struct pool {
   volatile struct Recycle *next;
   uint32_t        obj_sz;
   uint32_t        obj_id;
-  int_fast32_t    blk_id;
-  uint_fast32_t   nblk;
+  int32_t    blk_id;
+  uint32_t   nblk;
 };
 
 ANN static void mp_set(struct pool *p, const uint32_t obj_sz) {
@@ -34,7 +34,6 @@ MemPool mempool_ini(const size_t sz) {
   p->sz          = 0;
   for (size_t j = SZ_INT, k = 0; sz >= k; k = j, j <<= 1) p->sizes[p->sz++] = j;
   p->pools = (struct pool **)xcalloc(p->sz, sizeof(struct pool *));
-  MUTEX_SETUP(p->mutex);
   return p;
 }
 
@@ -48,7 +47,6 @@ void mempool_end(MemPool mp) {
   mp_end(mp->master_pool);
   xfree(mp->master_pool);
   xfree(mp->pools);
-  MUTEX_CLEANUP(mp->mutex);
   xfree(mp);
 }
 
@@ -75,14 +73,14 @@ void mp_end(struct pool *p) {
 #define N 64
 static void _realloc(struct pool *p) {
   p->obj_id = 0;
-  if (++p->blk_id == (int_fast32_t)p->nblk) {
+  if (++p->blk_id == (int32_t)p->nblk) {
 //    p->nblk <<= 1;
 
 const uint32_t old = p->nblk;
     p->nblk += N;
     p->data = (uint8_t **)xrealloc(p->data, sizeof(uint8_t *) * p->nblk);
-//    for (uint_fast32_t i = (p->nblk >> 1) + 1; i < p->nblk; ++i)
-    for (uint_fast32_t i = old + 1; i < p->nblk; ++i)
+//    for (uint32_t i = (p->nblk >> 1) + 1; i < p->nblk; ++i)
+    for (uint32_t i = old + 1; i < p->nblk; ++i)
       p->data[i] = NULL;
   }
   p->data[p->blk_id] = (uint8_t *)xcalloc(BLK(p->obj_sz), p->obj_sz);
@@ -110,11 +108,9 @@ void _mp_free2(struct pool *p, void *ptr) {
 
 void _mp_free(MemPool mp, const m_uint size, void *ptr) {
   struct pool *p = mp_ini(mp, size);
-  if (p) {
-//    MUTEX_LOCK(mp->mutex);
+  if (p)
     _mp_free2(p, ptr);
-//    MUTEX_UNLOCK(mp->mutex);
-  } else
+  else
     xfree(ptr);
 }
 
@@ -126,10 +122,8 @@ struct pool *new_pool(const uint32_t obj_sz) {
 
 #define MP_ALLOC(name, zero, default)                                          \
   void *_mp_##name(MemPool mp, const m_uint size) {                            \
-/*    MUTEX_LOCK(mp->mutex);                                                     */\
     struct pool *p   = mp_ini(mp, size);                                       \
     void *       ret = p ? _mp_calloc2(p, zero) : (void *)default;             \
-/*    MUTEX_UNLOCK(mp->mutex);                                                   */\
     return ret;                                                                \
   }
 
