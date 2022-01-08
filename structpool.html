@@ -73,6 +73,8 @@ $(function() {
 Data Fields</h2></td></tr>
 <tr class="memitem:a2a9aad1422fe864107fb0659ba542059"><td class="memItemLeft" align="right" valign="top">uint8_t **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a></td></tr>
 <tr class="separator:a2a9aad1422fe864107fb0659ba542059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0684ff564873352bbdf5298ff3fce03f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gwion__thread_8h.html#a94ada48918e73511c91e3e0e885fe763">MUTEX_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpool.html#a0684ff564873352bbdf5298ff3fce03f">mutex</a></td></tr>
+<tr class="separator:a0684ff564873352bbdf5298ff3fce03f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add1ad091b63301b68f59855fe03ec8a2"><td class="memItemLeft" align="right" valign="top">volatile struct <a class="el" href="structRecycle.html">Recycle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a></td></tr>
 <tr class="separator:add1ad091b63301b68f59855fe03ec8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc8ba0dca58a81ef85bb426cc939fdb9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a></td></tr>
@@ -86,7 +88,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00012">12</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00015">15</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a19abc5ed8cf130331689224e3c1ba315" name="a19abc5ed8cf130331689224e3c1ba315"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19abc5ed8cf130331689224e3c1ba315">&#9670;&nbsp;</a></span>blk_id</h2>
@@ -100,7 +102,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00017">17</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00021">21</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
@@ -116,7 +118,23 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00013">13</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00016">16</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+
+</div>
+</div>
+<a id="a0684ff564873352bbdf5298ff3fce03f" name="a0684ff564873352bbdf5298ff3fce03f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0684ff564873352bbdf5298ff3fce03f">&#9670;&nbsp;</a></span>mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gwion__thread_8h.html#a94ada48918e73511c91e3e0e885fe763">MUTEX_TYPE</a> pool::mutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00017">17</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
@@ -132,7 +150,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00018">18</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00022">22</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
@@ -148,7 +166,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00014">14</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00018">18</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
@@ -164,7 +182,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00016">16</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00020">20</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
@@ -180,7 +198,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00015">15</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00019">19</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>

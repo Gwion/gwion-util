@@ -95,8 +95,6 @@ Macros</h2></td></tr>
 <tr class="separator:a5f3d17bf39f78da3422ca52e475d7724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11a149767ea542f429838209d7d53e32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(obj_sz)&#160;&#160;&#160;(obj_sz &lt; <a class="el" href="mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724">HUGE</a> ? <a class="el" href="mpool_8c.html#ab758143e4c42716c9db84073df81312c">SMALL_BLK</a> : <a class="el" href="mpool_8c.html#ab2086d86e283fe86d382a499afd48d81">BIG_BLK</a>)</td></tr>
 <tr class="separator:a11a149767ea542f429838209d7d53e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0240ac851181b84ac374872dc5434ee4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;&#160;&#160;64</td></tr>
-<tr class="separator:a0240ac851181b84ac374872dc5434ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a506ee1ccf7cac90f6eeea9b6d4ec0e44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a506ee1ccf7cac90f6eeea9b6d4ec0e44">MP_ALLOC</a>(name,  zero,  default)</td></tr>
 <tr class="separator:a506ee1ccf7cac90f6eeea9b6d4ec0e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -116,6 +114,8 @@ Functions</h2></td></tr>
 <tr class="separator:a2cbb62d9002025dc08ce3c26399ae0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4295f8e812cbe0c7314b1534bfaa554"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#ac4295f8e812cbe0c7314b1534bfaa554">_realloc</a> (struct <a class="el" href="structpool.html">pool</a> *p)</td></tr>
 <tr class="separator:ac4295f8e812cbe0c7314b1534bfaa554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90da8f3594a2d915df88a6e1de394d30"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a90da8f3594a2d915df88a6e1de394d30">__mp_calloc2</a> (struct <a class="el" href="structpool.html">pool</a> *p, const m_bool zero)</td></tr>
+<tr class="separator:a90da8f3594a2d915df88a6e1de394d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cee2e6c4e630ec364a438c033e87bb6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a8cee2e6c4e630ec364a438c033e87bb6">_mp_calloc2</a> (struct <a class="el" href="structpool.html">pool</a> *p, const m_bool zero)</td></tr>
 <tr class="separator:a8cee2e6c4e630ec364a438c033e87bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680f5d1ffafebdcd504df58e393a8b8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a680f5d1ffafebdcd504df58e393a8b8d">_mp_free2</a> (struct <a class="el" href="structpool.html">pool</a> *p, void *ptr)</td></tr>
@@ -140,7 +140,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00004">4</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00007">7</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
@@ -160,7 +160,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00006">6</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00009">9</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
@@ -176,7 +176,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00005">5</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00008">8</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
@@ -216,28 +216,12 @@ Functions</h2></td></tr>
 <div class="line">    void *       ret = p ? <a class="code hl_function" href="mpool_8c.html#a8cee2e6c4e630ec364a438c033e87bb6">_mp_calloc2</a>(p, zero) : (void *)default;             \</div>
 <div class="line">    return ret;                                                                \</div>
 <div class="line">  }</div>
-<div class="ttc" id="ampool_8c_html_a12eed9764d075a4b330e7fe06b723f5a"><div class="ttname"><a href="mpool_8c.html#a12eed9764d075a4b330e7fe06b723f5a">mp_ini</a></div><div class="ttdeci">ANN struct pool * mp_ini(MemPool mp, const uint32_t obj_sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00061">mpool.c:61</a></div></div>
-<div class="ttc" id="ampool_8c_html_a8cee2e6c4e630ec364a438c033e87bb6"><div class="ttname"><a href="mpool_8c.html#a8cee2e6c4e630ec364a438c033e87bb6">_mp_calloc2</a></div><div class="ttdeci">void * _mp_calloc2(struct pool *p, const m_bool zero)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00089">mpool.c:89</a></div></div>
+<div class="ttc" id="ampool_8c_html_a12eed9764d075a4b330e7fe06b723f5a"><div class="ttname"><a href="mpool_8c.html#a12eed9764d075a4b330e7fe06b723f5a">mp_ini</a></div><div class="ttdeci">ANN struct pool * mp_ini(MemPool mp, const uint32_t obj_sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00066">mpool.c:66</a></div></div>
+<div class="ttc" id="ampool_8c_html_a8cee2e6c4e630ec364a438c033e87bb6"><div class="ttname"><a href="mpool_8c.html#a8cee2e6c4e630ec364a438c033e87bb6">_mp_calloc2</a></div><div class="ttdeci">void * _mp_calloc2(struct pool *p, const m_bool zero)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00106">mpool.c:106</a></div></div>
 <div class="ttc" id="astructMemPool___html"><div class="ttname"><a href="structMemPool__.html">MemPool_</a></div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00008">mpool.h:8</a></div></div>
-<div class="ttc" id="astructpool_html"><div class="ttname"><a href="structpool.html">pool</a></div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00012">mpool.c:12</a></div></div>
+<div class="ttc" id="astructpool_html"><div class="ttname"><a href="structpool.html">pool</a></div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00015">mpool.c:15</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00123">123</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-
-</div>
-</div>
-<a id="a0240ac851181b84ac374872dc5434ee4" name="a0240ac851181b84ac374872dc5434ee4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0240ac851181b84ac374872dc5434ee4">&#9670;&nbsp;</a></span>N</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define N&#160;&#160;&#160;64</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00073">73</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00138">138</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
@@ -253,11 +237,71 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00003">3</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00006">6</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a90da8f3594a2d915df88a6e1de394d30" name="a90da8f3594a2d915df88a6e1de394d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90da8f3594a2d915df88a6e1de394d30">&#9670;&nbsp;</a></span>__mp_calloc2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * __mp_calloc2 </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structpool.html">pool</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const m_bool&#160;</td>
+          <td class="paramname"><em>zero</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00092">92</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                                             {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordflow">if</span> (p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code hl_struct" href="structRecycle.html">Recycle</a> *<span class="keyword">const</span> recycle = p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">    #ifdef USE_HELGRIND</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    VALGRIND_HG_CLEAN_MEMORY(recycle, p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>                       = p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>-&gt;<a class="code hl_variable" href="structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da">next</a>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> (zero) memset((<span class="keywordtype">void</span>*)recycle, 0, p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> (<span class="keywordtype">void</span>*)recycle;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordflow">if</span> (++p-&gt;<a class="code hl_variable" href="structpool.html#a6f6c005da280c6584dab780e7a0e2b77">obj_id</a> == <a class="code hl_define" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>)) <a class="code hl_function" href="mpool_8c.html#ac4295f8e812cbe0c7314b1534bfaa554">_realloc</a>(p);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordflow">return</span> p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[p-&gt;<a class="code hl_variable" href="structpool.html#a19abc5ed8cf130331689224e3c1ba315">blk_id</a>] + p-&gt;<a class="code hl_variable" href="structpool.html#a6f6c005da280c6584dab780e7a0e2b77">obj_id</a> * p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="ttc" id="ampool_8c_html_a11a149767ea542f429838209d7d53e32"><div class="ttname"><a href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a></div><div class="ttdeci">#define BLK(obj_sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00009">mpool.c:9</a></div></div>
+<div class="ttc" id="ampool_8c_html_ac4295f8e812cbe0c7314b1534bfaa554"><div class="ttname"><a href="mpool_8c.html#ac4295f8e812cbe0c7314b1534bfaa554">_realloc</a></div><div class="ttdeci">static void _realloc(struct pool *p)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00080">mpool.c:80</a></div></div>
+<div class="ttc" id="astructRecycle_html"><div class="ttname"><a href="structRecycle.html">Recycle</a></div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00011">mpool.c:11</a></div></div>
+<div class="ttc" id="astructRecycle_html_a6030ec7f917c5b6769b7b329fe1d01da"><div class="ttname"><a href="structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da">Recycle::next</a></div><div class="ttdeci">volatile struct Recycle * next</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00012">mpool.c:12</a></div></div>
+<div class="ttc" id="astructpool_html_a19abc5ed8cf130331689224e3c1ba315"><div class="ttname"><a href="structpool.html#a19abc5ed8cf130331689224e3c1ba315">pool::blk_id</a></div><div class="ttdeci">int32_t blk_id</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00021">mpool.c:21</a></div></div>
+<div class="ttc" id="astructpool_html_a2a9aad1422fe864107fb0659ba542059"><div class="ttname"><a href="structpool.html#a2a9aad1422fe864107fb0659ba542059">pool::data</a></div><div class="ttdeci">uint8_t ** data</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00016">mpool.c:16</a></div></div>
+<div class="ttc" id="astructpool_html_a6f6c005da280c6584dab780e7a0e2b77"><div class="ttname"><a href="structpool.html#a6f6c005da280c6584dab780e7a0e2b77">pool::obj_id</a></div><div class="ttdeci">uint32_t obj_id</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00020">mpool.c:20</a></div></div>
+<div class="ttc" id="astructpool_html_abc8ba0dca58a81ef85bb426cc939fdb9"><div class="ttname"><a href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">pool::obj_sz</a></div><div class="ttdeci">uint32_t obj_sz</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00019">mpool.c:19</a></div></div>
+<div class="ttc" id="astructpool_html_add1ad091b63301b68f59855fe03ec8a2"><div class="ttname"><a href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">pool::next</a></div><div class="ttdeci">volatile struct Recycle * next</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00018">mpool.c:18</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a8cee2e6c4e630ec364a438c033e87bb6" name="a8cee2e6c4e630ec364a438c033e87bb6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8cee2e6c4e630ec364a438c033e87bb6">&#9670;&nbsp;</a></span>_mp_calloc2()</h2>
 
@@ -284,26 +328,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00089">89</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                                                     {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordflow">if</span> (p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>) {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code hl_struct" href="structRecycle.html">Recycle</a> *<span class="keyword">const</span> recycle = p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>                       = p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>-&gt;<a class="code hl_variable" href="structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da">next</a>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (zero) memset((<span class="keywordtype">void</span>*)recycle, 0, p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> (<span class="keywordtype">void</span>*)recycle;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordflow">if</span> (++p-&gt;<a class="code hl_variable" href="structpool.html#a6f6c005da280c6584dab780e7a0e2b77">obj_id</a> == <a class="code hl_define" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>)) <a class="code hl_function" href="mpool_8c.html#ac4295f8e812cbe0c7314b1534bfaa554">_realloc</a>(p);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordflow">return</span> p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[p-&gt;<a class="code hl_variable" href="structpool.html#a19abc5ed8cf130331689224e3c1ba315">blk_id</a>] + p-&gt;<a class="code hl_variable" href="structpool.html#a6f6c005da280c6584dab780e7a0e2b77">obj_id</a> * p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
-<div class="ttc" id="ampool_8c_html_a11a149767ea542f429838209d7d53e32"><div class="ttname"><a href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a></div><div class="ttdeci">#define BLK(obj_sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00006">mpool.c:6</a></div></div>
-<div class="ttc" id="ampool_8c_html_ac4295f8e812cbe0c7314b1534bfaa554"><div class="ttname"><a href="mpool_8c.html#ac4295f8e812cbe0c7314b1534bfaa554">_realloc</a></div><div class="ttdeci">static void _realloc(struct pool *p)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00074">mpool.c:74</a></div></div>
-<div class="ttc" id="astructRecycle_html"><div class="ttname"><a href="structRecycle.html">Recycle</a></div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00008">mpool.c:8</a></div></div>
-<div class="ttc" id="astructRecycle_html_a6030ec7f917c5b6769b7b329fe1d01da"><div class="ttname"><a href="structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da">Recycle::next</a></div><div class="ttdeci">volatile struct Recycle * next</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00009">mpool.c:9</a></div></div>
-<div class="ttc" id="astructpool_html_a19abc5ed8cf130331689224e3c1ba315"><div class="ttname"><a href="structpool.html#a19abc5ed8cf130331689224e3c1ba315">pool::blk_id</a></div><div class="ttdeci">int32_t blk_id</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00017">mpool.c:17</a></div></div>
-<div class="ttc" id="astructpool_html_a2a9aad1422fe864107fb0659ba542059"><div class="ttname"><a href="structpool.html#a2a9aad1422fe864107fb0659ba542059">pool::data</a></div><div class="ttdeci">uint8_t ** data</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00013">mpool.c:13</a></div></div>
-<div class="ttc" id="astructpool_html_a6f6c005da280c6584dab780e7a0e2b77"><div class="ttname"><a href="structpool.html#a6f6c005da280c6584dab780e7a0e2b77">pool::obj_id</a></div><div class="ttdeci">uint32_t obj_id</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00016">mpool.c:16</a></div></div>
-<div class="ttc" id="astructpool_html_abc8ba0dca58a81ef85bb426cc939fdb9"><div class="ttname"><a href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">pool::obj_sz</a></div><div class="ttdeci">uint32_t obj_sz</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00015">mpool.c:15</a></div></div>
-<div class="ttc" id="astructpool_html_add1ad091b63301b68f59855fe03ec8a2"><div class="ttname"><a href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">pool::next</a></div><div class="ttdeci">volatile struct Recycle * next</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00014">mpool.c:14</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00106">106</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                                                     {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <a class="code hl_define" href="gwion__thread_8h.html#a441b021fa23aeb332a6aa860cb1aee7c">MUTEX_LOCK</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a0684ff564873352bbdf5298ff3fce03f">mutex</a>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">void</span> *ret = <a class="code hl_function" href="mpool_8c.html#a90da8f3594a2d915df88a6e1de394d30">__mp_calloc2</a>(p, zero);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <a class="code hl_define" href="gwion__thread_8h.html#a04bad901d24418b1d7e307edb0d38662">MUTEX_UNLOCK</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a0684ff564873352bbdf5298ff3fce03f">mutex</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+<div class="ttc" id="agwion__thread_8h_html_a04bad901d24418b1d7e307edb0d38662"><div class="ttname"><a href="gwion__thread_8h.html#a04bad901d24418b1d7e307edb0d38662">MUTEX_UNLOCK</a></div><div class="ttdeci">#define MUTEX_UNLOCK(x)</div><div class="ttdef"><b>Definition:</b> <a href="gwion__thread_8h_source.html#l00064">gwion_thread.h:64</a></div></div>
+<div class="ttc" id="agwion__thread_8h_html_a441b021fa23aeb332a6aa860cb1aee7c"><div class="ttname"><a href="gwion__thread_8h.html#a441b021fa23aeb332a6aa860cb1aee7c">MUTEX_LOCK</a></div><div class="ttdeci">#define MUTEX_LOCK(x)</div><div class="ttdef"><b>Definition:</b> <a href="gwion__thread_8h_source.html#l00062">gwion_thread.h:62</a></div></div>
+<div class="ttc" id="ampool_8c_html_a90da8f3594a2d915df88a6e1de394d30"><div class="ttname"><a href="mpool_8c.html#a90da8f3594a2d915df88a6e1de394d30">__mp_calloc2</a></div><div class="ttdeci">static void * __mp_calloc2(struct pool *p, const m_bool zero)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00092">mpool.c:92</a></div></div>
+<div class="ttc" id="astructpool_html_a0684ff564873352bbdf5298ff3fce03f"><div class="ttname"><a href="structpool.html#a0684ff564873352bbdf5298ff3fce03f">pool::mutex</a></div><div class="ttdeci">MUTEX_TYPE mutex</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00017">mpool.c:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -339,15 +374,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00109">109</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                                                        {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *p = <a class="code hl_function" href="mpool_8c.html#a12eed9764d075a4b330e7fe06b723f5a">mp_ini</a>(mp, size);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordflow">if</span> (p)</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_function" href="mpool_8c.html#a680f5d1ffafebdcd504df58e393a8b8d">_mp_free2</a>(p, ptr);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(ptr);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
-<div class="ttc" id="ampool_8c_html_a680f5d1ffafebdcd504df58e393a8b8d"><div class="ttname"><a href="mpool_8c.html#a680f5d1ffafebdcd504df58e393a8b8d">_mp_free2</a></div><div class="ttdeci">void _mp_free2(struct pool *p, void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00100">mpool.c:100</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00124">124</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                                                        {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *p = <a class="code hl_function" href="mpool_8c.html#a12eed9764d075a4b330e7fe06b723f5a">mp_ini</a>(mp, size);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keywordflow">if</span> (p)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_function" href="mpool_8c.html#a680f5d1ffafebdcd504df58e393a8b8d">_mp_free2</a>(p, ptr);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(ptr);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
+<div class="ttc" id="ampool_8c_html_a680f5d1ffafebdcd504df58e393a8b8d"><div class="ttname"><a href="mpool_8c.html#a680f5d1ffafebdcd504df58e393a8b8d">_mp_free2</a></div><div class="ttdeci">void _mp_free2(struct pool *p, void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00113">mpool.c:113</a></div></div>
 <div class="ttc" id="axalloc_8h_html_a39ef228c1684eb7b3e198e83e70eff1b"><div class="ttname"><a href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a></div><div class="ttdeci">#define xfree(a)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00028">xalloc.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -378,15 +413,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00100">100</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                                          {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code hl_struct" href="structRecycle.html">Recycle</a> *<a class="code hl_variable" href="structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da">next</a> = p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#ifdef POOL_CHECK</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  memset(ptr, 0, p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>       = ptr;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>-&gt;<a class="code hl_variable" href="structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da">next</a> = <a class="code hl_variable" href="structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da">next</a>;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00113">113</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                                          {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_define" href="gwion__thread_8h.html#a441b021fa23aeb332a6aa860cb1aee7c">MUTEX_LOCK</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a0684ff564873352bbdf5298ff3fce03f">mutex</a>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keyword">volatile</span> <span class="keyword">struct </span><a class="code hl_struct" href="structRecycle.html">Recycle</a> *<a class="code hl_variable" href="structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da">next</a> = p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#ifdef POOL_CHECK</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  memset(ptr, 0, p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>       = ptr;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>-&gt;<a class="code hl_variable" href="structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da">next</a> = <a class="code hl_variable" href="structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da">next</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <a class="code hl_define" href="gwion__thread_8h.html#a04bad901d24418b1d7e307edb0d38662">MUTEX_UNLOCK</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a0684ff564873352bbdf5298ff3fce03f">mutex</a>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -414,23 +451,19 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00074">74</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                                     {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a6f6c005da280c6584dab780e7a0e2b77">obj_id</a> = 0;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">if</span> (++p-&gt;<a class="code hl_variable" href="structpool.html#a19abc5ed8cf130331689224e3c1ba315">blk_id</a> == (int32_t)p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a>) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">//    p-&gt;nblk &lt;&lt;= 1;</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">const</span> uint32_t old = p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a> += <a class="code hl_define" href="mpool_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a> = (uint8_t **)<a class="code hl_function" href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>, <span class="keyword">sizeof</span>(uint8_t *) * p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a>);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">//    for (uint32_t i = (p-&gt;nblk &gt;&gt; 1) + 1; i &lt; p-&gt;nblk; ++i)</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">for</span> (uint32_t i = old + 1; i &lt; p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a>; ++i)</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[i] = NULL;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[p-&gt;<a class="code hl_variable" href="structpool.html#a19abc5ed8cf130331689224e3c1ba315">blk_id</a>] = (uint8_t *)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(<a class="code hl_define" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>), p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
-<div class="ttc" id="ampool_8c_html_a0240ac851181b84ac374872dc5434ee4"><div class="ttname"><a href="mpool_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a></div><div class="ttdeci">#define N</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00073">mpool.c:73</a></div></div>
-<div class="ttc" id="astructpool_html_a5f9eb90fb91008ac26901153cea88fa3"><div class="ttname"><a href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">pool::nblk</a></div><div class="ttdeci">uint32_t nblk</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00018">mpool.c:18</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00080">80</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                                     {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a6f6c005da280c6584dab780e7a0e2b77">obj_id</a> = 0;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordflow">if</span> (++p-&gt;<a class="code hl_variable" href="structpool.html#a19abc5ed8cf130331689224e3c1ba315">blk_id</a> == (int32_t)p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a>) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">const</span> uint32_t nblk = p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a> + 1;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a> &lt;&lt;= 1;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a> = (uint8_t **)<a class="code hl_function" href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>, <span class="keyword">sizeof</span>(uint8_t *) * p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">for</span> (uint32_t i = nblk; i &lt; p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a>; ++i)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[i] = NULL;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[p-&gt;<a class="code hl_variable" href="structpool.html#a19abc5ed8cf130331689224e3c1ba315">blk_id</a>] = (uint8_t *)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(<a class="code hl_define" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>), p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
+<div class="ttc" id="astructpool_html_a5f9eb90fb91008ac26901153cea88fa3"><div class="ttname"><a href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">pool::nblk</a></div><div class="ttdeci">uint32_t nblk</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00022">mpool.c:22</a></div></div>
 <div class="ttc" id="axalloc_8h_html_a622b9e861d9862103ff0e44808c7516d"><div class="ttname"><a href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a></div><div class="ttdeci">static ANEW void * xcalloc(const m_uint n, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00018">xalloc.h:18</a></div></div>
 <div class="ttc" id="axalloc_8h_html_ac5fccae0c6946cbf65af70071f34659a"><div class="ttname"><a href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a></div><div class="ttdeci">static ANEW void * xrealloc(void *p, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00023">xalloc.h:23</a></div></div>
 </div><!-- fragment -->
@@ -452,21 +485,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00040">40</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                             {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <a class="code hl_define" href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">LOOP_OPTIM</a></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordflow">for</span> (m_uint i = mp-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a> + 1; --i;) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *p = mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a>[i - 1];</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> (p) <a class="code hl_function" href="mpool_8c.html#a2cbb62d9002025dc08ce3c26399ae0ba">mp_end</a>(p);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_function" href="mpool_8c.html#a2cbb62d9002025dc08ce3c26399ae0ba">mp_end</a>(mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b">master_pool</a>);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b">master_pool</a>);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(mp);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00045">45</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                             {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_define" href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">LOOP_OPTIM</a></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">for</span> (m_uint i = mp-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a> + 1; --i;) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *p = mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a>[i - 1];</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (p) <a class="code hl_function" href="mpool_8c.html#a2cbb62d9002025dc08ce3c26399ae0ba">mp_end</a>(p);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_function" href="mpool_8c.html#a2cbb62d9002025dc08ce3c26399ae0ba">mp_end</a>(mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b">master_pool</a>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b">master_pool</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(mp);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
 <div class="ttc" id="adefs_8h_html_a987623b00adaf8b6ddf4c54375bf703a"><div class="ttname"><a href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">LOOP_OPTIM</a></div><div class="ttdeci">#define LOOP_OPTIM</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00040">defs.h:40</a></div></div>
-<div class="ttc" id="ampool_8c_html_a2cbb62d9002025dc08ce3c26399ae0ba"><div class="ttname"><a href="mpool_8c.html#a2cbb62d9002025dc08ce3c26399ae0ba">mp_end</a></div><div class="ttdeci">void mp_end(struct pool *p)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00069">mpool.c:69</a></div></div>
+<div class="ttc" id="ampool_8c_html_a2cbb62d9002025dc08ce3c26399ae0ba"><div class="ttname"><a href="mpool_8c.html#a2cbb62d9002025dc08ce3c26399ae0ba">mp_end</a></div><div class="ttdeci">void mp_end(struct pool *p)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00074">mpool.c:74</a></div></div>
 <div class="ttc" id="astructMemPool___html_a6dad43f83b186be20173364333b277dd"><div class="ttname"><a href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">MemPool_::sizes</a></div><div class="ttdeci">size_t * sizes</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00011">mpool.h:11</a></div></div>
 <div class="ttc" id="astructMemPool___html_a79efc84b47401123ccf28b3f1dadd3f4"><div class="ttname"><a href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">MemPool_::pools</a></div><div class="ttdeci">struct pool ** pools</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00010">mpool.h:10</a></div></div>
 <div class="ttc" id="astructMemPool___html_a9bbb7dc5f44f5497a8604479bb73273b"><div class="ttname"><a href="structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b">MemPool_::master_pool</a></div><div class="ttdeci">struct pool * master_pool</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00009">mpool.h:9</a></div></div>
@@ -490,17 +523,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00030">30</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                                     {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_struct" href="structMemPool__.html">MemPool</a> p      = (<a class="code hl_typedef" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a>)<a class="code hl_function" href="xalloc_8h.html#a6d8d1e762ac32857e5fa1c1fb218befe">xmalloc</a>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structMemPool__.html">MemPool_</a>));</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b">master_pool</a> = <a class="code hl_function" href="mpool_8c.html#aac5b0b6d2bc686180a4b55ab8a199902">new_pool</a>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structMemPool__.html">MemPool_</a>));</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>       = <a class="code hl_function" href="xalloc_8h.html#a6d8d1e762ac32857e5fa1c1fb218befe">xmalloc</a>((log2(sz) - 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">size_t</span>));</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>          = 0;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = SZ_INT, k = 0; sz &gt;= k; k = j, j &lt;&lt;= 1) p-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>[p-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>++] = j;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a> = (<span class="keyword">struct</span> <a class="code hl_struct" href="structpool.html">pool</a> **)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(p-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structpool.html">pool</a> *));</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordflow">return</span> p;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
-<div class="ttc" id="ampool_8c_html_aac5b0b6d2bc686180a4b55ab8a199902"><div class="ttname"><a href="mpool_8c.html#aac5b0b6d2bc686180a4b55ab8a199902">new_pool</a></div><div class="ttdeci">struct pool * new_pool(const uint32_t obj_sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00117">mpool.c:117</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00035">35</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                     {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_struct" href="structMemPool__.html">MemPool</a> p      = (<a class="code hl_typedef" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a>)<a class="code hl_function" href="xalloc_8h.html#a6d8d1e762ac32857e5fa1c1fb218befe">xmalloc</a>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structMemPool__.html">MemPool_</a>));</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b">master_pool</a> = <a class="code hl_function" href="mpool_8c.html#aac5b0b6d2bc686180a4b55ab8a199902">new_pool</a>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structpool.html">pool</a>));</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>       = <a class="code hl_function" href="xalloc_8h.html#a6d8d1e762ac32857e5fa1c1fb218befe">xmalloc</a>((log2(sz) - 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">size_t</span>));</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>          = 0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = SZ_INT, k = 0; sz &gt;= k; k = j, j &lt;&lt;= 1) p-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>[p-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>++] = j;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a> = (<span class="keyword">struct</span> <a class="code hl_struct" href="structpool.html">pool</a> **)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(p-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structpool.html">pool</a> *));</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordflow">return</span> p;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="ttc" id="ampool_8c_html_aac5b0b6d2bc686180a4b55ab8a199902"><div class="ttname"><a href="mpool_8c.html#aac5b0b6d2bc686180a4b55ab8a199902">new_pool</a></div><div class="ttdeci">struct pool * new_pool(const uint32_t obj_sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00132">mpool.c:132</a></div></div>
 <div class="ttc" id="ampool_8h_html_ae4d9b6e55d40b65dbf81024805d1e8c3"><div class="ttname"><a href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a></div><div class="ttdeci">struct MemPool_ * MemPool</div></div>
 <div class="ttc" id="axalloc_8h_html_a6d8d1e762ac32857e5fa1c1fb218befe"><div class="ttname"><a href="xalloc_8h.html#a6d8d1e762ac32857e5fa1c1fb218befe">xmalloc</a></div><div class="ttdeci">static ANEW void * xmalloc(const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00013">xalloc.h:13</a></div></div>
 </div><!-- fragment -->
@@ -546,14 +579,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00053">53</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                                                         {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *p = (<span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *)<a class="code hl_function" href="mpool_8c.html#a8cee2e6c4e630ec364a438c033e87bb6">_mp_calloc2</a>(mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b">master_pool</a>, 0);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_function" href="mpool_8c.html#a33f52e2aeebb0b64d361b98a5c8b9c2d">mp_set</a>(p, <a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a>[idx] = p;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordflow">return</span> p;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
-<div class="ttc" id="ampool_8c_html_a33f52e2aeebb0b64d361b98a5c8b9c2d"><div class="ttname"><a href="mpool_8c.html#a33f52e2aeebb0b64d361b98a5c8b9c2d">mp_set</a></div><div class="ttdeci">static ANN void mp_set(struct pool *p, const uint32_t obj_sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00021">mpool.c:21</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00058">58</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                                         {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *p = (<span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *)<a class="code hl_function" href="mpool_8c.html#a8cee2e6c4e630ec364a438c033e87bb6">_mp_calloc2</a>(mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b">master_pool</a>, 0);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_function" href="mpool_8c.html#a33f52e2aeebb0b64d361b98a5c8b9c2d">mp_set</a>(p, <a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a>[idx] = p;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">return</span> p;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+<div class="ttc" id="ampool_8c_html_a33f52e2aeebb0b64d361b98a5c8b9c2d"><div class="ttname"><a href="mpool_8c.html#a33f52e2aeebb0b64d361b98a5c8b9c2d">mp_set</a></div><div class="ttdeci">static ANN void mp_set(struct pool *p, const uint32_t obj_sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00025">mpool.c:25</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -573,11 +606,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00069">69</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                            {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a> &amp;&amp; p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[i]; ++i) <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[i]);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00074">74</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                            {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <a class="code hl_define" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a0684ff564873352bbdf5298ff3fce03f">mutex</a>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a> &amp;&amp; p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[i]; ++i) <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[i]);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+<div class="ttc" id="agwion__thread_8h_html_a64ca321a1510fb750a1dbdc7990d056c"><div class="ttname"><a href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">MUTEX_CLEANUP</a></div><div class="ttdeci">#define MUTEX_CLEANUP(x)</div><div class="ttdef"><b>Definition:</b> <a href="gwion__thread_8h_source.html#l00057">gwion_thread.h:57</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -607,15 +642,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00061">61</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                                                           {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; mp-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>; ++i) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (obj_sz &lt;= mp-&gt;sizes[i])</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <span class="keywordflow">return</span> mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a>[i] ?: <a class="code hl_function" href="mpool_8c.html#aea49e922c09284eb4d4d6eb8b402ca01">mp_create</a>(mp, mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>[i], i);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
-<div class="ttc" id="ampool_8c_html_aea49e922c09284eb4d4d6eb8b402ca01"><div class="ttname"><a href="mpool_8c.html#aea49e922c09284eb4d4d6eb8b402ca01">mp_create</a></div><div class="ttdeci">static struct pool * mp_create(MemPool mp, const uint32_t obj_sz, const uint32_t idx)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00053">mpool.c:53</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00066">66</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                                           {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; mp-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>; ++i) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> (obj_sz &lt;= mp-&gt;sizes[i])</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">return</span> mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a>[i] ?: <a class="code hl_function" href="mpool_8c.html#aea49e922c09284eb4d4d6eb8b402ca01">mp_create</a>(mp, mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>[i], i);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+<div class="ttc" id="ampool_8c_html_aea49e922c09284eb4d4d6eb8b402ca01"><div class="ttname"><a href="mpool_8c.html#aea49e922c09284eb4d4d6eb8b402ca01">mp_create</a></div><div class="ttdeci">static struct pool * mp_create(MemPool mp, const uint32_t obj_sz, const uint32_t idx)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00058">mpool.c:58</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -657,13 +692,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00133">133</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                                                                              {</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keywordtype">void</span> *ret = <a class="code hl_function" href="mpool_8h.html#a536cd2b5da155dd3dc010867fd7ccae1">_mp_malloc</a>(mp, next);</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keywordflow">if</span> (ret != ptr) memcpy(ret, ptr, curr);</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <a class="code hl_define" href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a>(mp, curr, ptr);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00148">148</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                                                                              {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keywordtype">void</span> *ret = <a class="code hl_function" href="mpool_8h.html#a536cd2b5da155dd3dc010867fd7ccae1">_mp_malloc</a>(mp, next);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="keywordflow">if</span> (ret != ptr) memcpy(ret, ptr, curr);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <a class="code hl_define" href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a>(mp, curr, ptr);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>}</div>
 <div class="ttc" id="ampool_8h_html_a10cec164a62999f9bb328b6bc2479cf8"><div class="ttname"><a href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a></div><div class="ttdeci">#define mp_free2(p, sz, a)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
 <div class="ttc" id="ampool_8h_html_a536cd2b5da155dd3dc010867fd7ccae1"><div class="ttname"><a href="mpool_8h.html#a536cd2b5da155dd3dc010867fd7ccae1">_mp_malloc</a></div><div class="ttdeci">ANEW ANN void * _mp_malloc(MemPool, const m_uint) __attribute__((hot))</div></div>
 </div><!-- fragment -->
@@ -703,15 +738,17 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00021">21</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                                                              {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a> = obj_sz;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a6f6c005da280c6584dab780e7a0e2b77">obj_id</a> = <a class="code hl_define" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(obj_sz) - 1;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a19abc5ed8cf130331689224e3c1ba315">blk_id</a> = -1;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a>   = 1;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>   = NULL;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>   = (uint8_t **)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(1, <span class="keyword">sizeof</span>(uint8_t *));</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00025">25</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                                                              {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  p-&gt;<a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a> = obj_sz;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a6f6c005da280c6584dab780e7a0e2b77">obj_id</a> = <a class="code hl_define" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(obj_sz) - 1;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a19abc5ed8cf130331689224e3c1ba315">blk_id</a> = -1;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a>   = 1;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  p-&gt;<a class="code hl_variable" href="structpool.html#add1ad091b63301b68f59855fe03ec8a2">next</a>   = NULL;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>   = (uint8_t **)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(1, <span class="keyword">sizeof</span>(uint8_t *));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_define" href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a0684ff564873352bbdf5298ff3fce03f">mutex</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="ttc" id="agwion__thread_8h_html_a4c8c0786dbefcef7711a8bf23ef5a5e9"><div class="ttname"><a href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">MUTEX_SETUP</a></div><div class="ttdeci">#define MUTEX_SETUP(x)</div><div class="ttdef"><b>Definition:</b> <a href="gwion__thread_8h_source.html#l00049">gwion_thread.h:49</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -731,12 +768,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00117">117</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-<div class="fragment"><div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                             {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *p = (<span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *)<a class="code hl_function" href="xalloc_8h.html#a6d8d1e762ac32857e5fa1c1fb218befe">xmalloc</a>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structpool.html">pool</a>));</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <a class="code hl_function" href="mpool_8c.html#a33f52e2aeebb0b64d361b98a5c8b9c2d">mp_set</a>(p, <a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordflow">return</span> p;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00132">132</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+<div class="fragment"><div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                                             {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *p = (<span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *)<a class="code hl_function" href="xalloc_8h.html#a6d8d1e762ac32857e5fa1c1fb218befe">xmalloc</a>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structpool.html">pool</a>));</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <a class="code hl_function" href="mpool_8c.html#a33f52e2aeebb0b64d361b98a5c8b9c2d">mp_set</a>(p, <a class="code hl_variable" href="structpool.html#abc8ba0dca58a81ef85bb426cc939fdb9">obj_sz</a>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keywordflow">return</span> p;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
