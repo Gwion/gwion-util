@@ -26,7 +26,7 @@ obj := $(src:.c=.o)
 
 CFLAGS += -D_GNU_SOURCE
 
-all: options-show include/generated.h static
+all: options-show static
 
 options-show:
 	@$(call _options)
@@ -36,12 +36,6 @@ static: libgwion_util.a
 libgwion_util.a: ${obj}
 	@$(info linking $@)
 	@${AR} ${AR_OPT}
-
-include/generated.h: scripts/generate_header.c
-	$(info generating generated.h)
-	@${CC} ${CFLAGS} ${DFLAGS} scripts/generate_header.c -o generate_header
-	@./generate_header > include/generated.h
-	@rm generate_header
 
 clean:
 	$(info cleaning)

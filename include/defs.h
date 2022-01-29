@@ -78,7 +78,7 @@
 #include <math.h>
 #include <assert.h>
 #include <string.h>
-#include "generated.h"
+#include "gwcommon.h"
 
 typedef unsigned int uint;
 
