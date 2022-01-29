@@ -91,7 +91,7 @@ Macros</h2></td></tr>
 <tr class="separator:ab758143e4c42716c9db84073df81312c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2086d86e283fe86d382a499afd48d81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#ab2086d86e283fe86d382a499afd48d81">BIG_BLK</a>&#160;&#160;&#160;16</td></tr>
 <tr class="separator:ab2086d86e283fe86d382a499afd48d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f3d17bf39f78da3422ca52e475d7724"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724">HUGE</a>&#160;&#160;&#160;(64 * SZ_INT)</td></tr>
+<tr class="memitem:a5f3d17bf39f78da3422ca52e475d7724"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724">HUGE</a>&#160;&#160;&#160;(64 * <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>)</td></tr>
 <tr class="separator:a5f3d17bf39f78da3422ca52e475d7724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11a149767ea542f429838209d7d53e32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(obj_sz)&#160;&#160;&#160;(obj_sz &lt; <a class="el" href="mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724">HUGE</a> ? <a class="el" href="mpool_8c.html#ab758143e4c42716c9db84073df81312c">SMALL_BLK</a> : <a class="el" href="mpool_8c.html#ab2086d86e283fe86d382a499afd48d81">BIG_BLK</a>)</td></tr>
 <tr class="separator:a11a149767ea542f429838209d7d53e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,17 +114,17 @@ Functions</h2></td></tr>
 <tr class="separator:a2cbb62d9002025dc08ce3c26399ae0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4295f8e812cbe0c7314b1534bfaa554"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#ac4295f8e812cbe0c7314b1534bfaa554">_realloc</a> (struct <a class="el" href="structpool.html">pool</a> *p)</td></tr>
 <tr class="separator:ac4295f8e812cbe0c7314b1534bfaa554"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90da8f3594a2d915df88a6e1de394d30"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a90da8f3594a2d915df88a6e1de394d30">__mp_calloc2</a> (struct <a class="el" href="structpool.html">pool</a> *p, const m_bool zero)</td></tr>
+<tr class="memitem:a90da8f3594a2d915df88a6e1de394d30"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a90da8f3594a2d915df88a6e1de394d30">__mp_calloc2</a> (struct <a class="el" href="structpool.html">pool</a> *p, const <a class="el" href="gwcommon_8h.html#a6ce3f9f4d5e4f6f03b6d7be5226b045e">m_bool</a> zero)</td></tr>
 <tr class="separator:a90da8f3594a2d915df88a6e1de394d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cee2e6c4e630ec364a438c033e87bb6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a8cee2e6c4e630ec364a438c033e87bb6">_mp_calloc2</a> (struct <a class="el" href="structpool.html">pool</a> *p, const m_bool zero)</td></tr>
+<tr class="memitem:a8cee2e6c4e630ec364a438c033e87bb6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a8cee2e6c4e630ec364a438c033e87bb6">_mp_calloc2</a> (struct <a class="el" href="structpool.html">pool</a> *p, const <a class="el" href="gwcommon_8h.html#a6ce3f9f4d5e4f6f03b6d7be5226b045e">m_bool</a> zero)</td></tr>
 <tr class="separator:a8cee2e6c4e630ec364a438c033e87bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680f5d1ffafebdcd504df58e393a8b8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a680f5d1ffafebdcd504df58e393a8b8d">_mp_free2</a> (struct <a class="el" href="structpool.html">pool</a> *p, void *ptr)</td></tr>
 <tr class="separator:a680f5d1ffafebdcd504df58e393a8b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b287ec4e96434f9d09cbbcc7372ffd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a9b287ec4e96434f9d09cbbcc7372ffd3">_mp_free</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, const m_uint size, void *ptr)</td></tr>
+<tr class="memitem:a9b287ec4e96434f9d09cbbcc7372ffd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a9b287ec4e96434f9d09cbbcc7372ffd3">_mp_free</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> size, void *ptr)</td></tr>
 <tr class="separator:a9b287ec4e96434f9d09cbbcc7372ffd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac5b0b6d2bc686180a4b55ab8a199902"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structpool.html">pool</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#aac5b0b6d2bc686180a4b55ab8a199902">new_pool</a> (const uint32_t obj_sz)</td></tr>
 <tr class="separator:aac5b0b6d2bc686180a4b55ab8a199902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a350e2f3477250648c5475ce2d56821e4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a350e2f3477250648c5475ce2d56821e4">mp_realloc</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, void *ptr, const m_uint curr, const m_uint next)</td></tr>
+<tr class="memitem:a350e2f3477250648c5475ce2d56821e4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a350e2f3477250648c5475ce2d56821e4">mp_realloc</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, void *ptr, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> curr, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> next)</td></tr>
 <tr class="separator:a350e2f3477250648c5475ce2d56821e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -171,7 +171,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HUGE&#160;&#160;&#160;(64 * SZ_INT)</td>
+          <td class="memname">#define HUGE&#160;&#160;&#160;(64 * <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -211,11 +211,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordtype">void</span> *_mp_##name(<a class="code hl_struct" href="structMemPool__.html">MemPool</a> mp, <span class="keyword">const</span> m_uint size) {                            \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordtype">void</span> *_mp_##name(<a class="code hl_struct" href="structMemPool__.html">MemPool</a> mp, <span class="keyword">const</span> <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> size) {                            \</div>
 <div class="line">    struct <a class="code hl_struct" href="structpool.html">pool</a> *p   = <a class="code hl_function" href="mpool_8c.html#a12eed9764d075a4b330e7fe06b723f5a">mp_ini</a>(mp, size);                                       \</div>
 <div class="line">    void *       ret = p ? <a class="code hl_function" href="mpool_8c.html#a8cee2e6c4e630ec364a438c033e87bb6">_mp_calloc2</a>(p, zero) : (void *)default;             \</div>
 <div class="line">    return ret;                                                                \</div>
 <div class="line">  }</div>
+<div class="ttc" id="agwcommon_8h_html_a50651144ce12bd2634f6bc9591e6b062"><div class="ttname"><a href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a></div><div class="ttdeci">uintptr_t m_uint</div><div class="ttdef"><b>Definition:</b> <a href="gwcommon_8h_source.html#l00011">gwcommon.h:11</a></div></div>
 <div class="ttc" id="ampool_8c_html_a12eed9764d075a4b330e7fe06b723f5a"><div class="ttname"><a href="mpool_8c.html#a12eed9764d075a4b330e7fe06b723f5a">mp_ini</a></div><div class="ttdeci">ANN struct pool * mp_ini(MemPool mp, const uint32_t obj_sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00066">mpool.c:66</a></div></div>
 <div class="ttc" id="ampool_8c_html_a8cee2e6c4e630ec364a438c033e87bb6"><div class="ttname"><a href="mpool_8c.html#a8cee2e6c4e630ec364a438c033e87bb6">_mp_calloc2</a></div><div class="ttdeci">void * _mp_calloc2(struct pool *p, const m_bool zero)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00106">mpool.c:106</a></div></div>
 <div class="ttc" id="astructMemPool___html"><div class="ttname"><a href="structMemPool__.html">MemPool_</a></div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00008">mpool.h:8</a></div></div>
@@ -260,7 +261,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_bool&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a6ce3f9f4d5e4f6f03b6d7be5226b045e">m_bool</a>&#160;</td>
           <td class="paramname"><em>zero</em>&#160;</td>
         </tr>
         <tr>
@@ -317,7 +318,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_bool&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a6ce3f9f4d5e4f6f03b6d7be5226b045e">m_bool</a>&#160;</td>
           <td class="paramname"><em>zero</em>&#160;</td>
         </tr>
         <tr>
@@ -357,7 +358,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_uint&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
@@ -488,7 +489,7 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00045">45</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 <div class="fragment"><div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                             {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_define" href="defs_8h.html#a987623b00adaf8b6ddf4c54375bf703a">LOOP_OPTIM</a></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">for</span> (m_uint i = mp-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a> + 1; --i;) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">for</span> (<a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> i = mp-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a> + 1; --i;) {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structpool.html">pool</a> *p = mp-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a>[i - 1];</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (p) <a class="code hl_function" href="mpool_8c.html#a2cbb62d9002025dc08ce3c26399ae0ba">mp_end</a>(p);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
@@ -529,10 +530,11 @@ Functions</h2></td></tr>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b">master_pool</a> = <a class="code hl_function" href="mpool_8c.html#aac5b0b6d2bc686180a4b55ab8a199902">new_pool</a>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structpool.html">pool</a>));</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>       = <a class="code hl_function" href="xalloc_8h.html#a6d8d1e762ac32857e5fa1c1fb218befe">xmalloc</a>((log2(sz) - 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">size_t</span>));</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>          = 0;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = SZ_INT, k = 0; sz &gt;= k; k = j, j &lt;&lt;= 1) p-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>[p-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>++] = j;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = <a class="code hl_define" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>, k = 0; sz &gt;= k; k = j, j &lt;&lt;= 1) p-&gt;<a class="code hl_variable" href="structMemPool__.html#a6dad43f83b186be20173364333b277dd">sizes</a>[p-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>++] = j;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  p-&gt;<a class="code hl_variable" href="structMemPool__.html#a79efc84b47401123ccf28b3f1dadd3f4">pools</a> = (<span class="keyword">struct</span> <a class="code hl_struct" href="structpool.html">pool</a> **)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(p-&gt;<a class="code hl_variable" href="structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed">sz</a>, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structpool.html">pool</a> *));</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordflow">return</span> p;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="ttc" id="agwcommon_8h_html_a61ab0ac32d257c02bc3b3f12dfe668e9"><div class="ttname"><a href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a></div><div class="ttdeci">#define SZ_INT</div><div class="ttdef"><b>Definition:</b> <a href="gwcommon_8h_source.html#l00019">gwcommon.h:19</a></div></div>
 <div class="ttc" id="ampool_8c_html_aac5b0b6d2bc686180a4b55ab8a199902"><div class="ttname"><a href="mpool_8c.html#aac5b0b6d2bc686180a4b55ab8a199902">new_pool</a></div><div class="ttdeci">struct pool * new_pool(const uint32_t obj_sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00132">mpool.c:132</a></div></div>
 <div class="ttc" id="ampool_8h_html_ae4d9b6e55d40b65dbf81024805d1e8c3"><div class="ttname"><a href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a></div><div class="ttdeci">struct MemPool_ * MemPool</div></div>
 <div class="ttc" id="axalloc_8h_html_a6d8d1e762ac32857e5fa1c1fb218befe"><div class="ttname"><a href="xalloc_8h.html#a6d8d1e762ac32857e5fa1c1fb218befe">xmalloc</a></div><div class="ttdeci">static ANEW void * xmalloc(const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00013">xalloc.h:13</a></div></div>
@@ -675,13 +677,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_uint&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td>
           <td class="paramname"><em>curr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_uint&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td>
           <td class="paramname"><em>next</em>&#160;</td>
         </tr>
         <tr>

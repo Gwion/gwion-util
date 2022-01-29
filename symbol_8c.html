@@ -79,7 +79,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:acea55cc35d805592c3a507028614ed5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="symbol_8c.html#acea55cc35d805592c3a507028614ed5d">TABLE_SZ</a>(sz)&#160;&#160;&#160;(sizeof(struct <a class="el" href="structSymTable__.html">SymTable_</a>) + sz * SZ_INT)</td></tr>
+<tr class="memitem:acea55cc35d805592c3a507028614ed5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="symbol_8c.html#acea55cc35d805592c3a507028614ed5d">TABLE_SZ</a>(sz)&#160;&#160;&#160;(sizeof(struct <a class="el" href="structSymTable__.html">SymTable_</a>) + sz * <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>)</td></tr>
 <tr class="separator:acea55cc35d805592c3a507028614ed5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -90,9 +90,9 @@ Functions</h2></td></tr>
 <tr class="separator:a3cd2fe06c0c3c6ffd4c218f126922ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0d50c319c36cf405af39681ec630ead"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="symbol_8c.html#aa0d50c319c36cf405af39681ec630ead">free_symbols</a> (<a class="el" href="symbol_8h.html#ae300fdf4e3b772d3755da1aa41dfcf96">SymTable</a> *const ht)</td></tr>
 <tr class="separator:aa0d50c319c36cf405af39681ec630ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0df73efd7dba8292cf21fe28a3f4c10b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="symbol_8h.html#af5a7a75d6e13311eed0af65155ed4f9f">Symbol</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="symbol_8c.html#a0df73efd7dba8292cf21fe28a3f4c10b">mksymbol</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> p, const m_str name, const <a class="el" href="symbol_8h.html#af5a7a75d6e13311eed0af65155ed4f9f">Symbol</a> next)</td></tr>
+<tr class="memitem:a0df73efd7dba8292cf21fe28a3f4c10b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="symbol_8h.html#af5a7a75d6e13311eed0af65155ed4f9f">Symbol</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="symbol_8c.html#a0df73efd7dba8292cf21fe28a3f4c10b">mksymbol</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> p, const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a> name, const <a class="el" href="symbol_8h.html#af5a7a75d6e13311eed0af65155ed4f9f">Symbol</a> next)</td></tr>
 <tr class="separator:a0df73efd7dba8292cf21fe28a3f4c10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5bb1c7136e96401cf0be24858073316"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="symbol_8h.html#af5a7a75d6e13311eed0af65155ed4f9f">Symbol</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="symbol_8c.html#ae5bb1c7136e96401cf0be24858073316">insert_symbol</a> (<a class="el" href="symbol_8h.html#ae300fdf4e3b772d3755da1aa41dfcf96">SymTable</a> *const ht, const m_str name)</td></tr>
+<tr class="memitem:ae5bb1c7136e96401cf0be24858073316"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="symbol_8h.html#af5a7a75d6e13311eed0af65155ed4f9f">Symbol</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="symbol_8c.html#ae5bb1c7136e96401cf0be24858073316">insert_symbol</a> (<a class="el" href="symbol_8h.html#ae300fdf4e3b772d3755da1aa41dfcf96">SymTable</a> *const ht, const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a> name)</td></tr>
 <tr class="separator:ae5bb1c7136e96401cf0be24858073316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -107,7 +107,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">sz</td><td>)</td>
-          <td>&#160;&#160;&#160;(sizeof(struct <a class="el" href="structSymTable__.html">SymTable_</a>) + sz * SZ_INT)</td>
+          <td>&#160;&#160;&#160;(sizeof(struct <a class="el" href="structSymTable__.html">SymTable_</a>) + sz * <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -217,7 +217,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_str&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>&#160;</td>
           <td class="paramname"><em>name</em>&#160;</td>
         </tr>
         <tr>
@@ -266,7 +266,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_str&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>

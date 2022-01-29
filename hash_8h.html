@@ -106,7 +106,7 @@ Functions</h2></td></tr>
 <tr class="separator:a359e65a6cf2e55d73eef07aea2a8a37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa55a101821835a7e58aedb81b3ff28ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_8h.html#aa55a101821835a7e58aedb81b3ff28ed">hend</a> (const <a class="el" href="hash_8h.html#a0aca44ac0f8ffbde5d9891f0c61ed8a8">Hash</a>)</td></tr>
 <tr class="separator:aa55a101821835a7e58aedb81b3ff28ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69611d5ae5a93ab3ebf51a6c5f80f4c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_8h.html#a69611d5ae5a93ab3ebf51a6c5f80f4c8">hash</a> (const m_str s0)</td></tr>
+<tr class="memitem:a69611d5ae5a93ab3ebf51a6c5f80f4c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_8h.html#a69611d5ae5a93ab3ebf51a6c5f80f4c8">hash</a> (const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a> s0)</td></tr>
 <tr class="separator:a69611d5ae5a93ab3ebf51a6c5f80f4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -188,7 +188,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  ret_type prefix##<a class="code hl_define" href="defs_8h.html#a32a3cf3d9dd914f5aeeca5423c157934">_</a>##func(<span class="keyword">const</span> <a class="code hl_struct" href="structHash__.html">Hash</a> h, argtype arg) {                        \</div>
-<div class="line">    const <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> idx = <a class="code hl_function" href="hash_8h.html#a69611d5ae5a93ab3ebf51a6c5f80f4c8">hash</a>((m_str)arg) % h-&gt;<a class="code hl_variable" href="structHash__.html#ab5ac2ac9dfadbf988ede869ee99f46b7">size</a>;                       \</div>
+<div class="line">    const <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> idx = <a class="code hl_function" href="hash_8h.html#a69611d5ae5a93ab3ebf51a6c5f80f4c8">hash</a>((<a class="code hl_typedef" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>)arg) % h-&gt;<a class="code hl_variable" href="structHash__.html#ab5ac2ac9dfadbf988ede869ee99f46b7">size</a>;                       \</div>
 <div class="line">    const type         sym = h-&gt;<a class="code hl_variable" href="structHash__.html#a6c2a132802bb258e67592ae22947087d">table</a>[idx];                                    \</div>
 <div class="line">    pre <span class="keywordflow">for</span> (type s = sym; s; s = s-&gt;next) {                                   \</div>
 <div class="line">      if (cmp) { action }                                                      \</div>
@@ -197,6 +197,7 @@ Functions</h2></td></tr>
 <div class="line">    ret;                                                                       \</div>
 <div class="line">  }</div>
 <div class="ttc" id="adefs_8h_html_a32a3cf3d9dd914f5aeeca5423c157934"><div class="ttname"><a href="defs_8h.html#a32a3cf3d9dd914f5aeeca5423c157934">_</a></div><div class="ttdeci">#define _(String)</div><div class="ttdef"><b>Definition:</b> <a href="defs_8h_source.html#l00013">defs.h:13</a></div></div>
+<div class="ttc" id="agwcommon_8h_html_a76d6a803836c90c07c636d3354a71e28"><div class="ttname"><a href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a></div><div class="ttdeci">char * m_str</div><div class="ttdef"><b>Definition:</b> <a href="gwcommon_8h_source.html#l00015">gwcommon.h:15</a></div></div>
 <div class="ttc" id="ahash_8h_html_a69611d5ae5a93ab3ebf51a6c5f80f4c8"><div class="ttname"><a href="hash_8h.html#a69611d5ae5a93ab3ebf51a6c5f80f4c8">hash</a></div><div class="ttdeci">ANN unsigned int hash(const m_str s0)</div></div>
 <div class="ttc" id="astructHash___html"><div class="ttname"><a href="structHash__.html">Hash_</a></div><div class="ttdef"><b>Definition:</b> <a href="hash_8h_source.html#l00007">hash.h:7</a></div></div>
 <div class="ttc" id="astructHash___html_a6c2a132802bb258e67592ae22947087d"><div class="ttname"><a href="structHash__.html#a6c2a132802bb258e67592ae22947087d">Hash_::table</a></div><div class="ttdeci">void ** table</div><div class="ttdef"><b>Definition:</b> <a href="hash_8h_source.html#l00008">hash.h:8</a></div></div>
@@ -261,7 +262,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="hash_8h.html#a981b1b023e8af27dc7f2cd67827e8d41">haction</a>(type, ret_type, m_str, macro, func, pre, !strcmp(s-&gt;name, arg),      \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="hash_8h.html#a981b1b023e8af27dc7f2cd67827e8d41">haction</a>(type, ret_type, <a class="code hl_typedef" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>, macro, func, pre, !strcmp(s-&gt;name, arg),      \</div>
 <div class="line">          action, post, ret)</div>
 <div class="ttc" id="ahash_8h_html_a981b1b023e8af27dc7f2cd67827e8d41"><div class="ttname"><a href="hash_8h.html#a981b1b023e8af27dc7f2cd67827e8d41">haction</a></div><div class="ttdeci">#define haction(type, ret_type, argtype, prefix, func, pre, cmp, action, post, ret)</div><div class="ttdef"><b>Definition:</b> <a href="hash_8h_source.html#l00018">hash.h:18</a></div></div>
 </div><!-- fragment -->
@@ -296,7 +297,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> unsigned int hash </td>
           <td>(</td>
-          <td class="paramtype">const m_str&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>&#160;</td>
           <td class="paramname"><em>s0</em></td><td>)</td>
           <td></td>
         </tr>

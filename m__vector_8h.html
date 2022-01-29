@@ -85,15 +85,15 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a2b7ea6aed3aa81a25f6b101cda6d735a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a>&#160;&#160;&#160;SZ_INT * 4</td></tr>
+<tr class="memitem:a2b7ea6aed3aa81a25f6b101cda6d735a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a>&#160;&#160;&#160;<a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a> * 4</td></tr>
 <tr class="separator:a2b7ea6aed3aa81a25f6b101cda6d735a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedaab00e92eb6a8b9797aba4c21f01c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(array)&#160;&#160;&#160;(array-&gt;ptr + <a class="el" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a>)</td></tr>
 <tr class="separator:aedaab00e92eb6a8b9797aba4c21f01c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44c876c78e2fc722c001dfc1a36b638f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(array)&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr)</td></tr>
+<tr class="memitem:a44c876c78e2fc722c001dfc1a36b638f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(array)&#160;&#160;&#160;*(<a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> *)(array-&gt;ptr)</td></tr>
 <tr class="separator:a44c876c78e2fc722c001dfc1a36b638f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70c57aae3eb654e205459b4362c8089a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array)&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr + SZ_INT)</td></tr>
+<tr class="memitem:a70c57aae3eb654e205459b4362c8089a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array)&#160;&#160;&#160;*(<a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> *)(array-&gt;ptr + <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>)</td></tr>
 <tr class="separator:a70c57aae3eb654e205459b4362c8089a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16c6eace6af476b197d1e2a231440d4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(array)&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr + SZ_INT * 2)</td></tr>
+<tr class="memitem:a16c6eace6af476b197d1e2a231440d4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(array)&#160;&#160;&#160;*(<a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> *)(array-&gt;ptr + <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a> * 2)</td></tr>
 <tr class="separator:a16c6eace6af476b197d1e2a231440d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9d80d4f70dc66a23e1e183281463323"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#af9d80d4f70dc66a23e1e183281463323">ARRAY_MIN</a>(array)&#160;&#160;&#160;(<a class="el" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array) * 4 + <a class="el" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a>)</td></tr>
 <tr class="separator:af9d80d4f70dc66a23e1e183281463323"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,27 +105,27 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a54192d99b4a48eddeb6516cd6a57036f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> m_uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a54192d99b4a48eddeb6516cd6a57036f">m_vector_size</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> v)</td></tr>
+<tr class="memitem:a54192d99b4a48eddeb6516cd6a57036f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a54192d99b4a48eddeb6516cd6a57036f">m_vector_size</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> v)</td></tr>
 <tr class="separator:a54192d99b4a48eddeb6516cd6a57036f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf8c2eadabf60cfbb7cfb0d880ad65ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#adf8c2eadabf60cfbb7cfb0d880ad65ab">m_vector_get</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> v, const m_uint i, void *c)</td></tr>
+<tr class="memitem:adf8c2eadabf60cfbb7cfb0d880ad65ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#adf8c2eadabf60cfbb7cfb0d880ad65ab">m_vector_get</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> v, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> i, void *c)</td></tr>
 <tr class="separator:adf8c2eadabf60cfbb7cfb0d880ad65ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe53c8963e117b8ba9666eadbf0e1d81"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> m_bit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#afe53c8963e117b8ba9666eadbf0e1d81">m_vector_addr</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> v, const m_uint i)</td></tr>
+<tr class="memitem:afe53c8963e117b8ba9666eadbf0e1d81"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#afe53c8963e117b8ba9666eadbf0e1d81">m_vector_addr</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> v, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> i)</td></tr>
 <tr class="separator:afe53c8963e117b8ba9666eadbf0e1d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4326ef5af5efea83a7095fbc5975f01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#aa4326ef5af5efea83a7095fbc5975f01">m_vector_init</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> array, const m_uint size, const m_uint len)</td></tr>
+<tr class="memitem:aa4326ef5af5efea83a7095fbc5975f01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#aa4326ef5af5efea83a7095fbc5975f01">m_vector_init</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> array, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> size, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> len)</td></tr>
 <tr class="separator:aa4326ef5af5efea83a7095fbc5975f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5601ee490dc2c9a8915af7e77ce94f9b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a5601ee490dc2c9a8915af7e77ce94f9b">new_m_vector</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> p, const m_uint size, const m_uint len)</td></tr>
+<tr class="memitem:a5601ee490dc2c9a8915af7e77ce94f9b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a5601ee490dc2c9a8915af7e77ce94f9b">new_m_vector</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> p, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> size, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> len)</td></tr>
 <tr class="separator:a5601ee490dc2c9a8915af7e77ce94f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd80e347006e1d33850a649fd5408e00"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#afd80e347006e1d33850a649fd5408e00">m_vector_release</a> (<a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> a)</td></tr>
 <tr class="separator:afd80e347006e1d33850a649fd5408e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae688ebd6a6b64dc587987c0cc0bf807b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#ae688ebd6a6b64dc587987c0cc0bf807b">free_m_vector</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> p, <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> a)</td></tr>
 <tr class="separator:ae688ebd6a6b64dc587987c0cc0bf807b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2076e136cf4de5134f737685192e4069"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a2076e136cf4de5134f737685192e4069">m_vector_set</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a>, const m_uint, const void *)</td></tr>
+<tr class="memitem:a2076e136cf4de5134f737685192e4069"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a2076e136cf4de5134f737685192e4069">m_vector_set</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a>, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>, const void *)</td></tr>
 <tr class="separator:a2076e136cf4de5134f737685192e4069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9ab9c36aa1f47db321e3fbd7b246466"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#ac9ab9c36aa1f47db321e3fbd7b246466">m_vector_add</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a>, const void *)</td></tr>
 <tr class="separator:ac9ab9c36aa1f47db321e3fbd7b246466"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf24f886f5db1f413c41915e509a14c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#abf24f886f5db1f413c41915e509a14c3">m_vector_rem</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a>, const m_uint)</td></tr>
+<tr class="memitem:abf24f886f5db1f413c41915e509a14c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#abf24f886f5db1f413c41915e509a14c3">m_vector_rem</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a>, const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>)</td></tr>
 <tr class="separator:abf24f886f5db1f413c41915e509a14c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3799a54ac8972f53a10556f211e7f33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#aa3799a54ac8972f53a10556f211e7f33">m_vector_insert</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> v, m_uint index, const void *data)</td></tr>
+<tr class="memitem:aa3799a54ac8972f53a10556f211e7f33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#aa3799a54ac8972f53a10556f211e7f33">m_vector_insert</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> v, <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> index, const void *data)</td></tr>
 <tr class="separator:aa3799a54ac8972f53a10556f211e7f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15286546d4f3db3885bd92971b5f300d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__vector_8h.html#a15286546d4f3db3885bd92971b5f300d">m_vector_add_front</a> (const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a> v, const void *data)</td></tr>
 <tr class="separator:a15286546d4f3db3885bd92971b5f300d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,7 +142,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">array</td><td>)</td>
-          <td>&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr + SZ_INT * 2)</td>
+          <td>&#160;&#160;&#160;*(<a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> *)(array-&gt;ptr + <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a> * 2)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -162,7 +162,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">array</td><td>)</td>
-          <td>&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr)</td>
+          <td>&#160;&#160;&#160;*(<a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> *)(array-&gt;ptr)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -198,7 +198,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ARRAY_OFFSET&#160;&#160;&#160;SZ_INT * 4</td>
+          <td class="memname">#define ARRAY_OFFSET&#160;&#160;&#160;<a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a> * 4</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -238,7 +238,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">array</td><td>)</td>
-          <td>&#160;&#160;&#160;*(m_uint *)(array-&gt;ptr + SZ_INT)</td>
+          <td>&#160;&#160;&#160;*(<a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> *)(array-&gt;ptr + <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -336,13 +336,15 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00013">13</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
 <div class="fragment"><div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                                                          {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">const</span> m_uint size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordflow">if</span> (++<a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &gt;= <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v)) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">const</span> m_uint cap = <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *= 2;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    v-&gt;ptr           = (m_bit *)<a class="code hl_function" href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a>(v-&gt;ptr, <a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> cap = <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *= 2;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    v-&gt;ptr           = (<a class="code hl_typedef" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *)<a class="code hl_function" href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a>(v-&gt;ptr, <a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  }</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  memcpy(<a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + (<a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - 1) * size, data, size);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="ttc" id="agwcommon_8h_html_a50651144ce12bd2634f6bc9591e6b062"><div class="ttname"><a href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a></div><div class="ttdeci">uintptr_t m_uint</div><div class="ttdef"><b>Definition:</b> <a href="gwcommon_8h_source.html#l00011">gwcommon.h:11</a></div></div>
+<div class="ttc" id="agwcommon_8h_html_aa7599a91057633a798bff79858db9b0b"><div class="ttname"><a href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a></div><div class="ttdeci">unsigned char m_bit</div><div class="ttdef"><b>Definition:</b> <a href="gwcommon_8h_source.html#l00012">gwcommon.h:12</a></div></div>
 <div class="ttc" id="am__vector_8h_html_a16c6eace6af476b197d1e2a231440d4b"><div class="ttname"><a href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a></div><div class="ttdeci">#define ARRAY_CAP(array)</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00011">m_vector.h:11</a></div></div>
 <div class="ttc" id="am__vector_8h_html_a2b7ea6aed3aa81a25f6b101cda6d735a"><div class="ttname"><a href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a></div><div class="ttdeci">#define ARRAY_OFFSET</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00007">m_vector.h:7</a></div></div>
 <div class="ttc" id="am__vector_8h_html_a44c876c78e2fc722c001dfc1a36b638f"><div class="ttname"><a href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a></div><div class="ttdeci">#define ARRAY_LEN(array)</div><div class="ttdef"><b>Definition:</b> <a href="m__vector_8h_source.html#l00009">m_vector.h:9</a></div></div>
@@ -380,10 +382,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00022">22</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
 <div class="fragment"><div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                                                                {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">const</span> m_uint size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">if</span> (++<a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &gt;= <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v)) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> m_uint cap = <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *= 2;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    v-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>           = (m_bit *)<a class="code hl_function" href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a>(v-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> cap = <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *= 2;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    v-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>           = (<a class="code hl_typedef" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *)<a class="code hl_function" href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a>(v-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  }</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  memmove(<a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + size, <a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v), <a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) * size);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  memmove(<a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v), data, size);</div>
@@ -402,7 +404,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> m_bit * m_vector_addr </td>
+          <td class="memname">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> * m_vector_addr </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a>&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -410,7 +412,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_uint&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td>
           <td class="paramname"><em>i</em>&#160;</td>
         </tr>
         <tr>
@@ -428,7 +430,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8h_source.html#l00023">23</a> of file <a class="el" href="m__vector_8h_source.html">m_vector.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                                                                         {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">return</span> &amp;*(m_bit *)(<a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + i * <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v));</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">return</span> &amp;*(<a class="code hl_typedef" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *)(<a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + i * <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v));</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div><!-- fragment -->
 </div>
@@ -451,7 +453,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_uint&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
@@ -475,7 +477,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8h_source.html#l00018">18</a> of file <a class="el" href="m__vector_8h_source.html">m_vector.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                                                                               {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">const</span> m_uint size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  memcpy(c, <a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + i * size, size);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 </div><!-- fragment -->
@@ -496,13 +498,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_uint&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_uint&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td>
           <td class="paramname"><em>len</em>&#160;</td>
         </tr>
         <tr>
@@ -515,14 +517,15 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00003">3</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
 <div class="fragment"><div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>                                                                              {</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = (<a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> * SZ_INT) + (len * size);</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>  array-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>      = (m_bit *)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(1, sz);</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  m_uint cap      = 1;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = (<a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> * <a class="code hl_define" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>) + (len * size);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>  array-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>      = (<a class="code hl_typedef" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(1, sz);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> cap      = 1;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  <span class="keywordflow">while</span> (cap &lt; len) cap *= 2;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(array)  = cap;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array) = size;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(array)  = len;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+<div class="ttc" id="agwcommon_8h_html_a61ab0ac32d257c02bc3b3f12dfe668e9"><div class="ttname"><a href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a></div><div class="ttdeci">#define SZ_INT</div><div class="ttdef"><b>Definition:</b> <a href="gwcommon_8h_source.html#l00019">gwcommon.h:19</a></div></div>
 <div class="ttc" id="axalloc_8h_html_a622b9e861d9862103ff0e44808c7516d"><div class="ttname"><a href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a></div><div class="ttdeci">static ANEW void * xcalloc(const m_uint n, const m_uint sz)</div><div class="ttdef"><b>Definition:</b> <a href="xalloc_8h_source.html#l00018">xalloc.h:18</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -542,7 +545,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">m_uint&#160;</td>
+          <td class="paramtype"><a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td>
           <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
@@ -563,8 +566,8 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                                                           {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">if</span> (++<a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &gt;= <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v)) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">const</span> m_uint cap = <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *= 2;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    v-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>           = (m_bit *)<a class="code hl_function" href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a>(v-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> cap = <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) *= 2;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    v-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>           = (<a class="code hl_typedef" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *)<a class="code hl_function" href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a>(v-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>, <a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  memmove(<a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + (index + 1) * size, <a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + index * size,</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>          (<a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - index + 1) * size);</div>
@@ -631,14 +634,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00037">37</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
 <div class="fragment"><div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                                                      {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">const</span> m_uint size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordflow">if</span> (index &lt; <a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - 1)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    memmove(<a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + index * size, <a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + (index + 1) * size,</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            (<a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) - index - 1) * size);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  --<a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordflow">if</span> (<a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(v) &lt; <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) / 2) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">const</span> m_uint cap = <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) /= 2;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    v-&gt;ptr           = (m_bit *)<a class="code hl_function" href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a>(v-&gt;ptr, <a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> cap = <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(v) /= 2;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    v-&gt;ptr           = (<a class="code hl_typedef" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *)<a class="code hl_function" href="xalloc_8h.html#ac5fccae0c6946cbf65af70071f34659a">xrealloc</a>(v-&gt;ptr, <a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
 </div><!-- fragment -->
@@ -678,7 +681,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00032">32</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
 <div class="fragment"><div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                                                                          {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">const</span> m_uint size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> size = <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(v);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  memcpy(<a class="code hl_define" href="m__vector_8h.html#aedaab00e92eb6a8b9797aba4c21f01c0">ARRAY_PTR</a>(v) + i * size, data, size);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 </div><!-- fragment -->
@@ -694,7 +697,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> m_uint m_vector_size </td>
+          <td class="memname">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> m_vector_size </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="m__vector_8h.html#ab3e038c47832627431a0ecd290bd8746">M_Vector</a>&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
@@ -733,13 +736,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_uint&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const m_uint&#160;</td>
+          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>&#160;</td>
           <td class="paramname"><em>len</em>&#160;</td>
         </tr>
         <tr>
