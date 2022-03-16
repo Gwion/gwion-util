@@ -4,12 +4,11 @@
 typedef struct M_Vector_ {
   m_bit *ptr;
 } * M_Vector;
-#define ARRAY_OFFSET      SZ_INT * 4
+#define ARRAY_OFFSET      SZ_INT * 3
 #define ARRAY_PTR(array)  (array->ptr + ARRAY_OFFSET)
 #define ARRAY_LEN(array)  *(m_uint *)(array->ptr)
 #define ARRAY_SIZE(array) *(m_uint *)(array->ptr + SZ_INT)
 #define ARRAY_CAP(array)  *(m_uint *)(array->ptr + SZ_INT * 2)
-#define ARRAY_MIN(array)  (ARRAY_SIZE(array) * 4 + ARRAY_OFFSET)
 
 ANN static inline m_uint m_vector_size(const M_Vector v) {
   return ARRAY_LEN(v);

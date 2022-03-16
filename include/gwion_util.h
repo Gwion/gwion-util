@@ -19,4 +19,5 @@
 #include "gwion_text.h"
 #include "mp_string.h"
 #include "carg.h"
+#include "mp_vector.h"
 #endif
