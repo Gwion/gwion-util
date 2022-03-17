@@ -24,14 +24,10 @@ ANN static inline void free_mp_vector(const MemPool mp, const uint32_t size, MP_
     mp_vector_resize(mp, (a), sizeof(type), (*(a))->cap * 2);    \
   *(type*)((*(a))->ptr + ((*a)->len - 1) * sizeof(type)) = data; \
 
-#define mp_vector_first(mp, a, type, data)                       \
-  MP_Vector *a = new_mp_vector(mp, sizeof(type), 1);             \
-  *(type*)a->ptr = data;
-
 #define mp_vector_at(a, type, index)                             \
-  (type*)(a->ptr + index * sizeof(type))
+  ((type*)(a->ptr + index * sizeof(type)))
 
 #define mp_vector_set(a, type, index, data)                       \
-  *(type*)(a->ptr + index * sizeof(type)) = data
+  *(type*)(a->ptr + index * sizeof(type)) = (data)
 
 #endif
