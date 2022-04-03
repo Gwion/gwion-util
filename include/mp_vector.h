@@ -9,14 +9,14 @@ typedef struct MP_Vector {
 
 ANN static inline void mp_vector_resize(const MemPool mp, MP_Vector **ap, const uint32_t size, const uint32_t cap) {
   MP_Vector *a = *ap;
-  *ap      = (MP_Vector *)mp_realloc(mp, a, sizeof(MP_Vector) + a->cap * size, sizeof(MP_Vector) + cap * size);
+  *ap      = (MP_Vector *)mp_realloc(mp, a, sizeof(MP_Vector) + (m_uint)(a->cap * size), sizeof(MP_Vector) + (m_uint)(cap * size));
   (*ap)->cap = cap;
 }
 
 ANN MP_Vector *new_mp_vector(const MemPool mp, const uint32_t size, const uint32_t len);
 
 ANN static inline void free_mp_vector(const MemPool mp, const uint32_t size, MP_Vector *a) {
-  mp_free2(mp, sizeof(MP_Vector) + a->cap * size, a);
+  mp_free2(mp, sizeof(MP_Vector) + (m_uint)(a->cap * size), a);
 }
 
 #define mp_vector_add(mp, a, type, data)                         \
