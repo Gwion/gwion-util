@@ -1,5 +1,4 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/Gwion/gwion-util?branch=master)](https://bettercodehub.com/)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![Build Status](https://travis-ci.org/Gwion/gwion-util.svg?branch=master)](https://travis-ci.org/Gwion/gwion-util)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGwion%2Fgwion-util.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FGwion%2Fgwion-util?ref=badge_shield)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/Gwion/gwion-util.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Gwion/gwion-util/context:cpp)
@@ -23,19 +22,3 @@ make
 ## TODO
   * improve hash (?)
   * list utilities
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/vemakereporter"><img src="https://avatars2.githubusercontent.com/u/49064208?v=4" width="100px;" alt="Vemake"/><br /><sub><b>Vemake</b></sub></a><br /><a href="https://github.com/Gwion/gwion-util/commits?author=vemakereporter" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
