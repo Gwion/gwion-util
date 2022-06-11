@@ -85,6 +85,10 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a78d699c7724c8b993572e6af1adf2772"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__vector_8h.html#a78d699c7724c8b993572e6af1adf2772">new_mp_vector</a>(mp,  type,  data)&#160;&#160;&#160;  new_mp_vector(mp, sizeof(type), data)</td></tr>
+<tr class="separator:a78d699c7724c8b993572e6af1adf2772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae46ac3b9ba1963e100866e0e4f26c757"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__vector_8h.html#ae46ac3b9ba1963e100866e0e4f26c757">free_mp_vector</a>(mp,  type,  data)&#160;&#160;&#160;  free_mp_vector(mp, sizeof(type), data)</td></tr>
+<tr class="separator:ae46ac3b9ba1963e100866e0e4f26c757"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaefbf1cfceda2a7a8a6db58728580b3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__vector_8h.html#aaefbf1cfceda2a7a8a6db58728580b3e">mp_vector_add</a>(mp,  a,  type,  data)</td></tr>
 <tr class="separator:aaefbf1cfceda2a7a8a6db58728580b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4810c6a2c48ed8db6aa78f233f063006"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__vector_8h.html#a4810c6a2c48ed8db6aa78f233f063006">mp_vector_at</a>(a,  type,  index)&#160;&#160;&#160;  ((type*)((a)-&gt;ptr + (index) * sizeof(type)))</td></tr>
@@ -107,6 +111,42 @@ Functions</h2></td></tr>
 <tr class="separator:a6d87a56ff6dd33d8afd40740ed9f2617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ae46ac3b9ba1963e100866e0e4f26c757" name="ae46ac3b9ba1963e100866e0e4f26c757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae46ac3b9ba1963e100866e0e4f26c757">&#9670;&nbsp;</a></span>free_mp_vector</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define free_mp_vector</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mp, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;  free_mp_vector(mp, sizeof(type), data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00025">25</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+
+</div>
+</div>
 <a id="aaefbf1cfceda2a7a8a6db58728580b3e" name="aaefbf1cfceda2a7a8a6db58728580b3e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaefbf1cfceda2a7a8a6db58728580b3e">&#9670;&nbsp;</a></span>mp_vector_add</h2>
 
@@ -148,7 +188,7 @@ Functions</h2></td></tr>
 <div class="line">    mp_vector_resize(mp, (a), <span class="keyword">sizeof</span>(type), (*(a))-&gt;cap * 2);    \</div>
 <div class="line">  *(type*)((*(a))-&gt;ptr + ((*a)-&gt;len - 1) * <span class="keyword">sizeof</span>(type)) = data; \</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00022">22</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00028">28</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
 
 </div>
 </div>
@@ -184,7 +224,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00027">27</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00033">33</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
 
 </div>
 </div>
@@ -226,7 +266,43 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00030">30</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00036">36</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+
+</div>
+</div>
+<a id="a78d699c7724c8b993572e6af1adf2772" name="a78d699c7724c8b993572e6af1adf2772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78d699c7724c8b993572e6af1adf2772">&#9670;&nbsp;</a></span>new_mp_vector</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define new_mp_vector</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mp, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;  new_mp_vector(mp, sizeof(type), data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00022">22</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
 
 </div>
 </div>

@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="mp__vector_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="gwion__util_8h.html">gwion_util.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#undef new_mp_vector</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="mp__vector_8c.html#afc1a747926c3acaf62e6ddd2944557ff">    3</a></span><a class="code hl_define" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a> *<a class="code hl_function" href="mp__vector_8c.html#afc1a747926c3acaf62e6ddd2944557ff">new_mp_vector</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structMemPool__.html">MemPool</a> mp, <span class="keyword">const</span> uint32_t size, <span class="keyword">const</span> uint32_t len) {</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>  <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> cap   = 1;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>  <span class="keywordflow">while</span> (cap &lt; len) cap *= 2;</div>

@@ -1,8 +1,8 @@
 var searchData=
 [
   ['haction_0',['haction',['../hash_8h.html#a981b1b023e8af27dc7f2cd67827e8d41',1,'hash.h']]],
-  ['hash_1',['Hash',['../hash_8h.html#a0aca44ac0f8ffbde5d9891f0c61ed8a8',1,'hash.h']]],
-  ['hash_2',['hash',['../hash_8h.html#a69611d5ae5a93ab3ebf51a6c5f80f4c8',1,'hash.h']]],
+  ['hash_1',['hash',['../hash_8h.html#a69611d5ae5a93ab3ebf51a6c5f80f4c8',1,'hash.h']]],
+  ['hash_2',['Hash',['../hash_8h.html#a0aca44ac0f8ffbde5d9891f0c61ed8a8',1,'hash.h']]],
   ['hash_2ec_3',['hash.c',['../hash_8c.html',1,'']]],
   ['hash_2eh_4',['hash.h',['../hash_8h.html',1,'']]],
   ['hash_5f_5',['Hash_',['../structHash__.html',1,'']]],
