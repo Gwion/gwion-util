@@ -19,6 +19,12 @@ ANN static inline void free_mp_vector(const MemPool mp, const uint32_t size, MP_
   mp_free2(mp, sizeof(MP_Vector) + (m_uint)(a->cap * size), a);
 }
 
+#define new_mp_vector(mp, type, data)                            \
+  new_mp_vector(mp, sizeof(type), data)
+
+#define free_mp_vector(mp, type, data)                           \
+  free_mp_vector(mp, sizeof(type), data)
+
 #define mp_vector_add(mp, a, type, data)                         \
   if (++((*a))->len >= ((*a))->cap)                              \
     mp_vector_resize(mp, (a), sizeof(type), (*(a))->cap * 2);    \
