@@ -19,6 +19,10 @@ ANN static inline void free_mp_vector(const MemPool mp, const uint32_t size, MP_
   mp_free2(mp, sizeof(MP_Vector) + (m_uint)(a->cap * size), a);
 }
 
+static inline uint32_t mp_vector_len(MP_Vector *a) {
+  return a ? a->len : 0;
+}
+
 #define new_mp_vector(mp, type, data)                            \
   new_mp_vector(mp, sizeof(type), data)
 
@@ -33,7 +37,7 @@ ANN static inline void free_mp_vector(const MemPool mp, const uint32_t size, MP_
 #define mp_vector_at(a, type, index)                             \
   ((type*)((a)->ptr + (index) * sizeof(type)))
 
-#define mp_vector_set(a, type, index, data)                       \
+#define mp_vector_set(a, type, index, data)                      \
   *(type*)((a)->ptr + (index) * sizeof(type)) = (data)
 
 #endif
