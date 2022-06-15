@@ -109,6 +109,8 @@ Functions</h2></td></tr>
 <tr class="separator:afc1a747926c3acaf62e6ddd2944557ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d87a56ff6dd33d8afd40740ed9f2617"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__vector_8h.html#a6d87a56ff6dd33d8afd40740ed9f2617">free_mp_vector</a> (const <a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, const uint32_t size, <a class="el" href="structMP__Vector.html">MP_Vector</a> *a)</td></tr>
 <tr class="separator:a6d87a56ff6dd33d8afd40740ed9f2617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24636637d0b1f7554f591dbe570d64c0"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__vector_8h.html#a24636637d0b1f7554f591dbe570d64c0">mp_vector_len</a> (<a class="el" href="structMP__Vector.html">MP_Vector</a> *a)</td></tr>
+<tr class="separator:a24636637d0b1f7554f591dbe570d64c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ae46ac3b9ba1963e100866e0e4f26c757" name="ae46ac3b9ba1963e100866e0e4f26c757"></a>
@@ -143,7 +145,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00025">25</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00029">29</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
 
 </div>
 </div>
@@ -188,7 +190,7 @@ Functions</h2></td></tr>
 <div class="line">    mp_vector_resize(mp, (a), <span class="keyword">sizeof</span>(type), (*(a))-&gt;cap * 2);    \</div>
 <div class="line">  *(type*)((*(a))-&gt;ptr + ((*a)-&gt;len - 1) * <span class="keyword">sizeof</span>(type)) = data; \</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00028">28</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00032">32</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
 
 </div>
 </div>
@@ -224,7 +226,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00033">33</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00037">37</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
 
 </div>
 </div>
@@ -266,7 +268,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00036">36</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00040">40</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
 
 </div>
 </div>
@@ -302,7 +304,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00022">22</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00026">26</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
 
 </div>
 </div>
@@ -370,6 +372,38 @@ Functions</h2></td></tr>
 <div class="ttc" id="ampool_8h_html_a10cec164a62999f9bb328b6bc2479cf8"><div class="ttname"><a href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a></div><div class="ttdeci">#define mp_free2(p, sz, a)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
 <div class="ttc" id="astructMP__Vector_html"><div class="ttname"><a href="structMP__Vector.html">MP_Vector</a></div><div class="ttdef"><b>Definition:</b> <a href="mp__vector_8h_source.html#l00004">mp_vector.h:4</a></div></div>
 <div class="ttc" id="astructMP__Vector_html_ab827e42cfffb3f4381e131200f6a5e6e"><div class="ttname"><a href="structMP__Vector.html#ab827e42cfffb3f4381e131200f6a5e6e">MP_Vector::cap</a></div><div class="ttdeci">uint32_t cap</div><div class="ttdef"><b>Definition:</b> <a href="mp__vector_8h_source.html#l00006">mp_vector.h:6</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a24636637d0b1f7554f591dbe570d64c0" name="a24636637d0b1f7554f591dbe570d64c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24636637d0b1f7554f591dbe570d64c0">&#9670;&nbsp;</a></span>mp_vector_len()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t mp_vector_len </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMP__Vector.html">MP_Vector</a> *&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00022">22</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>                                                   {</div>
+<div class="line"><span class="lineno">   23</span>  <span class="keywordflow">return</span> a ? a-&gt;<a class="code hl_variable" href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">len</a> : 0;</div>
+<div class="line"><span class="lineno">   24</span>}</div>
+<div class="ttc" id="astructMP__Vector_html_af588d3b8eb91a1bba473bd6a44766fca"><div class="ttname"><a href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">MP_Vector::len</a></div><div class="ttdeci">uint32_t len</div><div class="ttdef"><b>Definition:</b> <a href="mp__vector_8h_source.html#l00005">mp_vector.h:5</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -473,7 +507,6 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   10</span>  <span class="keywordflow">return</span> a;</div>
 <div class="line"><span class="lineno">   11</span>}</div>
 <div class="ttc" id="ampool_8h_html_afdf8c742bac379902ef3a9fee8dd231a"><div class="ttname"><a href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a></div><div class="ttdeci">#define mp_malloc2(p, sz)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8h_source.html#l00030">mpool.h:30</a></div></div>
-<div class="ttc" id="astructMP__Vector_html_af588d3b8eb91a1bba473bd6a44766fca"><div class="ttname"><a href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">MP_Vector::len</a></div><div class="ttdeci">uint32_t len</div><div class="ttdef"><b>Definition:</b> <a href="mp__vector_8h_source.html#l00005">mp_vector.h:5</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

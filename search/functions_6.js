@@ -8,13 +8,13 @@ var searchData=
   ['m_5fvector_5finsert_5',['m_vector_insert',['../m__vector_8c.html#aa3799a54ac8972f53a10556f211e7f33',1,'m_vector_insert(const M_Vector v, m_uint index, const void *data):&#160;m_vector.c'],['../m__vector_8h.html#aa3799a54ac8972f53a10556f211e7f33',1,'m_vector_insert(const M_Vector v, m_uint index, const void *data):&#160;m_vector.c']]],
   ['m_5fvector_5frelease_6',['m_vector_release',['../m__vector_8h.html#afd80e347006e1d33850a649fd5408e00',1,'m_vector.h']]],
   ['m_5fvector_5frem_7',['m_vector_rem',['../m__vector_8c.html#a3ba88a274bdfba885bc10a19e757052c',1,'m_vector_rem(const M_Vector v, m_uint index):&#160;m_vector.c'],['../m__vector_8h.html#abf24f886f5db1f413c41915e509a14c3',1,'m_vector_rem(const M_Vector, const m_uint):&#160;m_vector.c']]],
-  ['m_5fvector_5fset_8',['m_vector_set',['../m__vector_8c.html#a283bd519be80b52cf4af94e7230d61aa',1,'m_vector_set(const M_Vector v, const m_uint i, const void *data):&#160;m_vector.c'],['../m__vector_8h.html#a2076e136cf4de5134f737685192e4069',1,'m_vector_set(const M_Vector, const m_uint, const void *):&#160;m_vector.c']]],
+  ['m_5fvector_5fset_8',['m_vector_set',['../m__vector_8h.html#a2076e136cf4de5134f737685192e4069',1,'m_vector_set(const M_Vector, const m_uint, const void *):&#160;m_vector.c'],['../m__vector_8c.html#a283bd519be80b52cf4af94e7230d61aa',1,'m_vector_set(const M_Vector v, const m_uint i, const void *data):&#160;m_vector.c']]],
   ['m_5fvector_5fsize_9',['m_vector_size',['../m__vector_8h.html#a54192d99b4a48eddeb6516cd6a57036f',1,'m_vector.h']]],
   ['map_5fat_10',['map_at',['../map_8h.html#af2e088adc3ebfa9789282d1cb0ad04cf',1,'map.h']]],
   ['map_5fclear_11',['map_clear',['../map_8c.html#ab15854a15cb8099714da897061584618',1,'map_clear(const Map v):&#160;map.c'],['../map_8h.html#a819cfa431c8e83d4e5e9481dc752683b',1,'map_clear(const Map):&#160;map.c']]],
   ['map_5fcommit_12',['map_commit',['../map_8c.html#aecb49d479a51ec7c2713c7232c25980e',1,'map_commit(const restrict Map map, const restrict Map commit):&#160;map.c'],['../map_8h.html#a6f48299e3250aaccecf2cfb368490b80',1,'map_commit(const __restrict__ Map, __restrict__ const Map):&#160;map.h']]],
   ['map_5fget_13',['map_get',['../map_8c.html#a71d601278ce6047bf156a0c3feb286c1',1,'map_get(const Map map, const vtype key):&#160;map.c'],['../map_8h.html#a7e3709b17d4a46a5d4895391e2b57bbf',1,'map_get(const Map, const vtype):&#160;map.c']]],
-  ['map_5findex_14',['map_index',['../map_8h.html#a5297faef7a58bf4d54280dd3eb90ea6a',1,'map_index(const Map, const vtype):&#160;map.c'],['../map_8c.html#a385aad8ff41529512a62fe84ce4adf2e',1,'map_index(const Map map, const vtype key):&#160;map.c']]],
+  ['map_5findex_14',['map_index',['../map_8c.html#a385aad8ff41529512a62fe84ce4adf2e',1,'map_index(const Map map, const vtype key):&#160;map.c'],['../map_8h.html#a5297faef7a58bf4d54280dd3eb90ea6a',1,'map_index(const Map, const vtype):&#160;map.c']]],
   ['map_5finit_15',['map_init',['../map_8c.html#a26c3f3e23287b942f5474c67957d1224',1,'map_init(const Map a):&#160;map.c'],['../map_8h.html#a249bdad562be592f15db355ee1b54b9b',1,'map_init(const Map):&#160;map.c']]],
   ['map_5frelease_16',['map_release',['../map_8c.html#a36f9d3abe43f7110686ab5ac1252acf4',1,'map_release(const Map map):&#160;map.c'],['../map_8h.html#ab25e0ac2856fd493b0686dbca588d628',1,'map_release(const Map):&#160;map.c']]],
   ['map_5fremove_17',['map_remove',['../map_8c.html#a45e72585ed4aadee61e254f824dfda61',1,'map_remove(const Map map, const vtype key):&#160;map.c'],['../map_8h.html#acb31c905ee58c4ba6b213aa8f8b8e19a',1,'map_remove(const Map, const vtype):&#160;map.c']]],
@@ -28,6 +28,7 @@ var searchData=
   ['mp_5fini_25',['mp_ini',['../mpool_8c.html#a12eed9764d075a4b330e7fe06b723f5a',1,'mp_ini(MemPool mp, const uint32_t obj_sz):&#160;mpool.c'],['../mpool_8h.html#a8d8472ba09709dfdf32b7909b2bef28a',1,'mp_ini(MemPool p, const uint32_t elementSize):&#160;mpool.c']]],
   ['mp_5frealloc_26',['mp_realloc',['../mpool_8c.html#a350e2f3477250648c5475ce2d56821e4',1,'mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next):&#160;mpool.c'],['../mpool_8h.html#a350e2f3477250648c5475ce2d56821e4',1,'mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next):&#160;mpool.c']]],
   ['mp_5fset_27',['mp_set',['../mpool_8c.html#a33f52e2aeebb0b64d361b98a5c8b9c2d',1,'mpool.c']]],
-  ['mp_5fvector_5fresize_28',['mp_vector_resize',['../mp__vector_8h.html#a3b22afa42f15b13875285ce863cbbb5c',1,'mp_vector.h']]],
-  ['mstrdup_29',['mstrdup',['../mp__string_8h.html#a452bc669e976f3d4154d2bcac6aad1df',1,'mp_string.h']]]
+  ['mp_5fvector_5flen_28',['mp_vector_len',['../mp__vector_8h.html#a24636637d0b1f7554f591dbe570d64c0',1,'mp_vector.h']]],
+  ['mp_5fvector_5fresize_29',['mp_vector_resize',['../mp__vector_8h.html#a3b22afa42f15b13875285ce863cbbb5c',1,'mp_vector.h']]],
+  ['mstrdup_30',['mstrdup',['../mp__string_8h.html#a452bc669e976f3d4154d2bcac6aad1df',1,'mp_string.h']]]
 ];
