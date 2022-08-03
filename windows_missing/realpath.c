@@ -131,6 +131,9 @@ char *realpath(const char *path, char resolved_path[PATH_MAX])
   {
     errno = EINVAL;
   }
-    
+  for(size_t i = 0; i < size; i++) {
+    if(return_path[i] == '\\')
+      return_path[i] == '/';
+  }
   return return_path;
 }
