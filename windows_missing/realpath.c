@@ -131,7 +131,7 @@ char *realpath(const char *path, char resolved_path[PATH_MAX])
   {
     errno = EINVAL;
   }
-  const size_t size = strlen(size);
+  const size_t size = strlen(realpath);
   for(size_t i = 0; i < size; i++) {
     if(return_path[i] == '\\')
       return_path[i] = '/';
