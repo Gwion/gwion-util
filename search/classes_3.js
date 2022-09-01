@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hash_5f_0',['Hash_',['../structHash__.html',1,'']]]
+  ['gwtext_5f_0',['GwText_',['../structGwText__.html',1,'']]]
 ];

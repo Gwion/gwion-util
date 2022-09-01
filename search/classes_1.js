@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['carg_0',['CArg',['../structCArg.html',1,'']]]
+  ['argsplitter_0',['ArgSplitter',['../structArgSplitter.html',1,'']]]
 ];
