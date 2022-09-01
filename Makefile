@@ -37,6 +37,14 @@ libgwion_util.a: ${obj}
 	@$(info linking $@)
 	@${AR} ${AR_OPT}
 
+libtermcolor.a: src/termcolor.o
+	@$(info linking $@)
+	@${AR} ${AR_OPT}
+
+libcmdapp.a: src/cmdapp.o
+	@$(info linking $@)
+	@${AR} ${AR_OPT}
+
 clean:
 	$(info cleaning)
 	@rm -f ${obj} *.a
