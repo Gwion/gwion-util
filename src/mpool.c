@@ -5,8 +5,8 @@
 
 #define SMALL_BLK   512
 #define BIG_BLK     16
-#define HUGE        (64 * SZ_INT)
-#define BLK(obj_sz) (obj_sz < HUGE ? SMALL_BLK : BIG_BLK)
+#define MPHUGE        (64 * SZ_INT)
+#define BLK(obj_sz) (obj_sz < MPHUGE ? SMALL_BLK : BIG_BLK)
 
 struct Recycle {
   volatile struct Recycle *next;
