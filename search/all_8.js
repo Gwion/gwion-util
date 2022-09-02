@@ -10,6 +10,5 @@ var searchData=
   ['help_5fdes_5foffset_7',['help_des_offset',['../structcmdapp__info__t.html#a11a07753d20adb198a1b8e2e5dc6c623',1,'cmdapp_info_t']]],
   ['hend_8',['hend',['../hash_8c.html#a66efcf4f97410b6d21f3d91592e01d8c',1,'hend(const Hash h):&#160;hash.c'],['../hash_8h.html#aa55a101821835a7e58aedb81b3ff28ed',1,'hend(const Hash):&#160;hash.c']]],
   ['hini_9',['hini',['../hash_8c.html#a128f5df671bc907b6b63199853676c22',1,'hini(Hash h, const uint nmemb):&#160;hash.c'],['../hash_8h.html#a72c776fa23bbd757fd4a1477138776b2',1,'hini(const Hash, const uint):&#160;hash.c']]],
-  ['hstraction_10',['hstraction',['../hash_8h.html#a49b301dd3f57fd4561b37c4992b585ce',1,'hash.h']]],
-  ['huge_11',['HUGE',['../mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724',1,'mpool.c']]]
+  ['hstraction_10',['hstraction',['../hash_8h.html#a49b301dd3f57fd4561b37c4992b585ce',1,'hash.h']]]
 ];

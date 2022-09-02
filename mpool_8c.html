@@ -98,9 +98,9 @@ Macros</h2></td></tr>
 <tr class="separator:ab758143e4c42716c9db84073df81312c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2086d86e283fe86d382a499afd48d81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#ab2086d86e283fe86d382a499afd48d81">BIG_BLK</a>&#160;&#160;&#160;16</td></tr>
 <tr class="separator:ab2086d86e283fe86d382a499afd48d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f3d17bf39f78da3422ca52e475d7724"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724">HUGE</a>&#160;&#160;&#160;(64 * <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>)</td></tr>
-<tr class="separator:a5f3d17bf39f78da3422ca52e475d7724"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11a149767ea542f429838209d7d53e32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(obj_sz)&#160;&#160;&#160;(obj_sz &lt; <a class="el" href="mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724">HUGE</a> ? <a class="el" href="mpool_8c.html#ab758143e4c42716c9db84073df81312c">SMALL_BLK</a> : <a class="el" href="mpool_8c.html#ab2086d86e283fe86d382a499afd48d81">BIG_BLK</a>)</td></tr>
+<tr class="memitem:acfd3ead2cd4cb5f07cfcb0a7ccea67a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#acfd3ead2cd4cb5f07cfcb0a7ccea67a3">MPHUGE</a>&#160;&#160;&#160;(64 * <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>)</td></tr>
+<tr class="separator:acfd3ead2cd4cb5f07cfcb0a7ccea67a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11a149767ea542f429838209d7d53e32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a11a149767ea542f429838209d7d53e32">BLK</a>(obj_sz)&#160;&#160;&#160;(obj_sz &lt; <a class="el" href="mpool_8c.html#acfd3ead2cd4cb5f07cfcb0a7ccea67a3">MPHUGE</a> ? <a class="el" href="mpool_8c.html#ab758143e4c42716c9db84073df81312c">SMALL_BLK</a> : <a class="el" href="mpool_8c.html#ab2086d86e283fe86d382a499afd48d81">BIG_BLK</a>)</td></tr>
 <tr class="separator:a11a149767ea542f429838209d7d53e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a506ee1ccf7cac90f6eeea9b6d4ec0e44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpool_8c.html#a506ee1ccf7cac90f6eeea9b6d4ec0e44">MP_ALLOC</a>(name,  zero,  default)</td></tr>
 <tr class="separator:a506ee1ccf7cac90f6eeea9b6d4ec0e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,28 +162,12 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">obj_sz</td><td>)</td>
-          <td>&#160;&#160;&#160;(obj_sz &lt; <a class="el" href="mpool_8c.html#a5f3d17bf39f78da3422ca52e475d7724">HUGE</a> ? <a class="el" href="mpool_8c.html#ab758143e4c42716c9db84073df81312c">SMALL_BLK</a> : <a class="el" href="mpool_8c.html#ab2086d86e283fe86d382a499afd48d81">BIG_BLK</a>)</td>
+          <td>&#160;&#160;&#160;(obj_sz &lt; <a class="el" href="mpool_8c.html#acfd3ead2cd4cb5f07cfcb0a7ccea67a3">MPHUGE</a> ? <a class="el" href="mpool_8c.html#ab758143e4c42716c9db84073df81312c">SMALL_BLK</a> : <a class="el" href="mpool_8c.html#ab2086d86e283fe86d382a499afd48d81">BIG_BLK</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00009">9</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
-
-</div>
-</div>
-<a id="a5f3d17bf39f78da3422ca52e475d7724" name="a5f3d17bf39f78da3422ca52e475d7724"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f3d17bf39f78da3422ca52e475d7724">&#9670;&#160;</a></span>HUGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define HUGE&#160;&#160;&#160;(64 * <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00008">8</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
@@ -230,6 +214,22 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructpool_html"><div class="ttname"><a href="structpool.html">pool</a></div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00015">mpool.c:15</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00138">138</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
+
+</div>
+</div>
+<a id="acfd3ead2cd4cb5f07cfcb0a7ccea67a3" name="acfd3ead2cd4cb5f07cfcb0a7ccea67a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfd3ead2cd4cb5f07cfcb0a7ccea67a3">&#9670;&#160;</a></span>MPHUGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPHUGE&#160;&#160;&#160;(64 * <a class="el" href="gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9">SZ_INT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpool_8c_source.html#l00008">8</a> of file <a class="el" href="mpool_8c_source.html">mpool.c</a>.</p>
 
 </div>
 </div>
