@@ -212,10 +212,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="m__vector_8c_source.html#l00008">8</a> of file <a class="el" href="m__vector_8c_source.html">m_vector.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    8</span>                                                                              {</div>
-<div class="line"><span class="lineno">    9</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = <a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + len * size;</div>
-<div class="line"><span class="lineno">   10</span>  array-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>      = (<a class="code hl_typedef" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(1, sz);</div>
-<div class="line"><span class="lineno">   11</span>  <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> cap      = 1;</div>
-<div class="line"><span class="lineno">   12</span>  <span class="keywordflow">while</span> (cap &lt; len) cap *= 2;</div>
+<div class="line"><span class="lineno">    9</span>  <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a> cap      = 1;</div>
+<div class="line"><span class="lineno">   10</span>  <span class="keywordflow">while</span> (cap &lt; len) cap *= 2;</div>
+<div class="line"><span class="lineno">   11</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = <a class="code hl_define" href="m__vector_8h.html#a2b7ea6aed3aa81a25f6b101cda6d735a">ARRAY_OFFSET</a> + cap * size;</div>
+<div class="line"><span class="lineno">   12</span>  array-&gt;<a class="code hl_variable" href="structM__Vector__.html#a25081824d83eefcaa74b3f31b7748078">ptr</a>      = (<a class="code hl_typedef" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(1, sz);</div>
 <div class="line"><span class="lineno">   13</span>  <a class="code hl_define" href="m__vector_8h.html#a16c6eace6af476b197d1e2a231440d4b">ARRAY_CAP</a>(array)  = cap;</div>
 <div class="line"><span class="lineno">   14</span>  <a class="code hl_define" href="m__vector_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array) = size;</div>
 <div class="line"><span class="lineno">   15</span>  <a class="code hl_define" href="m__vector_8h.html#a44c876c78e2fc722c001dfc1a36b638f">ARRAY_LEN</a>(array)  = len;</div>
