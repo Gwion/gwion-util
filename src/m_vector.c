@@ -6,10 +6,10 @@ ANN static inline void resize(const M_Vector v, const m_uint cap) {
 }
 
 void m_vector_init(const M_Vector array, const m_uint size, const m_uint len) {
-  const size_t sz = ARRAY_OFFSET + len * size;
-  array->ptr      = (m_bit *)xcalloc(1, sz);
   m_uint cap      = 1;
   while (cap < len) cap *= 2;
+  const size_t sz = ARRAY_OFFSET + cap * size;
+  array->ptr      = (m_bit *)xcalloc(1, sz);
   ARRAY_CAP(array)  = cap;
   ARRAY_SIZE(array) = size;
   ARRAY_LEN(array)  = len;
