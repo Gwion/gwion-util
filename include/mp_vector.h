@@ -48,8 +48,7 @@ ANN static inline void mp_vector_rem(MP_Vector *const a, const uint32_t size, co
 }
 
 ANN static inline m_bit* mp_vector_pop(MP_Vector *const a, const uint32_t size) {
-  m_bit *data = ((a)->ptr + (a->len-1) * size);
-  a->len--;
+  m_bit *data = ((a)->ptr + (a->len--) * size);
   return data;
 }
 
