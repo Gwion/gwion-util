@@ -87,13 +87,13 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a6676f1e3cf8449a4aa756c029ac9a053"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text_8c.html#a6676f1e3cf8449a4aa756c029ac9a053">text_grow</a> (<a class="el" href="gwion__text_8h.html#ad331ea1a359d16138e503e98a8b22d12">GwText</a> *text, const size_t sz)</td></tr>
 <tr class="separator:a6676f1e3cf8449a4aa756c029ac9a053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a302e1ee5febfa1bc2a547e98beddb78e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text_8c.html#a302e1ee5febfa1bc2a547e98beddb78e">text_add</a> (<a class="el" href="gwion__text_8h.html#ad331ea1a359d16138e503e98a8b22d12">GwText</a> *text, const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a> str)</td></tr>
-<tr class="memdesc:a302e1ee5febfa1bc2a547e98beddb78e"><td class="mdescLeft">&#160;</td><td class="mdescRight">append to text  <br /></td></tr>
-<tr class="separator:a302e1ee5febfa1bc2a547e98beddb78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e169fc9d93563391f9946efe86a380"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text_8c.html#a12e169fc9d93563391f9946efe86a380">text_add</a> (<a class="el" href="gwion__text_8h.html#ad331ea1a359d16138e503e98a8b22d12">GwText</a> *text, const char *str)</td></tr>
+<tr class="memdesc:a12e169fc9d93563391f9946efe86a380"><td class="mdescLeft">&#160;</td><td class="mdescRight">append to text  <br /></td></tr>
+<tr class="separator:a12e169fc9d93563391f9946efe86a380"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a302e1ee5febfa1bc2a547e98beddb78e" name="a302e1ee5febfa1bc2a547e98beddb78e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a302e1ee5febfa1bc2a547e98beddb78e">&#9670;&#160;</a></span>text_add()</h2>
+<a id="a12e169fc9d93563391f9946efe86a380" name="a12e169fc9d93563391f9946efe86a380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12e169fc9d93563391f9946efe86a380">&#9670;&#160;</a></span>text_add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -107,7 +107,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>str</em>&#160;</td>
         </tr>
         <tr>
@@ -123,21 +123,11 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="text_8c_source.html#l00012">12</a> of file <a class="el" href="text_8c_source.html">text.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   12</span>                                                 {</div>
 <div class="line"><span class="lineno">   13</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = strlen(str);</div>
-<div class="line"><span class="lineno">   14</span>  <span class="keywordflow">if</span> (!text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>) {</div>
-<div class="line"><span class="lineno">   15</span>    text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = (<a class="code hl_typedef" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>)<a class="code hl_function" href="mpool_8h.html#a536cd2b5da155dd3dc010867fd7ccae1">_mp_malloc</a>(text-&gt;<a class="code hl_variable" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a>, text-&gt;<a class="code hl_variable" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> = sz + 1);</div>
-<div class="line"><span class="lineno">   16</span>    strcpy(text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>, str);</div>
-<div class="line"><span class="lineno">   17</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> len = sz + text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> + 1;</div>
-<div class="line"><span class="lineno">   19</span>    strcpy(<a class="code hl_function" href="text_8c.html#a6676f1e3cf8449a4aa756c029ac9a053">text_grow</a>(text, len), str);</div>
-<div class="line"><span class="lineno">   20</span>  }</div>
-<div class="line"><span class="lineno">   21</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> += sz;</div>
-<div class="line"><span class="lineno">   22</span>}</div>
-<div class="ttc" id="agwcommon_8h_html_a76d6a803836c90c07c636d3354a71e28"><div class="ttname"><a href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a></div><div class="ttdeci">char * m_str</div><div class="ttdef"><b>Definition:</b> <a href="gwcommon_8h_source.html#l00015">gwcommon.h:15</a></div></div>
-<div class="ttc" id="ampool_8h_html_a536cd2b5da155dd3dc010867fd7ccae1"><div class="ttname"><a href="mpool_8h.html#a536cd2b5da155dd3dc010867fd7ccae1">_mp_malloc</a></div><div class="ttdeci">ANEW ANN void * _mp_malloc(MemPool, const m_uint) __attribute__((hot))</div></div>
+<div class="line"><span class="lineno">   14</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> len = sz + text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> + 1;</div>
+<div class="line"><span class="lineno">   15</span>  strcpy(<a class="code hl_function" href="text_8c.html#a6676f1e3cf8449a4aa756c029ac9a053">text_grow</a>(text, len), str);</div>
+<div class="line"><span class="lineno">   16</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> += sz;</div>
+<div class="line"><span class="lineno">   17</span>}</div>
 <div class="ttc" id="astructGwText___html_a137e5ab74984cadefe2a7523508a9224"><div class="ttname"><a href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">GwText_::len</a></div><div class="ttdeci">size_t len</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00011">gwion_text.h:11</a></div></div>
-<div class="ttc" id="astructGwText___html_a21473cb466fa7e1c741d82c852d9b050"><div class="ttname"><a href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">GwText_::cap</a></div><div class="ttdeci">size_t cap</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00010">gwion_text.h:10</a></div></div>
-<div class="ttc" id="astructGwText___html_a6dcca7bae982686b33476bc6cf463d67"><div class="ttname"><a href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">GwText_::str</a></div><div class="ttdeci">m_str str</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00009">gwion_text.h:9</a></div></div>
-<div class="ttc" id="astructGwText___html_ab898b542618ba8f288ff5f83e5a03c57"><div class="ttname"><a href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">GwText_::mp</a></div><div class="ttdeci">MemPool mp</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00012">gwion_text.h:12</a></div></div>
 <div class="ttc" id="atext_8c_html_a6676f1e3cf8449a4aa756c029ac9a053"><div class="ttname"><a href="text_8c.html#a6676f1e3cf8449a4aa756c029ac9a053">text_grow</a></div><div class="ttdeci">static ANN m_str text_grow(GwText *text, const size_t sz)</div><div class="ttdef"><b>Definition:</b> <a href="text_8c_source.html#l00003">text.c:3</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -186,7 +176,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">    9</span>  <span class="keywordflow">return</span> text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> + text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a>;</div>
 <div class="line"><span class="lineno">   10</span>}</div>
 <div class="ttc" id="agwcommon_8h_html_a50651144ce12bd2634f6bc9591e6b062"><div class="ttname"><a href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a></div><div class="ttdeci">uintptr_t m_uint</div><div class="ttdef"><b>Definition:</b> <a href="gwcommon_8h_source.html#l00011">gwcommon.h:11</a></div></div>
+<div class="ttc" id="agwcommon_8h_html_a76d6a803836c90c07c636d3354a71e28"><div class="ttname"><a href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a></div><div class="ttdeci">char * m_str</div><div class="ttdef"><b>Definition:</b> <a href="gwcommon_8h_source.html#l00015">gwcommon.h:15</a></div></div>
 <div class="ttc" id="ampool_8c_html_a350e2f3477250648c5475ce2d56821e4"><div class="ttname"><a href="mpool_8c.html#a350e2f3477250648c5475ce2d56821e4">mp_realloc</a></div><div class="ttdeci">void * mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00148">mpool.c:148</a></div></div>
+<div class="ttc" id="astructGwText___html_a21473cb466fa7e1c741d82c852d9b050"><div class="ttname"><a href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">GwText_::cap</a></div><div class="ttdeci">size_t cap</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00010">gwion_text.h:10</a></div></div>
+<div class="ttc" id="astructGwText___html_a6dcca7bae982686b33476bc6cf463d67"><div class="ttname"><a href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">GwText_::str</a></div><div class="ttdeci">m_str str</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00009">gwion_text.h:9</a></div></div>
+<div class="ttc" id="astructGwText___html_ab898b542618ba8f288ff5f83e5a03c57"><div class="ttname"><a href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">GwText_::mp</a></div><div class="ttdeci">MemPool mp</div><div class="ttdef"><b>Definition:</b> <a href="gwion__text_8h_source.html#l00012">gwion_text.h:12</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
