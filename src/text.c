@@ -9,14 +9,9 @@ ANN static inline m_str text_grow(GwText *text, const size_t sz) {
   return text->str + text->len;
 }
 
-ANN void text_add(GwText *text, const m_str str) {
+ANN void text_add(GwText *text, const char *str) {
   const size_t sz = strlen(str);
-  if (!text->str) {
-    text->str = (m_str)_mp_malloc(text->mp, text->cap = sz + 1);
-    strcpy(text->str, str);
-  } else {
-    const size_t len = sz + text->len + 1;
-    strcpy(text_grow(text, len), str);
-  }
+  const size_t len = sz + text->len + 1;
+  strcpy(text_grow(text, len), str);
   text->len += sz;
 }

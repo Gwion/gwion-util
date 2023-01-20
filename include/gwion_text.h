@@ -13,7 +13,14 @@ typedef struct GwText_ {
 } GwText;
 
 /** append to text **/
-ANN void text_add(GwText *, const m_str);
+ANN void text_add(GwText *, const char *);
+
+ANN static inline void text_init(GwText *text, MemPool mp) {
+  text->mp = mp;
+  text->str = (m_str)mp_malloc2(mp, 64);
+  text->len = 0;
+  text->cap = 64;
+}
 
 /** release text memory **/
 ANN static inline void text_release(GwText *text) {
@@ -26,7 +33,7 @@ ANN static inline void text_release(GwText *text) {
 
 ANN static inline GwText *new_text(MemPool mp) {
   GwText *text = (GwText *)mp_calloc(mp, GwText);
-  text->mp     = mp;
+  text_init(text, mp);
   return text;
 }
 
