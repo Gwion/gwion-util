@@ -85,14 +85,14 @@ int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 #ifndef BUILD_ON_WINDOWS
 #include <dlfcn.h>
 #define DLOPEN(dl, b)   dlopen(dl, b)
-#define DLSYM(dl, t, a) (t)(intptr_t) dlsym(dl, STR(a));
-#define DLCLOSE(dl)     dlclose(dl);
+#define DLSYM(dl, t, a) (t)(intptr_t) dlsym(dl, a)
+#define DLCLOSE(dl)     dlclose(dl)
 #define DLERROR()       dlerror()
 #else
 #include "windows.h"
 #define DLOPEN(dl, b)   LoadLibrary(dl)
-#define DLSYM(dl, t, a) (t)(intptr_t) GetProcAddress(dl, STR(a));
-#define DLCLOSE(dl)     FreeLibrary(dl);
+#define DLSYM(dl, t, a) (t)(intptr_t) GetProcAddress(dl, a)
+#define DLCLOSE(dl)     FreeLibrary(dl)
 #define DLERROR()       "plugin"
 #endif
 #endif
