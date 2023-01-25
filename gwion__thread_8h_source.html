@@ -162,14 +162,14 @@ $(function() {
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#ifndef BUILD_ON_WINDOWS</span></div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#include &lt;dlfcn.h&gt;</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#afb02bf89494d3be01d62ee7c0abaadf3">   87</a></span><span class="preprocessor">#define DLOPEN(dl, b)   dlopen(dl, b)</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a1d70650055a3ddb629c6243df73448b5">   88</a></span><span class="preprocessor">#define DLSYM(dl, t, a) (t)(intptr_t) dlsym(dl, STR(a));</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#ab24e5745b3a82deeaed92eff349ae81a">   89</a></span><span class="preprocessor">#define DLCLOSE(dl)     dlclose(dl);</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a1d70650055a3ddb629c6243df73448b5">   88</a></span><span class="preprocessor">#define DLSYM(dl, t, a) (t)(intptr_t) dlsym(dl, a)</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#ab24e5745b3a82deeaed92eff349ae81a">   89</a></span><span class="preprocessor">#define DLCLOSE(dl)     dlclose(dl)</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a690562dc6c92cb811f90e8391bfeb801">   90</a></span><span class="preprocessor">#define DLERROR()       dlerror()</span></div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#include &quot;windows.h&quot;</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#define DLOPEN(dl, b)   LoadLibrary(dl)</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#define DLSYM(dl, t, a) (t)(intptr_t) GetProcAddress(dl, STR(a));</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#define DLCLOSE(dl)     FreeLibrary(dl);</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#define DLSYM(dl, t, a) (t)(intptr_t) GetProcAddress(dl, a)</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#define DLCLOSE(dl)     FreeLibrary(dl)</span></div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#define DLERROR()       &quot;plugin&quot;</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif</span></div>
