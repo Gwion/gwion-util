@@ -87,20 +87,20 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a23d4adc0c6cb20fb464341a676445fb1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__string_8h.html#a23d4adc0c6cb20fb464341a676445fb1">free_mstr</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a> str)</td></tr>
-<tr class="memdesc:a23d4adc0c6cb20fb464341a676445fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">free mp_allocated string  <br /></td></tr>
-<tr class="separator:a23d4adc0c6cb20fb464341a676445fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a452bc669e976f3d4154d2bcac6aad1df"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__string_8h.html#a452bc669e976f3d4154d2bcac6aad1df">mstrdup</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a> name)</td></tr>
-<tr class="memdesc:a452bc669e976f3d4154d2bcac6aad1df"><td class="mdescLeft">&#160;</td><td class="mdescRight">mp_alloc version of strdup  <br /></td></tr>
-<tr class="separator:a452bc669e976f3d4154d2bcac6aad1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af47b35ee732e5f6e52d383809d6d4c97"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__string_8h.html#af47b35ee732e5f6e52d383809d6d4c97">free_mstr</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, char *const str)</td></tr>
+<tr class="memdesc:af47b35ee732e5f6e52d383809d6d4c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">free mp_allocated string  <br /></td></tr>
+<tr class="separator:af47b35ee732e5f6e52d383809d6d4c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a318f22e7ddd97bf443e6dd010aa63ca1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__string_8h.html#a318f22e7ddd97bf443e6dd010aa63ca1">mstrdup</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, const char *name)</td></tr>
+<tr class="memdesc:a318f22e7ddd97bf443e6dd010aa63ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">mp_alloc version of strdup  <br /></td></tr>
+<tr class="separator:a318f22e7ddd97bf443e6dd010aa63ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>string allocated with memory pool </p>
 
 <p class="definition">Definition in file <a class="el" href="mp__string_8h_source.html">mp_string.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a23d4adc0c6cb20fb464341a676445fb1" name="a23d4adc0c6cb20fb464341a676445fb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23d4adc0c6cb20fb464341a676445fb1">&#9670;&#160;</a></span>free_mstr()</h2>
+<a id="af47b35ee732e5f6e52d383809d6d4c97" name="af47b35ee732e5f6e52d383809d6d4c97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af47b35ee732e5f6e52d383809d6d4c97">&#9670;&#160;</a></span>free_mstr()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -117,7 +117,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>&#160;</td>
+          <td class="paramtype">char *const&#160;</td>
           <td class="paramname"><em>str</em>&#160;</td>
         </tr>
         <tr>
@@ -143,8 +143,8 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a452bc669e976f3d4154d2bcac6aad1df" name="a452bc669e976f3d4154d2bcac6aad1df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a452bc669e976f3d4154d2bcac6aad1df">&#9670;&#160;</a></span>mstrdup()</h2>
+<a id="a318f22e7ddd97bf443e6dd010aa63ca1" name="a318f22e7ddd97bf443e6dd010aa63ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a318f22e7ddd97bf443e6dd010aa63ca1">&#9670;&#160;</a></span>mstrdup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +161,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>name</em>&#160;</td>
         </tr>
         <tr>
