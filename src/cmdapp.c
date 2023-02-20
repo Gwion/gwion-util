@@ -76,10 +76,11 @@ static void cmdapp_append(cmdapp_t* app, cmdarg_internal_t* arg_int) {
 
 void cmdapp_set(cmdapp_t* app, char shorto, const char* longo, uint8_t flags,
                 cmdopt_t** conflicts, const char* description,
-                cmdopt_t* option)
+                const char *argtype,
+                 cmdopt_t* option)
 {
 
-    if (strncmp(longo, "help", 5) == 0) {
+     if (strncmp(longo, "help", 5) == 0) {
         app->_custom_help = 1;
     } else if (strncmp(longo, "version", 8) == 0) {
         app->_custom_ver = 1;
@@ -87,6 +88,7 @@ void cmdapp_set(cmdapp_t* app, char shorto, const char* longo, uint8_t flags,
 
     option->shorto = shorto;
     option->longo = longo;
+    option->argtype = argtype;
     option->flags = flags;
     option->value = NULL;
     const size_t conflict_count = (conflicts == NULL)
@@ -128,7 +130,9 @@ void cmdapp_print_help(cmdapp_t* app) {
     tcol_printf("{Y}Options:{0}\n");
     for (size_t i = 0; i < app->_length; i++) {
         cmdarg_internal_t* arg_int = app->_start[i];
-        tcol_printf("%*s%s\r", app->_info.help_des_offset, "", arg_int->description);
+        tcol_printf("%*s", app->_info.help_des_offset, "");
+        tcol_printf(arg_int->description);
+        tcol_printf("\r");
         if(arg_int->result->shorto) {
           tcol_printf("  {G}-%c{0}", arg_int->result->shorto);
         } else {
@@ -138,7 +142,20 @@ void cmdapp_print_help(cmdapp_t* app) {
             tcol_printf(", {G}--%s{0}", arg_int->result->longo);
         }
         if (arg_int->result->flags & CMDOPT_TAKESARG) {
-            tcol_printf("{M}=ARG{0}");
+          tcol_printf("{M}=");
+          if (!arg_int->result->argtype)
+            tcol_printf("ARG");
+          else
+            tcol_printf(arg_int->result->argtype);
+          tcol_printf("{0}");
+        }
+        else if (arg_int->result->flags & CMDOPT_MAYTAKEARG) {
+          tcol_printf("{M}(=");
+          if (!arg_int->result->argtype)
+            tcol_printf("ARG");
+          else
+            tcol_printf(arg_int->result->argtype);
+          tcol_printf("){0}");
         }
         fputc('\n', stdout);
     }

@@ -37,6 +37,7 @@ typedef struct {
     char shorto;
     const char* longo;
     const char* value;
+    const char* argtype;
     cmdopt_flags_t flags;
 } cmdopt_t;
 
@@ -104,6 +105,7 @@ void cmdapp_destroy(cmdapp_t* app);
 // Registers an option to the app with the given values and flags
 void cmdapp_set(cmdapp_t* app, char shorto, const char* longo, uint8_t flags,
                 cmdopt_t** conflicts, const char* description,
+                const char* argtype,
                 cmdopt_t* option);
 
 // Generates a --help output to stdout. If cmdapp_info was not called, the
