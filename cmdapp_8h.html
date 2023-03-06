@@ -160,7 +160,7 @@ Functions</h2></td></tr>
 <tr class="separator:aad9479125718c53561216da677bb6a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3b4a27cdc952ef39d5952e3d570c822"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcmdargs__t.html">cmdargs_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8h.html#aa3b4a27cdc952ef39d5952e3d570c822">cmdapp_getargs</a> (<a class="el" href="structcmdapp__t.html">cmdapp_t</a> *app)</td></tr>
 <tr class="separator:aa3b4a27cdc952ef39d5952e3d570c822"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add6ed0f12cf1bb28d189870c2c29ea71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8h.html#add6ed0f12cf1bb28d189870c2c29ea71">cmdapp_error</a> (<a class="el" href="structcmdapp__t.html">cmdapp_t</a> *app, const char *fmt,...)</td></tr>
+<tr class="memitem:add6ed0f12cf1bb28d189870c2c29ea71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8h.html#add6ed0f12cf1bb28d189870c2c29ea71">cmdapp_error</a> (<a class="el" href="structcmdapp__t.html">cmdapp_t</a> *app, const char *<a class="el" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>,...)</td></tr>
 <tr class="separator:add6ed0f12cf1bb28d189870c2c29ea71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -584,10 +584,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  372</span>    fprintf(stderr, <span class="stringliteral">&quot;%s: error: &quot;</span>, app-&gt;<a class="code hl_variable" href="structcmdapp__t.html#aa387b7c6fcf1e5f54ccef8173b6cfd2a">_info</a>.<a class="code hl_variable" href="structcmdapp__info__t.html#a074d288c33d44f86de4f7d4fd2f31ed3">program</a>);</div>
 <div class="line"><span class="lineno">  373</span><span class="preprocessor">    #endif </span><span class="comment">/* _POSIX_VERSION */</span><span class="preprocessor"></span></div>
 <div class="line"><span class="lineno">  374</span>    va_list valist;</div>
-<div class="line"><span class="lineno">  375</span>    va_start(valist, fmt);</div>
-<div class="line"><span class="lineno">  376</span>    vfprintf(stderr, fmt, valist);</div>
+<div class="line"><span class="lineno">  375</span>    va_start(valist, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
+<div class="line"><span class="lineno">  376</span>    vfprintf(stderr, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, valist);</div>
 <div class="line"><span class="lineno">  377</span>    va_end(valist);</div>
 <div class="line"><span class="lineno">  378</span>}</div>
+<div class="ttc" id="agwion__print_8h_html_a98e80936172a59a9f91c6305e193cd98"><div class="ttname"><a href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a></div><div class="ttdeci">char const char * fmt</div><div class="ttdef"><b>Definition:</b> <a href="gwion__print_8h_source.html#l00002">gwion_print.h:2</a></div></div>
 <div class="ttc" id="astructcmdapp__info__t_html_a074d288c33d44f86de4f7d4fd2f31ed3"><div class="ttname"><a href="structcmdapp__info__t.html#a074d288c33d44f86de4f7d4fd2f31ed3">cmdapp_info_t::program</a></div><div class="ttdeci">const char * program</div><div class="ttdef"><b>Definition:</b> <a href="cmdapp_8h_source.html#l00063">cmdapp.h:63</a></div></div>
 <div class="ttc" id="astructcmdapp__t_html_aa387b7c6fcf1e5f54ccef8173b6cfd2a"><div class="ttname"><a href="structcmdapp__t.html#aa387b7c6fcf1e5f54ccef8173b6cfd2a">cmdapp_t::_info</a></div><div class="ttdeci">cmdapp_info_t _info</div><div class="ttdef"><b>Definition:</b> <a href="cmdapp_8h_source.html#l00084">cmdapp.h:84</a></div></div>
 </div><!-- fragment -->

@@ -109,11 +109,11 @@ Functions</h2></td></tr>
 <tr class="separator:aa544f4a566ad33b69fc08ca7ff75a675"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45276491c40829998caacbdae38e9ab4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="termcolor_8h.html#a45276491c40829998caacbdae38e9ab4">tcol_override_color_checks</a> (bool enable_color)</td></tr>
 <tr class="separator:a45276491c40829998caacbdae38e9ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22c2d3666092d1f4ec58c27e06b96406"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="termcolor_8h.html#a22c2d3666092d1f4ec58c27e06b96406">tcol_fprintf</a> (FILE *stream, const char *fmt,...)</td></tr>
+<tr class="memitem:a22c2d3666092d1f4ec58c27e06b96406"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="termcolor_8h.html#a22c2d3666092d1f4ec58c27e06b96406">tcol_fprintf</a> (FILE *stream, const char *<a class="el" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>,...)</td></tr>
 <tr class="separator:a22c2d3666092d1f4ec58c27e06b96406"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3904600e47ea1b5e9b5190813e771726"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="termcolor_8h.html#a3904600e47ea1b5e9b5190813e771726">tcol_printf</a> (const char *fmt,...)</td></tr>
+<tr class="memitem:a3904600e47ea1b5e9b5190813e771726"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="termcolor_8h.html#a3904600e47ea1b5e9b5190813e771726">tcol_printf</a> (const char *<a class="el" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>,...)</td></tr>
 <tr class="separator:a3904600e47ea1b5e9b5190813e771726"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04f7ab41736b98fbba6b28c76f0d36f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="termcolor_8h.html#a04f7ab41736b98fbba6b28c76f0d36f6">tcol_snprintf</a> (char *buffer, size_t N, const char *fmt,...)</td></tr>
+<tr class="memitem:a04f7ab41736b98fbba6b28c76f0d36f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="termcolor_8h.html#a04f7ab41736b98fbba6b28c76f0d36f6">tcol_snprintf</a> (char *buffer, size_t N, const char *<a class="el" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>,...)</td></tr>
 <tr class="separator:a04f7ab41736b98fbba6b28c76f0d36f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -475,11 +475,12 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00361">361</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  361</span>                                                     {</div>
 <div class="line"><span class="lineno">  362</span>    va_list ap;</div>
-<div class="line"><span class="lineno">  363</span>    va_start(ap, fmt);</div>
-<div class="line"><span class="lineno">  364</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="termcolor_8c.html#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a>(stream, fmt, ap);</div>
+<div class="line"><span class="lineno">  363</span>    va_start(ap, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
+<div class="line"><span class="lineno">  364</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="termcolor_8c.html#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a>(stream, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, ap);</div>
 <div class="line"><span class="lineno">  365</span>    va_end(ap);</div>
 <div class="line"><span class="lineno">  366</span>    <span class="keywordflow">return</span> status;</div>
 <div class="line"><span class="lineno">  367</span>}</div>
+<div class="ttc" id="agwion__print_8h_html_a98e80936172a59a9f91c6305e193cd98"><div class="ttname"><a href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a></div><div class="ttdeci">char const char * fmt</div><div class="ttdef"><b>Definition:</b> <a href="gwion__print_8h_source.html#l00002">gwion_print.h:2</a></div></div>
 <div class="ttc" id="atermcolor_8c_html_abceb3cf9bcb5a4958f611458b711e996"><div class="ttname"><a href="termcolor_8c.html#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a></div><div class="ttdeci">static int tcol_vfprintf(FILE *stream, const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="termcolor_8c_source.html#l00320">termcolor.c:320</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -536,8 +537,8 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00369">369</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  369</span>                                      {</div>
 <div class="line"><span class="lineno">  370</span>    va_list ap;</div>
-<div class="line"><span class="lineno">  371</span>    va_start(ap, fmt);</div>
-<div class="line"><span class="lineno">  372</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="termcolor_8c.html#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a>(stdout, fmt, ap);</div>
+<div class="line"><span class="lineno">  371</span>    va_start(ap, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
+<div class="line"><span class="lineno">  372</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="termcolor_8c.html#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a>(stdout, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, ap);</div>
 <div class="line"><span class="lineno">  373</span>    va_end(ap);</div>
 <div class="line"><span class="lineno">  374</span>    <span class="keywordflow">return</span> status;</div>
 <div class="line"><span class="lineno">  375</span>}</div>
@@ -585,8 +586,8 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00378">378</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  378</span>                                                                {</div>
 <div class="line"><span class="lineno">  379</span>    va_list ap;</div>
-<div class="line"><span class="lineno">  380</span>    va_start(ap, fmt);</div>
-<div class="line"><span class="lineno">  381</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="termcolor_8c.html#a3328b083df29d219389ca7c1cffb7289">tcol_vsnprintf</a>(stream, N, fmt, ap);</div>
+<div class="line"><span class="lineno">  380</span>    va_start(ap, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
+<div class="line"><span class="lineno">  381</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="termcolor_8c.html#a3328b083df29d219389ca7c1cffb7289">tcol_vsnprintf</a>(stream, N, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, ap);</div>
 <div class="line"><span class="lineno">  382</span>    va_end(ap);</div>
 <div class="line"><span class="lineno">  383</span>    <span class="keywordflow">return</span> status;</div>
 <div class="line"><span class="lineno">  384</span>}</div>

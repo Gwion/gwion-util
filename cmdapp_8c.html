@@ -97,13 +97,13 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab5c189f7531a688e84518dd76f402ccb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#ab5c189f7531a688e84518dd76f402ccb">eprintf</a>(fmt, ...)&#160;&#160;&#160;    <a class="el" href="termcolor_8c.html#a22c2d3666092d1f4ec58c27e06b96406">tcol_fprintf</a>(stderr, &quot;{R+}error:{0}&quot; fmt, ##__VA_ARGS__);</td></tr>
+<tr class="memitem:ab5c189f7531a688e84518dd76f402ccb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#ab5c189f7531a688e84518dd76f402ccb">eprintf</a>(<a class="el" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, ...)&#160;&#160;&#160;    <a class="el" href="termcolor_8c.html#a22c2d3666092d1f4ec58c27e06b96406">tcol_fprintf</a>(stderr, &quot;{R+}error:{0}&quot; fmt, ##__VA_ARGS__);</td></tr>
 <tr class="separator:ab5c189f7531a688e84518dd76f402ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a764d4566a6c3d43d37d54b65b7cd34e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#a764d4566a6c3d43d37d54b65b7cd34e6">IS_END_OF_FLAGS</a>(str)&#160;&#160;&#160;    ((str)[0] == '-' &amp;&amp; (str)[1] == '-' &amp;&amp; (str)[2] == 0)</td></tr>
+<tr class="memitem:a764d4566a6c3d43d37d54b65b7cd34e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#a764d4566a6c3d43d37d54b65b7cd34e6">IS_END_OF_FLAGS</a>(<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)&#160;&#160;&#160;    ((<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[0] == '-' &amp;&amp; (<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[1] == '-' &amp;&amp; (<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[2] == 0)</td></tr>
 <tr class="separator:a764d4566a6c3d43d37d54b65b7cd34e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e25f755c056de59f8ff7a3bccc8e638"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#a6e25f755c056de59f8ff7a3bccc8e638">IS_LONG_FLAG</a>(str)&#160;&#160;&#160;((str)[0] == '-' &amp;&amp; (str)[1] == '-')</td></tr>
+<tr class="memitem:a6e25f755c056de59f8ff7a3bccc8e638"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#a6e25f755c056de59f8ff7a3bccc8e638">IS_LONG_FLAG</a>(<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)&#160;&#160;&#160;((<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[0] == '-' &amp;&amp; (<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[1] == '-')</td></tr>
 <tr class="separator:a6e25f755c056de59f8ff7a3bccc8e638"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8369baa2a208e85dad63915f1b328459"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#a8369baa2a208e85dad63915f1b328459">IS_SHORT_FLAG</a>(str)&#160;&#160;&#160;((str)[0] == '-')</td></tr>
+<tr class="memitem:a8369baa2a208e85dad63915f1b328459"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#a8369baa2a208e85dad63915f1b328459">IS_SHORT_FLAG</a>(<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)&#160;&#160;&#160;((<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[0] == '-')</td></tr>
 <tr class="separator:a8369baa2a208e85dad63915f1b328459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53a887d8da9d71043399f871ae9fb8ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#a53a887d8da9d71043399f871ae9fb8ca">APPEND_ARG</a>(arg)</td></tr>
 <tr class="separator:a53a887d8da9d71043399f871ae9fb8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 <tr class="separator:aad9479125718c53561216da677bb6a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3b4a27cdc952ef39d5952e3d570c822"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcmdargs__t.html">cmdargs_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#aa3b4a27cdc952ef39d5952e3d570c822">cmdapp_getargs</a> (<a class="el" href="structcmdapp__t.html">cmdapp_t</a> *app)</td></tr>
 <tr class="separator:aa3b4a27cdc952ef39d5952e3d570c822"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add6ed0f12cf1bb28d189870c2c29ea71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#add6ed0f12cf1bb28d189870c2c29ea71">cmdapp_error</a> (<a class="el" href="structcmdapp__t.html">cmdapp_t</a> *app, const char *fmt,...)</td></tr>
+<tr class="memitem:add6ed0f12cf1bb28d189870c2c29ea71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmdapp_8c.html#add6ed0f12cf1bb28d189870c2c29ea71">cmdapp_error</a> (<a class="el" href="structcmdapp__t.html">cmdapp_t</a> *app, const char *<a class="el" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>,...)</td></tr>
 <tr class="separator:add6ed0f12cf1bb28d189870c2c29ea71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -180,7 +180,7 @@ Functions</h2></td></tr>
           <td class="memname">#define eprintf</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">fmt, </td>
+          <td class="paramname"><a class="el" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -210,8 +210,8 @@ Functions</h2></td></tr>
           <td class="memname">#define IS_END_OF_FLAGS</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">str</td><td>)</td>
-          <td>&#160;&#160;&#160;    ((str)[0] == '-' &amp;&amp; (str)[1] == '-' &amp;&amp; (str)[2] == 0)</td>
+          <td class="paramname"><a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a></td><td>)</td>
+          <td>&#160;&#160;&#160;    ((<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[0] == '-' &amp;&amp; (<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[1] == '-' &amp;&amp; (<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[2] == 0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -230,8 +230,8 @@ Functions</h2></td></tr>
           <td class="memname">#define IS_LONG_FLAG</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">str</td><td>)</td>
-          <td>&#160;&#160;&#160;((str)[0] == '-' &amp;&amp; (str)[1] == '-')</td>
+          <td class="paramname"><a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a></td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[0] == '-' &amp;&amp; (<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[1] == '-')</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -250,8 +250,8 @@ Functions</h2></td></tr>
           <td class="memname">#define IS_SHORT_FLAG</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">str</td><td>)</td>
-          <td>&#160;&#160;&#160;((str)[0] == '-')</td>
+          <td class="paramname"><a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a></td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)[0] == '-')</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -475,10 +475,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  372</span>    fprintf(stderr, <span class="stringliteral">&quot;%s: error: &quot;</span>, app-&gt;<a class="code hl_variable" href="structcmdapp__t.html#aa387b7c6fcf1e5f54ccef8173b6cfd2a">_info</a>.<a class="code hl_variable" href="structcmdapp__info__t.html#a074d288c33d44f86de4f7d4fd2f31ed3">program</a>);</div>
 <div class="line"><span class="lineno">  373</span><span class="preprocessor">    #endif </span><span class="comment">/* _POSIX_VERSION */</span><span class="preprocessor"></span></div>
 <div class="line"><span class="lineno">  374</span>    va_list valist;</div>
-<div class="line"><span class="lineno">  375</span>    va_start(valist, fmt);</div>
-<div class="line"><span class="lineno">  376</span>    vfprintf(stderr, fmt, valist);</div>
+<div class="line"><span class="lineno">  375</span>    va_start(valist, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
+<div class="line"><span class="lineno">  376</span>    vfprintf(stderr, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, valist);</div>
 <div class="line"><span class="lineno">  377</span>    va_end(valist);</div>
 <div class="line"><span class="lineno">  378</span>}</div>
+<div class="ttc" id="agwion__print_8h_html_a98e80936172a59a9f91c6305e193cd98"><div class="ttname"><a href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a></div><div class="ttdeci">char const char * fmt</div><div class="ttdef"><b>Definition:</b> <a href="gwion__print_8h_source.html#l00002">gwion_print.h:2</a></div></div>
 <div class="ttc" id="astructcmdapp__info__t_html_a074d288c33d44f86de4f7d4fd2f31ed3"><div class="ttname"><a href="structcmdapp__info__t.html#a074d288c33d44f86de4f7d4fd2f31ed3">cmdapp_info_t::program</a></div><div class="ttdeci">const char * program</div><div class="ttdef"><b>Definition:</b> <a href="cmdapp_8h_source.html#l00063">cmdapp.h:63</a></div></div>
 <div class="ttc" id="astructcmdapp__t_html_aa387b7c6fcf1e5f54ccef8173b6cfd2a"><div class="ttname"><a href="structcmdapp__t.html#aa387b7c6fcf1e5f54ccef8173b6cfd2a">cmdapp_t::_info</a></div><div class="ttdeci">cmdapp_info_t _info</div><div class="ttdef"><b>Definition:</b> <a href="cmdapp_8h_source.html#l00084">cmdapp.h:84</a></div></div>
 </div><!-- fragment -->

@@ -87,7 +87,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af47b35ee732e5f6e52d383809d6d4c97"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__string_8h.html#af47b35ee732e5f6e52d383809d6d4c97">free_mstr</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, char *const str)</td></tr>
+<tr class="memitem:af47b35ee732e5f6e52d383809d6d4c97"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__string_8h.html#af47b35ee732e5f6e52d383809d6d4c97">free_mstr</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, char *const <a class="el" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>)</td></tr>
 <tr class="memdesc:af47b35ee732e5f6e52d383809d6d4c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">free mp_allocated string  <br /></td></tr>
 <tr class="separator:af47b35ee732e5f6e52d383809d6d4c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a318f22e7ddd97bf443e6dd010aa63ca1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> <a class="el" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mp__string_8h.html#a318f22e7ddd97bf443e6dd010aa63ca1">mstrdup</a> (<a class="el" href="mpool_8h.html#ae4d9b6e55d40b65dbf81024805d1e8c3">MemPool</a> mp, const char *name)</td></tr>
@@ -137,8 +137,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="mp__string_8h_source.html#l00008">8</a> of file <a class="el" href="mp__string_8h_source.html">mp_string.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    8</span>                                                              {</div>
-<div class="line"><span class="lineno">    9</span>  <a class="code hl_function" href="mpool_8c.html#a9b287ec4e96434f9d09cbbcc7372ffd3">_mp_free</a>(mp, strlen(str) + 1, str);</div>
+<div class="line"><span class="lineno">    9</span>  <a class="code hl_function" href="mpool_8c.html#a9b287ec4e96434f9d09cbbcc7372ffd3">_mp_free</a>(mp, strlen(<a class="code hl_variable" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>) + 1, <a class="code hl_variable" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>);</div>
 <div class="line"><span class="lineno">   10</span>}</div>
+<div class="ttc" id="agwion__print_8h_html_a0152c0786fc5e4375f6400f14b1da464"><div class="ttname"><a href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a></div><div class="ttdeci">char ** str</div><div class="ttdef"><b>Definition:</b> <a href="gwion__print_8h_source.html#l00002">gwion_print.h:2</a></div></div>
 <div class="ttc" id="ampool_8c_html_a9b287ec4e96434f9d09cbbcc7372ffd3"><div class="ttname"><a href="mpool_8c.html#a9b287ec4e96434f9d09cbbcc7372ffd3">_mp_free</a></div><div class="ttdeci">void _mp_free(MemPool mp, const m_uint size, void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="mpool_8c_source.html#l00124">mpool.c:124</a></div></div>
 </div><!-- fragment -->
 </div>

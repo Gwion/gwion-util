@@ -1,17 +1,19 @@
 var searchData=
 [
-  ['tcol_5fcolor_5fparse_0',['tcol_color_parse',['../termcolor_8h.html#aa544f4a566ad33b69fc08ca7ff75a675',1,'tcol_color_parse(char *dst, size_t dstn, char color[16], size_t k, size_t *len):&#160;termcolor.c'],['../termcolor_8c.html#aa544f4a566ad33b69fc08ca7ff75a675',1,'tcol_color_parse(char *dst, size_t dstn, char color[16], size_t k, size_t *len):&#160;termcolor.c']]],
-  ['tcol_5ferrorstr_1',['tcol_errorstr',['../termcolor_8c.html#a02a0b19d11c2a2fed211f535890223f0',1,'tcol_errorstr(const enum term_color_error_t err):&#160;termcolor.c'],['../termcolor_8h.html#a02a0b19d11c2a2fed211f535890223f0',1,'tcol_errorstr(const enum term_color_error_t err):&#160;termcolor.c']]],
-  ['tcol_5ffmt_5fparse_2',['tcol_fmt_parse',['../termcolor_8c.html#a814d3c4218299c57ec5ab6fbddf5d728',1,'termcolor.c']]],
-  ['tcol_5ffprintf_3',['tcol_fprintf',['../termcolor_8c.html#a22c2d3666092d1f4ec58c27e06b96406',1,'tcol_fprintf(FILE *stream, const char *fmt,...):&#160;termcolor.c'],['../termcolor_8h.html#a22c2d3666092d1f4ec58c27e06b96406',1,'tcol_fprintf(FILE *stream, const char *fmt,...):&#160;termcolor.c']]],
-  ['tcol_5foverride_5fcolor_5fchecks_4',['tcol_override_color_checks',['../termcolor_8c.html#a45276491c40829998caacbdae38e9ab4',1,'tcol_override_color_checks(bool enable_color):&#160;termcolor.c'],['../termcolor_8h.html#a45276491c40829998caacbdae38e9ab4',1,'tcol_override_color_checks(bool enable_color):&#160;termcolor.c']]],
-  ['tcol_5fprintf_5',['tcol_printf',['../termcolor_8h.html#a3904600e47ea1b5e9b5190813e771726',1,'tcol_printf(const char *fmt,...):&#160;termcolor.c'],['../termcolor_8c.html#a3904600e47ea1b5e9b5190813e771726',1,'tcol_printf(const char *fmt,...):&#160;termcolor.c']]],
-  ['tcol_5fsnprintf_6',['tcol_snprintf',['../termcolor_8c.html#a5d7c664db8584c4396bd5bb6c46939b7',1,'tcol_snprintf(char *stream, size_t N, const char *fmt,...):&#160;termcolor.c'],['../termcolor_8h.html#a04f7ab41736b98fbba6b28c76f0d36f6',1,'tcol_snprintf(char *buffer, size_t N, const char *fmt,...):&#160;termcolor.c']]],
-  ['tcol_5fvfprintf_7',['tcol_vfprintf',['../termcolor_8c.html#abceb3cf9bcb5a4958f611458b711e996',1,'termcolor.c']]],
-  ['tcol_5fvsnprintf_8',['tcol_vsnprintf',['../termcolor_8c.html#a3328b083df29d219389ca7c1cffb7289',1,'termcolor.c']]],
-  ['text_5fadd_9',['text_add',['../text_8c.html#a12e169fc9d93563391f9946efe86a380',1,'text_add(GwText *text, const char *str):&#160;text.c'],['../gwion__text_8h.html#a9cdc47b67c84e2a87c5908c3074c41a5',1,'text_add(GwText *, const char *):&#160;text.c']]],
-  ['text_5fgrow_10',['text_grow',['../text_8c.html#a6676f1e3cf8449a4aa756c029ac9a053',1,'text.c']]],
-  ['text_5finit_11',['text_init',['../gwion__text_8h.html#a06a5be3f975a55f3f1a0c96b9a78454c',1,'gwion_text.h']]],
-  ['text_5frelease_12',['text_release',['../gwion__text_8h.html#a8f885a2b609315784a1ca023e403bd43',1,'gwion_text.h']]],
-  ['text_5freset_13',['text_reset',['../gwion__text_8h.html#a0ee05644261d6721da77d6e82d377153',1,'gwion_text.h']]]
+  ['scope_5fadd_0',['scope_add',['../scope_8h.html#a08458b2a61509156eb821ccd90f98f47',1,'scope_add(const Scope, const vtype, const vtype):&#160;scope.c'],['../scope_8c.html#a8c4574e924c772506df576c09a9cb130',1,'scope_add(const Scope s, const vtype xid, const vtype value):&#160;scope.c']]],
+  ['scope_5fback_1',['scope_back',['../scope_8c.html#aa41f23bc24e2d8fceb808fd26e2a5865',1,'scope.c']]],
+  ['scope_5fcommit_2',['scope_commit',['../scope_8c.html#a3c29ea57e0d3f377015d1f6e3f01a8d5',1,'scope_commit(const Scope s):&#160;scope.c'],['../scope_8h.html#af381cf87d762e732f486ada43b9fa7be',1,'scope_commit(const Scope):&#160;scope.c']]],
+  ['scope_5fget_3',['scope_get',['../scope_8h.html#a7828d7d954bd4cf4e6cccddda5e5f613',1,'scope.h']]],
+  ['scope_5finit_4',['scope_init',['../scope_8c.html#aa9a68d25e9c5969b497cf653bc63779a',1,'scope_init(MemPool p, Scope a):&#160;scope.c'],['../scope_8h.html#aaa8d68d5688c3042bcaf2e52d56639c6',1,'scope_init(MemPool, Scope):&#160;scope.c']]],
+  ['scope_5fiter_5',['scope_iter',['../scope_8c.html#a213ca48497c648cfc167f34cb7b666f6',1,'scope_iter(struct scope_iter *iter, void *ret):&#160;scope.c'],['../scope_8h.html#a213ca48497c648cfc167f34cb7b666f6',1,'scope_iter(struct scope_iter *iter, void *ret):&#160;scope.c']]],
+  ['scope_5flookup0_6',['scope_lookup0',['../scope_8c.html#a0269af1a69af923ef21337f8cf3f5d60',1,'scope_lookup0(const Scope s, const vtype xid):&#160;scope.c'],['../scope_8h.html#aa6efcbf68cfe1f6d0602ad919cd26db3',1,'scope_lookup0(const Scope, const vtype):&#160;scope.c']]],
+  ['scope_5flookup1_7',['scope_lookup1',['../scope_8c.html#a0c607bca78b53f5637ae9bce23bd37fc',1,'scope_lookup1(const Scope s, const vtype xid):&#160;scope.c'],['../scope_8h.html#a625941368542fece0492543754d07970',1,'scope_lookup1(const Scope, const vtype):&#160;scope.c']]],
+  ['scope_5flookup2_8',['scope_lookup2',['../scope_8c.html#a36e58122000dfc6b6dd6b3d1971d8d53',1,'scope_lookup2(const Scope s, const vtype xid):&#160;scope.c'],['../scope_8h.html#a7f4686ae4da6e7e9cc25308205f77a35',1,'scope_lookup2(const Scope, const vtype):&#160;scope.c']]],
+  ['scope_5fpop_9',['scope_pop',['../scope_8h.html#a3a79a9a15eb98b78ccf499638056cf82',1,'scope.h']]],
+  ['scope_5fpush_10',['scope_push',['../scope_8h.html#a4ca51c170b7ae703615d18e239000fc4',1,'scope.h']]],
+  ['scope_5frelease_11',['scope_release',['../scope_8c.html#a81cac1e80ab12c6c7675d9b79590d828',1,'scope_release(Scope a):&#160;scope.c'],['../scope_8h.html#afe896be33d42fd24dbe4af1f460d550a',1,'scope_release(Scope):&#160;scope.c']]],
+  ['split_5fargs_12',['split_args',['../carg_8c.html#a3034a483044b365bd22a7b5082701858',1,'split_args(MemPool p, const m_str str):&#160;carg.c'],['../carg_8h.html#a0a98b55aa20636ca37a9790212ce6df9',1,'split_args(MemPool, const m_str str):&#160;carg.c']]],
+  ['strdup_13',['strdup',['../windows__missing_8h.html#a5ffaef3fc3f7ddb9856ccd4bcb79e9bc',1,'windows_missing.h']]],
+  ['strndup_14',['strndup',['../windows__missing_8h.html#ae1dd96623292aa543d16c28d1b6ce211',1,'windows_missing.h']]],
+  ['strsep_15',['strsep',['../windows__missing_8h.html#a098b232e1cfa2b0ce1d94b7ad0440cbb',1,'windows_missing.h']]]
 ];
