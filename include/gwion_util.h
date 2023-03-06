@@ -13,6 +13,7 @@
 #include "err_msg.h"
 #include "xalloc.h"
 #include "mpool.h"
+#include "gwion_print.h"
 #include "container.h"
 #include "hash.h"
 #include "symbol.h"
