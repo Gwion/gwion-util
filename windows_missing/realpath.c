@@ -132,7 +132,7 @@ char *realpath(const char *path, char resolved_path[PATH_MAX])
     errno = EINVAL;
   }
   if(return_path) {
-    const size_t size = strlen(realpath);
+    const size_t size = strlen(return_path);
     for(size_t i = 0; i < size; i++) {
       if(return_path[i] == '\\')
         return_path[i] = '/';
