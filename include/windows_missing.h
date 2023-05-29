@@ -21,8 +21,7 @@ char *               strndup(const char *s, size_t n);
 char *               strsep(char **stringp, const char *delim);
 int                  getline(char **lineptr, size_t *n, FILE *fp);
 FILE *               fmemopen(void *buf, size_t len, const char *type NUSED);
-char *               realpath(const char *path, char *resolved_path);
-
+#define realpath(N,R) _fullpath((R),(N),_MAX_PATH)
 #ifdef __clang__
 #define strdup _strdup
 
