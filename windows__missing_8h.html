@@ -95,6 +95,8 @@ Macros</h2></td></tr>
 <tr class="separator:ab99ded389af74001a6298fc9e44e74e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae688d728e1acdfe5988c7db45d6f0166"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows__missing_8h.html#ae688d728e1acdfe5988c7db45d6f0166">PATH_MAX</a>&#160;&#160;&#160;<a class="el" href="windows__missing_8h.html#ab99ded389af74001a6298fc9e44e74e5">MAX_PATH</a></td></tr>
 <tr class="separator:ae688d728e1acdfe5988c7db45d6f0166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897354f307117dccd0026e33de46faaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows__missing_8h.html#a897354f307117dccd0026e33de46faaf">realpath</a>(N,  R)&#160;&#160;&#160;_fullpath((R),(N),_MAX_PATH)</td></tr>
+<tr class="separator:a897354f307117dccd0026e33de46faaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -113,8 +115,6 @@ Functions</h2></td></tr>
 <tr class="separator:acb39c6e5f88ff43f616ac77e24fb8743"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2acb7ca81c5845472c36b06228cc3c5f"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows__missing_8h.html#a2acb7ca81c5845472c36b06228cc3c5f">fmemopen</a> (void *buf, size_t len, const char *type <a class="el" href="defs_8h.html#a779a45537ce96ee93fd887eef961a634">NUSED</a>)</td></tr>
 <tr class="separator:a2acb7ca81c5845472c36b06228cc3c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01d2f9a839a1dfc59db014b944daa26d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows__missing_8h.html#a01d2f9a839a1dfc59db014b944daa26d">realpath</a> (const char *path, char *resolved_path)</td></tr>
-<tr class="separator:a01d2f9a839a1dfc59db014b944daa26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>implementation of function not present in windows </p>
@@ -150,6 +150,36 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="windows__missing_8h_source.html#l00015">15</a> of file <a class="el" href="windows__missing_8h_source.html">windows_missing.h</a>.</p>
+
+</div>
+</div>
+<a id="a897354f307117dccd0026e33de46faaf" name="a897354f307117dccd0026e33de46faaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a897354f307117dccd0026e33de46faaf">&#9670;&#160;</a></span>realpath</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define realpath</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">N, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">R&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;_fullpath((R),(N),_MAX_PATH)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="windows__missing_8h_source.html#l00024">24</a> of file <a class="el" href="windows__missing_8h_source.html">windows_missing.h</a>.</p>
 
 </div>
 </div>
@@ -228,34 +258,6 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">FILE *&#160;</td>
           <td class="paramname"><em>fp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a01d2f9a839a1dfc59db014b944daa26d" name="a01d2f9a839a1dfc59db014b944daa26d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01d2f9a839a1dfc59db014b944daa26d">&#9670;&#160;</a></span>realpath()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * realpath </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>resolved_path</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
