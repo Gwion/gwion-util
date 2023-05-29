@@ -6,7 +6,7 @@ var searchData=
   ['decl_5fob_3',['DECL_OB',['../defs_8h.html#a8a9fbbcb2ec6b528f38d53fe1e48e154',1,'defs.h']]],
   ['decl_5foo_4',['DECL_OO',['../defs_8h.html#ae567284efb085a3f06ae6001011d3f23',1,'defs.h']]],
   ['defs_2eh_5',['defs.h',['../defs_8h.html',1,'']]],
-  ['description_6',['description',['../struct__cmdopt__internal__t.html#af372560dce735f129b857f31bfef5bd9',1,'_cmdopt_internal_t::description()'],['../structcmdapp__info__t.html#a2a680df4b8e5ca17dd211209c45ead02',1,'cmdapp_info_t::description()']]],
+  ['description_6',['description',['../struct__cmdopt__internal__t.html#af372560dce735f129b857f31bfef5bd9',1,'_cmdopt_internal_t::description'],['../structcmdapp__info__t.html#a2a680df4b8e5ca17dd211209c45ead02',1,'cmdapp_info_t::description']]],
   ['dlclose_7',['DLCLOSE',['../gwion__thread_8h.html#ab24e5745b3a82deeaed92eff349ae81a',1,'gwion_thread.h']]],
   ['dlerror_8',['DLERROR',['../gwion__thread_8h.html#a690562dc6c92cb811f90e8391bfeb801',1,'gwion_thread.h']]],
   ['dlopen_9',['DLOPEN',['../gwion__thread_8h.html#afb02bf89494d3be01d62ee7c0abaadf3',1,'gwion_thread.h']]],

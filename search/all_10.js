@@ -26,7 +26,7 @@ var searchData=
   ['split_5fargs_23',['split_args',['../carg_8h.html#a0a98b55aa20636ca37a9790212ce6df9',1,'split_args(MemPool, const m_str str):&#160;carg.c'],['../carg_8c.html#a3034a483044b365bd22a7b5082701858',1,'split_args(MemPool p, const m_str str):&#160;carg.c']]],
   ['str_24',['str',['../gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464',1,'gwion_print.h']]],
   ['str_25',['STR',['../gwion__thread_8h.html#a05b95a47759fd66b4deab2740ba27453',1,'gwion_thread.h']]],
-  ['str_26',['str',['../structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee',1,'ArgSplitter::str()'],['../structGwText__.html#a6dcca7bae982686b33476bc6cf463d67',1,'GwText_::str()']]],
+  ['str_26',['str',['../structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee',1,'ArgSplitter::str'],['../structGwText__.html#a6dcca7bae982686b33476bc6cf463d67',1,'GwText_::str']]],
   ['str_5fexpand_27',['STR_EXPAND',['../gwion__thread_8h.html#a61469a2fe6aebc934e696bde3522a763',1,'gwion_thread.h']]],
   ['strdup_28',['strdup',['../windows__missing_8h.html#a5ffaef3fc3f7ddb9856ccd4bcb79e9bc',1,'windows_missing.h']]],
   ['strndup_29',['strndup',['../windows__missing_8h.html#ae1dd96623292aa543d16c28d1b6ce211',1,'windows_missing.h']]],
@@ -39,7 +39,7 @@ var searchData=
   ['symtable_36',['SymTable',['../symbol_8h.html#ae300fdf4e3b772d3755da1aa41dfcf96',1,'symbol.h']]],
   ['symtable_5f_37',['SymTable_',['../structSymTable__.html',1,'']]],
   ['synopses_38',['synopses',['../structcmdapp__info__t.html#aa525aebb8220cc5878989f4cc3854513',1,'cmdapp_info_t']]],
-  ['sz_39',['sz',['../structSymTable__.html#a0214d7a9597cf6a110ab4e4cee48eaec',1,'SymTable_::sz()'],['../structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed',1,'MemPool_::sz()']]],
+  ['sz_39',['sz',['../structSymTable__.html#a0214d7a9597cf6a110ab4e4cee48eaec',1,'SymTable_::sz'],['../structMemPool__.html#ae7ed1cf61c95853982ddf9579e7c91ed',1,'MemPool_::sz']]],
   ['sz_5ffloat_40',['SZ_FLOAT',['../gwcommon_8h.html#a61f1386f5d2320698ef773cd99ec45c2',1,'gwcommon.h']]],
   ['sz_5fint_41',['SZ_INT',['../gwcommon_8h.html#a61ab0ac32d257c02bc3b3f12dfe668e9',1,'gwcommon.h']]]
 ];

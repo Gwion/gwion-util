@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['x_0',['x',['../structm__vec3.html#a2b7ebe315c3bea9fb957c14a0fde5665',1,'m_vec3::x()'],['../structm__vec4.html#a45eab07973b44e449483c4f44c55a716',1,'m_vec4::x()']]],
+  ['x_0',['x',['../structm__vec3.html#a2b7ebe315c3bea9fb957c14a0fde5665',1,'m_vec3::x'],['../structm__vec4.html#a45eab07973b44e449483c4f44c55a716',1,'m_vec4::x']]],
   ['xalloc_2eh_1',['xalloc.h',['../xalloc_8h.html',1,'']]],
   ['xcalloc_2',['xcalloc',['../xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d',1,'xalloc.h']]],
   ['xcheck_3',['xcheck',['../xalloc_8h.html#a3ae4374ebe7566098b5c359a09908a20',1,'xalloc.h']]],
