@@ -30,15 +30,15 @@ ANN void free_threadpool(threadpool_t *pool);
 
 #ifdef BUILD_ON_WINDOWS
 ANN static inline int gwt_lock(gwtlock_t *lock) {
-  EnterCriticalSection(lock);
+  EnterCriticalSection(*lock);
   return 0;
 }
 ANN static inline int gwt_unlock(gwtlock_t *lock) {
-  LeaveCriticalSection(lock);
+  LeaveCriticalSection(*lock);
   return 0;
 }
 ANN static inline void gwt_wait(gwtcond_t *cond, gwtlock_t *lock) {
-  SleepConditionVariableCS(cond, lock, INFINITE); // bool
+  SleepConditionVariableCS(*cond, *lock, INFINITE); // bool
 }
 ANN static inline int gwt_broadcast(gwtcond_t *cond) {
   WakeAllConditionVariable(*cond);
@@ -49,13 +49,16 @@ ANN static inline int gwt_signal(gwtcond_t *cond) {
   return 0;
 }
 ANN static inline void gwt_create(gwtthread_t *thread, void* (*fun)(void*), void *arg) {
-  *thread = CreateThread(NULL, 0, func, arg, 0, NULL);
+  *thread = CreateThread(NULL, 0, fun, arg, 0, NULL);
 }
 ANN static inline void gwt_join(gwtthread_t thread) {
   WaitForSingleObject(thread, INFINITE); // dword // (DWORD)0xFFFFFFFF on error
 }
 ANN static inline void gwt_lock_end(gwtlock_t *lock) {
   return DeleteCriticalSection(*lock);
+}
+ANN static inline void gwt_lock_ini(gwtlock_t *lock) {
+  return InitializeCriticalSection(*lock);
 }
 ANN static inline void gwt_cond_end(gwtcond_t *cond) {}
 #else
