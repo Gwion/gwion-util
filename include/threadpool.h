@@ -58,8 +58,9 @@ ANN static inline void gwt_join(gwtthread_t thread) {
 ANN static inline void gwt_lock_end(gwtlock_t *lock) {
   return DeleteCriticalSection(*lock);
 }
-ANN static inline void gwt_lock_ini(gwtlock_t *lock) {
-  return InitializeCriticalSection(*lock);
+ANN static inline int gwt_lock_ini(gwtlock_t *lock) {
+  InitializeCriticalSection(*lock);
+  return 0;
 }
 ANN static inline int gwt_cond_end(gwtcond_t *cond NUSED) { return 0;}
 ANN static inline int gwt_cond_ini(gwtcond_t *cond) {
