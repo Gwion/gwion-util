@@ -3,7 +3,7 @@
 
 #ifdef BUILD_ON_WINDOWS
 typedef HANDLE              gwtthread_t;
-typedef PCRITICAL_SECTION   gwtmutex_t;
+typedef PCRITICAL_SECTION   gwtlock_t;
 typedef PCONDITION_VARIABLE gwtcond_t;
 typedef long unsigned       gwtreturn_t;
 #else
@@ -41,11 +41,11 @@ ANN static inline void gwt_wait(gwtcond_t *cond, gwtlock_t *lock) {
   SleepConditionVariableCS(cond, lock, INFINITE); // bool
 }
 ANN static inline int gwt_broadcast(gwtcond_t *cond) {
-  WakeAllConditionVariable(cond);
+  WakeAllConditionVariable(*cond);
   return 0;
 }
 ANN static inline int gwt_signal(gwtcond_t *cond) {
-  WakeConditionVariable(cond);
+  WakeConditionVariable(*cond);
   return 0;
 }
 ANN static inline void gwt_create(gwtthread_t *thread, void* (*fun)(void*), void *arg) {
