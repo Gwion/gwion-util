@@ -29,20 +29,24 @@ ANN void free_threadpool(threadpool_t *pool);
 
 
 #ifdef BUILD_ON_WINDOWS
-ANN static inline void gwt_lock(threadpool_t *pool) {
-  EnterCriticalSection(&pool->lock); // void
+ANN static inline int gwt_lock(gwtlock_t *lock) {
+  EnterCriticalSection(lock);
+  return 0;
 }
-ANN static inline void gwt_unlock(threadpool_t *pool) {
-  LeaveCriticalSection(&pool->lock); // void
+ANN static inline int gwt_unlock(gwtlock_t *lock) {
+  LeaveCriticalSection(lock);
+  return 0;
 }
 ANN static inline void gwt_wait(gwtcond_t *cond, gwtlock_t *lock) {
   SleepConditionVariableCS(cond, lock, INFINITE); // bool
 }
-ANN static inline void gwt_broadcast(threadpool_t *pool) {
-  WakeAllConditionVariable(&pool->cond); // void
+ANN static inline int gwt_broadcast(gwtcond_t *cond) {
+  WakeAllConditionVariable(cond);
+  return 0;
 }
-ANN static inline void gwt_signal(threadpool_t *pool) {
-  return WakeConditionVariable(&pool->cond); // void
+ANN static inline int gwt_signal(gwtcond_t *cond) {
+  WakeConditionVariable(cond);
+  return 0;
 }
 ANN static inline void gwt_create(gwtthread_t *thread, void* (*fun)(void*), void *arg) {
   *thread = CreateThread(NULL, 0, func, arg, 0, NULL);
@@ -67,8 +71,8 @@ ANN static inline void gwt_join(gwtthread_t thread) {
 ANN static inline void gwt_wait(gwtcond_t *cond, gwtlock_t *lock) {
   pthread_cond_wait(cond, lock);
 }
-ANN static inline void gwt_broadcast(gwtcond_t *cond) {
-  pthread_cond_broadcast(cond);
+ANN static inline int gwt_broadcast(gwtcond_t *cond) {
+  return pthread_cond_broadcast(cond);
 }
 ANN static inline int gwt_signal(gwtcond_t *cond) {
   return pthread_cond_signal(cond);
