@@ -350,8 +350,8 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  111</span>}</div>
 <div class="ttc" id="ampool_8c_html_a90da8f3594a2d915df88a6e1de394d30"><div class="ttname"><a href="mpool_8c.html#a90da8f3594a2d915df88a6e1de394d30">__mp_calloc2</a></div><div class="ttdeci">static void * __mp_calloc2(struct pool *p, const m_bool zero)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8c_source.html#l00092">mpool.c:92</a></div></div>
 <div class="ttc" id="astructpool_html_ad2629bb0437d0b069fd8f6aeb4971f00"><div class="ttname"><a href="structpool.html#ad2629bb0437d0b069fd8f6aeb4971f00">pool::mutex</a></div><div class="ttdeci">gwtlock_t mutex</div><div class="ttdef"><b>Definition</b> <a href="mpool_8c_source.html#l00017">mpool.c:17</a></div></div>
-<div class="ttc" id="athreadpool_8h_html_a8bb27fa40de794f744b71e460881e3bc"><div class="ttname"><a href="threadpool_8h.html#a8bb27fa40de794f744b71e460881e3bc">gwt_unlock</a></div><div class="ttdeci">static ANN int gwt_unlock(gwtlock_t *lock)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00065">threadpool.h:65</a></div></div>
-<div class="ttc" id="athreadpool_8h_html_ad2be0830b1cf1d3ca2cb010cc5a94adb"><div class="ttname"><a href="threadpool_8h.html#ad2be0830b1cf1d3ca2cb010cc5a94adb">gwt_lock</a></div><div class="ttdeci">static ANN int gwt_lock(gwtlock_t *lock)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00062">threadpool.h:62</a></div></div>
+<div class="ttc" id="athreadpool_8h_html_a8bb27fa40de794f744b71e460881e3bc"><div class="ttname"><a href="threadpool_8h.html#a8bb27fa40de794f744b71e460881e3bc">gwt_unlock</a></div><div class="ttdeci">static ANN int gwt_unlock(gwtlock_t *lock)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00068">threadpool.h:68</a></div></div>
+<div class="ttc" id="athreadpool_8h_html_ad2be0830b1cf1d3ca2cb010cc5a94adb"><div class="ttname"><a href="threadpool_8h.html#ad2be0830b1cf1d3ca2cb010cc5a94adb">gwt_lock</a></div><div class="ttdeci">static ANN int gwt_lock(gwtlock_t *lock)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00065">threadpool.h:65</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -626,7 +626,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   76</span>  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; p-&gt;<a class="code hl_variable" href="structpool.html#a5f9eb90fb91008ac26901153cea88fa3">nblk</a> &amp;&amp; p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[i]; ++i) <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>[i]);</div>
 <div class="line"><span class="lineno">   77</span>  <a class="code hl_define" href="xalloc_8h.html#a39ef228c1684eb7b3e198e83e70eff1b">xfree</a>(p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>);</div>
 <div class="line"><span class="lineno">   78</span>}</div>
-<div class="ttc" id="athreadpool_8h_html_aabf13740f427aeb02af77083329941a8"><div class="ttname"><a href="threadpool_8h.html#aabf13740f427aeb02af77083329941a8">gwt_lock_end</a></div><div class="ttdeci">static ANN void gwt_lock_end(gwtlock_t *lock)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00086">threadpool.h:86</a></div></div>
+<div class="ttc" id="athreadpool_8h_html_aabf13740f427aeb02af77083329941a8"><div class="ttname"><a href="threadpool_8h.html#aabf13740f427aeb02af77083329941a8">gwt_lock_end</a></div><div class="ttdeci">static ANN void gwt_lock_end(gwtlock_t *lock)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00089">threadpool.h:89</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -762,7 +762,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   31</span>  p-&gt;<a class="code hl_variable" href="structpool.html#a2a9aad1422fe864107fb0659ba542059">data</a>   = (uint8_t **)<a class="code hl_function" href="xalloc_8h.html#a622b9e861d9862103ff0e44808c7516d">xcalloc</a>(1, <span class="keyword">sizeof</span>(uint8_t *));</div>
 <div class="line"><span class="lineno">   32</span>  <a class="code hl_function" href="threadpool_8h.html#ab2bd8104c4da5310eb04dbfd4f0d3a16">gwt_lock_ini</a>(&amp;p-&gt;<a class="code hl_variable" href="structpool.html#ad2629bb0437d0b069fd8f6aeb4971f00">mutex</a>);</div>
 <div class="line"><span class="lineno">   33</span>}</div>
-<div class="ttc" id="athreadpool_8h_html_ab2bd8104c4da5310eb04dbfd4f0d3a16"><div class="ttname"><a href="threadpool_8h.html#ab2bd8104c4da5310eb04dbfd4f0d3a16">gwt_lock_ini</a></div><div class="ttdeci">static ANN int gwt_lock_ini(gwtlock_t *lock)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00080">threadpool.h:80</a></div></div>
+<div class="ttc" id="athreadpool_8h_html_ab2bd8104c4da5310eb04dbfd4f0d3a16"><div class="ttname"><a href="threadpool_8h.html#ab2bd8104c4da5310eb04dbfd4f0d3a16">gwt_lock_ini</a></div><div class="ttdeci">static ANN int gwt_lock_ini(gwtlock_t *lock)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00083">threadpool.h:83</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
