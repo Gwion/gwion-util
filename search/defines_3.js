@@ -9,11 +9,10 @@ var searchData=
   ['cmdapp_5fmode_5fshortarg_6',['CMDAPP_MODE_SHORTARG',['../cmdapp_8h.html#af7d925def156a9378c792a455f7ed66c',1,'cmdapp.h']]],
   ['cmdapp_5fmode_5fsilent_7',['CMDAPP_MODE_SILENT',['../cmdapp_8h.html#a50e51415e76a5a3f3c0a0285f40e8878',1,'cmdapp.h']]],
   ['cmdapp_5fshould_5fexit_8',['cmdapp_should_exit',['../cmdapp_8h.html#a8661f49276c2a789b79ae44fc41c5c69',1,'cmdapp.h']]],
-  ['cmdopt_5fexists_9',['CMDOPT_EXISTS',['../cmdapp_8h.html#a5104a44bc0e94d25d09d35bc906f3733',1,'cmdapp.h']]],
-  ['cmdopt_5fexists_10',['cmdopt_exists',['../cmdapp_8h.html#ab7c605ec3dfe32cdf497316d57d8ccbb',1,'cmdapp.h']]],
-  ['cmdopt_5fis_5foptional_11',['cmdopt_is_optional',['../cmdapp_8h.html#afd3a9993e5813709259cfd8a3ef40fb1',1,'cmdapp.h']]],
-  ['cmdopt_5fmaytakearg_12',['CMDOPT_MAYTAKEARG',['../cmdapp_8h.html#a17b101f34934b80f3d410e90ee58ea6c',1,'cmdapp.h']]],
-  ['cmdopt_5foptional_13',['CMDOPT_OPTIONAL',['../cmdapp_8h.html#abb465dff78c9473f75a7a3cd06a92e2f',1,'cmdapp.h']]],
-  ['cmdopt_5ftakesarg_14',['CMDOPT_TAKESARG',['../cmdapp_8h.html#a08d401209ecd345e41c87fa3c2ea9548',1,'cmdapp.h']]],
-  ['container_5fof_15',['container_of',['../defs_8h.html#af8c317a42292b61c93aae91e59118a46',1,'defs.h']]]
+  ['cmdopt_5fexists_9',['cmdopt_exists',['../cmdapp_8h.html#ab7c605ec3dfe32cdf497316d57d8ccbb',1,'cmdopt_exists:&#160;cmdapp.h'],['../cmdapp_8h.html#a5104a44bc0e94d25d09d35bc906f3733',1,'CMDOPT_EXISTS:&#160;cmdapp.h']]],
+  ['cmdopt_5fis_5foptional_10',['cmdopt_is_optional',['../cmdapp_8h.html#afd3a9993e5813709259cfd8a3ef40fb1',1,'cmdapp.h']]],
+  ['cmdopt_5fmaytakearg_11',['CMDOPT_MAYTAKEARG',['../cmdapp_8h.html#a17b101f34934b80f3d410e90ee58ea6c',1,'cmdapp.h']]],
+  ['cmdopt_5foptional_12',['CMDOPT_OPTIONAL',['../cmdapp_8h.html#abb465dff78c9473f75a7a3cd06a92e2f',1,'cmdapp.h']]],
+  ['cmdopt_5ftakesarg_13',['CMDOPT_TAKESARG',['../cmdapp_8h.html#a08d401209ecd345e41c87fa3c2ea9548',1,'cmdapp.h']]],
+  ['container_5fof_14',['container_of',['../defs_8h.html#af8c317a42292b61c93aae91e59118a46',1,'defs.h']]]
 ];
