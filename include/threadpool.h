@@ -60,7 +60,11 @@ ANN static inline void gwt_lock_end(gwtlock_t *lock) {
 ANN static inline void gwt_lock_ini(gwtlock_t *lock) {
   return InitializeCriticalSection(*lock);
 }
-ANN static inline void gwt_cond_end(gwtcond_t *cond) {}
+ANN static inline int gwt_cond_end(gwtcond_t *cond NUSED) { return 0;}
+ANN static inline int gwt_cond_ini(gwtcond_t *cond) {
+  InitializeConditionVariable(cond);
+  return 0;
+}
 #else
 ANN static inline int gwt_lock(gwtlock_t *lock) {
   return pthread_mutex_lock(lock);
