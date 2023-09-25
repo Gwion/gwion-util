@@ -44,6 +44,9 @@ ANN static bool alloc(threadpool_t *p, const uint32_t thread_count,
 }
 
 ANN static bool utils(threadpool_t *p) {
+#ifdef BUILD_ON_WINDOWS
+  p->lock = NULL;
+#endif
   if(gwt_lock_ini(&p->lock)) return false;
   p->has_lock = true;
   if(gwt_cond_ini(&p->cond)) return false;

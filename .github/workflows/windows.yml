@@ -8,7 +8,6 @@ jobs:
     name:  Windows ${{ matrix.double && 'double' || 'float '}}
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     env:
-      BUILD_ON_WINDOWS: 1
       CC: gcc
       USE_DOUBLE: ${{ matrix.double }}
     strategy:
