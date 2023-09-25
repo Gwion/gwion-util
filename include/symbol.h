@@ -11,10 +11,10 @@ struct Symbol_ {
   char   name[];
 };
 typedef struct SymTable_ {
-  MUTEX_TYPE mutex;
-  MemPool    p;
-  size_t     sz;
-  Symbol     sym[];
+  gwtlock_t mutex;
+  MemPool   p;
+  size_t    sz;
+  Symbol    sym[];
 } SymTable;
 
 ANN SymTable *new_symbol_table(MemPool p, const size_t sz);

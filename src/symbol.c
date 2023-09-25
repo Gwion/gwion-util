@@ -5,7 +5,7 @@
 ANN SymTable *new_symbol_table(MemPool p, const size_t sz) {
   SymTable *const st = mp_malloc2(p, TABLE_SZ(sz));
   st->sz             = sz;
-  MUTEX_SETUP(st->mutex);
+  gwt_lock_ini(&st->mutex);
   st->p = p;
   return st;
 }
@@ -22,7 +22,7 @@ ANN void free_symbols(SymTable *const ht) {
     const Symbol s = ht->sym[i - 1];
     if (s) free_symbol(ht->p, s);
   }
-  MUTEX_CLEANUP(ht->mutex);
+  gwt_lock_end(&ht->mutex);
   mp_free2(ht->p, TABLE_SZ(ht->sz), ht);
 }
 
@@ -43,8 +43,8 @@ ANN Symbol insert_symbol(SymTable *const ht, const m_str name) {
   LOOP_OPTIM
   for (Symbol sym = syms; sym; sym = sym->next)
     if (!strcmp(sym->name, name)) return sym;
-  MUTEX_LOCK(ht->mutex);
+  gwt_lock(&ht->mutex);
   *addr = mksymbol(ht->p, name, syms);
-  MUTEX_UNLOCK(ht->mutex);
+  gwt_unlock(&ht->mutex);
   return ht->sym[index];
 }

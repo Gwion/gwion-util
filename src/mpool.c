@@ -14,7 +14,7 @@ struct Recycle {
 
 struct pool {
   uint8_t **      data;
-  MUTEX_TYPE mutex;
+  gwtlock_t mutex;
   volatile struct Recycle *next;
   uint32_t        obj_sz;
   uint32_t        obj_id;
@@ -29,7 +29,7 @@ ANN static void mp_set(struct pool *p, const uint32_t obj_sz) {
   p->nblk   = 1;
   p->next   = NULL;
   p->data   = (uint8_t **)xcalloc(1, sizeof(uint8_t *));
-  MUTEX_SETUP(p->mutex);
+  gwt_lock_ini(&p->mutex);
 }
 
 MemPool mempool_ini(const size_t sz) {
@@ -72,7 +72,7 @@ ANN struct pool *mp_ini(MemPool mp, const uint32_t obj_sz) {
 }
 
 void mp_end(struct pool *p) {
-  MUTEX_CLEANUP(p->mutex);
+  gwt_lock_end(&p->mutex);
   for (uint32_t i = 0; i < p->nblk && p->data[i]; ++i) xfree(p->data[i]);
   xfree(p->data);
 }
@@ -104,21 +104,21 @@ static void *__mp_calloc2(struct pool *p, const m_bool zero) {
 }
 
 void *_mp_calloc2(struct pool *p, const m_bool zero) {
-  MUTEX_LOCK(p->mutex);
+  gwt_lock(&p->mutex);
   void *ret = __mp_calloc2(p, zero);
-  MUTEX_UNLOCK(p->mutex);
+  gwt_unlock(&p->mutex);
   return ret;
 }
 
 void _mp_free2(struct pool *p, void *ptr) {
-  MUTEX_LOCK(p->mutex);
+  gwt_lock(&p->mutex);
   volatile struct Recycle *next = p->next;
 #ifdef POOL_CHECK
   memset(ptr, 0, p->obj_sz);
 #endif
   p->next       = ptr;
   p->next->next = next;
-  MUTEX_UNLOCK(p->mutex);
+  gwt_unlock(&p->mutex);
 }
 
 void _mp_free(MemPool mp, const m_uint size, void *ptr) {

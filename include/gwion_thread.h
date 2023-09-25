@@ -9,9 +9,10 @@
 #define THREAD_FUNC(a) THREAD_RETTYPE(a)(void *data)
 #define THREAD_TYPE    HANDLE
 #define THREAD_CREATE(thread, func, arg)                                       \
-  thread = CreateThread(NULL, 0, func, arg, 0, NULL);
-#define THREAD_JOIN(thread) WaitForSingleObject(thread, 0);
+  thread = CreateThread(NULL, 0, func, arg, 0, NULL)
+#define THREAD_JOIN(thread) WaitForSingleObject(thread, 0)
 #define THREAD_RETURN(arg)  return 0;
+#define THREAD_DETACH(arg)
 
 #define MUTEX_TYPE        HANDLE
 #define MUTEX_INITIALIZER NULL
@@ -28,6 +29,7 @@ int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 #define THREAD_COND_SETUP(x)       x = CreateEvent(NULL, FALSE, FALSE, NULL);
 #define THREAD_COND_WAIT(x, mutex) WaitForSingleObject(x, INFINITE)
 #define THREAD_COND_SIGNAL(x)      SetEvent(x);
+#define THREAD_COND_BROADCAST(x)      SetEvent(x);
 #define THREAD_COND_CLEANUP(x)     CloseHandle(x)
 #else
 #include <pthread.h>
@@ -36,13 +38,14 @@ int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 #define THREAD_FUNC(a) THREAD_RETTYPE(a)(void *data)
 #define THREAD_TYPE    pthread_t
 #define THREAD_CREATE(thread, func, arg)                                       \
-  pthread_create(&thread, NULL, func, arg);
-#define THREAD_JOIN(thread) pthread_join(thread, NULL);
+  pthread_create(&thread, NULL, func, arg)
+#define THREAD_JOIN(thread) pthread_join(thread, NULL)
 #define THREAD_RETURN(arg)                                                     \
   {                                                                            \
     pthread_exit(NULL);                                                        \
     return NULL;                                                               \
   }
+#define THREAD_DETACH(arg) pthread_detach(arg)
 
 #define MUTEX_TYPE        pthread_mutex_t *
 #define MUTEX_INITIALIZER PTHREAD_MUTEX_INITIALIZER
@@ -64,7 +67,7 @@ int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 #define MUTEX_UNLOCK(x)      pthread_mutex_unlock((x))
 #define MUTEX_COND_UNLOCK(x) pthread_mutex_unlock((x))
 
-#define THREAD_COND_TYPE pthread_cond_t *
+#define THREAD_COND_TYPE pthread_cond_t*
 #define THREAD_COND_SETUP(x)                                                   \
   {                                                                            \
     x = (pthread_cond_t *)xcalloc(1, sizeof(pthread_cond_t));                  \
@@ -72,6 +75,7 @@ int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
   }
 #define THREAD_COND_WAIT(x, mutex) pthread_cond_wait(x, mutex)
 #define THREAD_COND_SIGNAL(x)      pthread_cond_signal(x)
+#define THREAD_COND_BROADCAST(x)      pthread_cond_broadcast(x)
 #define THREAD_COND_CLEANUP(x)                                                 \
   {                                                                            \
     pthread_cond_destroy(x);                                                   \
