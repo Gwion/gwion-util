@@ -48,7 +48,7 @@ ANN static inline int gwt_signal(gwtcond_t *cond) {
   WakeConditionVariable(*cond);
   return 0;
 }
-ANN static inline int gwt_create(gwtthread_t *thread, gwreturn_t (*fun)(void*), void *arg) {
+ANN static inline int gwt_create(gwtthread_t *thread, gwtreturn_t (*fun)(void*), void *arg) {
   *thread = CreateThread(NULL, 0, fun, arg, 0, NULL);
   return 0;
 }
