@@ -306,21 +306,21 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8c_source.html#l00099">99</a> of file <a class="el" href="threadpool_8c_source.html">threadpool.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   99</span>                                          {</div>
-<div class="line"><span class="lineno">  100</span>  (void)<a class="code hl_function" href="threadpool_8h.html#ad2be0830b1cf1d3ca2cb010cc5a94adb">gwt_lock</a>(&amp;p-&gt;lock);</div>
-<div class="line"><span class="lineno">  101</span>  p-&gt;shutdown = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  102</span>  <a class="code hl_function" href="threadpool_8h.html#a708b3110184150457e9cbe22d01759f6">gwt_broadcast</a>(&amp;p-&gt;cond);</div>
-<div class="line"><span class="lineno">  103</span>  (void)<a class="code hl_function" href="threadpool_8h.html#a8bb27fa40de794f744b71e460881e3bc">gwt_unlock</a>(&amp;p-&gt;lock);</div>
-<div class="line"><span class="lineno">  104</span>  <span class="keywordflow">if</span>(p-&gt;threads) {</div>
-<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">for</span>(uint32_t i = 0; i &lt; p-&gt;started; i++)</div>
-<div class="line"><span class="lineno">  106</span>      <a class="code hl_function" href="threadpool_8h.html#aab67214a88ac0279219bf35fa884492c">gwt_join</a>(p-&gt;threads[i]);</div>
-<div class="line"><span class="lineno">  107</span>    free(p-&gt;threads);</div>
-<div class="line"><span class="lineno">  108</span>  }</div>
-<div class="line"><span class="lineno">  109</span>  <span class="keywordflow">if</span>(p-&gt;queue) free(p-&gt;queue);</div>
-<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">if</span>(p-&gt;has_lock) <a class="code hl_function" href="threadpool_8h.html#aabf13740f427aeb02af77083329941a8">gwt_lock_end</a>(&amp;p-&gt;lock);</div>
-<div class="line"><span class="lineno">  111</span>  <span class="keywordflow">if</span>(p-&gt;has_cond) <a class="code hl_function" href="threadpool_8h.html#a52a4ccc96d26e6287b49b48927f31133">gwt_cond_end</a>(&amp;p-&gt;cond);</div>
-<div class="line"><span class="lineno">  112</span>}</div>
+<p class="definition">Definition at line <a class="el" href="threadpool_8c_source.html#l00100">100</a> of file <a class="el" href="threadpool_8c_source.html">threadpool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                                          {</div>
+<div class="line"><span class="lineno">  101</span>  (void)<a class="code hl_function" href="threadpool_8h.html#ad2be0830b1cf1d3ca2cb010cc5a94adb">gwt_lock</a>(&amp;p-&gt;lock);</div>
+<div class="line"><span class="lineno">  102</span>  p-&gt;shutdown = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  103</span>  <a class="code hl_function" href="threadpool_8h.html#a708b3110184150457e9cbe22d01759f6">gwt_broadcast</a>(&amp;p-&gt;cond);</div>
+<div class="line"><span class="lineno">  104</span>  (void)<a class="code hl_function" href="threadpool_8h.html#a8bb27fa40de794f744b71e460881e3bc">gwt_unlock</a>(&amp;p-&gt;lock);</div>
+<div class="line"><span class="lineno">  105</span>  <span class="keywordflow">if</span>(p-&gt;threads) {</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">for</span>(uint32_t i = 0; i &lt; p-&gt;started; i++)</div>
+<div class="line"><span class="lineno">  107</span>      <a class="code hl_function" href="threadpool_8h.html#aab67214a88ac0279219bf35fa884492c">gwt_join</a>(p-&gt;threads[i]);</div>
+<div class="line"><span class="lineno">  108</span>    free(p-&gt;threads);</div>
+<div class="line"><span class="lineno">  109</span>  }</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">if</span>(p-&gt;queue) free(p-&gt;queue);</div>
+<div class="line"><span class="lineno">  111</span>  <span class="keywordflow">if</span>(p-&gt;has_lock) <a class="code hl_function" href="threadpool_8h.html#aabf13740f427aeb02af77083329941a8">gwt_lock_end</a>(&amp;p-&gt;lock);</div>
+<div class="line"><span class="lineno">  112</span>  <span class="keywordflow">if</span>(p-&gt;has_cond) <a class="code hl_function" href="threadpool_8h.html#a52a4ccc96d26e6287b49b48927f31133">gwt_cond_end</a>(&amp;p-&gt;cond);</div>
+<div class="line"><span class="lineno">  113</span>}</div>
 <div class="ttc" id="athreadpool_8h_html_a52a4ccc96d26e6287b49b48927f31133"><div class="ttname"><a href="threadpool_8h.html#a52a4ccc96d26e6287b49b48927f31133">gwt_cond_end</a></div><div class="ttdeci">static ANN void gwt_cond_end(gwtcond_t *cond)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00101">threadpool.h:101</a></div></div>
 <div class="ttc" id="athreadpool_8h_html_a708b3110184150457e9cbe22d01759f6"><div class="ttname"><a href="threadpool_8h.html#a708b3110184150457e9cbe22d01759f6">gwt_broadcast</a></div><div class="ttdeci">static ANN int gwt_broadcast(gwtcond_t *cond)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00083">threadpool.h:83</a></div></div>
 <div class="ttc" id="athreadpool_8h_html_a8bb27fa40de794f744b71e460881e3bc"><div class="ttname"><a href="threadpool_8h.html#a8bb27fa40de794f744b71e460881e3bc">gwt_unlock</a></div><div class="ttdeci">static ANN int gwt_unlock(gwtlock_t *lock)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00074">threadpool.h:74</a></div></div>
@@ -734,17 +734,19 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   69</span>  p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#ac4fef278e08e2141aebdd4e297d78d53">head</a> = p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#aa01baa6224efdfdb8c4c9c21c1e1948d">tail</a> = p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#ad67b6b639fce62ce32118ddbe2c24ecb">active</a> = 0;</div>
 <div class="line"><span class="lineno">   70</span>  p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#ac08079af09709607fdded02b27a49f98">shutdown</a> = p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#a54444997a7bd6d239c21e143c412d1fc">has_lock</a> = p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#a12423b61915ae27065156cd916f44166">has_cond</a> = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   71</span>  p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#a5c801fc5798e6c2851367667e051a4cd">started</a> = 0;</div>
-<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">if</span>(<a class="code hl_function" href="threadpool_8c.html#ac94012048e07c615c930cb513fc478c5">alloc</a>(p, thread_count, queue_size) || !<a class="code hl_function" href="threadpool_8c.html#abdd7b2667decaecb81d94c3c4b1d8dd6">utils</a>(p) ||</div>
-<div class="line"><span class="lineno">   73</span>     <a class="code hl_function" href="threadpool_8c.html#a3894d8da81939354904466d4173b1b2a">start</a>(p, thread_count)) {</div>
-<div class="line"><span class="lineno">   74</span>    <a class="code hl_function" href="threadpool_8c.html#ae35d63f9184e8e75b3160e9e96ccbd64">free_threadpool</a>(p);</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">   76</span>  }</div>
-<div class="line"><span class="lineno">   77</span>  <span class="keywordflow">return</span> p;</div>
-<div class="line"><span class="lineno">   78</span>}</div>
+<div class="line"><span class="lineno">   72</span>  p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#a9184cc0ffe6d2235e8200439f7e943ce">queue_size</a> = queue_size;</div>
+<div class="line"><span class="lineno">   73</span>  <span class="keywordflow">if</span>(<a class="code hl_function" href="threadpool_8c.html#ac94012048e07c615c930cb513fc478c5">alloc</a>(p, thread_count, queue_size) || !<a class="code hl_function" href="threadpool_8c.html#abdd7b2667decaecb81d94c3c4b1d8dd6">utils</a>(p) ||</div>
+<div class="line"><span class="lineno">   74</span>     <a class="code hl_function" href="threadpool_8c.html#a3894d8da81939354904466d4173b1b2a">start</a>(p, thread_count)) {</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_function" href="threadpool_8c.html#ae35d63f9184e8e75b3160e9e96ccbd64">free_threadpool</a>(p);</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+<div class="line"><span class="lineno">   78</span>  <span class="keywordflow">return</span> p;</div>
+<div class="line"><span class="lineno">   79</span>}</div>
 <div class="ttc" id="astructthreadpool__t_html"><div class="ttname"><a href="structthreadpool__t.html">threadpool_t</a></div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00008">threadpool.c:8</a></div></div>
 <div class="ttc" id="astructthreadpool__t_html_a12423b61915ae27065156cd916f44166"><div class="ttname"><a href="structthreadpool__t.html#a12423b61915ae27065156cd916f44166">threadpool_t::has_cond</a></div><div class="ttdeci">bool has_cond</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00020">threadpool.c:20</a></div></div>
 <div class="ttc" id="astructthreadpool__t_html_a54444997a7bd6d239c21e143c412d1fc"><div class="ttname"><a href="structthreadpool__t.html#a54444997a7bd6d239c21e143c412d1fc">threadpool_t::has_lock</a></div><div class="ttdeci">bool has_lock</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00019">threadpool.c:19</a></div></div>
 <div class="ttc" id="astructthreadpool__t_html_a5c801fc5798e6c2851367667e051a4cd"><div class="ttname"><a href="structthreadpool__t.html#a5c801fc5798e6c2851367667e051a4cd">threadpool_t::started</a></div><div class="ttdeci">uint32_t started</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00017">threadpool.c:17</a></div></div>
+<div class="ttc" id="astructthreadpool__t_html_a9184cc0ffe6d2235e8200439f7e943ce"><div class="ttname"><a href="structthreadpool__t.html#a9184cc0ffe6d2235e8200439f7e943ce">threadpool_t::queue_size</a></div><div class="ttdeci">uint32_t queue_size</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00016">threadpool.c:16</a></div></div>
 <div class="ttc" id="astructthreadpool__t_html_aa01baa6224efdfdb8c4c9c21c1e1948d"><div class="ttname"><a href="structthreadpool__t.html#aa01baa6224efdfdb8c4c9c21c1e1948d">threadpool_t::tail</a></div><div class="ttdeci">uint32_t tail</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00014">threadpool.c:14</a></div></div>
 <div class="ttc" id="astructthreadpool__t_html_ac08079af09709607fdded02b27a49f98"><div class="ttname"><a href="structthreadpool__t.html#ac08079af09709607fdded02b27a49f98">threadpool_t::shutdown</a></div><div class="ttdeci">bool shutdown</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00018">threadpool.c:18</a></div></div>
 <div class="ttc" id="astructthreadpool__t_html_ac4fef278e08e2141aebdd4e297d78d53"><div class="ttname"><a href="structthreadpool__t.html#ac4fef278e08e2141aebdd4e297d78d53">threadpool_t::head</a></div><div class="ttdeci">uint32_t head</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00013">threadpool.c:13</a></div></div>
@@ -752,7 +754,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="athreadpool_8c_html_a3894d8da81939354904466d4173b1b2a"><div class="ttname"><a href="threadpool_8c.html#a3894d8da81939354904466d4173b1b2a">start</a></div><div class="ttdeci">static ANN bool start(threadpool_t *p, const uint32_t thread_count)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00057">threadpool.c:57</a></div></div>
 <div class="ttc" id="athreadpool_8c_html_abdd7b2667decaecb81d94c3c4b1d8dd6"><div class="ttname"><a href="threadpool_8c.html#abdd7b2667decaecb81d94c3c4b1d8dd6">utils</a></div><div class="ttdeci">static ANN bool utils(threadpool_t *p)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00046">threadpool.c:46</a></div></div>
 <div class="ttc" id="athreadpool_8c_html_ac94012048e07c615c930cb513fc478c5"><div class="ttname"><a href="threadpool_8c.html#ac94012048e07c615c930cb513fc478c5">alloc</a></div><div class="ttdeci">static ANN bool alloc(threadpool_t *p, const uint32_t thread_count, const uint32_t queue_size)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00040">threadpool.c:40</a></div></div>
-<div class="ttc" id="athreadpool_8c_html_ae35d63f9184e8e75b3160e9e96ccbd64"><div class="ttname"><a href="threadpool_8c.html#ae35d63f9184e8e75b3160e9e96ccbd64">free_threadpool</a></div><div class="ttdeci">ANN void free_threadpool(threadpool_t *p)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00099">threadpool.c:99</a></div></div>
+<div class="ttc" id="athreadpool_8c_html_ae35d63f9184e8e75b3160e9e96ccbd64"><div class="ttname"><a href="threadpool_8c.html#ae35d63f9184e8e75b3160e9e96ccbd64">free_threadpool</a></div><div class="ttdeci">ANN void free_threadpool(threadpool_t *p)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8c_source.html#l00100">threadpool.c:100</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
