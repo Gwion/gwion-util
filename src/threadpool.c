@@ -69,6 +69,7 @@ threadpool_t *new_threadpool(const uint32_t thread_count, const uint32_t queue_s
   p->head = p->tail = p->active = 0;
   p->shutdown = p->has_lock = p->has_cond = false;
   p->started = 0;
+  p->queue_size = queue_size;
   if(alloc(p, thread_count, queue_size) || !utils(p) ||
      start(p, thread_count)) {
     free_threadpool(p);
