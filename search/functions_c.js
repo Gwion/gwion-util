@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tcol_5fcolor_5fparse_0',['tcol_color_parse',['../termcolor_8h.html#aa544f4a566ad33b69fc08ca7ff75a675',1,'tcol_color_parse(char *dst, size_t dstn, char color[16], size_t k, size_t *len):&#160;termcolor.c'],['../termcolor_8c.html#aa544f4a566ad33b69fc08ca7ff75a675',1,'tcol_color_parse(char *dst, size_t dstn, char color[16], size_t k, size_t *len):&#160;termcolor.c']]],
+  ['tcol_5fcolor_5fparse_0',['tcol_color_parse',['../termcolor_8c.html#aa544f4a566ad33b69fc08ca7ff75a675',1,'tcol_color_parse(char *dst, size_t dstn, char color[16], size_t k, size_t *len):&#160;termcolor.c'],['../termcolor_8h.html#aa544f4a566ad33b69fc08ca7ff75a675',1,'tcol_color_parse(char *dst, size_t dstn, char color[16], size_t k, size_t *len):&#160;termcolor.c']]],
   ['tcol_5ferrorstr_1',['tcol_errorstr',['../termcolor_8c.html#a02a0b19d11c2a2fed211f535890223f0',1,'tcol_errorstr(const enum term_color_error_t err):&#160;termcolor.c'],['../termcolor_8h.html#a02a0b19d11c2a2fed211f535890223f0',1,'tcol_errorstr(const enum term_color_error_t err):&#160;termcolor.c']]],
   ['tcol_5ffmt_5fparse_2',['tcol_fmt_parse',['../termcolor_8c.html#a814d3c4218299c57ec5ab6fbddf5d728',1,'termcolor.c']]],
   ['tcol_5ffprintf_3',['tcol_fprintf',['../termcolor_8c.html#a22c2d3666092d1f4ec58c27e06b96406',1,'tcol_fprintf(FILE *stream, const char *fmt,...):&#160;termcolor.c'],['../termcolor_8h.html#a22c2d3666092d1f4ec58c27e06b96406',1,'tcol_fprintf(FILE *stream, const char *fmt,...):&#160;termcolor.c']]],

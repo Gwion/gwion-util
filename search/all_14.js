@@ -14,7 +14,7 @@ var searchData=
   ['vector_5fclear_11',['vector_clear',['../vector_8c.html#a62051e7bd81302f20c3f433953355e13',1,'vector_clear(const Vector v):&#160;vector.c'],['../vector_8h.html#a2ed1568034a288e9be95dfdc4c7d9c1c',1,'vector_clear(const Vector):&#160;vector.c']]],
   ['vector_5fcopy_12',['vector_copy',['../vector_8c.html#a616148e5b55f1e7346d3ad6d0816238b',1,'vector_copy(MemPool p, const Vector v):&#160;vector.c'],['../vector_8h.html#a2286324e5dc6adfa56acc0de5fca6100',1,'vector_copy(MemPool p, const Vector):&#160;vector.c']]],
   ['vector_5fcopy2_13',['vector_copy2',['../vector_8c.html#ad758d9247651a863d0f14ff3a1319498',1,'vector_copy2(const restrict Vector v, const restrict Vector ret):&#160;vector.c'],['../vector_8h.html#a83e2f0aac92fb1478f4fb12f1a9c4da9',1,'vector_copy2(const __restrict__ Vector, __restrict__ Vector):&#160;vector.h']]],
-  ['vector_5ffind_14',['vector_find',['../vector_8h.html#aeaef2ae3b68bbc38e1f2abf812037d6f',1,'vector_find(const Vector, const vtype):&#160;vector.c'],['../vector_8c.html#af537c97c092510bd00e32be22d9dc625',1,'vector_find(const Vector v, const vtype data):&#160;vector.c']]],
+  ['vector_5ffind_14',['vector_find',['../vector_8c.html#af537c97c092510bd00e32be22d9dc625',1,'vector_find(const Vector v, const vtype data):&#160;vector.c'],['../vector_8h.html#aeaef2ae3b68bbc38e1f2abf812037d6f',1,'vector_find(const Vector, const vtype):&#160;vector.c']]],
   ['vector_5ffront_15',['vector_front',['../vector_8h.html#aeaafdd4b1fda86d3b51ef8420ed32c50',1,'vector.h']]],
   ['vector_5finit_16',['vector_init',['../vector_8c.html#ae8e8d1b42ab4a683263889154cfa4813',1,'vector_init(const Vector v):&#160;vector.c'],['../vector_8h.html#a0ab903f05577ffc9aea977e544a84cc5',1,'vector_init(const Vector):&#160;vector.c']]],
   ['vector_5fpop_17',['vector_pop',['../vector_8c.html#a1944f1d00058985c807dcbbb2b0b282e',1,'vector_pop(const Vector v):&#160;vector.c'],['../vector_8h.html#adf7cb5d8baac3186e2e6e0647c18a057',1,'vector_pop(const Vector):&#160;vector.c']]],
@@ -25,10 +25,11 @@ var searchData=
   ['vector_5fset_22',['vector_set',['../vector_8h.html#a2bd714301209691bb847b86ec6d75f3d',1,'vector.h']]],
   ['vector_5fsize_23',['vector_size',['../vector_8h.html#a18f017e4ef8e2e143cd8226046f83590',1,'vector.h']]],
   ['ver_5fextra_24',['ver_extra',['../structcmdapp__info__t.html#a4e440d5fc3da41c5cfcd3fac47cf8152',1,'cmdapp_info_t']]],
-  ['version_25',['version',['../structcmdapp__info__t.html#a546dac0013f8f47069cb73f1d22e13f2',1,'cmdapp_info_t::version'],['../License_8txt.html#a457a10a82940188536c43461775a7244',1,'Version:&#160;License.txt']]],
-  ['vkey_26',['VKEY',['../map_8h.html#a947775360bfe2111aaebc42684f6df2d',1,'map.h']]],
-  ['vlen_27',['VLEN',['../container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc',1,'container.h']]],
-  ['vptr_28',['VPTR',['../container_8h.html#ae7a7357208b181b8a9ab8219f9381278',1,'container.h']]],
-  ['vtype_29',['vtype',['../container_8h.html#a5482df11a6922f4ce0a1d79206c3a451',1,'container.h']]],
-  ['vval_30',['VVAL',['../map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1',1,'map.h']]]
+  ['version_25',['version',['../structcmdapp__info__t.html#a546dac0013f8f47069cb73f1d22e13f2',1,'cmdapp_info_t']]],
+  ['version_26',['Version',['../License_8txt.html#a457a10a82940188536c43461775a7244',1,'License.txt']]],
+  ['vkey_27',['VKEY',['../map_8h.html#a947775360bfe2111aaebc42684f6df2d',1,'map.h']]],
+  ['vlen_28',['VLEN',['../container_8h.html#a3e934d574017d1adbc19a23cccb3d7fc',1,'container.h']]],
+  ['vptr_29',['VPTR',['../container_8h.html#ae7a7357208b181b8a9ab8219f9381278',1,'container.h']]],
+  ['vtype_30',['vtype',['../container_8h.html#a5482df11a6922f4ce0a1d79206c3a451',1,'container.h']]],
+  ['vval_31',['VVAL',['../map_8h.html#a3521f8f27da255d3e6fb9686aa14eab1',1,'map.h']]]
 ];

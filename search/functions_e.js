@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['vector_5fadd_0',['vector_add',['../vector_8h.html#af3dbe9bffcee8d6c79a9f8bc99d72e3c',1,'vector_add(const Vector, const vtype):&#160;vector.c'],['../vector_8c.html#a105f09f63450df357dab17e179fd51a4',1,'vector_add(const Vector v, const vtype data):&#160;vector.c']]],
+  ['vector_5fadd_0',['vector_add',['../vector_8c.html#a105f09f63450df357dab17e179fd51a4',1,'vector_add(const Vector v, const vtype data):&#160;vector.c'],['../vector_8h.html#af3dbe9bffcee8d6c79a9f8bc99d72e3c',1,'vector_add(const Vector, const vtype):&#160;vector.c']]],
   ['vector_5fat_1',['vector_at',['../vector_8h.html#ab0ef2d430f25ad1463e6bc66c8a3f0ba',1,'vector.h']]],
   ['vector_5fback_2',['vector_back',['../vector_8h.html#a68dcc75381e730db2ab096f4511b760a',1,'vector.h']]],
   ['vector_5fclear_3',['vector_clear',['../vector_8c.html#a62051e7bd81302f20c3f433953355e13',1,'vector_clear(const Vector v):&#160;vector.c'],['../vector_8h.html#a2ed1568034a288e9be95dfdc4c7d9c1c',1,'vector_clear(const Vector):&#160;vector.c']]],
