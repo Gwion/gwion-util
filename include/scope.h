@@ -38,5 +38,5 @@ ANN static inline void scope_pop(MemPool p NUSED, const Scope s) {
 ANN static inline void _scope_init(const Scope s) {
   vector_init((Vector)(void *)s);
 }
-ANN m_bool scope_iter(struct scope_iter *iter, void *ret);
+ANN bool scope_iter(struct scope_iter *iter, void *ret);
 #endif

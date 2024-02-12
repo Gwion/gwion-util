@@ -89,7 +89,7 @@ static void _realloc(struct pool *p) {
   p->data[p->blk_id] = (uint8_t *)xcalloc(BLK(p->obj_sz), p->obj_sz);
 }
 
-static void *__mp_calloc2(struct pool *p, const m_bool zero) {
+static void *__mp_calloc2(struct pool *p, const bool zero) {
   if (p->next) {
     volatile struct Recycle *const recycle = p->next;
     #ifdef USE_HELGRIND
@@ -103,7 +103,7 @@ static void *__mp_calloc2(struct pool *p, const m_bool zero) {
   return p->data[p->blk_id] + p->obj_id * p->obj_sz;
 }
 
-void *_mp_calloc2(struct pool *p, const m_bool zero) {
+void *_mp_calloc2(struct pool *p, const bool zero) {
   gwt_lock(&p->mutex);
   void *ret = __mp_calloc2(p, zero);
   gwt_unlock(&p->mutex);

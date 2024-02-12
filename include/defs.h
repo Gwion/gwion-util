@@ -44,6 +44,18 @@
 #define likely(x)   __builtin_expect(!!(x), 1)
 #define unlikely(x) __builtin_expect(!!(x), 0)
 
+#define CHECK_b(f)                                                             \
+  do {                                                                         \
+    if (!f) return GW_ERROR;                                                   \
+  } while (0)
+#define CHECK_B(f)                                                             \
+  do {                                                                         \
+    if (!f) return false;                                                      \
+  } while (0)
+#define CHECK_O(f)                                                             \
+  do {                                                                         \
+    if (!f) return NULL;                                                       \
+  } while (0)
 #define CHECK_BB(f)                                                            \
   do {                                                                         \
     if (f < 0) return GW_ERROR;                                                \
@@ -61,6 +73,12 @@
     if (!f) return NULL;                                                       \
   } while (0)
 
+#define DECL_B(decl, f, exp)                                                   \
+  decl f exp;                                                                  \
+  if (!f) return false
+#define DECL_O(decl, f, exp)                                                   \
+  decl f exp;                                                                  \
+  if (!f) return NULL
 #define DECL_BB(decl, f, exp)                                                  \
   decl f exp;                                                                  \
   if (f < 0) return GW_ERROR

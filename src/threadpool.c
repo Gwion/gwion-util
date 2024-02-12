@@ -56,7 +56,7 @@ ANN static bool utils(threadpool_t *p) {
 
 ANN static bool start(threadpool_t *p, const uint32_t thread_count) {
   for(uint32_t i = 0; i < thread_count; i++) {
-    if(gwt_create(&p->threads[i], threadpool_thread, p))
+    if(!gwt_create(&p->threads[i], threadpool_thread, p))
       return false;
     p->started++;
   }
@@ -71,10 +71,11 @@ threadpool_t *new_threadpool(const uint32_t thread_count, const uint32_t queue_s
   p->started = 0;
   p->queue_size = queue_size;
   if(alloc(p, thread_count, queue_size) || !utils(p) ||
-     start(p, thread_count)) {
+     !start(p, thread_count)) {
     free_threadpool(p);
     return NULL;
   }
+
   return p;
 }
 

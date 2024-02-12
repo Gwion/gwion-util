@@ -26,8 +26,8 @@ ANN static void _split_args(MemPool mp, struct ArgSplitter *as) {
   m_uint       i = 0, j = 0;
   char         c;
   while ((c = as->str[i]) != '\0') {
-    const m_bool skip  = prev == '\\';
-    const m_bool comma = c == ',';
+    const bool skip  = prev == '\\';
+    const bool comma = c == ',';
     if (comma) {
       if (!skip) break;
       --j;

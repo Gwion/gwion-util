@@ -15,7 +15,7 @@ typedef struct MemPool_ {
 ANN struct pool *new_pool(const uint32_t elementSize);
 ANN struct pool *mp_ini(MemPool p, const uint32_t elementSize);
 ANN void         mp_end(struct pool *);
-ANEW ANN void *_mp_calloc2(struct pool *, const m_bool) __attribute__((hot));
+ANEW ANN void *_mp_calloc2(struct pool *, const bool) __attribute__((hot));
 ANEW ANN void *_mp_calloc(MemPool, const m_uint) __attribute__((hot));
 ANEW ANN void *_mp_malloc(MemPool, const m_uint) __attribute__((hot));
 ANN void       _mp_free(MemPool, const m_uint, void *);

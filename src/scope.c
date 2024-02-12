@@ -60,13 +60,13 @@ ANN void free_scope(MemPool p, Scope a) {
   mp_free(p, Scope, a);
 }
 
-ANN m_bool scope_iter(struct scope_iter *iter, void *ret) {
+ANN bool scope_iter(struct scope_iter *iter, void *ret) {
   m_uint       size  = map_size(&iter->s->map);
   const m_uint vsize = vector_size((Vector)iter->s);
   const m_uint vec   = vsize - iter->vec;
   Map          map   = &iter->s->map;
   if (vsize == iter->vec) {
-    if (iter->idx == size) return GW_ERROR;
+    if (iter->idx == size) return false;
   } else {
     map  = (Map)&VPTR(iter->s, vec - 1);
     size = map_size(map);
@@ -77,5 +77,5 @@ ANN m_bool scope_iter(struct scope_iter *iter, void *ret) {
     }
   }
   *(vtype *)ret = map_at(map, size - ++iter->idx);
-  return GW_OK;
+  return true;
 }
