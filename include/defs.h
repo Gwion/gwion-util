@@ -16,10 +16,6 @@
 #define container_of(ptr, type, member)                                        \
   ((type *)((char *)(ptr)-offsetof(type, member)))
 
-#define MEM_STEP   16
-#define SIZEOF_MEM (0x1 << MEM_STEP)
-#define SIZEOF_REG (0x1 << 14)
-
 #define ANN       __attribute__((nonnull))
 #define ANN2(...) __attribute__((nonnull(__VA_ARGS__)))
 //#define ANEW __attribute__((returns_nonnull,malloc))
