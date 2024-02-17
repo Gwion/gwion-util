@@ -38,7 +38,7 @@ ANN Vector vector_copy(MemPool p, const Vector v) {
 ANN m_int vector_find(const Vector v, const vtype data) {
   for (vtype i = VLEN(v) + 1; --i;)
     if (VPTR(v, i - 1) == (vtype)data) return (m_int)(i - 1);
-  return GW_ERROR;
+  return -1;
 }
 
 ANN void vector_rem(const Vector v, const vtype index) {

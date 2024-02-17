@@ -16,8 +16,6 @@
 #define container_of(ptr, type, member)                                        \
   ((type *)((char *)(ptr)-offsetof(type, member)))
 
-#define GW_ERROR   -1
-#define GW_OK      1
 #define MEM_STEP   16
 #define SIZEOF_MEM (0x1 << MEM_STEP)
 #define SIZEOF_REG (0x1 << 14)
@@ -44,10 +42,6 @@
 #define likely(x)   __builtin_expect(!!(x), 1)
 #define unlikely(x) __builtin_expect(!!(x), 0)
 
-#define CHECK_b(f)                                                             \
-  do {                                                                         \
-    if (!f) return GW_ERROR;                                                   \
-  } while (0)
 #define CHECK_B(f)                                                             \
   do {                                                                         \
     if (!f) return false;                                                      \
@@ -56,39 +50,11 @@
   do {                                                                         \
     if (!f) return NULL;                                                       \
   } while (0)
-#define CHECK_BB(f)                                                            \
-  do {                                                                         \
-    if (f < 0) return GW_ERROR;                                                \
-  } while (0)
-#define CHECK_OB(f)                                                            \
-  do {                                                                         \
-    if (!f) return GW_ERROR;                                                   \
-  } while (0)
-#define CHECK_BO(f)                                                            \
-  do {                                                                         \
-    if (f < 0) return NULL;                                                    \
-  } while (0)
-#define CHECK_OO(f)                                                            \
-  do {                                                                         \
-    if (!f) return NULL;                                                       \
-  } while (0)
 
 #define DECL_B(decl, f, exp)                                                   \
   decl f exp;                                                                  \
   if (!f) return false
 #define DECL_O(decl, f, exp)                                                   \
-  decl f exp;                                                                  \
-  if (!f) return NULL
-#define DECL_BB(decl, f, exp)                                                  \
-  decl f exp;                                                                  \
-  if (f < 0) return GW_ERROR
-#define DECL_OB(decl, f, exp)                                                  \
-  decl f exp;                                                                  \
-  if (!f) return GW_ERROR
-#define DECL_BO(decl, f, exp)                                                  \
-  decl f exp;                                                                  \
-  if (f < 0) return NULL
-#define DECL_OO(decl, f, exp)                                                  \
   decl f exp;                                                                  \
   if (!f) return NULL
 

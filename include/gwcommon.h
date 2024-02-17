@@ -10,7 +10,6 @@
 typedef intptr_t m_int;
 typedef uintptr_t m_uint;
 typedef unsigned char m_bit;
-typedef int m_bool;
 typedef float  m_float;
 typedef char * m_str;
 typedef struct { m_float x, y, z; } m_vec3;
