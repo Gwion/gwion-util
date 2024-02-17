@@ -50,7 +50,7 @@ ANN static inline int gwt_signal(gwtcond_t *cond) {
 }
 ANN static inline int gwt_create(gwtthread_t *thread, gwtreturn_t (*fun)(void*), void *arg) {
   *thread = CreateThread(NULL, 0, fun, arg, 0, NULL);
-  return 0;
+  return !!*thread;
 }
 ANN static inline void gwt_join(gwtthread_t thread) {
   WaitForSingleObject(thread, INFINITE); // dword // (DWORD)0xFFFFFFFF on error
@@ -102,7 +102,7 @@ ANN static inline void gwt_cond_end(gwtcond_t *cond) {
   pthread_cond_destroy(cond); // int
 }
 ANN static inline bool gwt_create(gwtthread_t *thread, gwtreturn_t (*fun)(void*), void *arg) {
-  return !pthread_create(thread, NULL, fun, arg); // int
+  return pthread_create(thread, NULL, fun, arg); // int
 }
 #endif
 
