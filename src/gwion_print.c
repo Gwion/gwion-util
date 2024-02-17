@@ -12,7 +12,7 @@ ANN2(2)
 static int gw_vasprintf(MemPool mp, char **str, const char *fmt, va_list args) {
   char *       base     = *str;
   const size_t base_len = base ? strlen(base) : 0;
-  const int size = fmtlen(fmt, args));
+  const int size = fmtlen(fmt, args);
   if (size < 0) return -1;
   char *ret = mp_malloc2(mp, base_len + size + 1);
   if (base) strcpy(ret, base);
