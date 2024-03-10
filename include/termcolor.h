@@ -93,6 +93,9 @@ int tcol_color_parse(char *dst, size_t dstn, char color[16],
    - `enable_color`: Whether to enable "colorization" of the format string */
 void tcol_override_color_checks(bool enable_color);
 
+/* Return the current state of colorization. */
+bool tcol_has_color(void);
+
 /* Printfs the colorized format string to the specified stream.
   
    Parameters:

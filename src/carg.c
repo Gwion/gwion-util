@@ -16,7 +16,6 @@ ANN m_str option_argument(struct CArg *ca) {
 struct ArgSplitter {
   m_str   str;
   Vector  v;
-  MemPool mp;
 };
 
 ANN static void _split_args(MemPool mp, struct ArgSplitter *as) {
@@ -36,7 +35,7 @@ ANN static void _split_args(MemPool mp, struct ArgSplitter *as) {
     ++i;
   }
   buf[i] = '\0';
-  vector_add(as->v, (vtype)mstrdup(as->mp, buf));
+  vector_add(as->v, (vtype)mstrdup(mp, buf));
   mp_free2(mp, sz + 1, buf);
   if (i == sz) return;
   as->str += i + 1;
@@ -44,7 +43,7 @@ ANN static void _split_args(MemPool mp, struct ArgSplitter *as) {
 }
 
 ANN Vector split_args(MemPool p, const m_str str) {
-  struct ArgSplitter as = {.str = str, .v = new_vector(p), .mp = p};
+  struct ArgSplitter as = {.str = str, .v = new_vector(p) };
   _split_args(p, &as);
   return as.v;
 }

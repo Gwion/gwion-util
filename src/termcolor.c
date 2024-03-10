@@ -33,6 +33,10 @@ inline const char *tcol_errorstr(const enum term_color_error_t err) {
     return tcol_errorstrs[err];
 }
 
+bool tcol_has_color(void) {
+    return use_color;
+}
+
 void tcol_override_color_checks(bool enable_color) {
     use_color = enable_color;
 }
