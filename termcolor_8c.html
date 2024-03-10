@@ -114,6 +114,8 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a02a0b19d11c2a2fed211f535890223f0" id="r_a02a0b19d11c2a2fed211f535890223f0"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02a0b19d11c2a2fed211f535890223f0">tcol_errorstr</a> (const enum <a class="el" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46b">term_color_error_t</a> err)</td></tr>
 <tr class="separator:a02a0b19d11c2a2fed211f535890223f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacfae8f2f863c6e5536f276eec1ce79" id="r_aaacfae8f2f863c6e5536f276eec1ce79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaacfae8f2f863c6e5536f276eec1ce79">tcol_has_color</a> (void)</td></tr>
+<tr class="separator:aaacfae8f2f863c6e5536f276eec1ce79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45276491c40829998caacbdae38e9ab4" id="r_a45276491c40829998caacbdae38e9ab4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45276491c40829998caacbdae38e9ab4">tcol_override_color_checks</a> (bool enable_color)</td></tr>
 <tr class="separator:a45276491c40829998caacbdae38e9ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99be6e984a18f32a90714be08d0f8495" id="r_a99be6e984a18f32a90714be08d0f8495"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99be6e984a18f32a90714be08d0f8495">_termcolor_internal_lookup</a> (const char color_name)</td></tr>
@@ -186,21 +188,21 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b" name="a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b"></a>_termcolor_internal_color_ITLC&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00063">63</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                               {</div>
-<div class="line"><span class="lineno">   64</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a118a20202996c7ef64d6d7e7df9e7c76">_termcolor_internal_color_BOLD</a> = 1 &lt;&lt; 1,</div>
-<div class="line"><span class="lineno">   65</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a0c749360675c8f63087b8d3b770b33b4">_termcolor_internal_color_FANT</a> = 1 &lt;&lt; 2,</div>
-<div class="line"><span class="lineno">   66</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a4e05739bbdcd6e086a6ccc1936fd84e9">_termcolor_internal_color_UNDR</a> = 1 &lt;&lt; 3,</div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02ad9a77b72165a5c42cca89544173dbf42">_termcolor_internal_color_BLNK</a> = 1 &lt;&lt; 4,</div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02acabc520ba4e14463374e326342b3185a">_termcolor_internal_color_STRK</a> = 1 &lt;&lt; 5,</div>
-<div class="line"><span class="lineno">   69</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b">_termcolor_internal_color_ITLC</a> = 1 &lt;&lt; 6</div>
-<div class="line"><span class="lineno">   70</span>};</div>
-<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02a0c749360675c8f63087b8d3b770b33b4"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02a0c749360675c8f63087b8d3b770b33b4">_termcolor_internal_color_FANT</a></div><div class="ttdeci">@ _termcolor_internal_color_FANT</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00065">termcolor.c:65</a></div></div>
-<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02a118a20202996c7ef64d6d7e7df9e7c76"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02a118a20202996c7ef64d6d7e7df9e7c76">_termcolor_internal_color_BOLD</a></div><div class="ttdeci">@ _termcolor_internal_color_BOLD</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00064">termcolor.c:64</a></div></div>
-<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02a4e05739bbdcd6e086a6ccc1936fd84e9"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02a4e05739bbdcd6e086a6ccc1936fd84e9">_termcolor_internal_color_UNDR</a></div><div class="ttdeci">@ _termcolor_internal_color_UNDR</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00066">termcolor.c:66</a></div></div>
-<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02acabc520ba4e14463374e326342b3185a"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02acabc520ba4e14463374e326342b3185a">_termcolor_internal_color_STRK</a></div><div class="ttdeci">@ _termcolor_internal_color_STRK</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00068">termcolor.c:68</a></div></div>
-<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02ad9a77b72165a5c42cca89544173dbf42"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02ad9a77b72165a5c42cca89544173dbf42">_termcolor_internal_color_BLNK</a></div><div class="ttdeci">@ _termcolor_internal_color_BLNK</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00067">termcolor.c:67</a></div></div>
-<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b">_termcolor_internal_color_ITLC</a></div><div class="ttdeci">@ _termcolor_internal_color_ITLC</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00070">termcolor.c:69</a></div></div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00067">67</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>                               {</div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a118a20202996c7ef64d6d7e7df9e7c76">_termcolor_internal_color_BOLD</a> = 1 &lt;&lt; 1,</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a0c749360675c8f63087b8d3b770b33b4">_termcolor_internal_color_FANT</a> = 1 &lt;&lt; 2,</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a4e05739bbdcd6e086a6ccc1936fd84e9">_termcolor_internal_color_UNDR</a> = 1 &lt;&lt; 3,</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02ad9a77b72165a5c42cca89544173dbf42">_termcolor_internal_color_BLNK</a> = 1 &lt;&lt; 4,</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02acabc520ba4e14463374e326342b3185a">_termcolor_internal_color_STRK</a> = 1 &lt;&lt; 5,</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b">_termcolor_internal_color_ITLC</a> = 1 &lt;&lt; 6</div>
+<div class="line"><span class="lineno">   74</span>};</div>
+<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02a0c749360675c8f63087b8d3b770b33b4"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02a0c749360675c8f63087b8d3b770b33b4">_termcolor_internal_color_FANT</a></div><div class="ttdeci">@ _termcolor_internal_color_FANT</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00069">termcolor.c:69</a></div></div>
+<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02a118a20202996c7ef64d6d7e7df9e7c76"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02a118a20202996c7ef64d6d7e7df9e7c76">_termcolor_internal_color_BOLD</a></div><div class="ttdeci">@ _termcolor_internal_color_BOLD</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00068">termcolor.c:68</a></div></div>
+<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02a4e05739bbdcd6e086a6ccc1936fd84e9"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02a4e05739bbdcd6e086a6ccc1936fd84e9">_termcolor_internal_color_UNDR</a></div><div class="ttdeci">@ _termcolor_internal_color_UNDR</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00070">termcolor.c:70</a></div></div>
+<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02acabc520ba4e14463374e326342b3185a"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02acabc520ba4e14463374e326342b3185a">_termcolor_internal_color_STRK</a></div><div class="ttdeci">@ _termcolor_internal_color_STRK</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00072">termcolor.c:72</a></div></div>
+<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02ad9a77b72165a5c42cca89544173dbf42"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02ad9a77b72165a5c42cca89544173dbf42">_termcolor_internal_color_BLNK</a></div><div class="ttdeci">@ _termcolor_internal_color_BLNK</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00071">termcolor.c:71</a></div></div>
+<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b">_termcolor_internal_color_ITLC</a></div><div class="ttdeci">@ _termcolor_internal_color_ITLC</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00074">termcolor.c:73</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -244,71 +246,71 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00072">72</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                         {</div>
-<div class="line"><span class="lineno">   74</span>    <span class="comment">/* Much of the code here was informed by the following gist:</span></div>
-<div class="line"><span class="lineno">   75</span><span class="comment">       https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797 */</span></div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    <span class="keywordtype">size_t</span> j = 0;</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>    <span class="comment">/* This macro checks to make sure we don&#39;t overrun the buffer when we add</span></div>
-<div class="line"><span class="lineno">   80</span><span class="comment">        a new character, */</span></div>
-<div class="line"><span class="lineno">   81</span><span class="preprocessor">    #define __APPEND(c) do { \</span></div>
-<div class="line"><span class="lineno">   82</span><span class="preprocessor">        dst[j++] = (c); \</span></div>
-<div class="line"><span class="lineno">   83</span><span class="preprocessor">        if (j &gt;= dstn) return TermColorErrorNone; \</span></div>
-<div class="line"><span class="lineno">   84</span><span class="preprocessor">    } while (0)</span></div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    <span class="comment">/* Every escape code begins with &quot;\e[&quot; */</span></div>
-<div class="line"><span class="lineno">   87</span>    <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;\033&#39;</span>);</div>
-<div class="line"><span class="lineno">   88</span>    <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;[&#39;</span>);</div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00076">76</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>                                                         {</div>
+<div class="line"><span class="lineno">   78</span>    <span class="comment">/* Much of the code here was informed by the following gist:</span></div>
+<div class="line"><span class="lineno">   79</span><span class="comment">       https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797 */</span></div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordtype">size_t</span> j = 0;</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <span class="comment">/* This macro checks to make sure we don&#39;t overrun the buffer when we add</span></div>
+<div class="line"><span class="lineno">   84</span><span class="comment">        a new character, */</span></div>
+<div class="line"><span class="lineno">   85</span><span class="preprocessor">    #define __APPEND(c) do { \</span></div>
+<div class="line"><span class="lineno">   86</span><span class="preprocessor">        dst[j++] = (c); \</span></div>
+<div class="line"><span class="lineno">   87</span><span class="preprocessor">        if (j &gt;= dstn) return TermColorErrorNone; \</span></div>
+<div class="line"><span class="lineno">   88</span><span class="preprocessor">    } while (0)</span></div>
 <div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>    <span class="comment">/* Add the appropriate parameters to our escape sequence depending on the</span></div>
-<div class="line"><span class="lineno">   91</span><span class="comment">       flags set in rep(resentation). */</span></div>
-<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a118a20202996c7ef64d6d7e7df9e7c76">_termcolor_internal_color_BOLD</a>) {</div>
-<div class="line"><span class="lineno">   93</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;1&#39;</span>);</div>
-<div class="line"><span class="lineno">   94</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;;&#39;</span>);</div>
-<div class="line"><span class="lineno">   95</span>    }</div>
-<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a0c749360675c8f63087b8d3b770b33b4">_termcolor_internal_color_FANT</a>) {</div>
-<div class="line"><span class="lineno">   97</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;2&#39;</span>);</div>
+<div class="line"><span class="lineno">   90</span>    <span class="comment">/* Every escape code begins with &quot;\e[&quot; */</span></div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;\033&#39;</span>);</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;[&#39;</span>);</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <span class="comment">/* Add the appropriate parameters to our escape sequence depending on the</span></div>
+<div class="line"><span class="lineno">   95</span><span class="comment">       flags set in rep(resentation). */</span></div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a118a20202996c7ef64d6d7e7df9e7c76">_termcolor_internal_color_BOLD</a>) {</div>
+<div class="line"><span class="lineno">   97</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;1&#39;</span>);</div>
 <div class="line"><span class="lineno">   98</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;;&#39;</span>);</div>
 <div class="line"><span class="lineno">   99</span>    }</div>
-<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b">_termcolor_internal_color_ITLC</a>) {</div>
-<div class="line"><span class="lineno">  101</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;3&#39;</span>);</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a0c749360675c8f63087b8d3b770b33b4">_termcolor_internal_color_FANT</a>) {</div>
+<div class="line"><span class="lineno">  101</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;2&#39;</span>);</div>
 <div class="line"><span class="lineno">  102</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;;&#39;</span>);</div>
 <div class="line"><span class="lineno">  103</span>    }</div>
-<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a4e05739bbdcd6e086a6ccc1936fd84e9">_termcolor_internal_color_UNDR</a>) {</div>
-<div class="line"><span class="lineno">  105</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;4&#39;</span>);</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b">_termcolor_internal_color_ITLC</a>) {</div>
+<div class="line"><span class="lineno">  105</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;3&#39;</span>);</div>
 <div class="line"><span class="lineno">  106</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;;&#39;</span>);</div>
 <div class="line"><span class="lineno">  107</span>    }</div>
-<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02ad9a77b72165a5c42cca89544173dbf42">_termcolor_internal_color_BLNK</a>) {</div>
-<div class="line"><span class="lineno">  109</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;5&#39;</span>);</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a4e05739bbdcd6e086a6ccc1936fd84e9">_termcolor_internal_color_UNDR</a>) {</div>
+<div class="line"><span class="lineno">  109</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;4&#39;</span>);</div>
 <div class="line"><span class="lineno">  110</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;;&#39;</span>);</div>
 <div class="line"><span class="lineno">  111</span>    }</div>
-<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02acabc520ba4e14463374e326342b3185a">_termcolor_internal_color_STRK</a>) {</div>
-<div class="line"><span class="lineno">  113</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;9&#39;</span>);</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02ad9a77b72165a5c42cca89544173dbf42">_termcolor_internal_color_BLNK</a>) {</div>
+<div class="line"><span class="lineno">  113</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;5&#39;</span>);</div>
 <div class="line"><span class="lineno">  114</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;;&#39;</span>);</div>
 <div class="line"><span class="lineno">  115</span>    }</div>
-<div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>    <span class="comment">/* If foreground and background colors were provided, snprintf them to dst. */</span></div>
-<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">if</span> (foreground != -1) {</div>
-<div class="line"><span class="lineno">  119</span>        j += snprintf(dst + j, dstn - j, <span class="stringliteral">&quot;%d;&quot;</span>, foreground);</div>
-<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">if</span> (j &gt;= dstn) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
-<div class="line"><span class="lineno">  121</span>    }</div>
-<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span> (background != -1) {</div>
-<div class="line"><span class="lineno">  123</span>        j += snprintf(dst + j, dstn - j, <span class="stringliteral">&quot;%d;&quot;</span>, background + 10);</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (rep &amp; <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02acabc520ba4e14463374e326342b3185a">_termcolor_internal_color_STRK</a>) {</div>
+<div class="line"><span class="lineno">  117</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;9&#39;</span>);</div>
+<div class="line"><span class="lineno">  118</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;;&#39;</span>);</div>
+<div class="line"><span class="lineno">  119</span>    }</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>    <span class="comment">/* If foreground and background colors were provided, snprintf them to dst. */</span></div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span> (foreground != -1) {</div>
+<div class="line"><span class="lineno">  123</span>        j += snprintf(dst + j, dstn - j, <span class="stringliteral">&quot;%d;&quot;</span>, foreground);</div>
 <div class="line"><span class="lineno">  124</span>        <span class="keywordflow">if</span> (j &gt;= dstn) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
 <div class="line"><span class="lineno">  125</span>    }</div>
-<div class="line"><span class="lineno">  126</span> </div>
-<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">if</span> (dst[j - 1] == <span class="charliteral">&#39;;&#39;</span>) {</div>
-<div class="line"><span class="lineno">  128</span>        j--;</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">if</span> (background != -1) {</div>
+<div class="line"><span class="lineno">  127</span>        j += snprintf(dst + j, dstn - j, <span class="stringliteral">&quot;%d;&quot;</span>, background + 10);</div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">if</span> (j &gt;= dstn) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
 <div class="line"><span class="lineno">  129</span>    }</div>
 <div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>    <span class="comment">/* Graphics mode escape sequences end with &#39;m&#39; */</span></div>
-<div class="line"><span class="lineno">  132</span>    <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;m&#39;</span>);</div>
-<div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>    *len = j;</div>
-<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
-<div class="line"><span class="lineno">  136</span>}</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">if</span> (dst[j - 1] == <span class="charliteral">&#39;;&#39;</span>) {</div>
+<div class="line"><span class="lineno">  132</span>        j--;</div>
+<div class="line"><span class="lineno">  133</span>    }</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>    <span class="comment">/* Graphics mode escape sequences end with &#39;m&#39; */</span></div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;m&#39;</span>);</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    *len = j;</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
+<div class="line"><span class="lineno">  140</span>}</div>
 <div class="ttc" id="atermcolor_8c_html_a81e06f7ed1ec07fe8d6b05de06b37aa7"><div class="ttname"><a href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a></div><div class="ttdeci">#define __APPEND(c)</div></div>
 </div><!-- fragment -->
 </div>
@@ -328,29 +330,29 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00040">40</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                      {</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">switch</span> (color_name) {</div>
-<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;N&#39;</span>:</div>
-<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">return</span> 30;</div>
-<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>:</div>
-<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">return</span> 31;</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;G&#39;</span>:</div>
-<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">return</span> 32;</div>
-<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;Y&#39;</span>:</div>
-<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">return</span> 33;</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;B&#39;</span>:</div>
-<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">return</span> 34;</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
-<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">return</span> 35;</div>
-<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span>:</div>
-<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">return</span> 36;</div>
-<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;W&#39;</span>:</div>
-<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">return</span> 37;</div>
-<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">   60</span>    }</div>
-<div class="line"><span class="lineno">   61</span>}</div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00044">44</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                                                      {</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">switch</span> (color_name) {</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;N&#39;</span>:</div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">return</span> 30;</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>:</div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">return</span> 31;</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;G&#39;</span>:</div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">return</span> 32;</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;Y&#39;</span>:</div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">return</span> 33;</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;B&#39;</span>:</div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">return</span> 34;</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
+<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">return</span> 35;</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span>:</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">return</span> 36;</div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;W&#39;</span>:</div>
+<div class="line"><span class="lineno">   61</span>            <span class="keywordflow">return</span> 37;</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -388,86 +390,86 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00138">138</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>                                  {</div>
-<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a6cab43a020dd24de30e5ba7f24242c99">use_color</a>) {</div>
-<div class="line"><span class="lineno">  141</span>        *len = 0;</div>
-<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
-<div class="line"><span class="lineno">  143</span>    }</div>
-<div class="line"><span class="lineno">  144</span> </div>
-<div class="line"><span class="lineno">  145</span>    <span class="comment">/* &#39;0&#39; signifies no color, i.e. a reset */</span></div>
-<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">if</span> (k == 1 &amp;&amp; *color == <span class="charliteral">&#39;0&#39;</span>) {</div>
-<div class="line"><span class="lineno">  147</span>        <span class="keywordtype">size_t</span> j = 0;</div>
-<div class="line"><span class="lineno">  148</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;\033&#39;</span>);</div>
-<div class="line"><span class="lineno">  149</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;[&#39;</span>);</div>
-<div class="line"><span class="lineno">  150</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;m&#39;</span>);</div>
-<div class="line"><span class="lineno">  151</span>        *len = j;</div>
-<div class="line"><span class="lineno">  152</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
-<div class="line"><span class="lineno">  153</span>    }</div>
-<div class="line"><span class="lineno">  154</span> </div>
-<div class="line"><span class="lineno">  155</span>    <span class="comment">/* As -1 they are ignored. Otherwise they are set to the foreground color</span></div>
-<div class="line"><span class="lineno">  156</span><span class="comment">       code. The backround code is later added 10 to. */</span></div>
-<div class="line"><span class="lineno">  157</span>    <span class="keywordtype">int</span> foreground = -1;</div>
-<div class="line"><span class="lineno">  158</span>    <span class="keywordtype">int</span> background = -1;</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="#a44d1e062686a8ca7f9507e7dd680ea02">_termcolor_internal_color</a> rep = 0;</div>
-<div class="line"><span class="lineno">  161</span>    <span class="keywordtype">size_t</span> i;</div>
-<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">for</span> (i = 0; i &lt; k; i++) {</div>
-<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">switch</span> (color[i]) {</div>
-<div class="line"><span class="lineno">  164</span>            <span class="comment">/* Farily straightforward; just sets the flags corresponding to the</span></div>
-<div class="line"><span class="lineno">  165</span><span class="comment">               color attributes. */</span></div>
-<div class="line"><span class="lineno">  166</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;+&#39;</span>:</div>
-<div class="line"><span class="lineno">  167</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a118a20202996c7ef64d6d7e7df9e7c76">_termcolor_internal_color_BOLD</a>;</div>
-<div class="line"><span class="lineno">  168</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  169</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;-&#39;</span>:</div>
-<div class="line"><span class="lineno">  170</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a0c749360675c8f63087b8d3b770b33b4">_termcolor_internal_color_FANT</a>;</div>
-<div class="line"><span class="lineno">  171</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  172</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;_&#39;</span>:</div>
-<div class="line"><span class="lineno">  173</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a4e05739bbdcd6e086a6ccc1936fd84e9">_termcolor_internal_color_UNDR</a>;</div>
-<div class="line"><span class="lineno">  174</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;*&#39;</span>:</div>
-<div class="line"><span class="lineno">  176</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02ad9a77b72165a5c42cca89544173dbf42">_termcolor_internal_color_BLNK</a>;</div>
-<div class="line"><span class="lineno">  177</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  178</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;~&#39;</span>:</div>
-<div class="line"><span class="lineno">  179</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02acabc520ba4e14463374e326342b3185a">_termcolor_internal_color_STRK</a>;</div>
-<div class="line"><span class="lineno">  180</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;/&#39;</span>:</div>
-<div class="line"><span class="lineno">  182</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b">_termcolor_internal_color_ITLC</a>;</div>
-<div class="line"><span class="lineno">  183</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  184</span> </div>
-<div class="line"><span class="lineno">  185</span>                <span class="comment">/* Here we take the character after the &#39;,&#39; and use that as our</span></div>
-<div class="line"><span class="lineno">  186</span><span class="comment">                   background color code, like Nano does. */</span></div>
-<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;,&#39;</span>: {</div>
-<div class="line"><span class="lineno">  188</span>                <span class="keywordflow">if</span> (i + 1 &gt;= k) {</div>
-<div class="line"><span class="lineno">  189</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba06a0e7f68df54c17a5b8208b27dff83d">TermColorErrorInvalidColor</a>;</div>
-<div class="line"><span class="lineno">  190</span>                }</div>
-<div class="line"><span class="lineno">  191</span>                <span class="keyword">const</span> <span class="keywordtype">int</span> result = <a class="code hl_function" href="#a99be6e984a18f32a90714be08d0f8495">_termcolor_internal_lookup</a>(color[i + 1]);</div>
-<div class="line"><span class="lineno">  192</span>                <span class="keywordflow">if</span> (result == -1) {</div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00142">142</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  143</span>                                  {</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a6cab43a020dd24de30e5ba7f24242c99">use_color</a>) {</div>
+<div class="line"><span class="lineno">  145</span>        *len = 0;</div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    <span class="comment">/* &#39;0&#39; signifies no color, i.e. a reset */</span></div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (k == 1 &amp;&amp; *color == <span class="charliteral">&#39;0&#39;</span>) {</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordtype">size_t</span> j = 0;</div>
+<div class="line"><span class="lineno">  152</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;\033&#39;</span>);</div>
+<div class="line"><span class="lineno">  153</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;[&#39;</span>);</div>
+<div class="line"><span class="lineno">  154</span>        <a class="code hl_define" href="#a81e06f7ed1ec07fe8d6b05de06b37aa7">__APPEND</a>(<span class="charliteral">&#39;m&#39;</span>);</div>
+<div class="line"><span class="lineno">  155</span>        *len = j;</div>
+<div class="line"><span class="lineno">  156</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    <span class="comment">/* As -1 they are ignored. Otherwise they are set to the foreground color</span></div>
+<div class="line"><span class="lineno">  160</span><span class="comment">       code. The backround code is later added 10 to. */</span></div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordtype">int</span> foreground = -1;</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordtype">int</span> background = -1;</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="#a44d1e062686a8ca7f9507e7dd680ea02">_termcolor_internal_color</a> rep = 0;</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordtype">size_t</span> i;</div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">for</span> (i = 0; i &lt; k; i++) {</div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">switch</span> (color[i]) {</div>
+<div class="line"><span class="lineno">  168</span>            <span class="comment">/* Farily straightforward; just sets the flags corresponding to the</span></div>
+<div class="line"><span class="lineno">  169</span><span class="comment">               color attributes. */</span></div>
+<div class="line"><span class="lineno">  170</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;+&#39;</span>:</div>
+<div class="line"><span class="lineno">  171</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a118a20202996c7ef64d6d7e7df9e7c76">_termcolor_internal_color_BOLD</a>;</div>
+<div class="line"><span class="lineno">  172</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;-&#39;</span>:</div>
+<div class="line"><span class="lineno">  174</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a0c749360675c8f63087b8d3b770b33b4">_termcolor_internal_color_FANT</a>;</div>
+<div class="line"><span class="lineno">  175</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  176</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;_&#39;</span>:</div>
+<div class="line"><span class="lineno">  177</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02a4e05739bbdcd6e086a6ccc1936fd84e9">_termcolor_internal_color_UNDR</a>;</div>
+<div class="line"><span class="lineno">  178</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  179</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;*&#39;</span>:</div>
+<div class="line"><span class="lineno">  180</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02ad9a77b72165a5c42cca89544173dbf42">_termcolor_internal_color_BLNK</a>;</div>
+<div class="line"><span class="lineno">  181</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  182</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;~&#39;</span>:</div>
+<div class="line"><span class="lineno">  183</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02acabc520ba4e14463374e326342b3185a">_termcolor_internal_color_STRK</a>;</div>
+<div class="line"><span class="lineno">  184</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  185</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;/&#39;</span>:</div>
+<div class="line"><span class="lineno">  186</span>                rep |= <a class="code hl_enumvalue" href="#a44d1e062686a8ca7f9507e7dd680ea02adb1af14eeb4ae00cbdd2a6a556cddd4b">_termcolor_internal_color_ITLC</a>;</div>
+<div class="line"><span class="lineno">  187</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  188</span> </div>
+<div class="line"><span class="lineno">  189</span>                <span class="comment">/* Here we take the character after the &#39;,&#39; and use that as our</span></div>
+<div class="line"><span class="lineno">  190</span><span class="comment">                   background color code, like Nano does. */</span></div>
+<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;,&#39;</span>: {</div>
+<div class="line"><span class="lineno">  192</span>                <span class="keywordflow">if</span> (i + 1 &gt;= k) {</div>
 <div class="line"><span class="lineno">  193</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba06a0e7f68df54c17a5b8208b27dff83d">TermColorErrorInvalidColor</a>;</div>
 <div class="line"><span class="lineno">  194</span>                }</div>
-<div class="line"><span class="lineno">  195</span>                background = result;</div>
-<div class="line"><span class="lineno">  196</span>                i++;</div>
-<div class="line"><span class="lineno">  197</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  198</span>            }</div>
-<div class="line"><span class="lineno">  199</span>            <span class="keywordflow">default</span>: {</div>
-<div class="line"><span class="lineno">  200</span>                <span class="comment">/* If we haven&#39;t matched anything, we assume its a foreground</span></div>
-<div class="line"><span class="lineno">  201</span><span class="comment">                   color. Make sure it is and error if not. */</span></div>
-<div class="line"><span class="lineno">  202</span>                <span class="keyword">const</span> <span class="keywordtype">int</span> result = <a class="code hl_function" href="#a99be6e984a18f32a90714be08d0f8495">_termcolor_internal_lookup</a>(color[i]);</div>
-<div class="line"><span class="lineno">  203</span>                <span class="keywordflow">if</span> (result != -1) {</div>
-<div class="line"><span class="lineno">  204</span>                    foreground = result;</div>
-<div class="line"><span class="lineno">  205</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  206</span>                }</div>
-<div class="line"><span class="lineno">  207</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba06a0e7f68df54c17a5b8208b27dff83d">TermColorErrorInvalidColor</a>;</div>
-<div class="line"><span class="lineno">  208</span>            }</div>
-<div class="line"><span class="lineno">  209</span>        }</div>
-<div class="line"><span class="lineno">  210</span>    }</div>
-<div class="line"><span class="lineno">  211</span> </div>
-<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a390ed47adafb1c3867ee8a2c14c02787">_tcol_color_generate</a>(dst, dstn, len, rep, foreground, background);</div>
-<div class="line"><span class="lineno">  213</span>}</div>
-<div class="ttc" id="atermcolor_8c_html_a390ed47adafb1c3867ee8a2c14c02787"><div class="ttname"><a href="#a390ed47adafb1c3867ee8a2c14c02787">_tcol_color_generate</a></div><div class="ttdeci">int _tcol_color_generate(char *dst, size_t dstn, size_t *len, int rep, int foreground, int background)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00072">termcolor.c:72</a></div></div>
-<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02">_termcolor_internal_color</a></div><div class="ttdeci">_termcolor_internal_color</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00063">termcolor.c:63</a></div></div>
+<div class="line"><span class="lineno">  195</span>                <span class="keyword">const</span> <span class="keywordtype">int</span> result = <a class="code hl_function" href="#a99be6e984a18f32a90714be08d0f8495">_termcolor_internal_lookup</a>(color[i + 1]);</div>
+<div class="line"><span class="lineno">  196</span>                <span class="keywordflow">if</span> (result == -1) {</div>
+<div class="line"><span class="lineno">  197</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba06a0e7f68df54c17a5b8208b27dff83d">TermColorErrorInvalidColor</a>;</div>
+<div class="line"><span class="lineno">  198</span>                }</div>
+<div class="line"><span class="lineno">  199</span>                background = result;</div>
+<div class="line"><span class="lineno">  200</span>                i++;</div>
+<div class="line"><span class="lineno">  201</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  202</span>            }</div>
+<div class="line"><span class="lineno">  203</span>            <span class="keywordflow">default</span>: {</div>
+<div class="line"><span class="lineno">  204</span>                <span class="comment">/* If we haven&#39;t matched anything, we assume its a foreground</span></div>
+<div class="line"><span class="lineno">  205</span><span class="comment">                   color. Make sure it is and error if not. */</span></div>
+<div class="line"><span class="lineno">  206</span>                <span class="keyword">const</span> <span class="keywordtype">int</span> result = <a class="code hl_function" href="#a99be6e984a18f32a90714be08d0f8495">_termcolor_internal_lookup</a>(color[i]);</div>
+<div class="line"><span class="lineno">  207</span>                <span class="keywordflow">if</span> (result != -1) {</div>
+<div class="line"><span class="lineno">  208</span>                    foreground = result;</div>
+<div class="line"><span class="lineno">  209</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  210</span>                }</div>
+<div class="line"><span class="lineno">  211</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba06a0e7f68df54c17a5b8208b27dff83d">TermColorErrorInvalidColor</a>;</div>
+<div class="line"><span class="lineno">  212</span>            }</div>
+<div class="line"><span class="lineno">  213</span>        }</div>
+<div class="line"><span class="lineno">  214</span>    }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a390ed47adafb1c3867ee8a2c14c02787">_tcol_color_generate</a>(dst, dstn, len, rep, foreground, background);</div>
+<div class="line"><span class="lineno">  217</span>}</div>
+<div class="ttc" id="atermcolor_8c_html_a390ed47adafb1c3867ee8a2c14c02787"><div class="ttname"><a href="#a390ed47adafb1c3867ee8a2c14c02787">_tcol_color_generate</a></div><div class="ttdeci">int _tcol_color_generate(char *dst, size_t dstn, size_t *len, int rep, int foreground, int background)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00076">termcolor.c:76</a></div></div>
+<div class="ttc" id="atermcolor_8c_html_a44d1e062686a8ca7f9507e7dd680ea02"><div class="ttname"><a href="#a44d1e062686a8ca7f9507e7dd680ea02">_termcolor_internal_color</a></div><div class="ttdeci">_termcolor_internal_color</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00067">termcolor.c:67</a></div></div>
 <div class="ttc" id="atermcolor_8c_html_a6cab43a020dd24de30e5ba7f24242c99"><div class="ttname"><a href="#a6cab43a020dd24de30e5ba7f24242c99">use_color</a></div><div class="ttdeci">static bool use_color</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00022">termcolor.c:22</a></div></div>
-<div class="ttc" id="atermcolor_8c_html_a99be6e984a18f32a90714be08d0f8495"><div class="ttname"><a href="#a99be6e984a18f32a90714be08d0f8495">_termcolor_internal_lookup</a></div><div class="ttdeci">int _termcolor_internal_lookup(const char color_name)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00040">termcolor.c:40</a></div></div>
+<div class="ttc" id="atermcolor_8c_html_a99be6e984a18f32a90714be08d0f8495"><div class="ttname"><a href="#a99be6e984a18f32a90714be08d0f8495">_termcolor_internal_lookup</a></div><div class="ttdeci">int _termcolor_internal_lookup(const char color_name)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00044">termcolor.c:44</a></div></div>
 <div class="ttc" id="atermcolor_8h_html_ae1d993ec016dde10bee74d23dc09c46ba06a0e7f68df54c17a5b8208b27dff83d"><div class="ttname"><a href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba06a0e7f68df54c17a5b8208b27dff83d">TermColorErrorInvalidColor</a></div><div class="ttdeci">@ TermColorErrorInvalidColor</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8h_source.html#l00042">termcolor.h:42</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -540,79 +542,79 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00215">215</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  216</span>                                              {</div>
-<div class="line"><span class="lineno">  217</span>    <span class="comment">/* Variables:</span></div>
-<div class="line"><span class="lineno">  218</span><span class="comment">         i = index in source</span></div>
-<div class="line"><span class="lineno">  219</span><span class="comment">         j = index in destination</span></div>
-<div class="line"><span class="lineno">  220</span><span class="comment"></span> </div>
-<div class="line"><span class="lineno">  221</span><span class="comment">       1. We loop throughout the source until we reach the end or until we</span></div>
-<div class="line"><span class="lineno">  222</span><span class="comment">       cannot write into dst anymore. */</span></div>
-<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">if</span> (dstn == 0) {</div>
-<div class="line"><span class="lineno">  224</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
-<div class="line"><span class="lineno">  225</span>    }</div>
-<div class="line"><span class="lineno">  226</span>    <span class="keywordtype">size_t</span> j = 0, i;</div>
-<div class="line"><span class="lineno">  227</span>    dstn--;</div>
-<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">for</span> (i = 0; i &lt; srcn &amp;&amp; j &lt; dstn; i++) {</div>
-<div class="line"><span class="lineno">  229</span>        loop_top:</div>
-<div class="line"><span class="lineno">  230</span>        <span class="comment">/* 2. We check if the current character is &#39;{&#39;. */</span></div>
-<div class="line"><span class="lineno">  231</span>        <span class="keywordflow">if</span> (src[i] == <span class="charliteral">&#39;{&#39;</span>) {</div>
-<div class="line"><span class="lineno">  232</span>            <span class="comment">/* 3.B. If it is, we make sure it&#39;s not escaped with &quot;{{&quot;. */</span></div>
-<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">if</span> (i + 1 &lt; srcn &amp;&amp; src[i + 1] == <span class="charliteral">&#39;{&#39;</span>) {</div>
-<div class="line"><span class="lineno">  234</span>                i++;</div>
-<div class="line"><span class="lineno">  235</span>                dst[j++] = <span class="charliteral">&#39;{&#39;</span>;</div>
-<div class="line"><span class="lineno">  236</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  237</span>                i++;</div>
-<div class="line"><span class="lineno">  238</span> </div>
-<div class="line"><span class="lineno">  239</span>                <span class="comment">/* 4. If not escape, we obtain the color and parse it. */</span></div>
-<div class="line"><span class="lineno">  240</span>                <span class="keywordtype">char</span> color[16];</div>
-<div class="line"><span class="lineno">  241</span>                <span class="keywordtype">int</span> k = 0;</div>
-<div class="line"><span class="lineno">  242</span>                <span class="keywordflow">while</span> (i &lt; srcn &amp;&amp; src[i] != <span class="charliteral">&#39;}&#39;</span>) {</div>
-<div class="line"><span class="lineno">  243</span>                    <span class="comment">/* Allow spaces in the color */</span></div>
-<div class="line"><span class="lineno">  244</span>                    <span class="keywordflow">if</span> (src[i] == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><span class="lineno">  245</span>                        i++;</div>
-<div class="line"><span class="lineno">  246</span>                        <span class="keywordflow">if</span> (src[i] == <span class="charliteral">&#39;}&#39;</span>) {</div>
-<div class="line"><span class="lineno">  247</span>                            i++;</div>
-<div class="line"><span class="lineno">  248</span>                            <span class="comment">/* If the color is all spaces, ignore it. */</span></div>
-<div class="line"><span class="lineno">  249</span>                            <span class="keywordflow">goto</span> loop_top;</div>
-<div class="line"><span class="lineno">  250</span>                        }</div>
-<div class="line"><span class="lineno">  251</span>                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  252</span>                    }</div>
-<div class="line"><span class="lineno">  253</span> </div>
-<div class="line"><span class="lineno">  254</span>                    <span class="comment">/* Copy over the contents of the source to the color buffer. */</span></div>
-<div class="line"><span class="lineno">  255</span>                    color[k++] = src[i++];</div>
-<div class="line"><span class="lineno">  256</span> </div>
-<div class="line"><span class="lineno">  257</span>                    <span class="comment">/* Make sure no bounds are overrun. */</span></div>
-<div class="line"><span class="lineno">  258</span>                    <span class="keywordflow">if</span> (k &gt; 16) {</div>
-<div class="line"><span class="lineno">  259</span>                        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba1227b9061ccd1ae1f08663813c997941">TermColorErrorUnterminatedColor</a>;</div>
-<div class="line"><span class="lineno">  260</span>                    }</div>
-<div class="line"><span class="lineno">  261</span>                }</div>
-<div class="line"><span class="lineno">  262</span> </div>
-<div class="line"><span class="lineno">  263</span>                <span class="comment">/* Confirm we ended on a right bracket */</span></div>
-<div class="line"><span class="lineno">  264</span>                <span class="keywordflow">if</span> (src[i] != <span class="charliteral">&#39;}&#39;</span>) {</div>
-<div class="line"><span class="lineno">  265</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba1227b9061ccd1ae1f08663813c997941">TermColorErrorUnterminatedColor</a>;</div>
-<div class="line"><span class="lineno">  266</span>                }</div>
-<div class="line"><span class="lineno">  267</span> </div>
-<div class="line"><span class="lineno">  268</span>                <span class="comment">/* Create the escape sequence. */</span></div>
-<div class="line"><span class="lineno">  269</span>                <span class="keywordtype">size_t</span> len = 0;</div>
-<div class="line"><span class="lineno">  270</span>                <span class="keywordtype">int</span> status = <a class="code hl_function" href="#aa544f4a566ad33b69fc08ca7ff75a675">tcol_color_parse</a>(dst + j, dstn - j, color, k,</div>
-<div class="line"><span class="lineno">  271</span>                                              &amp;len);</div>
-<div class="line"><span class="lineno">  272</span>                <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>) {</div>
-<div class="line"><span class="lineno">  273</span>                    <span class="keywordflow">return</span> status;</div>
-<div class="line"><span class="lineno">  274</span>                }</div>
-<div class="line"><span class="lineno">  275</span>                j += len;</div>
-<div class="line"><span class="lineno">  276</span>            }</div>
-<div class="line"><span class="lineno">  277</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  278</span>            <span class="comment">/* 3.A. If not, just write the character to the destination to</span></div>
-<div class="line"><span class="lineno">  279</span><span class="comment">               copy verbatim. */</span></div>
-<div class="line"><span class="lineno">  280</span>            dst[j++] = src[i];</div>
-<div class="line"><span class="lineno">  281</span>        }</div>
-<div class="line"><span class="lineno">  282</span>    }</div>
-<div class="line"><span class="lineno">  283</span>    dst[dstn] = 0;</div>
-<div class="line"><span class="lineno">  284</span>    dst[j] = 0;</div>
-<div class="line"><span class="lineno">  285</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
-<div class="line"><span class="lineno">  286</span>}</div>
-<div class="ttc" id="atermcolor_8c_html_aa544f4a566ad33b69fc08ca7ff75a675"><div class="ttname"><a href="#aa544f4a566ad33b69fc08ca7ff75a675">tcol_color_parse</a></div><div class="ttdeci">int tcol_color_parse(char *dst, size_t dstn, char color[16], size_t k, size_t *len)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00138">termcolor.c:138</a></div></div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00219">219</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  220</span>                                              {</div>
+<div class="line"><span class="lineno">  221</span>    <span class="comment">/* Variables:</span></div>
+<div class="line"><span class="lineno">  222</span><span class="comment">         i = index in source</span></div>
+<div class="line"><span class="lineno">  223</span><span class="comment">         j = index in destination</span></div>
+<div class="line"><span class="lineno">  224</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  225</span><span class="comment">       1. We loop throughout the source until we reach the end or until we</span></div>
+<div class="line"><span class="lineno">  226</span><span class="comment">       cannot write into dst anymore. */</span></div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">if</span> (dstn == 0) {</div>
+<div class="line"><span class="lineno">  228</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
+<div class="line"><span class="lineno">  229</span>    }</div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordtype">size_t</span> j = 0, i;</div>
+<div class="line"><span class="lineno">  231</span>    dstn--;</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">for</span> (i = 0; i &lt; srcn &amp;&amp; j &lt; dstn; i++) {</div>
+<div class="line"><span class="lineno">  233</span>        loop_top:</div>
+<div class="line"><span class="lineno">  234</span>        <span class="comment">/* 2. We check if the current character is &#39;{&#39;. */</span></div>
+<div class="line"><span class="lineno">  235</span>        <span class="keywordflow">if</span> (src[i] == <span class="charliteral">&#39;{&#39;</span>) {</div>
+<div class="line"><span class="lineno">  236</span>            <span class="comment">/* 3.B. If it is, we make sure it&#39;s not escaped with &quot;{{&quot;. */</span></div>
+<div class="line"><span class="lineno">  237</span>            <span class="keywordflow">if</span> (i + 1 &lt; srcn &amp;&amp; src[i + 1] == <span class="charliteral">&#39;{&#39;</span>) {</div>
+<div class="line"><span class="lineno">  238</span>                i++;</div>
+<div class="line"><span class="lineno">  239</span>                dst[j++] = <span class="charliteral">&#39;{&#39;</span>;</div>
+<div class="line"><span class="lineno">  240</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  241</span>                i++;</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>                <span class="comment">/* 4. If not escape, we obtain the color and parse it. */</span></div>
+<div class="line"><span class="lineno">  244</span>                <span class="keywordtype">char</span> color[16];</div>
+<div class="line"><span class="lineno">  245</span>                <span class="keywordtype">int</span> k = 0;</div>
+<div class="line"><span class="lineno">  246</span>                <span class="keywordflow">while</span> (i &lt; srcn &amp;&amp; src[i] != <span class="charliteral">&#39;}&#39;</span>) {</div>
+<div class="line"><span class="lineno">  247</span>                    <span class="comment">/* Allow spaces in the color */</span></div>
+<div class="line"><span class="lineno">  248</span>                    <span class="keywordflow">if</span> (src[i] == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><span class="lineno">  249</span>                        i++;</div>
+<div class="line"><span class="lineno">  250</span>                        <span class="keywordflow">if</span> (src[i] == <span class="charliteral">&#39;}&#39;</span>) {</div>
+<div class="line"><span class="lineno">  251</span>                            i++;</div>
+<div class="line"><span class="lineno">  252</span>                            <span class="comment">/* If the color is all spaces, ignore it. */</span></div>
+<div class="line"><span class="lineno">  253</span>                            <span class="keywordflow">goto</span> loop_top;</div>
+<div class="line"><span class="lineno">  254</span>                        }</div>
+<div class="line"><span class="lineno">  255</span>                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  256</span>                    }</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>                    <span class="comment">/* Copy over the contents of the source to the color buffer. */</span></div>
+<div class="line"><span class="lineno">  259</span>                    color[k++] = src[i++];</div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>                    <span class="comment">/* Make sure no bounds are overrun. */</span></div>
+<div class="line"><span class="lineno">  262</span>                    <span class="keywordflow">if</span> (k &gt; 16) {</div>
+<div class="line"><span class="lineno">  263</span>                        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba1227b9061ccd1ae1f08663813c997941">TermColorErrorUnterminatedColor</a>;</div>
+<div class="line"><span class="lineno">  264</span>                    }</div>
+<div class="line"><span class="lineno">  265</span>                }</div>
+<div class="line"><span class="lineno">  266</span> </div>
+<div class="line"><span class="lineno">  267</span>                <span class="comment">/* Confirm we ended on a right bracket */</span></div>
+<div class="line"><span class="lineno">  268</span>                <span class="keywordflow">if</span> (src[i] != <span class="charliteral">&#39;}&#39;</span>) {</div>
+<div class="line"><span class="lineno">  269</span>                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba1227b9061ccd1ae1f08663813c997941">TermColorErrorUnterminatedColor</a>;</div>
+<div class="line"><span class="lineno">  270</span>                }</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>                <span class="comment">/* Create the escape sequence. */</span></div>
+<div class="line"><span class="lineno">  273</span>                <span class="keywordtype">size_t</span> len = 0;</div>
+<div class="line"><span class="lineno">  274</span>                <span class="keywordtype">int</span> status = <a class="code hl_function" href="#aa544f4a566ad33b69fc08ca7ff75a675">tcol_color_parse</a>(dst + j, dstn - j, color, k,</div>
+<div class="line"><span class="lineno">  275</span>                                              &amp;len);</div>
+<div class="line"><span class="lineno">  276</span>                <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>) {</div>
+<div class="line"><span class="lineno">  277</span>                    <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">  278</span>                }</div>
+<div class="line"><span class="lineno">  279</span>                j += len;</div>
+<div class="line"><span class="lineno">  280</span>            }</div>
+<div class="line"><span class="lineno">  281</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  282</span>            <span class="comment">/* 3.A. If not, just write the character to the destination to</span></div>
+<div class="line"><span class="lineno">  283</span><span class="comment">               copy verbatim. */</span></div>
+<div class="line"><span class="lineno">  284</span>            dst[j++] = src[i];</div>
+<div class="line"><span class="lineno">  285</span>        }</div>
+<div class="line"><span class="lineno">  286</span>    }</div>
+<div class="line"><span class="lineno">  287</span>    dst[dstn] = 0;</div>
+<div class="line"><span class="lineno">  288</span>    dst[j] = 0;</div>
+<div class="line"><span class="lineno">  289</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
+<div class="line"><span class="lineno">  290</span>}</div>
+<div class="ttc" id="atermcolor_8c_html_aa544f4a566ad33b69fc08ca7ff75a675"><div class="ttname"><a href="#aa544f4a566ad33b69fc08ca7ff75a675">tcol_color_parse</a></div><div class="ttdeci">int tcol_color_parse(char *dst, size_t dstn, char color[16], size_t k, size_t *len)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00142">termcolor.c:142</a></div></div>
 <div class="ttc" id="atermcolor_8h_html_ae1d993ec016dde10bee74d23dc09c46ba1227b9061ccd1ae1f08663813c997941"><div class="ttname"><a href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba1227b9061ccd1ae1f08663813c997941">TermColorErrorUnterminatedColor</a></div><div class="ttdeci">@ TermColorErrorUnterminatedColor</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8h_source.html#l00043">termcolor.h:43</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -641,16 +643,38 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00361">361</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  361</span>                                                     {</div>
-<div class="line"><span class="lineno">  362</span>    va_list ap;</div>
-<div class="line"><span class="lineno">  363</span>    va_start(ap, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
-<div class="line"><span class="lineno">  364</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a>(stream, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, ap);</div>
-<div class="line"><span class="lineno">  365</span>    va_end(ap);</div>
-<div class="line"><span class="lineno">  366</span>    <span class="keywordflow">return</span> status;</div>
-<div class="line"><span class="lineno">  367</span>}</div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00365">365</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  365</span>                                                     {</div>
+<div class="line"><span class="lineno">  366</span>    va_list ap;</div>
+<div class="line"><span class="lineno">  367</span>    va_start(ap, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
+<div class="line"><span class="lineno">  368</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a>(stream, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, ap);</div>
+<div class="line"><span class="lineno">  369</span>    va_end(ap);</div>
+<div class="line"><span class="lineno">  370</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">  371</span>}</div>
 <div class="ttc" id="agwion__print_8h_html_a98e80936172a59a9f91c6305e193cd98"><div class="ttname"><a href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a></div><div class="ttdeci">char const char * fmt</div><div class="ttdef"><b>Definition</b> <a href="gwion__print_8h_source.html#l00002">gwion_print.h:2</a></div></div>
-<div class="ttc" id="atermcolor_8c_html_abceb3cf9bcb5a4958f611458b711e996"><div class="ttname"><a href="#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a></div><div class="ttdeci">static int tcol_vfprintf(FILE *stream, const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00320">termcolor.c:320</a></div></div>
+<div class="ttc" id="atermcolor_8c_html_abceb3cf9bcb5a4958f611458b711e996"><div class="ttname"><a href="#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a></div><div class="ttdeci">static int tcol_vfprintf(FILE *stream, const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00324">termcolor.c:324</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaacfae8f2f863c6e5536f276eec1ce79" name="aaacfae8f2f863c6e5536f276eec1ce79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaacfae8f2f863c6e5536f276eec1ce79">&#9670;&#160;</a></span>tcol_has_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tcol_has_color </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00036">36</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>                          {</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a6cab43a020dd24de30e5ba7f24242c99">use_color</a>;</div>
+<div class="line"><span class="lineno">   38</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -669,10 +693,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00036">36</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>                                                   {</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="#a6cab43a020dd24de30e5ba7f24242c99">use_color</a> = enable_color;</div>
-<div class="line"><span class="lineno">   38</span>}</div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00040">40</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                   {</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="#a6cab43a020dd24de30e5ba7f24242c99">use_color</a> = enable_color;</div>
+<div class="line"><span class="lineno">   42</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -695,14 +719,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00369">369</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  369</span>                                      {</div>
-<div class="line"><span class="lineno">  370</span>    va_list ap;</div>
-<div class="line"><span class="lineno">  371</span>    va_start(ap, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
-<div class="line"><span class="lineno">  372</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a>(stdout, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, ap);</div>
-<div class="line"><span class="lineno">  373</span>    va_end(ap);</div>
-<div class="line"><span class="lineno">  374</span>    <span class="keywordflow">return</span> status;</div>
-<div class="line"><span class="lineno">  375</span>}</div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00373">373</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  373</span>                                      {</div>
+<div class="line"><span class="lineno">  374</span>    va_list ap;</div>
+<div class="line"><span class="lineno">  375</span>    va_start(ap, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
+<div class="line"><span class="lineno">  376</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="#abceb3cf9bcb5a4958f611458b711e996">tcol_vfprintf</a>(stdout, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, ap);</div>
+<div class="line"><span class="lineno">  377</span>    va_end(ap);</div>
+<div class="line"><span class="lineno">  378</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">  379</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -735,15 +759,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00378">378</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  378</span>                                                                {</div>
-<div class="line"><span class="lineno">  379</span>    va_list ap;</div>
-<div class="line"><span class="lineno">  380</span>    va_start(ap, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
-<div class="line"><span class="lineno">  381</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="#a3328b083df29d219389ca7c1cffb7289">tcol_vsnprintf</a>(stream, N, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, ap);</div>
-<div class="line"><span class="lineno">  382</span>    va_end(ap);</div>
-<div class="line"><span class="lineno">  383</span>    <span class="keywordflow">return</span> status;</div>
-<div class="line"><span class="lineno">  384</span>}</div>
-<div class="ttc" id="atermcolor_8c_html_a3328b083df29d219389ca7c1cffb7289"><div class="ttname"><a href="#a3328b083df29d219389ca7c1cffb7289">tcol_vsnprintf</a></div><div class="ttdeci">static int tcol_vsnprintf(char *stream, size_t N, const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00288">termcolor.c:288</a></div></div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00382">382</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  382</span>                                                                {</div>
+<div class="line"><span class="lineno">  383</span>    va_list ap;</div>
+<div class="line"><span class="lineno">  384</span>    va_start(ap, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
+<div class="line"><span class="lineno">  385</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="#a3328b083df29d219389ca7c1cffb7289">tcol_vsnprintf</a>(stream, N, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, ap);</div>
+<div class="line"><span class="lineno">  386</span>    va_end(ap);</div>
+<div class="line"><span class="lineno">  387</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">  388</span>}</div>
+<div class="ttc" id="atermcolor_8c_html_a3328b083df29d219389ca7c1cffb7289"><div class="ttname"><a href="#a3328b083df29d219389ca7c1cffb7289">tcol_vsnprintf</a></div><div class="ttdeci">static int tcol_vsnprintf(char *stream, size_t N, const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00292">termcolor.c:292</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -779,46 +803,46 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00320">320</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  320</span>                                                                           {</div>
-<div class="line"><span class="lineno">  321</span>    <span class="comment">/* Gets the length of the format string and calculates a length for the new</span></div>
-<div class="line"><span class="lineno">  322</span><span class="comment">       format string to be created. */</span></div>
-<div class="line"><span class="lineno">  323</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> l = strlen(<a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
-<div class="line"><span class="lineno">  324</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> n = l * 2 + 16;</div>
-<div class="line"><span class="lineno">  325</span> </div>
-<div class="line"><span class="lineno">  326</span>    <span class="comment">/* Allocates and produces the new format string. */</span></div>
-<div class="line"><span class="lineno">  327</span>    <span class="keywordtype">char</span> *buffer = malloc(n);</div>
-<div class="line"><span class="lineno">  328</span>    <span class="keywordflow">if</span> (buffer == NULL) {</div>
-<div class="line"><span class="lineno">  329</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba9a739a636bd0b48c8e875ef480855ae5">TermColorErrorAllocationFailed</a>;</div>
-<div class="line"><span class="lineno">  330</span>    }</div>
-<div class="line"><span class="lineno">  331</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="#a814d3c4218299c57ec5ab6fbddf5d728">tcol_fmt_parse</a>(buffer, n, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, l);</div>
-<div class="line"><span class="lineno">  332</span>    <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>) {</div>
-<div class="line"><span class="lineno">  333</span>        free(buffer);</div>
-<div class="line"><span class="lineno">  334</span>        <span class="keywordflow">return</span> status;</div>
-<div class="line"><span class="lineno">  335</span>    }</div>
-<div class="line"><span class="lineno">  336</span><span class="preprocessor">    #ifdef TERMCOLOR_OS_WIN</span></div>
-<div class="line"><span class="lineno">  337</span>        HANDLE output  = GetStdHandle(STD_OUTPUT_HANDLE); <span class="comment">/* Console Output */</span></div>
-<div class="line"><span class="lineno">  338</span>        DWORD mode;</div>
-<div class="line"><span class="lineno">  339</span>        GetConsoleMode(output, &amp;mode);</div>
-<div class="line"><span class="lineno">  340</span>        mode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING; <span class="comment">/* Process ANSI Escape */</span></div>
-<div class="line"><span class="lineno">  341</span>        mode |= ENABLE_PROCESSED_OUTPUT; <span class="comment">/* Process ASCII Escape */</span></div>
-<div class="line"><span class="lineno">  342</span>        WINBOOL set = !SetConsoleMode(output, mode);</div>
-<div class="line"><span class="lineno">  343</span>        <span class="keywordflow">if</span> (set) { <span class="comment">/* If we could not set the console mode, we cannot print it */</span></div>
-<div class="line"><span class="lineno">  344</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bacd281161f0a834ac9668792db1e10d03">TermColorErrorPrintingFailed</a>;</div>
-<div class="line"><span class="lineno">  345</span>        }</div>
-<div class="line"><span class="lineno">  346</span><span class="preprocessor">    #endif</span></div>
-<div class="line"><span class="lineno">  347</span>    <span class="comment">/* Perform the printf itself. */</span></div>
-<div class="line"><span class="lineno">  348</span>    <span class="keywordflow">if</span> (vfprintf(stream, buffer, ap) &lt; 0) {</div>
-<div class="line"><span class="lineno">  349</span>        free(buffer);</div>
-<div class="line"><span class="lineno">  350</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bacd281161f0a834ac9668792db1e10d03">TermColorErrorPrintingFailed</a>;</div>
-<div class="line"><span class="lineno">  351</span>    }</div>
-<div class="line"><span class="lineno">  352</span> </div>
-<div class="line"><span class="lineno">  353</span>    <span class="comment">/* Cleanup resources. */</span></div>
-<div class="line"><span class="lineno">  354</span>    free(buffer);</div>
-<div class="line"><span class="lineno">  355</span> </div>
-<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
-<div class="line"><span class="lineno">  357</span>}</div>
-<div class="ttc" id="atermcolor_8c_html_a814d3c4218299c57ec5ab6fbddf5d728"><div class="ttname"><a href="#a814d3c4218299c57ec5ab6fbddf5d728">tcol_fmt_parse</a></div><div class="ttdeci">static int tcol_fmt_parse(char *dst, size_t dstn, const char *src, size_t srcn)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00215">termcolor.c:215</a></div></div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00324">324</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  324</span>                                                                           {</div>
+<div class="line"><span class="lineno">  325</span>    <span class="comment">/* Gets the length of the format string and calculates a length for the new</span></div>
+<div class="line"><span class="lineno">  326</span><span class="comment">       format string to be created. */</span></div>
+<div class="line"><span class="lineno">  327</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> l = strlen(<a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
+<div class="line"><span class="lineno">  328</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> n = l * 2 + 16;</div>
+<div class="line"><span class="lineno">  329</span> </div>
+<div class="line"><span class="lineno">  330</span>    <span class="comment">/* Allocates and produces the new format string. */</span></div>
+<div class="line"><span class="lineno">  331</span>    <span class="keywordtype">char</span> *buffer = malloc(n);</div>
+<div class="line"><span class="lineno">  332</span>    <span class="keywordflow">if</span> (buffer == NULL) {</div>
+<div class="line"><span class="lineno">  333</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba9a739a636bd0b48c8e875ef480855ae5">TermColorErrorAllocationFailed</a>;</div>
+<div class="line"><span class="lineno">  334</span>    }</div>
+<div class="line"><span class="lineno">  335</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="#a814d3c4218299c57ec5ab6fbddf5d728">tcol_fmt_parse</a>(buffer, n, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, l);</div>
+<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>) {</div>
+<div class="line"><span class="lineno">  337</span>        free(buffer);</div>
+<div class="line"><span class="lineno">  338</span>        <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">  339</span>    }</div>
+<div class="line"><span class="lineno">  340</span><span class="preprocessor">    #ifdef TERMCOLOR_OS_WIN</span></div>
+<div class="line"><span class="lineno">  341</span>        HANDLE output  = GetStdHandle(STD_OUTPUT_HANDLE); <span class="comment">/* Console Output */</span></div>
+<div class="line"><span class="lineno">  342</span>        DWORD mode;</div>
+<div class="line"><span class="lineno">  343</span>        GetConsoleMode(output, &amp;mode);</div>
+<div class="line"><span class="lineno">  344</span>        mode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING; <span class="comment">/* Process ANSI Escape */</span></div>
+<div class="line"><span class="lineno">  345</span>        mode |= ENABLE_PROCESSED_OUTPUT; <span class="comment">/* Process ASCII Escape */</span></div>
+<div class="line"><span class="lineno">  346</span>        WINBOOL set = !SetConsoleMode(output, mode);</div>
+<div class="line"><span class="lineno">  347</span>        <span class="keywordflow">if</span> (set) { <span class="comment">/* If we could not set the console mode, we cannot print it */</span></div>
+<div class="line"><span class="lineno">  348</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bacd281161f0a834ac9668792db1e10d03">TermColorErrorPrintingFailed</a>;</div>
+<div class="line"><span class="lineno">  349</span>        }</div>
+<div class="line"><span class="lineno">  350</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><span class="lineno">  351</span>    <span class="comment">/* Perform the printf itself. */</span></div>
+<div class="line"><span class="lineno">  352</span>    <span class="keywordflow">if</span> (vfprintf(stream, buffer, ap) &lt; 0) {</div>
+<div class="line"><span class="lineno">  353</span>        free(buffer);</div>
+<div class="line"><span class="lineno">  354</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bacd281161f0a834ac9668792db1e10d03">TermColorErrorPrintingFailed</a>;</div>
+<div class="line"><span class="lineno">  355</span>    }</div>
+<div class="line"><span class="lineno">  356</span> </div>
+<div class="line"><span class="lineno">  357</span>    <span class="comment">/* Cleanup resources. */</span></div>
+<div class="line"><span class="lineno">  358</span>    free(buffer);</div>
+<div class="line"><span class="lineno">  359</span> </div>
+<div class="line"><span class="lineno">  360</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
+<div class="line"><span class="lineno">  361</span>}</div>
+<div class="ttc" id="atermcolor_8c_html_a814d3c4218299c57ec5ab6fbddf5d728"><div class="ttname"><a href="#a814d3c4218299c57ec5ab6fbddf5d728">tcol_fmt_parse</a></div><div class="ttdeci">static int tcol_fmt_parse(char *dst, size_t dstn, const char *src, size_t srcn)</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8c_source.html#l00219">termcolor.c:219</a></div></div>
 <div class="ttc" id="atermcolor_8h_html_ae1d993ec016dde10bee74d23dc09c46ba9a739a636bd0b48c8e875ef480855ae5"><div class="ttname"><a href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba9a739a636bd0b48c8e875ef480855ae5">TermColorErrorAllocationFailed</a></div><div class="ttdeci">@ TermColorErrorAllocationFailed</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8h_source.html#l00040">termcolor.h:40</a></div></div>
 <div class="ttc" id="atermcolor_8h_html_ae1d993ec016dde10bee74d23dc09c46bacd281161f0a834ac9668792db1e10d03"><div class="ttname"><a href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bacd281161f0a834ac9668792db1e10d03">TermColorErrorPrintingFailed</a></div><div class="ttdeci">@ TermColorErrorPrintingFailed</div><div class="ttdef"><b>Definition</b> <a href="termcolor_8h_source.html#l00041">termcolor.h:41</a></div></div>
 </div><!-- fragment -->
@@ -861,35 +885,35 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00288">288</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  289</span>                                             {</div>
-<div class="line"><span class="lineno">  290</span>    <span class="comment">/* Gets the length of the format string and calculates a length for the new</span></div>
-<div class="line"><span class="lineno">  291</span><span class="comment">       format string to be created. */</span></div>
-<div class="line"><span class="lineno">  292</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> l = strlen(<a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
-<div class="line"><span class="lineno">  293</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> n = l * 2 + 16;</div>
-<div class="line"><span class="lineno">  294</span> </div>
-<div class="line"><span class="lineno">  295</span>    <span class="comment">/* Allocates and produces the new format string. */</span></div>
-<div class="line"><span class="lineno">  296</span>    <span class="keywordtype">char</span> *buffer = malloc(n);</div>
-<div class="line"><span class="lineno">  297</span>    <span class="keywordflow">if</span> (buffer == NULL) {</div>
-<div class="line"><span class="lineno">  298</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba9a739a636bd0b48c8e875ef480855ae5">TermColorErrorAllocationFailed</a>;</div>
-<div class="line"><span class="lineno">  299</span>    }</div>
-<div class="line"><span class="lineno">  300</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="#a814d3c4218299c57ec5ab6fbddf5d728">tcol_fmt_parse</a>(buffer, n, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, l);</div>
-<div class="line"><span class="lineno">  301</span>    <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>) {</div>
-<div class="line"><span class="lineno">  302</span>        free(buffer);</div>
-<div class="line"><span class="lineno">  303</span>        <span class="keywordflow">return</span> status;</div>
-<div class="line"><span class="lineno">  304</span>    }</div>
-<div class="line"><span class="lineno">  305</span> </div>
-<div class="line"><span class="lineno">  306</span>    <span class="comment">/* Perform the snprintf itself. */</span></div>
-<div class="line"><span class="lineno">  307</span>    <span class="keywordflow">if</span> (vsnprintf(stream, N, buffer, ap) &lt; 0) {</div>
-<div class="line"><span class="lineno">  308</span>        free(buffer);</div>
-<div class="line"><span class="lineno">  309</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bacd281161f0a834ac9668792db1e10d03">TermColorErrorPrintingFailed</a>;</div>
-<div class="line"><span class="lineno">  310</span>    }</div>
-<div class="line"><span class="lineno">  311</span> </div>
-<div class="line"><span class="lineno">  312</span>    <span class="comment">/* Cleanup resources. */</span></div>
-<div class="line"><span class="lineno">  313</span>    free(buffer);</div>
-<div class="line"><span class="lineno">  314</span> </div>
-<div class="line"><span class="lineno">  315</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
-<div class="line"><span class="lineno">  316</span>}</div>
+<p class="definition">Definition at line <a class="el" href="termcolor_8c_source.html#l00292">292</a> of file <a class="el" href="termcolor_8c_source.html">termcolor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  293</span>                                             {</div>
+<div class="line"><span class="lineno">  294</span>    <span class="comment">/* Gets the length of the format string and calculates a length for the new</span></div>
+<div class="line"><span class="lineno">  295</span><span class="comment">       format string to be created. */</span></div>
+<div class="line"><span class="lineno">  296</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> l = strlen(<a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>);</div>
+<div class="line"><span class="lineno">  297</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> n = l * 2 + 16;</div>
+<div class="line"><span class="lineno">  298</span> </div>
+<div class="line"><span class="lineno">  299</span>    <span class="comment">/* Allocates and produces the new format string. */</span></div>
+<div class="line"><span class="lineno">  300</span>    <span class="keywordtype">char</span> *buffer = malloc(n);</div>
+<div class="line"><span class="lineno">  301</span>    <span class="keywordflow">if</span> (buffer == NULL) {</div>
+<div class="line"><span class="lineno">  302</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46ba9a739a636bd0b48c8e875ef480855ae5">TermColorErrorAllocationFailed</a>;</div>
+<div class="line"><span class="lineno">  303</span>    }</div>
+<div class="line"><span class="lineno">  304</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = <a class="code hl_function" href="#a814d3c4218299c57ec5ab6fbddf5d728">tcol_fmt_parse</a>(buffer, n, <a class="code hl_variable" href="gwion__print_8h.html#a98e80936172a59a9f91c6305e193cd98">fmt</a>, l);</div>
+<div class="line"><span class="lineno">  305</span>    <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>) {</div>
+<div class="line"><span class="lineno">  306</span>        free(buffer);</div>
+<div class="line"><span class="lineno">  307</span>        <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">  308</span>    }</div>
+<div class="line"><span class="lineno">  309</span> </div>
+<div class="line"><span class="lineno">  310</span>    <span class="comment">/* Perform the snprintf itself. */</span></div>
+<div class="line"><span class="lineno">  311</span>    <span class="keywordflow">if</span> (vsnprintf(stream, N, buffer, ap) &lt; 0) {</div>
+<div class="line"><span class="lineno">  312</span>        free(buffer);</div>
+<div class="line"><span class="lineno">  313</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bacd281161f0a834ac9668792db1e10d03">TermColorErrorPrintingFailed</a>;</div>
+<div class="line"><span class="lineno">  314</span>    }</div>
+<div class="line"><span class="lineno">  315</span> </div>
+<div class="line"><span class="lineno">  316</span>    <span class="comment">/* Cleanup resources. */</span></div>
+<div class="line"><span class="lineno">  317</span>    free(buffer);</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="termcolor_8h.html#ae1d993ec016dde10bee74d23dc09c46bac7bf7e10166d187eef17c6f71bbfa3cd">TermColorErrorNone</a>;</div>
+<div class="line"><span class="lineno">  320</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

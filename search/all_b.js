@@ -45,7 +45,7 @@ var searchData=
   ['mempool_5fend_42',['mempool_end',['../mpool_8c.html#a8429a695a1af2385ae1c5d7a5771caf5',1,'mempool_end(MemPool mp):&#160;mpool.c'],['../mpool_8h.html#a8429a695a1af2385ae1c5d7a5771caf5',1,'mempool_end(MemPool mp):&#160;mpool.c']]],
   ['mempool_5fini_43',['mempool_ini',['../mpool_8c.html#a5a897670de44393bce837bce9fdc23ef',1,'mempool_ini(const size_t sz):&#160;mpool.c'],['../mpool_8h.html#a5a897670de44393bce837bce9fdc23ef',1,'mempool_ini(const size_t sz):&#160;mpool.c']]],
   ['mksymbol_44',['mksymbol',['../symbol_8c.html#a0df73efd7dba8292cf21fe28a3f4c10b',1,'symbol.c']]],
-  ['mp_45',['mp',['../structArgSplitter.html#a5143eb2485df5c7c28dc7d0bee8a5468',1,'ArgSplitter::mp'],['../structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57',1,'GwText_::mp']]],
+  ['mp_45',['mp',['../structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57',1,'GwText_']]],
   ['mp_5falloc_46',['MP_ALLOC',['../mpool_8c.html#a506ee1ccf7cac90f6eeea9b6d4ec0e44',1,'mpool.c']]],
   ['mp_5fcalloc_47',['mp_calloc',['../mpool_8h.html#a2c191a434fae6c134bab72438b8f01be',1,'mpool.h']]],
   ['mp_5fcalloc2_48',['mp_calloc2',['../mpool_8h.html#a6ad492253c67e5c5f6edbda4b0331c9c',1,'mpool.h']]],

@@ -138,37 +138,36 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="carg_8c_source.html#l00022">22</a> of file <a class="el" href="carg_8c_source.html">carg.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>                                                                {</div>
-<div class="line"><span class="lineno">   23</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = strlen(as-&gt;<a class="code hl_variable" href="structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee">str</a>);</div>
-<div class="line"><span class="lineno">   24</span>  <span class="keywordtype">char</span> *buf = <a class="code hl_define" href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a>(mp, sz + 1);</div>
-<div class="line"><span class="lineno">   25</span>  <span class="keywordtype">char</span> prev = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">   26</span>  <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>       i = 0, j = 0;</div>
-<div class="line"><span class="lineno">   27</span>  <span class="keywordtype">char</span>         c;</div>
-<div class="line"><span class="lineno">   28</span>  <span class="keywordflow">while</span> ((c = as-&gt;<a class="code hl_variable" href="structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee">str</a>[i]) != <span class="charliteral">&#39;\0&#39;</span>) {</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> skip  = prev == <span class="charliteral">&#39;\\&#39;</span>;</div>
-<div class="line"><span class="lineno">   30</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> comma = c == <span class="charliteral">&#39;,&#39;</span>;</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (comma) {</div>
-<div class="line"><span class="lineno">   32</span>      <span class="keywordflow">if</span> (!skip) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   33</span>      --j;</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
-<div class="line"><span class="lineno">   35</span>    buf[j++] = (prev = c);</div>
-<div class="line"><span class="lineno">   36</span>    ++i;</div>
-<div class="line"><span class="lineno">   37</span>  }</div>
-<div class="line"><span class="lineno">   38</span>  buf[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">   39</span>  <a class="code hl_function" href="vector_8c.html#a105f09f63450df357dab17e179fd51a4">vector_add</a>(as-&gt;<a class="code hl_variable" href="structArgSplitter.html#ae0687457ac60ada575041ee7e1e694f9">v</a>, (<a class="code hl_typedef" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)<a class="code hl_function" href="mp__string_8h.html#a318f22e7ddd97bf443e6dd010aa63ca1">mstrdup</a>(as-&gt;<a class="code hl_variable" href="structArgSplitter.html#a5143eb2485df5c7c28dc7d0bee8a5468">mp</a>, buf));</div>
-<div class="line"><span class="lineno">   40</span>  <a class="code hl_define" href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a>(mp, sz + 1, buf);</div>
-<div class="line"><span class="lineno">   41</span>  <span class="keywordflow">if</span> (i == sz) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   42</span>  as-&gt;<a class="code hl_variable" href="structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee">str</a> += i + 1;</div>
-<div class="line"><span class="lineno">   43</span>  <a class="code hl_function" href="#ae05d1aca5694d08073f913e6b4d3d0a5">_split_args</a>(mp, as);</div>
-<div class="line"><span class="lineno">   44</span>}</div>
-<div class="ttc" id="acarg_8c_html_ae05d1aca5694d08073f913e6b4d3d0a5"><div class="ttname"><a href="#ae05d1aca5694d08073f913e6b4d3d0a5">_split_args</a></div><div class="ttdeci">static ANN void _split_args(MemPool mp, struct ArgSplitter *as)</div><div class="ttdef"><b>Definition</b> <a href="carg_8c_source.html#l00022">carg.c:22</a></div></div>
+<p class="definition">Definition at line <a class="el" href="carg_8c_source.html#l00021">21</a> of file <a class="el" href="carg_8c_source.html">carg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                                                                {</div>
+<div class="line"><span class="lineno">   22</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sz = strlen(as-&gt;<a class="code hl_variable" href="structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee">str</a>);</div>
+<div class="line"><span class="lineno">   23</span>  <span class="keywordtype">char</span> *buf = <a class="code hl_define" href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a>(mp, sz + 1);</div>
+<div class="line"><span class="lineno">   24</span>  <span class="keywordtype">char</span> prev = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   25</span>  <a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>       i = 0, j = 0;</div>
+<div class="line"><span class="lineno">   26</span>  <span class="keywordtype">char</span>         c;</div>
+<div class="line"><span class="lineno">   27</span>  <span class="keywordflow">while</span> ((c = as-&gt;<a class="code hl_variable" href="structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee">str</a>[i]) != <span class="charliteral">&#39;\0&#39;</span>) {</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> skip  = prev == <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> comma = c == <span class="charliteral">&#39;,&#39;</span>;</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (comma) {</div>
+<div class="line"><span class="lineno">   31</span>      <span class="keywordflow">if</span> (!skip) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   32</span>      --j;</div>
+<div class="line"><span class="lineno">   33</span>    }</div>
+<div class="line"><span class="lineno">   34</span>    buf[j++] = (prev = c);</div>
+<div class="line"><span class="lineno">   35</span>    ++i;</div>
+<div class="line"><span class="lineno">   36</span>  }</div>
+<div class="line"><span class="lineno">   37</span>  buf[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   38</span>  <a class="code hl_function" href="vector_8c.html#a105f09f63450df357dab17e179fd51a4">vector_add</a>(as-&gt;<a class="code hl_variable" href="structArgSplitter.html#ae0687457ac60ada575041ee7e1e694f9">v</a>, (<a class="code hl_typedef" href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a>)<a class="code hl_function" href="mp__string_8h.html#a318f22e7ddd97bf443e6dd010aa63ca1">mstrdup</a>(mp, buf));</div>
+<div class="line"><span class="lineno">   39</span>  <a class="code hl_define" href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a>(mp, sz + 1, buf);</div>
+<div class="line"><span class="lineno">   40</span>  <span class="keywordflow">if</span> (i == sz) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   41</span>  as-&gt;<a class="code hl_variable" href="structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee">str</a> += i + 1;</div>
+<div class="line"><span class="lineno">   42</span>  <a class="code hl_function" href="#ae05d1aca5694d08073f913e6b4d3d0a5">_split_args</a>(mp, as);</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+<div class="ttc" id="acarg_8c_html_ae05d1aca5694d08073f913e6b4d3d0a5"><div class="ttname"><a href="#ae05d1aca5694d08073f913e6b4d3d0a5">_split_args</a></div><div class="ttdeci">static ANN void _split_args(MemPool mp, struct ArgSplitter *as)</div><div class="ttdef"><b>Definition</b> <a href="carg_8c_source.html#l00021">carg.c:21</a></div></div>
 <div class="ttc" id="acontainer_8h_html_a5482df11a6922f4ce0a1d79206c3a451"><div class="ttname"><a href="container_8h.html#a5482df11a6922f4ce0a1d79206c3a451">vtype</a></div><div class="ttdeci">uintptr_t vtype</div><div class="ttdef"><b>Definition</b> <a href="container_8h_source.html#l00014">container.h:14</a></div></div>
 <div class="ttc" id="agwcommon_8h_html_a50651144ce12bd2634f6bc9591e6b062"><div class="ttname"><a href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a></div><div class="ttdeci">uintptr_t m_uint</div><div class="ttdef"><b>Definition</b> <a href="gwcommon_8h_source.html#l00011">gwcommon.h:11</a></div></div>
 <div class="ttc" id="amp__string_8h_html_a318f22e7ddd97bf443e6dd010aa63ca1"><div class="ttname"><a href="mp__string_8h.html#a318f22e7ddd97bf443e6dd010aa63ca1">mstrdup</a></div><div class="ttdeci">static ANN m_str mstrdup(MemPool mp, const char *name)</div><div class="ttdoc">mp_alloc version of strdup</div><div class="ttdef"><b>Definition</b> <a href="mp__string_8h_source.html#l00013">mp_string.h:13</a></div></div>
 <div class="ttc" id="ampool_8h_html_a10cec164a62999f9bb328b6bc2479cf8"><div class="ttname"><a href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a></div><div class="ttdeci">#define mp_free2(p, sz, a)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
 <div class="ttc" id="ampool_8h_html_afdf8c742bac379902ef3a9fee8dd231a"><div class="ttname"><a href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a></div><div class="ttdeci">#define mp_malloc2(p, sz)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00030">mpool.h:30</a></div></div>
-<div class="ttc" id="astructArgSplitter_html_a5143eb2485df5c7c28dc7d0bee8a5468"><div class="ttname"><a href="structArgSplitter.html#a5143eb2485df5c7c28dc7d0bee8a5468">ArgSplitter::mp</a></div><div class="ttdeci">MemPool mp</div><div class="ttdef"><b>Definition</b> <a href="carg_8c_source.html#l00019">carg.c:19</a></div></div>
 <div class="ttc" id="astructArgSplitter_html_a9fa86c0b2a471471fbddb568aecb7cee"><div class="ttname"><a href="structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee">ArgSplitter::str</a></div><div class="ttdeci">m_str str</div><div class="ttdef"><b>Definition</b> <a href="carg_8c_source.html#l00017">carg.c:17</a></div></div>
 <div class="ttc" id="astructArgSplitter_html_ae0687457ac60ada575041ee7e1e694f9"><div class="ttname"><a href="structArgSplitter.html#ae0687457ac60ada575041ee7e1e694f9">ArgSplitter::v</a></div><div class="ttdeci">Vector v</div><div class="ttdef"><b>Definition</b> <a href="carg_8c_source.html#l00018">carg.c:18</a></div></div>
 <div class="ttc" id="avector_8c_html_a105f09f63450df357dab17e179fd51a4"><div class="ttname"><a href="vector_8c.html#a105f09f63450df357dab17e179fd51a4">vector_add</a></div><div class="ttdeci">ANN void vector_add(const Vector v, const vtype data)</div><div class="ttdef"><b>Definition</b> <a href="vector_8c_source.html#l00021">vector.c:21</a></div></div>
@@ -231,12 +230,12 @@ Functions</h2></td></tr>
 <p>returns separated arguments from a string in a vector. </p>
 <p>each value is a mp_allocated string. freeing it is caller responsability. </p>
 
-<p class="definition">Definition at line <a class="el" href="carg_8c_source.html#l00046">46</a> of file <a class="el" href="carg_8c_source.html">carg.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>                                                  {</div>
-<div class="line"><span class="lineno">   47</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structArgSplitter.html">ArgSplitter</a> as = {.<a class="code hl_variable" href="structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee">str</a> = <a class="code hl_variable" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>, .v = <a class="code hl_function" href="vector_8c.html#a3b05a62b48975cf61ed8d24b045cf13b">new_vector</a>(p), .mp = p};</div>
-<div class="line"><span class="lineno">   48</span>  <a class="code hl_function" href="#ae05d1aca5694d08073f913e6b4d3d0a5">_split_args</a>(p, &amp;as);</div>
-<div class="line"><span class="lineno">   49</span>  <span class="keywordflow">return</span> as.<a class="code hl_variable" href="structArgSplitter.html#ae0687457ac60ada575041ee7e1e694f9">v</a>;</div>
-<div class="line"><span class="lineno">   50</span>}</div>
+<p class="definition">Definition at line <a class="el" href="carg_8c_source.html#l00045">45</a> of file <a class="el" href="carg_8c_source.html">carg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                  {</div>
+<div class="line"><span class="lineno">   46</span>  <span class="keyword">struct </span><a class="code hl_struct" href="structArgSplitter.html">ArgSplitter</a> as = {.<a class="code hl_variable" href="structArgSplitter.html#a9fa86c0b2a471471fbddb568aecb7cee">str</a> = <a class="code hl_variable" href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a>, .v = <a class="code hl_function" href="vector_8c.html#a3b05a62b48975cf61ed8d24b045cf13b">new_vector</a>(p) };</div>
+<div class="line"><span class="lineno">   47</span>  <a class="code hl_function" href="#ae05d1aca5694d08073f913e6b4d3d0a5">_split_args</a>(p, &amp;as);</div>
+<div class="line"><span class="lineno">   48</span>  <span class="keywordflow">return</span> as.<a class="code hl_variable" href="structArgSplitter.html#ae0687457ac60ada575041ee7e1e694f9">v</a>;</div>
+<div class="line"><span class="lineno">   49</span>}</div>
 <div class="ttc" id="astructArgSplitter_html"><div class="ttname"><a href="structArgSplitter.html">ArgSplitter</a></div><div class="ttdoc">used internally to split arguments</div><div class="ttdef"><b>Definition</b> <a href="carg_8c_source.html#l00016">carg.c:16</a></div></div>
 <div class="ttc" id="avector_8c_html_a3b05a62b48975cf61ed8d24b045cf13b"><div class="ttname"><a href="vector_8c.html#a3b05a62b48975cf61ed8d24b045cf13b">new_vector</a></div><div class="ttdeci">Vector new_vector(MemPool p)</div><div class="ttdef"><b>Definition</b> <a href="vector_8c_source.html#l00008">vector.c:8</a></div></div>
 </div><!-- fragment -->
