@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['uint_0',['uint',['../defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14',1,'uint:&#160;defs.h'],['../windows__missing_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14',1,'uint:&#160;windows_missing.h']]]
+  ['scope_0',['Scope',['../scope_8h.html#a45670cd18dfb74867acf78d774652821',1,'scope.h']]],
+  ['symbol_1',['Symbol',['../symbol_8h.html#af5a7a75d6e13311eed0af65155ed4f9f',1,'symbol.h']]],
+  ['symtable_2',['SymTable',['../symbol_8h.html#ae300fdf4e3b772d3755da1aa41dfcf96',1,'symbol.h']]]
 ];

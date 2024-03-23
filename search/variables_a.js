@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['name_0',['name',['../structSymbol__.html#a151a0f094ab23024dbe1b604a346d5de',1,'Symbol_']]],
-  ['nblk_1',['nblk',['../structpool.html#a5f9eb90fb91008ac26901153cea88fa3',1,'pool']]],
-  ['next_2',['next',['../structRecycle.html#a6030ec7f917c5b6769b7b329fe1d01da',1,'Recycle::next'],['../structpool.html#add1ad091b63301b68f59855fe03ec8a2',1,'pool::next'],['../structSymbol__.html#a9040c623669a278243e9a8ed757b7e72',1,'Symbol_::next']]],
-  ['not_3',['not',['../License_8txt.html#a842224abbb72b50c9703a22030a36ee4',1,'License.txt']]]
+  ['main_0',['main',['../structlibprettyerr__error.html#a711d234a5711550825938f7bcf118264',1,'libprettyerr_error']]],
+  ['map_1',['map',['../structScope__.html#aa3e251b77360860c8454fdc9e9692926',1,'Scope_']]],
+  ['master_5fpool_2',['master_pool',['../structMemPool__.html#a9bbb7dc5f44f5497a8604479bb73273b',1,'MemPool_']]],
+  ['mp_3',['mp',['../structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57',1,'GwText_']]],
+  ['mutex_4',['mutex',['../structpool.html#ad2629bb0437d0b069fd8f6aeb4971f00',1,'pool::mutex'],['../structSymTable__.html#ad62dede8061bce852252f4763c44a7f4',1,'SymTable_::mutex']]]
 ];

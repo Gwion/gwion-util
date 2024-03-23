@@ -54,5 +54,6 @@ var searchData=
   ['threadpool_5fthread_51',['threadpool_thread',['../threadpool_8c.html#a6366ee00becf3487b07ed88fccff7f43',1,'threadpool.c']]],
   ['threadpool_5fthread_5ffailure_52',['threadpool_thread_failure',['../threadpool_8h.html#a8a6eee42eb9ec77ec476dd5003fa8a15a385969d03ee20f2af1b727310f736e6e',1,'threadpool.h']]],
   ['threads_53',['threads',['../structthreadpool__t.html#a4037578d62efe5812c6a71bdf80ca71f',1,'threadpool_t']]],
-  ['todo_54',['TODO',['../index.html#autotoc_md2',1,'']]]
+  ['todo_54',['TODO',['../index.html#autotoc_md2',1,'']]],
+  ['type_55',['type',['../structlibprettyerr__error.html#ace28bc086356d32d25b69f72b0b9145e',1,'libprettyerr_error']]]
 ];

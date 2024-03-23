@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['result_0',['result',['../struct__cmdopt__internal__t.html#a678acb92192258e897fb8b595aae15c9',1,'_cmdopt_internal_t']]],
-  ['routine_1',['routine',['../threadpool_8h.html#a62f1220b7d25e63115e145683a8602ef',1,'threadpool.h']]]
+  ['queue_0',['queue',['../structthreadpool__t.html#ab3d3ba7ac849b3bbb54b2872dac6c1ce',1,'threadpool_t']]],
+  ['queue_5fsize_1',['queue_size',['../structthreadpool__t.html#a9184cc0ffe6d2235e8200439f7e943ce',1,'threadpool_t']]]
 ];

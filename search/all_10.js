@@ -6,5 +6,7 @@ var searchData=
   ['resize_3',['resize',['../m__vector_8c.html#a868cd29151bca677e5192476a942a138',1,'m_vector.c']]],
   ['result_4',['result',['../struct__cmdopt__internal__t.html#a678acb92192258e897fb8b595aae15c9',1,'_cmdopt_internal_t']]],
   ['round2szint_5',['round2szint',['../defs_8h.html#a00d855f8b9223de721c8d9e2ced68b5b',1,'defs.h']]],
-  ['routine_6',['routine',['../threadpool_8h.html#a62f1220b7d25e63115e145683a8602ef',1,'threadpool.h']]]
+  ['rounded_6',['rounded',['../structlibprettyerr__printer.html#aa95b7a46728ea26b3dde21f1b80ae675',1,'libprettyerr_printer']]],
+  ['routine_7',['routine',['../threadpool_8h.html#a62f1220b7d25e63115e145683a8602ef',1,'threadpool.h']]],
+  ['runner_8',['runner',['../structlibprettyerr__printer.html#ac44931eba20dbe02f446ae9ba4853523',1,'libprettyerr_printer']]]
 ];

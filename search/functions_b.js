@@ -1,20 +1,9 @@
 var searchData=
 [
-  ['scope_5fadd_0',['scope_add',['../scope_8c.html#a8c4574e924c772506df576c09a9cb130',1,'scope_add(const Scope s, const vtype xid, const vtype value):&#160;scope.c'],['../scope_8h.html#a08458b2a61509156eb821ccd90f98f47',1,'scope_add(const Scope, const vtype, const vtype):&#160;scope.c']]],
-  ['scope_5fback_1',['scope_back',['../scope_8c.html#aa41f23bc24e2d8fceb808fd26e2a5865',1,'scope.c']]],
-  ['scope_5fcommit_2',['scope_commit',['../scope_8c.html#a3c29ea57e0d3f377015d1f6e3f01a8d5',1,'scope_commit(const Scope s):&#160;scope.c'],['../scope_8h.html#af381cf87d762e732f486ada43b9fa7be',1,'scope_commit(const Scope):&#160;scope.c']]],
-  ['scope_5fget_3',['scope_get',['../scope_8h.html#a7828d7d954bd4cf4e6cccddda5e5f613',1,'scope.h']]],
-  ['scope_5finit_4',['scope_init',['../scope_8c.html#aa9a68d25e9c5969b497cf653bc63779a',1,'scope_init(MemPool p, Scope a):&#160;scope.c'],['../scope_8h.html#aaa8d68d5688c3042bcaf2e52d56639c6',1,'scope_init(MemPool, Scope):&#160;scope.c']]],
-  ['scope_5fiter_5',['scope_iter',['../scope_8c.html#a5034d7ccfca96613e1186acaa3cf5f3f',1,'scope_iter(struct scope_iter *iter, void *ret):&#160;scope.c'],['../scope_8h.html#a5034d7ccfca96613e1186acaa3cf5f3f',1,'scope_iter(struct scope_iter *iter, void *ret):&#160;scope.c']]],
-  ['scope_5flookup0_6',['scope_lookup0',['../scope_8c.html#a0269af1a69af923ef21337f8cf3f5d60',1,'scope_lookup0(const Scope s, const vtype xid):&#160;scope.c'],['../scope_8h.html#aa6efcbf68cfe1f6d0602ad919cd26db3',1,'scope_lookup0(const Scope, const vtype):&#160;scope.c']]],
-  ['scope_5flookup1_7',['scope_lookup1',['../scope_8c.html#a0c607bca78b53f5637ae9bce23bd37fc',1,'scope_lookup1(const Scope s, const vtype xid):&#160;scope.c'],['../scope_8h.html#a625941368542fece0492543754d07970',1,'scope_lookup1(const Scope, const vtype):&#160;scope.c']]],
-  ['scope_5flookup2_8',['scope_lookup2',['../scope_8c.html#a36e58122000dfc6b6dd6b3d1971d8d53',1,'scope_lookup2(const Scope s, const vtype xid):&#160;scope.c'],['../scope_8h.html#a7f4686ae4da6e7e9cc25308205f77a35',1,'scope_lookup2(const Scope, const vtype):&#160;scope.c']]],
-  ['scope_5fpop_9',['scope_pop',['../scope_8h.html#a3a79a9a15eb98b78ccf499638056cf82',1,'scope.h']]],
-  ['scope_5fpush_10',['scope_push',['../scope_8h.html#a4ca51c170b7ae703615d18e239000fc4',1,'scope.h']]],
-  ['scope_5frelease_11',['scope_release',['../scope_8c.html#a81cac1e80ab12c6c7675d9b79590d828',1,'scope_release(Scope a):&#160;scope.c'],['../scope_8h.html#afe896be33d42fd24dbe4af1f460d550a',1,'scope_release(Scope):&#160;scope.c']]],
-  ['split_5fargs_12',['split_args',['../carg_8c.html#a3034a483044b365bd22a7b5082701858',1,'split_args(MemPool p, const m_str str):&#160;carg.c'],['../carg_8h.html#a0a98b55aa20636ca37a9790212ce6df9',1,'split_args(MemPool, const m_str str):&#160;carg.c']]],
-  ['start_13',['start',['../threadpool_8c.html#a3894d8da81939354904466d4173b1b2a',1,'threadpool.c']]],
-  ['strdup_14',['strdup',['../windows__missing_8h.html#a5ffaef3fc3f7ddb9856ccd4bcb79e9bc',1,'windows_missing.h']]],
-  ['strndup_15',['strndup',['../windows__missing_8h.html#ae1dd96623292aa543d16c28d1b6ce211',1,'windows_missing.h']]],
-  ['strsep_16',['strsep',['../windows__missing_8h.html#a098b232e1cfa2b0ce1d94b7ad0440cbb',1,'windows_missing.h']]]
+  ['perr_5fprint_5fbasic_5fstyle_0',['perr_print_basic_style',['../prettyerr_8c.html#af60fd512590455a3aff679ef05156cd8',1,'prettyerr.c']]],
+  ['perr_5fprint_5fcolumn_1',['perr_print_column',['../prettyerr_8c.html#add5334e7132b6f99b92be3150de6fc57',1,'prettyerr.c']]],
+  ['perr_5fprint_5ferror_2',['perr_print_error',['../prettyerr_8c.html#af15ba112e37214d168948ddb9ecc87a5',1,'perr_print_error(const perr_printer_t *printer, const perr_t *err):&#160;prettyerr.c'],['../prettyerr_8h.html#adce0d20d984c37d2349b0d9e60b985cc',1,'perr_print_error(const struct libprettyerr_printer *printer, const struct libprettyerr_error *err):&#160;prettyerr.h']]],
+  ['perr_5fprint_5fline_5fnumber_3',['perr_print_line_number',['../prettyerr_8c.html#acaa0d3dbdded4fc46bd99c0691f0cfbd',1,'perr_print_line_number(const perr_printer_t *printer, const perr_t *err, const char *color):&#160;prettyerr.c'],['../prettyerr_8h.html#a28238b85b129735ce27ca94d7e0dd901',1,'perr_print_line_number(const struct libprettyerr_printer *printer, const struct libprettyerr_error *err, const char *color):&#160;prettyerr.h']]],
+  ['perr_5fprint_5fsecondary_5fstyle_4',['perr_print_secondary_style',['../prettyerr_8c.html#accfb5f748f5352f5f9014f806209c588',1,'prettyerr.c']]],
+  ['perr_5fprinter_5finit_5',['perr_printer_init',['../prettyerr_8c.html#a5ea0aec2daaf3bf47d95aadd255d868d',1,'perr_printer_init(perr_printer_t *printer, FILE *stream, const char *source, bool utf8, perr_runner_t style):&#160;prettyerr.c'],['../prettyerr_8h.html#ac978b0aec18660f2f419fd8e5e7b72d5',1,'perr_printer_init(struct libprettyerr_printer *printer, FILE *stream, const char *source, bool utf8, libprettyerr_runner_t style):&#160;prettyerr.c']]]
 ];
