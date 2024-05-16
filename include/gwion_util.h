@@ -5,7 +5,9 @@
 #define __GWION_UTIL
 
 #if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(__WIN32))
+#ifndef BUILD_ON_WINDOWS
 #define BUILD_ON_WINDOWS
+#endif
 #endif
 
 #include "defs.h"
