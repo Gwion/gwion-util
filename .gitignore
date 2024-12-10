@@ -1,4 +1,4 @@
-*.o
+build
 .d
 *.a
 *.mo

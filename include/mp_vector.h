@@ -32,7 +32,7 @@ static inline uint32_t mp_vector_len(MP_Vector *a) {
 #define mp_vector_add(mp, a, type, data)                       {  \
   if (++((*a))->len >= ((*a))->cap)                               \
     mp_vector_resize(mp, (a), sizeof(type), (*(a))->cap * 2);     \
-  *(type*)((*(a))->ptr + ((*a)->len - 1) * sizeof(type)) = data; }\
+  *(type*)((*(a))->ptr + ((*a)->len - 1) * sizeof(type)) = (data); }\
 
 #define mp_vector_at(a, type, index)                             \
   ((type*)((a)->ptr + (index) * sizeof(type)))
@@ -69,4 +69,41 @@ ANN static inline m_bit* mp_vector_pop(MP_Vector *const a, const uint32_t size) 
 #define mp_vector_back(a, type)                                \
   ((type*)((a)->ptr + (a->len-1) * sizeof(type)))
 
+#define MK_VECTOR_TYPE(Type, type)                                                      \
+typedef struct Type##List {                                                             \
+  uint32_t len;                                                                         \
+  uint32_t cap;                                                                         \
+  Type     ptr[];                                                                       \
+} Type##List;                                                                           \
+/*typedef MP_Vector Type##List;*/                                                       \
+ANN static inline Type##List *new_##type##list(const MemPool mp, const uint32_t len) {  \
+  return (Type##List*)new_mp_vector(mp, Type, len);                                                  \
+}                                                                                       \
+ANN static inline void free_##type##list(const MemPool mp, Type##List *v) {             \
+  mp_free2(mp, sizeof(Type##List) + (m_uint)(v->cap * sizeof(Type)), v);                \
+}                                                                                       \
+ANN static inline void type##list_resize(const MemPool mp, Type##List **ap,              \
+                                        const uint32_t cap) {                           \
+  return mp_vector_resize(mp, (MP_Vector**)ap, sizeof(Type), cap);                                   \
+}                                                                                       \
+ANN static inline Type type##list_at(const Type##List *v, const uint32_t index) {      \
+  return v->ptr[index];                                                                 \
+}                                                                                       \
+ANN static inline Type* type##list_ptr_at(Type##List *v, const uint32_t index) {      \
+  return v->ptr + index;                                                                 \
+}                                                                                       \
+ANN static inline void type##list_set(Type##List *v, const uint32_t index,              \
+                                      Type data) {                                      \
+  v->ptr[index] = data;                                                                 \
+}                                                                                       \
+ANN static inline void type##list_add(const MemPool mp, Type##List **v,                  \
+                                      Type data) {                                      \
+  mp_vector_add(mp, (MP_Vector**)v, Type, data);                                             \
+}                                                                                       \
+static inline uint32_t type##list_len(const Type##List *a) {                                    \
+  return a ? a->len : 0;                                                                \
+}                                                                                       \
+ANN static inline Type type##list_back(const Type##List *a) {                                    \
+  return a->ptr[a->len-1];                                                                \
+}
 #endif

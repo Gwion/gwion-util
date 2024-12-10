@@ -46,15 +46,19 @@ endif
 PACKAGE_INFO ?= -DGWION_PACKAGE='"${GWION_PACKAGE}"'
 INSTALL_PREFIX ?= -DINSTALL_PREFIX='"${PREFIX}"'
 
-.c.o:
-	$(info compile $(<:.c=))
-	@${CC} $(DEPFLAGS) ${CFLAGS} ${PACKAGE_INFO} ${INSTALL_PREFIX} -c $< -o $(<:.c=.o)
-	@mv -f $(DEPDIR)/$(@F:.o=.Td) $(DEPDIR)/$(@F:.o=.d) && touch $@
-	@echo $@: config.mk >> $(DEPDIR)/$(@F:.o=.d)
+build/%.o: $(subst build,src, $(@:.o=.c))
+	$(info compile $(subst build/,,$(@:.o=)))
+	@mkdir -p $(shell dirname $@) > /dev/null
+	@mkdir -p $(subst build,.d,$(shell dirname $@)) > /dev/null
+	@${CC} $(DEPFLAGS) ${CFLAGS} -c $(subst build,src,$(@:.o=.c)) -o $@
+	@mv -f $(subst build,${DEPDIR},$(@:.o=.Td)) $(subst build,${DEPDIR},$(@:.o=.d)) && touch $@
 
 DEPDIR := .d
 $(shell mkdir -p $(DEPDIR) >/dev/null)
-DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)/$(@F:.o=.Td)
+DEPFLAGS = -MT $@ -MMD -MP -MF $(subst build,${DEPDIR},$(@:.o=.Td))
+DEPS := $(subst build,$(DEPDIR),$(OBJ:.o=.d))
+-include $(DEPS)
+
 
 define _options
   $(info PACKAGE : ${GWION_PACKAGE})

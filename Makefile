@@ -16,13 +16,14 @@ $(shell cp config.mk.orig config.mk)
 endif
 include config.mk
 
-src := $(wildcard src/*.c)
+SRC := $(wildcard src/*.c)
 
 ifeq (${BUILD_ON_WINDOWS}, 1)
-src += $(wildcard windows_missing/*.c)
+SRC += $(wildcard windows_missing/*.c)
 CFLAGS += -Iwindows_missing
 endif
-obj := $(src:.c=.o)
+
+OBJ := $(SRC:src/%.c=build/%.o)
 
 CFLAGS += -D_GNU_SOURCE
 
@@ -33,21 +34,22 @@ options-show:
 
 .PHONY: static
 static: libgwion_util.a
-libgwion_util.a: ${obj}
+libgwion_util.a: ${OBJ}
+	echo ${OBJ}
 	@$(info linking $@)
 	@${AR} ${AR_OPT}
 
-libtermcolor.a: src/termcolor.o
+libtermcolor.a: build/termcolor.o
 	@$(info linking $@)
 	@${AR} ${AR_OPT}
 
-libcmdapp.a: src/cmdapp.o
+libcmdapp.a: build/cmdapp.o
 	@$(info linking $@)
 	@${AR} ${AR_OPT}
 
 clean:
 	$(info cleaning)
-	@rm -f ${obj} *.a
+	@rm -f ${OBJ} *.a
 
 install: translation-install libgwion_util.a
 	$(info installing ${GWION_PACKAGE} in ${PREFIX})

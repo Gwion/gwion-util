@@ -19,14 +19,14 @@ ANN static inline void vector_set(const Vector v, const vtype i,
                                   const vtype arg) {
   VPTR(v, i) = arg;
 }
-ANN static inline vtype vector_front(const Vector v) { return VPTR(v, 0); }
-ANN static inline vtype vector_at(const Vector v, const vtype i) {
+ANN static inline vtype vector_front(const struct Vector_ *v) { return VPTR(v, 0); }
+ANN static inline vtype vector_at(const struct Vector_ *v, const vtype i) {
   return VPTR(v, i);
 }
-ANN static inline vtype vector_back(const Vector v) {
+ANN static inline vtype vector_back(const struct Vector_ *v) {
   return VPTR(v, VLEN(v) - 1);
 }
-ANN static inline vtype vector_size(Vector const v) { return VLEN(v); }
+ANN static inline vtype vector_size(const struct Vector_ *v) { return VLEN(v); }
 
 extern ANN void  vector_add(const Vector, const vtype);
 extern ANN void  vector_rem(const Vector, const vtype);

@@ -19,6 +19,11 @@ extern ANN m_int map_index(const Map, const vtype);
 ANN static inline vtype map_at(const Map map, const vtype index) {
   return VVAL(map, index);
 }
+
+ANN static inline vtype map_key(const Map map, const vtype index) {
+  return VPTR(map, index*2);
+}
+
 extern ANN void map_set(const Map, const vtype, const vtype);
 extern ANN void map_remove(const Map, const vtype);
 extern ANN void map_commit(const __restrict__ Map, __restrict__ const Map);
