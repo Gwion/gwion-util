@@ -69,8 +69,9 @@ ANN static inline m_bit* mp_vector_pop(MP_Vector *const a, const uint32_t size) 
 #define mp_vector_back(a, type)                                \
   ((type*)((a)->ptr + (a->len-1) * sizeof(type)))
 
-#define MK_VECTOR_TYPE(Type, type)                                                      \
+#define MK_VECTOR_TYPE(Type, type, ...)                                                 \
 typedef struct Type##List {                                                             \
+  __VA_ARGS__ ;                                                                         \
   uint32_t len;                                                                         \
   uint32_t cap;                                                                         \
   Type     ptr[];                                                                       \
