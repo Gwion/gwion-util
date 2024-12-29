@@ -125,8 +125,8 @@ Macros</h2></td></tr>
 <tr class="separator:a1eeb6ff75d94da68ca355a69ed33b336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafbe65d45e7e8a36cbeae36e39c99c9e" id="r_aafbe65d45e7e8a36cbeae36e39c99c9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafbe65d45e7e8a36cbeae36e39c99c9e">mp_vector_back</a>(a,  type)</td></tr>
 <tr class="separator:aafbe65d45e7e8a36cbeae36e39c99c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37565ee97401565da725e2c838e350cf" id="r_a37565ee97401565da725e2c838e350cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37565ee97401565da725e2c838e350cf">MK_VECTOR_TYPE</a>(Type,  type)</td></tr>
-<tr class="separator:a37565ee97401565da725e2c838e350cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff9bf74288aa5ac018f27507a6ba4e9b" id="r_aff9bf74288aa5ac018f27507a6ba4e9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff9bf74288aa5ac018f27507a6ba4e9b">MK_VECTOR_TYPE</a>(Type,  type, ...)</td></tr>
+<tr class="separator:aff9bf74288aa5ac018f27507a6ba4e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -181,8 +181,8 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a37565ee97401565da725e2c838e350cf" name="a37565ee97401565da725e2c838e350cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37565ee97401565da725e2c838e350cf">&#9670;&#160;</a></span>MK_VECTOR_TYPE</h2>
+<a id="aff9bf74288aa5ac018f27507a6ba4e9b" name="aff9bf74288aa5ac018f27507a6ba4e9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff9bf74288aa5ac018f27507a6ba4e9b">&#9670;&#160;</a></span>MK_VECTOR_TYPE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,49 +195,55 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00072">72</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span><span class="preprocessor">#define MK_VECTOR_TYPE(Type, type)                                                      \</span></div>
+<div class="fragment"><div class="line"><span class="lineno">   72</span><span class="preprocessor">#define MK_VECTOR_TYPE(Type, type, ...)                                                 \</span></div>
 <div class="line"><span class="lineno">   73</span><span class="preprocessor">typedef struct Type##List {                                                             \</span></div>
-<div class="line"><span class="lineno">   74</span><span class="preprocessor">  uint32_t len;                                                                         \</span></div>
-<div class="line"><span class="lineno">   75</span><span class="preprocessor">  uint32_t cap;                                                                         \</span></div>
-<div class="line"><span class="lineno">   76</span><span class="preprocessor">  Type     ptr[];                                                                       \</span></div>
-<div class="line"><span class="lineno">   77</span><span class="preprocessor">} Type##List;                                                                           \</span></div>
-<div class="line"><span class="lineno">   78</span><span class="preprocessor"></span><span class="comment">/*typedef MP_Vector Type##List;*/</span><span class="preprocessor">                                                       \</span></div>
-<div class="line"><span class="lineno">   79</span><span class="preprocessor">ANN static inline Type##List *new_##type##list(const MemPool mp, const uint32_t len) {  \</span></div>
-<div class="line"><span class="lineno">   80</span><span class="preprocessor">  return (Type##List*)new_mp_vector(mp, Type, len);                                                  \</span></div>
-<div class="line"><span class="lineno">   81</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   82</span><span class="preprocessor">ANN static inline void free_##type##list(const MemPool mp, Type##List *v) {             \</span></div>
-<div class="line"><span class="lineno">   83</span><span class="preprocessor">  mp_free2(mp, sizeof(Type##List) + (m_uint)(v-&gt;cap * sizeof(Type)), v);                \</span></div>
-<div class="line"><span class="lineno">   84</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   85</span><span class="preprocessor">ANN static inline void type##list_resize(const MemPool mp, Type##List **ap,              \</span></div>
-<div class="line"><span class="lineno">   86</span><span class="preprocessor">                                        const uint32_t cap) {                           \</span></div>
-<div class="line"><span class="lineno">   87</span><span class="preprocessor">  return mp_vector_resize(mp, (MP_Vector**)ap, sizeof(Type), cap);                                   \</span></div>
-<div class="line"><span class="lineno">   88</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   89</span><span class="preprocessor">ANN static inline Type type##list_at(const Type##List *v, const uint32_t index) {      \</span></div>
-<div class="line"><span class="lineno">   90</span><span class="preprocessor">  return v-&gt;ptr[index];                                                                 \</span></div>
-<div class="line"><span class="lineno">   91</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   92</span><span class="preprocessor">ANN static inline Type* type##list_ptr_at(Type##List *v, const uint32_t index) {      \</span></div>
-<div class="line"><span class="lineno">   93</span><span class="preprocessor">  return v-&gt;ptr + index;                                                                 \</span></div>
-<div class="line"><span class="lineno">   94</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   95</span><span class="preprocessor">ANN static inline void type##list_set(Type##List *v, const uint32_t index,              \</span></div>
-<div class="line"><span class="lineno">   96</span><span class="preprocessor">                                      Type data) {                                      \</span></div>
-<div class="line"><span class="lineno">   97</span><span class="preprocessor">  v-&gt;ptr[index] = data;                                                                 \</span></div>
-<div class="line"><span class="lineno">   98</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   99</span><span class="preprocessor">ANN static inline void type##list_add(const MemPool mp, Type##List **v,                  \</span></div>
-<div class="line"><span class="lineno">  100</span><span class="preprocessor">                                      Type data) {                                      \</span></div>
-<div class="line"><span class="lineno">  101</span><span class="preprocessor">  mp_vector_add(mp, (MP_Vector**)v, Type, data);                                             \</span></div>
-<div class="line"><span class="lineno">  102</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">  103</span><span class="preprocessor">static inline uint32_t type##list_len(const Type##List *a) {                                    \</span></div>
-<div class="line"><span class="lineno">  104</span><span class="preprocessor">  return a ? a-&gt;len : 0;                                                                \</span></div>
-<div class="line"><span class="lineno">  105</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">  106</span><span class="preprocessor">ANN static inline Type type##list_back(const Type##List *a) {                                    \</span></div>
-<div class="line"><span class="lineno">  107</span><span class="preprocessor">  return a-&gt;ptr[a-&gt;len-1];                                                                \</span></div>
-<div class="line"><span class="lineno">  108</span><span class="preprocessor">}</span></div>
+<div class="line"><span class="lineno">   74</span><span class="preprocessor">  __VA_ARGS__ ;                                                                         \</span></div>
+<div class="line"><span class="lineno">   75</span><span class="preprocessor">  uint32_t len;                                                                         \</span></div>
+<div class="line"><span class="lineno">   76</span><span class="preprocessor">  uint32_t cap;                                                                         \</span></div>
+<div class="line"><span class="lineno">   77</span><span class="preprocessor">  Type     ptr[];                                                                       \</span></div>
+<div class="line"><span class="lineno">   78</span><span class="preprocessor">} Type##List;                                                                           \</span></div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor"></span><span class="comment">/*typedef MP_Vector Type##List;*/</span><span class="preprocessor">                                                       \</span></div>
+<div class="line"><span class="lineno">   80</span><span class="preprocessor">ANN static inline Type##List *new_##type##list(const MemPool mp, const uint32_t len) {  \</span></div>
+<div class="line"><span class="lineno">   81</span><span class="preprocessor">  return (Type##List*)new_mp_vector(mp, Type, len);                                                  \</span></div>
+<div class="line"><span class="lineno">   82</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">   83</span><span class="preprocessor">ANN static inline void free_##type##list(const MemPool mp, Type##List *v) {             \</span></div>
+<div class="line"><span class="lineno">   84</span><span class="preprocessor">  mp_free2(mp, sizeof(Type##List) + (m_uint)(v-&gt;cap * sizeof(Type)), v);                \</span></div>
+<div class="line"><span class="lineno">   85</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">   86</span><span class="preprocessor">ANN static inline void type##list_resize(const MemPool mp, Type##List **ap,              \</span></div>
+<div class="line"><span class="lineno">   87</span><span class="preprocessor">                                        const uint32_t cap) {                           \</span></div>
+<div class="line"><span class="lineno">   88</span><span class="preprocessor">  return mp_vector_resize(mp, (MP_Vector**)ap, sizeof(Type), cap);                                   \</span></div>
+<div class="line"><span class="lineno">   89</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">   90</span><span class="preprocessor">ANN static inline Type type##list_at(const Type##List *v, const uint32_t index) {      \</span></div>
+<div class="line"><span class="lineno">   91</span><span class="preprocessor">  return v-&gt;ptr[index];                                                                 \</span></div>
+<div class="line"><span class="lineno">   92</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">   93</span><span class="preprocessor">ANN static inline Type* type##list_ptr_at(Type##List *v, const uint32_t index) {      \</span></div>
+<div class="line"><span class="lineno">   94</span><span class="preprocessor">  return v-&gt;ptr + index;                                                                 \</span></div>
+<div class="line"><span class="lineno">   95</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">   96</span><span class="preprocessor">ANN static inline void type##list_set(Type##List *v, const uint32_t index,              \</span></div>
+<div class="line"><span class="lineno">   97</span><span class="preprocessor">                                      Type data) {                                      \</span></div>
+<div class="line"><span class="lineno">   98</span><span class="preprocessor">  v-&gt;ptr[index] = data;                                                                 \</span></div>
+<div class="line"><span class="lineno">   99</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">  100</span><span class="preprocessor">ANN static inline void type##list_add(const MemPool mp, Type##List **v,                  \</span></div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">                                      Type data) {                                      \</span></div>
+<div class="line"><span class="lineno">  102</span><span class="preprocessor">  mp_vector_add(mp, (MP_Vector**)v, Type, data);                                             \</span></div>
+<div class="line"><span class="lineno">  103</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">  104</span><span class="preprocessor">static inline uint32_t type##list_len(const Type##List *a) {                                    \</span></div>
+<div class="line"><span class="lineno">  105</span><span class="preprocessor">  return a ? a-&gt;len : 0;                                                                \</span></div>
+<div class="line"><span class="lineno">  106</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">  107</span><span class="preprocessor">ANN static inline Type type##list_back(const Type##List *a) {                                    \</span></div>
+<div class="line"><span class="lineno">  108</span><span class="preprocessor">  return a-&gt;ptr[a-&gt;len-1];                                                                \</span></div>
+<div class="line"><span class="lineno">  109</span><span class="preprocessor">}</span></div>
 </div><!-- fragment -->
 </div>
 </div>
