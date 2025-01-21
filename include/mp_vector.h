@@ -42,9 +42,11 @@ static inline uint32_t mp_vector_len(MP_Vector *a) {
 
 ANN static inline void mp_vector_rem(MP_Vector *const a, const uint32_t size, const uint32_t idx) {
   if (idx >= a->len) return;
-  if (idx < a->len - 1)
+  if (idx < a->len - 1) {
+    const size_t len = a->len - idx - 1;
     memmove(a->ptr + idx, a->ptr + idx + OFFSET + 1,
-            (a->len - idx - 1) * size);
+            len * size);
+  }
 }
 
 ANN static inline m_bit* mp_vector_pop(MP_Vector *const a, const uint32_t size) {
