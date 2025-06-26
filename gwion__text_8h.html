@@ -177,15 +177,15 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00040">40</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>                                               {</div>
-<div class="line"><span class="lineno">   41</span>  <a class="code hl_function" href="#a8f885a2b609315784a1ca023e403bd43">text_release</a>(text);</div>
-<div class="line"><span class="lineno">   42</span>  <a class="code hl_define" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(text-&gt;<a class="code hl_variable" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a>, <a class="code hl_typedef" href="#ad331ea1a359d16138e503e98a8b22d12">GwText</a>, text);</div>
-<div class="line"><span class="lineno">   43</span>}</div>
-<div class="ttc" id="agwion__text_8h_html_a8f885a2b609315784a1ca023e403bd43"><div class="ttname"><a href="#a8f885a2b609315784a1ca023e403bd43">text_release</a></div><div class="ttdeci">static ANN void text_release(GwText *text)</div><div class="ttdoc">release text memory</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00026">gwion_text.h:26</a></div></div>
+<p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00039">39</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                                               {</div>
+<div class="line"><span class="lineno">   40</span>  <a class="code hl_function" href="#a8f885a2b609315784a1ca023e403bd43">text_release</a>(text);</div>
+<div class="line"><span class="lineno">   41</span>  <a class="code hl_define" href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a>(text-&gt;<a class="code hl_variable" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a>, <a class="code hl_typedef" href="#ad331ea1a359d16138e503e98a8b22d12">GwText</a>, text);</div>
+<div class="line"><span class="lineno">   42</span>}</div>
+<div class="ttc" id="agwion__text_8h_html_a8f885a2b609315784a1ca023e403bd43"><div class="ttname"><a href="#a8f885a2b609315784a1ca023e403bd43">text_release</a></div><div class="ttdeci">static ANN void text_release(GwText *text)</div><div class="ttdoc">release text memory</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00025">gwion_text.h:25</a></div></div>
 <div class="ttc" id="agwion__text_8h_html_ad331ea1a359d16138e503e98a8b22d12"><div class="ttname"><a href="#ad331ea1a359d16138e503e98a8b22d12">GwText</a></div><div class="ttdeci">struct GwText_ GwText</div><div class="ttdoc">mp_allocted text</div></div>
-<div class="ttc" id="ampool_8h_html_aaa16830712090aa944a1703301474d83"><div class="ttname"><a href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a></div><div class="ttdeci">#define mp_free(p, name, a)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00027">mpool.h:27</a></div></div>
-<div class="ttc" id="astructGwText___html_ab898b542618ba8f288ff5f83e5a03c57"><div class="ttname"><a href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">GwText_::mp</a></div><div class="ttdeci">MemPool mp</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00012">gwion_text.h:12</a></div></div>
+<div class="ttc" id="ampool_8h_html_aaa16830712090aa944a1703301474d83"><div class="ttname"><a href="mpool_8h.html#aaa16830712090aa944a1703301474d83">mp_free</a></div><div class="ttdeci">#define mp_free(p, name, a)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00025">mpool.h:25</a></div></div>
+<div class="ttc" id="astructGwText___html_ab898b542618ba8f288ff5f83e5a03c57"><div class="ttname"><a href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">GwText_::mp</a></div><div class="ttdeci">MemPool mp</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00011">gwion_text.h:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -212,14 +212,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00034">34</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>                                               {</div>
-<div class="line"><span class="lineno">   35</span>  <a class="code hl_typedef" href="#ad331ea1a359d16138e503e98a8b22d12">GwText</a> *text = (<a class="code hl_typedef" href="#ad331ea1a359d16138e503e98a8b22d12">GwText</a> *)<a class="code hl_define" href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a>(mp, <a class="code hl_typedef" href="#ad331ea1a359d16138e503e98a8b22d12">GwText</a>);</div>
-<div class="line"><span class="lineno">   36</span>  <a class="code hl_function" href="#a06a5be3f975a55f3f1a0c96b9a78454c">text_init</a>(text, mp);</div>
-<div class="line"><span class="lineno">   37</span>  <span class="keywordflow">return</span> text;</div>
-<div class="line"><span class="lineno">   38</span>}</div>
-<div class="ttc" id="agwion__text_8h_html_a06a5be3f975a55f3f1a0c96b9a78454c"><div class="ttname"><a href="#a06a5be3f975a55f3f1a0c96b9a78454c">text_init</a></div><div class="ttdeci">static ANN void text_init(GwText *text, MemPool mp)</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00018">gwion_text.h:18</a></div></div>
-<div class="ttc" id="ampool_8h_html_a2c191a434fae6c134bab72438b8f01be"><div class="ttname"><a href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a></div><div class="ttdeci">#define mp_calloc(p, name)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00026">mpool.h:26</a></div></div>
+<p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00033">33</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>                                               {</div>
+<div class="line"><span class="lineno">   34</span>  <a class="code hl_typedef" href="#ad331ea1a359d16138e503e98a8b22d12">GwText</a> *text = (<a class="code hl_typedef" href="#ad331ea1a359d16138e503e98a8b22d12">GwText</a> *)<a class="code hl_define" href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a>(mp, <a class="code hl_typedef" href="#ad331ea1a359d16138e503e98a8b22d12">GwText</a>);</div>
+<div class="line"><span class="lineno">   35</span>  <a class="code hl_function" href="#a06a5be3f975a55f3f1a0c96b9a78454c">text_init</a>(text, mp);</div>
+<div class="line"><span class="lineno">   36</span>  <span class="keywordflow">return</span> text;</div>
+<div class="line"><span class="lineno">   37</span>}</div>
+<div class="ttc" id="agwion__text_8h_html_a06a5be3f975a55f3f1a0c96b9a78454c"><div class="ttname"><a href="#a06a5be3f975a55f3f1a0c96b9a78454c">text_init</a></div><div class="ttdeci">static ANN void text_init(GwText *text, MemPool mp)</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00017">gwion_text.h:17</a></div></div>
+<div class="ttc" id="ampool_8h_html_a2c191a434fae6c134bab72438b8f01be"><div class="ttname"><a href="mpool_8h.html#a2c191a434fae6c134bab72438b8f01be">mp_calloc</a></div><div class="ttdeci">#define mp_calloc(p, name)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00024">mpool.h:24</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -252,7 +252,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   16</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> += sz;</div>
 <div class="line"><span class="lineno">   17</span>}</div>
 <div class="ttc" id="agwion__print_8h_html_a0152c0786fc5e4375f6400f14b1da464"><div class="ttname"><a href="gwion__print_8h.html#a0152c0786fc5e4375f6400f14b1da464">str</a></div><div class="ttdeci">char ** str</div><div class="ttdef"><b>Definition</b> <a href="gwion__print_8h_source.html#l00002">gwion_print.h:2</a></div></div>
-<div class="ttc" id="astructGwText___html_a137e5ab74984cadefe2a7523508a9224"><div class="ttname"><a href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">GwText_::len</a></div><div class="ttdeci">size_t len</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00011">gwion_text.h:11</a></div></div>
+<div class="ttc" id="astructGwText___html_a137e5ab74984cadefe2a7523508a9224"><div class="ttname"><a href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">GwText_::len</a></div><div class="ttdeci">size_t len</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00010">gwion_text.h:10</a></div></div>
 <div class="ttc" id="atext_8c_html_a6676f1e3cf8449a4aa756c029ac9a053"><div class="ttname"><a href="text_8c.html#a6676f1e3cf8449a4aa756c029ac9a053">text_grow</a></div><div class="ttdeci">static ANN m_str text_grow(GwText *text, const size_t sz)</div><div class="ttdef"><b>Definition</b> <a href="text_8c_source.html#l00003">text.c:3</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -284,17 +284,17 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00018">18</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>                                                           {</div>
-<div class="line"><span class="lineno">   19</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a> = mp;</div>
-<div class="line"><span class="lineno">   20</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = (<a class="code hl_typedef" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>)<a class="code hl_define" href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a>(mp, 64);</div>
-<div class="line"><span class="lineno">   21</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> = 0;</div>
-<div class="line"><span class="lineno">   22</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> = 64;</div>
-<div class="line"><span class="lineno">   23</span>}</div>
-<div class="ttc" id="agwcommon_8h_html_a76d6a803836c90c07c636d3354a71e28"><div class="ttname"><a href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a></div><div class="ttdeci">char * m_str</div><div class="ttdef"><b>Definition</b> <a href="gwcommon_8h_source.html#l00014">gwcommon.h:14</a></div></div>
-<div class="ttc" id="ampool_8h_html_afdf8c742bac379902ef3a9fee8dd231a"><div class="ttname"><a href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a></div><div class="ttdeci">#define mp_malloc2(p, sz)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00030">mpool.h:30</a></div></div>
-<div class="ttc" id="astructGwText___html_a21473cb466fa7e1c741d82c852d9b050"><div class="ttname"><a href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">GwText_::cap</a></div><div class="ttdeci">size_t cap</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00010">gwion_text.h:10</a></div></div>
-<div class="ttc" id="astructGwText___html_a6dcca7bae982686b33476bc6cf463d67"><div class="ttname"><a href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">GwText_::str</a></div><div class="ttdeci">m_str str</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00009">gwion_text.h:9</a></div></div>
+<p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00017">17</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>                                                           {</div>
+<div class="line"><span class="lineno">   18</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a> = mp;</div>
+<div class="line"><span class="lineno">   19</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = (<a class="code hl_typedef" href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a>)<a class="code hl_define" href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a>(mp, 64);</div>
+<div class="line"><span class="lineno">   20</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> = 0;</div>
+<div class="line"><span class="lineno">   21</span>  text-&gt;<a class="code hl_variable" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> = 64;</div>
+<div class="line"><span class="lineno">   22</span>}</div>
+<div class="ttc" id="agwcommon_8h_html_a76d6a803836c90c07c636d3354a71e28"><div class="ttname"><a href="gwcommon_8h.html#a76d6a803836c90c07c636d3354a71e28">m_str</a></div><div class="ttdeci">char * m_str</div><div class="ttdef"><b>Definition</b> <a href="gwcommon_8h_source.html#l00015">gwcommon.h:15</a></div></div>
+<div class="ttc" id="ampool_8h_html_afdf8c742bac379902ef3a9fee8dd231a"><div class="ttname"><a href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a></div><div class="ttdeci">#define mp_malloc2(p, sz)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
+<div class="ttc" id="astructGwText___html_a21473cb466fa7e1c741d82c852d9b050"><div class="ttname"><a href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">GwText_::cap</a></div><div class="ttdeci">size_t cap</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00009">gwion_text.h:9</a></div></div>
+<div class="ttc" id="astructGwText___html_a6dcca7bae982686b33476bc6cf463d67"><div class="ttname"><a href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">GwText_::str</a></div><div class="ttdeci">m_str str</div><div class="ttdef"><b>Definition</b> <a href="gwion__text_8h_source.html#l00008">gwion_text.h:8</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -323,15 +323,15 @@ Functions</h2></td></tr>
 
 <p>release text memory </p>
 
-<p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00026">26</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>                                                  {</div>
-<div class="line"><span class="lineno">   27</span>  <span class="keywordflow">if</span> (text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>) {</div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_define" href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a>(text-&gt;<a class="code hl_variable" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a>, text-&gt;<a class="code hl_variable" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a>, text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>);</div>
-<div class="line"><span class="lineno">   29</span>    text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = NULL;</div>
-<div class="line"><span class="lineno">   30</span>    text-&gt;<a class="code hl_variable" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> = text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> = 0;</div>
-<div class="line"><span class="lineno">   31</span>  }</div>
-<div class="line"><span class="lineno">   32</span>}</div>
-<div class="ttc" id="ampool_8h_html_a10cec164a62999f9bb328b6bc2479cf8"><div class="ttname"><a href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a></div><div class="ttdeci">#define mp_free2(p, sz, a)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
+<p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00025">25</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>                                                  {</div>
+<div class="line"><span class="lineno">   26</span>  <span class="keywordflow">if</span> (text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>) {</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_define" href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a>(text-&gt;<a class="code hl_variable" href="structGwText__.html#ab898b542618ba8f288ff5f83e5a03c57">mp</a>, text-&gt;<a class="code hl_variable" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a>, text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>);</div>
+<div class="line"><span class="lineno">   28</span>    text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = NULL;</div>
+<div class="line"><span class="lineno">   29</span>    text-&gt;<a class="code hl_variable" href="structGwText__.html#a21473cb466fa7e1c741d82c852d9b050">cap</a> = text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a> = 0;</div>
+<div class="line"><span class="lineno">   30</span>  }</div>
+<div class="line"><span class="lineno">   31</span>}</div>
+<div class="ttc" id="ampool_8h_html_a10cec164a62999f9bb328b6bc2479cf8"><div class="ttname"><a href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a></div><div class="ttdeci">#define mp_free2(p, sz, a)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00026">mpool.h:26</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -360,13 +360,13 @@ Functions</h2></td></tr>
 
 <p>reset text </p>
 
-<p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00046">46</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>                                                {</div>
-<div class="line"><span class="lineno">   47</span>  <span class="keywordflow">if</span> (text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>) {</div>
-<div class="line"><span class="lineno">   48</span>    *text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">   49</span>    text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a>  = 0;</div>
-<div class="line"><span class="lineno">   50</span>  }</div>
-<div class="line"><span class="lineno">   51</span>}</div>
+<p class="definition">Definition at line <a class="el" href="gwion__text_8h_source.html#l00045">45</a> of file <a class="el" href="gwion__text_8h_source.html">gwion_text.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                {</div>
+<div class="line"><span class="lineno">   46</span>  <span class="keywordflow">if</span> (text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a>) {</div>
+<div class="line"><span class="lineno">   47</span>    *text-&gt;<a class="code hl_variable" href="structGwText__.html#a6dcca7bae982686b33476bc6cf463d67">str</a> = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   48</span>    text-&gt;<a class="code hl_variable" href="structGwText__.html#a137e5ab74984cadefe2a7523508a9224">len</a>  = 0;</div>
+<div class="line"><span class="lineno">   49</span>  }</div>
+<div class="line"><span class="lineno">   50</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

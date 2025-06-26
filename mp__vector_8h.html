@@ -173,11 +173,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#ae46ac3b9ba1963e100866e0e4f26c757">free_mp_vector</a>(mp, <span class="keyword">sizeof</span>(type), data)</div>
-<div class="ttc" id="amp__vector_8h_html_ae46ac3b9ba1963e100866e0e4f26c757"><div class="ttname"><a href="#ae46ac3b9ba1963e100866e0e4f26c757">free_mp_vector</a></div><div class="ttdeci">#define free_mp_vector(mp, type, data)</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00029">mp_vector.h:29</a></div></div>
+<div class="ttc" id="amp__vector_8h_html_ae46ac3b9ba1963e100866e0e4f26c757"><div class="ttname"><a href="#ae46ac3b9ba1963e100866e0e4f26c757">free_mp_vector</a></div><div class="ttdeci">#define free_mp_vector(mp, type, data)</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00028">mp_vector.h:28</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00029">29</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span><span class="preprocessor">#define free_mp_vector(mp, type, data)                           \</span></div>
-<div class="line"><span class="lineno">   30</span><span class="preprocessor">  free_mp_vector(mp, sizeof(type), data)</span></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00028">28</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span><span class="preprocessor">#define free_mp_vector(mp, type, data)                           \</span></div>
+<div class="line"><span class="lineno">   29</span><span class="preprocessor">  free_mp_vector(mp, sizeof(type), data)</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -205,45 +205,51 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00074">74</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span><span class="preprocessor">#define MK_VECTOR_TYPE(Type, type, ...)                                                 \</span></div>
-<div class="line"><span class="lineno">   75</span><span class="preprocessor">typedef struct Type##List {                                                             \</span></div>
-<div class="line"><span class="lineno">   76</span><span class="preprocessor">  __VA_ARGS__ ;                                                                         \</span></div>
-<div class="line"><span class="lineno">   77</span><span class="preprocessor">  uint32_t len;                                                                         \</span></div>
-<div class="line"><span class="lineno">   78</span><span class="preprocessor">  uint32_t cap;                                                                         \</span></div>
-<div class="line"><span class="lineno">   79</span><span class="preprocessor">  Type     ptr[];                                                                       \</span></div>
-<div class="line"><span class="lineno">   80</span><span class="preprocessor">} Type##List;                                                                           \</span></div>
-<div class="line"><span class="lineno">   81</span><span class="preprocessor"></span><span class="comment">/*typedef MP_Vector Type##List;*/</span><span class="preprocessor">                                                       \</span></div>
-<div class="line"><span class="lineno">   82</span><span class="preprocessor">ANN static inline Type##List *new_##type##list(const MemPool mp, const uint32_t len) {  \</span></div>
-<div class="line"><span class="lineno">   83</span><span class="preprocessor">  return (Type##List*)new_mp_vector(mp, Type, len);                                                  \</span></div>
-<div class="line"><span class="lineno">   84</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   85</span><span class="preprocessor">ANN static inline void free_##type##list(const MemPool mp, Type##List *v) {             \</span></div>
-<div class="line"><span class="lineno">   86</span><span class="preprocessor">  mp_free2(mp, sizeof(Type##List) + (m_uint)(v-&gt;cap * sizeof(Type)), v);                \</span></div>
-<div class="line"><span class="lineno">   87</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   88</span><span class="preprocessor">ANN static inline void type##list_resize(const MemPool mp, Type##List **ap,              \</span></div>
-<div class="line"><span class="lineno">   89</span><span class="preprocessor">                                        const uint32_t cap) {                           \</span></div>
-<div class="line"><span class="lineno">   90</span><span class="preprocessor">  return mp_vector_resize(mp, (MP_Vector**)ap, sizeof(Type), cap);                                   \</span></div>
-<div class="line"><span class="lineno">   91</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   92</span><span class="preprocessor">ANN static inline Type type##list_at(const Type##List *v, const uint32_t index) {      \</span></div>
-<div class="line"><span class="lineno">   93</span><span class="preprocessor">  return v-&gt;ptr[index];                                                                 \</span></div>
-<div class="line"><span class="lineno">   94</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   95</span><span class="preprocessor">ANN static inline Type* type##list_ptr_at(Type##List *v, const uint32_t index) {      \</span></div>
-<div class="line"><span class="lineno">   96</span><span class="preprocessor">  return v-&gt;ptr + index;                                                                 \</span></div>
-<div class="line"><span class="lineno">   97</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">   98</span><span class="preprocessor">ANN static inline void type##list_set(Type##List *v, const uint32_t index,              \</span></div>
-<div class="line"><span class="lineno">   99</span><span class="preprocessor">                                      Type data) {                                      \</span></div>
-<div class="line"><span class="lineno">  100</span><span class="preprocessor">  v-&gt;ptr[index] = data;                                                                 \</span></div>
-<div class="line"><span class="lineno">  101</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">  102</span><span class="preprocessor">ANN static inline void type##list_add(const MemPool mp, Type##List **v,                  \</span></div>
-<div class="line"><span class="lineno">  103</span><span class="preprocessor">                                      Type data) {                                      \</span></div>
-<div class="line"><span class="lineno">  104</span><span class="preprocessor">  mp_vector_add(mp, (MP_Vector**)v, Type, data);                                             \</span></div>
-<div class="line"><span class="lineno">  105</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">  106</span><span class="preprocessor">static inline uint32_t type##list_len(const Type##List *a) {                                    \</span></div>
-<div class="line"><span class="lineno">  107</span><span class="preprocessor">  return a ? a-&gt;len : 0;                                                                \</span></div>
-<div class="line"><span class="lineno">  108</span><span class="preprocessor">}                                                                                       \</span></div>
-<div class="line"><span class="lineno">  109</span><span class="preprocessor">ANN static inline Type type##list_back(const Type##List *a) {                                    \</span></div>
-<div class="line"><span class="lineno">  110</span><span class="preprocessor">  return a-&gt;ptr[a-&gt;len-1];                                                                \</span></div>
-<div class="line"><span class="lineno">  111</span><span class="preprocessor">}</span></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00073">73</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span><span class="preprocessor">#define MK_VECTOR_TYPE(Type, type, ...)                                                 \</span></div>
+<div class="line"><span class="lineno">   74</span><span class="preprocessor">typedef struct Type##List {                                                             \</span></div>
+<div class="line"><span class="lineno">   75</span><span class="preprocessor">  __VA_ARGS__ ;                                                                         \</span></div>
+<div class="line"><span class="lineno">   76</span><span class="preprocessor">  uint32_t len;                                                                         \</span></div>
+<div class="line"><span class="lineno">   77</span><span class="preprocessor">  uint32_t cap;                                                                         \</span></div>
+<div class="line"><span class="lineno">   78</span><span class="preprocessor">  Type     ptr[];                                                                       \</span></div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">} Type##List;                                                                           \</span></div>
+<div class="line"><span class="lineno">   80</span><span class="preprocessor"></span><span class="comment">/*typedef MP_Vector Type##List;*/</span><span class="preprocessor">                                                       \</span></div>
+<div class="line"><span class="lineno">   81</span><span class="preprocessor">ANN static inline Type##List *new_##type##list(const MemPool mp, const uint32_t len) {  \</span></div>
+<div class="line"><span class="lineno">   82</span><span class="preprocessor">  return (Type##List*)new_mp_vector(mp, Type, len);                                                  \</span></div>
+<div class="line"><span class="lineno">   83</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">   84</span><span class="preprocessor">ANN static inline void free_##type##list(const MemPool mp, Type##List *v) {             \</span></div>
+<div class="line"><span class="lineno">   85</span><span class="preprocessor">  mp_free2(mp, sizeof(Type##List) + (m_uint)(v-&gt;cap * sizeof(Type)), v);                \</span></div>
+<div class="line"><span class="lineno">   86</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">   87</span><span class="preprocessor">ANN static inline void type##list_resize(const MemPool mp, Type##List **ap,              \</span></div>
+<div class="line"><span class="lineno">   88</span><span class="preprocessor">                                        const uint32_t cap) {                           \</span></div>
+<div class="line"><span class="lineno">   89</span><span class="preprocessor">  return mp_vector_resize(mp, (MP_Vector**)ap, sizeof(Type), cap);                                   \</span></div>
+<div class="line"><span class="lineno">   90</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">   91</span><span class="preprocessor">ANN static inline Type type##list_at(const Type##List *v, const uint32_t index) {      \</span></div>
+<div class="line"><span class="lineno">   92</span><span class="preprocessor">  return v-&gt;ptr[index];                                                                 \</span></div>
+<div class="line"><span class="lineno">   93</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">   94</span><span class="preprocessor">ANN static inline Type* type##list_ptr_at(Type##List *v, const uint32_t index) {      \</span></div>
+<div class="line"><span class="lineno">   95</span><span class="preprocessor">  return v-&gt;ptr + index;                                                                 \</span></div>
+<div class="line"><span class="lineno">   96</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">   97</span><span class="preprocessor">ANN static inline void type##list_set(Type##List *v, const uint32_t index,              \</span></div>
+<div class="line"><span class="lineno">   98</span><span class="preprocessor">                                      Type data) {                                      \</span></div>
+<div class="line"><span class="lineno">   99</span><span class="preprocessor">  v-&gt;ptr[index] = data;                                                                 \</span></div>
+<div class="line"><span class="lineno">  100</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">ANN static inline void type##list_add(const MemPool mp, Type##List **v,                  \</span></div>
+<div class="line"><span class="lineno">  102</span><span class="preprocessor">                                      Type data) {                                      \</span></div>
+<div class="line"><span class="lineno">  103</span><span class="preprocessor">  mp_vector_add(mp, (MP_Vector**)v, Type, data);                                             \</span></div>
+<div class="line"><span class="lineno">  104</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">  105</span><span class="preprocessor">static inline uint32_t type##list_len(const Type##List *a) {                                    \</span></div>
+<div class="line"><span class="lineno">  106</span><span class="preprocessor">  return a ? a-&gt;len : 0;                                                                \</span></div>
+<div class="line"><span class="lineno">  107</span><span class="preprocessor">}                                                                                       \</span></div>
+<div class="line"><span class="lineno">  108</span><span class="preprocessor">ANN static inline Type type##list_back(const Type##List *a) {                                    \</span></div>
+<div class="line"><span class="lineno">  109</span><span class="preprocessor">  return a-&gt;ptr[a-&gt;len-1];                                                                \</span></div>
+<div class="line"><span class="lineno">  110</span><span class="preprocessor">} \</span></div>
+<div class="line"><span class="lineno">  111</span><span class="preprocessor">ANN static inline void type##list_rem(Type##List *const a, const uint32_t idx) { \</span></div>
+<div class="line"><span class="lineno">  112</span><span class="preprocessor">  if (idx &gt;= a-&gt;len) return; \</span></div>
+<div class="line"><span class="lineno">  113</span><span class="preprocessor">  const size_t len = a-&gt;len - idx - 1; \</span></div>
+<div class="line"><span class="lineno">  114</span><span class="preprocessor">  memmove(a-&gt;ptr + idx, a-&gt;ptr + idx + OFFSET + 1, len * sizeof(Type));\</span></div>
+<div class="line"><span class="lineno">  115</span><span class="preprocessor">  a-&gt;len--; \</span></div>
+<div class="line"><span class="lineno">  116</span><span class="preprocessor">}</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -280,12 +286,12 @@ Functions</h2></td></tr>
 <div class="line">    mp_vector_resize(mp, (a), <span class="keyword">sizeof</span>(type), (*(a))-&gt;cap * 2);     \</div>
 <div class="line">  *(type*)((*(a))-&gt;ptr + ((*a)-&gt;len - 1) * <span class="keyword">sizeof</span>(type)) = (data); }\</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00032">32</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span><span class="preprocessor">#define mp_vector_add(mp, a, type, data)                       {  \</span></div>
-<div class="line"><span class="lineno">   33</span><span class="preprocessor">  if (++((*a))-&gt;len &gt;= ((*a))-&gt;cap)                               \</span></div>
-<div class="line"><span class="lineno">   34</span><span class="preprocessor">    mp_vector_resize(mp, (a), sizeof(type), (*(a))-&gt;cap * 2);     \</span></div>
-<div class="line"><span class="lineno">   35</span><span class="preprocessor">  *(type*)((*(a))-&gt;ptr + ((*a)-&gt;len - 1) * sizeof(type)) = (data); }\</span></div>
-<div class="line"><span class="lineno">   36</span><span class="preprocessor"></span> </div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00031">31</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="preprocessor">#define mp_vector_add(mp, a, type, data)                       {  \</span></div>
+<div class="line"><span class="lineno">   32</span><span class="preprocessor">  if (++((*a))-&gt;len &gt;= ((*a))-&gt;cap)                               \</span></div>
+<div class="line"><span class="lineno">   33</span><span class="preprocessor">    mp_vector_resize(mp, (a), sizeof(type), (*(a))-&gt;cap * 2);     \</span></div>
+<div class="line"><span class="lineno">   34</span><span class="preprocessor">  *(type*)((*(a))-&gt;ptr + ((*a)-&gt;len - 1) * sizeof(type)) = (data); }\</span></div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor"></span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -314,9 +320,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  ((type*)((a)-&gt;ptr + (index) * <span class="keyword">sizeof</span>(type)))</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00037">37</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span><span class="preprocessor">#define mp_vector_at(a, type, index)                             \</span></div>
-<div class="line"><span class="lineno">   38</span><span class="preprocessor">  ((type*)((a)-&gt;ptr + (index) * sizeof(type)))</span></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00036">36</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span><span class="preprocessor">#define mp_vector_at(a, type, index)                             \</span></div>
+<div class="line"><span class="lineno">   37</span><span class="preprocessor">  ((type*)((a)-&gt;ptr + (index) * sizeof(type)))</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -340,9 +346,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  ((type*)((a)-&gt;ptr + (a-&gt;len-1) * <span class="keyword">sizeof</span>(type)))</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00071">71</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span><span class="preprocessor">#define mp_vector_back(a, type)                                \</span></div>
-<div class="line"><span class="lineno">   72</span><span class="preprocessor">  ((type*)((a)-&gt;ptr + (a-&gt;len-1) * sizeof(type)))</span></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00070">70</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span><span class="preprocessor">#define mp_vector_back(a, type)                                \</span></div>
+<div class="line"><span class="lineno">   71</span><span class="preprocessor">  ((type*)((a)-&gt;ptr + (a-&gt;len-1) * sizeof(type)))</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -365,11 +371,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  ((type*)<a class="code hl_define" href="#a7e51d546bc4b910752d6b225b1bd618f">mp_vector_pop</a>(a, <span class="keyword">sizeof</span>(type)))</div>
-<div class="ttc" id="amp__vector_8h_html_a7e51d546bc4b910752d6b225b1bd618f"><div class="ttname"><a href="#a7e51d546bc4b910752d6b225b1bd618f">mp_vector_pop</a></div><div class="ttdeci">#define mp_vector_pop(a, type)</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00057">mp_vector.h:57</a></div></div>
+<div class="ttc" id="amp__vector_8h_html_a7e51d546bc4b910752d6b225b1bd618f"><div class="ttname"><a href="#a7e51d546bc4b910752d6b225b1bd618f">mp_vector_pop</a></div><div class="ttdeci">#define mp_vector_pop(a, type)</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00056">mp_vector.h:56</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00057">57</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span><span class="preprocessor">#define mp_vector_pop(a, type)                                 \</span></div>
-<div class="line"><span class="lineno">   58</span><span class="preprocessor">  ((type*)mp_vector_pop(a, sizeof(type)))</span></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00056">56</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span><span class="preprocessor">#define mp_vector_pop(a, type)                                 \</span></div>
+<div class="line"><span class="lineno">   57</span><span class="preprocessor">  ((type*)mp_vector_pop(a, sizeof(type)))</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -397,11 +403,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#a1dfe2da2ee3c1539002246489914c1cd">mp_vector_rem</a>(a, <span class="keyword">sizeof</span>(type), idx)</div>
-<div class="ttc" id="amp__vector_8h_html_a1dfe2da2ee3c1539002246489914c1cd"><div class="ttname"><a href="#a1dfe2da2ee3c1539002246489914c1cd">mp_vector_rem</a></div><div class="ttdeci">#define mp_vector_rem(a, type, idx)</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00060">mp_vector.h:60</a></div></div>
+<div class="ttc" id="amp__vector_8h_html_a1dfe2da2ee3c1539002246489914c1cd"><div class="ttname"><a href="#a1dfe2da2ee3c1539002246489914c1cd">mp_vector_rem</a></div><div class="ttdeci">#define mp_vector_rem(a, type, idx)</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00059">mp_vector.h:59</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00060">60</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span><span class="preprocessor">#define mp_vector_rem(a, type, idx)                            \</span></div>
-<div class="line"><span class="lineno">   61</span><span class="preprocessor">  mp_vector_rem(a, sizeof(type), idx)</span></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00059">59</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span><span class="preprocessor">#define mp_vector_rem(a, type, idx)                            \</span></div>
+<div class="line"><span class="lineno">   60</span><span class="preprocessor">  mp_vector_rem(a, sizeof(type), idx)</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -434,16 +440,16 @@ Functions</h2></td></tr>
 <div class="line">      <span class="keywordflow">break</span>;                                                   \</div>
 <div class="line">    }                                                          \</div>
 <div class="line">  }</div>
-<div class="ttc" id="amp__vector_8h_html_a4810c6a2c48ed8db6aa78f233f063006"><div class="ttname"><a href="#a4810c6a2c48ed8db6aa78f233f063006">mp_vector_at</a></div><div class="ttdeci">#define mp_vector_at(a, type, index)</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00037">mp_vector.h:37</a></div></div>
+<div class="ttc" id="amp__vector_8h_html_a4810c6a2c48ed8db6aa78f233f063006"><div class="ttname"><a href="#a4810c6a2c48ed8db6aa78f233f063006">mp_vector_at</a></div><div class="ttdeci">#define mp_vector_at(a, type, index)</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00036">mp_vector.h:36</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00063">63</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span><span class="preprocessor">#define mp_vector_rem2(a, type, data)                          \</span></div>
-<div class="line"><span class="lineno">   64</span><span class="preprocessor">  for(uint32_t i = 0; i &lt; a-&gt;len; i++) {                       \</span></div>
-<div class="line"><span class="lineno">   65</span><span class="preprocessor">    if(data == mp_vector_at(a, type, i)) {                     \</span></div>
-<div class="line"><span class="lineno">   66</span><span class="preprocessor">      mp_vector_rem(a, type, i);                               \</span></div>
-<div class="line"><span class="lineno">   67</span><span class="preprocessor">      break;                                                   \</span></div>
-<div class="line"><span class="lineno">   68</span><span class="preprocessor">    }                                                          \</span></div>
-<div class="line"><span class="lineno">   69</span><span class="preprocessor">  }</span></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00062">62</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span><span class="preprocessor">#define mp_vector_rem2(a, type, data)                          \</span></div>
+<div class="line"><span class="lineno">   63</span><span class="preprocessor">  for(uint32_t i = 0; i &lt; a-&gt;len; i++) {                       \</span></div>
+<div class="line"><span class="lineno">   64</span><span class="preprocessor">    if(data == mp_vector_at(a, type, i)) {                     \</span></div>
+<div class="line"><span class="lineno">   65</span><span class="preprocessor">      mp_vector_rem(a, type, i);                               \</span></div>
+<div class="line"><span class="lineno">   66</span><span class="preprocessor">      break;                                                   \</span></div>
+<div class="line"><span class="lineno">   67</span><span class="preprocessor">    }                                                          \</span></div>
+<div class="line"><span class="lineno">   68</span><span class="preprocessor">  }</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -477,9 +483,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  *(type*)((a)-&gt;ptr + (index) * <span class="keyword">sizeof</span>(type)) = (data)</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00040">40</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span><span class="preprocessor">#define mp_vector_set(a, type, index, data)                      \</span></div>
-<div class="line"><span class="lineno">   41</span><span class="preprocessor">  *(type*)((a)-&gt;ptr + (index) * sizeof(type)) = (data)</span></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00039">39</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span><span class="preprocessor">#define mp_vector_set(a, type, index, data)                      \</span></div>
+<div class="line"><span class="lineno">   40</span><span class="preprocessor">  *(type*)((a)-&gt;ptr + (index) * sizeof(type)) = (data)</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -507,11 +513,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="#a78d699c7724c8b993572e6af1adf2772">new_mp_vector</a>(mp, <span class="keyword">sizeof</span>(type), data)</div>
-<div class="ttc" id="amp__vector_8h_html_a78d699c7724c8b993572e6af1adf2772"><div class="ttname"><a href="#a78d699c7724c8b993572e6af1adf2772">new_mp_vector</a></div><div class="ttdeci">#define new_mp_vector(mp, type, data)</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00026">mp_vector.h:26</a></div></div>
+<div class="ttc" id="amp__vector_8h_html_a78d699c7724c8b993572e6af1adf2772"><div class="ttname"><a href="#a78d699c7724c8b993572e6af1adf2772">new_mp_vector</a></div><div class="ttdeci">#define new_mp_vector(mp, type, data)</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00025">mp_vector.h:25</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00026">26</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span><span class="preprocessor">#define new_mp_vector(mp, type, data)                            \</span></div>
-<div class="line"><span class="lineno">   27</span><span class="preprocessor">  new_mp_vector(mp, sizeof(type), data)</span></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00025">25</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span><span class="preprocessor">#define new_mp_vector(mp, type, data)                            \</span></div>
+<div class="line"><span class="lineno">   26</span><span class="preprocessor">  new_mp_vector(mp, sizeof(type), data)</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -563,14 +569,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00018">18</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>                                                                                           {</div>
-<div class="line"><span class="lineno">   19</span>  <a class="code hl_define" href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a>(mp, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a>) + (<a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>)(a-&gt;<a class="code hl_variable" href="structMP__Vector.html#ab827e42cfffb3f4381e131200f6a5e6e">cap</a> * size), a);</div>
-<div class="line"><span class="lineno">   20</span>}</div>
-<div class="ttc" id="agwcommon_8h_html_a50651144ce12bd2634f6bc9591e6b062"><div class="ttname"><a href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a></div><div class="ttdeci">uintptr_t m_uint</div><div class="ttdef"><b>Definition</b> <a href="gwcommon_8h_source.html#l00011">gwcommon.h:11</a></div></div>
-<div class="ttc" id="ampool_8h_html_a10cec164a62999f9bb328b6bc2479cf8"><div class="ttname"><a href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a></div><div class="ttdeci">#define mp_free2(p, sz, a)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
-<div class="ttc" id="astructMP__Vector_html"><div class="ttname"><a href="structMP__Vector.html">MP_Vector</a></div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00004">mp_vector.h:4</a></div></div>
-<div class="ttc" id="astructMP__Vector_html_ab827e42cfffb3f4381e131200f6a5e6e"><div class="ttname"><a href="structMP__Vector.html#ab827e42cfffb3f4381e131200f6a5e6e">MP_Vector::cap</a></div><div class="ttdeci">uint32_t cap</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00006">mp_vector.h:6</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00017">17</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>                                                                                           {</div>
+<div class="line"><span class="lineno">   18</span>  <a class="code hl_define" href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a>(mp, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a>) + (<a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>)(a-&gt;<a class="code hl_variable" href="structMP__Vector.html#ab827e42cfffb3f4381e131200f6a5e6e">cap</a> * size), a);</div>
+<div class="line"><span class="lineno">   19</span>}</div>
+<div class="ttc" id="agwcommon_8h_html_a50651144ce12bd2634f6bc9591e6b062"><div class="ttname"><a href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a></div><div class="ttdeci">uintptr_t m_uint</div><div class="ttdef"><b>Definition</b> <a href="gwcommon_8h_source.html#l00012">gwcommon.h:12</a></div></div>
+<div class="ttc" id="ampool_8h_html_a10cec164a62999f9bb328b6bc2479cf8"><div class="ttname"><a href="mpool_8h.html#a10cec164a62999f9bb328b6bc2479cf8">mp_free2</a></div><div class="ttdeci">#define mp_free2(p, sz, a)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00026">mpool.h:26</a></div></div>
+<div class="ttc" id="astructMP__Vector_html"><div class="ttname"><a href="structMP__Vector.html">MP_Vector</a></div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00003">mp_vector.h:3</a></div></div>
+<div class="ttc" id="astructMP__Vector_html_ab827e42cfffb3f4381e131200f6a5e6e"><div class="ttname"><a href="structMP__Vector.html#ab827e42cfffb3f4381e131200f6a5e6e">MP_Vector::cap</a></div><div class="ttdeci">uint32_t cap</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00005">mp_vector.h:5</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -597,11 +603,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00022">22</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>                                                   {</div>
-<div class="line"><span class="lineno">   23</span>  <span class="keywordflow">return</span> a ? a-&gt;<a class="code hl_variable" href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">len</a> : 0;</div>
-<div class="line"><span class="lineno">   24</span>}</div>
-<div class="ttc" id="astructMP__Vector_html_af588d3b8eb91a1bba473bd6a44766fca"><div class="ttname"><a href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">MP_Vector::len</a></div><div class="ttdeci">uint32_t len</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00005">mp_vector.h:5</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00021">21</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                                                   {</div>
+<div class="line"><span class="lineno">   22</span>  <span class="keywordflow">return</span> a ? a-&gt;<a class="code hl_variable" href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">len</a> : 0;</div>
+<div class="line"><span class="lineno">   23</span>}</div>
+<div class="ttc" id="astructMP__Vector_html_af588d3b8eb91a1bba473bd6a44766fca"><div class="ttname"><a href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">MP_Vector::len</a></div><div class="ttdeci">uint32_t len</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00004">mp_vector.h:4</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -632,12 +638,12 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00052">52</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>                                                                                {</div>
-<div class="line"><span class="lineno">   53</span>  <a class="code hl_typedef" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *data = ((a)-&gt;ptr + (a-&gt;<a class="code hl_variable" href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">len</a>--) * size);</div>
-<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">return</span> data;</div>
-<div class="line"><span class="lineno">   55</span>}</div>
-<div class="ttc" id="agwcommon_8h_html_aa7599a91057633a798bff79858db9b0b"><div class="ttname"><a href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a></div><div class="ttdeci">unsigned char m_bit</div><div class="ttdef"><b>Definition</b> <a href="gwcommon_8h_source.html#l00012">gwcommon.h:12</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00051">51</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>                                                                                {</div>
+<div class="line"><span class="lineno">   52</span>  <a class="code hl_typedef" href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a> *data = ((a)-&gt;ptr + (a-&gt;<a class="code hl_variable" href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">len</a>--) * size);</div>
+<div class="line"><span class="lineno">   53</span>  <span class="keywordflow">return</span> data;</div>
+<div class="line"><span class="lineno">   54</span>}</div>
+<div class="ttc" id="agwcommon_8h_html_aa7599a91057633a798bff79858db9b0b"><div class="ttname"><a href="gwcommon_8h.html#aa7599a91057633a798bff79858db9b0b">m_bit</a></div><div class="ttdeci">unsigned char m_bit</div><div class="ttdef"><b>Definition</b> <a href="gwcommon_8h_source.html#l00013">gwcommon.h:13</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -673,17 +679,17 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00043">43</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                                                                  {</div>
-<div class="line"><span class="lineno">   44</span>  <span class="keywordflow">if</span> (idx &gt;= a-&gt;<a class="code hl_variable" href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">len</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   45</span>  <span class="keywordflow">if</span> (idx &lt; a-&gt;len - 1) {</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> len = a-&gt;<a class="code hl_variable" href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">len</a> - idx - 1;</div>
-<div class="line"><span class="lineno">   47</span>    memmove(a-&gt;<a class="code hl_variable" href="structMP__Vector.html#ac89f821c68245de1e321f870be07fe9f">ptr</a> + idx, a-&gt;<a class="code hl_variable" href="structMP__Vector.html#ac89f821c68245de1e321f870be07fe9f">ptr</a> + idx + <a class="code hl_define" href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a> + 1,</div>
-<div class="line"><span class="lineno">   48</span>            len * size);</div>
-<div class="line"><span class="lineno">   49</span>  }</div>
-<div class="line"><span class="lineno">   50</span>}</div>
-<div class="ttc" id="acontainer_8h_html_a21005f9f4e2ce7597c5eb4351816d7e2"><div class="ttname"><a href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a></div><div class="ttdeci">#define OFFSET</div><div class="ttdef"><b>Definition</b> <a href="container_8h_source.html#l00009">container.h:9</a></div></div>
-<div class="ttc" id="astructMP__Vector_html_ac89f821c68245de1e321f870be07fe9f"><div class="ttname"><a href="structMP__Vector.html#ac89f821c68245de1e321f870be07fe9f">MP_Vector::ptr</a></div><div class="ttdeci">uint8_t ptr[]</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00007">mp_vector.h:7</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00042">42</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                                                                                                  {</div>
+<div class="line"><span class="lineno">   43</span>  <span class="keywordflow">if</span> (idx &gt;= a-&gt;<a class="code hl_variable" href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">len</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   44</span>  <span class="keywordflow">if</span> (idx &lt; a-&gt;len - 1) {</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> len = a-&gt;<a class="code hl_variable" href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">len</a> - idx - 1;</div>
+<div class="line"><span class="lineno">   46</span>    memmove(a-&gt;<a class="code hl_variable" href="structMP__Vector.html#ac89f821c68245de1e321f870be07fe9f">ptr</a> + idx, a-&gt;<a class="code hl_variable" href="structMP__Vector.html#ac89f821c68245de1e321f870be07fe9f">ptr</a> + idx + <a class="code hl_define" href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a> + 1,</div>
+<div class="line"><span class="lineno">   47</span>            len * size);</div>
+<div class="line"><span class="lineno">   48</span>  }</div>
+<div class="line"><span class="lineno">   49</span>}</div>
+<div class="ttc" id="acontainer_8h_html_a21005f9f4e2ce7597c5eb4351816d7e2"><div class="ttname"><a href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a></div><div class="ttdeci">#define OFFSET</div><div class="ttdef"><b>Definition</b> <a href="container_8h_source.html#l00007">container.h:7</a></div></div>
+<div class="ttc" id="astructMP__Vector_html_ac89f821c68245de1e321f870be07fe9f"><div class="ttname"><a href="structMP__Vector.html#ac89f821c68245de1e321f870be07fe9f">MP_Vector::ptr</a></div><div class="ttdeci">uint8_t ptr[]</div><div class="ttdef"><b>Definition</b> <a href="mp__vector_8h_source.html#l00006">mp_vector.h:6</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -724,12 +730,12 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00010">10</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   10</span>                                                                                                                   {</div>
-<div class="line"><span class="lineno">   11</span>  <a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a> *a = *ap;</div>
-<div class="line"><span class="lineno">   12</span>  *ap      = (<a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a> *)<a class="code hl_function" href="mpool_8c.html#a350e2f3477250648c5475ce2d56821e4">mp_realloc</a>(mp, a, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a>) + (<a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>)(a-&gt;<a class="code hl_variable" href="structMP__Vector.html#ab827e42cfffb3f4381e131200f6a5e6e">cap</a> * size), <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a>) + (<a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>)(cap * size));</div>
-<div class="line"><span class="lineno">   13</span>  (*ap)-&gt;<a class="code hl_variable" href="structMP__Vector.html#ab827e42cfffb3f4381e131200f6a5e6e">cap</a> = cap;</div>
-<div class="line"><span class="lineno">   14</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mp__vector_8h_source.html#l00009">9</a> of file <a class="el" href="mp__vector_8h_source.html">mp_vector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>                                                                                                                   {</div>
+<div class="line"><span class="lineno">   10</span>  <a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a> *a = *ap;</div>
+<div class="line"><span class="lineno">   11</span>  *ap      = (<a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a> *)<a class="code hl_function" href="mpool_8c.html#a350e2f3477250648c5475ce2d56821e4">mp_realloc</a>(mp, a, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a>) + (<a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>)(a-&gt;<a class="code hl_variable" href="structMP__Vector.html#ab827e42cfffb3f4381e131200f6a5e6e">cap</a> * size), <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structMP__Vector.html">MP_Vector</a>) + (<a class="code hl_typedef" href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a>)(cap * size));</div>
+<div class="line"><span class="lineno">   12</span>  (*ap)-&gt;<a class="code hl_variable" href="structMP__Vector.html#ab827e42cfffb3f4381e131200f6a5e6e">cap</a> = cap;</div>
+<div class="line"><span class="lineno">   13</span>}</div>
 <div class="ttc" id="ampool_8c_html_a350e2f3477250648c5475ce2d56821e4"><div class="ttname"><a href="mpool_8c.html#a350e2f3477250648c5475ce2d56821e4">mp_realloc</a></div><div class="ttdeci">void * mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8c_source.html#l00148">mpool.c:148</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -768,7 +774,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">    9</span>  a-&gt;<a class="code hl_variable" href="structMP__Vector.html#af588d3b8eb91a1bba473bd6a44766fca">len</a>  = len;</div>
 <div class="line"><span class="lineno">   10</span>  <span class="keywordflow">return</span> a;</div>
 <div class="line"><span class="lineno">   11</span>}</div>
-<div class="ttc" id="ampool_8h_html_afdf8c742bac379902ef3a9fee8dd231a"><div class="ttname"><a href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a></div><div class="ttdeci">#define mp_malloc2(p, sz)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00030">mpool.h:30</a></div></div>
+<div class="ttc" id="ampool_8h_html_afdf8c742bac379902ef3a9fee8dd231a"><div class="ttname"><a href="mpool_8h.html#afdf8c742bac379902ef3a9fee8dd231a">mp_malloc2</a></div><div class="ttdeci">#define mp_malloc2(p, sz)</div><div class="ttdef"><b>Definition</b> <a href="mpool_8h_source.html#l00028">mpool.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

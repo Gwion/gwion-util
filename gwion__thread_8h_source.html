@@ -93,118 +93,116 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <a href="gwion__thread_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef __GWION_THREAD</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define __GWION_THREAD</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifdef BUILD_ON_WINDOWS</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;windows.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define THREAD_RETTYPE long unsigned int</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define THREAD_FUNC(a) THREAD_RETTYPE(a)(void *data)</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define THREAD_TYPE    HANDLE</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define THREAD_CREATE(thread, func, arg)                                       \</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">  thread = CreateThread(NULL, 0, func, arg, 0, NULL)</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define THREAD_JOIN(thread) WaitForSingleObject(thread, 0)</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define THREAD_RETURN(arg)  return 0;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define THREAD_DETACH(arg)</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define MUTEX_TYPE        HANDLE</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define MUTEX_INITIALIZER NULL</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define MUTEX_SETUP(x)    (x) = CreateMutex(NULL, FALSE, NULL)</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define MUTEX_CLEANUP(x)  CloseHandle(x)</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define MUTEX_LOCK(x)     emulate_pthread_mutex_lock(&amp;(x))</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define MUTEX_COND_LOCK(x)</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//#define MUTEX_UNLOCK(x)        (ReleaseMutex((x)) == 0)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define MUTEX_UNLOCK(x)      ReleaseMutex((x))</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define MUTEX_COND_UNLOCK(x) (void)x</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">int</span> emulate_pthread_mutex_lock(<span class="keyword">volatile</span> <a class="code hl_define" href="gwion__thread_8h.html#a94ada48918e73511c91e3e0e885fe763">MUTEX_TYPE</a> *mx);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define THREAD_COND_TYPE           HANDLE</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define THREAD_COND_SETUP(x)       x = CreateEvent(NULL, FALSE, FALSE, NULL);</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define THREAD_COND_WAIT(x, mutex) WaitForSingleObject(x, INFINITE)</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define THREAD_COND_SIGNAL(x)      SetEvent(x);</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#define THREAD_COND_BROADCAST(x)      SetEvent(x);</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#define THREAD_COND_CLEANUP(x)     CloseHandle(x)</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#aa6e1228d7e1d7da1e094240f2fa92a7d">   37</a></span><span class="preprocessor">#define THREAD_RETTYPE void *</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a3637287c89ec5d3696006f53de1b9617">   38</a></span><span class="preprocessor">#define THREAD_FUNC(a) THREAD_RETTYPE(a)(void *data)</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a53ca774b0fc84afe282a5419d2d7239a">   39</a></span><span class="preprocessor">#define THREAD_TYPE    pthread_t</span></div>
-<div class="foldopen" id="foldopen00040" data-start="" data-end="">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a0d6735b6a6b74cb75e999d16f1eb2d9e">   40</a></span><span class="preprocessor">#define THREAD_CREATE(thread, func, arg)                                       \</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">  pthread_create(&amp;thread, NULL, func, arg)</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifdef BUILD_ON_WINDOWS</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;windows.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define THREAD_RETTYPE long unsigned int</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define THREAD_FUNC(a) THREAD_RETTYPE(a)(void *data)</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define THREAD_TYPE    HANDLE</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define THREAD_CREATE(thread, func, arg)                                       \</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">  thread = CreateThread(NULL, 0, func, arg, 0, NULL)</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define THREAD_JOIN(thread) WaitForSingleObject(thread, 0)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define THREAD_RETURN(arg)  return 0;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define THREAD_DETACH(arg)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define MUTEX_TYPE        HANDLE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define MUTEX_INITIALIZER NULL</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define MUTEX_SETUP(x)    (x) = CreateMutex(NULL, FALSE, NULL)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define MUTEX_CLEANUP(x)  CloseHandle(x)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define MUTEX_LOCK(x)     emulate_pthread_mutex_lock(&amp;(x))</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define MUTEX_COND_LOCK(x)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//#define MUTEX_UNLOCK(x)        (ReleaseMutex((x)) == 0)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define MUTEX_UNLOCK(x)      ReleaseMutex((x))</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define MUTEX_COND_UNLOCK(x) (void)x</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">int</span> emulate_pthread_mutex_lock(<span class="keyword">volatile</span> <a class="code hl_define" href="gwion__thread_8h.html#a94ada48918e73511c91e3e0e885fe763">MUTEX_TYPE</a> *mx);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define THREAD_COND_TYPE           HANDLE</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define THREAD_COND_SETUP(x)       x = CreateEvent(NULL, FALSE, FALSE, NULL);</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define THREAD_COND_WAIT(x, mutex) WaitForSingleObject(x, INFINITE)</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define THREAD_COND_SIGNAL(x)      SetEvent(x);</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define THREAD_COND_BROADCAST(x)      SetEvent(x);</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#define THREAD_COND_CLEANUP(x)     CloseHandle(x)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#aa6e1228d7e1d7da1e094240f2fa92a7d">   36</a></span><span class="preprocessor">#define THREAD_RETTYPE void *</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a3637287c89ec5d3696006f53de1b9617">   37</a></span><span class="preprocessor">#define THREAD_FUNC(a) THREAD_RETTYPE(a)(void *data)</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a53ca774b0fc84afe282a5419d2d7239a">   38</a></span><span class="preprocessor">#define THREAD_TYPE    pthread_t</span></div>
+<div class="foldopen" id="foldopen00039" data-start="" data-end="">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a0d6735b6a6b74cb75e999d16f1eb2d9e">   39</a></span><span class="preprocessor">#define THREAD_CREATE(thread, func, arg)                                       \</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">  pthread_create(&amp;thread, NULL, func, arg)</span></div>
 </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#ab2c7c48d11176ee55bda16531ba59363">   42</a></span><span class="preprocessor">#define THREAD_JOIN(thread) pthread_join(thread, NULL)</span></div>
-<div class="foldopen" id="foldopen00043" data-start="" data-end="">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a515c663597d2215632df9477bde675f6">   43</a></span><span class="preprocessor">#define THREAD_RETURN(arg)                                                     \</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">  {                                                                            \</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">    pthread_exit(NULL);                                                        \</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">    return NULL;                                                               \</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">  }</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#ab2c7c48d11176ee55bda16531ba59363">   41</a></span><span class="preprocessor">#define THREAD_JOIN(thread) pthread_join(thread, NULL)</span></div>
+<div class="foldopen" id="foldopen00042" data-start="" data-end="">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a515c663597d2215632df9477bde675f6">   42</a></span><span class="preprocessor">#define THREAD_RETURN(arg)                                                     \</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">  {                                                                            \</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">    pthread_exit(NULL);                                                        \</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">    return NULL;                                                               \</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">  }</span></div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a4bf3369b61ceeec33cd50c9e66de04f5">   48</a></span><span class="preprocessor">#define THREAD_DETACH(arg) pthread_detach(arg)</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a94ada48918e73511c91e3e0e885fe763">   50</a></span><span class="preprocessor">#define MUTEX_TYPE        pthread_mutex_t *</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a10ba6c8c4a5e2bcf9f5f5fd41675e122">   51</a></span><span class="preprocessor">#define MUTEX_INITIALIZER PTHREAD_MUTEX_INITIALIZER</span></div>
-<div class="foldopen" id="foldopen00052" data-start="" data-end="">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">   52</a></span><span class="preprocessor">#define MUTEX_SETUP(x)                                                         \</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">  {                                                                            \</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">    pthread_mutexattr_t attr;                                                  \</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">    pthread_mutexattr_init(&amp;attr);                                             \</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">    pthread_mutexattr_settype(&amp;attr, PTHREAD_MUTEX_RECURSIVE);                 \</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">    x = (pthread_mutex_t *)xmalloc(sizeof(pthread_mutex_t));                   \</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">    pthread_mutex_init(x, &amp;attr);                                              \</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">  }</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a4bf3369b61ceeec33cd50c9e66de04f5">   47</a></span><span class="preprocessor">#define THREAD_DETACH(arg) pthread_detach(arg)</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a94ada48918e73511c91e3e0e885fe763">   49</a></span><span class="preprocessor">#define MUTEX_TYPE        pthread_mutex_t *</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a10ba6c8c4a5e2bcf9f5f5fd41675e122">   50</a></span><span class="preprocessor">#define MUTEX_INITIALIZER PTHREAD_MUTEX_INITIALIZER</span></div>
+<div class="foldopen" id="foldopen00051" data-start="" data-end="">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a4c8c0786dbefcef7711a8bf23ef5a5e9">   51</a></span><span class="preprocessor">#define MUTEX_SETUP(x)                                                         \</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">  {                                                                            \</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">    pthread_mutexattr_t attr;                                                  \</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">    pthread_mutexattr_init(&amp;attr);                                             \</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">    pthread_mutexattr_settype(&amp;attr, PTHREAD_MUTEX_RECURSIVE);                 \</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">    x = (pthread_mutex_t *)xmalloc(sizeof(pthread_mutex_t));                   \</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">    pthread_mutex_init(x, &amp;attr);                                              \</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">  }</span></div>
 </div>
-<div class="foldopen" id="foldopen00060" data-start="" data-end="">
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">   60</a></span><span class="preprocessor">#define MUTEX_CLEANUP(x)                                                       \</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">  {                                                                            \</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">    pthread_mutex_destroy((x));                                                \</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">    xfree(x);                                                                  \</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">  }</span></div>
+<div class="foldopen" id="foldopen00059" data-start="" data-end="">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a64ca321a1510fb750a1dbdc7990d056c">   59</a></span><span class="preprocessor">#define MUTEX_CLEANUP(x)                                                       \</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">  {                                                                            \</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">    pthread_mutex_destroy((x));                                                \</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">    xfree(x);                                                                  \</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">  }</span></div>
 </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a441b021fa23aeb332a6aa860cb1aee7c">   65</a></span><span class="preprocessor">#define MUTEX_LOCK(x)        pthread_mutex_lock((x))</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a00f6327b0c1f459305ece988e83a848a">   66</a></span><span class="preprocessor">#define MUTEX_COND_LOCK(x)   pthread_mutex_lock((x))</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a04bad901d24418b1d7e307edb0d38662">   67</a></span><span class="preprocessor">#define MUTEX_UNLOCK(x)      pthread_mutex_unlock((x))</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a27640932477cf246092d313468effba4">   68</a></span><span class="preprocessor">#define MUTEX_COND_UNLOCK(x) pthread_mutex_unlock((x))</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a3e2835fe70b1eaf44eeabad652062ad4">   70</a></span><span class="preprocessor">#define THREAD_COND_TYPE pthread_cond_t*</span></div>
-<div class="foldopen" id="foldopen00071" data-start="" data-end="">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a3d93fc0a1cc0db288695989bbffb704a">   71</a></span><span class="preprocessor">#define THREAD_COND_SETUP(x)                                                   \</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">  {                                                                            \</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">    x = (pthread_cond_t *)xcalloc(1, sizeof(pthread_cond_t));                  \</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">    pthread_cond_init(x, NULL);                                                \</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">  }</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a441b021fa23aeb332a6aa860cb1aee7c">   64</a></span><span class="preprocessor">#define MUTEX_LOCK(x)        pthread_mutex_lock((x))</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a00f6327b0c1f459305ece988e83a848a">   65</a></span><span class="preprocessor">#define MUTEX_COND_LOCK(x)   pthread_mutex_lock((x))</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a04bad901d24418b1d7e307edb0d38662">   66</a></span><span class="preprocessor">#define MUTEX_UNLOCK(x)      pthread_mutex_unlock((x))</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a27640932477cf246092d313468effba4">   67</a></span><span class="preprocessor">#define MUTEX_COND_UNLOCK(x) pthread_mutex_unlock((x))</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a3e2835fe70b1eaf44eeabad652062ad4">   69</a></span><span class="preprocessor">#define THREAD_COND_TYPE pthread_cond_t*</span></div>
+<div class="foldopen" id="foldopen00070" data-start="" data-end="">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a3d93fc0a1cc0db288695989bbffb704a">   70</a></span><span class="preprocessor">#define THREAD_COND_SETUP(x)                                                   \</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">  {                                                                            \</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">    x = (pthread_cond_t *)xcalloc(1, sizeof(pthread_cond_t));                  \</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">    pthread_cond_init(x, NULL);                                                \</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">  }</span></div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a8b459dbc6d165c396134b045a72a6d74">   76</a></span><span class="preprocessor">#define THREAD_COND_WAIT(x, mutex) pthread_cond_wait(x, mutex)</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#afe58fe34a9dac2526796eedc93417652">   77</a></span><span class="preprocessor">#define THREAD_COND_SIGNAL(x)      pthread_cond_signal(x)</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a8fa7020cd72973db2af5de783ff4a1c2">   78</a></span><span class="preprocessor">#define THREAD_COND_BROADCAST(x)      pthread_cond_broadcast(x)</span></div>
-<div class="foldopen" id="foldopen00079" data-start="" data-end="">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a7e307dfe60e30c7c953283031a09c72b">   79</a></span><span class="preprocessor">#define THREAD_COND_CLEANUP(x)                                                 \</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">  {                                                                            \</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">    pthread_cond_destroy(x);                                                   \</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">    xfree(x);                                                                  \</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">  }</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a8b459dbc6d165c396134b045a72a6d74">   75</a></span><span class="preprocessor">#define THREAD_COND_WAIT(x, mutex) pthread_cond_wait(x, mutex)</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#afe58fe34a9dac2526796eedc93417652">   76</a></span><span class="preprocessor">#define THREAD_COND_SIGNAL(x)      pthread_cond_signal(x)</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a8fa7020cd72973db2af5de783ff4a1c2">   77</a></span><span class="preprocessor">#define THREAD_COND_BROADCAST(x)      pthread_cond_broadcast(x)</span></div>
+<div class="foldopen" id="foldopen00078" data-start="" data-end="">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a7e307dfe60e30c7c953283031a09c72b">   78</a></span><span class="preprocessor">#define THREAD_COND_CLEANUP(x)                                                 \</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">  {                                                                            \</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">    pthread_cond_destroy(x);                                                   \</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">    xfree(x);                                                                  \</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">  }</span></div>
 </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a61469a2fe6aebc934e696bde3522a763">   87</a></span><span class="preprocessor">#define STR_EXPAND(tok) #tok</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a05b95a47759fd66b4deab2740ba27453">   88</a></span><span class="preprocessor">#define STR(tok)        STR_EXPAND(tok)</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#ifndef BUILD_ON_WINDOWS</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#include &lt;dlfcn.h&gt;</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#afb02bf89494d3be01d62ee7c0abaadf3">   91</a></span><span class="preprocessor">#define DLOPEN(dl, b)   dlopen(dl, b)</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a1d70650055a3ddb629c6243df73448b5">   92</a></span><span class="preprocessor">#define DLSYM(dl, t, a) (t)(intptr_t) dlsym(dl, a)</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#ab24e5745b3a82deeaed92eff349ae81a">   93</a></span><span class="preprocessor">#define DLCLOSE(dl)     dlclose(dl)</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a690562dc6c92cb811f90e8391bfeb801">   94</a></span><span class="preprocessor">#define DLERROR()       dlerror()</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#include &quot;windows.h&quot;</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#define DLOPEN(dl, b)   LoadLibrary(dl)</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#define DLSYM(dl, t, a) (t)(intptr_t) GetProcAddress(dl, a)</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#define DLCLOSE(dl)     FreeLibrary(dl)</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#define DLERROR()       &quot;plugin&quot;</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="agwion__thread_8h_html_a94ada48918e73511c91e3e0e885fe763"><div class="ttname"><a href="gwion__thread_8h.html#a94ada48918e73511c91e3e0e885fe763">MUTEX_TYPE</a></div><div class="ttdeci">#define MUTEX_TYPE</div><div class="ttdef"><b>Definition</b> <a href="#l00050">gwion_thread.h:50</a></div></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a61469a2fe6aebc934e696bde3522a763">   86</a></span><span class="preprocessor">#define STR_EXPAND(tok) #tok</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a05b95a47759fd66b4deab2740ba27453">   87</a></span><span class="preprocessor">#define STR(tok)        STR_EXPAND(tok)</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#ifndef BUILD_ON_WINDOWS</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#include &lt;dlfcn.h&gt;</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#afb02bf89494d3be01d62ee7c0abaadf3">   90</a></span><span class="preprocessor">#define DLOPEN(dl, b)   dlopen(dl, b)</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a1d70650055a3ddb629c6243df73448b5">   91</a></span><span class="preprocessor">#define DLSYM(dl, t, a) (t)(intptr_t) dlsym(dl, a)</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#ab24e5745b3a82deeaed92eff349ae81a">   92</a></span><span class="preprocessor">#define DLCLOSE(dl)     dlclose(dl)</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="gwion__thread_8h.html#a690562dc6c92cb811f90e8391bfeb801">   93</a></span><span class="preprocessor">#define DLERROR()       dlerror()</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#include &quot;windows.h&quot;</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#define DLOPEN(dl, b)   LoadLibrary(dl)</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#define DLSYM(dl, t, a) (t)(intptr_t) GetProcAddress(dl, a)</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#define DLCLOSE(dl)     FreeLibrary(dl)</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#define DLERROR()       &quot;plugin&quot;</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="agwion__thread_8h_html_a94ada48918e73511c91e3e0e885fe763"><div class="ttname"><a href="gwion__thread_8h.html#a94ada48918e73511c91e3e0e885fe763">MUTEX_TYPE</a></div><div class="ttdeci">#define MUTEX_TYPE</div><div class="ttdef"><b>Definition</b> <a href="#l00049">gwion_thread.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
