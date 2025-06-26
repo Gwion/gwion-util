@@ -1,9 +1,7 @@
 /** @file: mpool.h
 \brief memory pool
 */
-
-#ifndef __POOL
-#define __POOL
+#pragma once
 
 typedef struct MemPool_ {
   struct pool * master_pool;
@@ -31,4 +29,3 @@ void *mp_realloc(MemPool mp, void *ptr, const m_uint curr, const m_uint next);
 
 MemPool mempool_ini(const size_t sz);
 void    mempool_end(MemPool mp);
-#endif

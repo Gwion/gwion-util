@@ -1,8 +1,7 @@
 /** @file symbol.h
 \brief Symbol table
 **/
-#ifndef __SYMBOL_H__
-#define __SYMBOL_H__
+#pragma once
 
 #include "gwion_thread.h"
 typedef struct Symbol_ *Symbol;
@@ -24,4 +23,3 @@ __attribute__((pure)) ANN static inline m_str s_name(const Symbol s) {
   return s->name;
 };
 ANN void free_symbols(SymTable *const);
-#endif

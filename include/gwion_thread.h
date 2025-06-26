@@ -1,8 +1,7 @@
 /** @file: gwion_thread.h
 \brief cross-platform thread functions
 */
-#ifndef __GWION_THREAD
-#define __GWION_THREAD
+#pragma once
 #ifdef BUILD_ON_WINDOWS
 #include <windows.h>
 #define THREAD_RETTYPE long unsigned int
@@ -98,5 +97,4 @@ int emulate_pthread_mutex_lock(volatile MUTEX_TYPE *mx);
 #define DLSYM(dl, t, a) (t)(intptr_t) GetProcAddress(dl, a)
 #define DLCLOSE(dl)     FreeLibrary(dl)
 #define DLERROR()       "plugin"
-#endif
 #endif

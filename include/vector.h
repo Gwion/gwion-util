@@ -2,8 +2,7 @@
 /** @file: vector.h
 \brief vector functions
 */
-#ifndef __VECTOR
-#define __VECTOR
+#pragma once
 
 typedef struct Vector_ {
   vtype *ptr;
@@ -40,4 +39,3 @@ ANN static inline void vector_realloc(const Vector v) {
   if ((OFFSET + (VLEN(v) << 1) + 1) > VCAP(v))
     v->ptr = (m_uint *)xrealloc(v->ptr, (VCAP(v) <<= 1) * SZ_INT);
 }
-#endif

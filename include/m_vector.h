@@ -1,5 +1,4 @@
-#ifndef __M_VECTOR
-#define __M_VECTOR
+#pragma once
 
 typedef struct M_Vector_ {
   m_bit *ptr;
@@ -44,4 +43,3 @@ ANN void m_vector_add(const M_Vector, const void *);
 ANN void m_vector_rem(const M_Vector, const m_uint);
 ANN void m_vector_insert(const M_Vector v, m_uint index, const void *data);
 ANN void m_vector_add_front(const M_Vector v, const void *data);
-#endif

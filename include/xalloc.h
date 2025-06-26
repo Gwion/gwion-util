@@ -1,5 +1,5 @@
-#ifndef __ALLOC
-#define __ALLOC
+#pragma once
+
 #ifndef MEM_UNSECURE
 static void *xcheck(void *a) {
   if (a) return a;
@@ -26,4 +26,3 @@ ANEW static inline void *xrealloc(void *p, const m_uint sz) {
 }
 
 #define xfree(a) free(a)
-#endif

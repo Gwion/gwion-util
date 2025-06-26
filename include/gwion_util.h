@@ -1,8 +1,7 @@
 /** @file: gwion_util.h
 \brief meta header (use this to include the whole library)
 */
-#ifndef __GWION_UTIL
-#define __GWION_UTIL
+#pragma once
 
 #if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(__WIN32))
 #ifndef BUILD_ON_WINDOWS
@@ -28,7 +27,4 @@
 
 #if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(__WIN32))
 #include "windows_missing.h"
-#endif
-
-
 #endif

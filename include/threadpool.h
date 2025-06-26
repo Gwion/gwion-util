@@ -1,5 +1,4 @@
-#ifndef _THREADPOOL_H_
-#define _THREADPOOL_H_
+#pragma once
 
 #ifdef BUILD_ON_WINDOWS
 typedef HANDLE              gwtthread_t;
@@ -104,7 +103,4 @@ ANN static inline void gwt_cond_end(gwtcond_t *cond) {
 ANN static inline bool gwt_create(gwtthread_t *thread, gwtreturn_t (*fun)(void*), void *arg) {
   return pthread_create(thread, NULL, fun, arg); // int
 }
-#endif
-
-
 #endif

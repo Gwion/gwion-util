@@ -1,5 +1,4 @@
-#ifndef __MP_VECTOR
-#define __MP_VECTOR
+#pragma once
 
 typedef struct MP_Vector {
   uint32_t len;
@@ -108,5 +107,10 @@ static inline uint32_t type##list_len(const Type##List *a) {                    
 }                                                                                       \
 ANN static inline Type type##list_back(const Type##List *a) {                                    \
   return a->ptr[a->len-1];                                                                \
+} \
+ANN static inline void type##list_rem(Type##List *const a, const uint32_t idx) { \
+  if (idx >= a->len) return; \
+  const size_t len = a->len - idx - 1; \
+  memmove(a->ptr + idx, a->ptr + idx + OFFSET + 1, len * sizeof(Type));\
+  a->len--; \
 }
-#endif

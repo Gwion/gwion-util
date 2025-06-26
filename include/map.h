@@ -1,8 +1,7 @@
 /** @file: map.h
 \brief Map functions
 */
-#ifndef __MAP
-#define __MAP
+#pragma once
 
 typedef struct Map_ {
   vtype *ptr;
@@ -31,4 +30,3 @@ extern ANN void map_clear(const Map);
 extern ANN void free_map(MemPool p, const Map);
 extern ANN void map_release(const Map);
 ANN static inline vtype map_size(const Map map) { return VLEN(map); }
-#endif

@@ -14,8 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-#ifndef _LIBPRETTYERR_ERROR_H
-#define _LIBPRETTYERR_ERROR_H
+#pragma once
 
 #include <stddef.h>
 #include <stdbool.h>
@@ -121,5 +120,3 @@ typedef struct libprettyerr_printer perr_printer_t;
 typedef libprettyerr_runner_t       perr_runner_t;
 extern PRETTYERR_EXPORT perr_runner_t perr_runner_basic_style;
 extern PRETTYERR_EXPORT perr_runner_t perr_runner_secondary_style;
-
-#endif /* _LIBPRETTYERR_PRETTYERR_H */

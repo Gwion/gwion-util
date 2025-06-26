@@ -1,8 +1,7 @@
 /** @file: hash.h
 \brief Hash table implementation and (near) generic set of macros
 **/
-#ifndef __HASH
-#define __HASH
+#pragma once
 typedef struct Hash_ *Hash;
 struct Hash_ {
   void ** table;
@@ -31,4 +30,3 @@ ANN unsigned int hash(const m_str s0);
 #define hstraction(type, ret_type, func, pre, action, post, ret)               \
   haction(type, ret_type, m_str, macro, func, pre, !strcmp(s->name, arg),      \
           action, post, ret)
-#endif

@@ -1,8 +1,7 @@
 /** @file: gwion_text.h
 \brief text structure and functions
 **/
-#ifndef __GWTEXT
-#define __GWTEXT
+#pragma once
 
 /** mp_allocted text */
 typedef struct GwText_ {
@@ -49,4 +48,3 @@ ANN static inline void text_reset(GwText *text) {
     text->len  = 0;
   }
 }
-#endif

@@ -1,8 +1,7 @@
 /** @file: mp_string.h
 \brief string allocated with memory pool
 **/
-#ifndef __MP_STRING
-#define __MP_STRING
+#pragma once
 
 /** free mp_allocated string **/
 ANN static inline void free_mstr(MemPool mp, char *const str) {
@@ -15,4 +14,3 @@ ANN static inline m_str mstrdup(MemPool mp, const char *name) {
   strcpy(dup, name);
   return dup;
 }
-#endif

@@ -19,9 +19,7 @@
    other information. Both places are vital for proper API usage, so reading
    both places will facilitate adeptitude with libtermcolor.
 */
-
-#ifndef _LIBTERMCOLOR_TERMCOLOR_H
-#define _LIBTERMCOLOR_TERMCOLOR_H
+#pragma once
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -128,5 +126,3 @@ int tcol_printf(const char *fmt, ...);
    Return Value:
    - `int`: One of the values `enum term_color_error_t`*/
 int tcol_snprintf(char *buffer, size_t N, const char *fmt, ...);
-
-#endif /* _LIBTERMCOLOR_TERMCOLOR_H */

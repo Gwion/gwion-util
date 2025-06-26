@@ -13,9 +13,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-#ifndef _CMDAPP_APP_H
-#define _CMDAPP_APP_H
+#pragma once
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -131,5 +129,3 @@ cmdargs_t* cmdapp_getargs(cmdapp_t* app);
 
 // Prints a formatted error message to stderr.
 void cmdapp_error(cmdapp_t* app, const char* fmt, ...);
-
-#endif /* _CMDAPP_APP_H */

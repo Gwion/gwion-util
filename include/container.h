@@ -1,9 +1,7 @@
 /** @file: container.h
 \brief macros and meta-header for container types
 */
-
-#ifndef _CONTAINER
-#define _CONTAINER
+#pragma once
 
 #define MAP_CAP    8                      /*< base container capacity */
 #define OFFSET     2                      /*< size of container offset */
@@ -17,4 +15,3 @@ typedef uintptr_t vtype; /*< base type for containers, size of a pointer */
 #include "m_vector.h"
 #include "map.h"
 #include "scope.h"
-#endif

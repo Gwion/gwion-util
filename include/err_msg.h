@@ -1,9 +1,7 @@
 /** @file: err_msg.h
 \brief thread-safe console output
 **/
-
-#ifndef __ERRMSG
-#define __ERRMSG
+#pragma once
 
 #include <stdarg.h>
 #include "termcolor.h"
@@ -15,6 +13,4 @@
 #ifdef __FUZZING__
 #define gw_err(a, ...)
 #define gw_out(a, ...)
-#endif
-
 #endif

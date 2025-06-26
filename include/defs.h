@@ -1,8 +1,7 @@
 /** @file: defs.h
 \brief base definitions
 **/
-#ifndef __DEF
-#define __DEF
+#pragma once
 
 #ifdef USE_GETTEXT
 #include <libintl.h>
@@ -69,4 +68,3 @@ static inline m_uint num_digit(const m_uint i) {
 static inline m_uint round2szint(const m_uint i) {
   return ((i + (SZ_INT - 1)) & ~(SZ_INT - 1));
 }
-#endif

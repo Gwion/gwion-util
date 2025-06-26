@@ -1,9 +1,7 @@
 /** @file: windows_missing.h
 \brief implementation of function not present in windows
 **/
-
-#ifndef __WINDOWS_MISSING
-#define __WINDOWS_MISSING
+#pragma once
 #include <windows.h>
 #include <stddef.h>
 
@@ -31,6 +29,5 @@ FILE *               fmemopen(void *buf, size_t len, const char *type NUSED);
 #else
 #define crealf(a) crealf(*(_Fcomplex *)&a)
 #define cimagf(a) cimagf(*(_Fcomplex *)&a)
-#endif
 #endif
 #endif

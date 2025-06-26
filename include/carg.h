@@ -1,8 +1,7 @@
 /** @file: carg.h
 \brief argument utilities
 **/
-#ifndef __CARG
-#define __CARG
+#pragma once
 
 /** structure used to parse arguments **/
 struct CArg {
@@ -19,4 +18,3 @@ each value is a mp_allocated string.
 freeing it is caller responsability.
 **/
 ANN Vector split_args(MemPool, const m_str str);
-#endif

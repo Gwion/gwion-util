@@ -1,9 +1,8 @@
 /** @file: scope.h
 \brief scope functions
 */
+#pragma once
 
-#ifndef __SCOPE
-#define __SCOPE
 typedef struct Scope_ {
   vtype *     ptr;
   struct Map_ map;
@@ -39,4 +38,3 @@ ANN static inline void _scope_init(const Scope s) {
   vector_init((Vector)(void *)s);
 }
 ANN bool scope_iter(struct scope_iter *iter, void *ret);
-#endif
