@@ -113,4 +113,9 @@ ANN static inline void type##list_rem(Type##List *const a, const uint32_t idx) {
   const size_t len = a->len - idx - 1; \
   memmove(a->ptr + idx, a->ptr + idx + OFFSET + 1, len * sizeof(Type));\
   a->len--; \
-}
+} \
+ANN static inline void type##list_pop(MP_Vector *const a) {\
+  a->len--; \
+}\
+
+
