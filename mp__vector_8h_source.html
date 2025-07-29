@@ -238,8 +238,13 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">  const size_t len = a-&gt;len - idx - 1; \</span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">  memmove(a-&gt;ptr + idx, a-&gt;ptr + idx + OFFSET + 1, len * sizeof(Type));\</span></div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">  a-&gt;len--; \</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">}</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">} \</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">ANN static inline void type##list_pop(MP_Vector *const a) {\</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">  a-&gt;len--; \</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">}\</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor"></span> </div>
 </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="ttc" id="acontainer_8h_html_a21005f9f4e2ce7597c5eb4351816d7e2"><div class="ttname"><a href="container_8h.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a></div><div class="ttdeci">#define OFFSET</div><div class="ttdef"><b>Definition</b> <a href="container_8h_source.html#l00007">container.h:7</a></div></div>
 <div class="ttc" id="adefs_8h_html_a95b121a36f009118cbb1bbf55579d23f"><div class="ttname"><a href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a></div><div class="ttdeci">#define ANN</div><div class="ttdef"><b>Definition</b> <a href="defs_8h_source.html#l00018">defs.h:18</a></div></div>
 <div class="ttc" id="agwcommon_8h_html_a50651144ce12bd2634f6bc9591e6b062"><div class="ttname"><a href="gwcommon_8h.html#a50651144ce12bd2634f6bc9591e6b062">m_uint</a></div><div class="ttdeci">uintptr_t m_uint</div><div class="ttdef"><b>Definition</b> <a href="gwcommon_8h_source.html#l00012">gwcommon.h:12</a></div></div>

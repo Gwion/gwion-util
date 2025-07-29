@@ -249,7 +249,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  113</span><span class="preprocessor">  const size_t len = a-&gt;len - idx - 1; \</span></div>
 <div class="line"><span class="lineno">  114</span><span class="preprocessor">  memmove(a-&gt;ptr + idx, a-&gt;ptr + idx + OFFSET + 1, len * sizeof(Type));\</span></div>
 <div class="line"><span class="lineno">  115</span><span class="preprocessor">  a-&gt;len--; \</span></div>
-<div class="line"><span class="lineno">  116</span><span class="preprocessor">}</span></div>
+<div class="line"><span class="lineno">  116</span><span class="preprocessor">} \</span></div>
+<div class="line"><span class="lineno">  117</span><span class="preprocessor">ANN static inline void type##list_pop(MP_Vector *const a) {\</span></div>
+<div class="line"><span class="lineno">  118</span><span class="preprocessor">  a-&gt;len--; \</span></div>
+<div class="line"><span class="lineno">  119</span><span class="preprocessor">}\</span></div>
+<div class="line"><span class="lineno">  120</span><span class="preprocessor"></span> </div>
 </div><!-- fragment -->
 </div>
 </div>
