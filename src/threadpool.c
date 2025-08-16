@@ -63,21 +63,6 @@ ANN static bool start(threadpool_t *p, const uint32_t thread_count) {
   return true;
 }
 
-threadpool_t *new_threadpool(const uint32_t thread_count, const uint32_t queue_size) {
-  threadpool_t *p = malloc(sizeof(threadpool_t));
-  if(!p) return NULL;
-  p->head = p->tail = p->active = 0;
-  p->shutdown = p->has_lock = p->has_cond = false;
-  p->started = 0;
-  p->queue_size = queue_size;
-  if(alloc(p, thread_count, queue_size) || !utils(p) ||
-     !start(p, thread_count)) {
-    free_threadpool(p);
-    return NULL;
-  }
-  return p;
-}
-
 ANN2(1, 2) static bool add(threadpool_t *p, void (*fun)(void *), void *arg) {
   if(unlikely(p->shutdown || p->active == p->queue_size))
    return false;
@@ -110,4 +95,22 @@ ANN void free_threadpool(threadpool_t *p) {
   if(p->queue) free(p->queue);
   if(p->has_lock) gwt_lock_end(&p->lock);
   if(p->has_cond) gwt_cond_end(&p->cond);
+  free(p);
 }
+
+threadpool_t *new_threadpool(const uint32_t thread_count, const uint32_t queue_size) {
+  threadpool_t *p = malloc(sizeof(threadpool_t));
+  if(!p) return NULL;
+  p->head = p->tail = p->active = 0;
+  p->shutdown = p->has_lock = p->has_cond = false;
+  p->started = 0;
+  p->queue_size = queue_size;
+  if(alloc(p, thread_count, queue_size) || !utils(p) ||
+     !start(p, thread_count)) {
+    free_threadpool(p);
+    return NULL;
+  }
+  return p;
+}
+
+

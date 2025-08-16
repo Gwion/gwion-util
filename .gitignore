@@ -2,6 +2,7 @@ build
 .d
 *.a
 *.mo
+.cache
 config.mk
 include/generated.h
 html
