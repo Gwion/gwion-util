@@ -1,7 +1,7 @@
 #include "gwion_util.h"
 
 typedef struct {
-  void (*fun)(void *);
+  void (*routine)(void *);
   void *arg;
 } task_t;
 
@@ -31,7 +31,7 @@ ANN static gwtreturn_t threadpool_thread(void *data) {
     p->head = (p->head + 1) % p->queue_size;
     p->active--;
     (void)gwt_unlock(&p->lock);
-    task.fun(task.arg);
+    task.routine(task.arg);
   }
   (void)gwt_unlock(&p->lock);
   THREAD_RETURN(NULL);
@@ -63,21 +63,21 @@ ANN static bool start(threadpool_t *p, const uint32_t thread_count) {
   return true;
 }
 
-ANN2(1, 2) static bool add(threadpool_t *p, void (*fun)(void *), void *arg) {
-  if(unlikely(p->shutdown || p->active == p->queue_size))
+ANN2(1, 2) static bool add(threadpool_t *pool, void (*routine)(void *), void *arg) {
+  if(unlikely(pool->shutdown || pool->active == pool->queue_size))
    return false;
-  const uint32_t next = (p->tail + 1) % p->queue_size;
-  task_t t = { .fun = fun, .arg = arg };
-  p->queue[p->tail] = t;
-  p->tail = next;
-  p->active++;
-  (void)gwt_signal(&p->cond);
+  const uint32_t next = (pool->tail + 1) % pool->queue_size;
+  task_t t = { .routine = routine, .arg = arg };
+  pool->queue[pool->tail] = t;
+  pool->tail = next;
+  pool->active++;
+  (void)gwt_signal(&pool->cond);
   return true;
 }
 
-bool threadpool_add(threadpool_t *p, void (*fun)(void *), void *arg) {
+bool threadpool_add(threadpool_t *p, void (*routine)(void *), void *arg) {
   (void)gwt_lock(&p->lock);
-  const bool ret = add(p, fun, arg);
+  const bool ret = add(p, routine, arg);
   (void)gwt_unlock(&p->lock);
   return ret;
 }
