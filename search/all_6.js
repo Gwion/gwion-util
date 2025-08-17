@@ -13,6 +13,5 @@ var searchData=
   ['free_5fsymbols_10',['free_symbols',['../symbol_8c.html#aa0d50c319c36cf405af39681ec630ead',1,'free_symbols(SymTable *const ht):&#160;symbol.c'],['../symbol_8h.html#a42763ecf2c634569f19cae6bcc91b58a',1,'free_symbols(SymTable *const):&#160;symbol.c']]],
   ['free_5ftext_11',['free_text',['../gwion__text_8h.html#a6b603ab8a4cc8024ac193f630cda275f',1,'gwion_text.h']]],
   ['free_5fthreadpool_12',['free_threadpool',['../threadpool_8c.html#ae35d63f9184e8e75b3160e9e96ccbd64',1,'free_threadpool(threadpool_t *p):&#160;threadpool.c'],['../threadpool_8h.html#a73cab886ee08c1b82321768af8d2aad6',1,'free_threadpool(threadpool_t *pool):&#160;threadpool.c']]],
-  ['free_5fvector_13',['free_vector',['../vector_8c.html#aad4dfaaf45ca6ba2c980650dc90d1920',1,'free_vector(MemPool p, const Vector v):&#160;vector.c'],['../vector_8h.html#a483556ddd0ed54f530706458736ff2d9',1,'free_vector(MemPool p, const Vector):&#160;vector.c']]],
-  ['fun_14',['fun',['../structtask__t.html#a0d85181c03c8065f6ab63f33597409b1',1,'task_t']]]
+  ['free_5fvector_13',['free_vector',['../vector_8c.html#aad4dfaaf45ca6ba2c980650dc90d1920',1,'free_vector(MemPool p, const Vector v):&#160;vector.c'],['../vector_8h.html#a483556ddd0ed54f530706458736ff2d9',1,'free_vector(MemPool p, const Vector):&#160;vector.c']]]
 ];

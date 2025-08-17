@@ -118,8 +118,8 @@ Functions</h2></td></tr>
 <tr class="separator:a3894d8da81939354904466d4173b1b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50fbc04bac80b3dc18fee07bb26a537f" id="r_a50fbc04bac80b3dc18fee07bb26a537f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50fbc04bac80b3dc18fee07bb26a537f">ANN2</a> (1, 2)</td></tr>
 <tr class="separator:a50fbc04bac80b3dc18fee07bb26a537f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d4ac1614d1076b3f64a161ec8a2d1d5" id="r_a1d4ac1614d1076b3f64a161ec8a2d1d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d4ac1614d1076b3f64a161ec8a2d1d5">threadpool_add</a> (<a class="el" href="structthreadpool__t.html">threadpool_t</a> *p, void(*fun)(void *), void *<a class="el" href="threadpool_8h.html#ae8f0544a29d2cdb12a8aea8fc0d4c66e">arg</a>)</td></tr>
-<tr class="separator:a1d4ac1614d1076b3f64a161ec8a2d1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e439ad0c08da1f65f84c5f3e99d23ec" id="r_a0e439ad0c08da1f65f84c5f3e99d23ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e439ad0c08da1f65f84c5f3e99d23ec">threadpool_add</a> (<a class="el" href="structthreadpool__t.html">threadpool_t</a> *p, void(*<a class="el" href="threadpool_8h.html#a62f1220b7d25e63115e145683a8602ef">routine</a>)(void *), void *<a class="el" href="threadpool_8h.html#ae8f0544a29d2cdb12a8aea8fc0d4c66e">arg</a>)</td></tr>
+<tr class="separator:a0e439ad0c08da1f65f84c5f3e99d23ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae35d63f9184e8e75b3160e9e96ccbd64" id="r_ae35d63f9184e8e75b3160e9e96ccbd64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#a95b121a36f009118cbb1bbf55579d23f">ANN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae35d63f9184e8e75b3160e9e96ccbd64">free_threadpool</a> (<a class="el" href="structthreadpool__t.html">threadpool_t</a> *p)</td></tr>
 <tr class="separator:ae35d63f9184e8e75b3160e9e96ccbd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afde15ab7faafe8eb2b1c54f9c6ed4aae" id="r_afde15ab7faafe8eb2b1c54f9c6ed4aae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structthreadpool__t.html">threadpool_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afde15ab7faafe8eb2b1c54f9c6ed4aae">new_threadpool</a> (const uint32_t thread_count, const uint32_t queue_size)</td></tr>
@@ -190,18 +190,20 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="threadpool_8c_source.html#l00066">66</a> of file <a class="el" href="threadpool_8c_source.html">threadpool.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                                            {</div>
-<div class="line"><span class="lineno">   67</span>  <span class="keywordflow">if</span>(<a class="code hl_define" href="defs_8h.html#ac6c45889010c1bd68631771b64f18101">unlikely</a>(p-&gt;shutdown || p-&gt;active == p-&gt;queue_size))</div>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                                                   {</div>
+<div class="line"><span class="lineno">   67</span>  <span class="keywordflow">if</span>(<a class="code hl_define" href="defs_8h.html#ac6c45889010c1bd68631771b64f18101">unlikely</a>(<a class="code hl_struct" href="structpool.html">pool</a>-&gt;shutdown || <a class="code hl_struct" href="structpool.html">pool</a>-&gt;active == <a class="code hl_struct" href="structpool.html">pool</a>-&gt;queue_size))</div>
 <div class="line"><span class="lineno">   68</span>   <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   69</span>  <span class="keyword">const</span> uint32_t next = (p-&gt;tail + 1) % p-&gt;queue_size;</div>
-<div class="line"><span class="lineno">   70</span>  <a class="code hl_struct" href="structtask__t.html">task_t</a> t = { .fun = fun, .arg = <a class="code hl_variable" href="threadpool_8h.html#ae8f0544a29d2cdb12a8aea8fc0d4c66e">arg</a> };</div>
-<div class="line"><span class="lineno">   71</span>  p-&gt;queue[p-&gt;tail] = t;</div>
-<div class="line"><span class="lineno">   72</span>  p-&gt;tail = next;</div>
-<div class="line"><span class="lineno">   73</span>  p-&gt;active++;</div>
-<div class="line"><span class="lineno">   74</span>  (void)<a class="code hl_function" href="threadpool_8h.html#ab905e04cd9344347aa4f18800694c6d6">gwt_signal</a>(&amp;p-&gt;cond);</div>
+<div class="line"><span class="lineno">   69</span>  <span class="keyword">const</span> uint32_t next = (<a class="code hl_struct" href="structpool.html">pool</a>-&gt;tail + 1) % <a class="code hl_struct" href="structpool.html">pool</a>-&gt;queue_size;</div>
+<div class="line"><span class="lineno">   70</span>  <a class="code hl_struct" href="structtask__t.html">task_t</a> t = { .routine = <a class="code hl_variable" href="threadpool_8h.html#a62f1220b7d25e63115e145683a8602ef">routine</a>, .arg = <a class="code hl_variable" href="threadpool_8h.html#ae8f0544a29d2cdb12a8aea8fc0d4c66e">arg</a> };</div>
+<div class="line"><span class="lineno">   71</span>  <a class="code hl_struct" href="structpool.html">pool</a>-&gt;queue[<a class="code hl_struct" href="structpool.html">pool</a>-&gt;tail] = t;</div>
+<div class="line"><span class="lineno">   72</span>  <a class="code hl_struct" href="structpool.html">pool</a>-&gt;tail = next;</div>
+<div class="line"><span class="lineno">   73</span>  <a class="code hl_struct" href="structpool.html">pool</a>-&gt;active++;</div>
+<div class="line"><span class="lineno">   74</span>  (void)<a class="code hl_function" href="threadpool_8h.html#ab905e04cd9344347aa4f18800694c6d6">gwt_signal</a>(&amp;<a class="code hl_struct" href="structpool.html">pool</a>-&gt;cond);</div>
 <div class="line"><span class="lineno">   75</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   76</span>}</div>
 <div class="ttc" id="adefs_8h_html_ac6c45889010c1bd68631771b64f18101"><div class="ttname"><a href="defs_8h.html#ac6c45889010c1bd68631771b64f18101">unlikely</a></div><div class="ttdeci">#define unlikely(x)</div><div class="ttdef"><b>Definition</b> <a href="defs_8h_source.html#l00038">defs.h:38</a></div></div>
+<div class="ttc" id="astructpool_html"><div class="ttname"><a href="structpool.html">pool</a></div><div class="ttdef"><b>Definition</b> <a href="mpool_8c_source.html#l00015">mpool.c:15</a></div></div>
+<div class="ttc" id="athreadpool_8h_html_a62f1220b7d25e63115e145683a8602ef"><div class="ttname"><a href="threadpool_8h.html#a62f1220b7d25e63115e145683a8602ef">routine</a></div><div class="ttdeci">void(* routine)(void *)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00026">threadpool.h:26</a></div></div>
 <div class="ttc" id="athreadpool_8h_html_ab905e04cd9344347aa4f18800694c6d6"><div class="ttname"><a href="threadpool_8h.html#ab905e04cd9344347aa4f18800694c6d6">gwt_signal</a></div><div class="ttdeci">static ANN int gwt_signal(gwtcond_t *cond)</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00085">threadpool.h:85</a></div></div>
 <div class="ttc" id="athreadpool_8h_html_ae8f0544a29d2cdb12a8aea8fc0d4c66e"><div class="ttname"><a href="threadpool_8h.html#ae8f0544a29d2cdb12a8aea8fc0d4c66e">arg</a></div><div class="ttdeci">void void * arg</div><div class="ttdef"><b>Definition</b> <a href="threadpool_8h_source.html#l00026">threadpool.h:26</a></div></div>
 </div><!-- fragment -->
@@ -340,8 +342,8 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a1d4ac1614d1076b3f64a161ec8a2d1d5" name="a1d4ac1614d1076b3f64a161ec8a2d1d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d4ac1614d1076b3f64a161ec8a2d1d5">&#9670;&#160;</a></span>threadpool_add()</h2>
+<a id="a0e439ad0c08da1f65f84c5f3e99d23ec" name="a0e439ad0c08da1f65f84c5f3e99d23ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e439ad0c08da1f65f84c5f3e99d23ec">&#9670;&#160;</a></span>threadpool_add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,7 +356,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>fun&#160;</em></span>)(void *), </td>
+          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>routine&#160;</em></span>)(void *), </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -365,9 +367,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="threadpool_8c_source.html#l00078">78</a> of file <a class="el" href="threadpool_8c_source.html">threadpool.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>                                                                     {</div>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                                                                         {</div>
 <div class="line"><span class="lineno">   79</span>  (void)<a class="code hl_function" href="threadpool_8h.html#ad2be0830b1cf1d3ca2cb010cc5a94adb">gwt_lock</a>(&amp;p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#a8a819268af79e0b88f5dfde8fe72696a">lock</a>);</div>
-<div class="line"><span class="lineno">   80</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> ret = add(p, fun, <a class="code hl_variable" href="threadpool_8h.html#ae8f0544a29d2cdb12a8aea8fc0d4c66e">arg</a>);</div>
+<div class="line"><span class="lineno">   80</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> ret = add(p, <a class="code hl_variable" href="threadpool_8h.html#a62f1220b7d25e63115e145683a8602ef">routine</a>, <a class="code hl_variable" href="threadpool_8h.html#ae8f0544a29d2cdb12a8aea8fc0d4c66e">arg</a>);</div>
 <div class="line"><span class="lineno">   81</span>  (void)<a class="code hl_function" href="threadpool_8h.html#a8bb27fa40de794f744b71e460881e3bc">gwt_unlock</a>(&amp;p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#a8a819268af79e0b88f5dfde8fe72696a">lock</a>);</div>
 <div class="line"><span class="lineno">   82</span>  <span class="keywordflow">return</span> ret;</div>
 <div class="line"><span class="lineno">   83</span>}</div>
@@ -409,7 +411,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   31</span>    p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#ac4fef278e08e2141aebdd4e297d78d53">head</a> = (p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#ac4fef278e08e2141aebdd4e297d78d53">head</a> + 1) % p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#a9184cc0ffe6d2235e8200439f7e943ce">queue_size</a>;</div>
 <div class="line"><span class="lineno">   32</span>    p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#ad67b6b639fce62ce32118ddbe2c24ecb">active</a>--;</div>
 <div class="line"><span class="lineno">   33</span>    (void)<a class="code hl_function" href="threadpool_8h.html#a8bb27fa40de794f744b71e460881e3bc">gwt_unlock</a>(&amp;p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#a8a819268af79e0b88f5dfde8fe72696a">lock</a>);</div>
-<div class="line"><span class="lineno">   34</span>    task.fun(task.arg);</div>
+<div class="line"><span class="lineno">   34</span>    task.routine(task.arg);</div>
 <div class="line"><span class="lineno">   35</span>  }</div>
 <div class="line"><span class="lineno">   36</span>  (void)<a class="code hl_function" href="threadpool_8h.html#a8bb27fa40de794f744b71e460881e3bc">gwt_unlock</a>(&amp;p-&gt;<a class="code hl_variable" href="structthreadpool__t.html#a8a819268af79e0b88f5dfde8fe72696a">lock</a>);</div>
 <div class="line"><span class="lineno">   37</span>  <a class="code hl_define" href="gwion__thread_8h.html#a515c663597d2215632df9477bde675f6">THREAD_RETURN</a>(NULL);</div>
